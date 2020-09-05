@@ -1,50 +1,60 @@
-# native-styled-system
+# native-theme-ui
 
-[![GitHub stars](https://img.shields.io/github/stars/codejamninja/native-styled-system.svg?style=social&label=Stars)](https://github.com/codejamninja/native-styled-system)
+[![GitHub stars](https://img.shields.io/github/stars/codejamninja/native-theme-ui.svg?style=social&label=Stars)](https://github.com/codejamninja/native-theme-ui)
 
-> styled system for react native
+> theme ui for react native
 
 Please ★ this repo if you found it useful ★ ★ ★
+
 
 ## Installation
 
 ```sh
-npm install --save native-styled-system
+npm install --save native-theme-ui
 ```
+
 
 ## Dependencies
 
-- [NodeJS](https://nodejs.org)
+* [NodeJS](https://nodejs.org)
+
 
 ## Usage
 
-[Contribute](https://github.com/codejamninja/native-styled-system/blob/master/CONTRIBUTING.md) usage docs
+[Contribute](https://github.com/codejamninja/native-theme-ui/blob/master/CONTRIBUTING.md) usage docs
+
 
 ## Support
 
-Submit an [issue](https://github.com/codejamninja/native-styled-system/issues/new)
+Submit an [issue](https://github.com/codejamninja/native-theme-ui/issues/new)
+
 
 ## Screenshots
 
-[Contribute](https://github.com/codejamninja/native-styled-system/blob/master/CONTRIBUTING.md) a screenshot
+[Contribute](https://github.com/codejamninja/native-theme-ui/blob/master/CONTRIBUTING.md) a screenshot
+
 
 ## Contributing
 
-Review the [guidelines for contributing](https://github.com/codejamninja/native-styled-system/blob/master/CONTRIBUTING.md)
+Review the [guidelines for contributing](https://github.com/codejamninja/native-theme-ui/blob/master/CONTRIBUTING.md)
+
 
 ## License
 
-[MIT License](https://github.com/codejamninja/native-styled-system/blob/master/LICENSE)
+[MIT License](https://github.com/codejamninja/native-theme-ui/blob/master/LICENSE)
 
 [Jam Risser](https://codejam.ninja) © 2020
 
+
 ## Changelog
 
-Review the [changelog](https://github.com/codejamninja/native-styled-system/blob/master/CHANGELOG.md)
+Review the [changelog](https://github.com/codejamninja/native-theme-ui/blob/master/CHANGELOG.md)
+
 
 ## Credits
 
-- [Jam Risser](https://codejam.ninja) - Author
+* [Jam Risser](https://codejam.ninja) - Author
+
 
 ## Support on Liberapay
 
