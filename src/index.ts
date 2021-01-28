@@ -1,8 +1,16 @@
-import { ComponentClass, ComponentType, FunctionComponent } from 'react';
 import { StyleSheet } from 'react-primitives';
 import { ThemedOptions } from 'dripsy/lib/typescript/css/types';
 import { createStyled as emotionCreateStyled } from '@emotion/primitives-core';
 import { createThemedComponent } from 'dripsy';
+import {
+  Component,
+  ComponentClass,
+  ComponentProps,
+  ComponentType,
+  ForwardRefExoticComponent,
+  FunctionComponent,
+  Props
+} from 'react';
 import {
   Interpolation,
   StyledOptions as EmotionStyledOptions,
@@ -19,23 +27,37 @@ export interface StyledOptions
   shouldForwardProp?: (name: string) => boolean;
 }
 
-export type CreateStyledComponent<
-  Props extends object,
+export type ThemedComponent<P, T> = ForwardRefExoticComponent<
+  Props<P> &
+    ComponentProps<typeof Component> &
+    T &
+    P &
+    React.RefAttributes<typeof Component>
+>;
+
+export type CreateThemedStyledComponent<
   InnerProps extends object,
+  ExtraProps extends object,
   Theme extends object
 > =
+  | (((
+      ...args: Array<Interpolation<Themed<ExtraProps, Theme>>>
+    ) => StyledStatelessComponent<ExtraProps, InnerProps, Theme>) &
+      ThemedComponent<ExtraProps & InnerProps, Theme>)
   | ((
-      ...args: Array<Interpolation<Themed<Props, Theme>>>
-    ) => StyledStatelessComponent<Props, InnerProps, Theme>)
-  | ((
-      ...args: Array<Interpolation<Themed<Props, Theme>>>
-    ) => StyledOtherComponent<Props, InnerProps, Theme>);
+      ...args: Array<Interpolation<Themed<ExtraProps, Theme>>>
+    ) => StyledOtherComponent<ExtraProps, InnerProps, Theme> &
+      ThemedComponent<ExtraProps & InnerProps, Theme>);
 
-export function styled<Props extends object, InnerProps extends object = Props>(
+export function styled<
+  InnerProps extends object,
+  ExtraProps extends object = any,
+  Theme extends object = any
+>(
   component: FunctionComponent<any> | ComponentClass<any> | ComponentType<any>,
   options?: StyledOptions,
   themedOptions?: ThemedOptions<any>
-): CreateStyledComponent<Props, InnerProps, any> {
+): CreateThemedStyledComponent<InnerProps, ExtraProps, Theme> {
   const shouldForwardProp =
     options?.shouldForwardProp ||
     ((prop: string): boolean => {
@@ -53,8 +75,11 @@ export function styled<Props extends object, InnerProps extends object = Props>(
   })(
     options?.isThemed
       ? component
-      : createThemedComponent(component, themedOptions)
-  );
+      : createThemedComponent<InnerProps & ExtraProps, Theme>(
+          component,
+          themedOptions
+        )
+  ) as CreateThemedStyledComponent<InnerProps, ExtraProps, Theme>;
 }
 
 export * from 'dripsy';
