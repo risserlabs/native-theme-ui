@@ -37,8 +37,8 @@ export type ThemedComponent<P, T> = ForwardRefExoticComponent<
 
 export type ThemedStyledComponent<
   InnerProps extends object,
-  ExtraProps extends object,
-  Theme extends object
+  ExtraProps extends object = any,
+  Theme extends object = any
 > = (
   | StyledStatelessComponent<ExtraProps, InnerProps, Theme>
   | StyledOtherComponent<ExtraProps, InnerProps, Theme>
@@ -47,8 +47,8 @@ export type ThemedStyledComponent<
 
 export type CreateThemedStyledComponent<
   InnerProps extends object,
-  ExtraProps extends object,
-  Theme extends object
+  ExtraProps extends object = any,
+  Theme extends object = any
 > = (
   ...args: Array<Interpolation<Themed<ExtraProps, Theme>>>
 ) => ThemedStyledComponent<InnerProps, ExtraProps, Theme>;
