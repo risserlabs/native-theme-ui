@@ -35,19 +35,23 @@ export type ThemedComponent<P, T> = ForwardRefExoticComponent<
     React.RefAttributes<typeof Component>
 >;
 
+export type ThemedStyledComponent<
+  InnerProps extends object,
+  ExtraProps extends object,
+  Theme extends object
+> = (
+  | StyledStatelessComponent<ExtraProps, InnerProps, Theme>
+  | StyledOtherComponent<ExtraProps, InnerProps, Theme>
+) &
+  ThemedComponent<ExtraProps & InnerProps, Theme>;
+
 export type CreateThemedStyledComponent<
   InnerProps extends object,
   ExtraProps extends object,
   Theme extends object
-> =
-  | (((
-      ...args: Array<Interpolation<Themed<ExtraProps, Theme>>>
-    ) => StyledStatelessComponent<ExtraProps, InnerProps, Theme>) &
-      ThemedComponent<ExtraProps & InnerProps, Theme>)
-  | ((
-      ...args: Array<Interpolation<Themed<ExtraProps, Theme>>>
-    ) => StyledOtherComponent<ExtraProps, InnerProps, Theme> &
-      ThemedComponent<ExtraProps & InnerProps, Theme>);
+> = (
+  ...args: Array<Interpolation<Themed<ExtraProps, Theme>>>
+) => ThemedStyledComponent<InnerProps, ExtraProps, Theme>;
 
 export function styled<
   InnerProps extends object,
