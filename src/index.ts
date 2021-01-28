@@ -34,7 +34,7 @@ export type CreateStyledComponent<
 export function styled<Props extends object, InnerProps extends object = Props>(
   component: FunctionComponent<any> | ComponentClass<any> | ComponentType<any>,
   options?: StyledOptions,
-  themedOptions?: ThemedOptions
+  themedOptions?: ThemedOptions<any>
 ): CreateStyledComponent<Props, InnerProps, any> {
   const shouldForwardProp =
     options?.shouldForwardProp ||

@@ -80,3 +80,5 @@ yarn.lock
 tsconfig.tsbuildinfo
 pnpm-lock.yaml
 .tmp/
+/es
+/dist
