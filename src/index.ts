@@ -148,6 +148,7 @@ interface ClassInterpolation extends Function {
 
 interface StyledComponentMethods<
   Props extends object,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars,@typescript-eslint/naming-convention
   _InnerProps extends object,
   Theme extends object
 > {
