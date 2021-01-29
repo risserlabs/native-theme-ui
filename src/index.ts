@@ -1,6 +1,9 @@
 import { StyleSheet } from 'react-primitives';
-import { StyledProps as ThemeUIStyledProps } from 'dripsy/lib/typescript/css/types';
-import { ThemedOptions } from 'dripsy/lib/typescript/css/types';
+import {
+  StyledProps as ThemeUIStyledProps,
+  ThemedOptions
+} from 'dripsy/lib/typescript/css/types';
+
 import { createStyled as emotionCreateStyled } from '@emotion/primitives-core';
 import { createThemedComponent } from 'dripsy';
 import {
