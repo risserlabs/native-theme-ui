@@ -34,8 +34,8 @@ export interface StyledOptions
 
 declare type ThemedProps<
   InnerProps extends object,
-  ExtraProps extends object = any,
-  Theme extends object = any
+  ExtraProps extends object = {},
+  Theme extends object = {}
 > = Omit<
   ThemeUIStyledProps<InnerProps & ExtraProps>,
   | 'theme'
@@ -49,52 +49,52 @@ declare type ThemedProps<
 
 declare type ThemedComponent<
   InnerProps extends object,
-  ExtraProps extends object = any,
-  Theme extends object = any
+  ExtraProps extends object = {},
+  Theme extends object = {}
 > = ForwardRefExoticComponent<ThemedProps<InnerProps, ExtraProps, Theme>>;
 
 declare type StyledProps<
   InnerProps extends object,
-  ExtraProps extends object = any,
-  Theme extends object = any
+  ExtraProps extends object = {},
+  Theme extends object = {}
 > =
   | StyledStatelessProps<InnerProps & ExtraProps, Theme>
   | StyledOtherProps<InnerProps & ExtraProps, Theme, Ref<any>>;
 
 declare type StyledComponent<
   InnerProps extends object,
-  ExtraProps extends object = any,
-  Theme extends object = any
+  ExtraProps extends object = {},
+  Theme extends object = {}
 > =
   | StyledStatelessComponent<ExtraProps, InnerProps, Theme>
   | StyledOtherComponent<ExtraProps, InnerProps, Theme>;
 
 export type ThemedStyledProps<
   InnerProps extends object,
-  ExtraProps extends object = any,
-  Theme extends object = any
+  ExtraProps extends object = {},
+  Theme extends object = {}
 > = StyledProps<InnerProps, ExtraProps, Theme> &
   ThemedProps<InnerProps, ExtraProps, Theme>;
 
 export type ThemedStyledComponent<
   InnerProps extends object,
-  ExtraProps extends object = any,
-  Theme extends object = any
+  ExtraProps extends object = {},
+  Theme extends object = {}
 > = StyledComponent<InnerProps, ExtraProps, Theme> &
   ThemedComponent<InnerProps, ExtraProps, Theme>;
 
 export type CreateThemedStyledComponent<
   InnerProps extends object,
-  ExtraProps extends object = any,
-  Theme extends object = any
+  ExtraProps extends object = {},
+  Theme extends object = {}
 > = (
   ...args: Array<Interpolation<Themed<ExtraProps, Theme>>>
 ) => ThemedStyledComponent<InnerProps, ExtraProps, Theme>;
 
 export function styled<
   InnerProps extends object,
-  ExtraProps extends object = any,
-  Theme extends object = any
+  ExtraProps extends object = {},
+  Theme extends object = {}
 >(
   component: FunctionComponent<any> | ComponentClass<any> | ComponentType<any>,
   options?: StyledOptions,
