@@ -1,11 +1,10 @@
 import { StyleSheet } from 'react-primitives';
+import { createStyled as emotionCreateStyled } from '@emotion/primitives-core';
+import { createThemedComponent } from 'dripsy';
 import {
   StyledProps as ThemeUIStyledProps,
   ThemedOptions
 } from 'dripsy/lib/typescript/css/types';
-
-import { createStyled as emotionCreateStyled } from '@emotion/primitives-core';
-import { createThemedComponent } from 'dripsy';
 import {
   Component,
   ComponentClass,
