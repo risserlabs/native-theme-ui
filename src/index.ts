@@ -17,10 +17,6 @@ import {
 import {
   Interpolation,
   StyledOptions as EmotionStyledOptions,
-  StyledOtherComponent,
-  StyledStatelessComponent,
-  StyledStatelessProps,
-  StyledOtherProps,
   Themed
 } from '@emotion/primitives';
 
@@ -125,3 +121,55 @@ export function styled<
 }
 
 export * from 'dripsy';
+
+interface StyledStatelessComponent<
+  Props extends object,
+  InnerProps extends object,
+  Theme extends object
+> extends ComponentClass<StyledStatelessProps<Props & InnerProps, Theme>>,
+    ClassInterpolation,
+    StyledComponentMethods<Props, InnerProps, Theme> {}
+
+interface StyledOtherComponent<
+  Props extends object,
+  InnerProps extends object,
+  Theme extends object
+> extends ComponentClass<StyledOtherProps<Props & InnerProps, Theme, Ref<any>>>,
+    ClassInterpolation,
+    StyledComponentMethods<Props, InnerProps, Theme> {}
+
+interface ClassInterpolation extends Function {
+  __emotion_real: any;
+  __emotion_styles: BaseInterpolation[];
+  __emotion_base: ClassInterpolation;
+  __emotion_target: string;
+  __emotion_forwardProp: undefined | null | ((arg: string) => boolean);
+}
+
+interface StyledComponentMethods<
+  Props extends object,
+  _InnerProps extends object,
+  Theme extends object
+> {
+  withComponent<IP extends object>(
+    component: FunctionComponent<IP>,
+    options?: StyledOptions
+  ): StyledStatelessComponent<Props, IP, Theme>;
+
+  withComponent<IP extends object>(
+    component: ComponentClass<IP> | ComponentType<IP>,
+    options?: StyledOptions
+  ): StyledOtherComponent<Props, IP, Theme>;
+}
+
+type StyledStatelessProps<P extends object, T extends object> = P & {
+  theme?: T;
+};
+
+type StyledOtherProps<
+  P extends object,
+  T extends object,
+  R
+> = StyledStatelessProps<P, T> & { innerRef?: R };
+
+type BaseInterpolation = any;
