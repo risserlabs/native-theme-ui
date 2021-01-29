@@ -55,8 +55,8 @@ declare type ThemedComponent<
 
 declare type StyledProps<
   InnerProps extends object,
-  ExtraProps extends object,
-  Theme extends object
+  ExtraProps extends object = any,
+  Theme extends object = any
 > =
   | StyledStatelessProps<InnerProps & ExtraProps, Theme>
   | StyledOtherProps<InnerProps & ExtraProps, Theme, Ref<any>>;
@@ -71,8 +71,8 @@ declare type StyledComponent<
 
 export type ThemedStyledProps<
   InnerProps extends object,
-  ExtraProps extends object,
-  Theme extends object
+  ExtraProps extends object = any,
+  Theme extends object = any
 > = StyledProps<InnerProps, ExtraProps, Theme> &
   ThemedProps<InnerProps, ExtraProps, Theme>;
 
