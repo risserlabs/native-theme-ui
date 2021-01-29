@@ -28,59 +28,49 @@ export interface StyledOptions
   shouldForwardProp?: (name: string) => boolean;
 }
 
-declare type ThemedProps<
-  InnerProps extends object,
-  ExtraProps extends object = {},
-  Theme extends object = {}
-> = Omit<
+declare type ThemedProps<InnerProps, ExtraProps = {}, Theme = {}> = Omit<
   ThemeUIStyledProps<InnerProps & ExtraProps>,
-  | 'theme'
-  | ('breakpoint' &
-      ComponentProps<typeof Component> &
-      Theme &
-      InnerProps &
-      ExtraProps &
-      React.RefAttributes<typeof Component>)
->;
+  'theme' | 'breakpoint'
+> &
+  ComponentProps<typeof Component> &
+  Theme &
+  InnerProps &
+  ExtraProps &
+  React.RefAttributes<typeof Component>;
 
 declare type ThemedComponent<
-  InnerProps extends object,
-  ExtraProps extends object = {},
-  Theme extends object = {}
+  InnerProps,
+  ExtraProps = {},
+  Theme = {}
 > = ForwardRefExoticComponent<ThemedProps<InnerProps, ExtraProps, Theme>>;
 
 declare type StyledProps<
-  InnerProps extends object,
-  ExtraProps extends object = {},
-  Theme extends object = {}
-> =
-  | StyledStatelessProps<InnerProps & ExtraProps, Theme>
-  | StyledOtherProps<InnerProps & ExtraProps, Theme, Ref<any>>;
+  InnerProps,
+  ExtraProps = {},
+  Theme = {}
+> = StyledStatelessProps<InnerProps & ExtraProps, Theme> &
+  StyledOtherProps<InnerProps & ExtraProps, Theme, Ref<any>>;
 
-declare type StyledComponent<
-  InnerProps extends object,
-  ExtraProps extends object = {},
-  Theme extends object = {}
-> =
+declare type StyledComponent<InnerProps, ExtraProps = {}, Theme = {}> =
   | StyledStatelessComponent<ExtraProps, InnerProps, Theme>
   | StyledOtherComponent<ExtraProps, InnerProps, Theme>;
 
 export type ThemedStyledProps<
-  InnerProps extends object,
-  ExtraProps extends object = {},
-  Theme extends object = {}
+  InnerProps,
+  ExtraProps = {},
+  Theme = {}
 > = StyledProps<InnerProps, ExtraProps, Theme> &
   ThemedProps<InnerProps, ExtraProps, Theme>;
 
 export type ThemedStyledComponent<
-  InnerProps extends object,
-  ExtraProps extends object = {},
-  Theme extends object = {}
+  InnerProps,
+  ExtraProps = {},
+  Theme = {}
 > = StyledComponent<InnerProps, ExtraProps, Theme> &
   ThemedComponent<InnerProps, ExtraProps, Theme>;
 
 export type CreateThemedStyledComponent<
-  InnerProps extends object,
+  InnerProps,
   ExtraProps extends object = {},
   Theme extends object = {}
 > = (
@@ -88,7 +78,7 @@ export type CreateThemedStyledComponent<
 ) => ThemedStyledComponent<InnerProps, ExtraProps, Theme>;
 
 export function styled<
-  InnerProps extends object,
+  InnerProps,
   ExtraProps extends object = {},
   Theme extends object = {}
 >(
@@ -122,19 +112,13 @@ export function styled<
 
 export * from 'dripsy';
 
-interface StyledStatelessComponent<
-  Props extends object,
-  InnerProps extends object,
-  Theme extends object
-> extends ComponentClass<StyledStatelessProps<Props & InnerProps, Theme>>,
+interface StyledStatelessComponent<Props, InnerProps, Theme>
+  extends ComponentClass<StyledStatelessProps<Props & InnerProps, Theme>>,
     ClassInterpolation,
     StyledComponentMethods<Props, InnerProps, Theme> {}
 
-interface StyledOtherComponent<
-  Props extends object,
-  InnerProps extends object,
-  Theme extends object
-> extends ComponentClass<StyledOtherProps<Props & InnerProps, Theme, Ref<any>>>,
+interface StyledOtherComponent<Props, InnerProps, Theme>
+  extends ComponentClass<StyledOtherProps<Props & InnerProps, Theme, Ref<any>>>,
     ClassInterpolation,
     StyledComponentMethods<Props, InnerProps, Theme> {}
 
@@ -147,30 +131,26 @@ interface ClassInterpolation extends Function {
 }
 
 interface StyledComponentMethods<
-  Props extends object,
+  Props,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars,@typescript-eslint/naming-convention
-  _InnerProps extends object,
-  Theme extends object
+  _InnerProps,
+  Theme
 > {
-  withComponent<IP extends object>(
+  withComponent<IP>(
     component: FunctionComponent<IP>,
     options?: StyledOptions
   ): StyledStatelessComponent<Props, IP, Theme>;
 
-  withComponent<IP extends object>(
+  withComponent<IP>(
     component: ComponentClass<IP> | ComponentType<IP>,
     options?: StyledOptions
   ): StyledOtherComponent<Props, IP, Theme>;
 }
 
-type StyledStatelessProps<P extends object, T extends object> = P & {
+type StyledStatelessProps<P, T> = P & {
   theme?: T;
 };
 
-type StyledOtherProps<
-  P extends object,
-  T extends object,
-  R
-> = StyledStatelessProps<P, T> & { innerRef?: R };
+type StyledOtherProps<P, T, R> = StyledStatelessProps<P, T> & { innerRef?: R };
 
 type BaseInterpolation = any;
