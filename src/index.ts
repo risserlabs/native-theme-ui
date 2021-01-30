@@ -3,7 +3,7 @@ import { createStyled as emotionCreateStyled } from '@emotion/primitives-core';
 import { createThemedComponent } from 'dripsy';
 import {
   StyledProps as ThemeUIStyledProps,
-  ThemedOptions
+  ThemedOptions as DripsyThemedOptions
 } from 'dripsy/lib/typescript/css/types';
 import {
   Component,
@@ -22,11 +22,18 @@ import {
 
 export interface StyledOptions
   extends Omit<EmotionStyledOptions, 'getShouldForwardProp'> {
-  isThemed?: boolean;
   forwardPropsBlacklist?: Set<string>;
   forwardPropsWhitelist?: Set<string>;
   shouldForwardProp?: (name: string) => boolean;
 }
+
+export interface ThemedOptions<Theme = {}> extends DripsyThemedOptions<Theme> {
+  isThemed?: boolean;
+}
+
+export interface Options<Theme = {}>
+  extends StyledOptions,
+    ThemedOptions<Theme> {}
 
 declare type ThemedProps<InnerProps, ExtraProps = {}, Theme = {}> = Omit<
   ThemeUIStyledProps<InnerProps & ExtraProps>,
@@ -83,8 +90,7 @@ export function styled<
   Theme extends object = {}
 >(
   component: FunctionComponent<any> | ComponentClass<any> | ComponentType<any>,
-  options?: StyledOptions,
-  themedOptions?: ThemedOptions<any>
+  options?: Partial<Options<Theme>>
 ): CreateThemedStyledComponent<InnerProps, ExtraProps, Theme> {
   const shouldForwardProp =
     options?.shouldForwardProp ||
@@ -101,13 +107,31 @@ export function styled<
   return emotionCreateStyled(StyleSheet, {
     getShouldForwardProp: () => shouldForwardProp
   })(
-    options?.isThemed
-      ? component
-      : createThemedComponent<InnerProps & ExtraProps, Theme>(
-          component,
-          themedOptions
-        )
+    themed<InnerProps, ExtraProps, Theme>(component, {
+      defaultStyle: options?.defaultStyle,
+      themeKey: options?.themeKey,
+      defaultVariant: options?.defaultVariant,
+      defaultVariants: options?.defaultVariants
+    })
   ) as CreateThemedStyledComponent<InnerProps, ExtraProps, Theme>;
+}
+
+export function themed<
+  InnerProps,
+  ExtraProps extends object = {},
+  Theme extends object = {}
+>(
+  component: FunctionComponent<any> | ComponentClass<any> | ComponentType<any>,
+  themedOptions: Partial<ThemedOptions<Theme>> = {}
+) {
+  const { isThemed } = themedOptions;
+  delete themedOptions.isThemed;
+  return isThemed
+    ? component
+    : createThemedComponent<InnerProps & ExtraProps, Theme>(
+        component,
+        themedOptions
+      );
 }
 
 export * from 'dripsy';
