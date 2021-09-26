@@ -1,0 +1,12 @@
+appId: us.bitspur.multiverse-example
+productName: 'Multiverse Example'
+copyright: Copyright © 2021 BitSpur Inc
+directories:
+  output: dist
+  buildResources: resources
+files:
+  - from: .
+    filter:
+      - package.json
+      - app
+publish: null
