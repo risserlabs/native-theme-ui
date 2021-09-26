@@ -4,7 +4,7 @@
  * File Created: 25-09-2021 18:08:58
  * Author: Clay Risser
  * -----
- * Last Modified: 25-09-2021 20:00:35
+ * Last Modified: 25-09-2021 20:56:53
  * Modified By: Clay Risser
  * -----
  * BitSpur Inc (c) Copyright 2021
@@ -22,20 +22,34 @@
  * limitations under the License.
  */
 
+const withFonts = require('next-fonts');
 const withImages = require('next-images');
+const withOffline = require('next-offline');
+const withPlugins = require('next-compose-plugins');
+const { withExpo } = require('@expo/next-adapter');
+const withTM = require('next-transpile-modules')(['react-native-web']);
 
-module.exports = withImages({
-  assetPrefix: './',
-  poweredByHeader: false,
-  target: 'server',
-  productionBrowserSourceMaps: true,
-  devIndicators: { autoPrerender: false },
-  webpack: (config) => {
-    if (typeof isServer !== 'undefined' && !isServer) {
-      config.target = 'electron-renderer';
+module.exports = withPlugins(
+  [
+    // withTM,
+    // withOffline,
+    // [withExpo, { projectRoot: __dirname }]
+    // [withImages, { projectRoot: __dirname }]
+    // [withFonts, { projectRoot: __dirname }]
+  ],
+  {
+    assetPrefix: './',
+    poweredByHeader: false,
+    target: 'server',
+    productionBrowserSourceMaps: true,
+    devIndicators: { autoPrerender: false },
+    webpack: (config) => {
+      if (typeof isServer !== 'undefined' && !isServer) {
+        config.target = 'electron-renderer';
+      }
+      if (!config.watchOptions) config.watchOptions = {};
+      config.watchOptions.ignored = '**/.*';
+      return config;
     }
-    if (!config.watchOptions) config.watchOptions = {};
-    config.watchOptions.ignored = '**/.*';
-    return config;
   }
-});
+);

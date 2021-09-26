@@ -4,7 +4,7 @@
  * File Created: 25-09-2021 18:46:51
  * Author: Clay Risser
  * -----
- * Last Modified: 25-09-2021 20:01:15
+ * Last Modified: 25-09-2021 20:52:32
  * Modified By: Clay Risser
  * -----
  * BitSpur Inc (c) Copyright 2021
@@ -22,6 +22,7 @@
  * limitations under the License.
  */
 
+import 'setimmediate';
 import React, { FC, ReactElement } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 import { createStore } from '~/store';

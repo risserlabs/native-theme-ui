@@ -55,6 +55,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # app
+/.expo
+/.next
 /app
 /next-env.d.ts
 pnpm-lock.yaml
