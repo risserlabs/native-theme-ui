@@ -1,0 +1,19 @@
+# expo
+*.jks
+*.key
+*.mobileprovision
+*.orig.*
+*.p12
+*.p8
+.DS_Store
+.expo/
+/.expo/*
+/dist
+/web-build/*
+dist/
+node_modules/
+npm-debug.*
+web-build/
+
+# app
+yarn.lock
