@@ -15,5 +15,25 @@ node_modules/
 npm-debug.*
 web-build/
 
+# nextjs
+*.pem
+*.tsbuildinfo
+.DS_Store
+.env.development.local
+.env.local
+.env.production.local
+.env.test.local
+.pnp.js
+.vercel
+/.next/
+/.pnp
+/build
+/coverage
+/node_modules
+/out/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
 # app
 yarn.lock

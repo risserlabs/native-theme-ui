@@ -3,18 +3,23 @@
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start",
     "android": "expo start --android",
+    "build": "next build",
+    "dev": "next dev",
+    "eject": "expo eject",
     "ios": "expo start --ios",
-    "web": "expo start --web",
-    "eject": "expo eject"
+    "lint": "next lint",
+    "start": "expo start",
+    "start-next": "next start",
+    "web": "expo start --web"
   },
   "dependencies": {
     "electron": "^6.0.12",
     "expo": "~43.0.0",
     "expo-status-bar": "~1.1.0",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
+    "next": "12.0.3",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
     "react-native": "0.64.2",
     "react-native-web": "0.17.1"
   },
@@ -22,10 +27,17 @@
     "@babel/core": "^7.12.9",
     "@expo/electron-adapter": "^0.0.55",
     "@expo/webpack-config": "^0.16.6",
-    "@types/react": "~17.0.21",
+    "@types/node": "16.11.6",
+    "@types/react": "17.0.34",
     "@types/react-native": "~0.64.12",
     "electron-builder": "^22.13.1",
-    "typescript": "~4.3.5"
+    "eslint": "7",
+    "eslint-config-next": "12.0.3",
+    "typescript": "4.4.4"
   },
-  "private": true
+  "private": true,
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "none"
+  }
 }
