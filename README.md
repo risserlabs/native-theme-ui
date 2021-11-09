@@ -1,3 +1,0 @@
-# multiverse-example
-
-> multiverse example
