@@ -1,10 +1,10 @@
 /**
- * File: /App.tsx
+ * File: /vscode/extension.ts
  * Project: multiverse-example
- * File Created: 08-11-2021 02:31:35
+ * File Created: 08-11-2021 19:49:41
  * Author: Clay Risser
  * -----
- * Last Modified: 08-11-2021 22:01:57
+ * Last Modified: 09-11-2021 00:25:56
  * Modified By: Clay Risser
  * -----
  * BitSpur, Inc. (c) Copyright 2021
@@ -22,27 +22,21 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
-import App from './src/App';
+import * as vscode from 'vscode';
 
-export interface ExpoAppProps {}
+export function activate(context: vscode.ExtensionContext) {
+  console.log(
+    'Congratulations, your extension "multiverse-example" is now active in the web extension host!'
+  );
+  let disposable = vscode.commands.registerCommand(
+    'multiverse-example.helloWorld',
+    () => {
+      vscode.window.showInformationMessage(
+        'Hello World from multiverse-example in a web extension host!'
+      );
+    }
+  );
+  context.subscriptions.push(disposable);
+}
 
-const ExpoApp: FC<ExpoAppProps> = (_props: ExpoAppProps) => (
-  <View style={styles.container}>
-    <App />
-    <StatusBar style="auto" />
-  </View>
-);
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-});
-
-export default ExpoApp;
+export function deactivate() {}
