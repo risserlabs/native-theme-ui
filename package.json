@@ -1,0 +1,19 @@
+{
+  "name": "multiverse",
+  "private": true,
+  "devDependencies": {
+    "expo-yarn-workspaces": "^1.5.1",
+    "patch-package": "^6.4.7"
+  },
+  "workspaces": [
+    "app",
+    "platforms/*"
+  ],
+  "scripts": {
+    "postinstall": "patch-package"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "none"
+  }
+}
