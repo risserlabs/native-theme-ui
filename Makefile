@@ -3,8 +3,8 @@
 # File Created: 25-09-2021 18:31:26
 # Author: Clay Risser
 # -----
-# Last Modified: 25-09-2021 20:00:32
-# Modified By: Clay Risser
+# Last Modified: 28-10-2021 02:49:10
+# Modified By: Jam Risser
 # -----
 # BitSpur Inc (c) Copyright 2021
 #
@@ -20,13 +20,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-export MAKE_CACHE := $(shell pwd)/node_modules/.make
-export PARENT := true
-include blackmagic.mk
+NPM ?= yarn
 
-VERSION := $(shell cat package.json | jq -r '.version')
+include mkpm.mk
+ifneq (,$(MKPM))
+-include $(MKPM)/gnu
+ifneq (,$(GNU_READY))
+-include $(MKPM)/mkchain
+
+.DEFAULT_GOAL := build
+
+VERSION := $(shell $(CAT) package.json | jq -r '.version')
 PACKAGE := pass-$(VERSION).vsix
 
+NPM ?= $(call ternary,pnpm --version,pnpm,$(call ternary,yarn --version,yarn,npm))
 BABEL ?= node_modules/.bin/babel
 CLOC ?= cloc
 CSPELL ?= node_modules/.bin/cspell
@@ -39,81 +46,66 @@ PRETTIER ?= node_modules/.bin/prettier
 TMP_DIR ?= node_modules/.tmp
 TSC ?= node_modules/.bin/tsc
 VSCE ?= node_modules/.bin/vsce
+
 COLLECT_COVERAGE_FROM := ["src/**/*.{js,jsx,ts,tsx}"]
 
 .PHONY: all
 all: build
 
 ACTIONS += install
-INSTALL_DEPS := $(patsubst %,$(DONE)/_install/%,package.json)
-$(ACTION)/install:
+$(ACTION)/install: package.json
 	@$(NPM) install
 	@$(call done,install)
 
 ACTIONS += format~install
-FORMAT_DEPS := $(call deps,format,$(shell $(GIT) ls-files 2>$(NULL) | \
-	grep -E "\.((json)|(ya?ml)|(md)|([jt]sx?))$$"))
-$(ACTION)/format:
-#	@for i in $$($(call get_deps,format)); do echo $$i | \
+$(ACTION)/format: $(call git_deps,\.((json)|(ya?ml)|(md)|([jt]sx?))$$)
+#	@for i in $^; do echo $$i | \
 #		grep -E "\.[jt]sx?$$"; done | xargs $(ESLINT) --fix >/dev/null ||true
-	@$(PRETTIER) --write $(shell $(call get_deps,format))
+	@$(PRETTIER) --write $^
 	@$(call done,format)
 
 ACTIONS += spellcheck~format
-SPELLCHECK_DEPS := $(call deps,spellcheck,$(shell $(GIT) ls-files 2>$(NULL) | \
-	$(GIT) ls-files | grep -E "\.(md)$$"))
-$(ACTION)/spellcheck:
-	@mkdir -p $(TMP_DIR)
-	@node -e "console.log(JSON.stringify({language:'en',version:'0.1',words:require('./.vscode/settings.json')['cSpell.words']}, null, 2))" > \
-		$(TMP_DIR)/cspellrc.json
-	-@$(CSPELL) --config $(TMP_DIR)/cspellrc.json $(shell $(call get_deps,spellcheck))
+$(ACTION)/spellcheck: $(call git_deps,\.(md)$$)
+	@$(ECHO) '{"language":"en","version":"0.1","words":$(shell cat .vscode/settings.json | $(SED) 's|^\s*//.*||g' | jq ".[\"cSpell.words\"]")}' > \
+		$(MKPM_TMP)/cspellrc.json
+	-@$(CSPELL) --config $(MKPM_TMP)/cspellrc.json $?
 	@$(call done,spellcheck)
 
 ACTIONS += lint~spellcheck
-LINT_DEPS := $(call deps,lint,$(shell $(GIT) ls-files 2>$(NULL) | \
-	grep -E "\.([jt]sx?)$$"))
-$(ACTION)/lint:
+$(ACTION)/lint: $(call git_deps,\.([jt]sx?)$$)
 #	-@$(LOCKFILE_LINT) --type npm --path package-lock.json --validate-https
-	-@$(ESLINT) -f json -o node_modules/.tmp/eslintReport.json $(shell $(call get_deps,lint)) $(NOFAIL)
-	-@$(ESLINT) $(shell $(call get_deps,lint))
+	-@$(ESLINT) -f json -o node_modules/.tmp/eslintReport.json $? $(NOFAIL)
+	-@$(ESLINT) $^
 	@$(call done,lint)
 
 ACTIONS += test~lint
-TEST_DEPS := $(call deps,test,$(shell $(GIT) ls-files 2>$(NULL) | \
-	grep -E "\.([jt]sx?)$$"))
-$(ACTION)/test:
-	-@$(JEST) --json --outputFile=node_modules/.tmp/jestTestResults.json --coverage \
+$(ACTION)/test: $(call git_deps,\.([jt]sx?)$$)
+	-@$(JEST) --pass-with-no-tests --json --outputFile=node_modules/.tmp/jestTestResults.json --coverage \
 		--coverageDirectory=node_modules/.tmp/coverage --testResultsProcessor=jest-sonar-reporter \
-		--collectCoverageFrom='$(COLLECT_COVERAGE_FROM)' --findRelatedTests $(shell $(call get_deps,test))
+		--collectCoverageFrom='$(COLLECT_COVERAGE_FROM)' --findRelatedTests $?
 	@$(call done,test)
 
 ACTIONS += build~test
-BUILD_DEPS := $(call deps,build,$(shell $(GIT) ls-files 2>$(NULL) | \
-	grep -E "\.([jt]sx?)$$"))
 BUILD_TARGET := dist/extension.js
 dist/extension.js:
 	@$(MAKE) -s _build
-	@rm -rf $(ACTION)/build $(NOFAIL)
-$(ACTION)/build:
+	@$(RM) -rf $(ACTION)/build $(NOFAIL)
+$(ACTION)/build: $(call git_deps,\.([jt]sx?)$$)
 	@$(NEXT) build $(ARGS)
 	@$(NEXT) export -o dist
 	@$(call done,build)
 
 ACTIONS += package~build
-PACKAGE_DEPS := $(call deps,package,$(shell $(GIT) ls-files 2>$(NULL) | \
-	grep -E "\.([jt]sx?)$$"))
 PACKAGE_TARGET := $(PACKAGE)
 $(PACKAGE):
 	@$(MAKE) -s _package
 	@rm -rf $(ACTION)/package $(NOFAIL)
-$(ACTION)/package:
+$(ACTION)/package: $(call git_deps,\.([jt]sx?)$$)
 	@$(VSCE) package
 	@$(call done,package)
 
 ACTIONS += publish~package
-PUBLISH_DEPS := $(call deps,publish,$(shell $(GIT) ls-files 2>$(NULL) | \
-	grep -E "\.([jt]sx?)$$"))
-$(ACTION)/publish:
+$(ACTION)/publish: $(call git_deps,\.([jt]sx?)$$)
 	@$(VSCE) publish
 	@$(call done,publish)
 
@@ -132,34 +124,24 @@ inc:
 count:
 	@$(CLOC) $(shell $(GIT) ls-files)
 
-.PHONY: pack +pack
+.PHONY: pack
 pack: build
-	@$(MAKE) -s +pack
-+pack:
 	@$(NPM) pack
 
 .PHONY: coverage
-coverage: ~lint
-	@$(MAKE) -s +coverage
-+coverage:
+coverage:
 	@$(JEST) --coverage --collectCoverageFrom='$(COLLECT_COVERAGE_FROM)' $(ARGS)
 
 .PHONY: test-ui
 test-ui: ~lint
-	@$(MAKE) -s +test-ui
-+test-ui:
 	@$(MAJESTIC) $(ARGS)
 
 .PHONY: test-watch
 test-watch: ~lint
-	@$(MAKE) -s +test-watch
-+test-watch:
 	@$(JEST) --watch $(ARGS)
 
-.PHONY: start +start
+.PHONY: start
 start: ~format
-	@$(MAKE) -s +start
-+start:
 	@$(NEXT) dev $(ARGS)
 
 .PHONY: list
@@ -168,12 +150,11 @@ list:
 
 .PHONY: clean
 clean:
-	-@$(call clean)
+	-@$(MKCACHE_CLEAN)
 	-@$(JEST) --clearCache $(NOFAIL)
-	-@rm -rf node_modules/.cache $(NOFAIL)
-	-@rm -rf node_modules/.tmp $(NOFAIL)
 	-@$(GIT) clean -fXd \
-		$(call deepignore,node_modules) \
+		$(MKPM_GIT_CLEAN_FLAGS) \
+		$(call git_clean_flags,node_modules) \
 		-e $(BANG)/package-lock.json \
 		-e $(BANG)/pnpm-lock.yaml \
 		-e $(BANG)/yarn.lock $(NOFAIL)
@@ -182,22 +163,10 @@ clean:
 purge: clean
 	-@$(GIT) clean -fXd
 
--include $(patsubst %,$(_ACTIONS)/%,$(ACTIONS))
-
-+%:
-	@$(MAKE) -e -s $(shell echo $@ | $(SED) 's/^\+//g')
-
-%: ;
-
 CACHE_ENVS += \
-	BABEL \
-	CLOC \
-	CSPELL \
-	ESLINT \
-	JEST \
-	LOCKFILE_LINT \
-	MAJESTIC \
-	NEXT \
-	PRETTIER \
-	TMP_DIR \
-	TSC
+	NPM
+
+-include $(call actions)
+
+endif
+endif
