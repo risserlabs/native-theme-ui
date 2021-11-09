@@ -1,5 +1,6 @@
 {
   "name": "multiverse",
+  "description": "write once, render anywhere",
   "private": true,
   "devDependencies": {
     "expo-yarn-workspaces": "^1.5.1",
