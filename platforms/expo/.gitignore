@@ -1,0 +1,21 @@
+# expo
+*.jks
+*.key
+*.mobileprovision
+*.orig.*
+*.p12
+*.p8
+.DS_Store
+.expo/
+.pnp.js
+/.expo/*
+/.next/*
+/.pnp
+/build/
+/dist
+/out/
+/web-build/*
+dist/
+node_modules/
+npm-debug.*
+web-build/
