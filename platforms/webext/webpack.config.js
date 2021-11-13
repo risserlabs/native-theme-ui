@@ -1,15 +1,14 @@
 var CopyPlugin = require('copy-webpack-plugin');
 var path = require('path');
+
 module.exports = {
   mode: 'development',
   target: 'web',
   devtool: 'cheap-module-source-map',
   entry: {
     background: path.resolve(__dirname, 'src/background.ts'),
-    contentScript: path.resolve(__dirname, 'src/contentScript.ts')
-    // devtools: path.resolve(__dirname, 'src/devtools.ts'),
-    // injectible: path.resolve(__dirname, 'src/injectible.ts'),
-    // panel: path.resolve(__dirname, 'src/panel.tsx')
+    contentScript: path.resolve(__dirname, 'src/contentScript.ts'),
+    devtools: path.resolve(__dirname, 'src/devtools.ts')
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -32,11 +31,15 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'out'),
           to: path.resolve(__dirname, 'dist/out')
+          // context: 'out'
+        },
+        {
+          from: path.resolve(__dirname, 'out/_next'),
+          to: path.resolve(__dirname, 'dist/out/next')
         }
       ]
     })
   ],
-
   module: {
     rules: [
       {

@@ -1,5 +1,5 @@
 {
-  "name": "@multiverse/browser-extension",
+  "name": "@multiverse/webext",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "ext:dev": "cd dist && web-ext run --verbose --browser-console",
-    "ext:build": "webpack"
+    "webext:dev": "cd dist && web-ext run --verbose --browser-console",
+    "webext:build": "rm -rf dist && next export && webpack && cd dist/out && rm -rf _next && (grep -rl '/_next' * | xargs sed -i 's|/_next|/next|g')"
   },
   "dependencies": {
     "@babel/runtime": "^7.16.3",
@@ -25,6 +25,8 @@
     "@babel/preset-typescript": "^7.16.0",
     "@expo/next-adapter": "^3.1.7",
     "@next/bundle-analyzer": "^12.0.3",
+    "@types/chrome": "^0.0.163",
+    "@types/firefox-webext-browser": "^94.0.0",
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-transform-typescript-metadata": "^0.3.2",
     "copy-webpack-plugin": "6.2.1",

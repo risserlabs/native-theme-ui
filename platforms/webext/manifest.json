@@ -3,13 +3,21 @@
   "name": "multiverse",
   "version": "0.0.1",
   "description": "write once, render anywhere",
+  "author": "BitSpur, Inc.",
+  "developer": {
+    "name": "BitSpur, Inc.",
+    "url": "https://bitspur.com"
+  },
+  "devtools_page": "out/devtools.html",
+  "permissions": [],
+  "web_accessible_resources": [],
   "browser_specific_settings": {
     "gecko": {
       "id": "multiverse@bitspur.com"
     }
   },
   "icons": {
-    "48": "out/border-48.png"
+    "48": "border-48.png"
   },
   "content_scripts": [
     {
@@ -18,6 +26,7 @@
     }
   ],
   "background": {
-    "scripts": ["browser-polyfill.js", "background.js"]
+    "scripts": ["browser-polyfill.js", "background.js"],
+    "persistent": false
   }
 }
