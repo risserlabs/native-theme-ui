@@ -1,5 +1,5 @@
 {
-  "name": "@multiverse/next",
+  "name": "@multiverse/browser-extension",
   "version": "0.0.1",
   "private": true,
   "scripts": {

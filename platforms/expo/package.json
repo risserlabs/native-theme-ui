@@ -1,7 +1,7 @@
 {
   "name": "@multiverse/expo",
-  "private": true,
   "version": "0.0.1",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "android": "expo start --android",
@@ -20,7 +20,6 @@
     "expo-dev-client": "^0.6.3",
     "expo-dev-launcher": "^0.8.4",
     "expo-status-bar": "^1.1.0",
-    "next": "^12.0.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-native": "^0.64.2",
@@ -35,7 +34,7 @@
     "@types/react": "^17.0.21",
     "@types/react-native": "^0.64.12",
     "babel-preset-expo": "^8.5.1",
-    "eslint": "^8.2.0",
+    "eslint": "<8.0.0",
     "eslint-config-next": "12.0.3",
     "expo-dev-client": "^0.6.3",
     "expo-yarn-workspaces": "^1.6.0",

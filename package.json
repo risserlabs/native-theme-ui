@@ -1,7 +1,19 @@
 {
   "name": "multiverse",
+  "version": "0.0.1",
   "description": "write once, render anywhere",
   "private": true,
+  "homepage": "https://gitlab.com/bitspur/community/multiverse",
+  "bugs": {
+    "url": "https://gitlab.com/bitspur/community/multiverse",
+    "email": "howdy@bitspur.com"
+  },
+  "license": "Apache-2.0",
+  "author": {
+    "name": "BitSpur, Inc.",
+    "email": "howdy@bitspur.com",
+    "url": "https://bitspur.com"
+  },
   "devDependencies": {
     "expo-yarn-workspaces": "^1.5.1",
     "patch-package": "^6.4.7"
