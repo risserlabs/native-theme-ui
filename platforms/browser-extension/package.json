@@ -6,15 +6,31 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "ext:dev": "cd dist && web-ext run --verbose --browser-console",
+    "ext:build": "webpack"
   },
   "dependencies": {
-    "next": "11.1.2"
+    "@babel/runtime": "^7.16.3",
+    "core-js": "^3.19.1",
+    "next": "11.1.2",
+    "webextension-polyfill": "^0.8.0"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.16.0",
+    "@babel/plugin-proposal-decorators": "^7.16.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.16.0",
+    "@babel/plugin-transform-runtime": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
     "@expo/next-adapter": "^3.1.7",
     "@next/bundle-analyzer": "^12.0.3",
+    "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-transform-typescript-metadata": "^0.3.2",
+    "copy-webpack-plugin": "6.2.1",
     "next-compose-plugins": "^2.2.1",
-    "next-transpile-modules": "^9.0.0"
+    "next-transpile-modules": "^9.0.0",
+    "web-ext": "^6.5.0",
+    "webpack": "^5.64.0"
   }
 }

@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "multiverse",
+  "version": "0.0.1",
+  "description": "write once, render anywhere",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "multiverse@bitspur.com"
+    }
+  },
+  "icons": {
+    "48": "out/border-48.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.mozilla.org/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["browser-polyfill.js", "background.js"]
+  }
+}
