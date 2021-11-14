@@ -1,0 +1,12 @@
+{
+  "cSpell.words": [
+    "corejs",
+    "haptics",
+    "importscripts",
+    "nosources",
+    "unimodules",
+    "webext",
+    "webextension"
+  ],
+  "typescript.tsc.autoDetect": "off"
+}

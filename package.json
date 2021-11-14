@@ -23,7 +23,10 @@
     "platforms/*"
   ],
   "scripts": {
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "vscode:compile": "cd platforms/vscode && yarn run vscode:compile",
+    "vscode:run-in-browser": "cd platforms/vscode && yarn run vscode:run-in-browser",
+    "vscode:watch": "cd platforms/vscode && yarn run vscode:watch"
   },
   "prettier": {
     "singleQuote": true,

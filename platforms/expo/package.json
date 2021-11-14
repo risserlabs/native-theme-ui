@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "android": "expo start --android",
-    "build": "next build",
     "eject": "expo eject",
     "electron": "expo-electron start",
     "ios": "expo start --ios",
@@ -14,7 +13,8 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@expo/next-adapter": "^3.1.7",
+    "@babel/runtime": "^7.16.3",
+    "core-js": "^3.19.1",
     "electron": "^6.0.12",
     "expo": "^43.0.0",
     "expo-dev-client": "^0.6.3",
@@ -34,6 +34,7 @@
     "@types/react": "^17.0.21",
     "@types/react-native": "^0.64.12",
     "babel-preset-expo": "^8.5.1",
+    "electron-windows-store": "^2.1.0",
     "eslint": "<8.0.0",
     "eslint-config-next": "12.0.3",
     "expo-dev-client": "^0.6.3",

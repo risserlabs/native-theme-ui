@@ -3,7 +3,6 @@
 .DS_Store
 .expo
 .vercel
-.vscode
 node_modules/
 yarn-error.log
 yarn.lock
