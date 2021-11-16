@@ -17,7 +17,7 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "target": "ES3",
+    "target": "ES5",
     "lib": [
       "DOM",
       "DOM.Iterable",
@@ -28,16 +28,6 @@
       "Webworker.Iterable"
     ]
   },
-  "exclude": [
-    "node_modules",
-    "*.js",
-    ".next",
-    ".expo",
-    "out"
-  ],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+  "exclude": ["node_modules", "*.js", ".next", ".expo", "out"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

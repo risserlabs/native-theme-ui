@@ -31,7 +31,6 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'out'),
           to: path.resolve(__dirname, 'dist/out')
-          // context: 'out'
         },
         {
           from: path.resolve(__dirname, 'out/_next'),
@@ -74,5 +73,8 @@ module.exports = {
         }
       }
     ]
+  },
+  infrastructureLogging: {
+    level: 'log'
   }
 };

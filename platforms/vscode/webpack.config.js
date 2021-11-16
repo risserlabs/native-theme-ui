@@ -1,74 +1,78 @@
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-
-//@ts-check
-'use strict';
-
-//@ts-check
-/** @typedef {import('webpack').Configuration} WebpackConfig **/
-
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
-/** @type WebpackConfig */
 const webExtensionConfig = {
-  mode: 'none', // this leaves the source code as close as possible to the original (when packaging we set this to 'production')
-  target: 'webworker', // extensions run in a webworker context
+  mode: 'none',
+  target: 'webworker',
   entry: {
     extension: './src/extension.ts',
     'test/suite/index': './src/test/suite/index.ts'
   },
   output: {
+    devtoolModuleFilenameTemplate: '../../[resource-path]',
     filename: '[name].js',
-    path: path.join(__dirname, './dist'),
     libraryTarget: 'commonjs',
-    devtoolModuleFilenameTemplate: '../../[resource-path]'
+    path: path.join(__dirname, './dist')
   },
   resolve: {
-    mainFields: ['browser', 'module', 'main'], // look for `browser` entry point in imported node modules
-    extensions: ['.ts', '.js'], // support ts-files and js-files
-    alias: {
-      // provides alternate implementation for node module and source files
-    },
+    alias: {},
+    extensions: ['.ts', '.js'],
+    mainFields: ['browser', 'module', 'main'],
     fallback: {
-      // Webpack 5 no longer polyfills Node.js core modules automatically.
-      // see https://webpack.js.org/configuration/resolve/#resolvefallback
-      // for the list of Node.js core module polyfills.
       assert: require.resolve('assert')
     }
   },
   module: {
     rules: [
       {
-        test: /\.ts$/,
+        test: /\.(j|t)sx?$/,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: 'ts-loader',
-            options: {
-              configFile: 'tsconfig.vscode.json'
-            }
+        use: {
+          loader: 'babel-loader',
+          options: {
+            babelrc: false,
+            presets: [
+              [
+                '@babel/preset-env',
+                {
+                  corejs: 3,
+                  useBuiltIns: 'entry',
+                  targets: {
+                    node: '6'
+                  }
+                }
+              ],
+              '@babel/preset-typescript'
+            ],
+            plugins: [
+              'babel-plugin-macros',
+              'babel-plugin-transform-typescript-metadata',
+              ['@babel/plugin-proposal-decorators', { legacy: true }],
+              ['@babel/plugin-proposal-class-properties', { loose: true }],
+              '@babel/plugin-proposal-optional-chaining',
+              '@babel/plugin-transform-runtime'
+            ]
           }
-        ]
+        }
       }
     ]
   },
   plugins: [
     new webpack.ProvidePlugin({
-      process: 'process/browser' // provide a shim for the global `process` variable
-    })
+      process: 'process/browser'
+    }),
+    new NodePolyfillPlugin({ excludeAliases: [] })
   ],
   externals: {
-    vscode: 'commonjs vscode' // ignored because it doesn't exist
+    vscode: 'commonjs vscode'
   },
   performance: {
     hints: false
   },
-  devtool: 'nosources-source-map', // create a source map that points to the original source file
+  devtool: 'nosources-source-map',
   infrastructureLogging: {
-    level: 'log' // enables logging required for problem matchers
+    level: 'log'
   }
 };
 

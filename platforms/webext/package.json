@@ -11,8 +11,8 @@
     "webext:build": "rm -rf dist && next export && webpack && cd dist/out && rm -rf _next && (grep -rl '/_next' * | xargs sed -i 's|/_next|/next|g')"
   },
   "dependencies": {
-    "next": "11.1.2",
-    "webextension-polyfill": "^0.8.0"
+    "app": "*",
+    "next": "11.1.2"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.16.0",

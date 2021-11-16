@@ -6,7 +6,8 @@
     "nosources",
     "unimodules",
     "webext",
-    "webextension"
+    "webextension",
+    "webviews"
   ],
   "typescript.tsc.autoDetect": "off"
 }

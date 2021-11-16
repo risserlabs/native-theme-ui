@@ -9,18 +9,6 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-    "onCommand:multiverse.helloWorld"
-  ],
-  "browser": "./dist/extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "multiverse.helloWorld",
-        "title": "Hello World"
-      }
-    ]
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -36,9 +24,16 @@
     "vscode:watch": "webpack --watch"
   },
   "dependencies": {
+    "app": "*",
     "next": "11.1.2"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.16.0",
+    "@babel/plugin-proposal-decorators": "^7.16.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.16.0",
+    "@babel/plugin-transform-runtime": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
     "@types/mocha": "^9.0.0",
     "@types/vscode": "^1.62.0",
     "@types/webpack-env": "^1.16.2",
@@ -46,12 +41,39 @@
     "@typescript-eslint/parser": "^5.1.0",
     "@vscode/test-web": "^0.0.15",
     "assert": "^2.0.0",
+    "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-transform-typescript-metadata": "^0.3.2",
     "eslint": "^8.1.0",
     "mocha": "^9.1.3",
+    "node-polyfill-webpack-plugin": "^1.1.4",
     "process": "^0.11.10",
-    "ts-loader": "^9.2.5",
     "typescript": "^4.4.4",
     "webpack": "^5.52.1",
     "webpack-cli": "^4.8.0"
+  },
+  "browser": "./dist/extension.js",
+  "activationEvents": [
+    "onCommand:multiverse.helloWorld",
+    "onCustomEditor:multiverseEdit.multi"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "multiverse.helloWorld",
+        "title": "Hello World"
+      }
+    ],
+    "customEditors": [
+      {
+        "viewType": "multiverseEdit.multi",
+        "displayName": "Multiverse",
+        "selector": [
+          {
+            "filenamePattern": "**/*.multi"
+          }
+        ],
+        "priority": "default"
+      }
+    ]
   }
 }

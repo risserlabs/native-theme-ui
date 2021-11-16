@@ -31,3 +31,4 @@ yarn-error.log*
 # application
 /dist
 /.vscode-test-web
+/vscode-web-insider-*
