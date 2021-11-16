@@ -4,6 +4,7 @@
     "haptics",
     "importscripts",
     "nosources",
+    "ondevice",
     "unimodules",
     "webext",
     "webextension",

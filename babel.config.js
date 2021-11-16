@@ -1,7 +1,7 @@
 module.exports = (api) => {
   api.cache(true);
   return {
-    babelrcRoots: ['.', './app', './platforms/*'],
+    babelrcRoots: ['.', './src', './platforms/*'],
     presets: ['@expo/next-adapter/babel'],
     plugins: ['react-native-reanimated/plugin'],
     overrides: [

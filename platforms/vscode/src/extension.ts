@@ -1,5 +1,5 @@
 import vscode from 'vscode';
-import pkg from 'app/pkg';
+import pkg from '-/pkg';
 import Commands from './commands';
 import {
   DocumentContentProvider as MultiverseDocumentContentProvider,

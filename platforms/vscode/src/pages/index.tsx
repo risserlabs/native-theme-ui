@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import HomeScreen from 'app/screens/Home';
 import React from 'react';
+import HomeScreen from '-/screens/Home';
 
 const Home: NextPage = () => (
   <>

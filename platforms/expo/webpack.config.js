@@ -1,16 +1,12 @@
 const createExpoWebpackConfigAsync = require('@expo/webpack-config');
 
-module.exports = async function (env, argv) {
-  const config = await createExpoWebpackConfigAsync(
+module.exports = (config, argv) =>
+  createExpoWebpackConfigAsync(
     {
-      ...env,
+      ...config,
       babel: {
-        dangerouslyAddModulePathsToTranspile: ['app']
+        dangerouslyAddModulePathsToTranspile: ['-']
       }
     },
     argv
   );
-  return config;
-
-  return config;
-};

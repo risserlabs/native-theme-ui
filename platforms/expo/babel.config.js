@@ -1,5 +1,3 @@
-// module.exports = { presets: ['@expo/next-adapter/babel'] };
-
 module.exports = (api) => {
   api.cache(true);
   return {

@@ -24,8 +24,9 @@
     "vscode:watch": "webpack --watch"
   },
   "dependencies": {
-    "app": "*",
-    "next": "11.1.2"
+    "-": "*",
+    "next": "11.1.2",
+    "react-native-web": "^0.17.1"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.16.0",
