@@ -1,0 +1,23 @@
+stages:
+  - test
+
+visual-regression:
+  variables:
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_DRIVER: overlay2
+  stage: test
+  image: node:16
+  services:
+    - docker:dind
+  before_script:
+    - curl -L http://get.docker.io | bash
+    - apt update && apt install graphicsmagick
+    - docker info
+  script:
+    - yarn
+    - cd src && yarn run visual-regression
+  artifacts:
+    paths:
+      - src/.loki
+    expire_in: 1 week
+  when: manual

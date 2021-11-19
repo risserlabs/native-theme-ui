@@ -16,4 +16,5 @@ web-build/
 /.loki/.gitignore
 /.loki/current
 /.loki/difference
+/storybook-static
 tsconfig.tsbuildinfo
