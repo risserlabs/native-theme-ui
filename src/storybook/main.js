@@ -18,6 +18,7 @@ module.exports = {
   stories: ['../**/*.stories.@(js|jsx|ts|tsx|md|mdx)'],
   logLevel: 'debug',
   addons: [
+    'storybook-facelift',
     '@etchteam/storybook-addon-status',
     '@luigiminardim/storybook-addon-globals-controls',
     '@pbutlewski/storybook-html',
@@ -25,14 +26,15 @@ module.exports = {
     '@storybook/addon-ie11',
     '@storybook/addon-links',
     '@storybook/addon-storyshots',
-    // '@react-theming/storybook-addon',
     '@storybook/addon-storysource',
     'addon-screen-reader',
     'storybook-addon-breakpoints',
     'storybook-addon-grid',
     'storybook-addon-paddings',
     'storybook-color-picker',
+    // 'storybook-dark-mode',
     'storybook-mobile',
+    // '@react-theming/storybook-addon',
     {
       name: '@storybook/addon-react-native-web',
       options: {

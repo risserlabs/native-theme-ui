@@ -1,4 +1,5 @@
 import { addons } from '@storybook/addons';
+import { themes as storybookThemes } from '@storybook/theming';
 
 addons.setConfig({
   enableShortcuts: true,
@@ -9,7 +10,7 @@ addons.setConfig({
   selectedPanel: undefined,
   showNav: true,
   showPanel: true,
-  theme: undefined,
+  theme: storybookThemes.normal,
   sidebar: {
     collapsedRoots: ['other'],
     showRoots: false

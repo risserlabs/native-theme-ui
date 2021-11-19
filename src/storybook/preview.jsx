@@ -1,5 +1,6 @@
 import { DripsyProvider } from 'dripsy';
 import { addDecorator } from '@storybook/react';
+import { themes as storybookThemes } from '@storybook/theming';
 import { withDesign } from 'storybook-addon-designs';
 import { withGlobals } from '@luigiminardim/storybook-addon-globals-controls';
 import { withThemes } from '@react-theming/storybook-addon';
@@ -15,7 +16,12 @@ export const parameters = {
         description: 'This component is stable and released'
       }
     }
-  }
+  },
+  facelift: {}
+  // darkMode: {
+  //   dark: { ...storybookThemes.dark },
+  //   light: { ...storybookThemes.normal }
+  // }
 };
 
 export const loaders = [];
