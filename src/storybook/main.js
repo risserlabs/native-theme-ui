@@ -18,7 +18,6 @@ module.exports = {
   stories: ['../**/*.stories.@(js|jsx|ts|tsx|md|mdx)'],
   logLevel: 'debug',
   addons: [
-    'storybook-facelift',
     '@etchteam/storybook-addon-status',
     '@luigiminardim/storybook-addon-globals-controls',
     '@pbutlewski/storybook-html',
@@ -31,8 +30,9 @@ module.exports = {
     'storybook-addon-breakpoints',
     'storybook-addon-grid',
     'storybook-addon-paddings',
+    'storybook-addon-themes',
     'storybook-color-picker',
-    // 'storybook-dark-mode',
+    'storybook-dark-mode',
     'storybook-mobile',
     // '@react-theming/storybook-addon',
     {
@@ -46,7 +46,7 @@ module.exports = {
       name: '@storybook/addon-essentials',
       options: {
         actions: true,
-        backgrounds: true,
+        backgrounds: false,
         controls: true,
         docs: true,
         toolbars: true,
