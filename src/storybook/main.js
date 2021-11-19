@@ -1,13 +1,20 @@
+const path = require('path');
+
 const babelConfig = {
   presets: [],
   plugins: [
-    ['@babel/plugin-proposal-class-properties', { loose: true }],
     ['@babel/plugin-proposal-private-methods', { loose: true }],
-    ['@babel/plugin-proposal-private-property-in-object', { loose: true }]
+    ['@babel/plugin-proposal-private-property-in-object', { loose: true }],
+    ['@babel/plugin-proposal-class-properties', { loose: true }],
+    'babel-plugin-macros',
+    'babel-plugin-transform-typescript-metadata',
+    ['@babel/plugin-proposal-decorators', { legacy: true }],
+    '@babel/plugin-proposal-optional-chaining',
+    '@babel/plugin-transform-runtime'
   ]
 };
 
-const config = {
+module.exports = {
   stories: ['../**/*.stories.@(js|jsx|ts|tsx|md|mdx)'],
   logLevel: 'debug',
   addons: [
@@ -18,6 +25,7 @@ const config = {
     '@storybook/addon-ie11',
     '@storybook/addon-links',
     '@storybook/addon-storyshots',
+    // '@react-theming/storybook-addon',
     '@storybook/addon-storysource',
     'addon-screen-reader',
     'storybook-addon-breakpoints',
@@ -25,6 +33,13 @@ const config = {
     'storybook-addon-paddings',
     'storybook-color-picker',
     'storybook-mobile',
+    {
+      name: '@storybook/addon-react-native-web',
+      options: {
+        babelPlugins: babelConfig.plugins,
+        modulesToTranspile: ['dripsy', '@dripsy/core']
+      }
+    },
     {
       name: '@storybook/addon-essentials',
       options: {
@@ -49,23 +64,17 @@ const config = {
     postcss: false,
     buildStoriesJson: true
   },
-  webpackFinal: (config, {}) => {
-    patchBabel(config);
-    return {
-      resolve: {
-        ...config.resolve,
-        alias: {
-          ...config.resolve.alias,
-          'react-native$': 'react-native-web'
-        }
-      },
-      ...config
-    };
+  webpackFinal: (webpackConfig) => {
+    patchBabel(webpackConfig, {
+      ...babelConfig,
+      plugins: [...(babelConfig.plugins || [])]
+    });
+    return { ...webpackConfig };
   }
 };
 
-function patchBabel(config) {
-  config.module.rules.forEach((rule) => {
+function patchBabel(webpackConfig, babelConfig) {
+  webpackConfig.module.rules.forEach((rule) => {
     if (Array.isArray(rule.use)) {
       rule.use.forEach((item) => {
         if (item.loader?.indexOf('babel-loader') > -1) {
@@ -110,5 +119,3 @@ function patchBabel(config) {
     }
   });
 }
-
-module.exports = config;

@@ -1,17 +1,12 @@
+import { DripsyProvider } from 'dripsy';
 import { addDecorator } from '@storybook/react';
-import { base, funk } from '@theme-ui/presets';
 import { withDesign } from 'storybook-addon-designs';
 import { withGlobals } from '@luigiminardim/storybook-addon-globals-controls';
-import { withThemeProvider } from 'storybook-addon-theme-ui';
+import { withThemes } from '@react-theming/storybook-addon';
+import * as themes from '../themes';
 
 export const parameters = {
   globalsControls: {},
-  themeUi: {
-    themes: [
-      { theme: base, name: 'base' },
-      { theme: funk, name: 'funk' }
-    ]
-  },
   status: {
     statuses: {
       released: {
@@ -25,11 +20,31 @@ export const parameters = {
 
 export const loaders = [];
 
+const themingDecorator = withThemes(
+  null,
+  Object.entries(themes).map(([name, theme]) => {
+    theme.name = name;
+    return theme;
+  }),
+  {
+    providerFn: ({ theme, children }) => {
+      return <DripsyProvider theme={theme}>{children}</DripsyProvider>;
+    },
+    onThemeSwitch: (_context) => {
+      return { parameters: { backgrounds: null } };
+    }
+  }
+);
 const withDisplayGlobals = withGlobals((Story, _globalValues) => <Story />);
 
 addDecorator(withDesign);
 addDecorator(withDisplayGlobals);
-addDecorator(withThemeProvider);
+// addDecorator(themingDecorator);
+addDecorator((Root) => (
+  <DripsyProvider theme={themes.sketchy}>
+    <Root />
+  </DripsyProvider>
+));
 
 export const globalTypes = {
   boolean: {
