@@ -34,7 +34,6 @@ module.exports = {
     'storybook-color-picker',
     'storybook-dark-mode',
     'storybook-mobile',
-    // '@react-theming/storybook-addon',
     {
       name: '@storybook/addon-react-native-web',
       options: {
