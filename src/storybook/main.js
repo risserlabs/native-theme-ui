@@ -49,7 +49,7 @@ const config = {
     postcss: false,
     buildStoriesJson: true
   },
-  webpackFinal: async (config, {}) => {
+  webpackFinal: (config, {}) => {
     patchBabel(config);
     return {
       resolve: {

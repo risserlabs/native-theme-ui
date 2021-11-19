@@ -1,11 +1,17 @@
-import { ThemeProvider, themes, convert } from '@storybook/theming';
 import { addDecorator } from '@storybook/react';
+import { base, funk } from '@theme-ui/presets';
 import { withDesign } from 'storybook-addon-designs';
 import { withGlobals } from '@luigiminardim/storybook-addon-globals-controls';
+import { withThemeProvider } from 'storybook-addon-theme-ui';
 
 export const parameters = {
-  facelift: {},
   globalsControls: {},
+  themeUi: {
+    themes: [
+      { theme: base, name: 'base' },
+      { theme: funk, name: 'funk' }
+    ]
+  },
   status: {
     statuses: {
       released: {
@@ -23,6 +29,7 @@ const withDisplayGlobals = withGlobals((Story, _globalValues) => <Story />);
 
 addDecorator(withDesign);
 addDecorator(withDisplayGlobals);
+addDecorator(withThemeProvider);
 
 export const globalTypes = {
   boolean: {

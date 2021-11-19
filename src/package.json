@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "android": "expo start --android",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook -c storybook",
     "eject": "expo eject",
     "ios": "expo start --ios",
-    "native:storybook": "node node_modules/@storybook/react-native-server/bin/index.js",
+    "native:storybook": "node node_modules/@storybook/react-native-server/bin/index.js -c storybook",
     "postinstall": "expo-yarn-workspaces postinstall && cd .. && npx patch-package",
     "start": "expo start",
-    "storybook": "node node_modules/@storybook/react/bin/index.js -p 6006",
+    "storybook": "node node_modules/@storybook/react/bin/index.js -c storybook -p 6006",
     "web": "expo start --web",
     "upgrade": "ncu -i",
     "yarn": "yarn"
@@ -23,7 +23,8 @@
     "expo-dev-client": "^0.6.3",
     "expo-dev-launcher": "^0.8.4",
     "expo-status-bar": "^1.1.0",
-    "react-native": "^0.66.3"
+    "react-native": "^0.66.3",
+    "theme-ui": "^0.12.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
@@ -48,6 +49,7 @@
     "@storybook/react": "^6.3.12",
     "@storybook/react-native": "^5.3.25",
     "@storybook/react-native-server": "^5.3.23",
+    "@theme-ui/presets": "^0.12.0",
     "addon-screen-reader": "^1.8.6",
     "babel-loader": "^8.2.3",
     "expo-status-bar": "^1.1.0",
@@ -58,6 +60,7 @@
     "storybook-addon-grid": "^0.0.13",
     "storybook-addon-outline": "^1.4.1",
     "storybook-addon-paddings": "^4.2.1",
+    "storybook-addon-theme-ui": "^0.1.5",
     "storybook-color-picker": "^2.1.4",
     "storybook-mobile": "^0.1.32",
     "typescript": "^4.5.2",
