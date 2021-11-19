@@ -20,6 +20,7 @@
   ],
   "scripts": {
     "postinstall": "patch-package",
+    "upgrade": "yarn workspaces run upgrade && yarn --prefer-offline",
     "vscode:compile": "cd platforms/vscode && yarn run vscode:compile",
     "vscode:run-in-browser": "cd platforms/vscode && yarn run vscode:run-in-browser",
     "vscode:watch": "cd platforms/vscode && yarn run vscode:watch"
@@ -30,15 +31,15 @@
   },
   "dependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.1",
-    "react-native": "^0.64.2",
-    "react-native-web": "^0.17.1"
+    "react-dom": "^17.0.2",
+    "react-native": "^0.66.3",
+    "react-native-web": "^0.17.5"
   },
   "devDependencies": {
-    "expo-yarn-workspaces": "^1.5.1",
-    "patch-package": "^6.4.7",
-    "@types/node": "^16.11.7",
-    "@types/react": "^17.0.21",
-    "@types/react-native": "^0.64.12"
+    "@types/node": "^16.11.8",
+    "@types/react": "^17.0.35",
+    "@types/react-native": "^0.66.5",
+    "npm-check-updates": "^12.0.2",
+    "patch-package": "^6.4.7"
   }
 }
