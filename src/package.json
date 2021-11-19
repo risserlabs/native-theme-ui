@@ -60,6 +60,7 @@
     "babel-plugin-react-native-web": "^0.17.5",
     "expo-status-bar": "^1.1.0",
     "expo-yarn-workspaces": "^1.6.0",
+    "loki": "^0.28.1",
     "react-element-to-jsx-string": "^14.3.4",
     "storybook-addon-breakpoints": "^1.0.0",
     "storybook-addon-designs": "^6.2.0",
@@ -125,5 +126,18 @@
       "unimodules-sensors-interface",
       "unimodules-task-manager-interface"
     ]
+  },
+  "loki": {
+    "configurations": {
+      "chrome.iphone7": {
+        "target": "chrome.docker",
+        "preset": "iPhone 7"
+      }
+    },
+    "loki": {
+      "gm": {},
+      "looks-same": {},
+      "pixelmatch": {}
+    }
   }
 }

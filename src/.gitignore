@@ -13,4 +13,7 @@ npm-debug.*
 web-build/
 
 # application
+/.loki/.gitignore
+/.loki/current
+/.loki/difference
 tsconfig.tsbuildinfo

@@ -23,7 +23,7 @@ storiesOf('Button', module)
     'with some emoji',
     () => (
       <Button onPress={action('clicked-emoji')}>
-        <Text>😀 😎 👍 💯</Text>
+        <Text>😀 😎 👍 💯 :)</Text>
       </Button>
     ),
     {
