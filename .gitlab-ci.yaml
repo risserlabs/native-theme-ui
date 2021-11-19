@@ -11,7 +11,7 @@ visual-regression:
     - docker:dind
   before_script:
     - curl -L http://get.docker.io | bash
-    - apt update && apt install graphicsmagick
+    - apt update && apt install -y graphicsmagick
     - docker info
   script:
     - yarn
