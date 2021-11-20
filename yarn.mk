@@ -1,4 +1,6 @@
-NPM ?= node $(PROJECT_ROOT)/.yarn/releases/yarn-3.1.0.cjs
+YARN ?= node $(PROJECT_ROOT)/.yarn/releases/yarn-3.1.0.cjs
+
+NPM ?= $(YARN)
 
 BASE64_NOWRAP ?= $(call ternary,openssl version,openssl base64 -A,base64 -w0)
 
@@ -42,5 +44,5 @@ done
 endef
 
 define workspace_foreach
-$(call workspace_exec_foreach,$(MAKE) -s $1 || true)
+$(call workspace_exec_foreach,$(MAKE) -s $1 ARGS=$2 || $(TRUE))
 endef
