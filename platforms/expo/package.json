@@ -10,9 +10,7 @@
     "ios": "expo start --ios",
     "postinstall": "expo-yarn-workspaces postinstall && cd ../.. && npx patch-package",
     "start": "expo start",
-    "upgrade": "ncu -i",
-    "web": "expo start --web",
-    "yarn": "yarn"
+    "web": "expo start --web"
   },
   "dependencies": {
     "-": "*",

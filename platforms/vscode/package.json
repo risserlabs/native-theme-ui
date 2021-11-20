@@ -21,9 +21,7 @@
     "vscode:pretest": "yarn run compile",
     "vscode:run-in-browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. .",
     "vscode:test": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. --extensionTestsPath=dist/test/suite/index.js",
-    "vscode:watch": "webpack --watch",
-    "upgrade": "ncu -i",
-    "yarn": "yarn"
+    "vscode:watch": "webpack --watch"
   },
   "dependencies": {
     "-": "*",

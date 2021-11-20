@@ -8,9 +8,7 @@
     "lint": "next lint",
     "start": "next start",
     "webext:build": "rm -rf dist && next export && webpack && cd dist/out && rm -rf _next && (grep -rl '/_next' * | xargs sed -i 's|/_next|/next|g')",
-    "webext:dev": "cd dist && web-ext run --verbose --browser-console",
-    "upgrade": "ncu -i",
-    "yarn": "yarn"
+    "webext:dev": "cd dist && web-ext run --verbose --browser-console"
   },
   "dependencies": {
     "-": "*",

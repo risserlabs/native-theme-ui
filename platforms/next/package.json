@@ -6,9 +6,7 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start",
-    "upgrade": "ncu -i",
-    "yarn": "yarn"
+    "start": "next start"
   },
   "dependencies": {
     "-": "*",

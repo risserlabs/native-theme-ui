@@ -13,8 +13,6 @@
     "start": "expo start",
     "storybook": "node node_modules/@storybook/react/bin/index.js -c storybook -p 6006",
     "web": "expo start --web",
-    "upgrade": "ncu -i",
-    "yarn": "yarn",
     "visual-regression": "yarn build-storybook && loki --requireReference --diffingEngine gm --reactUri file:./storybook-static --chromeLoadTimeout 60000 --chromeRetries 3"
   },
   "dependencies": {

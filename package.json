@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "postinstall": "patch-package",
-    "upgrade": "ncu -i && yarn workspaces run upgrade && yarn --prefer-offline",
+    "upgrade": "ncu -i && sh -c 'COMMAND=\"ncu -i\" && for i in $(yarn workspaces list | sed \"s|YN0000: \\..*||g\" | sed \"s|YN0000: Done in.*||g\" | cut -d\" \" -f3); do sh -c \"cd $i && $COMMAND\"; done' && yarn",
     "vscode:compile": "cd platforms/vscode && yarn run vscode:compile",
     "vscode:run-in-browser": "cd platforms/vscode && yarn run vscode:run-in-browser",
     "vscode:watch": "cd platforms/vscode && yarn run vscode:watch"
