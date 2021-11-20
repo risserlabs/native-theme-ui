@@ -16,7 +16,7 @@
     "pbutlewski",
     "pixelmatch",
     "roboto",
-    "Ruleset",
+    "ruleset",
     "storypa",
     "storyshots",
     "storysource",
@@ -24,7 +24,14 @@
     "unimodules",
     "webext",
     "webextension",
-    "webviews"
+    "webviews",
+    "yarnpkg"
   ],
-  "typescript.tsc.autoDetect": "off"
+  "typescript.tsc.autoDetect": "off",
+  "search.exclude": {
+    "**/.git": true,
+    "**/.yarn": true,
+    "**/node_modules": true,
+    "**/yarn.lock": true
+  }
 }

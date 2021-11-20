@@ -8,7 +8,7 @@
     "eject": "expo eject",
     "electron": "expo-electron start",
     "ios": "expo start --ios",
-    "postinstall": "expo-yarn-workspaces postinstall && cd ../.. && npx patch-package",
+    "postinstall": "expo-yarn-workspaces postinstall",
     "start": "expo start",
     "web": "expo start --web"
   },
@@ -21,12 +21,13 @@
     "expo-dev-client": "^0.6.3",
     "expo-dev-launcher": "^0.8.4",
     "expo-status-bar": "^1.1.0",
-    "react-native": "^0.66.3"
+    "react-native": "^0.64.3"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@expo/electron-adapter": "^0.0.55",
     "@expo/webpack-config": "^0.16.7",
+    "@types/react-native": "^0.66.5",
     "babel-preset-expo": "^8.5.1",
     "electron-windows-store": "^2.1.0",
     "eslint": "^8.2.0",
@@ -40,6 +41,8 @@
       "@expo/next-adapter",
       "@sentry/cli",
       "@sentry/react-native",
+      "@storybook/react",
+      "@storybook/react-native-server",
       "@unimodules/core",
       "@unimodules/react-native-adapter",
       "expo-app-loading",
@@ -81,5 +84,9 @@
       "unimodules-sensors-interface",
       "unimodules-task-manager-interface"
     ]
+  },
+  "installConfig": {
+    "hoistingLimits": "workspace",
+    "selfReferences": true
   }
 }

@@ -1,4 +1,5 @@
-const path = require('path');
+const isNative =
+  process.argv.join(' ').indexOf('@storybook/react-native-server') > -1;
 
 const babelConfig = {
   presets: [],
@@ -18,40 +19,44 @@ module.exports = {
   stories: ['../**/*.stories.@(js|jsx|ts|tsx|md|mdx)'],
   logLevel: 'debug',
   addons: [
-    '@etchteam/storybook-addon-status',
-    '@luigiminardim/storybook-addon-globals-controls',
-    '@pbutlewski/storybook-html',
-    '@storybook/addon-a11y',
-    '@storybook/addon-ie11',
-    '@storybook/addon-links',
-    '@storybook/addon-storyshots',
-    '@storybook/addon-storysource',
-    'addon-screen-reader',
-    'storybook-addon-breakpoints',
-    'storybook-addon-grid',
-    'storybook-addon-paddings',
-    'storybook-addon-themes',
-    'storybook-color-picker',
-    'storybook-dark-mode',
-    'storybook-mobile',
-    {
-      name: '@storybook/addon-react-native-web',
-      options: {
-        babelPlugins: babelConfig.plugins,
-        modulesToTranspile: ['dripsy', '@dripsy/core']
-      }
-    },
-    {
-      name: '@storybook/addon-essentials',
-      options: {
-        actions: true,
-        backgrounds: false,
-        controls: true,
-        docs: true,
-        toolbars: true,
-        viewport: true
-      }
-    }
+    ...(isNative
+      ? []
+      : [
+          '@etchteam/storybook-addon-status',
+          '@luigiminardim/storybook-addon-globals-controls',
+          '@pbutlewski/storybook-html',
+          '@storybook/addon-a11y',
+          '@storybook/addon-ie11',
+          '@storybook/addon-links',
+          '@storybook/addon-storyshots',
+          '@storybook/addon-storysource',
+          'addon-screen-reader',
+          'storybook-addon-breakpoints',
+          'storybook-addon-grid',
+          'storybook-addon-paddings',
+          'storybook-addon-themes',
+          'storybook-color-picker',
+          'storybook-dark-mode',
+          'storybook-mobile',
+          {
+            name: '@storybook/addon-react-native-web',
+            options: {
+              babelPlugins: babelConfig.plugins,
+              modulesToTranspile: ['dripsy', '@dripsy/core']
+            }
+          },
+          {
+            name: '@storybook/addon-essentials',
+            options: {
+              actions: true,
+              backgrounds: false,
+              controls: true,
+              docs: true,
+              toolbars: true,
+              viewport: true
+            }
+          }
+        ])
   ],
   typescript: {
     check: true,

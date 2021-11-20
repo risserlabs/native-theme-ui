@@ -9,14 +9,15 @@
     "eject": "expo eject",
     "ios": "expo start --ios",
     "native:storybook": "node node_modules/@storybook/react-native-server/bin/index.js -c storybook",
-    "postinstall": "expo-yarn-workspaces postinstall && cd .. && npx patch-package",
+    "postinstall": "expo-yarn-workspaces postinstall",
     "start": "expo start",
     "storybook": "node node_modules/@storybook/react/bin/index.js -c storybook -p 6006",
-    "web": "expo start --web",
-    "visual-regression": "yarn build-storybook && loki --requireReference --diffingEngine gm --reactUri file:./storybook-static"
+    "visual-regression": "yarn build-storybook && loki --requireReference --diffingEngine gm --reactUri file:./storybook-static",
+    "web": "expo start --web"
   },
   "dependencies": {
     "@babel/runtime": "^7.16.3",
+    "@dripsy/core": "^3.5.3",
     "core-js": "^3.19.1",
     "dripsy": "^3.5.3",
     "expo": "^43.0.3",
@@ -24,7 +25,8 @@
     "expo-dev-launcher": "^0.8.4",
     "expo-status-bar": "^1.1.0",
     "react": "^17.0.2",
-    "react-native": "^0.66.3",
+    "react-dom": "^17.0.2",
+    "react-native": "^0.64.3",
     "react-native-web": "^0.17.5",
     "theme-ui": "^0.12.0"
   },
@@ -73,17 +75,13 @@
     "typescript": "^4.5.2",
     "webpack": "^5.64.1"
   },
-  "workspaces": {
-    "nohoist": [
-      "@storybook/react",
-      "@storybook/react-native-server"
-    ]
-  },
   "expo-yarn-workspaces": {
     "symlinks": [
       "@expo/next-adapter",
       "@sentry/cli",
       "@sentry/react-native",
+      "@storybook/react",
+      "@storybook/react-native-server",
       "@unimodules/core",
       "@unimodules/react-native-adapter",
       "expo-app-loading",
@@ -125,6 +123,10 @@
       "unimodules-sensors-interface",
       "unimodules-task-manager-interface"
     ]
+  },
+  "installConfig": {
+    "hoistingLimits": "workspace",
+    "selfReferences": true
   },
   "loki": {
     "configurations": {
