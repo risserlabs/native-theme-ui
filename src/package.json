@@ -13,7 +13,7 @@
     "start": "expo start",
     "storybook": "node node_modules/@storybook/react/bin/index.js -c storybook -p 6006",
     "web": "expo start --web",
-    "visual-regression": "echo yarn build-storybook && loki --requireReference --diffingEngine gm --reactUri file:./storybook-static"
+    "visual-regression": "yarn build-storybook && loki --requireReference --diffingEngine gm --reactUri file:./storybook-static"
   },
   "dependencies": {
     "@babel/runtime": "^7.16.3",
