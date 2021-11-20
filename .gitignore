@@ -3,6 +3,7 @@
 .DS_Store
 .expo
 .vercel
+.yarn/build-state.yml
+.yarn/unplugged
 node_modules/
 yarn-error.log
-yarn.lock

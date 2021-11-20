@@ -4,16 +4,13 @@
   "description": "write once, render anywhere",
   "private": true,
   "homepage": "https://gitlab.com/bitspur/community/multiverse",
+  "repository": "git@gitlab.com:bitspur/community/multiverse.git",
   "bugs": {
     "url": "https://gitlab.com/bitspur/community/multiverse",
     "email": "howdy@bitspur.com"
   },
   "license": "Apache-2.0",
-  "author": {
-    "name": "BitSpur, Inc.",
-    "email": "howdy@bitspur.com",
-    "url": "https://bitspur.com"
-  },
+  "author": "BitSpur, Inc. <howdy@bitspur.com> (https://bitspur.com)",
   "workspaces": [
     "src",
     "platforms/*"
@@ -41,5 +38,6 @@
     "@types/react-native": "^0.66.5",
     "npm-check-updates": "^12.0.2",
     "patch-package": "^6.4.7"
-  }
+  },
+  "packageManager": "yarn@3.1.0"
 }
