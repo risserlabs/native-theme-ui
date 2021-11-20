@@ -15,7 +15,7 @@
     "web": "expo start --web",
     "upgrade": "ncu -i",
     "yarn": "yarn",
-    "visual-regression": "yarn build-storybook && loki --requireReference --diffingEngine gm --reactUri file:./storybook-static"
+    "visual-regression": "yarn build-storybook && loki --requireReference --diffingEngine gm --reactUri file:./storybook-static --chromeLoadTimeout 60000 --chromeRetries 3"
   },
   "dependencies": {
     "@babel/runtime": "^7.16.3",
