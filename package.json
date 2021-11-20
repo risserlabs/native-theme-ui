@@ -16,7 +16,6 @@
     "platforms/*"
   ],
   "scripts": {
-    "postinstall": "patch-package",
     "upgrade": "ncu -i && sh -c 'COMMAND=\"ncu -i\" && for i in $(yarn workspaces list | sed \"s|YN0000: \\..*||g\" | sed \"s|YN0000: Done in.*||g\" | cut -d\" \" -f3); do sh -c \"cd $i && $COMMAND\"; done' && yarn",
     "vscode:compile": "cd platforms/vscode && yarn run vscode:compile",
     "vscode:run-in-browser": "cd platforms/vscode && yarn run vscode:run-in-browser",
@@ -36,8 +35,10 @@
     "@types/node": "^16.11.9",
     "@types/react": "^17.0.35",
     "@types/react-native": "^0.66.5",
-    "npm-check-updates": "^12.0.2",
-    "patch-package": "^6.4.7"
+    "npm-check-updates": "^12.0.2"
   },
-  "packageManager": "yarn@3.1.0"
+  "packageManager": "yarn@3.1.0",
+  "resolutions": {
+    "@storybook/addon-react-native-web@0.0.7": "patch:@storybook/addon-react-native-web@npm:0.0.7#.yarn/patches/@storybook-addon-react-native-web-npm-0.0.7-49dddd98a4"
+  }
 }
