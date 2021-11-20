@@ -5,7 +5,7 @@ module.exports = (config, argv) =>
     {
       ...config,
       babel: {
-        dangerouslyAddModulePathsToTranspile: ['-']
+        dangerouslyAddModulePathsToTranspile: ['-', 'dripsy', '@dripsy/core']
       }
     },
     argv

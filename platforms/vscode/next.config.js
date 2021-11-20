@@ -5,7 +5,7 @@ const { withExpo } = require('@expo/next-adapter');
 
 module.exports = withPlugins(
   [
-    withTranspileModules(['react-native-web', '-']),
+    withTranspileModules(['react-native-web', '-', 'dripsy', '@dripsy/core']),
     withBundleAnalyzer({
       enabled: process.env.ANALYZE === 'true'
     }),

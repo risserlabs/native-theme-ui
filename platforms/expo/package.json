@@ -15,18 +15,24 @@
   "dependencies": {
     "-": "*",
     "@babel/runtime": "^7.16.3",
+    "@dripsy/core": "^3.5.3",
     "core-js": "^3.19.1",
+    "dripsy": "^3.5.3",
     "electron": "^16.0.1",
     "expo": "^43.0.3",
     "expo-dev-client": "^0.6.3",
     "expo-dev-launcher": "^0.8.4",
     "expo-status-bar": "^1.1.0",
-    "react-native": "^0.64.3"
+    "react": "^17.0.2",
+    "react-native": "^0.64.3",
+    "react-native-web": "^0.17.5",
+    "theme-ui": "^0.12.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@expo/electron-adapter": "^0.0.55",
     "@expo/webpack-config": "^0.16.7",
+    "@types/react": "^17.0.35",
     "@types/react-native": "^0.66.5",
     "babel-preset-expo": "^8.5.1",
     "electron-windows-store": "^2.1.0",
