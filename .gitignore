@@ -2,6 +2,7 @@
 *.hprof
 .DS_Store
 .expo
+.mkpm/
 .vercel
 .yarn/install-state.gz
 .yarn/unplugged
