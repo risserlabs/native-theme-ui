@@ -1,0 +1,17 @@
+diff --git a/src/create-chrome-target.js b/src/create-chrome-target.js
+index f2e99728b5a8ae02391fca30eb50e851af259d5a..73cd1ed9f66bd8f4a60367afe2019101ec9f6f59 100644
+--- a/src/create-chrome-target.js
++++ b/src/create-chrome-target.js
+@@ -393,7 +393,12 @@ function createChromeTarget(
+     const tab = await launchNewTab(tabOptions);
+     let screenshot;
+     try {
++      var start = new Date();
++      console.log('withTimeout', options.chromeLoadTimeout);
+       await withTimeout(options.chromeLoadTimeout)(tab.loadUrl(url, selector));
++      var end = new Date() - start;
++      console.log('timeout complete');
++      console.info('Execution time: %dms', end);
+       screenshot = await tab.captureScreenshot(selector);
+     } catch (err) {
+       if (err instanceof TimeoutError) {
