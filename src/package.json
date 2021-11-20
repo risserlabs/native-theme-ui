@@ -132,10 +132,11 @@
         "preset": "iPhone 7"
       }
     },
-    "loki": {
+    "diffingEngine": {
       "gm": {},
       "looks-same": {},
       "pixelmatch": {}
-    }
+    },
+    "verboseRenderer": true
   }
 }
