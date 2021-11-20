@@ -3,8 +3,6 @@ include mkpm.mk
 -include $(MKPM)/mkchain
 ifneq (,$(MKPM_READY))
 
-LOCKFILE_LINT ?= $(PROJECT_ROOT)/node_modules/.bin/lockfile-lint
-
 .DEFAULT_GOAL := lint
 
 ACTIONS += install
