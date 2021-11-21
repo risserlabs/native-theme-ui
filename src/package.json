@@ -61,10 +61,12 @@
     "addon-screen-reader": "^1.8.6",
     "babel-loader": "^8.2.3",
     "babel-plugin-react-native-web": "^0.17.5",
-    "eslint": "^8.2.0",
+    "eslint": "^8.3.0",
     "eslint-plugin-react": "^7.27.1",
     "expo-status-bar": "^1.1.0",
     "expo-yarn-workspaces": "^1.6.0",
+    "jest": "^27.3.1",
+    "jest-sonar-reporter": "^2.0.0",
     "loki": "^0.28.1",
     "react-element-to-jsx-string": "^14.3.4",
     "storybook-addon-breakpoints": "^1.0.0",
@@ -75,9 +77,9 @@
     "storybook-addon-themes": "^6.1.0",
     "storybook-color-picker": "^2.1.4",
     "storybook-dark-mode": "^1.0.8",
-    "storybook-mobile": "^0.1.32",
+    "storybook-mobile": "^1.0.0",
     "typescript": "^4.5.2",
-    "webpack": "^5.64.1"
+    "webpack": "^5.64.2"
   },
   "expo-yarn-workspaces": {
     "symlinks": [
@@ -131,6 +133,25 @@
   "installConfig": {
     "hoistingLimits": "workspace",
     "selfReferences": true
+  },
+  "jest": {
+    "testRegex": "((/(tests|__tests__)((/|/[^_.\n][^/\n]*(/[^_.\n][^/\n]+)*/)[^_.\n][^/\n]*))|((/|/.*/)(([^_.\n][^/\n]*.(spec|test))|(spec|test)))).[jt]sx?$",
+    "testEnvironment": "node",
+    "verbose": true,
+    "testPathIgnorePatterns": [
+      "<rootDir>/dist/",
+      "<rootDir>/es/",
+      "<rootDir>/lib/",
+      "<rootDir>/out/"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/tests/_setup.ts"
+    ]
+  },
+  "jestSonar": {
+    "reportPath": ".mkpm/.tmp/reports",
+    "reportFile": "test-report.xml",
+    "indent": 4
   },
   "loki": {
     "configurations": {

@@ -3,7 +3,7 @@ include ../mkpm.mk
 -include $(MKPM)/mkchain
 ifneq (,$(MKPM_READY))
 
-.DEFAULT_GOAL := lint
+.DEFAULT_GOAL := build
 
 ACTIONS += install
 $(ACTION)/install: $(PROJECT_ROOT)/package.json package.json
@@ -29,6 +29,27 @@ ACTIONS += lint~spellcheck
 $(ACTION)/lint: $(call git_deps,\.([jt]sx?)$$)
 	-@$(call eslint,$?,$(ARGS))
 	@$(call done,lint)
+
+ACTIONS += test~lint
+$(ACTION)/test: $(call git_deps,\.([jt]sx?)$$)
+	-@$(call jest,$?,$(ARGS))
+	@$(call done,test)
+
+ACTIONS += build@storybook_web~test
+BUILD@STORYBOOK_WEB_TARGETS := storybook-static/index.html
+storybook-static/index.html:
+	@$(call reset,build@storybook_web)
+$(ACTION)/build@storybook_web: $(call git_deps,\.([jt]sx?)$$)
+	@$(BUILD_STORYBOOK) -c storybook
+	@$(call done,build@storybook_web)
+
+ACTIONS += build@storybook_android~test
+$(ACTION)/build@storybook_android: $(call git_deps,\.([jt]sx?)$$)
+	@$(EXPO) build:android
+	@$(call done,build@storybook_android)
+
+.PHONY: build
+build: build@storybook_web build@storybook_expo
 
 CACHE_ENVS += \
 

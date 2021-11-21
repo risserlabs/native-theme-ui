@@ -3,7 +3,7 @@ include mkpm.mk
 -include $(MKPM)/mkchain
 ifneq (,$(MKPM_READY))
 
-.DEFAULT_GOAL := lint
+.DEFAULT_GOAL := build
 
 ACTIONS += install
 $(ACTION)/install: $(PROJECT_ROOT)/package.json $(call workspace_paths,package.json)
@@ -24,6 +24,20 @@ ACTIONS += lint
 $(ACTION)/lint: $(call git_deps,\.([jt]sx?)$$)
 	@$(call workspace_foreach,lint,$(ARGS))
 	@$(call done,lint)
+
+ACTIONS += test
+$(ACTION)/test: $(call git_deps,\.([jt]sx?)$$)
+	@$(call workspace_foreach,test,$(ARGS))
+	@$(call done,test)
+
+ACTIONS += build
+$(ACTION)/build: $(call git_deps,\.([jt]sx?)$$)
+	@$(call workspace_foreach,build,$(ARGS))
+	@$(call done,build)
+
+.PHONY: upgrade
+upgrade:
+	@$(YARN) upgrade-interactive
 
 CACHE_ENVS += \
 

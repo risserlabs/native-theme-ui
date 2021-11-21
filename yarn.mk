@@ -1,6 +1,15 @@
+BABEL ?= $(PROJECT_ROOT)/node_modules/.bin/babel
+BABEL_NODE ?= $(PROJECT_ROOT)/node_modules/.bin/babel-node
+BUILD_STORYBOOK ?= $(PROJECT_ROOT)/node_modules/.bin/build-storybook
 CSPELL ?= $(PROJECT_ROOT)/node_modules/.bin/cspell
 ESLINT ?= $(PROJECT_ROOT)/node_modules/.bin/eslint
+EXPO ?= $(PROJECT_ROOT)/node_modules/.bin/expo
+JEST ?= $(PROJECT_ROOT)/node_modules/.bin/jest
+LOKI ?= $(PROJECT_ROOT)/node_modules/.bin/loki
 PRETTIER ?= $(PROJECT_ROOT)/node_modules/.bin/prettier
+STORYBOOK_NATIVE_SERVER ?= node $(PROJECT_ROOT)/node_modules/@storybook/react-native-server/bin/index.js
+STORYBOOK_SERVER ?= node $(PROJECT_ROOT)/node_modules/@storybook/react/bin/index.js
+TSC ?= $(PROJECT_ROOT)/node_modules/.bin/tsc
 YARN ?= node $(PROJECT_ROOT)/.yarn/releases/yarn-3.1.0.cjs
 NPM ?= $(YARN)
 
@@ -49,6 +58,10 @@ define workspace_foreach
 $(call workspace_exec_foreach,$(MAKE) -s $1 ARGS=$2 || $(TRUE))
 endef
 
+define shell_arr_to_json_arr
+$(shell (for i in $1; do echo $$i; done) | jq -R . | jq -s .)
+endef
+
 export CSPELLRC := $(MKPM_TMP)/cspellrc.json
 define cspell
 $(ECHO) '{"language":"en","version":"0.1","words":$(shell \
@@ -74,4 +87,17 @@ export ESLINT_REPORT := $(MKPM_TMP)/eslintReport.json
 define eslint
 $(ESLINT) -f json -o $(ESLINT_REPORT) $1 $(NOFAIL) && \
 $(ESLINT) $2 $1
+endef
+
+export JEST_TEST_RESULTS := $(MKPM_TMP)/jestTestResults.json
+export COVERAGE_DIRECTORY := $(MKPM_TMP)/coverage
+define jest
+$(JEST) --pass-with-no-tests --json --outputFile=$(JEST_TEST_RESULTS) --coverage \
+		--coverageDirectory=$(COVERAGE_DIRECTORY) --testResultsProcessor=jest-sonar-reporter \
+		--collectCoverageFrom='$(call shell_arr_to_json_arr,$1)' --findRelatedTests $1 $2
+endef
+
+define reset
+$(MAKE) -s _$1 && \
+$(RM) -rf $(ACTION)/$1 $(NOFAIL)
 endef
