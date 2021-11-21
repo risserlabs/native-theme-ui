@@ -1,19 +1,25 @@
-BABEL ?= $(PROJECT_ROOT)/node_modules/.bin/babel
-BABEL_NODE ?= $(PROJECT_ROOT)/node_modules/.bin/babel-node
-BUILD_STORYBOOK ?= $(PROJECT_ROOT)/node_modules/.bin/build-storybook
-CSPELL ?= $(PROJECT_ROOT)/node_modules/.bin/cspell
-ESLINT ?= $(PROJECT_ROOT)/node_modules/.bin/eslint
-EXPO ?= $(PROJECT_ROOT)/node_modules/.bin/expo
-JEST ?= $(PROJECT_ROOT)/node_modules/.bin/jest
-LOKI ?= $(PROJECT_ROOT)/node_modules/.bin/loki
-PRETTIER ?= $(PROJECT_ROOT)/node_modules/.bin/prettier
-STORYBOOK_NATIVE_SERVER ?= node $(PROJECT_ROOT)/node_modules/@storybook/react-native-server/bin/index.js
-STORYBOOK_SERVER ?= node $(PROJECT_ROOT)/node_modules/@storybook/react/bin/index.js
-TSC ?= $(PROJECT_ROOT)/node_modules/.bin/tsc
+BABEL ?= $(call yarn_binary,babel)
+BABEL_NODE ?= $(call yarn_binary,babel-node)
+BUILD_STORYBOOK ?= $(call yarn_binary,build-storybook)
+CSPELL ?= $(call yarn_binary,cspell)
+ESLINT ?= $(call yarn_binary,eslint)
+EXPO ?= $(call yarn_binary,expo)
+JEST ?= $(call yarn_binary,jest)
+LOKI ?= $(call yarn_binary,loki)
+PRETTIER ?= $(call yarn_binary,prettier)
+TSC ?= $(call yarn_binary,tsc)
 YARN ?= node $(PROJECT_ROOT)/.yarn/releases/yarn-3.1.0.cjs
 NPM ?= $(YARN)
+STORYBOOK_NATIVE_SERVER ?= node $(call ternary,$(TEST) -f \
+	$(PROJECT_ROOT)/node_modules/@storybook/react-native-server/bin/index.js,$(PROJECT_ROOT)/node_modules/@storybook/react-native-server/bin/index.js,$(CURDIR)/node_modules/@storybook/react-native-server/bin/index.js) 
+STORYBOOK_SERVER ?= node $(call ternary,$(TEST) -f \
+	$(PROJECT_ROOT)/node_modules/@storybook/react/bin/index.js,$(PROJECT_ROOT)/node_modules/@storybook/react/bin/index.js,$(CURDIR)/node_modules/@storybook/react/bin/index.js) 
 
 BASE64_NOWRAP ?= $(call ternary,openssl version,openssl base64 -A,base64 -w0)
+
+define yarn_binary
+$(call ternary,$(WHICH) $(PROJECT_ROOT)/node_modules/.bin/$1,$(PROJECT_ROOT)/node_modules/.bin/$1,$(CURDIR)/node_modules/.bin/$1)
+endef
 
 define b64_encode_each
 $(shell for i in $1; do \
@@ -100,4 +106,12 @@ endef
 define reset
 $(MAKE) -s _$1 && \
 $(RM) -rf $(ACTION)/$1 $(NOFAIL)
+endef
+
+define YARN_GIT_CLEAN_FLAGS
+$(call git_clean_flags,node_modules) \
+	$(call git_clean_flags,.yarn) \
+	-e $(BANG)/package-lock.json \
+	-e $(BANG)/pnpm-lock.yaml \
+	-e $(BANG)/yarn.lock
 endef

@@ -35,12 +35,17 @@ $(ACTION)/test: $(call git_deps,\.([jt]sx?)$$)
 	-@$(call jest,$?,$(ARGS))
 	@$(call done,test)
 
-ACTIONS += build@storybook_web~test
-BUILD@STORYBOOK_WEB_TARGETS := storybook-static/index.html
+ACTIONS += build@storybook~test
+BUILD@STORYBOOK_TARGETS := storybook-static/index.html
 storybook-static/index.html:
-	@$(call reset,build@storybook_web)
-$(ACTION)/build@storybook_web: $(call git_deps,\.([jt]sx?)$$)
+	@$(call reset,build@storybook)
+$(ACTION)/build@storybook: $(call git_deps,\.([jt]sx?)$$)
 	@$(BUILD_STORYBOOK) -c storybook
+	@$(call done,build@storybook)
+
+ACTIONS += build@storybook_web~test
+$(ACTION)/build@storybook_web: $(call git_deps,\.([jt]sx?)$$)
+	@$(EXPO) build:web
 	@$(call done,build@storybook_web)
 
 ACTIONS += build@storybook_android~test
@@ -48,8 +53,22 @@ $(ACTION)/build@storybook_android: $(call git_deps,\.([jt]sx?)$$)
 	@$(EXPO) build:android
 	@$(call done,build@storybook_android)
 
+ACTIONS += build@storybook_ios~test
+$(ACTION)/build@storybook_ios: $(call git_deps,\.([jt]sx?)$$)
+	@$(EXPO) build:ios
+	@$(call done,build@storybook_ios)
+
 .PHONY: build
-build: build@storybook_web build@storybook_expo
+build: build@storybook build@storybook_web build@storybook_android build@storybook_ios
+
+.PHONY: clean
+clean:
+	-@$(MKCACHE_CLEAN)
+	-@$(JEST) --clearCache $(NOFAIL)
+	-@$(GIT) clean -fXd \
+		$(MKPM_GIT_CLEAN_FLAGS) \
+		$(YARN_GIT_CLEAN_FLAGS) \
+		$(NOFAIL)
 
 CACHE_ENVS += \
 

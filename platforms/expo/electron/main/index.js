@@ -10,20 +10,24 @@ const isDevelopment = process.env.NODE_ENV !== 'production';
 let mainWindow;
 
 function createMainWindow() {
-  const browserWindow = new BrowserWindow({ webPreferences: { nodeIntegration: true } });
+  const browserWindow = new BrowserWindow({
+    webPreferences: { nodeIntegration: true }
+  });
 
   if (isDevelopment) {
     browserWindow.webContents.openDevTools();
   }
 
   if (isDevelopment) {
-    browserWindow.loadURL(`http://localhost:${process.env.ELECTRON_WEBPACK_WDS_PORT}`);
+    browserWindow.loadURL(
+      `http://localhost:${process.env.ELECTRON_WEBPACK_WDS_PORT}`
+    );
   } else {
     browserWindow.loadURL(
       formatUrl({
         pathname: path.join(__dirname, 'index.html'),
         protocol: 'file',
-        slashes: true,
+        slashes: true
       })
     );
   }

@@ -1,47 +1,42 @@
-include mkpm.mk
+include ../../mkpm.mk
 -include $(MKPM)/gnu
 -include $(MKPM)/mkchain
 ifneq (,$(MKPM_READY))
 
-.DEFAULT_GOAL := build
+.DEFAULT_GOAL := test
 
 ACTIONS += install
-$(ACTION)/install: $(PROJECT_ROOT)/package.json $(call workspace_paths,package.json)
-	@$(YARN) install $(ARGS)
+$(ACTION)/install: $(PROJECT_ROOT)/package.json package.json
+ifneq (,$(SUBPROC))
+	@$(MAKE) -C $(PROJECT_ROOT) \~install ARGS=$(ARGS)
+else
+	@$(YARN) workspaces focus $(ARGS)
+endif
 	@$(call done,install)
 
-ACTIONS += format
+ACTIONS += format~install
 $(ACTION)/format: $(call git_deps,\.((json)|(md)|([jt]sx?))$$)
-	@$(call workspace_foreach,format,$(ARGS))
+#	-@$(call eslint_format,$?)
+	-@$(call prettier,$?,$(ARGS))
 	@$(call done,format)
 
-ACTIONS += spellcheck
+ACTIONS += spellcheck~format
 $(ACTION)/spellcheck: $(call git_deps,\.(md)$$)
-	@$(call workspace_foreach,spellcheck,$(ARGS))
+	-@$(call cspell,$?,$(ARGS))
 	@$(call done,spellcheck)
 
-ACTIONS += lint
+ACTIONS += lint~spellcheck
 $(ACTION)/lint: $(call git_deps,\.([jt]sx?)$$)
-	@$(call workspace_foreach,lint,$(ARGS))
+	-@$(call eslint,$?,$(ARGS))
 	@$(call done,lint)
 
-ACTIONS += test
+ACTIONS += test~lint
 $(ACTION)/test: $(call git_deps,\.([jt]sx?)$$)
-	@$(call workspace_foreach,test,$(ARGS))
+	-@$(call jest,$?,$(ARGS))
 	@$(call done,test)
-
-ACTIONS += build
-$(ACTION)/build: $(call git_deps,\.([jt]sx?)$$)
-	@$(call workspace_foreach,build,$(ARGS))
-	@$(call done,build)
-
-.PHONY: upgrade
-upgrade:
-	@$(YARN) upgrade-interactive
 
 .PHONY: clean
 clean:
-	@$(call workspace_foreach,clean,$(ARGS))
 	-@$(MKCACHE_CLEAN)
 	-@$(JEST) --clearCache $(NOFAIL)
 	-@$(GIT) clean -fXd \
