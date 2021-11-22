@@ -3,6 +3,8 @@ include mkpm.mk
 -include $(MKPM)/mkchain
 ifneq (,$(MKPM_READY))
 
+CLOC ?= cloc
+
 .DEFAULT_GOAL := build
 
 ACTIONS += install
@@ -53,6 +55,10 @@ clean:
 .PHONY: purge
 purge: clean
 	@$(GIT) clean -fXd
+
+.PHONY: count
+count:
+	@LC_ALL=C $(CLOC) $(shell $(GIT) ls-files | $(GREP) -vE "^\.yarn")
 
 PLATFORMS := $(shell $(LS) platforms)
 .PHONY: $(patsubst %,%/%,$(PLATFORMS))
