@@ -43,20 +43,33 @@ $(ACTION)/build@storybook: $(call git_deps,\.([jt]sx?)$$)
 	@$(BUILD_STORYBOOK) -c storybook
 	@$(call done,build@storybook)
 
-ACTIONS += build@storybook_web~test
-$(ACTION)/build@storybook_web: $(call git_deps,\.([jt]sx?)$$)
+ACTIONS += build@storybook-web~test
+$(ACTION)/build@storybook-web: $(call git_deps,\.([jt]sx?)$$)
 	@$(EXPO) build:web
-	@$(call done,build@storybook_web)
+	@$(call done,build@storybook-web)
 
-ACTIONS += build@storybook_android~test
-$(ACTION)/build@storybook_android: $(call git_deps,\.([jt]sx?)$$)
+ACTIONS += build@storybook-android~test
+$(ACTION)/build@storybook-android: $(call git_deps,\.([jt]sx?)$$)
 	@$(EXPO) build:android
-	@$(call done,build@storybook_android)
+	@$(call done,build@storybook-android)
 
-ACTIONS += build@storybook_ios~test
-$(ACTION)/build@storybook_ios: $(call git_deps,\.([jt]sx?)$$)
+ACTIONS += build@storybook-ios~test
+$(ACTION)/build@storybook-ios: $(call git_deps,\.([jt]sx?)$$)
 	@$(EXPO) build:ios
-	@$(call done,build@storybook_ios)
+	@$(call done,build@storybook-ios)
+
+.PHONY: start@storybook
+start@storybook: ~install
+	@$(STORYBOOK_SERVER) -c storybook -p 6006
+
+.PHONY: start@storybook-web
+start@storybook-web:
+
+.PHONY: start@storybook-android
+start@storybook-android:
+
+.PHONY: start@storybook-ios
+start@storybook-ios:
 
 .PHONY: build
 build: build@storybook build@storybook_web build@storybook_android build@storybook_ios
@@ -65,6 +78,7 @@ build: build@storybook build@storybook_web build@storybook_android build@storybo
 clean:
 	-@$(MKCACHE_CLEAN)
 	-@$(JEST) --clearCache $(NOFAIL)
+	-@$(WATCHMAN) watch-del-all $(NOFAIL)
 	-@$(GIT) clean -fXd \
 		$(MKPM_GIT_CLEAN_FLAGS) \
 		$(YARN_GIT_CLEAN_FLAGS) \

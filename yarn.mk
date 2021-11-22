@@ -8,6 +8,7 @@ JEST ?= $(call yarn_binary,jest)
 LOKI ?= $(call yarn_binary,loki)
 PRETTIER ?= $(call yarn_binary,prettier)
 TSC ?= $(call yarn_binary,tsc)
+WATCHMAN ?= watchman
 YARN ?= node $(PROJECT_ROOT)/.yarn/releases/yarn-3.1.0.cjs
 NPM ?= $(YARN)
 STORYBOOK_NATIVE_SERVER ?= node $(call ternary,$(TEST) -f \
@@ -101,11 +102,6 @@ define jest
 $(JEST) --pass-with-no-tests --json --outputFile=$(JEST_TEST_RESULTS) --coverage \
 		--coverageDirectory=$(COVERAGE_DIRECTORY) --testResultsProcessor=jest-sonar-reporter \
 		--collectCoverageFrom='$(call shell_arr_to_json_arr,$1)' --findRelatedTests $1 $2
-endef
-
-define reset
-$(MAKE) -s _$1 && \
-$(RM) -rf $(ACTION)/$1 $(NOFAIL)
 endef
 
 define YARN_GIT_CLEAN_FLAGS

@@ -39,6 +39,7 @@ $(ACTION)/test: $(call git_deps,\.([jt]sx?)$$)
 clean:
 	-@$(MKCACHE_CLEAN)
 	-@$(JEST) --clearCache $(NOFAIL)
+	-@$(WATCHMAN) watch-del-all $(NOFAIL)
 	-@$(GIT) clean -fXd \
 		$(MKPM_GIT_CLEAN_FLAGS) \
 		$(YARN_GIT_CLEAN_FLAGS) \

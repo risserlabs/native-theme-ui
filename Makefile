@@ -44,10 +44,24 @@ clean:
 	@$(call workspace_foreach,clean,$(ARGS))
 	-@$(MKCACHE_CLEAN)
 	-@$(JEST) --clearCache $(NOFAIL)
+	-@$(WATCHMAN) watch-del-all $(NOFAIL)
 	-@$(GIT) clean -fXd \
 		$(MKPM_GIT_CLEAN_FLAGS) \
 		$(YARN_GIT_CLEAN_FLAGS) \
 		$(NOFAIL)
+
+.PHONY: purge
+purge: clean
+	@$(GIT) clean -fXd
+
+PLATFORMS := $(shell $(LS) platforms)
+.PHONY: $(patsubst %,%/%,$(PLATFORMS))
+$(patsubst %,%/%,$(PLATFORMS)):
+	@$(MAKE) -sC platforms/$(@D) $*
+
+.PHONY: src/%
+src/%:
+	@$(MAKE) -sC $(@D) $*
 
 CACHE_ENVS += \
 
