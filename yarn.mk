@@ -1,21 +1,5 @@
-BABEL ?= $(call yarn_binary,babel)
-BABEL_NODE ?= $(call yarn_binary,babel-node)
-BUILD_STORYBOOK ?= $(call yarn_binary,build-storybook)
-CSPELL ?= $(call yarn_binary,cspell)
-ESLINT ?= $(call yarn_binary,eslint)
-EXPO ?= $(call yarn_binary,expo)
-EXPO_YARN_WORKSPACES ?= $(call yarn_binary,expo-yarn-workspaces)
-JEST ?= $(call yarn_binary,jest)
-LOKI ?= $(call yarn_binary,loki)
-PRETTIER ?= $(call yarn_binary,prettier)
-TSC ?= $(call yarn_binary,tsc)
-WATCHMAN ?= watchman
 YARN ?= node $(PROJECT_ROOT)/.yarn/releases/yarn-3.1.0.cjs
 NPM ?= $(YARN)
-STORYBOOK_NATIVE_SERVER ?= node $(call ternary,$(TEST) -f \
-	$(PROJECT_ROOT)/node_modules/@storybook/react-native-server/bin/index.js,$(PROJECT_ROOT)/node_modules/@storybook/react-native-server/bin/index.js,$(CURDIR)/node_modules/@storybook/react-native-server/bin/index.js) 
-STORYBOOK_SERVER ?= node $(call ternary,$(TEST) -f \
-	$(PROJECT_ROOT)/node_modules/@storybook/react/bin/index.js,$(PROJECT_ROOT)/node_modules/@storybook/react/bin/index.js,$(CURDIR)/node_modules/@storybook/react/bin/index.js) 
 
 BASE64_NOWRAP ?= $(call ternary,openssl version,openssl base64 -A,base64 -w0)
 

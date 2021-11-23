@@ -33,6 +33,9 @@ $(ACTION)/test: $(call git_deps,\.([jt]sx?)$$)
 	-@$(call jest,$?,$(ARGS))
 	@$(call done,test)
 
+.PHONY: postinstall
+postinstall: ##
+
 .PHONY: clean
 clean: ##
 	-@$(MKCACHE_CLEAN)

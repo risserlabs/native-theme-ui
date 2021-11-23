@@ -3,7 +3,6 @@ include mkpm.mk
 -include $(MKPM)/mkchain
 ifneq (,$(MKPM_READY))
 
-CLOC ?= cloc
 
 ACTIONS += install ##
 $(ACTION)/install: $(PROJECT_ROOT)/package.json $(call workspace_paths,package.json)

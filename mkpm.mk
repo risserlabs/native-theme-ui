@@ -25,3 +25,4 @@ endif
 ############## MKPM BOOTSTRAP SCRIPT END ##############
 
 -include $(PROJECT_ROOT)/yarn.mk
+include $(PROJECT_ROOT)/global.mk

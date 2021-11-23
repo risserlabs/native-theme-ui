@@ -43,6 +43,9 @@ clean: ##
 		$(YARN_GIT_CLEAN_FLAGS) \
 		$(NOFAIL)
 
+.PHONY: postinstall
+postinstall: ##
+
 help: $(MKCHAIN_HELP)
 
 CACHE_ENVS += \
