@@ -43,7 +43,7 @@ clean: ##
 		$(YARN_GIT_CLEAN_FLAGS) \
 		$(NOFAIL)
 
-help: $(HELP)
+help: $(MKCHAIN_HELP)
 
 CACHE_ENVS += \
 

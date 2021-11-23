@@ -1,7 +1,7 @@
 MKPM_PACKAGES := \
 	docker=0.0.3 \
 	gnu=0.0.2 \
-	mkchain=0.0.3
+	mkchain=0.0.4
 
 MKPM_REPOS := \
 	https://gitlab.com/bitspur/community/mkpm-stable.git

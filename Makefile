@@ -67,7 +67,7 @@ $(patsubst %,%/%,$(PLATFORMS)):
 src/%:
 	@$(MAKE) -sC $(@D) $*
 
-help: $(HELP)
+help: $(MKCHAIN_HELP)
 	@$(MAKE) -sC src help HELP_PREFIX=src/
 	@for i in $(PLATFORMS); do \
 		$(MAKE) -sC platforms/$$i help HELP_PREFIX=$$i/ 2>$(NULL) || $(TRUE); \
