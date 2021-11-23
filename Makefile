@@ -5,8 +5,6 @@ ifneq (,$(MKPM_READY))
 
 CLOC ?= cloc
 
-.DEFAULT_GOAL := build
-
 ACTIONS += install ##
 $(ACTION)/install: $(PROJECT_ROOT)/package.json $(call workspace_paths,package.json)
 	@$(YARN) install $(ARGS)
