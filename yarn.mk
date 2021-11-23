@@ -112,3 +112,17 @@ $(call git_clean_flags,node_modules) \
 	-e $(BANG)/pnpm-lock.yaml \
 	-e $(BANG)/yarn.lock
 endef
+
+HELP_PREFIX ?=
+HELP_SPACING := 32
+HELP := _help
+$(HELP):
+	@$(CAT) $(CURDIR)/Makefile | $(GREP) -E '^[a-zA-Z0-9][^ 	%*]*:.*##' | $(SORT) | awk 'BEGIN {FS = ":[^#]*([ 	]+##[ 	]*)?"}; {printf "\033[36m%-$(HELP_SPACING)s  \033[0m%s\n", "$(HELP_PREFIX)"$$1, $$2}'
+	@$(CAT) $(CURDIR)/Makefile | $(GREP) -E '^ACTIONS\s+\+=\s+[a-zA-Z0-9].*##' | $(SED) 's|^ACTIONS\s\++=\s\+||g' | $(SED) 's|~[^ 	]\+||' | $(AWK) 'BEGIN {FS = "[ 	]+##[ 	]*"}; {printf "\033[36m%-$(HELP_SPACING)s  \033[0m%s\n", "$(HELP_PREFIX)"$$1, $$2}'
+
+.PHONY: help-generate-table
+help-generate-table:
+	@export HELP_TABLE=$(MKPM_TMP)/help-table.md && \
+		$(MAKE) -s help | \
+		node help-generate-table.js > $$HELP_TABLE && \
+		$(PRETTIER) $$HELP_TABLE

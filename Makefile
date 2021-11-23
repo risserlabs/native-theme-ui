@@ -7,42 +7,42 @@ CLOC ?= cloc
 
 .DEFAULT_GOAL := build
 
-ACTIONS += install
+ACTIONS += install ##
 $(ACTION)/install: $(PROJECT_ROOT)/package.json $(call workspace_paths,package.json)
 	@$(YARN) install $(ARGS)
 	@$(call done,install)
 
-ACTIONS += format
+ACTIONS += format ##
 $(ACTION)/format: $(call git_deps,\.((json)|(md)|([jt]sx?))$$)
 	@$(call workspace_foreach,format,$(ARGS))
 	@$(call done,format)
 
-ACTIONS += spellcheck
+ACTIONS += spellcheck ##
 $(ACTION)/spellcheck: $(call git_deps,\.(md)$$)
 	@$(call workspace_foreach,spellcheck,$(ARGS))
 	@$(call done,spellcheck)
 
-ACTIONS += lint
+ACTIONS += lint ##
 $(ACTION)/lint: $(call git_deps,\.([jt]sx?)$$)
 	@$(call workspace_foreach,lint,$(ARGS))
 	@$(call done,lint)
 
-ACTIONS += test
+ACTIONS += test ##
 $(ACTION)/test: $(call git_deps,\.([jt]sx?)$$)
 	@$(call workspace_foreach,test,$(ARGS))
 	@$(call done,test)
 
-ACTIONS += build
+ACTIONS += build ##
 $(ACTION)/build: $(call git_deps,\.([jt]sx?)$$)
 	@$(call workspace_foreach,build,$(ARGS))
 	@$(call done,build)
 
 .PHONY: upgrade
-upgrade:
+upgrade: ##
 	@$(YARN) upgrade-interactive
 
 .PHONY: clean
-clean:
+clean: ##
 	@$(call workspace_foreach,clean,$(ARGS))
 	-@$(MKCACHE_CLEAN)
 	-@$(JEST) --clearCache $(NOFAIL)
@@ -53,11 +53,11 @@ clean:
 		$(NOFAIL)
 
 .PHONY: purge
-purge: clean
+purge: clean ##
 	@$(GIT) clean -fXd
 
 .PHONY: count
-count:
+count: ## count lines of code in project
 	@LC_ALL=C $(CLOC) $(shell $(GIT) ls-files | $(GREP) -vE "^\.yarn")
 
 PLATFORMS := $(shell $(LS) platforms)
@@ -68,6 +68,12 @@ $(patsubst %,%/%,$(PLATFORMS)):
 .PHONY: src/%
 src/%:
 	@$(MAKE) -sC $(@D) $*
+
+help: $(HELP)
+	@$(MAKE) -sC src help HELP_PREFIX=src/
+	@for i in $(PLATFORMS); do \
+		$(MAKE) -sC platforms/$$i help HELP_PREFIX=$$i/ 2>$(NULL) || $(TRUE); \
+	done
 
 CACHE_ENVS += \
 
