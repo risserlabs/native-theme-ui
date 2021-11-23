@@ -58,20 +58,12 @@ purge: clean ##
 count: ## count lines of code in project
 	@LC_ALL=C $(CLOC) $(shell $(GIT) ls-files | $(GREP) -vE "^\.yarn")
 
-PLATFORMS := $(shell $(LS) platforms)
-.PHONY: $(patsubst %,%/%,$(PLATFORMS))
-$(patsubst %,%/%,$(PLATFORMS)):
-	@$(MAKE) -sC platforms/$(@D) $*
-
-.PHONY: src/%
-src/%:
-	@$(MAKE) -sC $(@D) $*
+.PHONY: $(patsubst %,%/%,$(WORKSPACE_NAMES))
+$(patsubst %,%/%,$(WORKSPACE_NAMES)):
+	@$(MAKE) -sC $(call map_workspace,$(@D)) $*
 
 help: $(MKCHAIN_HELP)
-	@$(MAKE) -sC src help HELP_PREFIX=src/
-	@for i in $(PLATFORMS); do \
-		$(MAKE) -sC platforms/$$i help HELP_PREFIX=$$i/ 2>$(NULL) || $(TRUE); \
-	done
+	@$(call workspace_foreach_help,$(ARGS))
 
 CACHE_ENVS += \
 

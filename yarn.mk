@@ -56,6 +56,20 @@ $(shell for w in $(b64_workspace_paths); do \
 done)
 endef
 
+define WORKSPACE_NAMES
+$(shell for w in $(WORKSPACES); do \
+	$(ECHO) $$w | $(GREP) -oE '[^\/]+$$'; \
+done)
+endef
+
+define map_workspace
+$(shell for w in $(WORKSPACES); do \
+	if [ "$$($(ECHO) $$w | $(GREP) -oE '[^\/]+$$')" = "$1" ]; then \
+		$(ECHO) $$w; \
+	fi \
+done)
+endef
+
 define workspace_exec_foreach
 for w in $(call b64_workspace_paths); do \
 	$(CD) "$$($(ECHO) $$w | $(BASE64_NOWRAP) -d)" && $1; \
@@ -64,6 +78,15 @@ endef
 
 define workspace_foreach
 $(call workspace_exec_foreach,$(MAKE) -s $1 ARGS=$2 || $(TRUE))
+endef
+
+define workspace_foreach_help
+for w in $(call b64_workspace_paths); do \
+	$(EXPORT) WORKSPACE=$$($(ECHO) $$w | $(BASE64_NOWRAP) -d) && \
+		$(MAKE) -sC $$WORKSPACE help \
+		HELP_PREFIX="$$($(ECHO) $$WORKSPACE | $(GREP) -oE '[^\/]+$$')/" 2>$(NULL) || \
+		$(TRUE); \
+done
 endef
 
 define shell_arr_to_json_arr
