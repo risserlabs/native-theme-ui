@@ -1,3 +1,9 @@
+export .DEFAULT_GOAL := help
+
+-include $(MKPM)/gnu
+ifneq (,$(MKPM_READY))
+-include $(PROJECT_ROOT)/yarn.mk
+
 export BABEL ?= $(call yarn_binary,babel)
 export BABEL_NODE ?= $(call yarn_binary,babel-node)
 export BUILD_STORYBOOK ?= $(call yarn_binary,build-storybook)
@@ -32,3 +38,5 @@ CACHE_ENVS += \
 	STORYBOOK_SERVER \
 	TSC \
 	WATCHMAN
+
+endif

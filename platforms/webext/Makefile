@@ -1,5 +1,4 @@
 include ../../mkpm.mk
--include $(MKPM)/gnu
 -include $(MKPM)/mkchain
 ifneq (,$(MKPM_READY))
 

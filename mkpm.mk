@@ -1,7 +1,7 @@
 MKPM_PACKAGES := \
 	docker=0.0.3 \
 	gnu=0.0.2 \
-	mkchain=0.0.4
+	mkchain=0.0.6
 
 MKPM_REPOS := \
 	https://gitlab.com/bitspur/community/mkpm-stable.git
@@ -23,6 +23,3 @@ endif
 			echo wget --content-on-error -O) \
 		.bootstrap.mk $(MKPM_BOOTSTRAP) >$(NULL)
 ############## MKPM BOOTSTRAP SCRIPT END ##############
-
--include $(PROJECT_ROOT)/yarn.mk
-include $(PROJECT_ROOT)/global.mk

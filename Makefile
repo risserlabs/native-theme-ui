@@ -1,8 +1,6 @@
 include mkpm.mk
--include $(MKPM)/gnu
 -include $(MKPM)/mkchain
 ifneq (,$(MKPM_READY))
-
 
 ACTIONS += install ##
 $(ACTION)/install: $(PROJECT_ROOT)/package.json $(call workspace_paths,package.json)

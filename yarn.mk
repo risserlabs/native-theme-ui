@@ -129,6 +129,5 @@ help-generate-table:
 		node help-generate-table.js > $$HELP_TABLE && \
 		$(PRETTIER) $$HELP_TABLE
 
-ifeq (,$(DEFAULT_GOAL))
-.DEFAULT_GOAL := help
-endif
+CACHE_ENVS += \
+	BASE64_NOWRAP
