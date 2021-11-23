@@ -16,7 +16,6 @@ endif
 
 ACTIONS += format~install
 $(ACTION)/format: $(call git_deps,\.((json)|(md)|([jt]sx?))$$)
-#	-@$(call eslint_format,$?)
 	-@$(call prettier,$?,$(ARGS))
 	@$(call done,format)
 
@@ -62,17 +61,36 @@ $(ACTION)/build@storybook-ios: $(call git_deps,\.([jt]sx?)$$)
 start@storybook: ~install
 	@$(STORYBOOK_SERVER) -c storybook -p 6006
 
+.PHONY: start@storybook-native
+start@storybook-native: ~install
+	@$(STORYBOOK_NATIVE_SERVER) -c storybook
+
 .PHONY: start@storybook-web
-start@storybook-web:
+start@storybook-web: ~install
+	@$(EXPO) start --web
 
 .PHONY: start@storybook-android
-start@storybook-android:
+start@storybook-android: ~install
+	@$(EXPO) start --android
 
 .PHONY: start@storybook-ios
-start@storybook-ios:
+start@storybook-ios: ~install
+	@$(EXPO) start --ios
+
+.PHONY: eject
+eject: ~install
+	@$(EXPO) eject
+
+.PHONY: visual-regression
+visual-regression: ~build@storybook
+	@$(LOKI) --requireReference --diffingEngine gm --reactUri file:./storybook-static
+
+.PHONY: postinstall
+postinstall:
+	@$(EXPO_YARN_WORKSPACES) postinstall
 
 .PHONY: build
-build: build@storybook build@storybook_web build@storybook_android build@storybook_ios
+build: build@storybook build@storybook-web build@storybook-android build@storybook-ios
 
 .PHONY: clean
 clean:

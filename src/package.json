@@ -4,16 +4,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "android": "expo start --android",
-    "build-storybook": "build-storybook -c storybook",
-    "eject": "expo eject",
-    "ios": "expo start --ios",
-    "native:storybook": "node node_modules/@storybook/react-native-server/bin/index.js -c storybook",
-    "postinstall": "expo-yarn-workspaces postinstall",
-    "start": "expo start",
-    "storybook": "node node_modules/@storybook/react/bin/index.js -c storybook -p 6006",
-    "visual-regression": "yarn build-storybook && loki --requireReference --diffingEngine gm --reactUri file:./storybook-static",
-    "web": "expo start --web"
+    "postinstall": "make -s postinstall"
   },
   "dependencies": {
     "@babel/runtime": "^7.16.3",
@@ -28,7 +19,7 @@
     "react-dom": "^17.0.2",
     "react-native": "^0.64.3",
     "react-native-web": "^0.17.5",
-    "theme-ui": "^0.12.0"
+    "theme-ui": "^0.12.1"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
@@ -55,7 +46,7 @@
     "@storybook/react": "^6.3.12",
     "@storybook/react-native": "^5.3.25",
     "@storybook/react-native-server": "^5.3.23",
-    "@theme-ui/presets": "^0.12.0",
+    "@theme-ui/presets": "^0.12.1",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "addon-screen-reader": "^1.8.6",
