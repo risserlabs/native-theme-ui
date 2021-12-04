@@ -1,8 +1,9 @@
 include ../../mkpm.mk
--include $(MKPM)/gnu
--include $(MKPM)/mkchain
--include $(PROJECT_ROOT)/yarn.mk
 ifneq (,$(MKPM_READY))
+include $(MKPM)/gnu
+include $(MKPM)/mkchain
+include $(PROJECT_ROOT)/yarn.mk
+include ../../config.mk
 
 ACTIONS += install
 $(ACTION)/install: $(PROJECT_ROOT)/package.json package.json
