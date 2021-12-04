@@ -1,7 +1,7 @@
 MKPM_PACKAGES := \
 	docker=0.0.8 \
 	gnu=0.0.3 \
-	mkchain=0.0.7
+	mkchain=0.0.13
 
 MKPM_REPOS := \
 	https://gitlab.com/bitspur/community/mkpm-stable.git
@@ -16,10 +16,10 @@ ifneq ($(patsubst %.exe,%,$(SHELL)),$(SHELL))
 endif
 -include .mkpm/.bootstrap.mk
 .mkpm/.bootstrap.mk:
-	@mkdir .mkpm 2>$(NULL) || $(TRUE)
-	@cd .mkpm && \
+	@mkdir $(@D) 2>$(NULL) || $(TRUE)
+	@cd $(@D) && \
 		$(shell curl --version >$(NULL) 2>$(NULL) && \
 			echo curl -L -o || \
 			echo wget --content-on-error -O) \
-		.bootstrap.mk $(MKPM_BOOTSTRAP) >$(NULL)
+		$(@F) $(MKPM_BOOTSTRAP) >$(NULL)
 ############## MKPM BOOTSTRAP SCRIPT END ##############

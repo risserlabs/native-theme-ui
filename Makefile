@@ -1,5 +1,8 @@
+MONOREPO := 1
+
 include mkpm.mk
 -include $(MKPM)/mkchain
+-include $(PROJECT_ROOT)/yarn.mk
 ifneq (,$(MKPM_READY))
 
 ACTIONS += install ##
@@ -59,8 +62,9 @@ count: ## count lines of code in project
 $(patsubst %,%/%,$(WORKSPACE_NAMES)):
 	@$(MAKE) -sC $(call map_workspace,$(@D)) $*
 
+HELP = help
 help: $(MKCHAIN_HELP)
-	@$(call workspace_foreach_help,$(ARGS))
+	@$(call workspace_foreach_help,$(MKCHAIN_HELP),$(ARGS))
 
 CACHE_ENVS += \
 

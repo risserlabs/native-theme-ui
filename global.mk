@@ -1,8 +1,5 @@
-export .DEFAULT_GOAL := help
-
 -include $(MKPM)/gnu
 ifneq (,$(MKPM_READY))
--include $(PROJECT_ROOT)/yarn.mk
 
 export BABEL ?= $(call yarn_binary,babel)
 export BABEL_NODE ?= $(call yarn_binary,babel-node)

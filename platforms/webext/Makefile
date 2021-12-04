@@ -1,5 +1,6 @@
 include ../../mkpm.mk
 -include $(MKPM)/mkchain
+-include $(PROJECT_ROOT)/yarn.mk
 ifneq (,$(MKPM_READY))
 
 ACTIONS += install ##
@@ -44,8 +45,6 @@ clean: ##
 
 .PHONY: postinstall
 postinstall: ##
-
-help: $(MKCHAIN_HELP)
 
 CACHE_ENVS += \
 

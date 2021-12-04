@@ -1,7 +1,7 @@
 YARN ?= node $(PROJECT_ROOT)/.yarn/releases/yarn-3.1.0.cjs
 NPM ?= $(YARN)
 
-BASE64_NOWRAP ?= $(call ternary,openssl version,openssl base64 -A,base64 -w0)
+export BASE64_NOWRAP ?= $(call ternary,openssl version,openssl base64 -A,base64 -w0)
 
 define yarn_binary
 $(call ternary,$(WHICH) $(PROJECT_ROOT)/node_modules/.bin/$1,$(PROJECT_ROOT)/node_modules/.bin/$1,$(CURDIR)/node_modules/.bin/$1)
@@ -19,30 +19,50 @@ $(shell for i in $1; do \
 done)
 endef
 
+MONOREPO ?= 0
+
+ifneq (0,$(MONOREPO))
+ifeq (,$(CALCULATED_WORKSPACES))
+ifneq (,$(MKPM_BOOTSTRAPPED))
+$(info calculating monorepo workspaces ⌛)
 define B64_WORKSPACES
 $(call b64_encode_each,$(shell $(NPM) workspaces list | $(SED) '/YN0000: \..*/d' | $(SED) '/YN0000: Done in.*/d' | $(CUT) -d' ' -f3-))
 endef
+export B64_WORKSPACES
 
 define WORKSPACES
 $(call b64_decode_each,$(B64_WORKSPACES))
 endef
+export WORKSPACES
+
+define WORKSPACE_NAMES
+$(shell for w in $(WORKSPACES); do \
+	$(ECHO) $$w | $(GREP) -oE '[^\/]+$$'; \
+done)
+endef
+export WORKSPACE_NAMES
+
+export CALCULATED_WORKSPACES := 1
+endif
+endif
+endif
+
+ifeq (,$(WORKSPACES))
+	MONOREPO = 0
+else
+	MONOREPO = 1
+endif
 
 define b64_workspace_paths
-$(shell for i in $(call B64_WORKSPACES); do \
+$(shell for i in $(B64_WORKSPACES); do \
 	$(ECHO) $(PROJECT_ROOT)/$$(echo $$i | $(BASE64_NOWRAP) -d)$$([ '$1' = '' ] || $(ECHO) '/$1') | \
 	$(BASE64_NOWRAP) && echo; \
 done)
 endef
 
 define workspace_paths
-$(shell for w in $(b64_workspace_paths); do \
+$(shell for w in $(call b64_workspace_paths,$1); do \
 	$(ECHO) $$w | $(BASE64_NOWRAP) -d; \
-done)
-endef
-
-define WORKSPACE_NAMES
-$(shell for w in $(WORKSPACES); do \
-	$(ECHO) $$w | $(GREP) -oE '[^\/]+$$'; \
 done)
 endef
 
@@ -67,7 +87,7 @@ endef
 define workspace_foreach_help
 for w in $(call b64_workspace_paths); do \
 	$(EXPORT) WORKSPACE=$$($(ECHO) $$w | $(BASE64_NOWRAP) -d) && \
-		$(MAKE) -sC $$WORKSPACE help \
+		$(MAKE) -sC $$WORKSPACE $$([ "$1" = "" ] && echo $(HELP) || echo $1) ARGS=$2 \
 		HELP_PREFIX="$$($(ECHO) $$WORKSPACE | $(GREP) -oE '[^\/]+$$')/" 2>$(NULL) || \
 		$(TRUE); \
 done
@@ -120,14 +140,10 @@ $(call git_clean_flags,node_modules) \
 	-e $(BANG)/yarn.lock
 endef
 
-.PHONY: help-generate-table
-help-generate-table:
-	@$(MAKE) -s help
-	@$(MAKE) -s \~install 2>$(NULL)
-	@export HELP_TABLE=$(MKPM_TMP)/help-table.md && \
-		$(MAKE) -s help | \
-		node help-generate-table.js > $$HELP_TABLE && \
-		$(PRETTIER) $$HELP_TABLE
-
 CACHE_ENVS += \
-	BASE64_NOWRAP
+	B64_WORKSPACES \
+	BASE64_NOWRAP \
+	MONOREPO \
+	WORKSPACES \
+	CALCULATED_WORKSPACES \
+	WORKSPACE_NAMES
