@@ -1,5 +1,3 @@
--include $(MKPM)/gnu
-
 export BABEL ?= $(call yarn_binary,babel)
 export BABEL_NODE ?= $(call yarn_binary,babel-node)
 export BUILD_STORYBOOK ?= $(call yarn_binary,build-storybook)

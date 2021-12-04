@@ -1,4 +1,5 @@
 include ../../mkpm.mk
+-include $(MKPM)/gnu
 -include $(MKPM)/mkchain
 -include $(PROJECT_ROOT)/yarn.mk
 ifneq (,$(MKPM_READY))
