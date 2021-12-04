@@ -5,6 +5,7 @@ ifneq (,$(MKPM_READY))
 include $(MKPM)/gnu
 include $(MKPM)/mkchain
 include $(PROJECT_ROOT)/yarn.mk
+include config.mk
 
 ACTIONS += install ##
 $(ACTION)/install: $(PROJECT_ROOT)/package.json $(call workspace_paths,package.json)
