@@ -23,8 +23,8 @@ MONOREPO ?= 0
 
 ifneq (0,$(MONOREPO))
 ifeq (,$(CALCULATED_WORKSPACES))
-ifneq (,$(MKPM_BOOTSTRAPPED))
 $(info calculating monorepo workspaces ⌛)
+
 define B64_WORKSPACES
 $(call b64_encode_each,$(shell $(NPM) workspaces list | $(SED) '/YN0000: \..*/d' | $(SED) '/YN0000: Done in.*/d' | $(CUT) -d' ' -f3-))
 endef
@@ -43,7 +43,6 @@ endef
 export WORKSPACE_NAMES
 
 export CALCULATED_WORKSPACES := 1
-endif
 endif
 endif
 
