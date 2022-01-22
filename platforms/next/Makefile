@@ -2,7 +2,7 @@ include ../../mkpm.mk
 ifneq (,$(MKPM_READY))
 include $(MKPM)/gnu
 include $(MKPM)/mkchain
-include $(PROJECT_ROOT)/yarn.mk
+include $(MKPM)/yarn
 include ../../config.mk
 
 ACTIONS += install ##

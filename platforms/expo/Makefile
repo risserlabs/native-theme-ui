@@ -2,7 +2,7 @@ include ../../mkpm.mk
 ifneq (,$(MKPM_READY))
 include $(MKPM)/gnu
 include $(MKPM)/mkchain
-include $(PROJECT_ROOT)/yarn.mk
+include $(MKPM)/yarn
 include ../../config.mk
 
 ACTIONS += install ##
@@ -36,7 +36,8 @@ $(ACTION)/test: $(call git_deps,\.([jt]sx?)$$)
 	@$(call done,test)
 
 .PHONY: postinstall
-postinstall: ##
+postinstall:
+	@$(EXPO_YARN_WORKSPACES) postinstall
 
 .PHONY: clean
 clean: ##

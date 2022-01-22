@@ -2,7 +2,7 @@ include ../mkpm.mk
 ifneq (,$(MKPM_READY))
 include $(MKPM)/gnu
 include $(MKPM)/mkchain
-include $(PROJECT_ROOT)/yarn.mk
+include $(MKPM)/yarn
 include ../config.mk
 
 ACTIONS += install
@@ -86,7 +86,7 @@ visual-regression: ~build@storybook ##
 	@$(LOKI) --requireReference --diffingEngine gm --reactUri file:./storybook-static
 
 .PHONY: postinstall
-postinstall: ##
+postinstall:
 	@$(EXPO_YARN_WORKSPACES) postinstall
 
 .PHONY: build
