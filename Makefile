@@ -3,8 +3,8 @@
 # File Created: 04-12-2021 07:22:50
 # Author: Clay Risser <email@clayrisser.com>
 # -----
-# Last Modified: 22-01-2022 09:04:56
-# Modified By: Clay Risser <email@clayrisser.com>
+# Last Modified: 29-01-2022 10:01:35
+# Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
 #
@@ -25,6 +25,7 @@ MONOREPO := 1
 include mkpm.mk
 ifneq (,$(MKPM_READY))
 include $(MKPM)/gnu
+include $(MKPM)/envcache
 include $(MKPM)/mkchain
 include $(MKPM)/yarn
 include config.mk
@@ -63,6 +64,16 @@ $(ACTION)/build: $(call git_deps,\.([jt]sx?)$$)
 upgrade: ##
 	@$(YARN) upgrade-interactive
 
+
+INOTIFY_LIMIT ?= 999999
+.PHONY: inotify
+inotify: sudo ## increases the inotify limit
+	@$(SUDO) sh -c '$(ECHO) $(INOTIFY_LIMIT) > /proc/sys/fs/inotify/max_user_watches'
+	@$(SUDO) sh -c '$(ECHO) $(INOTIFY_LIMIT) > /proc/sys/fs/inotify/max_queued_events'
+	@$(SUDO) sh -c '$(ECHO) $(INOTIFY_LIMIT) > /proc/sys/fs/inotify/max_user_instances'
+	@$(WATCHMAN) shutdown-server
+	@$(SUDO) sysctl -p
+
 .PHONY: clean
 clean: ##
 	@$(call workspace_foreach,clean,$(ARGS))
@@ -80,7 +91,7 @@ purge: clean ##
 
 .PHONY: count
 count: ## count lines of code in project
-	@LC_ALL=C $(CLOC) $(shell $(GIT) ls-files | $(GREP) -vE "^\.yarn")
+	@$(CLOC) $(shell $(GIT) ls-files | $(GREP) -vE "^\.yarn")
 
 .PHONY: $(patsubst %,%/%,$(WORKSPACE_NAMES))
 $(patsubst %,%/%,$(WORKSPACE_NAMES)):
