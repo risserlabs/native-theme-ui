@@ -5,10 +5,10 @@ visual-regression:
   stage: test
   image: node:16
   before_script:
-    - apt update && apt install -y graphicsmagick chromium
+    - apt update && apt install -y graphicsmagick chromium make git-lfs
   script:
     - yarn
-    - cd src && yarn run visual-regression || true
+    - make -s src/visual-regression || true
   artifacts:
     paths:
       - src/.loki
