@@ -3,7 +3,7 @@
 # File Created: 04-12-2021 07:22:50
 # Author: Clay Risser <email@clayrisser.com>
 # -----
-# Last Modified: 29-01-2022 10:01:35
+# Last Modified: 27-02-2022 10:20:29
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -92,6 +92,15 @@ purge: clean ##
 .PHONY: count
 count: ## count lines of code in project
 	@$(CLOC) $(shell $(GIT) ls-files | $(GREP) -vE "^\.yarn")
+
+.PHONY: doctor
+doctor: sudo
+	@$(WATCHMAN) watch-del-all
+	@$(ECHO) 999999 | $(SUDO) $(TEE) -a /proc/sys/fs/inotify/max_user_watches
+	@$(ECHO) 999999 | $(SUDO) $(TEE) -a /proc/sys/fs/inotify/max_queued_events
+	@$(ECHO) 999999 | $(SUDO) $(TEE) -a /proc/sys/fs/inotify/max_user_instances
+	@$(WATCHMAN) shutdown-server
+	@$(SUDO) sysctl -p
 
 .PHONY: $(patsubst %,%/%,$(WORKSPACE_NAMES))
 $(patsubst %,%/%,$(WORKSPACE_NAMES)):

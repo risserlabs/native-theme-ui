@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 29-01-2022 10:17:30
+ * Last Modified: 27-02-2022 10:31:57
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -91,8 +91,9 @@ module.exports = {
     builder: 'webpack5'
   },
   features: {
+    buildStoriesJson: false,
     postcss: false,
-    buildStoriesJson: true
+    storyStoreV7: false
   },
   webpackFinal: (webpackConfig) => {
     patchBabel(webpackConfig, {

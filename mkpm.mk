@@ -3,8 +3,8 @@
 # File Created: 04-12-2021 02:19:00
 # Author: Clay Risser <email@clayrisser.com>
 # -----
-# Last Modified: 22-01-2022 09:05:01
-# Modified By: Clay Risser <email@clayrisser.com>
+# Last Modified: 27-02-2022 10:09:58
+# Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
 #
@@ -44,7 +44,7 @@ endif
 $(PROJECT_ROOT)/.mkpm/.bootstrap.mk:
 	@mkdir $(@D) 2>$(NULL) || $(TRUE)
 	@$(shell curl --version >$(NULL) 2>$(NULL) && \
-			echo curl -L -o || \
-			echo wget --content-on-error -O) \
+			echo curl -Lo || \
+			echo wget -O) \
 		$@ $(MKPM_BOOTSTRAP) >$(NULL)
 ############## MKPM BOOTSTRAP SCRIPT END ##############
