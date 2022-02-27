@@ -4,3 +4,4 @@ yarn.lock filter=lfs diff=lfs merge=lfs -text
 .yarn/releases/** filter=lfs diff=lfs merge=lfs -text
 .yarn/plugins/** filter=lfs diff=lfs merge=lfs -text
 src/.loki/reference filter=lfs diff=lfs merge=lfs -text
+src/.loki/reference/**/* filter=lfs diff=lfs merge=lfs -text
