@@ -57,3 +57,7 @@
 | `make src/lint`                    |                                |
 | `make src/spellcheck`              |                                |
 | `make src/test`                    |                                |
+
+## Versions
+
+`@storybook/addon-react-native-web@0.0.7`
