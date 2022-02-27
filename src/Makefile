@@ -3,7 +3,7 @@
 # File Created: 23-01-2022 02:18:40
 # Author: Clay Risser
 # -----
-# Last Modified: 29-01-2022 09:41:14
+# Last Modified: 27-02-2022 13:04:21
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -104,9 +104,19 @@ start@storybook-ios: ~install ##
 eject: ~install ##
 	@$(EXPO) eject
 
-.PHONY: visual-regression
-visual-regression: ~build@storybook ##
-	@$(LOKI) --requireReference --diffingEngine gm --reactUri file:./storybook-static
+# TODO: improve loki caching
+
+.PHONY: vr-update
+vr-update: ~build@storybook ##
+	@$(LOKI) --requireReference --diffingEngine gm --reactUri file:./storybook-static update
+
+.PHONY: vr-test
+vr-test: ~build@storybook ##
+	@$(LOKI) --requireReference --diffingEngine gm --reactUri file:./storybook-static test
+
+.PHONY: vr-approve
+vr-approve: ##
+	@$(LOKI) --requireReference --diffingEngine gm --reactUri file:./storybook-static approve
 
 .PHONY: postinstall
 postinstall:

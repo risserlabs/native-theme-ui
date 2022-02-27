@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 27-02-2022 10:28:10
+ * Last Modified: 27-02-2022 12:51:22
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -27,8 +27,7 @@ import { Text } from 'react-native';
 import { action } from '@storybook/addon-actions';
 import Button from '.';
 import CenterView from '../CenterView';
-// import { storiesOf } from '../../storybook';
-import { storiesOf } from '@storybook/react';
+import { storiesOf } from '../../storybook';
 
 storiesOf('Button', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)

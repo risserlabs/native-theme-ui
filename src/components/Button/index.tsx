@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 29-01-2022 10:17:59
+ * Last Modified: 27-02-2022 12:57:07
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,16 +24,22 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Text } from 'dripsy';
+import { Pressable, Text } from 'dripsy';
 
-// @ts-ignore
-export default function Button({ children }) {
-  return <Text sx={{ color: 'primary' }}>{children}</Text>;
+export interface ButtonProps {
+  children: string;
+}
+
+export default function Button(props: ButtonProps) {
+  return (
+    <Pressable sx={{ color: 'primary' }} onPress={console.log}>
+      <Text>{props.children}</Text>
+    </Pressable>
+  );
 }
 
 Button.defaultProps = {
-  children: null,
-  onPress: () => {}
+  children: null
 };
 
 Button.propTypes = {
