@@ -1,10 +1,10 @@
 /**
- * File: /components/Button/Button.stories.js
+ * File: /components/Pressable/Pressable.stories.tsx
  * Project: -
- * File Created: 23-01-2022 02:18:40
+ * File Created: 27-02-2022 12:19:39
  * Author: Clay Risser
  * -----
- * Last Modified: 27-02-2022 12:51:22
+ * Last Modified: 02-03-2022 01:29:31
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,35 +23,37 @@
  */
 
 import React from 'react';
-import { Text } from 'react-native';
 import { action } from '@storybook/addon-actions';
-import Button from '.';
+import Pressable from '.';
 import CenterView from '../CenterView';
 import { storiesOf } from '../../storybook';
+import Text from '../Text';
 
-storiesOf('Button', module)
+storiesOf('Pressable', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add(
     'with text',
     () => (
-      <Button onPress={action('clicked-text')}>
-        <Text>Button text</Text>
-      </Button>
+      <CenterView>
+        <Pressable onPress={action('clicked-text')}>
+          <Text>Button text</Text>
+        </Pressable>
+      </CenterView>
     ),
     {
-      component: Button,
+      component: Pressable,
       status: { type: 'beta' }
     }
   )
   .add(
     'with some emoji',
     () => (
-      <Button onPress={action('clicked-emoji')}>
+      <Pressable onPress={action('clicked-emoji')}>
         <Text>😀 😎 👍 💯 :)</Text>
-      </Button>
+      </Pressable>
     ),
     {
-      component: Button,
+      component: Pressable,
       status: { type: 'beta' }
     }
   );

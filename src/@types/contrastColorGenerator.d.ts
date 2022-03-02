@@ -1,10 +1,10 @@
 /**
- * File: /components/Welcome/Welcome.stories.js
+ * File: /@types/contrastColorGenerator.d.ts
  * Project: -
- * File Created: 23-01-2022 02:18:40
+ * File Created: 01-03-2022 10:08:56
  * Author: Clay Risser
  * -----
- * Last Modified: 29-01-2022 10:11:31
+ * Last Modified: 01-03-2022 10:08:58
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,11 +22,28 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { linkTo } from '@storybook/addon-links';
-import Welcome from '.';
-import { storiesOf } from '../../storybook';
+declare module 'contrast-color-generator' {
+  export interface Color {
+    hexStr: string;
+  }
 
-storiesOf('Welcome', module).add('to Storybook', () => (
-  <Welcome showApp={linkTo('Button')} />
-));
+  export class Generator {
+    constructor(hue: number, options?: Options);
+
+    static BRIGHTER_FIRST: number;
+
+    static BRIGHTER_ONLY: number;
+
+    static DARKER_FIRST: number;
+
+    static DARKER_ONLY: number;
+
+    generate(color: string): Color;
+  }
+
+  export interface Options {
+    minimumRatio?: number;
+
+    searchPrior?: number;
+  }
+}

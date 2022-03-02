@@ -1,10 +1,10 @@
 /**
- * File: /storybook/stories.js
+ * File: /hooks/useCalculatedSx.ts
  * Project: -
- * File Created: 23-01-2022 02:18:40
+ * File Created: 01-03-2022 10:23:12
  * Author: Clay Risser
  * -----
- * Last Modified: 01-03-2022 09:47:43
+ * Last Modified: 01-03-2022 14:15:13
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,5 +22,12 @@
  * limitations under the License.
  */
 
-import '../components/Pressable/Pressable.stories';
-import '../components/Welcome/Welcome.stories';
+import { SxProp, Sx, useDripsyTheme } from 'dripsy';
+
+export default function useCalculatedSx(sxProp: SxProp): Sx {
+  const { theme } = useDripsyTheme();
+  if (typeof sxProp === 'function') {
+    return sxProp(theme);
+  }
+  return sxProp as Sx;
+}

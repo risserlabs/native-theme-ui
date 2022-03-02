@@ -1,10 +1,10 @@
 /**
- * File: /storybook/stories.js
+ * File: /contexts/backgroundColor.ts
  * Project: -
- * File Created: 23-01-2022 02:18:40
+ * File Created: 01-03-2022 14:18:52
  * Author: Clay Risser
  * -----
- * Last Modified: 01-03-2022 09:47:43
+ * Last Modified: 02-03-2022 01:40:55
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,5 +22,10 @@
  * limitations under the License.
  */
 
-import '../components/Pressable/Pressable.stories';
-import '../components/Welcome/Welcome.stories';
+import { createContext } from 'react';
+
+const BackgroundColorContext = createContext<string | unknown | undefined>(
+  undefined
+);
+
+export default BackgroundColorContext;

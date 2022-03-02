@@ -34,9 +34,9 @@
     "@types/eslint": "^8.4.1",
     "@types/prettier": "^2.4.4",
     "@types/react": "^17.0.39",
-    "@types/react-native": "^0.66.16",
-    "@typescript-eslint/eslint-plugin": "^5.12.1",
-    "@typescript-eslint/parser": "^5.12.1",
+    "@types/react-native": "^0.67.1",
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.13.0",
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-transform-typescript-metadata": "^0.3.2",
     "cspell": "^5.18.5",
@@ -47,7 +47,7 @@
     "next-compose-plugins": "^2.2.1",
     "next-transpile-modules": "^9.0.0",
     "prettier": "^2.5.1",
-    "typescript": "^4.5.5"
+    "typescript": "^4.6.2"
   },
   "installConfig": {
     "hoistingLimits": "none",
