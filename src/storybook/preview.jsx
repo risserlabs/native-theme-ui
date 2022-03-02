@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 29-01-2022 10:17:21
+ * Last Modified: 02-03-2022 08:24:13
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,6 +22,7 @@
  * limitations under the License.
  */
 
+import React from 'react';
 import { DripsyProvider } from 'dripsy';
 import { addDecorator } from '@storybook/react';
 import { themes as storybookThemes } from '@storybook/theming';
@@ -44,6 +45,9 @@ export const parameters = {
   darkMode: {
     dark: { ...storybookThemes.dark },
     light: { ...storybookThemes.normal }
+  },
+  paddings: {
+    default: 'Small'
   },
   themes: {
     default: 'main',

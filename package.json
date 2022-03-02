@@ -30,19 +30,8 @@
     "@loki/target-chrome-core@0.28.0": "patch:@loki/target-chrome-core@npm:0.28.0#.yarn/patches/@loki-target-chrome-core-npm-0.28.0-0d269ca947"
   },
   "devDependencies": {
-    "@types/color-string": "^1",
-    "@types/lodash.camelcase": "^4.3.6",
-    "@types/lodash.startcase": "^4.4.6",
     "@types/prettier": "^2.4.4",
-    "@types/wcag-contrast": "^3",
     "cspell": "^5.18.5",
     "prettier": "^2.5.1"
-  },
-  "dependencies": {
-    "color-string": "^1.9.0",
-    "contrast-color-generator": "^0.1.1",
-    "lodash.camelcase": "^4.3.0",
-    "lodash.startcase": "^4.4.0",
-    "wcag-contrast": "^3.0.0"
   }
 }

@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 02-03-2022 02:11:20
+ * Last Modified: 02-03-2022 08:11:33
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -36,7 +36,7 @@ const theme = makeTheme<BaseTheme>({
     textPrimary: '#ffffff'
   },
   fontWeights: {},
-  autoContrast: 'A'
+  autoContrast: true
 });
 
 export type MainTheme = typeof theme;

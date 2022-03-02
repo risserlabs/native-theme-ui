@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 01-03-2022 11:01:30
+ * Last Modified: 02-03-2022 08:28:12
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,42 +22,34 @@
  * limitations under the License.
  */
 
-import { DripsyBaseTheme } from 'dripsy';
-import {
-  base,
-  bootstrap,
-  bulma,
-  dark,
-  deep,
-  funk,
-  future,
-  roboto,
-  sketchy,
-  swiss,
-  system,
-  tailwind,
-  tosh
-} from '@theme-ui/presets';
+import { DripsyBaseTheme, makeTheme } from 'dripsy';
+import * as presets from '@theme-ui/presets';
 import main from './main';
-import { AutoContrast } from '../hooks/useColor';
+import { AutoContrast } from '@risserlabs/auto-contrast';
 
-export {
-  base,
-  bootstrap,
-  bulma,
-  dark,
-  deep,
-  funk,
-  future,
-  main,
-  roboto,
-  sketchy,
-  swiss,
-  system,
-  tailwind,
-  tosh
-};
+export const base = wrapTheme(presets.base);
+export const bootstrap = wrapTheme(presets.bootstrap);
+export const bulma = wrapTheme(presets.bulma);
+export const dark = wrapTheme(presets.dark);
+export const deep = wrapTheme(presets.deep);
+export const funk = wrapTheme(presets.funk);
+export const future = wrapTheme(presets.future);
+export const roboto = wrapTheme(presets.roboto);
+export const sketchy = wrapTheme(presets.sketchy as never);
+export const swiss = wrapTheme(presets.swiss);
+export const system = wrapTheme(presets.system);
+export const tailwind = wrapTheme(presets.tailwind);
+export const tosh = wrapTheme(presets.tosh);
+
+function wrapTheme(theme: Record<string, unknown>) {
+  return makeTheme<BaseTheme>({
+    ...theme,
+    autoContrast: 'AAA'
+  });
+}
 
 export type BaseTheme = DripsyBaseTheme & {
   autoContrast?: AutoContrast;
 };
+
+export { main };

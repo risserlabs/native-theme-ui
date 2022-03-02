@@ -4,7 +4,7 @@
  * File Created: 01-03-2022 14:20:43
  * Author: Clay Risser
  * -----
- * Last Modified: 02-03-2022 01:35:29
+ * Last Modified: 02-03-2022 07:51:16
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,8 +25,7 @@
 import React, { FC } from 'react';
 import { Text as DText, SxProp } from 'dripsy';
 import { TextProps as RNTextProps } from 'react-native';
-import { AutoContrast } from '../../hooks/useColor';
-import useColor from '../../hooks/useColor';
+import { AutoContrast, useColor } from '@risserlabs/auto-contrast';
 
 export interface TextProps extends RNTextProps {
   autoContrast?: AutoContrast;

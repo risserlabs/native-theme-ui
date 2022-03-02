@@ -4,7 +4,7 @@
  * File Created: 27-02-2022 12:19:39
  * Author: Clay Risser
  * -----
- * Last Modified: 02-03-2022 01:29:31
+ * Last Modified: 02-03-2022 08:08:22
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,20 +25,16 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import Pressable from '.';
-import CenterView from '../CenterView';
 import { storiesOf } from '../../storybook';
 import Text from '../Text';
 
 storiesOf('Pressable', module)
-  .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add(
     'with text',
     () => (
-      <CenterView>
-        <Pressable onPress={action('clicked-text')}>
-          <Text>Button text</Text>
-        </Pressable>
-      </CenterView>
+      <Pressable onPress={action('clicked-text')}>
+        <Text>Button text</Text>
+      </Pressable>
     ),
     {
       component: Pressable,

@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 29-01-2022 10:17:39
+ * Last Modified: 02-03-2022 08:08:59
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,6 +23,7 @@
  */
 
 import React from 'react';
+import asyncStorage from '@react-native-async-storage/async-storage';
 import { DripsyProvider } from 'dripsy';
 import { Platform } from 'react-native';
 import { withKnobs } from '@storybook/addon-knobs';
@@ -36,7 +37,7 @@ import * as themes from '../themes';
 
 addDecorator(withKnobs);
 addDecorator((Root: any) => (
-  <DripsyProvider theme={themes.main as any}>
+  <DripsyProvider theme={themes.main as never}>
     <Root />
   </DripsyProvider>
 ));
@@ -47,7 +48,7 @@ configure(() => {
 
 const StorybookUIRoot = getStorybookUI({
   host: Platform.OS === 'android' ? '10.0.2.2' : '0.0.0.0',
-  asyncStorage: require('@react-native-async-storage/async-storage').default
+  asyncStorage
 });
 
 export default StorybookUIRoot;

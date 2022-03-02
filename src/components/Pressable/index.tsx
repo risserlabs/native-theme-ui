@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 02-03-2022 01:24:52
+ * Last Modified: 02-03-2022 04:28:42
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,7 +25,7 @@
 import React, { FC } from 'react';
 import { Pressable as DPressable, SxProp } from 'dripsy';
 import { PressableProps as RNPressableProps } from 'react-native';
-import BackgroundColorProvider from '../BackgroundColorProvider';
+import { BackgroundColorProvider } from '@risserlabs/auto-contrast';
 
 export interface PressableProps extends RNPressableProps {
   hidden?: boolean;
