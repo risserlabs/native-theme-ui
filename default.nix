@@ -11,6 +11,7 @@ nixpkgs.stdenv.mkDerivation rec {
     nixpkgs.expect
     nixpkgs.gnumake42
     nixpkgs.gnused
+    nixpkgs.graphicsmagick
     nixpkgs.jq
     nixpkgs.postgresql
     nixpkgs.watchman

@@ -3,7 +3,7 @@
 # File Created: 23-01-2022 02:18:40
 # Author: Clay Risser
 # -----
-# Last Modified: 03-03-2022 02:23:41
+# Last Modified: 03-03-2022 08:26:53
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -26,7 +26,7 @@ include $(MKPM)/gnu
 include $(MKPM)/envcache
 include $(MKPM)/mkchain
 include $(MKPM)/yarn
-include ../config.mk
+include ../shared.mk
 
 ACTIONS += install
 $(ACTION)/install: $(PROJECT_ROOT)/package.json package.json
@@ -103,8 +103,6 @@ start@storybook-ios: ~install ##
 .PHONY: eject
 eject: ~install ##
 	@$(EXPO) eject
-
-# TODO: improve loki caching
 
 .PHONY: vr-update
 vr-update: ~build@storybook ##

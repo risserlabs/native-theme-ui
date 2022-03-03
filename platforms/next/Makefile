@@ -3,7 +3,7 @@
 # File Created: 23-01-2022 02:18:40
 # Author: Clay Risser
 # -----
-# Last Modified: 29-01-2022 09:41:33
+# Last Modified: 03-03-2022 08:25:36
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -26,7 +26,7 @@ include $(MKPM)/gnu
 include $(MKPM)/envcache
 include $(MKPM)/mkchain
 include $(MKPM)/yarn
-include ../../config.mk
+include ../../shared.mk
 
 ACTIONS += install ##
 $(ACTION)/install: $(PROJECT_ROOT)/package.json package.json
