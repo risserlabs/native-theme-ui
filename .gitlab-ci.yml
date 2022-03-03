@@ -8,7 +8,7 @@ visual-regression:
     - apt update && apt install -y graphicsmagick chromium make git-lfs
   script:
     - yarn
-    - make -s src/visual-regression || true
+    - make -s src/vr-test || true
   artifacts:
     paths:
       - src/.loki

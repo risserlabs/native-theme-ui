@@ -3,7 +3,7 @@
 # File Created: 04-12-2021 07:22:50
 # Author: Clay Risser <email@clayrisser.com>
 # -----
-# Last Modified: 27-02-2022 10:20:29
+# Last Modified: 03-03-2022 01:53:40
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -64,16 +64,6 @@ $(ACTION)/build: $(call git_deps,\.([jt]sx?)$$)
 upgrade: ##
 	@$(YARN) upgrade-interactive
 
-
-INOTIFY_LIMIT ?= 999999
-.PHONY: inotify
-inotify: sudo ## increases the inotify limit
-	@$(SUDO) sh -c '$(ECHO) $(INOTIFY_LIMIT) > /proc/sys/fs/inotify/max_user_watches'
-	@$(SUDO) sh -c '$(ECHO) $(INOTIFY_LIMIT) > /proc/sys/fs/inotify/max_queued_events'
-	@$(SUDO) sh -c '$(ECHO) $(INOTIFY_LIMIT) > /proc/sys/fs/inotify/max_user_instances'
-	@$(WATCHMAN) shutdown-server
-	@$(SUDO) sysctl -p
-
 .PHONY: clean
 clean: ##
 	@$(call workspace_foreach,clean,$(ARGS))
@@ -93,12 +83,13 @@ purge: clean ##
 count: ## count lines of code in project
 	@$(CLOC) $(shell $(GIT) ls-files | $(GREP) -vE "^\.yarn")
 
+INOTIFY_LIMIT ?= 999999
 .PHONY: doctor
-doctor: sudo
+doctor: sudo ##
 	@$(WATCHMAN) watch-del-all
-	@$(ECHO) 999999 | $(SUDO) $(TEE) -a /proc/sys/fs/inotify/max_user_watches
-	@$(ECHO) 999999 | $(SUDO) $(TEE) -a /proc/sys/fs/inotify/max_queued_events
-	@$(ECHO) 999999 | $(SUDO) $(TEE) -a /proc/sys/fs/inotify/max_user_instances
+	@$(SUDO) sh -c '$(ECHO) $(INOTIFY_LIMIT) > /proc/sys/fs/inotify/max_user_watches'
+	@$(SUDO) sh -c '$(ECHO) $(INOTIFY_LIMIT) > /proc/sys/fs/inotify/max_queued_events'
+	@$(SUDO) sh -c '$(ECHO) $(INOTIFY_LIMIT) > /proc/sys/fs/inotify/max_user_instances'
 	@$(WATCHMAN) shutdown-server
 	@$(SUDO) sysctl -p
 
@@ -109,6 +100,10 @@ $(patsubst %,%/%,$(WORKSPACE_NAMES)):
 HELP = help
 help: $(MKCHAIN_HELP)
 	@$(call workspace_foreach_help,$(MKCHAIN_HELP),$(ARGS))
+
+.PHONY: %
+%:
+	@$(MAKE) -s src/$@
 
 CACHE_ENVS += \
 
