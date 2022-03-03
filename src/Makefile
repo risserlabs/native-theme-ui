@@ -3,7 +3,7 @@
 # File Created: 23-01-2022 02:18:40
 # Author: Clay Risser
 # -----
-# Last Modified: 27-02-2022 13:04:21
+# Last Modified: 03-03-2022 02:23:41
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -108,15 +108,30 @@ eject: ~install ##
 
 .PHONY: vr-update
 vr-update: ~build@storybook ##
-	@$(LOKI) --requireReference --diffingEngine gm --reactUri file:./storybook-static update
+	@$(LOKI) \
+		--requireReference \
+		--diffingEngine gm \
+		--reactUri file:./storybook-static \
+		--chromeFlags="--headless --disable-gpu --hide-scrollbars --no-sandbox" \
+		update
 
 .PHONY: vr-test
 vr-test: ~build@storybook ##
-	@$(LOKI) --requireReference --diffingEngine gm --reactUri file:./storybook-static test
+	@$(LOKI) \
+		--requireReference \
+		--diffingEngine gm \
+		--reactUri file:./storybook-static \
+		--chromeFlags="--headless --disable-gpu --hide-scrollbars --no-sandbox" \
+		test
 
 .PHONY: vr-approve
 vr-approve: ##
-	@$(LOKI) --requireReference --diffingEngine gm --reactUri file:./storybook-static approve
+	@$(LOKI) \
+		--requireReference \
+		--diffingEngine gm \
+		--reactUri file:./storybook-static \
+		--chromeFlags="--headless --disable-gpu --hide-scrollbars --no-sandbox" \
+		approve
 
 .PHONY: postinstall
 postinstall:
