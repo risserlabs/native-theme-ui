@@ -3,7 +3,7 @@ stages:
 
 visual-regression:
   stage: test
-  image: node:16
+  image: registry.gitlab.com/risserlabs/community/images/node:16.14.2
   before_script:
     - apt update && apt install -y graphicsmagick chromium make git-lfs
   script:
