@@ -1,10 +1,10 @@
 /**
- * File: /components/Pressable/Pressable.stories.tsx
+ * File: /components/Image/Image.stories.tsx
  * Project: -
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:17
+ * Last Modified: 13-06-2022 00:56:43
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,48 +23,47 @@
  */
 
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-import Pressable from '.';
 import { storiesOf } from '../../storybook';
-import Text from '../Text';
-import Box from '../Box';
+import Image from '.';
 
-storiesOf('Pressable', module)
+storiesOf('Image', module)
   .add(
-    'with text',
+    'Simple Image ',
     () => (
-      <Pressable onPress={action('clicked-text')}>
-        <Text>Button text</Text>
-      </Pressable>
+      <Image
+        source={{
+          uri: 'https://picsum.photos/200/300'
+        }}
+        sx={{
+          width: 150,
+          height: 150
+        }}
+      />
     ),
     {
-      component: Pressable,
+      component: Image,
       status: { type: 'beta' }
     }
   )
   .add(
-    'with some emoji',
+    'Styled image',
     () => (
-      <Pressable onPress={action('clicked-emoji')}>
-        <Text>😀 😎 👍 💯 :)</Text>
-      </Pressable>
+      <Image
+        source={{
+          uri: 'https://source.unsplash.com/user/c_v_r/1900x800'
+        }}
+        sx={{
+          width: 150,
+          height: 150,
+          borderRadius: 150 / 2,
+          overflow: 'hidden',
+          borderWidth: 3,
+          borderColor: 'primary'
+        }}
+      />
     ),
     {
-      component: Pressable,
-      status: { type: 'beta' }
-    }
-  )
-  .add(
-    'with background',
-    () => (
-      <Box sx={{ bg: 'background', p: 4 }}>
-        <Pressable onPress={action('clicked-text')}>
-          <Text>Button text</Text>
-        </Pressable>
-      </Box>
-    ),
-    {
-      component: Text,
+      component: Image,
       status: { type: 'beta' }
     }
   );

@@ -1,10 +1,10 @@
 /**
- * File: /components/Pressable/Pressable.stories.tsx
+ * File: /components/Spinner/Spinner.stories.tsx
  * Project: -
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:17
+ * Last Modified: 13-06-2022 00:57:38
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,48 +23,36 @@
  */
 
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-import Pressable from '.';
+import { Box } from 'dripsy';
+import Spinner from '.';
 import { storiesOf } from '../../storybook';
-import Text from '../Text';
-import Box from '../Box';
 
-storiesOf('Pressable', module)
+storiesOf('Spinner', module)
   .add(
-    'with text',
+    'size',
     () => (
-      <Pressable onPress={action('clicked-text')}>
-        <Text>Button text</Text>
-      </Pressable>
+      <div style={{ display: 'flex', gap: 10 }}>
+        <Spinner size="small" /> <Spinner size="large" />
+      </div>
     ),
     {
-      component: Pressable,
+      component: Spinner,
       status: { type: 'beta' }
     }
   )
-  .add(
-    'with some emoji',
-    () => (
-      <Pressable onPress={action('clicked-emoji')}>
-        <Text>😀 😎 👍 💯 :)</Text>
-      </Pressable>
-    ),
-    {
-      component: Pressable,
-      status: { type: 'beta' }
-    }
-  )
+  .add('like theme-ui', () => <Spinner color="primary" />, {
+    component: Spinner,
+    status: { type: 'beta' }
+  })
   .add(
     'with background',
     () => (
       <Box sx={{ bg: 'background', p: 4 }}>
-        <Pressable onPress={action('clicked-text')}>
-          <Text>Button text</Text>
-        </Pressable>
+        <Spinner />
       </Box>
     ),
     {
-      component: Text,
+      component: Spinner,
       status: { type: 'beta' }
     }
   );

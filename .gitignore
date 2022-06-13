@@ -2,9 +2,12 @@
 *.hprof
 .DS_Store
 .expo
-.mkpm/
 .vercel
 .yarn/install-state.gz
 .yarn/unplugged
 node_modules/
 yarn-error.log
+.mkpm/*
+**/.mkpm/*
+!/.mkpm/.cache.tar.gz
+!/.mkpm/.bootstrap.mk

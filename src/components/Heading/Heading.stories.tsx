@@ -1,10 +1,10 @@
 /**
- * File: /components/Pressable/Pressable.stories.tsx
+ * File: /components/Heading/Heading.stories.tsx
  * Project: -
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:17
+ * Last Modified: 13-06-2022 00:56:28
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,34 +23,38 @@
  */
 
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-import Pressable from '.';
-import { storiesOf } from '../../storybook';
-import Text from '../Text';
+import { View } from 'dripsy';
 import Box from '../Box';
+import Heading from '.';
+import { storiesOf } from '../../storybook';
 
-storiesOf('Pressable', module)
+storiesOf('Heading', module)
   .add(
-    'with text',
+    'variants',
     () => (
-      <Pressable onPress={action('clicked-text')}>
-        <Text>Button text</Text>
-      </Pressable>
+      <Box>
+        <Heading as="h1" sx={{ color: 'primary', lineHeight: 30 }}>
+          h1
+        </Heading>
+        <Heading as="h2" sx={{ color: 'primary', lineHeight: 30 }}>
+          h2
+        </Heading>
+        <Heading as="h3" sx={{ color: 'primary', lineHeight: 27 }}>
+          h3
+        </Heading>
+        <Heading as="h4" sx={{ color: 'primary', lineHeight: 25 }}>
+          h4
+        </Heading>
+        <Heading as="h5" sx={{ color: 'primary', lineHeight: 20 }}>
+          h5
+        </Heading>
+        <Heading as="h6" sx={{ color: 'primary', lineHeight: 20 }}>
+          h6
+        </Heading>
+      </Box>
     ),
     {
-      component: Pressable,
-      status: { type: 'beta' }
-    }
-  )
-  .add(
-    'with some emoji',
-    () => (
-      <Pressable onPress={action('clicked-emoji')}>
-        <Text>😀 😎 👍 💯 :)</Text>
-      </Pressable>
-    ),
-    {
-      component: Pressable,
+      component: Heading,
       status: { type: 'beta' }
     }
   )
@@ -58,13 +62,11 @@ storiesOf('Pressable', module)
     'with background',
     () => (
       <Box sx={{ bg: 'background', p: 4 }}>
-        <Pressable onPress={action('clicked-text')}>
-          <Text>Button text</Text>
-        </Pressable>
+        <Heading as="h1">Hello, world!</Heading>
       </Box>
     ),
     {
-      component: Text,
+      component: Heading,
       status: { type: 'beta' }
     }
   );

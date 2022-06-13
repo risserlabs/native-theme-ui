@@ -1,10 +1,10 @@
 /**
- * File: /components/Text/index.tsx
+ * File: /components/Link/index.tsx
  * Project: -
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:49
+ * Last Modified: 13-06-2022 00:57:03
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,30 +23,37 @@
  */
 
 import React, { FC } from 'react';
-import { Text as DText, SxProp } from 'dripsy';
+import { SxProp } from 'dripsy';
+import Text from '../Text';
 import { TextProps as RNTextProps } from 'react-native';
-import { AutoContrast, useColor } from '@risserlabs/auto-contrast';
+import useThemeLookup from '../../hooks/useThemeLookup';
 
-export interface TextProps extends RNTextProps {
-  autoContrast?: AutoContrast;
+export interface LinkProps extends RNTextProps {
   sx?: SxProp;
+  href: string;
 }
 
-const Text: FC<TextProps> = (props: TextProps) => {
+const Link: FC<LinkProps> = (props: LinkProps) => {
+  const themeLookup = useThemeLookup();
   const sx: SxProp = {
-    ...styles.text,
+    ...themeLookup('styles', 'a'),
+    ...styles.link,
     ...props.sx
   };
-  const color = useColor(props, sx);
-  return <DText {...props} sx={{ ...sx, ...(color ? { color } : {}) }} />;
+
+  return (
+    <Text {...props} sx={{ ...sx }}>
+      {props.children}
+    </Text>
+  );
 };
 
-Text.defaultProps = {};
+Link.defaultProps = {
+  children: null
+};
 
 export const styles = {
-  text: {
-    color: 'text'
-  }
+  link: {}
 };
 
-export default Text;
+export default Link;

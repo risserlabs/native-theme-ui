@@ -1,10 +1,10 @@
 /**
- * File: /components/Text/index.tsx
+ * File: /components/Text/Text.stories.tsx
  * Project: -
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:49
+ * Last Modified: 13-06-2022 00:57:52
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,31 +22,25 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { Text as DText, SxProp } from 'dripsy';
-import { TextProps as RNTextProps } from 'react-native';
-import { AutoContrast, useColor } from '@risserlabs/auto-contrast';
+import React from 'react';
+import Box from '../Box';
+import Text from '.';
+import { storiesOf } from '../../storybook';
 
-export interface TextProps extends RNTextProps {
-  autoContrast?: AutoContrast;
-  sx?: SxProp;
-}
-
-const Text: FC<TextProps> = (props: TextProps) => {
-  const sx: SxProp = {
-    ...styles.text,
-    ...props.sx
-  };
-  const color = useColor(props, sx);
-  return <DText {...props} sx={{ ...sx, ...(color ? { color } : {}) }} />;
-};
-
-Text.defaultProps = {};
-
-export const styles = {
-  text: {
-    color: 'text'
-  }
-};
-
-export default Text;
+storiesOf('Text', module)
+  .add('default', () => <Text>Hello, world!</Text>, {
+    component: Text,
+    status: { type: 'beta' }
+  })
+  .add(
+    'with background',
+    () => (
+      <Box sx={{ bg: 'background', p: 4 }}>
+        <Text>Hello, world!</Text>
+      </Box>
+    ),
+    {
+      component: Text,
+      status: { type: 'beta' }
+    }
+  );

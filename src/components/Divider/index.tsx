@@ -1,10 +1,10 @@
 /**
- * File: /components/Text/index.tsx
+ * File: /components/Divider/index.tsx
  * Project: -
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:49
+ * Last Modified: 13-06-2022 00:55:59
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,30 +23,33 @@
  */
 
 import React, { FC } from 'react';
-import { Text as DText, SxProp } from 'dripsy';
-import { TextProps as RNTextProps } from 'react-native';
-import { AutoContrast, useColor } from '@risserlabs/auto-contrast';
-
-export interface TextProps extends RNTextProps {
-  autoContrast?: AutoContrast;
+import { View, SxProp } from 'dripsy';
+import { ViewProps } from 'react-native';
+export interface DividerProps extends ViewProps {
   sx?: SxProp;
 }
 
-const Text: FC<TextProps> = (props: TextProps) => {
+const Divider: FC<DividerProps> = (props: DividerProps) => {
   const sx: SxProp = {
-    ...styles.text,
+    ...styles.divider,
     ...props.sx
   };
-  const color = useColor(props, sx);
-  return <DText {...props} sx={{ ...sx, ...(color ? { color } : {}) }} />;
+
+  return <View sx={{ ...sx }} />;
 };
 
-Text.defaultProps = {};
+Divider.defaultProps = {};
 
 export const styles = {
-  text: {
-    color: 'text'
+  divider: {
+    color: 'gray',
+    m: 0,
+    my: 2,
+    border: 0,
+    borderBottom: '1px solid',
+    borderBottomColor: 'black',
+    borderBottomWidth: 1
   }
 };
 
-export default Text;
+export default Divider;

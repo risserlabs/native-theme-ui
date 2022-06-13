@@ -1,10 +1,10 @@
 /**
- * File: /components/Pressable/Pressable.stories.tsx
+ * File: /components/Input/Input.stories.tsx
  * Project: -
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:17
+ * Last Modified: 13-06-2022 00:56:52
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,34 +23,38 @@
  */
 
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-import Pressable from '.';
+import { Box } from 'dripsy';
 import { storiesOf } from '../../storybook';
-import Text from '../Text';
-import Box from '../Box';
+import Input from '.';
 
-storiesOf('Pressable', module)
+storiesOf('Input', module)
+  .add('full width', () => <Input />, {
+    component: Input,
+    status: { type: 'beta' }
+  })
   .add(
-    'with text',
+    'with placeholder',
     () => (
-      <Pressable onPress={action('clicked-text')}>
-        <Text>Button text</Text>
-      </Pressable>
+      <Input
+        placeholderTextColor="primary"
+        placeholder="hello"
+        sx={{ borderColor: 'blue', maxWidth: 200 }}
+      />
     ),
     {
-      component: Pressable,
+      component: Input,
       status: { type: 'beta' }
     }
   )
   .add(
-    'with some emoji',
+    'like theme-ui',
     () => (
-      <Pressable onPress={action('clicked-emoji')}>
-        <Text>😀 😎 👍 💯 :)</Text>
-      </Pressable>
+      <Box>
+        <Input defaultValue="Hello" />
+      </Box>
     ),
     {
-      component: Pressable,
+      component: Input,
       status: { type: 'beta' }
     }
   )
@@ -58,13 +62,11 @@ storiesOf('Pressable', module)
     'with background',
     () => (
       <Box sx={{ bg: 'background', p: 4 }}>
-        <Pressable onPress={action('clicked-text')}>
-          <Text>Button text</Text>
-        </Pressable>
+        <Input />
       </Box>
     ),
     {
-      component: Text,
+      component: Input,
       status: { type: 'beta' }
     }
   );

@@ -1,10 +1,10 @@
 /**
- * File: /components/Pressable/Pressable.stories.tsx
+ * File: /components/Avatar/Avatar.stories.tsx
  * Project: -
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:17
+ * Last Modified: 13-06-2022 00:55:12
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,48 +23,43 @@
  */
 
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-import Pressable from '.';
 import { storiesOf } from '../../storybook';
-import Text from '../Text';
-import Box from '../Box';
+import Avatar from '.';
 
-storiesOf('Pressable', module)
+storiesOf('Avatar', module)
   .add(
-    'with text',
+    'Simple Avatar',
     () => (
-      <Pressable onPress={action('clicked-text')}>
-        <Text>Button text</Text>
-      </Pressable>
+      <Avatar
+        sx={{
+          width: 50,
+          height: 50,
+          borderRadius: 25
+        }}
+        name={'UI'}
+        isImage={false}
+      />
     ),
     {
-      component: Pressable,
+      component: Avatar,
       status: { type: 'beta' }
     }
   )
   .add(
-    'with some emoji',
+    'Image Avatar',
     () => (
-      <Pressable onPress={action('clicked-emoji')}>
-        <Text>😀 😎 👍 💯 :)</Text>
-      </Pressable>
+      <Avatar
+        isImage
+        uri={'https://picsum.photos/200'}
+        sx={{
+          width: 50,
+          height: 50,
+          borderRadius: 25
+        }}
+      />
     ),
     {
-      component: Pressable,
-      status: { type: 'beta' }
-    }
-  )
-  .add(
-    'with background',
-    () => (
-      <Box sx={{ bg: 'background', p: 4 }}>
-        <Pressable onPress={action('clicked-text')}>
-          <Text>Button text</Text>
-        </Pressable>
-      </Box>
-    ),
-    {
-      component: Text,
+      component: Avatar,
       status: { type: 'beta' }
     }
   );

@@ -1,10 +1,10 @@
 /**
- * File: /components/Text/index.tsx
+ * File: /components/Close/Close.stories.tsx
  * Project: -
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:49
+ * Last Modified: 13-06-2022 00:55:48
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,31 +22,25 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { Text as DText, SxProp } from 'dripsy';
-import { TextProps as RNTextProps } from 'react-native';
-import { AutoContrast, useColor } from '@risserlabs/auto-contrast';
+import React from 'react';
+import Box from '../Box';
+import Close from '.';
+import { storiesOf } from '../../storybook';
 
-export interface TextProps extends RNTextProps {
-  autoContrast?: AutoContrast;
-  sx?: SxProp;
-}
-
-const Text: FC<TextProps> = (props: TextProps) => {
-  const sx: SxProp = {
-    ...styles.text,
-    ...props.sx
-  };
-  const color = useColor(props, sx);
-  return <DText {...props} sx={{ ...sx, ...(color ? { color } : {}) }} />;
-};
-
-Text.defaultProps = {};
-
-export const styles = {
-  text: {
-    color: 'text'
-  }
-};
-
-export default Text;
+storiesOf('Close', module)
+  .add('default', () => <Close sx={{ color: 'primary' }} />, {
+    component: Close,
+    status: { type: 'beta' }
+  })
+  .add(
+    'with background',
+    () => (
+      <Box sx={{ bg: 'background', p: 4 }}>
+        <Close sx={{ color: 'primary' }} />
+      </Box>
+    ),
+    {
+      component: Close,
+      status: { type: 'beta' }
+    }
+  );

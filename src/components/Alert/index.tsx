@@ -1,10 +1,10 @@
 /**
- * File: /components/Text/index.tsx
+ * File: /components/Alert/index.tsx
  * Project: -
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:49
+ * Last Modified: 13-06-2022 00:55:07
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,29 +24,54 @@
 
 import React, { FC } from 'react';
 import { Text as DText, SxProp } from 'dripsy';
+import Box from '../Box';
 import { TextProps as RNTextProps } from 'react-native';
-import { AutoContrast, useColor } from '@risserlabs/auto-contrast';
+import useThemeLookup from '../../hooks/useThemeLookup';
 
+type VARIANTS =
+  | 'accent'
+  | 'muted'
+  | 'secondary'
+  | 'primary'
+  | 'highlight'
+  | undefined;
 export interface TextProps extends RNTextProps {
-  autoContrast?: AutoContrast;
   sx?: SxProp;
+  variant?: VARIANTS;
 }
 
-const Text: FC<TextProps> = (props: TextProps) => {
+const Alert: FC<TextProps> = (props: TextProps) => {
+  const themeLookup = useThemeLookup();
   const sx: SxProp = {
-    ...styles.text,
-    ...props.sx
+    flexDirection: 'row',
+    ...styles.alert,
+    ...props.sx,
+    ...(props.variant ? { bg: themeLookup('color', props.variant) } : {})
   };
-  const color = useColor(props, sx);
-  return <DText {...props} sx={{ ...sx, ...(color ? { color } : {}) }} />;
+
+  return (
+    <Box {...props} sx={{ ...sx }}>
+      {props.children}
+    </Box>
+  );
 };
 
-Text.defaultProps = {};
+Alert.defaultProps = {
+  variant: 'primary'
+};
 
 export const styles = {
-  text: {
-    color: 'text'
+  alert: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    px: 3,
+    py: 2,
+    fontWeight: 'bold',
+    color: 'white',
+    bg: 'primary',
+    borderRadius: 4
   }
 };
 
-export default Text;
+export default Alert;

@@ -1,10 +1,10 @@
 /**
- * File: /components/Pressable/Pressable.stories.tsx
+ * File: /components/IconButton/IconButton.stories.tsx
  * Project: -
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:17
+ * Last Modified: 13-06-2022 00:56:34
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,48 +23,43 @@
  */
 
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-import Pressable from '.';
 import { storiesOf } from '../../storybook';
-import Text from '../Text';
-import Box from '../Box';
+import IconButton from '.';
 
-storiesOf('Pressable', module)
+storiesOf('IconButton', module)
   .add(
-    'with text',
+    'Home IconButton',
     () => (
-      <Pressable onPress={action('clicked-text')}>
-        <Text>Button text</Text>
-      </Pressable>
+      <IconButton
+        source={require('../../assets/homeIcon.png')}
+        iconSx={{
+          width: 30,
+          height: 30,
+          overflow: 'hidden'
+        }}
+        onPress={() => console.log('HOME ICON PRESSED')}
+      />
     ),
     {
-      component: Pressable,
+      component: IconButton,
       status: { type: 'beta' }
     }
   )
   .add(
-    'with some emoji',
+    'Notification IconButton',
     () => (
-      <Pressable onPress={action('clicked-emoji')}>
-        <Text>😀 😎 👍 💯 :)</Text>
-      </Pressable>
+      <IconButton
+        source={require('../../assets/notificationIcon.png')}
+        iconSx={{
+          width: 30,
+          height: 30,
+          overflow: 'hidden'
+        }}
+        onPress={() => console.log('NOTIFICATION ICON PRESSED')}
+      />
     ),
     {
-      component: Pressable,
-      status: { type: 'beta' }
-    }
-  )
-  .add(
-    'with background',
-    () => (
-      <Box sx={{ bg: 'background', p: 4 }}>
-        <Pressable onPress={action('clicked-text')}>
-          <Text>Button text</Text>
-        </Pressable>
-      </Box>
-    ),
-    {
-      component: Text,
+      component: IconButton,
       status: { type: 'beta' }
     }
   );

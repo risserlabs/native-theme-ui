@@ -1,10 +1,10 @@
 /**
- * File: /components/Text/index.tsx
+ * File: /components/Card/index.tsx
  * Project: -
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:49
+ * Last Modified: 13-06-2022 00:56:08
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,30 +23,37 @@
  */
 
 import React, { FC } from 'react';
-import { Text as DText, SxProp } from 'dripsy';
-import { TextProps as RNTextProps } from 'react-native';
-import { AutoContrast, useColor } from '@risserlabs/auto-contrast';
+import { View as DView, SxProp } from 'dripsy';
+import { ViewProps as RNViewProps } from 'react-native';
 
-export interface TextProps extends RNTextProps {
-  autoContrast?: AutoContrast;
+export interface ViewProps extends RNViewProps {
   sx?: SxProp;
 }
 
-const Text: FC<TextProps> = (props: TextProps) => {
+const Card: FC<ViewProps> = (props: ViewProps) => {
   const sx: SxProp = {
-    ...styles.text,
+    ...styles.card,
     ...props.sx
   };
-  const color = useColor(props, sx);
-  return <DText {...props} sx={{ ...sx, ...(color ? { color } : {}) }} />;
+  return (
+    <DView {...props} sx={sx}>
+      {props.children}
+    </DView>
+  );
 };
 
-Text.defaultProps = {};
+Card.defaultProps = {
+  children: null,
+  sx: {}
+};
 
 export const styles = {
-  text: {
-    color: 'text'
+  card: {
+    boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
+    transition: '0.3s',
+    padding: '4px 16px',
+    borderRadius: '2%'
   }
 };
 
-export default Text;
+export default Card;

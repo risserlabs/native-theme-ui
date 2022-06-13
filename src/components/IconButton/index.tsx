@@ -1,10 +1,10 @@
 /**
- * File: /components/Pressable/index.tsx
+ * File: /components/IconButton/index.tsx
  * Project: -
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:10
+ * Last Modified: 13-06-2022 00:56:38
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,49 +23,51 @@
  */
 
 import React, { FC } from 'react';
-import { Pressable as DPressable, SxProp } from 'dripsy';
-import { PressableProps as RNPressableProps } from 'react-native';
-import { BackgroundColorProvider } from '@risserlabs/auto-contrast';
-
+import { SxProp } from 'dripsy';
+import {
+  PressableProps as RNPressableProps,
+  ImageProps as RNImageProps,
+  ImageSourcePropType
+} from 'react-native';
+import Pressable from '../Pressable';
+import Image from '../Image';
 export interface PressableProps extends RNPressableProps {
-  hidden?: boolean;
   sx?: SxProp;
 }
-
-const Pressable: FC<PressableProps> = (props: PressableProps) => {
+export interface ImageProps extends RNImageProps {
+  source: ImageSourcePropType;
+  iconSx?: SxProp;
+  // tintColor?: string;
+}
+type Props = PressableProps & ImageProps;
+const IconButton: FC<Props> = (props: PressableProps & ImageProps) => {
   const sx: SxProp = {
-    display: props.hidden ? undefined : 'inline-block',
     ...styles.pressable,
     ...props.sx
   };
+  const iconsx: SxProp = {
+    ...props.iconSx
+  };
+
   return (
-    <DPressable {...props} sx={sx}>
-      <BackgroundColorProvider sx={sx}>
-        {props.children}
-      </BackgroundColorProvider>
-    </DPressable>
+    <Pressable {...props} sx={{ ...sx }} onPress={props.onPress}>
+      <Image source={props.source} sx={{ ...iconsx }} />
+    </Pressable>
   );
 };
 
-Pressable.defaultProps = {
-  children: null,
-  sx: {}
+IconButton.defaultProps = {
+  sx: {},
+  iconSx: {}
 };
 
 export const styles = {
   pressable: {
-    // appearance: 'none',
+    maxWidth: '100%',
     bg: 'primary',
-    border: 0,
-    borderRadius: 4,
-    color: 'white',
-    fontSize: 'inherit',
-    lineHeight: 'inherit',
-    px: 3,
-    py: 2
-    // textAlign: 'center',
-    // textDecoration: 'none'
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 };
 
-export default Pressable;
+export default IconButton;

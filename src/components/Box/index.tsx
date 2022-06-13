@@ -1,10 +1,10 @@
 /**
- * File: /components/Pressable/index.tsx
+ * File: /components/Box/index.tsx
  * Project: -
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:10
+ * Last Modified: 13-06-2022 00:55:26
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,49 +23,45 @@
  */
 
 import React, { FC } from 'react';
-import { Pressable as DPressable, SxProp } from 'dripsy';
-import { PressableProps as RNPressableProps } from 'react-native';
-import { BackgroundColorProvider } from '@risserlabs/auto-contrast';
+import { Box as DBox, SxProp } from 'dripsy';
+import { ViewProps } from 'react-native';
+import {
+  useColor,
+  BackgroundColorProvider,
+  AutoContrast
+} from '@risserlabs/auto-contrast';
 
-export interface PressableProps extends RNPressableProps {
-  hidden?: boolean;
+export interface BoxProps extends ViewProps {
   sx?: SxProp;
+  autoContrast?: AutoContrast;
 }
 
-const Pressable: FC<PressableProps> = (props: PressableProps) => {
+const Box: FC<BoxProps> = (props: BoxProps) => {
   const sx: SxProp = {
-    display: props.hidden ? undefined : 'inline-block',
-    ...styles.pressable,
+    ...styles.box,
     ...props.sx
   };
+  const color = useColor(props, sx);
+  // const color = useColor(props, sx, sx.bg || sx.backgroundColor);
   return (
-    <DPressable {...props} sx={sx}>
+    <DBox {...props} sx={{ ...sx, ...(color ? { color } : {}) }}>
       <BackgroundColorProvider sx={sx}>
         {props.children}
       </BackgroundColorProvider>
-    </DPressable>
+    </DBox>
   );
 };
 
-Pressable.defaultProps = {
-  children: null,
+Box.defaultProps = {
   sx: {}
 };
 
 export const styles = {
-  pressable: {
-    // appearance: 'none',
-    bg: 'primary',
-    border: 0,
-    borderRadius: 4,
-    color: 'white',
-    fontSize: 'inherit',
-    lineHeight: 'inherit',
-    px: 3,
-    py: 2
-    // textAlign: 'center',
-    // textDecoration: 'none'
+  box: {
+    // boxSizing: 'border-box',
+    margin: 0,
+    minWidth: 0
   }
 };
 
-export default Pressable;
+export default Box;

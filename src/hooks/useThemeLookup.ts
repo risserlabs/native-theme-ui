@@ -1,10 +1,10 @@
 /**
- * File: /App.tsx
+ * File: /hooks/useThemeLookup.ts
  * Project: -
- * File Created: 23-01-2022 02:18:40
+ * File Created: 13-06-2022 00:52:46
  * Author: Clay Risser
  * -----
- * Last Modified: 27-03-2022 23:28:09
+ * Last Modified: 13-06-2022 00:58:07
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,4 +22,11 @@
  * limitations under the License.
  */
 
-export { default } from './storybook/expo';
+import { useSx } from 'dripsy';
+
+export default function useThemeLookup() {
+  const sx = useSx();
+  return <T>(key: string, value: unknown): T | undefined => {
+    return sx(value ? { [key]: value } : {})[key] as T | undefined;
+  };
+}

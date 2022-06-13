@@ -1,10 +1,10 @@
 /**
- * File: /components/Pressable/index.tsx
+ * File: /components/Close/index.tsx
  * Project: -
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:10
+ * Last Modified: 13-06-2022 00:55:52
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,49 +23,47 @@
  */
 
 import React, { FC } from 'react';
-import { Pressable as DPressable, SxProp } from 'dripsy';
+import { SxProp } from 'dripsy';
+import Pressable from '../Pressable';
 import { PressableProps as RNPressableProps } from 'react-native';
-import { BackgroundColorProvider } from '@risserlabs/auto-contrast';
 
-export interface PressableProps extends RNPressableProps {
-  hidden?: boolean;
+const x = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    fill="currentcolor"
+    viewBox="0 0 24 24"
+  >
+    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+  </svg>
+);
+
+export interface CloseProps extends RNPressableProps {
   sx?: SxProp;
 }
 
-const Pressable: FC<PressableProps> = (props: PressableProps) => {
+const Close: FC<CloseProps> = (props: CloseProps) => {
   const sx: SxProp = {
-    display: props.hidden ? undefined : 'inline-block',
-    ...styles.pressable,
+    ...styles.close,
     ...props.sx
   };
+
+  //todo: replace Pressable with Icon button (Icon button wrapping is not done yet)
+
   return (
-    <DPressable {...props} sx={sx}>
-      <BackgroundColorProvider sx={sx}>
-        {props.children}
-      </BackgroundColorProvider>
-    </DPressable>
+    <Pressable {...props} sx={sx}>
+      {x}
+    </Pressable>
   );
 };
 
-Pressable.defaultProps = {
-  children: null,
+Close.defaultProps = {
   sx: {}
 };
 
 export const styles = {
-  pressable: {
-    // appearance: 'none',
-    bg: 'primary',
-    border: 0,
-    borderRadius: 4,
-    color: 'white',
-    fontSize: 'inherit',
-    lineHeight: 'inherit',
-    px: 3,
-    py: 2
-    // textAlign: 'center',
-    // textDecoration: 'none'
-  }
+  close: { bg: 'transparent' }
 };
 
-export default Pressable;
+export default Close;

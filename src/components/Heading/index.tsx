@@ -1,10 +1,10 @@
 /**
- * File: /components/Text/index.tsx
+ * File: /components/Heading/index.tsx
  * Project: -
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:49
+ * Last Modified: 13-06-2022 00:56:30
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,30 +23,39 @@
  */
 
 import React, { FC } from 'react';
-import { Text as DText, SxProp } from 'dripsy';
+import { SxProp } from 'dripsy';
+import Text from '../Text';
 import { TextProps as RNTextProps } from 'react-native';
-import { AutoContrast, useColor } from '@risserlabs/auto-contrast';
+import useThemeLookup from '../../hooks/useThemeLookup';
 
-export interface TextProps extends RNTextProps {
-  autoContrast?: AutoContrast;
+type HEADINGS = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+export interface HeadingProps extends RNTextProps {
   sx?: SxProp;
+  as: HEADINGS;
 }
 
-const Text: FC<TextProps> = (props: TextProps) => {
+const Heading: FC<HeadingProps> = (_props: HeadingProps) => {
+  const themeLookup = useThemeLookup();
+
+  const { as, ...props } = _props;
   const sx: SxProp = {
-    ...styles.text,
+    ...themeLookup('styles', as),
+    ...styles.heading,
     ...props.sx
   };
-  const color = useColor(props, sx);
-  return <DText {...props} sx={{ ...sx, ...(color ? { color } : {}) }} />;
+  return <Text {...props} sx={{ ...sx }} />;
 };
 
-Text.defaultProps = {};
+Heading.defaultProps = {
+  as: 'h1'
+};
 
 export const styles = {
-  text: {
-    color: 'text'
+  heading: {
+    fontFamily: 'heading',
+    fontWeight: 'heading',
+    lineHeight: 'heading'
   }
 };
 
-export default Text;
+export default Heading;

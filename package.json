@@ -32,6 +32,7 @@
   "devDependencies": {
     "@types/prettier": "^2.4.4",
     "cspell": "^5.18.5",
+    "expo": "^44.0.6",
     "prettier": "^2.5.1"
   }
 }

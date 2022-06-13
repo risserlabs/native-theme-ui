@@ -37,6 +37,11 @@ else
 endif
 	@$(call done,install)
 
+.PHONY: start +start
+start: | +start
++start: ~install
+	$(YARN) start
+
 ACTIONS += format~install ##
 $(ACTION)/format: $(call git_deps,\.((json)|(md)|([jt]sx?))$$)
 #	-@$(call eslint_format,$?)

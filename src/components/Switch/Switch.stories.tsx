@@ -1,10 +1,10 @@
 /**
- * File: /components/Pressable/Pressable.stories.tsx
+ * File: /components/Switch/Switch.stories.tsx
  * Project: -
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:17
+ * Last Modified: 13-06-2022 00:57:46
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,34 +23,34 @@
  */
 
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-import Pressable from '.';
-import { storiesOf } from '../../storybook';
-import Text from '../Text';
 import Box from '../Box';
+import Switch from '.';
+import { storiesOf } from '../../storybook';
 
-storiesOf('Pressable', module)
+storiesOf('Switch', module)
   .add(
-    'with text',
+    'default',
     () => (
-      <Pressable onPress={action('clicked-text')}>
-        <Text>Button text</Text>
-      </Pressable>
+      <>
+        <Switch
+          trackColor={{ false: '#767577', true: '#81b0ff' }}
+          ios_backgroundColor="#3e3e3e"
+        />
+        <Switch
+          trackColor={{ false: '#767577', true: 'primary' }}
+          ios_backgroundColor="#3e3e3e"
+          thumbColor={'red'}
+          value={true}
+        />
+        <Switch
+          trackColor={{ false: '#767577', true: 'primary' }}
+          ios_backgroundColor="#3e3e3e"
+          thumbColor={'primary'}
+        />
+      </>
     ),
     {
-      component: Pressable,
-      status: { type: 'beta' }
-    }
-  )
-  .add(
-    'with some emoji',
-    () => (
-      <Pressable onPress={action('clicked-emoji')}>
-        <Text>😀 😎 👍 💯 :)</Text>
-      </Pressable>
-    ),
-    {
-      component: Pressable,
+      component: Switch,
       status: { type: 'beta' }
     }
   )
@@ -58,13 +58,15 @@ storiesOf('Pressable', module)
     'with background',
     () => (
       <Box sx={{ bg: 'background', p: 4 }}>
-        <Pressable onPress={action('clicked-text')}>
-          <Text>Button text</Text>
-        </Pressable>
+        <Switch
+          trackColor={{ false: '#767577', true: 'primary' }}
+          ios_backgroundColor="#3e3e3e"
+          value={true}
+        />
       </Box>
     ),
     {
-      component: Text,
+      component: Switch,
       status: { type: 'beta' }
     }
   );

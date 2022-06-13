@@ -1,10 +1,10 @@
 /**
- * File: /components/Text/index.tsx
+ * File: /components/Label/index.tsx
  * Project: -
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:49
+ * Last Modified: 13-06-2022 00:56:55
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -32,7 +32,7 @@ export interface TextProps extends RNTextProps {
   sx?: SxProp;
 }
 
-const Text: FC<TextProps> = (props: TextProps) => {
+const Label: FC<TextProps> = (props: TextProps) => {
   const sx: SxProp = {
     ...styles.text,
     ...props.sx
@@ -41,12 +41,13 @@ const Text: FC<TextProps> = (props: TextProps) => {
   return <DText {...props} sx={{ ...sx, ...(color ? { color } : {}) }} />;
 };
 
-Text.defaultProps = {};
+Label.defaultProps = {};
 
 export const styles = {
   text: {
-    color: 'text'
+    color: 'text',
+    fontWeight: 700
   }
 };
 
-export default Text;
+export default Label;

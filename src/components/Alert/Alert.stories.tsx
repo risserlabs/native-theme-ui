@@ -1,10 +1,10 @@
 /**
- * File: /components/Pressable/Pressable.stories.tsx
+ * File: /components/Alert/Alert.stories.tsx
  * Project: -
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:17
+ * Last Modified: 13-06-2022 00:55:02
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,48 +23,37 @@
  */
 
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-import Pressable from '.';
+import Close from '../Close';
+import Alert from '.';
 import { storiesOf } from '../../storybook';
-import Text from '../Text';
-import Box from '../Box';
 
-storiesOf('Pressable', module)
+storiesOf('Alert', module)
   .add(
-    'with text',
+    'default',
     () => (
-      <Pressable onPress={action('clicked-text')}>
-        <Text>Button text</Text>
-      </Pressable>
+      <>
+        <Alert variant="primary" sx={{ mb: 1 }}>
+          Primary
+        </Alert>
+        <Alert variant="secondary" sx={{ mb: 1 }}>
+          Secondary
+        </Alert>
+      </>
     ),
     {
-      component: Pressable,
+      component: Alert,
       status: { type: 'beta' }
     }
   )
   .add(
-    'with some emoji',
+    'like theme ui',
     () => (
-      <Pressable onPress={action('clicked-emoji')}>
-        <Text>😀 😎 👍 💯 :)</Text>
-      </Pressable>
+      <Alert>
+        Beep boop, this is an alert! <Close />
+      </Alert>
     ),
     {
-      component: Pressable,
-      status: { type: 'beta' }
-    }
-  )
-  .add(
-    'with background',
-    () => (
-      <Box sx={{ bg: 'background', p: 4 }}>
-        <Pressable onPress={action('clicked-text')}>
-          <Text>Button text</Text>
-        </Pressable>
-      </Box>
-    ),
-    {
-      component: Text,
+      component: Alert,
       status: { type: 'beta' }
     }
   );

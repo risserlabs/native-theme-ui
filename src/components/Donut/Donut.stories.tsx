@@ -1,10 +1,10 @@
 /**
- * File: /components/Pressable/Pressable.stories.tsx
+ * File: /components/Donut/Donut.stories.tsx
  * Project: -
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:17
+ * Last Modified: 13-06-2022 00:56:14
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,48 +23,62 @@
  */
 
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-import Pressable from '.';
-import { storiesOf } from '../../storybook';
-import Text from '../Text';
 import Box from '../Box';
+import Donut from '.';
+import { storiesOf } from '../../storybook';
 
-storiesOf('Pressable', module)
+storiesOf('Donut', module)
+  .add('default 50% Donut', () => <Donut max={100} value={50} />, {
+    component: Donut,
+    status: { type: 'beta' }
+  })
+  .add('40% Donut', () => <Donut max={100} value={40} />, {
+    component: Donut,
+    status: { type: 'beta' }
+  })
   .add(
-    'with text',
-    () => (
-      <Pressable onPress={action('clicked-text')}>
-        <Text>Button text</Text>
-      </Pressable>
-    ),
+    'Donut with max=200 and value=80',
+    () => <Donut max={200} value={80} />,
     {
-      component: Pressable,
+      component: Donut,
       status: { type: 'beta' }
     }
   )
   .add(
-    'with some emoji',
+    'like theme-ui',
     () => (
-      <Pressable onPress={action('clicked-emoji')}>
-        <Text>😀 😎 👍 💯 :)</Text>
-      </Pressable>
+      <Donut max={1} value={1 / 2}>
+        50%
+      </Donut>
     ),
     {
-      component: Pressable,
+      component: Donut,
       status: { type: 'beta' }
     }
   )
   .add(
-    'with background',
+    'with background with 70%',
     () => (
-      <Box sx={{ bg: 'background', p: 4 }}>
-        <Pressable onPress={action('clicked-text')}>
-          <Text>Button text</Text>
-        </Pressable>
+      <Box sx={{ bg: 'black', p: 4 }}>
+        <Donut max={100} value={70}>
+          70%
+        </Donut>
       </Box>
     ),
     {
-      component: Text,
+      component: Donut,
+      status: { type: 'beta' }
+    }
+  )
+  .add(
+    'with background with 70%',
+    () => (
+      <Box sx={{ bg: 'black', p: 4 }}>
+        <Donut max={100} value={70} />
+      </Box>
+    ),
+    {
+      component: Donut,
       status: { type: 'beta' }
     }
   );
