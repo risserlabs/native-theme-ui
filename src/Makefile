@@ -3,7 +3,7 @@
 # File Created: 23-01-2022 02:18:40
 # Author: Clay Risser
 # -----
-# Last Modified: 03-03-2022 08:26:53
+# Last Modified: 13-06-2022 02:57:51
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -27,6 +27,8 @@ include $(MKPM)/envcache
 include $(MKPM)/mkchain
 include $(MKPM)/yarn
 include ../shared.mk
+
+VR_DIFFING_ENGINE ?= pixelmatch # pixelmatch looks-same gm
 
 ACTIONS += install
 $(ACTION)/install: $(PROJECT_ROOT)/package.json package.json
@@ -108,7 +110,7 @@ eject: ~install ##
 vr-update: ~build@storybook ##
 	@$(LOKI) \
 		--requireReference \
-		--diffingEngine gm \
+		--diffingEngine $(VR_DIFFING_ENGINE) \
 		--reactUri file:./storybook-static \
 		--chromeFlags="--headless --disable-gpu --hide-scrollbars --no-sandbox" \
 		update
@@ -117,7 +119,7 @@ vr-update: ~build@storybook ##
 vr-test: ~build@storybook ##
 	@$(LOKI) \
 		--requireReference \
-		--diffingEngine gm \
+		--diffingEngine $(VR_DIFFING_ENGINE) \
 		--reactUri file:./storybook-static \
 		--chromeFlags="--headless --disable-gpu --hide-scrollbars --no-sandbox" \
 		test
@@ -126,7 +128,7 @@ vr-test: ~build@storybook ##
 vr-approve: ##
 	@$(LOKI) \
 		--requireReference \
-		--diffingEngine gm \
+		--diffingEngine $(VR_DIFFING_ENGINE) \
 		--reactUri file:./storybook-static \
 		--chromeFlags="--headless --disable-gpu --hide-scrollbars --no-sandbox" \
 		approve
