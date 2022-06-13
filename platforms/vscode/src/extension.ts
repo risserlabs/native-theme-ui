@@ -2,15 +2,15 @@ import vscode from 'vscode';
 import pkg from '-/pkg';
 import Commands from './commands';
 import {
-  DocumentContentProvider as MultiverseDocumentContentProvider,
-  EditorProvider as MultiverseEditorProvider
-} from './views/multiverse';
+  DocumentContentProvider as Multiplatform FrameworkDocumentContentProvider,
+  EditorProvider as Multiplatform FrameworkEditorProvider
+} from './views/multiplatform-framework';
 
 export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
-    MultiverseDocumentContentProvider.register(context)
+    Multiplatform FrameworkDocumentContentProvider.register(context)
   );
-  context.subscriptions.push(MultiverseEditorProvider.register(context));
+  context.subscriptions.push(Multiplatform FrameworkEditorProvider.register(context));
 
   const commands = new Commands(context);
   Object.getOwnPropertyNames(Object.getPrototypeOf(commands)).forEach(

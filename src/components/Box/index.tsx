@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:55:26
+ * Last Modified: 13-06-2022 01:27:30
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -26,8 +26,8 @@ import React, { FC } from 'react';
 import { Box as DBox, SxProp } from 'dripsy';
 import { ViewProps } from 'react-native';
 import {
-  useColor,
   BackgroundColorProvider,
+  useAutoContrast,
   AutoContrast
 } from '@risserlabs/auto-contrast';
 
@@ -37,14 +37,12 @@ export interface BoxProps extends ViewProps {
 }
 
 const Box: FC<BoxProps> = (props: BoxProps) => {
-  const sx: SxProp = {
+  const sx = useAutoContrast(props, {
     ...styles.box,
     ...props.sx
-  };
-  const color = useColor(props, sx);
-  // const color = useColor(props, sx, sx.bg || sx.backgroundColor);
+  });
   return (
-    <DBox {...props} sx={{ ...sx, ...(color ? { color } : {}) }}>
+    <DBox {...props} sx={sx}>
       <BackgroundColorProvider sx={sx}>
         {props.children}
       </BackgroundColorProvider>

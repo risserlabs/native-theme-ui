@@ -2,7 +2,7 @@ import Document from './document';
 import DocumentContentProvider from './documentContentProvider';
 import EditorProvider from './editorProvider';
 
-export const protocol = 'multiverse';
+export const protocol = 'multiplatform-framework';
 
 export const extension = 'multi';
 

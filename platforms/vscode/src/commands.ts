@@ -5,7 +5,7 @@ export default class Commands {
 
   helloWorld() {
     vscode.window.showInformationMessage(
-      'Hello World from multiverse in a web extension host!'
+      'Hello World from multiplatform-framework in a web extension host!'
     );
   }
 }

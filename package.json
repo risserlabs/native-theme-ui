@@ -1,12 +1,12 @@
 {
-  "name": "multiverse",
+  "name": "multiplatform-framework",
   "version": "0.0.1",
   "description": "write once, render anywhere",
   "private": true,
-  "homepage": "https://gitlab.com/bitspur/community/multiverse",
-  "repository": "git@gitlab.com:bitspur/community/multiverse.git",
+  "homepage": "https://gitlab.com/bitspur/community/multiplatform-framework",
+  "repository": "git@gitlab.com:bitspur/community/multiplatform-framework.git",
   "bugs": {
-    "url": "https://gitlab.com/bitspur/community/multiverse",
+    "url": "https://gitlab.com/bitspur/community/multiplatform-framework",
     "email": "howdy@bitspur.com"
   },
   "license": "Apache-2.0",

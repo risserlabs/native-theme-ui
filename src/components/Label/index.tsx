@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:56:55
+ * Last Modified: 13-06-2022 01:28:42
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,7 +25,7 @@
 import React, { FC } from 'react';
 import { Text as DText, SxProp } from 'dripsy';
 import { TextProps as RNTextProps } from 'react-native';
-import { AutoContrast, useColor } from '@risserlabs/auto-contrast';
+import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
 
 export interface TextProps extends RNTextProps {
   autoContrast?: AutoContrast;
@@ -33,12 +33,11 @@ export interface TextProps extends RNTextProps {
 }
 
 const Label: FC<TextProps> = (props: TextProps) => {
-  const sx: SxProp = {
+  const sx = useAutoContrast(props, {
     ...styles.text,
     ...props.sx
-  };
-  const color = useColor(props, sx);
-  return <DText {...props} sx={{ ...sx, ...(color ? { color } : {}) }} />;
+  });
+  return <DText {...props} sx={sx} />;
 };
 
 Label.defaultProps = {};

@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:56:49
+ * Last Modified: 13-06-2022 01:28:14
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,7 +25,7 @@
 import React, { FC } from 'react';
 import { TextInput as DTextInput, SxProp } from 'dripsy';
 import { TextInputProps as RNTextInputProps } from 'react-native';
-import { useColor } from '@risserlabs/auto-contrast';
+import { useAutoContrast } from '@risserlabs/auto-contrast';
 import useThemeLookup from '../../hooks/useThemeLookup';
 
 export interface InputProps extends RNTextInputProps {
@@ -37,18 +37,17 @@ export interface InputProps extends RNTextInputProps {
 
 const Input: FC<InputProps> = (props: InputProps) => {
   const themeLookup = useThemeLookup();
-  const sxProp: SxProp = {
+  const sx = useAutoContrast(props, {
     ...styles.input,
     ...props.sx
-  };
-  const color = useColor(props, sxProp);
+  });
   return (
     <DTextInput
       {...props}
       placeholderTextColor={themeLookup('color', props.placeholderTextColor)}
       selectionColor={themeLookup('color', props.selectionColor)}
       underlineColorAndroid={themeLookup('color', props.underlineColorAndroid)}
-      sx={{ ...sxProp, ...(color ? { color } : {}) }}
+      sx={sx}
     />
   );
 };

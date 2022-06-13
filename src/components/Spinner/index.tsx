@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:31
+ * Last Modified: 13-06-2022 01:09:00
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,7 +25,6 @@
 import React, { FC } from 'react';
 import { ActivityIndicator as DActivityIndicator, SxProp } from 'dripsy';
 import { ActivityIndicatorProps as RNActivityIndicator } from 'react-native';
-import { useColor } from '@risserlabs/auto-contrast';
 import useThemeLookup from '../../hooks/useThemeLookup';
 
 export interface ActivityIndicatorProps extends RNActivityIndicator {

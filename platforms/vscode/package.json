@@ -1,6 +1,6 @@
 {
-  "name": "@multiverse/vscode",
-  "displayName": "multiverse",
+  "name": "@multiplatform/vscode",
+  "displayName": "multiplatform-framework",
   "description": "write once, render anywhere",
   "version": "0.0.1",
   "engines": {
@@ -97,20 +97,20 @@
   },
   "browser": "./dist/extension.js",
   "activationEvents": [
-    "onCommand:multiverse.helloWorld",
-    "onCustomEditor:multiverseEdit.multi"
+    "onCommand:multiplatform-framework.helloWorld",
+    "onCustomEditor:multiplatform-frameworkEdit.multi"
   ],
   "contributes": {
     "commands": [
       {
-        "command": "multiverse.helloWorld",
+        "command": "multiplatform-framework.helloWorld",
         "title": "Hello World"
       }
     ],
     "customEditors": [
       {
-        "viewType": "multiverseEdit.multi",
-        "displayName": "Multiverse",
+        "viewType": "multiplatform-frameworkEdit.multi",
+        "displayName": "Multiplatform Framework",
         "selector": [
           {
             "filenamePattern": "**/*.multi"

@@ -6,7 +6,7 @@ import HomeScreen from '-/screens/Home';
 const Home: NextPage = () => (
   <>
     <Head>
-      <title>Multiverse</title>
+      <title>Multiplatform Framework</title>
       <meta name="description" content="write once, render anywhere" />
       <link rel="icon" href="/favicon.ico" />
     </Head>

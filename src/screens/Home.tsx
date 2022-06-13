@@ -4,7 +4,7 @@ import { Text } from 'react-native';
 export interface HomeScreenProps {}
 
 const HomeScreen: FC<HomeScreenProps> = (_props: HomeScreenProps) => (
-  <Text>Hello, multiverse!</Text>
+  <Text>Hello, multiplatform-framework!</Text>
 );
 
 export default HomeScreen;
