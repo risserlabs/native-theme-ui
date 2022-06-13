@@ -3,7 +3,7 @@
 # File Created: 23-01-2022 02:18:40
 # Author: Clay Risser
 # -----
-# Last Modified: 13-06-2022 01:22:48
+# Last Modified: 13-06-2022 01:56:25
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -27,6 +27,8 @@ include $(MKPM)/envcache
 include $(MKPM)/mkchain
 include $(MKPM)/yarn
 include ../../shared.mk
+
+export NEXT ?= $(call yarn_binary,next)
 
 ACTIONS += install ##
 $(ACTION)/install: $(PROJECT_ROOT)/package.json package.json
@@ -57,6 +59,11 @@ ACTIONS += test~lint ##
 $(ACTION)/test: $(call git_deps,\.([jt]sx?)$$)
 	-@$(call jest,$?,$(ARGS))
 	@$(call done,test)
+
+.PHONY: start +start
+start: | ~install +start
++start:
+	@$(NEXT) dev
 
 .PHONY: clean
 clean: ##
