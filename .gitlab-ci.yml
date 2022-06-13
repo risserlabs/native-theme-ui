@@ -3,9 +3,7 @@ stages:
 
 visual-regression:
   stage: test
-  image: registry.gitlab.com/risserlabs/community/images/node:16.14.2
-  before_script:
-    - apt update && apt install -y graphicsmagick chromium make git-lfs
+  image: registry.gitlab.com/risserlabs/community/images/loki:0.0.1
   script:
     - yarn
     - make -s src/vr-test || true
