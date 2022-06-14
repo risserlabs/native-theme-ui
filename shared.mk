@@ -3,7 +3,7 @@
 # File Created: 23-01-2022 02:18:40
 # Author: Clay Risser
 # -----
-# Last Modified: 13-06-2022 01:56:07
+# Last Modified: 14-06-2022 05:52:52
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -62,6 +62,6 @@ ifneq ($(call ternary,command jq --version,1),1)
 	@$(call requires_pkg,jq,https://git-scm.com)
 endif
 ifneq ($(call ternary,command gm -version,1),1)
-	@$(call requires_pkg,graphicsmagic,https://git-scm.com)
+	@$(call requires_pkg,graphicsmagick,http://www.graphicsmagick.org)
 endif
 	@$(TOUCH) $(MKPM_TMP)/requires
