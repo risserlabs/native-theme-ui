@@ -1,11 +1,11 @@
 /**
- * File: /components/Button/index.tsx
+ * File: /components/Select/index.tsx
  * Project: -
- * File Created: 17-06-2022 07:34:18
- * Author: Clay Risser
+ * File Created: 17-06-2022 06:47:48
+ * Author: Harikittu46
  * -----
- * Last Modified: 17-06-2022 08:23:08
- * Modified By: Clay Risser
+ * Last Modified: 17-06-2022 08:12:12
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -24,18 +24,17 @@
 
 import React, { FC } from 'react';
 import { AutoContrast } from '@risserlabs/auto-contrast';
-// import { Pressable as RNPressable } from 'react-native';
-import { Pressable as DPressable, SxProp } from 'dripsy';
-
-type ButtonProps = {
-  autoContrast?: AutoContrast;
-  sx?: SxProp;
+type SelectProps = {
+  autoContrast: string;
 };
 
-const Button: FC<ButtonProps> = (props: ButtonProps) => {
-  return <DPressable sx={props.sx}>Hello</DPressable>;
+const Select: FC<SelectProps> = (Props: SelectProps) => {
+  return (
+    <div>
+      <h1>Select hello</h1>
+    </div>
+  );
 };
 
-Button.defaultProps = {};
-
-export default Button;
+Select.defaultProps = {};
+export default Select;

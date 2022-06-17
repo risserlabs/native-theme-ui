@@ -1,11 +1,11 @@
 /**
- * File: /components/Button/index.tsx
+ * File: /components/Container/index.tsx
  * Project: -
- * File Created: 17-06-2022 07:34:18
- * Author: Clay Risser
+ * File Created: 17-06-2022 13:07:00
+ * Author: ajithkrm6
  * -----
- * Last Modified: 17-06-2022 08:23:08
- * Modified By: Clay Risser
+ * Last Modified: 17-06-2022 18:00:10
+ * Modified By: ajithkrm6
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -24,18 +24,13 @@
 
 import React, { FC } from 'react';
 import { AutoContrast } from '@risserlabs/auto-contrast';
-// import { Pressable as RNPressable } from 'react-native';
-import { Pressable as DPressable, SxProp } from 'dripsy';
 
-type ButtonProps = {
-  autoContrast?: AutoContrast;
-  sx?: SxProp;
+type ContainerProps = {
+  autoContrast: AutoContrast;
+};
+const Container: FC<ContainerProps> = (props: ContainerProps) => {
+  return <h1>Container This is me</h1>;
 };
 
-const Button: FC<ButtonProps> = (props: ButtonProps) => {
-  return <DPressable sx={props.sx}>Hello</DPressable>;
-};
-
-Button.defaultProps = {};
-
-export default Button;
+Container.defaultProps = {};
+export default Container;

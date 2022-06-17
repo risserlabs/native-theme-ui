@@ -1,11 +1,11 @@
 /**
- * File: /components/Button/index.tsx
+ * File: /components/Select/select.stories.tsx
  * Project: -
- * File Created: 17-06-2022 07:34:18
- * Author: Clay Risser
+ * File Created: 17-06-2022 06:16:36
+ * Author: Harikittu46
  * -----
- * Last Modified: 17-06-2022 08:23:08
- * Modified By: Clay Risser
+ * Last Modified: 17-06-2022 08:09:42
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -23,19 +23,9 @@
  */
 
 import React, { FC } from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
-// import { Pressable as RNPressable } from 'react-native';
-import { Pressable as DPressable, SxProp } from 'dripsy';
+import { storiesOf } from '../../storybook';
+import Select from './index';
 
-type ButtonProps = {
-  autoContrast?: AutoContrast;
-  sx?: SxProp;
-};
-
-const Button: FC<ButtonProps> = (props: ButtonProps) => {
-  return <DPressable sx={props.sx}>Hello</DPressable>;
-};
-
-Button.defaultProps = {};
-
-export default Button;
+storiesOf('Select', module).add('with background', () => (
+  <Select autoContrast={''}></Select>
+));
