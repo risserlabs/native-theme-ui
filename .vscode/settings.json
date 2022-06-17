@@ -138,5 +138,6 @@
     "**/.yarn": true,
     "**/node_modules": true,
     "**/yarn.lock": true
-  }
+  },
+  "vscode-as-git-mergetool.settingsAssistantOnStartup": false
 }
