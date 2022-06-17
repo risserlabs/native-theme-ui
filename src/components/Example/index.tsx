@@ -4,8 +4,8 @@
  * File Created: 14-06-2022 07:29:28
  * Author: Clay Risser
  * -----
- * Last Modified: 14-06-2022 08:01:37
- * Modified By: Clay Risser
+ * Last Modified: 17-06-2022 05:40:36
+ * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -26,7 +26,6 @@ import React, { FC } from 'react';
 import { Box as DBox, Pressable as DPressable } from 'dripsy';
 import { useAutoContrast } from '@risserlabs/auto-contrast';
 import {
-  PressableProps as DPressableProps,
   BoxProps as DBoxProps
 } from '../../dripsyProps';
 
