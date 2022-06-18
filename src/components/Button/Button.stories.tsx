@@ -1,8 +1,8 @@
 /**
  * File: /components/Button/Button.stories.tsx
  * Project: -
- * File Created: 15-06-2022 06:38:12
- * Author: K S R P BHUSHAN
+ * File Created: 17-06-2022 07:34:26
+ * Author: Clay Risser
  * -----
  * Last Modified: 18-06-2022 00:24:30
  * Modified By: K S R P BHUSHAN
@@ -26,4 +26,6 @@ import React from 'react';
 import { storiesOf } from '../../storybook';
 import Button from './index';
 
-storiesOf('Button', module).add('with background', () => <Button></Button>);
+storiesOf('Button', module)
+  .add('with green color', () => <Button sx={{ backgroundColor: 'green' }} />)
+  .add('with blue color', () => <Button sx={{ backgroundColor: 'blue' }} />);
