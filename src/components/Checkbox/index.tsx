@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 01:05:11
  * Author: Lavanya Katari
  * -----
- * Last Modified: 18-06-2022 01:17:30
+ * Last Modified: 18-06-2022 06:41:53
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,26 +24,16 @@
 
 import React, { FC } from 'react';
 import { AutoContrast } from '@risserlabs/auto-contrast';
+import ECheckbox from 'expo-checkbox';
 
-type CheckBoxProps = {
-  autocontrast?: AutoContrast;
-};
-const CheckBox: FC<CheckBoxProps> = (Props: CheckBoxProps) => {
-  return (
-    <div
-      style={{
-        backgroundColor: 'purple',
-        padding: 40,
-        borderRadius: 15,
-        color: 'white',
-        width: 1200
-      }}
-    >
-      CheckBox
-    </div>
-  );
+type CheckboxProps = {
+  autoContrast?: AutoContrast;
 };
 
-CheckBox.defaultProps = {};
+const Checkbox: FC<CheckboxProps> = (props: CheckboxProps) => {
+  return <ECheckbox />;
+};
 
-export default CheckBox;
+Checkbox.defaultProps = {};
+
+export default Checkbox;
