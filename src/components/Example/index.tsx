@@ -25,9 +25,7 @@
 import React, { FC } from 'react';
 import { Box as DBox, Pressable as DPressable } from 'dripsy';
 import { useAutoContrast } from '@risserlabs/auto-contrast';
-import {
-  BoxProps as DBoxProps
-} from '../../dripsyProps';
+import { BoxProps as DBoxProps } from '../../dripsyProps';
 
 type ExampleProps = DPressableProps &
   DBoxProps & {
