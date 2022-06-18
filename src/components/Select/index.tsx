@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 06:47:48
  * Author: Harikittu46
  * -----
- * Last Modified: 17-06-2022 08:12:12
- * Modified By: Harikittu46
+ * Last Modified: 18-06-2022 06:50:57
+ * Modified By: Hari Krishna
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -24,16 +24,17 @@
 
 import React, { FC } from 'react';
 import { AutoContrast } from '@risserlabs/auto-contrast';
+import { color } from '@storybook/addon-knobs';
+import { Picker as EPicker } from '@react-native-picker/picker';
+import { SxProp } from 'dripsy';
+
 type SelectProps = {
-  autoContrast: string;
+  autoContrast?: AutoContrast;
+  sx?: SxProp;
 };
 
-const Select: FC<SelectProps> = (Props: SelectProps) => {
-  return (
-    <div>
-      <h1>Select hello</h1>
-    </div>
-  );
+const Select: FC<SelectProps> = (props: SelectProps) => {
+  return <EPicker></EPicker>;
 };
 
 Select.defaultProps = {};
