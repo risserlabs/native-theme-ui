@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 01:05:11
  * Author: Lavanya Katari
  * -----
- * Last Modified: 17-06-2022 07:26:24
+ * Last Modified: 18-06-2022 00:21:33
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -29,8 +29,8 @@ type CheckBox = {
   autocontrast: AutoContrast;
 };
 
-const CheckBox: FC = () => {
-  return <h1>CheckBox This is Me:</h1>;
+const CheckBox: FC<CheckBoxProps> = (Props: CheckBoxProps) => {
+  return <h1>CheckBox This is Me</h1>;
 };
 
 CheckBox.defaultProps = {};

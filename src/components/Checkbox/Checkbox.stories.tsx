@@ -4,7 +4,7 @@
  * File Created: 15-06-2022 06:37:48
  * Author: Lavanya Katari
  * -----
- * Last Modified: 17-06-2022 07:01:56
+ * Last Modified: 18-06-2022 00:00:51
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,7 +25,6 @@
 import React from 'react';
 import { storiesOf } from '../../storybook';
 import CheckBox from './index';
-
 storiesOf('CheckBox', module).add('with background', () => (
   <CheckBox></CheckBox>
 ));
