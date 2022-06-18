@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 02:19:03
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 17-06-2022 07:02:05
+ * Last Modified: 18-06-2022 00:52:41
  * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,13 +23,31 @@
  */
 
 import React, { FC } from 'react';
+import { AutoContrast } from '@risserlabs/auto-contrast';
+//  import { Pressable as DPressable } from 'react-native';
+import { Pressable as DPressable } from 'dripsy';
+import { Button as RNButton } from 'react-native';
 
-const Button = () => {
+type ButtonProps = {
+  autoContrast?: AutoContrast;
+};
+
+const Button: FC<ButtonProps> = (props: ButtonProps) => {
   return (
-    <div>
-      <h1>Button this is me</h1>
+    <div
+      style={{
+        backgroundColor: 'black',
+        padding: 10,
+        borderRadius: 5,
+        color: 'white',
+        width: 200
+      }}
+    >
+      button
     </div>
   );
 };
+
+Button.defaultProps = {};
 
 export default Button;
