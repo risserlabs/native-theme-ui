@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 06:47:48
  * Author: Harikittu46
  * -----
- * Last Modified: 17-06-2022 08:12:12
- * Modified By: Harikittu46
+ * Last Modified: 18-06-2022 00:41:44
+ * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -25,15 +25,11 @@
 import React, { FC } from 'react';
 import { AutoContrast } from '@risserlabs/auto-contrast';
 type SelectProps = {
-  autoContrast: string;
+  autoContrast?: AutoContrast;
 };
 
 const Select: FC<SelectProps> = (Props: SelectProps) => {
-  return (
-    <div>
-      <h1>Select hello</h1>
-    </div>
-  );
+  return <h1>Select hello</h1>;
 };
 
 Select.defaultProps = {};
