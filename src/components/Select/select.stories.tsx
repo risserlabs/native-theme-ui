@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 06:16:36
  * Author: Harikittu46
  * -----
- * Last Modified: 17-06-2022 08:09:42
- * Modified By: Harikittu46
+ * Last Modified: 18-06-2022 00:39:55
+ * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -26,6 +26,4 @@ import React, { FC } from 'react';
 import { storiesOf } from '../../storybook';
 import Select from './index';
 
-storiesOf('Select', module).add('with background', () => (
-  <Select autoContrast={''}></Select>
-));
+storiesOf('Select', module).add('with background', () => <Select></Select>);
