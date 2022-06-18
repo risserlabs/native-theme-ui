@@ -1,10 +1,10 @@
 /**
  * File: /components/Button/index.tsx
  * Project: -
- * File Created: 17-06-2022 02:19:03
- * Author: K S R P BHUSHAN
+ * File Created: 17-06-2022 07:34:18
+ * Author: Clay Risser
  * -----
- * Last Modified: 17-06-2022 07:02:05
+ * Last Modified: 18-06-2022 00:52:41
  * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,13 +23,19 @@
  */
 
 import React, { FC } from 'react';
+import { AutoContrast } from '@risserlabs/auto-contrast';
+// import { Pressable as RNPressable } from 'react-native';
+import { Pressable as DPressable, SxProp } from 'dripsy';
 
-const Button = () => {
-  return (
-    <div>
-      <h1>Button this is me</h1>
-    </div>
-  );
+type ButtonProps = {
+  autoContrast?: AutoContrast;
+  sx?: SxProp;
 };
+
+const Button: FC<ButtonProps> = (props: ButtonProps) => {
+  return <DPressable sx={props.sx}>Hello</DPressable>;
+};
+
+Button.defaultProps = {};
 
 export default Button;
