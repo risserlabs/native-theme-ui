@@ -1,10 +1,10 @@
 /**
- * File: /components/Checkbox/Checkbox.stories.tsx
+ * File: /components/Slider/Slider.stories.tsx
  * Project: -
- * File Created: 15-06-2022 06:37:48
+ * File Created: 20-06-2022 06:25:43
  * Author: Lavanya Katari
  * -----
- * Last Modified: 20-06-2022 06:14:22
+ * Last Modified: 20-06-2022 06:06:21
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,7 +24,7 @@
 
 import React from "react";
 import { storiesOf } from "../../storybook";
-import CheckBox from "./index";
-storiesOf("CheckBox", module).add("with background", () => (
-  <CheckBox></CheckBox>
+
+storiesOf("Slider", module).add("with background", () => (
+  <Slider>that is the</Slider>
 ));
