@@ -24,7 +24,7 @@
 
 import React from 'react';
 import { storiesOf } from '../../storybook';
-import CheckBox from './index';
-storiesOf('CheckBox', module).add('with background', () => (
-  <CheckBox></CheckBox>
+import Checkbox from './index';
+storiesOf('Checkbox', module).add('with background', () => (
+  <Checkbox></Checkbox>
 ));
