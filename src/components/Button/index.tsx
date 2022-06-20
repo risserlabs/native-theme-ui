@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 07:34:18
  * Author: Clay Risser
  * -----
- * Last Modified: 18-06-2022 00:52:41
- * Modified By: K S R P BHUSHAN
+ * Last Modified: 20-06-2022 08:17:45
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -26,16 +26,28 @@ import React, { FC } from 'react';
 import { AutoContrast } from '@risserlabs/auto-contrast';
 // import { Pressable as RNPressable } from 'react-native';
 import { Pressable as DPressable, SxProp } from 'dripsy';
+import { PressableProps as DPressableProps } from '../../dripsyProps';
 
-type ButtonProps = {
+type ButtonProps = DPressableProps & {
   autoContrast?: AutoContrast;
-  sx?: SxProp;
 };
 
 const Button: FC<ButtonProps> = (props: ButtonProps) => {
-  return <DPressable sx={props.sx}>Hello</DPressable>;
+  const sx: SxProp = {
+    ...styles.dPressable,
+    ...props.sx
+  };
+  return (
+    <DPressable {...props} sx={sx}>
+      {props.children}
+    </DPressable>
+  );
 };
 
 Button.defaultProps = {};
+
+export const styles = {
+  dPressable: {}
+};
 
 export default Button;
