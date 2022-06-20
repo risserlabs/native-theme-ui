@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 06:16:36
  * Author: Harikittu46
  * -----
- * Last Modified: 18-06-2022 00:39:55
- * Modified By: Lavanya Katari
+ * Last Modified: 20-06-2022 02:27:20
+ * Modified By: Hari Krishna
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
+import React from 'react';
 import { storiesOf } from '../../storybook';
 import Select from './index';
 

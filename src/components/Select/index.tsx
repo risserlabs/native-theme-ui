@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 06:47:48
  * Author: Harikittu46
  * -----
- * Last Modified: 18-06-2022 00:41:44
- * Modified By: Lavanya Katari
+ * Last Modified: 20-06-2022 00:14:16
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -24,12 +24,14 @@
 
 import React, { FC } from 'react';
 import { AutoContrast } from '@risserlabs/auto-contrast';
+import { Picker as EPicker } from '@react-native-picker/picker';
+
 type SelectProps = {
   autoContrast?: AutoContrast;
 };
 
-const Select: FC<SelectProps> = (Props: SelectProps) => {
-  return <h1>Select hello</h1>;
+const Select: FC<SelectProps> = (props: SelectProps) => {
+  return <EPicker></EPicker>;
 };
 
 Select.defaultProps = {};
