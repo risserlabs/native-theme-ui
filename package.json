@@ -1,0 +1,40 @@
+{
+  "name": "multiplatform-framework",
+  "version": "0.0.1",
+  "description": "write once, render anywhere",
+  "private": true,
+  "homepage": "https://gitlab.com/bitspur/community/multiplatform-framework",
+  "repository": "git@gitlab.com:bitspur/community/multiplatform-framework.git",
+  "bugs": {
+    "url": "https://gitlab.com/bitspur/community/multiplatform-framework",
+    "email": "howdy@bitspur.com"
+  },
+  "license": "Apache-2.0",
+  "author": "BitSpur, Inc. <howdy@bitspur.com> (https://bitspur.com)",
+  "workspaces": [
+    "src",
+    "platforms/*"
+  ],
+  "scripts": {
+    "vscode:compile": "cd platforms/vscode && yarn run vscode:compile",
+    "vscode:run-in-browser": "cd platforms/vscode && yarn run vscode:run-in-browser",
+    "vscode:watch": "cd platforms/vscode && yarn run vscode:watch"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "none"
+  },
+  "packageManager": "yarn@3.1.0",
+  "resolutions": {
+    "@storybook/addon-react-native-web@0.0.7": "patch:@storybook/addon-react-native-web@npm:0.0.7#.yarn/patches/@storybook-addon-react-native-web-npm-0.0.7-49dddd98a4"
+  },
+  "devDependencies": {
+    "@types/prettier": "^2.6.3",
+    "cspell": "^6.1.2",
+    "expo": "^44.0.6",
+    "prettier": "^2.6.2"
+  },
+  "dependencies": {
+    "expo-checkbox": "^2.1.0"
+  }
+}
