@@ -1,11 +1,11 @@
 /**
- * File: /components/Box-1/box.story.tsx
+ * File: /components/MenuButton/MenuButton.stories.tsx
  * Project: -
- * File Created: 16-06-2022 23:04:13
- * Author: Lavanya Katari
+ * File Created: 19-06-2022 06:50:53
+ * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 16-06-2022 23:04:16
- * Modified By: Lavanya Katari
+ * Last Modified: 20-06-2022 01:46:47
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,5 +22,14 @@
  * limitations under the License.
  */
 
-import React, {FC} from 'react'
-interface BoxProps 
+import React from 'react';
+import { storiesOf } from '../../storybook';
+import MenuButton from './index';
+
+storiesOf('MenuButton', module)
+  .add('with green color', () => (
+    <MenuButton sx={{ backgroundColor: 'green' }} />
+  ))
+  .add('with blue color', () => (
+    <MenuButton sx={{ backgroundColor: 'blue' }} />
+  ));
