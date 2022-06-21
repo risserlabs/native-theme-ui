@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 07:34:26
  * Author: Clay Risser
  * -----
- * Last Modified: 21-06-2022 03:59:21
- * Modified By: K S R P BHUSHAN
+ * Last Modified: 21-06-2022 06:39:45
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -26,14 +26,22 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { storiesOf } from '../../storybook';
 import Button from './index';
+import Text from '../Text';
 
 storiesOf('Button', module)
   .add('default', () => <Button>Click Me</Button>)
-  .add('with green color', () => (
-    <Button sx={{ bg: 'green' }}>Click Me 456</Button>
+  .add('with auto contrast', () => (
+    <Button sx={{ bg: 'primary', color: 'primary' }}>Click Me 456</Button>
   ))
-  .add('with blue color', () => (
-    <Button sx={{ bg: 'blue' }}>Click Me 789</Button>
+  .add('with hidden props', () => (
+    <Button hidden sx={{ bg: 'blue' }}>
+      Click Me 789
+    </Button>
+  ))
+  .add('with text', () => (
+    <Button>
+      <Text>hello</Text>
+    </Button>
   ))
   .add('with onPress', () => (
     <Button sx={{ bg: 'blue' }} onPress={action('I was pressed')}>

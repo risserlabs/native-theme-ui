@@ -1,10 +1,10 @@
 /**
- * File: /dripsyProps.ts
+ * File: /dripsyHelper.ts
  * Project: -
  * File Created: 14-06-2022 07:52:25
  * Author: Clay Risser
  * -----
- * Last Modified: 14-06-2022 07:53:29
+ * Last Modified: 21-06-2022 06:31:18
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -21,6 +21,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import { SxProp } from 'dripsy';
+
 export type PressableProps = Pick<
   Omit<
     | (import('@dripsy/core').StyledProps<keyof import('@dripsy/core').Theme> &
@@ -150,3 +153,108 @@ export type BoxProps = import('@dripsy/core').StyledProps<
         children?: import('react').ReactNode;
       })
   );
+
+export type DPProps = import('@dripsy/core').StyledProps<'text'> &
+  (
+    | (Pick<
+        import('@expo/html-elements/build/primitives/Text').TextProps,
+        | 'testID'
+        | 'onLayout'
+        | 'nativeID'
+        | 'accessible'
+        | 'accessibilityActions'
+        | 'accessibilityLabel'
+        | 'accessibilityState'
+        | 'accessibilityHint'
+        | 'accessibilityValue'
+        | 'onAccessibilityAction'
+        | 'accessibilityLiveRegion'
+        | 'importantForAccessibility'
+        | 'accessibilityElementsHidden'
+        | 'accessibilityViewIsModal'
+        | 'onAccessibilityEscape'
+        | 'onAccessibilityTap'
+        | 'onMagicTap'
+        | 'accessibilityIgnoresInvertColors'
+        | 'onPress'
+        | 'onLongPress'
+        | 'key'
+        | 'allowFontScaling'
+        | 'ellipsizeMode'
+        | 'lineBreakMode'
+        | 'numberOfLines'
+        | 'onTextLayout'
+        | 'maxFontSizeMultiplier'
+        | 'adjustsFontSizeToFit'
+        | 'minimumFontScale'
+        | 'suppressHighlighting'
+        | 'selectable'
+        | 'selectionColor'
+        | 'textBreakStrategy'
+        | 'dataDetectorType'
+        | keyof import('@expo/html-elements/build/primitives/Text').WebTextProps
+      > &
+        import('react').RefAttributes<
+          import('react').Component<
+            import('@expo/html-elements/build/primitives/Text').TextProps,
+            any,
+            any
+          >
+        >)
+    | (Pick<
+        Omit<
+          import('react-native').TextProps &
+            import('react').ClassAttributes<typeof import('react-native').Text>,
+          'style' | 'accessibilityRole'
+        > &
+          import('@expo/html-elements/build/primitives/Text').WebTextProps & {
+            children?: import('react').ReactNode;
+          },
+        | 'testID'
+        | 'children'
+        | 'onLayout'
+        | 'nativeID'
+        | 'accessible'
+        | 'accessibilityActions'
+        | 'accessibilityLabel'
+        | 'accessibilityState'
+        | 'accessibilityHint'
+        | 'accessibilityValue'
+        | 'onAccessibilityAction'
+        | 'accessibilityLiveRegion'
+        | 'importantForAccessibility'
+        | 'accessibilityElementsHidden'
+        | 'accessibilityViewIsModal'
+        | 'onAccessibilityEscape'
+        | 'onAccessibilityTap'
+        | 'onMagicTap'
+        | 'accessibilityIgnoresInvertColors'
+        | 'onPress'
+        | 'onLongPress'
+        | 'key'
+        | 'allowFontScaling'
+        | 'ellipsizeMode'
+        | 'lineBreakMode'
+        | 'numberOfLines'
+        | 'onTextLayout'
+        | 'maxFontSizeMultiplier'
+        | 'adjustsFontSizeToFit'
+        | 'minimumFontScale'
+        | 'suppressHighlighting'
+        | 'selectable'
+        | 'selectionColor'
+        | 'textBreakStrategy'
+        | 'dataDetectorType'
+        | keyof import('@expo/html-elements/build/primitives/Text').WebTextProps
+      > & {
+        ref?:
+          | ((instance: typeof import('react-native').Text | null) => void)
+          | import('react').RefObject<typeof import('react-native').Text>
+          | null
+          | undefined;
+      })
+  );
+
+export interface DripsyStyles {
+  [key: string]: SxProp;
+}

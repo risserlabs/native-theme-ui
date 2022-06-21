@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 07:34:18
  * Author: Clay Risser
  * -----
- * Last Modified: 20-06-2022 08:17:45
+ * Last Modified: 21-06-2022 06:56:29
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,32 +22,56 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
-// import { Pressable as RNPressable } from 'react-native';
-import { Pressable as DPressable, SxProp } from 'dripsy';
-import { PressableProps as DPressableProps } from '../../dripsyProps';
+import React, { FC, ReactNode } from 'react';
+import { Pressable as DPressable } from 'dripsy';
+import {
+  AutoContrast,
+  useAutoContrast,
+  BackgroundColorProvider
+} from '@risserlabs/auto-contrast';
+import {
+  PressableProps as DPressableProps,
+  DripsyStyles
+} from '../../dripsyHelper';
 
 type ButtonProps = DPressableProps & {
   autoContrast?: AutoContrast;
+  children?: ReactNode;
+  hidden?: boolean;
 };
 
 const Button: FC<ButtonProps> = (props: ButtonProps) => {
-  const sx: SxProp = {
+  const sx = useAutoContrast(props, {
     ...styles.dPressable,
+    display: props.hidden ? 'none' : 'inline-block',
     ...props.sx
-  };
+  });
   return (
     <DPressable {...props} sx={sx}>
-      {props.children}
+      <BackgroundColorProvider sx={sx}>
+        {props.children}
+      </BackgroundColorProvider>
     </DPressable>
   );
 };
 
 Button.defaultProps = {};
 
-export const styles = {
-  dPressable: {}
+export const styles: DripsyStyles = {
+  dPressable: {
+    appearance: 'none',
+    bg: 'primary',
+    border: 0,
+    borderRadius: 4,
+    color: 'white',
+    fontSize: 'inherit',
+    lineHeight: 'inherit',
+    px: 3,
+    py: 2,
+    textAlign: 'center',
+    textDecoration: 'none',
+    userSelect: 'none'
+  }
 };
 
 export default Button;
