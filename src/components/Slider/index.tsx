@@ -4,7 +4,7 @@
  * File Created: 20-06-2022 06:24:02
  * Author: Lavanya Katari
  * -----
- * Last Modified: 20-06-2022 06:06:17
+ * Last Modified: 21-06-2022 04:52:11
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -21,3 +21,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import React, { FC } from 'react';
+import { AutoContrast } from '@risserlabs/auto-contrast';
+type SliderProps = {
+  autoContrast?: AutoContrast;
+};
+
+const Slider: FC<SliderProps> = (props: SliderProps) => {
+  return <div>Slider component</div>;
+};
+export default Slider;

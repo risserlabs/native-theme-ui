@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 01:05:11
  * Author: Lavanya Katari
  * -----
- * Last Modified: 20-06-2022 23:23:48
+ * Last Modified: 21-06-2022 02:01:17
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,7 +25,6 @@
 import React, { FC } from 'react';
 import { AutoContrast } from '@risserlabs/auto-contrast';
 import ECheckbox from 'expo-checkbox';
-
 type CheckboxProps = {
   autoContrast?: AutoContrast;
 };
@@ -35,7 +34,6 @@ const Checkbox: FC<CheckboxProps> = (props: CheckboxProps) => {
 };
 
 Checkbox.defaultProps = {};
-
 export const styles = {
   eCheckbox: {}
 };
