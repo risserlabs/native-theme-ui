@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 06:47:48
  * Author: Harikittu46
  * -----
- * Last Modified: 20-06-2022 08:16:42
- * Modified By: Clay Risser
+ * Last Modified: 20-06-2022 23:17:56
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -37,7 +37,7 @@ const Select: FC<SelectProps> = (props: SelectProps) => {
 Select.defaultProps = {};
 
 export const styles = {
-  ePicker: {}
+  EPicker: {}
 };
 
 export default Select;
