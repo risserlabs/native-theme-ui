@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 06:47:48
  * Author: Harikittu46
  * -----
- * Last Modified: 20-06-2022 00:14:16
+ * Last Modified: 20-06-2022 07:33:00
  * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,9 +22,9 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
-import { Picker as EPicker } from '@react-native-picker/picker';
+import React, { FC } from "react";
+import { AutoContrast } from "@risserlabs/auto-contrast";
+import { Picker as EPicker } from "@react-native-picker/picker";
 
 type SelectProps = {
   autoContrast?: AutoContrast;
