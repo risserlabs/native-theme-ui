@@ -5,5 +5,15 @@ type EmbedProps = {
   autoContrast?: AutoContrast;
 };
 const Embed: FC<EmbedProps> = (props: EmbedProps) => {
-  return <div>Embed component</div>;
+  return (
+    <div
+      style={{
+        backgroundColor: 'bisque'
+      }}
+    >
+      Embed component
+    </div>
+  );
 };
+
+export default Embed;
