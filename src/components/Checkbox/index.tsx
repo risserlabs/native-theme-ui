@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 01:05:11
  * Author: Lavanya Katari
  * -----
- * Last Modified: 18-06-2022 06:41:53
+ * Last Modified: 20-06-2022 23:23:48
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -35,5 +35,9 @@ const Checkbox: FC<CheckboxProps> = (props: CheckboxProps) => {
 };
 
 Checkbox.defaultProps = {};
+
+export const styles = {
+  eCheckbox: {}
+};
 
 export default Checkbox;
