@@ -1,10 +1,10 @@
 /**
- * File: /components/Select/index.tsx
+ * File: /components/Forms/Forms.stories.tsx
  * Project: -
- * File Created: 17-06-2022 06:47:48
+ * File Created: 21-06-2022 02:17:52
  * Author: Harikittu46
  * -----
- * Last Modified: 21-06-2022 00:42:23
+ * Last Modified: 21-06-2022 03:37:26
  * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,22 +22,8 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
-import { Picker as EPicker } from '@react-native-picker/picker';
+import React from 'react';
+import { storiesOf } from '../../storybook';
+import Forms from './index';
 
-type SelectProps = {
-  autoContrast?: AutoContrast;
-};
-
-const Select: FC<SelectProps> = (props: SelectProps) => {
-  return <EPicker></EPicker>;
-};
-
-Select.defaultProps = {};
-
-export const styles = {
-  ePicker: {}
-};
-
-export default Select;
+storiesOf('Forms', module).add('with background', () => <Forms></Forms>);
