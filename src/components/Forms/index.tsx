@@ -1,11 +1,11 @@
 /**
- * File: /components/Checkbox/index.tsx
+ * File: /components/Forms/index.tsx
  * Project: -
- * File Created: 17-06-2022 01:05:11
- * Author: Lavanya Katari
+ * File Created: 21-06-2022 02:17:32
+ * Author: Harikittu46
  * -----
- * Last Modified: 21-06-2022 02:01:17
- * Modified By: Lavanya Katari
+ * Last Modified: 21-06-2022 03:43:31
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -24,18 +24,12 @@
 
 import React, { FC } from 'react';
 import { AutoContrast } from '@risserlabs/auto-contrast';
-import ECheckbox from 'expo-checkbox';
-type CheckboxProps = {
+
+type FormProps = {
   autoContrast?: AutoContrast;
 };
-
-const Checkbox: FC<CheckboxProps> = (props: CheckboxProps) => {
-  return <ECheckbox />;
+const Forms: FC<FormProps> = (props: FormProps) => {
+  return <div>Form Component</div>;
 };
 
-Checkbox.defaultProps = {};
-export const styles = {
-  eCheckbox: {}
-};
-
-export default Checkbox;
+export default Forms;

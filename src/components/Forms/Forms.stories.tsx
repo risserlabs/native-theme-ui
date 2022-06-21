@@ -1,11 +1,11 @@
 /**
- * File: /components/Checkbox/index.tsx
+ * File: /components/Forms/Forms.stories.tsx
  * Project: -
- * File Created: 17-06-2022 01:05:11
- * Author: Lavanya Katari
+ * File Created: 21-06-2022 02:17:52
+ * Author: Harikittu46
  * -----
- * Last Modified: 21-06-2022 02:01:17
- * Modified By: Lavanya Katari
+ * Last Modified: 21-06-2022 03:37:26
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,20 +22,8 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
-import ECheckbox from 'expo-checkbox';
-type CheckboxProps = {
-  autoContrast?: AutoContrast;
-};
+import React from 'react';
+import { storiesOf } from '../../storybook';
+import Forms from './index';
 
-const Checkbox: FC<CheckboxProps> = (props: CheckboxProps) => {
-  return <ECheckbox />;
-};
-
-Checkbox.defaultProps = {};
-export const styles = {
-  eCheckbox: {}
-};
-
-export default Checkbox;
+storiesOf('Forms', module).add('with background', () => <Forms></Forms>);

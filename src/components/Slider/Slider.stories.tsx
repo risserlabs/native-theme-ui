@@ -4,7 +4,7 @@
  * File Created: 20-06-2022 06:25:43
  * Author: Lavanya Katari
  * -----
- * Last Modified: 20-06-2022 06:06:21
+ * Last Modified: 21-06-2022 04:19:10
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,9 +22,7 @@
  * limitations under the License.
  */
 
-import React from "react";
-import { storiesOf } from "../../storybook";
-
-storiesOf("Slider", module).add("with background", () => (
-  <Slider>that is the</Slider>
-));
+import React from 'react';
+import { storiesOf } from '../../storybook';
+import Slider from './index';
+storiesOf('Slider', module).add('with background', () => <Slider />);
