@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 07:34:18
  * Author: Clay Risser
  * -----
- * Last Modified: 21-06-2022 06:56:29
+ * Last Modified: 21-06-2022 07:32:30
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import React, { FC, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { Pressable as DPressable } from 'dripsy';
 import {
   AutoContrast,
@@ -30,8 +30,8 @@ import {
   BackgroundColorProvider
 } from '@risserlabs/auto-contrast';
 import {
-  PressableProps as DPressableProps,
-  DripsyStyles
+  DripsyFC,
+  PressableProps as DPressableProps
 } from '../../dripsyHelper';
 
 type ButtonProps = DPressableProps & {
@@ -40,9 +40,9 @@ type ButtonProps = DPressableProps & {
   hidden?: boolean;
 };
 
-const Button: FC<ButtonProps> = (props: ButtonProps) => {
+const Button: DripsyFC<ButtonProps> = (props: ButtonProps) => {
   const sx = useAutoContrast(props, {
-    ...styles.dPressable,
+    ...Button.defaultSx,
     display: props.hidden ? 'none' : 'inline-block',
     ...props.sx
   });
@@ -57,21 +57,19 @@ const Button: FC<ButtonProps> = (props: ButtonProps) => {
 
 Button.defaultProps = {};
 
-export const styles: DripsyStyles = {
-  dPressable: {
-    appearance: 'none',
-    bg: 'primary',
-    border: 0,
-    borderRadius: 4,
-    color: 'white',
-    fontSize: 'inherit',
-    lineHeight: 'inherit',
-    px: 3,
-    py: 2,
-    textAlign: 'center',
-    textDecoration: 'none',
-    userSelect: 'none'
-  }
+Button.defaultSx = {
+  appearance: 'none',
+  bg: 'primary',
+  border: 0,
+  borderRadius: 4,
+  color: 'white',
+  fontSize: 'inherit',
+  lineHeight: 'inherit',
+  px: 3,
+  py: 2,
+  textAlign: 'center',
+  textDecoration: 'none',
+  userSelect: 'none'
 };
 
 export default Button;

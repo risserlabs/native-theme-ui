@@ -4,7 +4,7 @@
  * File Created: 14-06-2022 07:52:25
  * Author: Clay Risser
  * -----
- * Last Modified: 21-06-2022 06:31:18
+ * Last Modified: 21-06-2022 07:28:27
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,7 +22,8 @@
  * limitations under the License.
  */
 
-import { SxProp } from 'dripsy';
+import { FC } from 'react';
+import { SxProp, Sx } from 'dripsy';
 
 export type PressableProps = Pick<
   Omit<
@@ -255,6 +256,4 @@ export type DPProps = import('@dripsy/core').StyledProps<'text'> &
       })
   );
 
-export interface DripsyStyles {
-  [key: string]: SxProp;
-}
+export type DripsyFC<P> = FC<P> & { defaultSx: Sx };
