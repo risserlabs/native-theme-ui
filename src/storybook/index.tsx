@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 22-06-2022 05:33:27
+ * Last Modified: 22-06-2022 06:00:47
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,6 +23,7 @@
  */
 
 import React, { ComponentType } from 'react';
+import { Sx } from 'dripsy';
 export * from './storybook';
 
 export function getProps(args: Record<string, unknown>) {
@@ -58,3 +59,26 @@ export function createArgsStory(
     return <C {...props} {...getProps(args)} sx={getSx(args)} />;
   };
 }
+
+export function createSxArgs(
+  C: ComponentType<Record<string, unknown>> & { defaultSx: Sx }
+) {
+  return {
+    sxBg: C.defaultSx?.bg,
+    sxM: C.defaultSx?.m,
+    sxP: C.defaultSx?.p,
+    sxFontSize: C.defaultSx?.fontSize,
+    sxColor: C.defaultSx?.color,
+    sxHeight: C.defaultSx?.height,
+    sxWidth: C.defaultSx?.width
+  };
+}
+
+export const sxArgTypes = {
+  sxBg: { control: { type: 'color' } },
+  sxColor: { control: { type: 'color' } },
+  sxM: { control: 'number' },
+  sxP: { control: 'number' },
+  sxHeight: { control: 'number' },
+  sxWidth: { control: 'number' }
+};

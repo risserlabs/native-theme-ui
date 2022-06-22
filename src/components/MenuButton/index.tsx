@@ -4,8 +4,8 @@
  * File Created: 19-06-2022 06:50:27
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 22-06-2022 03:35:59
- * Modified By: K S R P BHUSHAN
+ * Last Modified: 22-06-2022 05:37:54
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -32,7 +32,7 @@ type MenuButtonProps = {
 };
 
 const MenuButton: FC<MenuButtonProps> = (props: MenuButtonProps) => {
-  return <DPressable sx={props.sx}>Hello</DPressable>;
+  return <DPressable sx={props.sx}>Menu Button</DPressable>;
 };
 
 MenuButton.defaultProps = {};

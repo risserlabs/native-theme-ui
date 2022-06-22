@@ -4,7 +4,7 @@
  * File Created: 14-06-2022 07:52:25
  * Author: Clay Risser
  * -----
- * Last Modified: 21-06-2022 07:28:27
+ * Last Modified: 22-06-2022 05:58:11
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,9 +23,10 @@
  */
 
 import { FC } from 'react';
-import { SxProp, Sx } from 'dripsy';
+import { Sx } from 'dripsy';
+import { TextInput as RNTextInput } from 'react-native';
 
-export type PressableProps = Pick<
+export type DPressableProps = Pick<
   Omit<
     | (import('@dripsy/core').StyledProps<keyof import('@dripsy/core').Theme> &
         Pick<
@@ -37,7 +38,9 @@ export type PressableProps = Pick<
           React.Component<
             import('react-native').PressableProps &
               React.RefAttributes<import('react-native').View>,
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             any,
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             any
           >
         > & {
@@ -60,7 +63,9 @@ export type PressableProps = Pick<
           React.Component<
             import('react-native').PressableProps &
               React.RefAttributes<import('react-native').View>,
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             any,
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             any
           >
         > & {
@@ -142,12 +147,13 @@ export type PressableProps = Pick<
 > &
   React.RefAttributes<import('react-native').View>;
 
-export type BoxProps = import('@dripsy/core').StyledProps<
+export type DBoxProps = import('@dripsy/core').StyledProps<
   keyof import('@dripsy/core').Theme
 > &
   (
     | (import('react-native').ViewProps &
         import('react').RefAttributes<
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           import('react').Component<import('react-native').ViewProps, any, any>
         >)
     | (import('react-native').ViewProps & {
@@ -198,7 +204,9 @@ export type DPProps = import('@dripsy/core').StyledProps<'text'> &
         import('react').RefAttributes<
           import('react').Component<
             import('@expo/html-elements/build/primitives/Text').TextProps,
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             any,
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             any
           >
         >)
@@ -255,5 +263,34 @@ export type DPProps = import('@dripsy/core').StyledProps<'text'> &
           | undefined;
       })
   );
+
+export type DTextInputProps = Omit<
+  | (import('@dripsy/core').StyledProps<'forms'> &
+      import('react-native').TextInputProps &
+      React.RefAttributes<
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        React.Component<import('react-native').TextInputProps, any, any>
+      >)
+  | (import('@dripsy/core').StyledProps<'forms'> &
+      import('react-native').TextInputProps & {
+        children?: React.ReactNode;
+      })
+  | (import('@dripsy/core').StyledProps<'forms'> &
+      import('react-native').TextInputProps &
+      React.RefAttributes<
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        React.Component<import('react-native').TextInputProps, any, any>
+      > & {
+        children?: React.ReactNode;
+      }),
+  'selectionColor' | 'placeholderTextColor' | 'underlineColorAndroid'
+> & {
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  selectionColor?: (string & {}) | undefined;
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  placeholderTextColor?: (string & {}) | undefined;
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  underlineColorAndroid?: (string & {}) | undefined;
+} & React.RefAttributes<RNTextInput>;
 
 export type DripsyFC<P> = FC<P> & { defaultSx: Sx };

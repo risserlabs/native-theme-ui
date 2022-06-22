@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:56:52
+ * Last Modified: 22-06-2022 06:02:12
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,26 +24,30 @@
 
 import React from 'react';
 import { Box } from 'dripsy';
-import { storiesOf } from '../../storybook';
-import Input from '.';
+import { action } from '@storybook/addon-actions';
+import {
+  storiesOf,
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes
+} from '../../storybook';
+import Input from './index';
 
 storiesOf('Input', module)
-  .add('full width', () => <Input />, {
-    component: Input,
-    status: { type: 'beta' }
-  })
   .add(
-    'with placeholder',
-    () => (
-      <Input
-        placeholderTextColor="primary"
-        placeholder="hello"
-        sx={{ borderColor: 'blue', maxWidth: 200 }}
-      />
-    ),
+    'default',
+    createArgsStory(Input, {
+      onBlur: action('onBlur'),
+      onChange: action('onChange'),
+      onFocus: action('onFocus')
+    }),
     {
-      component: Input,
-      status: { type: 'beta' }
+      args: {
+        ...createSxArgs(Input)
+      },
+      argTypes: {
+        ...sxArgTypes
+      }
     }
   )
   .add(

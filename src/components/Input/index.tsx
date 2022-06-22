@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 01:28:14
+ * Last Modified: 22-06-2022 05:52:59
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,23 +22,20 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { TextInput as DTextInput, SxProp } from 'dripsy';
-import { TextInputProps as RNTextInputProps } from 'react-native';
-import { useAutoContrast } from '@risserlabs/auto-contrast';
+import React from 'react';
+import { TextInput as DTextInput } from 'dripsy';
+import { useAutoContrast, AutoContrast } from '@risserlabs/auto-contrast';
 import useThemeLookup from '../../hooks/useThemeLookup';
+import { DripsyFC, DTextInputProps } from '../../dripsyHelper';
 
-export interface InputProps extends RNTextInputProps {
-  sx?: SxProp;
-  selectionColor?: string;
-  placeholderTextColor?: string;
-  underlineColorAndroid?: string;
-}
+export type InputProps = DTextInputProps & {
+  autoContrast?: AutoContrast;
+};
 
-const Input: FC<InputProps> = (props: InputProps) => {
+const Input: DripsyFC<InputProps> = (props: InputProps) => {
   const themeLookup = useThemeLookup();
   const sx = useAutoContrast(props, {
-    ...styles.input,
+    ...Input.defaultSx,
     ...props.sx
   });
   return (
@@ -56,21 +53,19 @@ Input.defaultProps = {
   sx: {}
 };
 
-export const styles = {
-  input: {
-    display: 'block',
-    width: '100%',
-    p: 2,
-    margin: 0,
-    minWidth: 0,
-    // appearance: 'none',
-    fontSize: 1,
-    lineHeight: 1,
-    border: '1px solid',
-    borderRadius: 4,
-    color: 'text',
-    bg: 'transparent'
-  }
+Input.defaultSx = {
+  display: 'block',
+  width: '100%',
+  p: 2,
+  margin: 0,
+  minWidth: 0,
+  appearance: 'none',
+  fontSize: 1,
+  lineHeight: 1,
+  border: '1px solid',
+  borderRadius: 4,
+  color: 'text',
+  bg: 'transparent'
 };
 
 export default Input;

@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 07:34:26
  * Author: Clay Risser
  * -----
- * Last Modified: 22-06-2022 05:35:11
+ * Last Modified: 22-06-2022 06:01:33
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,7 +24,12 @@
 
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { storiesOf, createArgsStory } from '../../storybook';
+import {
+  storiesOf,
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes
+} from '../../storybook';
 import Button from './index';
 import Text from '../Text';
 
@@ -43,13 +48,7 @@ storiesOf('Button', module)
         hidden: Button.defaultProps?.hidden,
         autoContrast: Button.defaultProps?.autoContrast,
         disabled: Button.defaultProps?.disabled,
-        sxBg: Button.defaultSx.bg,
-        sxM: Button.defaultSx.m,
-        sxP: Button.defaultSx.p,
-        sxFontSize: Button.defaultSx.fontSize,
-        sxColor: Button.defaultSx.color,
-        sxHeight: Button.defaultSx.height,
-        sxWidth: Button.defaultSx.width
+        ...createSxArgs(Button)
       },
       argTypes: {
         hidden: { control: { type: 'boolean' } },
@@ -58,12 +57,7 @@ storiesOf('Button', module)
           options: ['A', 'AA', 'AAA', false],
           control: 'select'
         },
-        sxBg: { control: { type: 'color' } },
-        sxColor: { control: { type: 'color' } },
-        sxM: { control: 'number' },
-        sxP: { control: 'number' },
-        sxHeight: { control: 'number' },
-        sxWidth: { control: 'number' }
+        ...sxArgTypes
       }
     }
   )
