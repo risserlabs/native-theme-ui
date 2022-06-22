@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 07:34:26
  * Author: Clay Risser
  * -----
- * Last Modified: 21-06-2022 08:06:03
+ * Last Modified: 22-06-2022 05:35:11
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,50 +24,51 @@
 
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { storiesOf, createDefaultStory } from '../../storybook';
+import { storiesOf, createArgsStory } from '../../storybook';
 import Button from './index';
 import Text from '../Text';
 
 storiesOf('Button', module)
-  .add('default', createDefaultStory(Button), {
-    args: {
-      children: 'Click Me',
-      hidden: Button.defaultProps?.hidden,
-      autoContrast: Button.defaultProps?.autoContrast,
-      sxBg: Button.defaultSx.bg,
-      sxM: Button.defaultSx.m,
-      sxP: Button.defaultSx.p,
-      sxFontSize: Button.defaultSx.fontSize,
-      sxColor: Button.defaultSx.color,
-      sxHeight: Button.defaultSx.height,
-      sxWidth: Button.defaultSx.width
-    },
-    argTypes: {
-      hidden: { control: { type: 'boolean' } },
-      autoContrast: {
-        options: ['A', 'AA', 'AAA', false],
-        control: 'select'
+  .add(
+    'default',
+    createArgsStory(Button, {
+      onPress: action('I was pressed'),
+      onLongPress: action('I was long pressed'),
+      onPressIn: action('I was pressed in'),
+      onPressOut: action('I was pressed out')
+    }),
+    {
+      args: {
+        children: 'Click Me',
+        hidden: Button.defaultProps?.hidden,
+        autoContrast: Button.defaultProps?.autoContrast,
+        disabled: Button.defaultProps?.disabled,
+        sxBg: Button.defaultSx.bg,
+        sxM: Button.defaultSx.m,
+        sxP: Button.defaultSx.p,
+        sxFontSize: Button.defaultSx.fontSize,
+        sxColor: Button.defaultSx.color,
+        sxHeight: Button.defaultSx.height,
+        sxWidth: Button.defaultSx.width
       },
-      sxBg: { control: { type: 'color' } },
-      sxColor: { control: { type: 'color' } },
-      sxM: { control: 'number' },
-      sxP: { control: 'number' },
-      sxHeight: { control: 'number' },
-      sxWidth: { control: 'number' }
+      argTypes: {
+        hidden: { control: { type: 'boolean' } },
+        disabled: { control: { type: 'boolean' } },
+        autoContrast: {
+          options: ['A', 'AA', 'AAA', false],
+          control: 'select'
+        },
+        sxBg: { control: { type: 'color' } },
+        sxColor: { control: { type: 'color' } },
+        sxM: { control: 'number' },
+        sxP: { control: 'number' },
+        sxHeight: { control: 'number' },
+        sxWidth: { control: 'number' }
+      }
     }
-  })
+  )
   .add('with text component', () => (
     <Button>
       <Text>hello</Text>
-    </Button>
-  ))
-  .add('with events', () => (
-    <Button
-      onPress={action('I was pressed')}
-      onLongPress={action('I was long pressed')}
-      onPressIn={action('I was pressed in')}
-      onPressOut={action('I was pressed out')}
-    >
-      Click Me
     </Button>
   ));

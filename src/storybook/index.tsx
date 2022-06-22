@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 21-06-2022 08:05:29
+ * Last Modified: 22-06-2022 05:33:27
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,7 +23,6 @@
  */
 
 import React, { ComponentType } from 'react';
-import { SxProp } from 'theme-ui';
 export * from './storybook';
 
 export function getProps(args: Record<string, unknown>) {
@@ -50,8 +49,12 @@ export function getSx(args: Record<string, unknown>) {
   );
 }
 
-export function createDefaultStory(C: ComponentType<Record<string, unknown>>) {
+export function createArgsStory(
+  C: ComponentType<Record<string, unknown>>,
+  props?: Record<string, unknown>
+) {
+  if (!props) props = {};
   return function StoryComponent(args: Record<string, unknown>) {
-    return <C {...getProps(args)} sx={getSx(args)} />;
+    return <C {...props} {...getProps(args)} sx={getSx(args)} />;
   };
 }

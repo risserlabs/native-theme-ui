@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 27-02-2022 10:31:57
+ * Last Modified: 22-06-2022 05:17:21
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -66,7 +66,11 @@ module.exports = {
             name: '@storybook/addon-react-native-web',
             options: {
               babelPlugins: babelConfig.plugins,
-              modulesToTranspile: ['dripsy', '@dripsy/core']
+              modulesToTranspile: [
+                'dripsy',
+                '@dripsy/core',
+                'react-native-swipe-gestures'
+              ]
             }
           },
           {
