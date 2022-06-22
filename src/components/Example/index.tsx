@@ -4,7 +4,7 @@
  * File Created: 14-06-2022 07:29:28
  * Author: Clay Risser
  * -----
- * Last Modified: 14-06-2022 08:01:37
+ * Last Modified: 21-06-2022 06:14:26
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,10 +25,7 @@
 import React, { FC } from 'react';
 import { Box as DBox, Pressable as DPressable } from 'dripsy';
 import { useAutoContrast } from '@risserlabs/auto-contrast';
-import {
-  PressableProps as DPressableProps,
-  BoxProps as DBoxProps
-} from '../../dripsyProps';
+import { BoxProps as DBoxProps } from '../../dripsyHelper';
 
 type ExampleProps = DPressableProps &
   DBoxProps & {

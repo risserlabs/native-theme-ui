@@ -1,5 +1,6 @@
 {
   "cSpell.words": [
+    "BHUSHAN",
     "bitspur",
     "bulma",
     "camelcase",
@@ -10,12 +11,15 @@
     "dind",
     "docgen",
     "dripsy",
+    "ellipsize",
     "etchteam",
     "gnumake",
     "gnused",
     "graphicsmagick",
     "haptics",
     "importscripts",
+    "Katari",
+    "Lavanya",
     "luigiminardim",
     "mkpm",
     "nixpkgs",
@@ -25,6 +29,7 @@
     "pixelmatch",
     "pressable",
     "proptypes",
+    "Rasterize",
     "risser",
     "risserlabs",
     "roboto",
@@ -34,6 +39,7 @@
     "storypa",
     "storyshots",
     "storysource",
+    "Subviews",
     "toolshown",
     "UICSS",
     "unimodules",
@@ -138,5 +144,6 @@
     "**/.yarn": true,
     "**/node_modules": true,
     "**/yarn.lock": true
-  }
+  },
+  "vscode-as-git-mergetool.settingsAssistantOnStartup": false
 }
