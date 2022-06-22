@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 13:07:00
  * Author: ajithkrm6
  * -----
- * Last Modified: 17-06-2022 18:00:10
- * Modified By: ajithkrm6
+ * Last Modified: 22-06-2022 15:05:43
+ * Modified By: Ajithkrm6
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,14 +22,31 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
+import React, { ReactNode } from 'react';
+import {
+  AutoContrast,
+  useAutoContrast,
+  BackgroundColorProvider
+} from '@risserlabs/auto-contrast';
+
+import { DripsyFc, Container as DContainer } from 'dripsy';
 
 type ContainerProps = {
-  autoContrast: AutoContrast;
+  autoContrast?: AutoContrast;
+  children?: ReactNode;
+  hidden?: boolean;
 };
-const Container: FC<ContainerProps> = (props: ContainerProps) => {
-  return <h1>Container This is me</h1>;
+
+const Container: DripsyFC<ContainerProps> = (props: ContainerProps) => {
+  const sx = useAutoContrast(props, {
+    ...Container.defaultsx,
+    ...props.sx
+  });
+  return (
+    <DContainer {...props}>
+      <BackgroundColorProvider>{props.children}</BackgroundColorProvider>
+    </DContainer>
+  );
 };
 
 Container.defaultProps = {};

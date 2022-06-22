@@ -1,10 +1,10 @@
 /**
- * File: /components/Container/Container.stories.tsx
+ * File: /components/NavLink /index.tsx
  * Project: -
- * File Created: 17-06-2022 13:00:27
- * Author: ajithkrm6
+ * File Created: 22-06-2022 14:33:38
+ * Author: Ajithkrm6
  * -----
- * Last Modified: 22-06-2022 15:02:52
+ * Last Modified: 22-06-2022 14:59:58
  * Modified By: Ajithkrm6
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,11 +22,17 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { storiesOf } from '../../storybook';
-import Container from './index';
+import React, { FC } from 'react';
+import { AutoContrast } from '@risserlabs/auto-contrast';
 
-storiesOf('Container', module).add('Default', () => <Container></Container>);
-storiesOf('Container', module).add('Primary', () => (
-  <Container sx={{ bg: 'blue' }}></Container>
-));
+type NavLinkProps = {
+  autoContrast?: AutoContrast;
+};
+
+const NavLink: FC<NavLinkProps> = (props: NavLinkProps) => {
+  return <h1>NavLink</h1>;
+};
+
+NavLink.defaultProps = {};
+
+export default NavLink;

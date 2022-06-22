@@ -1,10 +1,10 @@
 /**
- * File: /components/Container/Container.stories.tsx
+ * File: /components/NavLink /NavLink.stories.tsx
  * Project: -
- * File Created: 17-06-2022 13:00:27
- * Author: ajithkrm6
+ * File Created: 22-06-2022 14:34:02
+ * Author: Ajithkrm6
  * -----
- * Last Modified: 22-06-2022 15:02:52
+ * Last Modified: 22-06-2022 15:07:34
  * Modified By: Ajithkrm6
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,9 +24,6 @@
 
 import React from 'react';
 import { storiesOf } from '../../storybook';
-import Container from './index';
+import NavLink from './index';
 
-storiesOf('Container', module).add('Default', () => <Container></Container>);
-storiesOf('Container', module).add('Primary', () => (
-  <Container sx={{ bg: 'blue' }}></Container>
-));
+storiesOf('NavLink', module).add('with default', () => <NavLink></NavLink>);
