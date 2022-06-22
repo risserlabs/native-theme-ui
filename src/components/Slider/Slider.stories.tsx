@@ -4,7 +4,7 @@
  * File Created: 20-06-2022 06:25:43
  * Author: Lavanya Katari
  * -----
- * Last Modified: 21-06-2022 04:19:10
+ * Last Modified: 22-06-2022 00:56:16
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,4 +25,5 @@
 import React from 'react';
 import { storiesOf } from '../../storybook';
 import Slider from './index';
-storiesOf('Slider', module).add('with background', () => <Slider />);
+
+storiesOf('Slider', module).add('with background', () => <Slider></Slider>);
