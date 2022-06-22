@@ -4,7 +4,7 @@
  * File Created: 20-06-2022 06:24:02
  * Author: Lavanya Katari
  * -----
- * Last Modified: 21-06-2022 04:52:11
+ * Last Modified: 22-06-2022 04:01:43
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -27,8 +27,16 @@ import { AutoContrast } from '@risserlabs/auto-contrast';
 type SliderProps = {
   autoContrast?: AutoContrast;
 };
-
 const Slider: FC<SliderProps> = (props: SliderProps) => {
-  return <div>Slider component</div>;
+  return (
+    <div
+      style={{
+        backgroundColor: 'purple'
+      }}
+    >
+      Slider component
+    </div>
+  );
 };
+
 export default Slider;
