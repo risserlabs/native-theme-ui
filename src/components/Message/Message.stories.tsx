@@ -1,11 +1,11 @@
 /**
- * File: /components/Select/index.tsx
+ * File: /components/Message/Message.stories.tsx
  * Project: -
- * File Created: 17-06-2022 06:47:48
- * Author: Harikittu46
+ * File Created: 22-06-2022 04:27:49
+ * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 22-06-2022 00:24:18
- * Modified By: Hari Krishna
+ * Last Modified: 22-06-2022 04:38:57
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,22 +22,8 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
-import { Picker as EPicker } from '@react-native-picker/picker';
+import React from 'react';
+import { storiesOf } from '@storybook/react-native';
+import Message from './index';
 
-type SelectProps = {
-  autoContrast?: AutoContrast;
-};
-
-const Select: FC<SelectProps> = (props: SelectProps) => {
-  return <EPicker></EPicker>;
-};
-
-Select.defaultProps = {};
-
-export const styles = {
-  ePicker: {}
-};
-
-export default Select;
+storiesOf('Message', module).add('with background', () => <Message></Message>);

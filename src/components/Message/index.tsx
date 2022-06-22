@@ -1,11 +1,11 @@
 /**
- * File: /components/Select/index.tsx
+ * File: /components/Message/index.tsx
  * Project: -
- * File Created: 17-06-2022 06:47:48
- * Author: Harikittu46
+ * File Created: 22-06-2022 04:26:50
+ * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 22-06-2022 00:24:18
- * Modified By: Hari Krishna
+ * Last Modified: 22-06-2022 04:47:09
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -24,20 +24,20 @@
 
 import React, { FC } from 'react';
 import { AutoContrast } from '@risserlabs/auto-contrast';
-import { Picker as EPicker } from '@react-native-picker/picker';
 
-type SelectProps = {
+type MessageProps = {
   autoContrast?: AutoContrast;
 };
-
-const Select: FC<SelectProps> = (props: SelectProps) => {
-  return <EPicker></EPicker>;
+const Message: FC<MessageProps> = (props: MessageProps) => {
+  return (
+    <div
+      style={{
+        backgroundColor: 'black'
+      }}
+    >
+      Message component
+    </div>
+  );
 };
 
-Select.defaultProps = {};
-
-export const styles = {
-  ePicker: {}
-};
-
-export default Select;
+export default Message;
