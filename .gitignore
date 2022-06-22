@@ -11,3 +11,4 @@ yarn-error.log
 **/.mkpm/*
 !/.mkpm/.cache.tar.gz
 !/.mkpm/.bootstrap.mk
+*.log

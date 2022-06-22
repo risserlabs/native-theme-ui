@@ -1,13 +1,0 @@
-make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/ajithkrm6/multiplatform-framework'
- 
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-  0     0    0     0    0     0      0      0 --:--:-- --:
---:-- --:--:--     0
-100 20730  100 20730    0     0  1770
-2      0  0:00:01  0:00:01 --:--:-- 17702
-
-make: Leaving directory '/home/ajithkrm6/multiplatform-framework'
- 
