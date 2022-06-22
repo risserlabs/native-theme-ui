@@ -43,7 +43,7 @@ Paragraph.defaultProps = {};
 
 const styles: DripsyStyles = {
   dp: {
-    fontFamily: 'body',
+    fontFamily: 'SofiaPro-Bold',
     fontWeight: 'body',
     lineHeight: 'body'
   }

@@ -27,7 +27,9 @@ import { storiesOf } from '../../storybook';
 import Paragraph from './index';
 
 storiesOf('Paragraph', module)
-  .add('default', () => <Paragraph>hello world</Paragraph>)
+  .add('default', () => (
+    <Paragraph sx={{ bg: 'yellow' }}>hello world</Paragraph>
+  ))
   .add('with background', () => (
-    <Paragraph sx={{ bg: 'green' }}>howdy texas</Paragraph>
+    <Paragraph sx={{ bg: 'red' }}>howdy texas</Paragraph>
   ));
