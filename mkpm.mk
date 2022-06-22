@@ -3,7 +3,7 @@
 # File Created: 04-12-2021 02:19:00
 # Author: Clay Risser <email@clayrisser.com>
 # -----
-# Last Modified: 13-06-2022 01:22:33
+# Last Modified: 22-06-2022 15:22:29
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -20,19 +20,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-MKPM_PACKAGES := \
+export MKPM_PACKAGES_DEFAULT := \
+	envcache=0.1.0 \
+	mkchain=0.1.0 \
 	docker=0.0.16 \
 	dotenv=0.0.9 \
-	envcache=0.0.2 \
 	gnu=0.0.3 \
 	mkchain=0.0.16 \
 	yarn=0.0.1
 
-MKPM_REPOS := \
+export MKPM_REPO_DEFAULT := \
 	https://gitlab.com/risserlabs/community/mkpm-stable.git
 
 ############# MKPM BOOTSTRAP SCRIPT BEGIN #############
-MKPM_BOOTSTRAP := https://risserlabs.gitlab.io/community/mkpm/bootstrap.mk
+MKPM_BOOTSTRAP := https://gitlab.com/api/v4/projects/29276259/packages/generic/mkpm/0.2.0/bootstrap.mk
 export PROJECT_ROOT := $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
 NULL := /dev/null
 TRUE := true
