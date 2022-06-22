@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 07:34:26
  * Author: Clay Risser
  * -----
- * Last Modified: 22-06-2022 06:01:33
+ * Last Modified: 22-06-2022 08:08:39
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,9 +25,10 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import {
-  storiesOf,
+  Args,
   createArgsStory,
   createSxArgs,
+  storiesOf,
   sxArgTypes
 } from '../../storybook';
 import Button from './index';
@@ -61,8 +62,21 @@ storiesOf('Button', module)
       }
     }
   )
-  .add('with text component', () => (
-    <Button>
-      <Text>hello</Text>
-    </Button>
-  ));
+  .add(
+    'with autocontrast',
+    (args: Args) => (
+      <Button sx={{ bg: args.background }}>
+        <Text autoContrast={args.autoContrast}>hello</Text>
+      </Button>
+    ),
+    {
+      args: { autoContrast: 'AAA', background: 'black' },
+      argTypes: {
+        autoContrast: {
+          options: ['A', 'AA', 'AAA', false],
+          control: 'select'
+        },
+        background: { control: { type: 'color' } }
+      }
+    }
+  );
