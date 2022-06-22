@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 22-06-2022 06:46:34
+ * Last Modified: 22-06-2022 07:19:21
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -37,9 +37,14 @@ storiesOf('Box', module)
   .add('default', createArgsStory(Box), {
     args: {
       children: 'I am a box',
+      autoContrast: Box.defaultProps?.autoContrast,
       ...createSxArgs(Box)
     },
     argTypes: {
+      autoContrast: {
+        options: ['A', 'AA', 'AAA', false],
+        control: 'select'
+      },
       ...sxArgTypes
     }
   })

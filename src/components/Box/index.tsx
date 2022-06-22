@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 22-06-2022 06:44:34
+ * Last Modified: 22-06-2022 07:52:47
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -53,6 +53,7 @@ Box.defaultProps = {};
 
 Box.defaultSx = {
   boxSizing: 'border-box',
+  display: 'inline-block',
   margin: 0,
   minWidth: 0
 };

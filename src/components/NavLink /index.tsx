@@ -4,8 +4,8 @@
  * File Created: 22-06-2022 14:33:38
  * Author: Ajithkrm6
  * -----
- * Last Modified: 22-06-2022 14:59:58
- * Modified By: Ajithkrm6
+ * Last Modified: 22-06-2022 07:42:06
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,17 +22,33 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
+import React from 'react';
+import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
+import { A as DA } from 'dripsy';
+import { DAProps, DripsyFC } from '../../dripsyHelper';
 
-type NavLinkProps = {
+export type NavLinkProps = Partial<DAProps> & {
   autoContrast?: AutoContrast;
 };
 
-const NavLink: FC<NavLinkProps> = (props: NavLinkProps) => {
-  return <h1>NavLink</h1>;
+const NavLink: DripsyFC<NavLinkProps> = (props: NavLinkProps) => {
+  const sx = useAutoContrast(props, {
+    ...NavLink.defaultSx,
+    ...props.sx
+  });
+  return <DA {...(props as DAProps)} sx={sx} />;
 };
 
 NavLink.defaultProps = {};
+
+NavLink.defaultSx = {
+  color: 'inherit',
+  textDecoration: 'none',
+  fontWeight: 'bold',
+  display: 'inline-block'
+  // '&:hover, &:focus, &.active': {
+  //   color: 'primary'
+  // }
+};
 
 export default NavLink;

@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 22-06-2022 06:59:42
+ * Last Modified: 22-06-2022 07:30:06
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -51,7 +51,8 @@ export function getSx(args: Record<string, unknown>) {
 }
 
 export function createArgsStory(
-  C: ComponentType<Record<string, unknown>>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  C: ComponentType<any>,
   props?: Record<string, unknown>,
   children?: ReactNode
 ) {
@@ -70,7 +71,8 @@ export function createArgsStory(
 }
 
 export function createSxArgs(
-  C: ComponentType<Record<string, unknown>> & { defaultSx: Sx }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  C: ComponentType<any> & { defaultSx: Sx }
 ) {
   return {
     sxBg: C.defaultSx?.bg,

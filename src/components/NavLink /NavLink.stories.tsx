@@ -4,8 +4,8 @@
  * File Created: 22-06-2022 14:34:02
  * Author: Ajithkrm6
  * -----
- * Last Modified: 22-06-2022 15:07:34
- * Modified By: Ajithkrm6
+ * Last Modified: 22-06-2022 07:37:13
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -23,7 +23,57 @@
  */
 
 import React from 'react';
-import { storiesOf } from '../../storybook';
+import {
+  storiesOf,
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes,
+  Args
+} from '../../storybook';
 import NavLink from './index';
+import Box from '../Box';
 
-storiesOf('NavLink', module).add('with default', () => <NavLink></NavLink>);
+storiesOf('NavLink', module)
+  .add('with default', createArgsStory(NavLink), {
+    args: {
+      children: 'Click Me',
+      href: 'https://example.com',
+      autoContrast: NavLink.defaultProps?.autoContrast,
+      ...createSxArgs(NavLink)
+    },
+    argTypes: {
+      autoContrast: {
+        options: ['A', 'AA', 'AAA', false],
+        control: 'select'
+      },
+      ...sxArgTypes
+    }
+  })
+  .add(
+    'with background',
+    (args: Args) => (
+      <Box
+        sx={{
+          padding: 2,
+          bg: args.background
+        }}
+      >
+        <NavLink autoContrast={args.autoContrast} href="https://example.com">
+          Click Me
+        </NavLink>
+      </Box>
+    ),
+    {
+      args: {
+        background: 'black',
+        autoContrast: 'AAA'
+      },
+      argTypes: {
+        background: { control: { type: 'color' } },
+        autoContrast: {
+          options: ['A', 'AA', 'AAA', false],
+          control: 'select'
+        }
+      }
+    }
+  );

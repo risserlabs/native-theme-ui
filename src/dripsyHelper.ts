@@ -4,7 +4,7 @@
  * File Created: 14-06-2022 07:52:25
  * Author: Clay Risser
  * -----
- * Last Modified: 22-06-2022 06:42:56
+ * Last Modified: 22-06-2022 07:24:48
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -292,5 +292,249 @@ export type DTextInputProps = Omit<
   // eslint-disable-next-line @typescript-eslint/ban-types
   underlineColorAndroid?: (string & {}) | undefined;
 } & React.RefAttributes<RNTextInput>;
+
+export type DAProps = import('@dripsy/core').StyledProps<'text'> &
+  (
+    | (Pick<
+        import('react').PropsWithChildren<
+          Pick<
+            import('react-native').TextProps &
+              import('react').ClassAttributes<
+                typeof import('react-native').Text
+              >,
+            | 'testID'
+            | 'ref'
+            | 'onLayout'
+            | 'nativeID'
+            | 'accessible'
+            | 'accessibilityActions'
+            | 'accessibilityLabel'
+            | 'accessibilityState'
+            | 'accessibilityHint'
+            | 'accessibilityValue'
+            | 'onAccessibilityAction'
+            | 'accessibilityLiveRegion'
+            | 'importantForAccessibility'
+            | 'accessibilityElementsHidden'
+            | 'accessibilityViewIsModal'
+            | 'onAccessibilityEscape'
+            | 'onAccessibilityTap'
+            | 'onMagicTap'
+            | 'accessibilityIgnoresInvertColors'
+            | 'onPress'
+            | 'onLongPress'
+            | 'key'
+            | 'allowFontScaling'
+            | 'ellipsizeMode'
+            | 'lineBreakMode'
+            | 'numberOfLines'
+            | 'onTextLayout'
+            | 'maxFontSizeMultiplier'
+            | 'adjustsFontSizeToFit'
+            | 'minimumFontScale'
+            | 'suppressHighlighting'
+            | 'selectable'
+            | 'selectionColor'
+            | 'textBreakStrategy'
+            | 'accessibilityComponentType'
+            | 'accessibilityTraits'
+          > &
+            import('@expo/html-elements/build/primitives/Text').WebTextProps & {
+              href?: string | undefined;
+              target?: string | undefined;
+            }
+        >,
+        | 'testID'
+        | 'children'
+        | 'onLayout'
+        | 'nativeID'
+        | 'accessible'
+        | 'accessibilityActions'
+        | 'accessibilityLabel'
+        | 'accessibilityState'
+        | 'accessibilityHint'
+        | 'accessibilityValue'
+        | 'onAccessibilityAction'
+        | 'accessibilityLiveRegion'
+        | 'importantForAccessibility'
+        | 'accessibilityElementsHidden'
+        | 'accessibilityViewIsModal'
+        | 'onAccessibilityEscape'
+        | 'onAccessibilityTap'
+        | 'onMagicTap'
+        | 'accessibilityIgnoresInvertColors'
+        | 'onPress'
+        | 'onLongPress'
+        | 'key'
+        | 'allowFontScaling'
+        | 'ellipsizeMode'
+        | 'lineBreakMode'
+        | 'numberOfLines'
+        | 'onTextLayout'
+        | 'maxFontSizeMultiplier'
+        | 'adjustsFontSizeToFit'
+        | 'minimumFontScale'
+        | 'suppressHighlighting'
+        | 'selectable'
+        | 'selectionColor'
+        | 'textBreakStrategy'
+        | keyof import('@expo/html-elements/build/primitives/Text').WebTextProps
+        | 'accessibilityComponentType'
+        | 'accessibilityTraits'
+        | 'href'
+        | 'target'
+      > &
+        import('react').RefAttributes<
+          import('react').Component<
+            import('react').PropsWithChildren<
+              Pick<
+                import('react-native').TextProps &
+                  import('react').ClassAttributes<
+                    typeof import('react-native').Text
+                  >,
+                | 'testID'
+                | 'ref'
+                | 'onLayout'
+                | 'nativeID'
+                | 'accessible'
+                | 'accessibilityActions'
+                | 'accessibilityLabel'
+                | 'accessibilityState'
+                | 'accessibilityHint'
+                | 'accessibilityValue'
+                | 'onAccessibilityAction'
+                | 'accessibilityLiveRegion'
+                | 'importantForAccessibility'
+                | 'accessibilityElementsHidden'
+                | 'accessibilityViewIsModal'
+                | 'onAccessibilityEscape'
+                | 'onAccessibilityTap'
+                | 'onMagicTap'
+                | 'accessibilityIgnoresInvertColors'
+                | 'onPress'
+                | 'onLongPress'
+                | 'key'
+                | 'allowFontScaling'
+                | 'ellipsizeMode'
+                | 'lineBreakMode'
+                | 'numberOfLines'
+                | 'onTextLayout'
+                | 'maxFontSizeMultiplier'
+                | 'adjustsFontSizeToFit'
+                | 'minimumFontScale'
+                | 'suppressHighlighting'
+                | 'selectable'
+                | 'selectionColor'
+                | 'textBreakStrategy'
+                | 'accessibilityComponentType'
+                | 'accessibilityTraits'
+              > &
+                import('@expo/html-elements/build/primitives/Text').WebTextProps & {
+                  href?: string | undefined;
+                  target?: string | undefined;
+                }
+            >,
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            any,
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            any
+          >
+        >)
+    | (Pick<
+        Pick<
+          import('react-native').TextProps &
+            import('react').ClassAttributes<typeof import('react-native').Text>,
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          | 'testID'
+          | 'ref'
+          | 'onLayout'
+          | 'nativeID'
+          | 'accessible'
+          | 'accessibilityActions'
+          | 'accessibilityLabel'
+          | 'accessibilityState'
+          | 'accessibilityHint'
+          | 'accessibilityValue'
+          | 'onAccessibilityAction'
+          | 'accessibilityLiveRegion'
+          | 'importantForAccessibility'
+          | 'accessibilityElementsHidden'
+          | 'accessibilityViewIsModal'
+          | 'onAccessibilityEscape'
+          | 'onAccessibilityTap'
+          | 'onMagicTap'
+          | 'accessibilityIgnoresInvertColors'
+          | 'onPress'
+          | 'onLongPress'
+          | 'key'
+          | 'allowFontScaling'
+          | 'ellipsizeMode'
+          | 'lineBreakMode'
+          | 'numberOfLines'
+          | 'onTextLayout'
+          | 'maxFontSizeMultiplier'
+          | 'adjustsFontSizeToFit'
+          | 'minimumFontScale'
+          | 'suppressHighlighting'
+          | 'selectable'
+          | 'selectionColor'
+          | 'textBreakStrategy'
+          | 'accessibilityComponentType'
+          | 'accessibilityTraits'
+        > &
+          import('@expo/html-elements/build/primitives/Text').WebTextProps & {
+            href?: string | undefined;
+            target?: string | undefined;
+          } & {
+            children?: import('react').ReactNode;
+          },
+        | 'testID'
+        | 'children'
+        | 'onLayout'
+        | 'nativeID'
+        | 'accessible'
+        | 'accessibilityActions'
+        | 'accessibilityLabel'
+        | 'accessibilityState'
+        | 'accessibilityHint'
+        | 'accessibilityValue'
+        | 'onAccessibilityAction'
+        | 'accessibilityLiveRegion'
+        | 'importantForAccessibility'
+        | 'accessibilityElementsHidden'
+        | 'accessibilityViewIsModal'
+        | 'onAccessibilityEscape'
+        | 'onAccessibilityTap'
+        | 'onMagicTap'
+        | 'accessibilityIgnoresInvertColors'
+        | 'onPress'
+        | 'onLongPress'
+        | 'key'
+        | 'allowFontScaling'
+        | 'ellipsizeMode'
+        | 'lineBreakMode'
+        | 'numberOfLines'
+        | 'onTextLayout'
+        | 'maxFontSizeMultiplier'
+        | 'adjustsFontSizeToFit'
+        | 'minimumFontScale'
+        | 'suppressHighlighting'
+        | 'selectable'
+        | 'selectionColor'
+        | 'textBreakStrategy'
+        | keyof import('@expo/html-elements/build/primitives/Text').WebTextProps
+        | 'accessibilityComponentType'
+        | 'accessibilityTraits'
+        | 'href'
+        | 'target'
+      > & {
+        ref?:
+          | ((instance: typeof import('react-native').Text | null) => void)
+          | import('react').RefObject<typeof import('react-native').Text>
+          | null
+          | undefined;
+      })
+  );
 
 export type DripsyFC<P> = FC<P> & { defaultSx: Sx };

@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 06:47:48
  * Author: Harikittu46
  * -----
- * Last Modified: 22-06-2022 07:06:06
+ * Last Modified: 22-06-2022 07:43:00
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -31,7 +31,7 @@ import Option from './Option';
 
 const DPicker = createThemedComponent(EPicker);
 
-type SelectProps = PickerProps & {
+export type SelectProps = PickerProps & {
   autoContrast?: AutoContrast;
   sx?: SxProp;
 };
@@ -57,3 +57,5 @@ Select.defaultProps = {};
 Select.defaultSx = {};
 
 export default Select;
+
+export * from './Option';

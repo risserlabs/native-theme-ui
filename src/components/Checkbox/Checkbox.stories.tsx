@@ -4,8 +4,8 @@
  * File Created: 15-06-2022 06:37:48
  * Author: Lavanya Katari
  * -----
- * Last Modified: 20-06-2022 06:14:22
- * Modified By: Lavanya Katari
+ * Last Modified: 22-06-2022 07:54:31
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,9 +22,32 @@
  * limitations under the License.
  */
 
-import React from "react";
-import { storiesOf } from "../../storybook";
-import CheckBox from "./index";
-storiesOf("CheckBox", module).add("with background", () => (
-  <CheckBox></CheckBox>
-));
+import React from 'react';
+import { action } from '@storybook/addon-actions';
+import {
+  storiesOf,
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes
+} from '../../storybook';
+import CheckBox from './index';
+
+storiesOf('CheckBox', module)
+  .add(
+    'default',
+    createArgsStory(CheckBox, {
+      onChange: action('onChange'),
+      onValueChange: action('onValueChange')
+    }),
+    {
+      args: {
+        defaultChecked: CheckBox.defaultProps?.defaultChecked,
+        ...createSxArgs(CheckBox)
+      },
+      argTypes: {
+        defaultChecked: { control: { type: 'boolean' } },
+        ...sxArgTypes
+      }
+    }
+  )
+  .add('with background', () => <CheckBox></CheckBox>);

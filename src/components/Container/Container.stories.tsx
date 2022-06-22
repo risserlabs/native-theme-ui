@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 13:00:27
  * Author: ajithkrm6
  * -----
- * Last Modified: 22-06-2022 15:02:52
- * Modified By: Ajithkrm6
+ * Last Modified: 22-06-2022 07:19:17
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,11 +22,25 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { storiesOf } from '../../storybook';
+import {
+  storiesOf,
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes
+} from '../../storybook';
 import Container from './index';
 
-storiesOf('Container', module).add('Default', () => <Container></Container>);
-storiesOf('Container', module).add('Primary', () => (
-  <Container sx={{ bg: 'blue' }}></Container>
-));
+storiesOf('Container', module).add('default', createArgsStory(Container), {
+  args: {
+    children: 'I am a Container',
+    autoContrast: Container.defaultProps?.autoContrast,
+    ...createSxArgs(Container)
+  },
+  argTypes: {
+    autoContrast: {
+      options: ['A', 'AA', 'AAA', false],
+      control: 'select'
+    },
+    ...sxArgTypes
+  }
+});

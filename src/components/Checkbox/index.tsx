@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 01:05:11
  * Author: Lavanya Katari
  * -----
- * Last Modified: 21-06-2022 02:01:17
- * Modified By: Lavanya Katari
+ * Last Modified: 22-06-2022 07:49:51
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,20 +22,34 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
+import ECheckbox, { CheckboxProps as ECheckboxProps } from 'expo-checkbox';
+import React from 'react';
 import { AutoContrast } from '@risserlabs/auto-contrast';
-import ECheckbox from 'expo-checkbox';
-type CheckboxProps = {
+import { SxProp } from 'dripsy';
+import { DripsyFC } from '../../dripsyHelper';
+import Box from '../Box';
+
+export type CheckboxProps = ECheckboxProps & {
+  sx?: SxProp;
+  defaultChecked?: boolean;
   autoContrast?: AutoContrast;
 };
 
-const Checkbox: FC<CheckboxProps> = (props: CheckboxProps) => {
-  return <ECheckbox />;
+const Checkbox: DripsyFC<CheckboxProps> = (props: CheckboxProps) => {
+  const eCheckboxProps = { ...props };
+  delete eCheckboxProps.sx;
+  if (props.defaultChecked) {
+    eCheckboxProps.value = true;
+  }
+  return (
+    <Box sx={props.sx}>
+      <ECheckbox {...eCheckboxProps} />
+    </Box>
+  );
 };
 
 Checkbox.defaultProps = {};
-export const styles = {
-  eCheckbox: {}
-};
+
+Checkbox.defaultSx = {};
 
 export default Checkbox;
