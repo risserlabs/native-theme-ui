@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 07:34:18
  * Author: Clay Risser
  * -----
- * Last Modified: 22-06-2022 05:36:17
+ * Last Modified: 22-06-2022 06:28:19
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -29,10 +29,7 @@ import {
   useAutoContrast,
   BackgroundColorProvider
 } from '@risserlabs/auto-contrast';
-import {
-  DripsyFC,
-  PressableProps as DPressableProps
-} from '../../dripsyHelper';
+import { DripsyFC, DPressableProps } from '../../dripsyHelper';
 
 type ButtonProps = DPressableProps & {
   autoContrast?: AutoContrast;

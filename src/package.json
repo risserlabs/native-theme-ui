@@ -11,7 +11,7 @@
     "@dripsy/core": "^3.6.0",
     "@emotion/react": "^11.9.3",
     "@react-native-picker/picker": "^2.4.1",
-    "@risserlabs/auto-contrast": "0.1.4",
+    "@risserlabs/auto-contrast": "0.2.0",
     "core-js": "^3.22.8",
     "dripsy": "^3.6.0",
     "expo": "^44.0.6",

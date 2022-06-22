@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 01:27:30
+ * Last Modified: 22-06-2022 06:44:34
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,23 +22,22 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { Box as DBox, SxProp } from 'dripsy';
-import { ViewProps } from 'react-native';
+import React from 'react';
+import { Box as DBox } from 'dripsy';
 import {
   BackgroundColorProvider,
   useAutoContrast,
   AutoContrast
 } from '@risserlabs/auto-contrast';
+import { DBoxProps, DripsyFC } from '../../dripsyHelper';
 
-export interface BoxProps extends ViewProps {
-  sx?: SxProp;
+export type BoxProps = DBoxProps & {
   autoContrast?: AutoContrast;
-}
+};
 
-const Box: FC<BoxProps> = (props: BoxProps) => {
+const Box: DripsyFC<BoxProps> = (props: BoxProps) => {
   const sx = useAutoContrast(props, {
-    ...styles.box,
+    ...Box.defaultSx,
     ...props.sx
   });
   return (
@@ -50,16 +49,12 @@ const Box: FC<BoxProps> = (props: BoxProps) => {
   );
 };
 
-Box.defaultProps = {
-  sx: {}
-};
+Box.defaultProps = {};
 
-export const styles = {
-  box: {
-    // boxSizing: 'border-box',
-    margin: 0,
-    minWidth: 0
-  }
+Box.defaultSx = {
+  boxSizing: 'border-box',
+  margin: 0,
+  minWidth: 0
 };
 
 export default Box;

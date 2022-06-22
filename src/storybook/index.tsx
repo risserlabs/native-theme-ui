@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 22-06-2022 06:00:47
+ * Last Modified: 22-06-2022 06:59:42
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import React, { ComponentType } from 'react';
+import React, { ComponentType, ReactNode } from 'react';
 import { Sx } from 'dripsy';
 export * from './storybook';
 
@@ -52,11 +52,20 @@ export function getSx(args: Record<string, unknown>) {
 
 export function createArgsStory(
   C: ComponentType<Record<string, unknown>>,
-  props?: Record<string, unknown>
+  props?: Record<string, unknown>,
+  children?: ReactNode
 ) {
   if (!props) props = {};
+  if (children) props.children = children;
   return function StoryComponent(args: Record<string, unknown>) {
-    return <C {...props} {...getProps(args)} sx={getSx(args)} />;
+    const sxArgs = getSx(args);
+    if (
+      typeof sxArgs.borderRadius === 'string' &&
+      sxArgs.borderRadius[sxArgs.borderRadius.length - 1] !== '%'
+    ) {
+      sxArgs.borderRadius = parseInt(sxArgs.borderRadius);
+    }
+    return <C {...props} {...getProps(args)} sx={sxArgs} />;
   };
 }
 
@@ -70,7 +79,9 @@ export function createSxArgs(
     sxFontSize: C.defaultSx?.fontSize,
     sxColor: C.defaultSx?.color,
     sxHeight: C.defaultSx?.height,
-    sxWidth: C.defaultSx?.width
+    sxWidth: C.defaultSx?.width,
+    sxBorderWidth: C.defaultSx?.borderWidth,
+    sxBorderRadius: C.defaultSx?.borderRadius
   };
 }
 
@@ -80,5 +91,12 @@ export const sxArgTypes = {
   sxM: { control: 'number' },
   sxP: { control: 'number' },
   sxHeight: { control: 'number' },
-  sxWidth: { control: 'number' }
+  sxWidth: { control: 'number' },
+  sxBorderWidth: { control: 'number' },
+  sxBorderRadius: {
+    control: { type: 'text' }
+  }
 };
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type Args = Record<string, any>;

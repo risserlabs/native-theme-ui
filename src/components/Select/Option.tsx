@@ -1,11 +1,11 @@
 /**
- * File: /components/Select/select.stories.tsx
+ * File: /components/Select/Option.tsx
  * Project: -
- * File Created: 17-06-2022 06:16:36
- * Author: Harikittu46
+ * File Created: 22-06-2022 06:05:53
+ * Author: Clay Risser
  * -----
- * Last Modified: 20-06-2022 02:27:20
- * Modified By: Hari Krishna
+ * Last Modified: 22-06-2022 06:24:54
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,8 +22,18 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { storiesOf } from '../../storybook';
-import Select from './index';
+import React, { FC } from 'react';
+import {
+  Picker as EPicker,
+  PickerItemProps
+} from '@react-native-picker/picker';
 
-storiesOf('Select', module).add('with background', () => <Select></Select>);
+export type OptionProps = Omit<PickerItemProps, 'label'> & {
+  children?: string;
+};
+
+const Option: FC<OptionProps> = (props: OptionProps) => {
+  return <EPicker.Item {...props} label={props.children} />;
+};
+
+export default Option;

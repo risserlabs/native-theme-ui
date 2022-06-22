@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 06:47:48
  * Author: Harikittu46
  * -----
- * Last Modified: 22-06-2022 00:24:18
- * Modified By: Hari Krishna
+ * Last Modified: 22-06-2022 07:06:06
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,22 +22,38 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
-import { Picker as EPicker } from '@react-native-picker/picker';
+import React from 'react';
+import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
+import { Picker as EPicker, PickerProps } from '@react-native-picker/picker';
+import { createThemedComponent, SxProp } from 'dripsy';
+import { DripsyFC } from '../../dripsyHelper';
+import Option from './Option';
 
-type SelectProps = {
+const DPicker = createThemedComponent(EPicker);
+
+type SelectProps = PickerProps & {
   autoContrast?: AutoContrast;
+  sx?: SxProp;
 };
 
-const Select: FC<SelectProps> = (props: SelectProps) => {
-  return <EPicker></EPicker>;
+const Select: DripsyFC<SelectProps> & { Option: typeof Option } = (
+  props: SelectProps
+) => {
+  const sx = useAutoContrast(
+    props,
+    {
+      ...Select.defaultSx,
+      ...props.sx
+    },
+    true
+  );
+  return <DPicker sx={sx}>{props.children}</DPicker>;
 };
+
+Select.Option = Option;
 
 Select.defaultProps = {};
 
-export const styles = {
-  ePicker: {}
-};
+Select.defaultSx = {};
 
 export default Select;

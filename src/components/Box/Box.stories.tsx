@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:55:22
+ * Last Modified: 22-06-2022 06:46:34
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,16 +24,25 @@
 
 import React from 'react';
 import { View } from 'dripsy';
-import { storiesOf } from '../../storybook';
-import Box from '.';
+import {
+  storiesOf,
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes
+} from '../../storybook';
+import Box from './index';
 import Text from '../Text';
 
 storiesOf('Box', module)
-  .add('with text', () => (
-    <Box>
-      <Text>Hello, world!</Text>
-    </Box>
-  ))
+  .add('default', createArgsStory(Box), {
+    args: {
+      children: 'I am a box',
+      ...createSxArgs(Box)
+    },
+    argTypes: {
+      ...sxArgTypes
+    }
+  })
   .add('with background', () => (
     <Box sx={{ bg: 'secondary' }}>
       <Text>Hello, world!</Text>

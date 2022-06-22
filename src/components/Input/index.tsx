@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 22-06-2022 05:52:59
+ * Last Modified: 22-06-2022 06:28:35
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -49,9 +49,7 @@ const Input: DripsyFC<InputProps> = (props: InputProps) => {
   );
 };
 
-Input.defaultProps = {
-  sx: {}
-};
+Input.defaultProps = {};
 
 Input.defaultSx = {
   display: 'block',
