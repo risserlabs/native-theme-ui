@@ -1,11 +1,11 @@
 /**
- * File: /components/Slider/index.tsx
+ * File: /components/Message/index.tsx
  * Project: -
- * File Created: 20-06-2022 06:24:02
- * Author: Lavanya Katari
+ * File Created: 22-06-2022 04:26:50
+ * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 22-06-2022 04:01:43
- * Modified By: Lavanya Katari
+ * Last Modified: 22-06-2022 04:47:09
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -24,19 +24,20 @@
 
 import React, { FC } from 'react';
 import { AutoContrast } from '@risserlabs/auto-contrast';
-type SliderProps = {
+
+type MessageProps = {
   autoContrast?: AutoContrast;
 };
-const Slider: FC<SliderProps> = (props: SliderProps) => {
+const Message: FC<MessageProps> = (props: MessageProps) => {
   return (
     <div
       style={{
-        backgroundColor: 'purple'
+        backgroundColor: 'black'
       }}
     >
-      Slider component
+      Message component
     </div>
   );
 };
 
-export default Slider;
+export default Message;

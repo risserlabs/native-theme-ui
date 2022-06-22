@@ -4,7 +4,7 @@
  * File Created: 20-06-2022 07:09:45
  * Author: Lavanya Katari
  * -----
- * Last Modified: 20-06-2022 05:54:02
+ * Last Modified: 22-06-2022 03:58:05
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -21,5 +21,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import React { FC }from 'react'
-// import
+
+import React, { FC } from 'react';
+import { AutoContrast } from '@risserlabs/auto-contrast';
+
+type RadioProps = {
+  autoContrast?: AutoContrast;
+};
+const Radio: FC<RadioProps> = (props: RadioProps) => {
+  return <div>Radio component</div>;
+};
+export default Radio;

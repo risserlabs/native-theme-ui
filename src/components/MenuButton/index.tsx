@@ -4,7 +4,7 @@
  * File Created: 19-06-2022 06:50:27
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 20-06-2022 02:27:01
+ * Last Modified: 22-06-2022 03:35:59
  * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -26,7 +26,6 @@ import React, { FC } from 'react';
 import { AutoContrast } from '@risserlabs/auto-contrast';
 // import { Pressable as RNPressable } from 'react-native';
 import { Pressable as DPressable, SxProp } from 'dripsy';
-
 type MenuButtonProps = {
   autoContrast?: AutoContrast;
   sx?: SxProp;

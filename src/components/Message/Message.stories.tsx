@@ -1,11 +1,11 @@
 /**
- * File: /components/Slider/index.tsx
+ * File: /components/Message/Message.stories.tsx
  * Project: -
- * File Created: 20-06-2022 06:24:02
- * Author: Lavanya Katari
+ * File Created: 22-06-2022 04:27:49
+ * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 22-06-2022 04:01:43
- * Modified By: Lavanya Katari
+ * Last Modified: 22-06-2022 04:38:57
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,21 +22,8 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
-type SliderProps = {
-  autoContrast?: AutoContrast;
-};
-const Slider: FC<SliderProps> = (props: SliderProps) => {
-  return (
-    <div
-      style={{
-        backgroundColor: 'purple'
-      }}
-    >
-      Slider component
-    </div>
-  );
-};
+import React from 'react';
+import { storiesOf } from '@storybook/react-native';
+import Message from './index';
 
-export default Slider;
+storiesOf('Message', module).add('with background', () => <Message></Message>);
