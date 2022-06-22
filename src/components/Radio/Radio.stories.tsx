@@ -4,7 +4,7 @@
  * File Created: 20-06-2022 07:09:30
  * Author: Lavanya Katari
  * -----
- * Last Modified: 20-06-2022 05:20:45
+ * Last Modified: 22-06-2022 03:55:46
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,9 +22,8 @@
  * limitations under the License.
  */
 
-import React from "react";
-import { storiesOf } from "../../storybook";
+import React from 'react';
+import { storiesOf } from '../../storybook';
+import Radio from './index';
 
-storiesOf("Radio", module).add("with background", () => (
-  <Radio>that is the</Radio>
-));
+storiesOf('Radio', module).add('with background', () => <Radio></Radio>);
