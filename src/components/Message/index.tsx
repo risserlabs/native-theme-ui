@@ -1,10 +1,10 @@
 /**
- * File: /components/MenuButton/index.tsx
+ * File: /components/Message/index.tsx
  * Project: -
- * File Created: 19-06-2022 06:50:27
+ * File Created: 22-06-2022 04:26:50
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 22-06-2022 03:35:59
+ * Last Modified: 22-06-2022 04:47:09
  * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,17 +24,20 @@
 
 import React, { FC } from 'react';
 import { AutoContrast } from '@risserlabs/auto-contrast';
-// import { Pressable as RNPressable } from 'react-native';
-import { Pressable as DPressable, SxProp } from 'dripsy';
-type MenuButtonProps = {
+
+type MessageProps = {
   autoContrast?: AutoContrast;
-  sx?: SxProp;
+};
+const Message: FC<MessageProps> = (props: MessageProps) => {
+  return (
+    <div
+      style={{
+        backgroundColor: 'black'
+      }}
+    >
+      Message component
+    </div>
+  );
 };
 
-const MenuButton: FC<MenuButtonProps> = (props: MenuButtonProps) => {
-  return <DPressable sx={props.sx}>Hello</DPressable>;
-};
-
-MenuButton.defaultProps = {};
-
-export default MenuButton;
+export default Message;

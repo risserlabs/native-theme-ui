@@ -1,10 +1,10 @@
 /**
- * File: /components/MenuButton/index.tsx
+ * File: /components/Message/Message.stories.tsx
  * Project: -
- * File Created: 19-06-2022 06:50:27
+ * File Created: 22-06-2022 04:27:49
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 22-06-2022 03:35:59
+ * Last Modified: 22-06-2022 04:38:57
  * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,19 +22,8 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
-// import { Pressable as RNPressable } from 'react-native';
-import { Pressable as DPressable, SxProp } from 'dripsy';
-type MenuButtonProps = {
-  autoContrast?: AutoContrast;
-  sx?: SxProp;
-};
+import React from 'react';
+import { storiesOf } from '@storybook/react-native';
+import Message from './index';
 
-const MenuButton: FC<MenuButtonProps> = (props: MenuButtonProps) => {
-  return <DPressable sx={props.sx}>Hello</DPressable>;
-};
-
-MenuButton.defaultProps = {};
-
-export default MenuButton;
+storiesOf('Message', module).add('with background', () => <Message></Message>);
