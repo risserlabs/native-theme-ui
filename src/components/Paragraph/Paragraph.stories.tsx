@@ -4,7 +4,7 @@
  * File Created: 20-06-2022 05:48:50
  * Author: Clay Risser
  * -----
- * Last Modified: 21-06-2022 05:51:44
+ * Last Modified: 22-06-2022 08:02:39
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,13 +23,54 @@
  */
 
 import React from 'react';
-import { storiesOf } from '../../storybook';
+import {
+  storiesOf,
+  Args,
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes
+} from '../../storybook';
 import Paragraph from './index';
+import Box from '../Box';
 
 storiesOf('Paragraph', module)
-  .add('default', () => (
-    <Paragraph sx={{ bg: 'yellow' }}>hello world</Paragraph>
-  ))
-  .add('with background', () => (
-    <Paragraph sx={{ bg: 'red' }}>howdy texas</Paragraph>
-  ));
+  .add('default', createArgsStory(Paragraph), {
+    args: {
+      children: 'I am a paragraph',
+      autoContrast: Paragraph.defaultProps?.autoContrast,
+      ...createSxArgs(Paragraph)
+    },
+    argTypes: {
+      autoContrast: {
+        options: ['A', 'AA', 'AAA', false],
+        control: 'select'
+      },
+      ...sxArgTypes
+    }
+  })
+  .add(
+    'with background',
+    (args: Args) => (
+      <Box
+        sx={{
+          padding: 2,
+          bg: args.background
+        }}
+      >
+        <Paragraph autoContrast={args.autoContrast}>I am a paragraph</Paragraph>
+      </Box>
+    ),
+    {
+      args: {
+        background: 'black',
+        autoContrast: 'AAA'
+      },
+      argTypes: {
+        background: { control: { type: 'color' } },
+        autoContrast: {
+          options: ['A', 'AA', 'AAA', false],
+          control: 'select'
+        }
+      }
+    }
+  );

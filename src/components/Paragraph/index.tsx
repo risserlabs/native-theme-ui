@@ -4,7 +4,7 @@
  * File Created: 20-06-2022 05:48:50
  * Author: Clay Risser
  * -----
- * Last Modified: 21-06-2022 06:16:37
+ * Last Modified: 22-06-2022 08:02:20
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,31 +22,29 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
+import React from 'react';
+import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
 import { P as DP } from 'dripsy';
-import { DPProps, DripsyStyles } from '../../dripsyHelper';
+import { DPProps, DripsyFC } from '../../dripsyHelper';
 
 type ParagraphProps = DPProps & {
   autoContrast?: AutoContrast;
 };
 
-const Paragraph: FC<ParagraphProps> = (props: ParagraphProps) => {
-  const sx = {
-    ...styles.dp,
+const Paragraph: DripsyFC<ParagraphProps> = (props: ParagraphProps) => {
+  const sx = useAutoContrast(props, {
+    ...Paragraph.defaultSx,
     ...props.sx
-  };
+  });
   return <DP {...props} sx={sx} />;
 };
 
 Paragraph.defaultProps = {};
 
-const styles: DripsyStyles = {
-  dp: {
-    fontFamily: 'SofiaPro-Bold',
-    fontWeight: 'body',
-    lineHeight: 'body'
-  }
+Paragraph.defaultSx = {
+  fontFamily: 'SofiaPro-Bold',
+  fontWeight: 'body',
+  lineHeight: 'body'
 };
 
 export default Paragraph;
