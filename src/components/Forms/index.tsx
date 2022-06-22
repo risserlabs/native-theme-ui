@@ -4,8 +4,8 @@
  * File Created: 21-06-2022 02:17:32
  * Author: Harikittu46
  * -----
- * Last Modified: 21-06-2022 03:43:31
- * Modified By: Harikittu46
+ * Last Modified: 22-06-2022 01:05:22
+ * Modified By: Hari Krishna
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -24,12 +24,15 @@
 
 import React, { FC } from 'react';
 import { AutoContrast } from '@risserlabs/auto-contrast';
+import { TextInput as DTextInput } from 'dripsy';
 
 type FormProps = {
   autoContrast?: AutoContrast;
 };
 const Forms: FC<FormProps> = (props: FormProps) => {
-  return <div>Form Component</div>;
+  return <DTextInput></DTextInput>;
 };
+
+Forms.defaultProps = {};
 
 export default Forms;
