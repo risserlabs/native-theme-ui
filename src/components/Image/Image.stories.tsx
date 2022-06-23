@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:56:43
+ * Last Modified: 23-06-2022 07:51:16
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,28 +23,24 @@
  */
 
 import React from 'react';
-import { storiesOf } from '../../storybook';
-import Image from '.';
+import {
+  storiesOf,
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes
+} from '../../storybook';
+import Image from './index';
 
 storiesOf('Image', module)
-  .add(
-    'Simple Image ',
-    () => (
-      <Image
-        source={{
-          uri: 'https://picsum.photos/200/300'
-        }}
-        sx={{
-          width: 150,
-          height: 150
-        }}
-      />
-    ),
-    {
-      component: Image,
-      status: { type: 'beta' }
+  .add('default', createArgsStory(Image), {
+    args: {
+      src: 'https://picsum.photos/200/300',
+      ...createSxArgs(Image)
+    },
+    argTypes: {
+      ...sxArgTypes
     }
-  )
+  })
   .add(
     'Styled image',
     () => (

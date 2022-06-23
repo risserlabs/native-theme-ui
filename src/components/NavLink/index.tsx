@@ -1,10 +1,10 @@
 /**
- * File: /components/NavLink /index.tsx
+ * File: /components/NavLink/index.tsx
  * Project: -
- * File Created: 22-06-2022 14:33:38
- * Author: Ajithkrm6
+ * File Created: 13-06-2022 00:51:44
+ * Author: Clay Risser
  * -----
- * Last Modified: 23-06-2022 14:25:18
+ * Last Modified: 23-06-2022 18:37:41
  * Modified By: Ajithkrm6
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,32 +23,24 @@
  */
 
 import React from 'react';
-import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
-import { A as DA } from 'dripsy';
-import { DAProps, DripsyFC } from '../../dripsyHelper';
+import { SxProp } from 'dripsy';
+import Link, { LinkProps } from '../Link';
+import { DripsyFC } from '../../dripsyHelper';
 
-export type NavLinkProps = Partial<DAProps> & {
-  autoContrast?: AutoContrast;
-};
+export type NavLinkProps = LinkProps;
 
 const NavLink: DripsyFC<NavLinkProps> = (props: NavLinkProps) => {
-  const sx = useAutoContrast(props, {
+  const sx: SxProp = {
     ...NavLink.defaultSx,
     ...props.sx
-  });
-  return <DA {...(props as DAProps)} sx={sx} />;
+  };
+  return <Link {...props} sx={sx} />;
 };
 
-NavLink.defaultProps = {};
-
-NavLink.defaultSx = {
-  color: 'inherit',
-  textDecoration: 'none',
-  fontWeight: 'bold',
-  display: 'inline-block'
-  //'&:hover, &:focus': {
-  // backgroundColor: 'primary'
-  //}
+NavLink.defaultProps = {
+  children: null
 };
+
+NavLink.defaultSx = {};
 
 export default NavLink;

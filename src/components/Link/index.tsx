@@ -1,10 +1,10 @@
 /**
- * File: /components/Link/index.tsx
+ * File: /components/Link /index.tsx
  * Project: -
- * File Created: 13-06-2022 00:51:44
- * Author: Clay Risser
+ * File Created: 22-06-2022 14:33:38
+ * Author: Ajithkrm6
  * -----
- * Last Modified: 23-06-2022 15:33:28
+ * Last Modified: 23-06-2022 18:35:50
  * Modified By: Ajithkrm6
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,38 +22,33 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { SxProp } from 'dripsy';
-import Text from '../Text';
-import { TextProps as RNTextProps } from 'react-native';
-import useThemeLookup from '../../hooks/useThemeLookup';
+import React from 'react';
+import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
+import { A as DA } from 'dripsy';
+import { DAProps, DripsyFC } from '../../dripsyHelper';
 
-export interface LinkProps extends RNTextProps {
-  sx?: SxProp;
-  href: string;
-}
+export type LinkProps = Partial<DAProps> & {
+  autoContrast?: AutoContrast;
+};
 
-const Link: FC<LinkProps> = (props: LinkProps) => {
-  const themeLookup = useThemeLookup();
-  const sx: SxProp = {
-    ...themeLookup('styles', 'a'),
-    ...styles.link,
+const Link: DripsyFC<LinkProps> = (props: LinkProps) => {
+  const sx = useAutoContrast(props, {
+    ...Link.defaultSx,
     ...props.sx
-  };
-
-  return (
-    <Text {...props} sx={{ ...sx }}>
-      {props.children}
-    </Text>
-  );
+  });
+  return <DA {...(props as DAProps)} sx={sx} />;
 };
 
-Link.defaultProps = {
-  children: null
-};
+Link.defaultProps = {};
 
-export const styles = {
-  link: {}
+Link.defaultSx = {
+  color: 'inherit',
+  textDecoration: 'none',
+  fontWeight: 'bold',
+  display: 'inline-block'
+  //'&:hover, &:focus': {
+  // backgroundColor: 'primary'
+  //}
 };
 
 export default Link;

@@ -4,8 +4,8 @@
  * File Created: 22-06-2022 04:27:49
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 22-06-2022 23:37:22
- * Modified By: K S R P BHUSHAN
+ * Last Modified: 23-06-2022 07:37:20
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,8 +22,20 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { storiesOf } from '../../storybook';
+import {
+  storiesOf,
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes
+} from '../../storybook';
 import Message from './index';
 
-storiesOf('Message', module).add('with background', () => <Message></Message>);
+storiesOf('Message', module).add('default', createArgsStory(Message), {
+  args: {
+    children: 'I am a message',
+    ...createSxArgs(Message)
+  },
+  argTypes: {
+    ...sxArgTypes
+  }
+});

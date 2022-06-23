@@ -1,11 +1,11 @@
 /**
- * File: /components/Image/index.tsx
+ * File: /components/NavLink/NavLink.stories.tsx
  * Project: -
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 23-06-2022 07:57:56
- * Modified By: Clay Risser
+ * Last Modified: 23-06-2022 18:37:46
+ * Modified By: Ajithkrm6
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -23,31 +23,30 @@
  */
 
 import React from 'react';
-import { SxProp, Image as DImage } from 'dripsy';
-import { DImageProps, DripsyFC } from '../../dripsyHelper';
+import Box from '../Box';
+import Link from '.';
+import { storiesOf } from '../../storybook';
 
-export type ImageProps = DImageProps & {
-  src?: string;
-};
-
-const Image: DripsyFC<ImageProps> = (props: ImageProps) => {
-  const sx: SxProp = {
-    ...Image.defaultSx,
-    ...props.sx
-  };
-  const dImageProps = { ...props };
-  if (props.src) dImageProps.source = { uri: props.src };
-  delete dImageProps.src;
-  return <DImage {...dImageProps} sx={sx} />;
-};
-
-Image.defaultProps = {
-  sx: {}
-};
-
-Image.defaultSx = {
-  maxWidth: '100%',
-  height: 'auto'
-};
-
-export default Image;
+storiesOf('NavLink', module)
+  .add(
+    'default',
+    () => (
+      <Link href="https://theme-ui.com/components/link">Hello, world!</Link>
+    ),
+    {
+      component: Link,
+      status: { type: 'beta' }
+    }
+  )
+  .add(
+    'with background',
+    () => (
+      <Box sx={{ bg: 'background', p: 4 }}>
+        <Link href="https://theme-ui.com/components/link">Hello, world!</Link>
+      </Box>
+    ),
+    {
+      component: Link,
+      status: { type: 'beta' }
+    }
+  );

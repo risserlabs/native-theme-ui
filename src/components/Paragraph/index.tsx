@@ -4,7 +4,7 @@
  * File Created: 20-06-2022 05:48:50
  * Author: Clay Risser
  * -----
- * Last Modified: 23-06-2022 14:59:03
+ * Last Modified: 23-06-2022 18:37:34
  * Modified By: Ajithkrm6
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
+import React from 'react';
 import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
 import { P as DP } from 'dripsy';
 import { DPProps, DripsyFC } from '../../dripsyHelper';
@@ -31,7 +31,7 @@ export type ParagraphProps = DPProps & {
   autoContrast?: AutoContrast;
 };
 
-const Paragraph: FC<ParagraphProps> = (props: ParagraphProps) => {
+const Paragraph: DripsyFC<ParagraphProps> = (props: ParagraphProps) => {
   const sx = useAutoContrast(props, {
     ...Paragraph.defaultSx,
     ...props.sx

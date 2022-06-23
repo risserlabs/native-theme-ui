@@ -1,10 +1,10 @@
 /**
- * File: /components/Link/Link.stories.tsx
+ * File: /components/Link /Link.stories.tsx
  * Project: -
- * File Created: 13-06-2022 00:51:44
- * Author: Clay Risser
+ * File Created: 22-06-2022 14:34:02
+ * Author: Ajithkrm6
  * -----
- * Last Modified: 23-06-2022 15:31:06
+ * Last Modified: 23-06-2022 18:35:59
  * Modified By: Ajithkrm6
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,30 +23,57 @@
  */
 
 import React from 'react';
+import {
+  storiesOf,
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes,
+  Args
+} from '../../storybook';
+import Link from './index';
 import Box from '../Box';
-import Link from '.';
-import { storiesOf } from '../../storybook';
 
 storiesOf('Link', module)
-  .add(
-    'default',
-    () => (
-      <Link href="https://theme-ui.com/components/link">Hello, world!</Link>
-    ),
-    {
-      component: Link,
-      status: { type: 'beta' }
+  .add('default', createArgsStory(Link), {
+    args: {
+      children: 'Click Me',
+      href: 'https://example.com',
+      autoContrast: Link.defaultProps?.autoContrast,
+      ...createSxArgs(Link)
+    },
+    argTypes: {
+      autoContrast: {
+        options: ['A', 'AA', 'AAA', false],
+        control: 'select'
+      },
+      ...sxArgTypes
     }
-  )
+  })
   .add(
     'with background',
-    () => (
-      <Box sx={{ bg: 'background', p: 4 }}>
-        <Link href="https://theme-ui.com/components/link">Hello, world!</Link>
+    (args: Args) => (
+      <Box
+        sx={{
+          padding: 2,
+          bg: args.background
+        }}
+      >
+        <Link autoContrast={args.autoContrast} href="https://example.com">
+          Click Me
+        </Link>
       </Box>
     ),
     {
-      component: Link,
-      status: { type: 'beta' }
+      args: {
+        background: 'black',
+        autoContrast: 'AAA'
+      },
+      argTypes: {
+        background: { control: { type: 'color' } },
+        autoContrast: {
+          options: ['A', 'AA', 'AAA', false],
+          control: 'select'
+        }
+      }
     }
   );
