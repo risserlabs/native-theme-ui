@@ -1,16 +1,11 @@
 /**
- * File: /components/Message/index.tsx
+ * File: /components/AspectImage/index.tsx
  * Project: -
- * File Created: 22-06-2022 04:26:50
+ * File Created: 23-06-2022 03:43:01
  * Author: K S R P BHUSHAN
  * -----
-<<<<<<< HEAD
- * Last Modified: 23-06-2022 17:33:47
- * Modified By: Ajithkrm6
-=======
- * Last Modified: 23-06-2022 17:33:47
- * Modified By: Ajithkrm6
->>>>>>> 915dbba2539d9bdfced409fac14c7fb2f5b48c51
+ * Last Modified: 23-06-2022 04:03:06
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -27,16 +22,22 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
-import { DripsyFC } from '../../dripsyHelper';
-import Paragraph, { ParagraphProps } from '../Paragraph';
+import React, { FC } from 'react';
+import { AutoContrast } from '@risserlabs/auto-contrast';
 
-type MessageProps = ParagraphProps;
-const Message: DripsyFC<MessageProps> = (props: MessageProps) => {
-  return <Paragraph {...props} />;
+type AspectImageProps = {
+  autoContrast?: AutoContrast;
+};
+const AspectImage: FC<AspectImageProps> = (props: AspectImageProps) => {
+  return (
+    <div
+      style={{
+        backgroundColor: 'green'
+      }}
+    >
+      AspectImage component
+    </div>
+  );
 };
 
-Message.defaultSx = {};
-
-export default Message;
+export default AspectImage;

@@ -1,16 +1,11 @@
 /**
- * File: /components/Message/index.tsx
+ * File: /components/AspectImage/AspectImage.stories.tsx
  * Project: -
- * File Created: 22-06-2022 04:26:50
+ * File Created: 23-06-2022 03:44:14
  * Author: K S R P BHUSHAN
  * -----
-<<<<<<< HEAD
- * Last Modified: 23-06-2022 17:33:47
- * Modified By: Ajithkrm6
-=======
- * Last Modified: 23-06-2022 17:33:47
- * Modified By: Ajithkrm6
->>>>>>> 915dbba2539d9bdfced409fac14c7fb2f5b48c51
+ * Last Modified: 23-06-2022 03:59:37
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -28,15 +23,9 @@
  */
 
 import React from 'react';
-import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
-import { DripsyFC } from '../../dripsyHelper';
-import Paragraph, { ParagraphProps } from '../Paragraph';
+import { storiesOf } from '../../storybook';
+import AspectImage from './index';
 
-type MessageProps = ParagraphProps;
-const Message: DripsyFC<MessageProps> = (props: MessageProps) => {
-  return <Paragraph {...props} />;
-};
-
-Message.defaultSx = {};
-
-export default Message;
+storiesOf('AspectImage', module).add('with background', () => (
+  <AspectImage></AspectImage>
+));
