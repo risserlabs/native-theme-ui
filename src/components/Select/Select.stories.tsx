@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 06:16:36
  * Author: Harikittu46
  * -----
- * Last Modified: 22-06-2022 07:00:56
- * Modified By: Clay Risser
+ * Last Modified: 23-06-2022 03:48:34
+ * Modified By: Hari Krishna
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -37,8 +37,10 @@ storiesOf('Select', module)
   .add(
     'default',
     createArgsStory(Select, {}, [
-      <Select.Option key="0">hello</Select.Option>,
-      <Select.Option key="1">world</Select.Option>
+      <Select.Option key="0">BMW</Select.Option>,
+      <Select.Option key="1">AUDI</Select.Option>,
+      <Select.Option key="2">FORD</Select.Option>,
+      <Select.Option key="3">SUZIKI</Select.Option>
     ]),
     {
       args: {
@@ -64,8 +66,10 @@ storiesOf('Select', module)
         }}
       >
         <Select autoContrast={args.autoContrast}>
-          <Select.Option>hello</Select.Option>
-          <Select.Option>world</Select.Option>
+          <Select.Option>BMW</Select.Option>
+          <Select.Option>AUDI</Select.Option>
+          <Select.Option>FORD</Select.Option>
+          <Select.Option>SUZIKI</Select.Option>
         </Select>
       </Box>
     ),
