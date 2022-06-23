@@ -3,7 +3,7 @@
 # File Created: 04-12-2021 02:19:00
 # Author: Clay Risser <email@clayrisser.com>
 # -----
-# Last Modified: 22-06-2022 15:22:29
+# Last Modified: 23-06-2022 06:47:36
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -26,7 +26,6 @@ export MKPM_PACKAGES_DEFAULT := \
 	docker=0.0.16 \
 	dotenv=0.0.9 \
 	gnu=0.0.3 \
-	mkchain=0.0.16 \
 	yarn=0.0.1
 
 export MKPM_REPO_DEFAULT := \
