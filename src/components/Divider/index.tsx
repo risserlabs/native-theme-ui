@@ -25,6 +25,7 @@
 import React, { FC } from 'react';
 import { View, SxProp } from 'dripsy';
 import { ViewProps } from 'react-native';
+
 export interface DividerProps extends ViewProps {
   sx?: SxProp;
 }

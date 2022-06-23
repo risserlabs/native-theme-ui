@@ -26,13 +26,16 @@ import React, { FC } from 'react';
 import { ActivityIndicator as DActivityIndicator, SxProp } from 'dripsy';
 import { ActivityIndicatorProps as RNActivityIndicator } from 'react-native';
 import useThemeLookup from '../../hooks/useThemeLookup';
+import { DripsyFC } from '../../dripsyHelper';
 
 export interface ActivityIndicatorProps extends RNActivityIndicator {
   sx?: SxProp;
   color?: string;
 }
 
-const Spinner: FC<ActivityIndicatorProps> = (props: ActivityIndicatorProps) => {
+const Spinner: DripsyFC<ActivityIndicatorProps> = (
+  props: ActivityIndicatorProps
+) => {
   const themeLookup = useThemeLookup();
   const sxProp: SxProp = { ...styles.spinner, ...props.sx };
 
@@ -53,5 +56,5 @@ Spinner.defaultProps = {
 export const styles = {
   spinner: {}
 };
-
+Spinner.defaultSx = {};
 export default Spinner;
