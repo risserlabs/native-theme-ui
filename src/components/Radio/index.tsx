@@ -4,8 +4,8 @@
  * File Created: 20-06-2022 07:09:45
  * Author: Lavanya Katari
  * -----
- * Last Modified: 22-06-2022 03:58:05
- * Modified By: Lavanya Katari
+ * Last Modified: 23-06-2022 14:59:17
+ * Modified By: Ajithkrm6
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -29,6 +29,14 @@ type RadioProps = {
   autoContrast?: AutoContrast;
 };
 const Radio: FC<RadioProps> = (props: RadioProps) => {
-  return <div>Radio component</div>;
+  return (
+    <div
+      style={{
+        backgroundColor: 'yellow'
+      }}
+    >
+      Radio component
+    </div>
+  );
 };
 export default Radio;
