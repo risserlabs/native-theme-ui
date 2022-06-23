@@ -4,7 +4,7 @@
  * File Created: 22-06-2022 04:27:49
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 22-06-2022 04:38:57
+ * Last Modified: 22-06-2022 23:37:22
  * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,7 +23,7 @@
  */
 
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
+import { storiesOf } from '../../storybook';
 import Message from './index';
 
 storiesOf('Message', module).add('with background', () => <Message></Message>);

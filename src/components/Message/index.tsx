@@ -4,7 +4,7 @@
  * File Created: 22-06-2022 04:26:50
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 22-06-2022 04:47:09
+ * Last Modified: 22-06-2022 23:38:21
  * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -32,7 +32,7 @@ const Message: FC<MessageProps> = (props: MessageProps) => {
   return (
     <div
       style={{
-        backgroundColor: 'black'
+        backgroundColor: 'yellow'
       }}
     >
       Message component
