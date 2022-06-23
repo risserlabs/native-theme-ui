@@ -1,10 +1,10 @@
 /**
- * File: /components/Message/index.tsx
+ * File: /components/AspectImage/index.tsx
  * Project: -
- * File Created: 22-06-2022 04:26:50
+ * File Created: 23-06-2022 03:43:01
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 22-06-2022 23:38:21
+ * Last Modified: 23-06-2022 04:03:06
  * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,19 +25,19 @@
 import React, { FC } from 'react';
 import { AutoContrast } from '@risserlabs/auto-contrast';
 
-type MessageProps = {
+type AspectImageProps = {
   autoContrast?: AutoContrast;
 };
-const Message: FC<MessageProps> = (props: MessageProps) => {
+const AspectImage: FC<AspectImageProps> = (props: AspectImageProps) => {
   return (
     <div
       style={{
-        backgroundColor: 'yellow'
+        backgroundColor: 'green'
       }}
     >
-      Message component
+      AspectImage component
     </div>
   );
 };
 
-export default Message;
+export default AspectImage;

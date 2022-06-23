@@ -1,10 +1,10 @@
 /**
- * File: /components/Message/index.tsx
+ * File: /components/AspectImage/AspectImage.stories.tsx
  * Project: -
- * File Created: 22-06-2022 04:26:50
+ * File Created: 23-06-2022 03:44:14
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 22-06-2022 23:38:21
+ * Last Modified: 23-06-2022 03:59:37
  * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,22 +22,10 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
+import React from 'react';
+import { storiesOf } from '../../storybook';
+import AspectImage from './index';
 
-type MessageProps = {
-  autoContrast?: AutoContrast;
-};
-const Message: FC<MessageProps> = (props: MessageProps) => {
-  return (
-    <div
-      style={{
-        backgroundColor: 'yellow'
-      }}
-    >
-      Message component
-    </div>
-  );
-};
-
-export default Message;
+storiesOf('AspectImage', module).add('with background', () => (
+  <AspectImage></AspectImage>
+));
