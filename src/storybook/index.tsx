@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 22-06-2022 07:30:06
+ * Last Modified: 23-06-2022 07:43:28
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,7 +23,7 @@
  */
 
 import React, { ComponentType, ReactNode } from 'react';
-import { Sx } from 'dripsy';
+import { SxProp, Sx } from 'dripsy';
 export * from './storybook';
 
 export function getProps(args: Record<string, unknown>) {
@@ -59,31 +59,38 @@ export function createArgsStory(
   if (!props) props = {};
   if (children) props.children = children;
   return function StoryComponent(args: Record<string, unknown>) {
-    const sxArgs = getSx(args);
-    if (
-      typeof sxArgs.borderRadius === 'string' &&
-      sxArgs.borderRadius[sxArgs.borderRadius.length - 1] !== '%'
-    ) {
-      sxArgs.borderRadius = parseInt(sxArgs.borderRadius);
-    }
+    const sxArgs = Object.entries(getSx(args)).reduce(
+      (sxArgs: Args, [key, value]: [string, unknown]) => {
+        if (typeof value === 'string' && !Number.isNaN(Number(value))) {
+          value = Number(value);
+        }
+        sxArgs[key] = value;
+        return sxArgs;
+      },
+      {}
+    );
     return <C {...props} {...getProps(args)} sx={sxArgs} />;
   };
 }
 
 export function createSxArgs(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  C: ComponentType<any> & { defaultSx: Sx }
+  C: ComponentType<any> & { defaultSx: SxProp }
 ) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const DC = C as ComponentType<any> & { defaultSx: Sx };
   return {
-    sxBg: C.defaultSx?.bg,
-    sxM: C.defaultSx?.m,
-    sxP: C.defaultSx?.p,
-    sxFontSize: C.defaultSx?.fontSize,
-    sxColor: C.defaultSx?.color,
-    sxHeight: C.defaultSx?.height,
-    sxWidth: C.defaultSx?.width,
-    sxBorderWidth: C.defaultSx?.borderWidth,
-    sxBorderRadius: C.defaultSx?.borderRadius
+    sxBg: DC.defaultSx?.bg,
+    sxM: DC.defaultSx?.m,
+    sxP: DC.defaultSx?.p,
+    sxFontSize: DC.defaultSx?.fontSize,
+    sxColor: DC.defaultSx?.color,
+    sxHeight: DC.defaultSx?.height,
+    sxWidth: DC.defaultSx?.width,
+    sxBorderWidth: DC.defaultSx?.borderWidth,
+    sxBorderRadius: DC.defaultSx?.borderRadius,
+    sxMinWidth: DC.defaultSx?.minWidth,
+    sxMaxWidth: DC.defaultSx?.minWidth
   };
 }
 
@@ -93,8 +100,10 @@ export const sxArgTypes = {
   sxM: { control: 'number' },
   sxP: { control: 'number' },
   sxHeight: { control: 'number' },
-  sxWidth: { control: 'number' },
-  sxBorderWidth: { control: 'number' },
+  sxWidth: { control: 'text' },
+  sxMinWidth: { control: 'text' },
+  sxMaxWidth: { control: 'text' },
+  sxBorderWidth: { control: 'text' },
   sxBorderRadius: {
     control: { type: 'text' }
   }

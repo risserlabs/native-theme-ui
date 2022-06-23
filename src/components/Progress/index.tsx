@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:22
+ * Last Modified: 23-06-2022 07:44:23
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,11 +25,12 @@
 import React, { FC } from 'react';
 import { View, SxProp } from 'dripsy';
 import { ViewProps } from 'react-native';
-export interface ProgressProps extends ViewProps {
+
+export type ProgressProps = {
   sx?: SxProp;
-  max?: Number;
-  value?: Number;
-}
+  max?: number;
+  value?: number;
+};
 
 const Progress: FC<ProgressProps> = (props: ProgressProps) => {
   let max: any = props.max;

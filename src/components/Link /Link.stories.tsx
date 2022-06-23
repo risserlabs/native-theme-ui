@@ -1,10 +1,10 @@
 /**
- * File: /components/NavLink /NavLink.stories.tsx
+ * File: /components/Link /Link.stories.tsx
  * Project: -
  * File Created: 22-06-2022 14:34:02
  * Author: Ajithkrm6
  * -----
- * Last Modified: 22-06-2022 07:37:13
+ * Last Modified: 23-06-2022 07:20:33
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -30,16 +30,16 @@ import {
   sxArgTypes,
   Args
 } from '../../storybook';
-import NavLink from './index';
+import Link from './index';
 import Box from '../Box';
 
-storiesOf('NavLink', module)
-  .add('with default', createArgsStory(NavLink), {
+storiesOf('Link', module)
+  .add('default', createArgsStory(Link), {
     args: {
       children: 'Click Me',
       href: 'https://example.com',
-      autoContrast: NavLink.defaultProps?.autoContrast,
-      ...createSxArgs(NavLink)
+      autoContrast: Link.defaultProps?.autoContrast,
+      ...createSxArgs(Link)
     },
     argTypes: {
       autoContrast: {
@@ -58,9 +58,9 @@ storiesOf('NavLink', module)
           bg: args.background
         }}
       >
-        <NavLink autoContrast={args.autoContrast} href="https://example.com">
+        <Link autoContrast={args.autoContrast} href="https://example.com">
           Click Me
-        </NavLink>
+        </Link>
       </Box>
     ),
     {

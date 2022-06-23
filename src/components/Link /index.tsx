@@ -1,10 +1,10 @@
 /**
- * File: /components/Paragraph/index.tsx
+ * File: /components/Link /index.tsx
  * Project: -
- * File Created: 20-06-2022 05:48:50
- * Author: Clay Risser
+ * File Created: 22-06-2022 14:33:38
+ * Author: Ajithkrm6
  * -----
- * Last Modified: 23-06-2022 07:29:41
+ * Last Modified: 23-06-2022 07:22:58
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,27 +24,31 @@
 
 import React from 'react';
 import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
-import { P as DP } from 'dripsy';
-import { DPProps, DripsyFC } from '../../dripsyHelper';
+import { A as DA } from 'dripsy';
+import { DAProps, DripsyFC } from '../../dripsyHelper';
 
-type ParagraphProps = DPProps & {
+export type LinkProps = Partial<DAProps> & {
   autoContrast?: AutoContrast;
 };
 
-const Paragraph: DripsyFC<ParagraphProps> = (props: ParagraphProps) => {
+const Link: DripsyFC<LinkProps> = (props: LinkProps) => {
   const sx = useAutoContrast(props, {
-    ...Paragraph.defaultSx,
+    ...Link.defaultSx,
     ...props.sx
   });
-  return <DP {...props} sx={sx} />;
+  return <DA {...(props as DAProps)} sx={sx} />;
 };
 
-Paragraph.defaultProps = {};
+Link.defaultProps = {};
 
-Paragraph.defaultSx = {
-  fontFamily: 'SofiaPro-Bold',
-  fontWeight: 'body',
-  lineHeight: 'body'
+Link.defaultSx = {
+  color: 'inherit',
+  textDecoration: 'none',
+  fontWeight: 'bold',
+  display: 'inline-block'
+  // '&:hover, &:focus, &.active': {
+  //   color: 'primary'
+  // }
 };
 
-export default Paragraph;
+export default Link;

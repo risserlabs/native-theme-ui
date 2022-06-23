@@ -4,8 +4,8 @@
  * File Created: 22-06-2022 04:26:50
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 22-06-2022 23:38:21
- * Modified By: K S R P BHUSHAN
+ * Last Modified: 23-06-2022 07:38:49
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,22 +22,30 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
+import React from 'react';
+import Box, { BoxProps } from '../Box';
+import { DripsyFC } from '../../dripsyHelper';
 
-type MessageProps = {
-  autoContrast?: AutoContrast;
+export type MessageProps = BoxProps;
+
+const Message: DripsyFC<MessageProps> = (props: MessageProps) => {
+  const sx = {
+    ...Message.defaultSx,
+    ...props.sx
+  };
+  return <Box {...props} sx={sx} />;
 };
-const Message: FC<MessageProps> = (props: MessageProps) => {
-  return (
-    <div
-      style={{
-        backgroundColor: 'yellow'
-      }}
-    >
-      Message component
-    </div>
-  );
+
+Message.defaultProps = {};
+
+Message.defaultSx = {
+  padding: 3,
+  paddingLeft: (t) => t.space && Number(t.space[3]) - Number(t.space[1]),
+  borderLeftWidth: (t) => t.space && Number(t.space[1]),
+  borderLeftStyle: 'solid',
+  borderLeftColor: 'primary',
+  borderRadius: 4,
+  bg: 'highlight'
 };
 
 export default Message;

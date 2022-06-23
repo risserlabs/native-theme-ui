@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:56:45
+ * Last Modified: 23-06-2022 07:57:56
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,31 +22,32 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
+import React from 'react';
 import { SxProp, Image as DImage } from 'dripsy';
-import { ImageProps as RNImageProps } from 'react-native';
+import { DImageProps, DripsyFC } from '../../dripsyHelper';
 
-export interface ImageProps extends RNImageProps {
-  sx?: SxProp;
-}
+export type ImageProps = DImageProps & {
+  src?: string;
+};
 
-const Image: FC<ImageProps> = (props: ImageProps) => {
+const Image: DripsyFC<ImageProps> = (props: ImageProps) => {
   const sx: SxProp = {
-    ...styles.image,
+    ...Image.defaultSx,
     ...props.sx
   };
-  return <DImage {...props} sx={{ ...sx }} />;
+  const dImageProps = { ...props };
+  if (props.src) dImageProps.source = { uri: props.src };
+  delete dImageProps.src;
+  return <DImage {...dImageProps} sx={sx} />;
 };
 
 Image.defaultProps = {
   sx: {}
 };
 
-export const styles = {
-  image: {
-    maxWidth: '100%',
-    height: 'auto'
-  }
+Image.defaultSx = {
+  maxWidth: '100%',
+  height: 'auto'
 };
 
 export default Image;

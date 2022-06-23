@@ -4,7 +4,7 @@
  * File Created: 14-06-2022 07:52:25
  * Author: Clay Risser
  * -----
- * Last Modified: 22-06-2022 07:24:48
+ * Last Modified: 23-06-2022 07:47:26
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,7 +23,7 @@
  */
 
 import { FC } from 'react';
-import { Sx } from 'dripsy';
+import { SxProp } from 'dripsy';
 import { TextInput as RNTextInput } from 'react-native';
 
 export type DPressableProps = Pick<
@@ -537,4 +537,18 @@ export type DAProps = import('@dripsy/core').StyledProps<'text'> &
       })
   );
 
-export type DripsyFC<P> = FC<P> & { defaultSx: Sx };
+export type DImageProps = import('@dripsy/core').StyledProps<
+  keyof import('@dripsy/core').Theme
+> &
+  (
+    | (import('react-native').ImageProps &
+        import('react').RefAttributes<
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          import('react').Component<import('react-native').ImageProps, any, any>
+        >)
+    | (import('react-native').ImageProps & {
+        children?: import('react').ReactNode;
+      })
+  );
+
+export type DripsyFC<P> = FC<P> & { defaultSx: SxProp };
