@@ -1,10 +1,10 @@
 /**
- * File: /components/Slider/index.tsx
+ * File: /components/Slider/Slider.stories.tsx
  * Project: -
- * File Created: 20-06-2022 06:24:02
+ * File Created: 20-06-2022 06:25:43
  * Author: Lavanya Katari
  * -----
- * Last Modified: 22-06-2022 04:01:43
+ * Last Modified: 24-06-2022 01:39:00
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,21 +22,29 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
-type SliderProps = {
-  autoContrast?: AutoContrast;
-};
-const Slider: FC<SliderProps> = (props: SliderProps) => {
-  return (
-    <div
-      style={{
-        backgroundColor: 'purple'
-      }}
-    >
-      Slider component
-    </div>
-  );
-};
+import React from 'react';
 
-export default Slider;
+import Box from '../Box';
+import {
+  storiesOf,
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes
+} from '../../storybook';
+import Slider from './index';
+
+storiesOf('Slider', module)
+  .add('default', createArgsStory(Slider), {
+    args: {
+      children: 'Slider',
+      ...createSxArgs(Slider)
+    },
+    argTypes: {
+      autoContrast: {
+        options: ['A', 'AA', 'AAA', false]
+      },
+      ...sxArgTypes
+    }
+  })
+  .add('with background', () => <Box sx={{ bg: 'background', p: 4 }}></Box>);
+//.add('with background', () => <Slider></Slider>);

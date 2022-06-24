@@ -4,7 +4,7 @@
  * File Created: 23-06-2022 18:32:39
  * Author: Ajithkrm6
  * -----
- * Last Modified: 23-06-2022 18:36:58
+ * Last Modified: 24-06-2022 11:09:07
  * Modified By: Ajithkrm6
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -47,7 +47,5 @@ Message.defaultSx = {
   borderRadius: 4,
   bg: 'highlight'
 };
-
-Message.defaultSx = {};
 
 export default Message;
