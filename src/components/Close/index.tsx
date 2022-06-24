@@ -4,8 +4,13 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
+<<<<<<< HEAD
  * Last Modified: 24-06-2022 11:09:20
  * Modified By: Ajithkrm6
+=======
+ * Last Modified: 24-06-2022 01:28:06
+ * Modified By: K S R P BHUSHAN
+>>>>>>> 49426c223a1740d5457bca87d0fbaeb49f7f8f04
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -27,7 +32,8 @@ import { SxProp } from 'dripsy';
 import { DripsyFC } from '../../dripsyHelper';
 import Pressable from '../Pressable';
 import { PressableProps as RNPressableProps } from 'react-native';
-
+import { DripsyFC } from '../../dripsyHelper';
+import { AutoContrast } from '@risserlabs/auto-contrast';
 const x = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -40,13 +46,17 @@ const x = (
   </svg>
 );
 
-export interface CloseProps extends RNPressableProps {
+type CloseProps = RNPressableProps & {
   sx?: SxProp;
-}
+  autoContrast?: AutoContrast;
+};
+//export interface CloseProps extends RNPressableProps {
+//sx?: SxProp;
+//}
 
 const Close: DripsyFC<CloseProps> = (props: CloseProps) => {
   const sx: SxProp = {
-    ...styles.close,
+    ...Close.defaultSx,
     ...props.sx
   };
 
@@ -64,7 +74,15 @@ Close.defaultProps = {
 };
 
 Close.defaultSx = {
+<<<<<<< HEAD
   // close: { bg: 'transparent' }
+=======
+  bg: 'transparent'
+>>>>>>> 49426c223a1740d5457bca87d0fbaeb49f7f8f04
 };
+
+//export const styles = {
+//close: { bg: 'transparent' }
+//};
 
 export default Close;
