@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 06:16:36
  * Author: Harikittu46
  * -----
- * Last Modified: 23-06-2022 03:48:34
+ * Last Modified: 23-06-2022 22:57:28
  * Modified By: Hari Krishna
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -40,7 +40,7 @@ storiesOf('Select', module)
       <Select.Option key="0">BMW</Select.Option>,
       <Select.Option key="1">AUDI</Select.Option>,
       <Select.Option key="2">FORD</Select.Option>,
-      <Select.Option key="3">SUZIKI</Select.Option>
+      <Select.Option key="3">SUZUKI</Select.Option>
     ]),
     {
       args: {
@@ -69,7 +69,7 @@ storiesOf('Select', module)
           <Select.Option>BMW</Select.Option>
           <Select.Option>AUDI</Select.Option>
           <Select.Option>FORD</Select.Option>
-          <Select.Option>SUZIKI</Select.Option>
+          <Select.Option>SUZUKI</Select.Option>
         </Select>
       </Box>
     ),
