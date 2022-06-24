@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 06:47:48
  * Author: Harikittu46
  * -----
- * Last Modified: 23-06-2022 05:44:29
- * Modified By: Hari Krishna
+ * Last Modified: 24-06-2022 01:26:20
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -54,7 +54,19 @@ Select.Option = Option;
 
 Select.defaultProps = {};
 
-Select.defaultSx = {};
+Select.defaultSx = {
+  display: 'block',
+  width: '100%',
+  p: 2,
+  appearance: 'none',
+  fontSize: 'inherit',
+  lineHeight: 'inherit',
+  border: '1px solid',
+  borderRadius: 4,
+  borderColor: 'blue',
+  color: 'inherit'
+  //backgroundColor: (theme) => get(theme, 'colors.background', null),
+};
 
 export default Select;
 

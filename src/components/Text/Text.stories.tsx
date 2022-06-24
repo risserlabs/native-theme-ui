@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:52
- * Modified By: Clay Risser
+ * Last Modified: 24-06-2022 03:49:27
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -23,24 +23,55 @@
  */
 
 import React from 'react';
+//import Paragraph from '../Paragraph';
 import Box from '../Box';
-import Text from '.';
-import { storiesOf } from '../../storybook';
+import Text from './index';
+import {
+  Args,
+  createArgsStory,
+  createSxArgs,
+  storiesOf,
+  sxArgTypes
+} from '../../storybook';
 
 storiesOf('Text', module)
-  .add('default', () => <Text>Hello, world!</Text>, {
-    component: Text,
-    status: { type: 'beta' }
+  //.add('default', () => <Text>Hello, world!</Text>, {
+  //component: Text,
+  //status: { type: 'beta' }
+  //})
+
+  .add('default', createArgsStory(Text), {
+    args: {
+      children: 'I am Text Editor',
+      ...createSxArgs(Text)
+    },
+    argTypes: {
+      autoContrast: {
+        options: ['A', 'AA', 'AAA', false]
+      },
+      ...sxArgTypes
+    }
   })
   .add(
     'with background',
-    () => (
-      <Box sx={{ bg: 'background', p: 4 }}>
+    (args: Args) => (
+      <Box
+        sx={{
+          bg: args.background,
+          p: 4,
+          fontWeight: 'bold'
+        }}
+      >
         <Text>Hello, world!</Text>
       </Box>
     ),
     {
-      component: Text,
-      status: { type: 'beta' }
+      argTypes: {
+        background: { control: { type: 'color' } },
+        autoContrast: {
+          options: ['A', 'AA', 'AAA', false],
+          control: 'select'
+        }
+      }
     }
   );

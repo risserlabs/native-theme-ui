@@ -4,8 +4,8 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 23-06-2022 07:43:28
- * Modified By: Clay Risser
+ * Last Modified: 24-06-2022 01:24:15
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -90,7 +90,8 @@ export function createSxArgs(
     sxBorderWidth: DC.defaultSx?.borderWidth,
     sxBorderRadius: DC.defaultSx?.borderRadius,
     sxMinWidth: DC.defaultSx?.minWidth,
-    sxMaxWidth: DC.defaultSx?.minWidth
+    sxMaxWidth: DC.defaultSx?.minWidth,
+    sxBorderColor: DC.defaultSx?.borderColor
   };
 }
 
@@ -106,7 +107,8 @@ export const sxArgTypes = {
   sxBorderWidth: { control: 'text' },
   sxBorderRadius: {
     control: { type: 'text' }
-  }
+  },
+  sxBorderColor: { control: { type: 'color' } }
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
