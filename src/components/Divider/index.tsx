@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:55:59
+ * Last Modified: 24-06-2022 06:49:14
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,35 +23,37 @@
  */
 
 import React from 'react';
-import { View, SxProp } from 'dripsy';
-import { ViewProps } from 'react-native';
-import { DripsyFC } from '../../dripsyHelper';
-import { AutoContrast } from '@risserlabs/auto-contrast';
+import { View, Sx, SxProp } from 'dripsy';
+import { DripsyFC, DViewProps } from '../../dripsyHelper';
+import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
 
-type DividerProps = ViewProps & {
-  sx?: SxProp;
+type DividerProps = DViewProps & {
   autoContrast?: AutoContrast;
 };
 
 const Divider: DripsyFC<DividerProps> = (props: DividerProps) => {
-  const sx: SxProp = {
+  const mergedSx: SxProp = {
     ...Divider.defaultSx,
-    ...props.sx
+    ...props.sx,
+    color: (props.sx as Sx)?.bg
   };
-
-  return <View sx={{ ...sx }} />;
+  delete mergedSx.bg;
+  const sx = useAutoContrast(props, mergedSx);
+  (sx as Sx).bg = (sx as Sx).color as string;
+  delete (sx as Sx).color;
+  return <View sx={sx} />;
 };
 
 Divider.defaultProps = {};
 
 Divider.defaultSx = {
-  color: 'gray',
+  bg: 'gray',
   m: 0,
+  height: 1,
+  width: '100%',
   my: 2,
   border: 0,
-  borderBottom: '1px solid',
-  borderBottomColor: 'black',
-  borderBottomWidth: 1
+  borderBottom: '1px solid'
 };
 
 export default Divider;

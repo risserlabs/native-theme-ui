@@ -4,7 +4,7 @@
  * File Created: 14-06-2022 07:52:25
  * Author: Clay Risser
  * -----
- * Last Modified: 23-06-2022 07:47:26
+ * Last Modified: 24-06-2022 06:27:54
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -547,6 +547,20 @@ export type DImageProps = import('@dripsy/core').StyledProps<
           import('react').Component<import('react-native').ImageProps, any, any>
         >)
     | (import('react-native').ImageProps & {
+        children?: import('react').ReactNode;
+      })
+  );
+
+export type DViewProps = import('@dripsy/core').StyledProps<
+  keyof import('@dripsy/core').Theme
+> &
+  (
+    | (import('react-native').ViewProps &
+        import('react').RefAttributes<
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          import('react').Component<import('react-native').ViewProps, any, any>
+        >)
+    | (import('react-native').ViewProps & {
         children?: import('react').ReactNode;
       })
   );

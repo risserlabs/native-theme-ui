@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 24-06-2022 06:22:48
+ * Last Modified: 24-06-2022 06:28:01
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,11 +23,11 @@
  */
 
 import React from 'react';
-import { SxProp, Sx, Box } from 'dripsy';
-import { DripsyFC, DBoxProps } from '../../dripsyHelper';
+import { SxProp, Sx, View } from 'dripsy';
+import { DripsyFC, DViewProps } from '../../dripsyHelper';
 
 export type ProgressProps = Omit<
-  DBoxProps,
+  DViewProps,
   | 'p'
   | 'pb'
   | 'pl'
@@ -96,9 +96,9 @@ const Progress: DripsyFC<ProgressProps> = (props: ProgressProps) => {
   delete sxValue.mt;
 
   return (
-    <Box sx={sxMax}>
-      <Box sx={sxValue} />
-    </Box>
+    <View sx={sxMax}>
+      <View sx={sxValue} />
+    </View>
   );
 };
 
