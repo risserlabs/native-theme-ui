@@ -4,8 +4,8 @@
  * File Created: 22-06-2022 14:33:38
  * Author: Ajithkrm6
  * -----
- * Last Modified: 23-06-2022 07:22:58
- * Modified By: Clay Risser
+ * Last Modified: 23-06-2022 18:35:50
+ * Modified By: Ajithkrm6
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -46,9 +46,9 @@ Link.defaultSx = {
   textDecoration: 'none',
   fontWeight: 'bold',
   display: 'inline-block'
-  // '&:hover, &:focus, &.active': {
-  //   color: 'primary'
-  // }
+  //'&:hover, &:focus': {
+  // backgroundColor: 'primary'
+  //}
 };
 
 export default Link;

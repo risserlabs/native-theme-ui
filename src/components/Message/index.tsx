@@ -1,11 +1,11 @@
 /**
  * File: /components/Message/index.tsx
  * Project: -
- * File Created: 22-06-2022 04:26:50
- * Author: K S R P BHUSHAN
+ * File Created: 23-06-2022 18:32:39
+ * Author: Ajithkrm6
  * -----
- * Last Modified: 23-06-2022 07:38:49
- * Modified By: Clay Risser
+ * Last Modified: 23-06-2022 18:36:58
+ * Modified By: Ajithkrm6
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -47,5 +47,7 @@ Message.defaultSx = {
   borderRadius: 4,
   bg: 'highlight'
 };
+
+Message.defaultSx = {};
 
 export default Message;
