@@ -22,26 +22,36 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
+import React from 'react';
 import { SxProp, View as DView } from 'dripsy';
 import { ViewProps as RNViewProps } from 'react-native';
 import Text from '../Text';
 import Image from '../Image';
+import { DripsyFC } from '../../dripsyHelper';
+import { AutoContrast } from '@risserlabs/auto-contrast';
 
-export interface ViewProps extends RNViewProps {
+type ViewProps = RNViewProps & {
   sx?: SxProp;
   isImage?: boolean;
   name?: string;
   uri?: string;
-}
+  autoContrast?: AutoContrast;
+};
 
-const Avatar: FC<ViewProps> = (props: ViewProps) => {
+//export interface ViewProps extends RNViewProps {
+//sx?: SxProp;
+//isImage?: boolean;
+//name?: string;
+//uri?: string;
+//}
+
+const Avatar: DripsyFC<ViewProps> = (props: ViewProps) => {
   const sx: SxProp = {
-    ...styles.view,
+    ...Avatar.defaultSx,
     ...props.sx
   };
   return (
-    <DView {...props} sx={{ ...sx }}>
+    <DView {...props} sx={sx}>
       {props.isImage ? (
         <Image
           source={{
@@ -62,23 +72,19 @@ Avatar.defaultProps = {
   name: '',
   uri: ''
 };
+Avatar.defaultSx = {
+  maxWidth: '100%',
+  bg: 'primary',
+  border: 0,
+  alignItems: 'center',
+  justifyContent: 'center',
 
-export const styles = {
-  view: {
-    maxWidth: '100%',
-    bg: 'primary',
-    border: 0,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  image: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    overflow: 'hidden',
-    borderWidth: 1,
-    borderColor: 'primary'
-  }
+  width: 50,
+  height: 50,
+  borderRadius: 25,
+  overflow: 'hidden',
+  borderWidth: 1,
+  borderColor: 'primary'
 };
 
 export default Avatar;

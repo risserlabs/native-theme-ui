@@ -23,43 +23,26 @@
  */
 
 import React from 'react';
-import { storiesOf } from '../../storybook';
+import {
+  storiesOf,
+  createArgsStory,
+  sxArgTypes,
+  createSxArgs
+} from '../../storybook';
 import Avatar from '.';
 
-storiesOf('Avatar', module)
-  .add(
-    'Simple Avatar',
-    () => (
-      <Avatar
-        sx={{
-          width: 50,
-          height: 50,
-          borderRadius: 25
-        }}
-        name={'UI'}
-        isImage={false}
-      />
-    ),
-    {
-      component: Avatar,
-      status: { type: 'beta' }
-    }
-  )
-  .add(
-    'Image Avatar',
-    () => (
-      <Avatar
-        isImage
-        uri={'https://picsum.photos/200'}
-        sx={{
-          width: 50,
-          height: 50,
-          borderRadius: 25
-        }}
-      />
-    ),
-    {
-      component: Avatar,
-      status: { type: 'beta' }
-    }
-  );
+storiesOf('Avatar', module).add('Simple Avatar', createArgsStory(Avatar), {
+  args: {
+    src: 'https://picsum.photos/200/300',
+    children: 'Iam Avatar',
+    autoContrast: Avatar.defaultProps?.autoContrast,
+    ...createSxArgs(Avatar)
+  },
+  argTypes: {
+    autoContrast: {
+      options: ['A', 'AA', 'AAA', false],
+      control: 'Select'
+    },
+    ...sxArgTypes
+  }
+});

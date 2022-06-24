@@ -11,7 +11,11 @@ const Embed: DripsyFC<EmbedProps> = (props: EmbedProps) => {
     ...Embed.defaultSx,
     ...props.sx
   });
-  return <DE {...props} sx={sx}></DE>;
+  return (
+    <DE {...props} sx={sx}>
+      h
+    </DE>
+  );
 
   Embed.defaultProps = {};
   Embed.defaultSx = {};

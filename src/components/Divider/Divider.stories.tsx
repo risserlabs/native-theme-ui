@@ -25,12 +25,27 @@
 import React from 'react';
 import Box from '../Box';
 import Divider from '.';
-import { storiesOf } from '../../storybook';
+import {
+  storiesOf,
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes
+} from '../../storybook';
 
 storiesOf('Divider', module)
-  .add('default', () => <Divider sx={{ borderBottomColor: 'primary' }} />, {
-    component: Divider,
-    status: { type: 'beta' }
+  .add('default', createArgsStory(Divider), {
+    args: {
+      children: 'i am a divider',
+
+      autoContrast: Divider.defaultProps?.autoContrast,
+      ...createSxArgs(Divider)
+    },
+    argTypes: {
+      autoContrast: {
+        options: ['A', 'AA', 'AAA', false]
+      },
+      ...sxArgTypes
+    }
   })
   .add(
     'with background',

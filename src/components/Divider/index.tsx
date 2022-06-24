@@ -22,17 +22,20 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
+import React from 'react';
 import { View, SxProp } from 'dripsy';
 import { ViewProps } from 'react-native';
+import { DripsyFC } from '../../dripsyHelper';
+import { AutoContrast } from '@risserlabs/auto-contrast';
 
-export interface DividerProps extends ViewProps {
+type DividerProps = ViewProps & {
   sx?: SxProp;
-}
+  autoContrast?: AutoContrast;
+};
 
-const Divider: FC<DividerProps> = (props: DividerProps) => {
+const Divider: DripsyFC<DividerProps> = (props: DividerProps) => {
   const sx: SxProp = {
-    ...styles.divider,
+    ...Divider.defaultSx,
     ...props.sx
   };
 
@@ -41,16 +44,14 @@ const Divider: FC<DividerProps> = (props: DividerProps) => {
 
 Divider.defaultProps = {};
 
-export const styles = {
-  divider: {
-    color: 'gray',
-    m: 0,
-    my: 2,
-    border: 0,
-    borderBottom: '1px solid',
-    borderBottomColor: 'black',
-    borderBottomWidth: 1
-  }
+Divider.defaultSx = {
+  color: 'gray',
+  m: 0,
+  my: 2,
+  border: 0,
+  borderBottom: '1px solid',
+  borderBottomColor: 'black',
+  borderBottomWidth: 1
 };
 
 export default Divider;
