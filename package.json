@@ -10,7 +10,7 @@
     "email": "howdy@bitspur.com"
   },
   "license": "Apache-2.0",
-  "author": "BitSpur, Inc. <howdy@bitspur.com> (https://bitspur.com)",
+  "author": "Risser Labs LLC <howdy@bitspur.com> (https://bitspur.com)",
   "workspaces": [
     "src",
     "platforms/*"
