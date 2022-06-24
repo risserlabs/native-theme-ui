@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:55:52
- * Modified By: Clay Risser
+ * Last Modified: 24-06-2022 01:28:06
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,11 +22,12 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
+import React from 'react';
 import { SxProp } from 'dripsy';
 import Pressable from '../Pressable';
 import { PressableProps as RNPressableProps } from 'react-native';
-
+import { DripsyFC } from '../../dripsyHelper';
+import { AutoContrast } from '@risserlabs/auto-contrast';
 const x = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -39,13 +40,17 @@ const x = (
   </svg>
 );
 
-export interface CloseProps extends RNPressableProps {
+type CloseProps = RNPressableProps & {
   sx?: SxProp;
-}
+  autoContrast?: AutoContrast;
+};
+//export interface CloseProps extends RNPressableProps {
+//sx?: SxProp;
+//}
 
-const Close: FC<CloseProps> = (props: CloseProps) => {
+const Close: DripsyFC<CloseProps> = (props: CloseProps) => {
   const sx: SxProp = {
-    ...styles.close,
+    ...Close.defaultSx,
     ...props.sx
   };
 
@@ -62,8 +67,12 @@ Close.defaultProps = {
   sx: {}
 };
 
-export const styles = {
-  close: { bg: 'transparent' }
+Close.defaultSx = {
+  bg: 'transparent'
 };
+
+//export const styles = {
+//close: { bg: 'transparent' }
+//};
 
 export default Close;

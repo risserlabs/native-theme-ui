@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:56:58
- * Modified By: Clay Risser
+ * Last Modified: 24-06-2022 03:52:53
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -25,12 +25,32 @@
 import React from 'react';
 import Box from '../Box';
 import Label from '.';
-import { storiesOf } from '../../storybook';
+import {
+  storiesOf,
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes
+} from '../../storybook';
 
 storiesOf('Label', module)
-  .add('default', () => <Label>Form Label</Label>, {
-    component: Label,
-    status: { type: 'beta' }
+  //.add('default', () => <Label>Form Label</Label>, {
+  //component: Label,
+  //status: { type: 'beta' }
+  //})
+
+  .add('default', createArgsStory(Label), {
+    args: {
+      children: 'Label',
+      autoContrast: Label.defaultProps?.autoContrast,
+      ...createSxArgs(Label)
+    },
+    argTypes: {
+      autoContrast: {
+        options: ['A', 'AA', 'AAA', false],
+        control: 'select'
+      },
+      ...sxArgTypes
+    }
   })
   .add(
     'with background',
