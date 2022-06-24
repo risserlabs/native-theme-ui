@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:56:21
- * Modified By: Clay Risser
+ * Last Modified: 24-06-2022 14:34:41
+ * Modified By: Ajithkrm6
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -24,10 +24,27 @@
 
 import React from 'react';
 import { Box, Text } from 'dripsy';
-import { storiesOf } from '../../storybook';
+import {
+  createArgsStory,
+  storiesOf,
+  createSxArgs,
+  sxArgTypes
+} from '../../storybook';
 import Flex from '.';
 
 storiesOf('Flex', module)
+  .add('default', createArgsStory(Flex), {
+    args: {
+      children: 'I am Flex ',
+      ...createSxArgs
+    },
+    argTypes: {
+      autoContrast: {
+        options: ['A', 'AA', 'AAA', false]
+      },
+      ...sxArgTypes
+    }
+  })
   .add(
     'flex row',
     () => (

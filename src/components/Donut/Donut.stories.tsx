@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:56:14
- * Modified By: Clay Risser
+ * Last Modified: 24-06-2022 11:37:38
+ * Modified By: Ajithkrm6
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -25,13 +25,32 @@
 import React from 'react';
 import Box from '../Box';
 import Donut from '.';
-import { storiesOf } from '../../storybook';
+import {
+  storiesOf,
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes
+} from '../../storybook';
 
 storiesOf('Donut', module)
-  .add('default 50% Donut', () => <Donut max={100} value={50} />, {
-    component: Donut,
-    status: { type: 'beta' }
+  //..add('default 50% Donut', () => <Donut max={100} value={50} />, {
+  //component: Donut,
+  //status: { type: 'beta' }
+  //})
+
+  .add('default', createArgsStory(Donut), {
+    args: {
+      children: 'I am a donut',
+      ...createSxArgs(Donut)
+    },
+    argtypes: {
+      autoContrast: {
+        options: ['A', 'AA', 'AAA', false]
+      },
+      ...sxArgTypes
+    }
   })
+
   .add('40% Donut', () => <Donut max={100} value={40} />, {
     component: Donut,
     status: { type: 'beta' }

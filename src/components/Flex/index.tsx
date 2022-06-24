@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:56:24
- * Modified By: Clay Risser
+ * Last Modified: 24-06-2022 14:09:17
+ * Modified By: Ajithkrm6
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -26,32 +26,29 @@ import React, { FC } from 'react';
 import { SxProp } from 'dripsy';
 import { ViewProps } from 'react-native';
 import Box from '../Box/index';
+import { DripsyFC } from '../../dripsyHelper';
 
 export interface FlexProps extends ViewProps {
   sx?: SxProp;
 }
 
-const Flex: FC<FlexProps> = (props: FlexProps) => {
+const Flex: DripsyFC<FlexProps> = (props: FlexProps) => {
   const sx: SxProp = {
     flexDirection: 'row',
-    ...styles.flex,
+    ...Flex.defaultSx,
     ...props.sx,
     display: 'flex'
   };
-  return (
-    <Box
-      {...props}
-      sx={{
-        ...sx
-      }}
-    />
-  );
+  return <Box {...props} sx={sx} />;
 };
 
 Flex.defaultProps = {};
-
-export const styles = {
+Flex.defaultSx = {
   flex: {}
 };
+
+//export const styles = {
+//flex: {}
+//};
 
 export default Flex;

@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:56:17
- * Modified By: Clay Risser
+ * Last Modified: 24-06-2022 14:09:03
+ * Modified By: Ajithkrm6
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,17 +22,26 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
+import React from 'react';
 //  import { View, SxProp } from 'dripsy';
 import { Box as DBox, SxProp } from 'dripsy';
 import { ViewProps } from 'react-native';
-export interface DonutProps extends ViewProps {
-  sx?: SxProp;
-  max?: Number;
-  value?: Number;
-}
+import { DripsyFC } from '../../dripsyHelper';
+import { AutoContrast } from '@risserlabs/auto-contrast';
 
-const Donut: FC<DonutProps> = (props: DonutProps) => {
+type DonutProps = ViewProps & {
+  sx?: SxProp;
+  max?: number;
+  value?: number;
+  autoContrast?: AutoContrast;
+};
+//export interface DonutProps extends ViewProps {
+//sx?: SxProp;
+//max?: Number;
+//value?: Number;
+//}
+
+const Donut: DripsyFC<DonutProps> = (props: DonutProps) => {
   const size = 128;
   const strokeWidth = 2;
   const value = 0;
@@ -43,7 +52,7 @@ const Donut: FC<DonutProps> = (props: DonutProps) => {
   const offset = C - ((value - min) / (max - min)) * C;
 
   const sx: SxProp = {
-    ...styles.donut,
+    ...Donut.defaultSx,
     ...props.sx
   };
 
@@ -64,17 +73,15 @@ const Donut: FC<DonutProps> = (props: DonutProps) => {
 
 Donut.defaultProps = {};
 
-export const styles = {
-  donut: {
-    border: '3px solid black',
-    width: '50px',
-    height: '50px',
-    borderRadius: '50px',
-    strokeWidth: 2,
-    fill: 'none',
-    stroke: 'currentcolor',
-    color: 'primary'
-  }
+Donut.defaultSx = {
+  border: '3px solid black',
+  width: '50px',
+  height: '50px',
+  borderRadius: '50px',
+  strokeWidth: 2,
+  fill: 'none',
+  stroke: 'currentcolor',
+  color: 'primary'
 };
 
 export default Donut;
