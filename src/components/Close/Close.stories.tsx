@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:55:48
- * Modified By: Clay Risser
+ * Last Modified: 24-06-2022 01:16:59
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -25,12 +25,30 @@
 import React from 'react';
 import Box from '../Box';
 import Close from '.';
-import { storiesOf } from '../../storybook';
+import {
+  storiesOf,
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes
+} from '../../storybook';
 
 storiesOf('Close', module)
-  .add('default', () => <Close sx={{ color: 'primary' }} />, {
-    component: Close,
-    status: { type: 'beta' }
+  //.add('default', () => <Close sx={{ color: 'primary' }} />, {
+  //component: Close,
+  //status: { type: 'beta' }
+  //})
+
+  .add('default', createArgsStory(Close), {
+    args: {
+      children: 'Close',
+      ...createSxArgs(Close)
+    },
+    argTypes: {
+      autoContrast: {
+        options: ['A', 'AA', 'AAA', false]
+      },
+      ...sxArgTypes
+    }
   })
   .add(
     'with background',
