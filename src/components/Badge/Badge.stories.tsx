@@ -23,10 +23,29 @@
  */
 
 import React from 'react';
-import { storiesOf } from '../../storybook';
+import {
+  storiesOf,
+  createSxArgs,
+  createArgsStory,
+  sxArgTypes
+} from '../../storybook';
 import Badge from '.';
 
 storiesOf('Badge', module)
+  .add('default', createArgsStory(Badge), {
+    args: {
+      children: 'Iam Badge Component',
+      autoContrast: Badge.defaultProps?.autoContrast,
+      ...createSxArgs(Badge)
+    },
+    argTypes: {
+      autoContrast: {
+        options: ['A', 'AA', 'AAA', false],
+        control: 'select'
+      },
+      ...sxArgTypes
+    }
+  })
   .add('Accent Badge', () => <Badge variant="accent">Badge</Badge>, {
     component: Badge,
     status: { type: 'beta' }

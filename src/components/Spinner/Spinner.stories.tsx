@@ -25,9 +25,29 @@
 import React from 'react';
 import { Box } from 'dripsy';
 import Spinner from '.';
-import { storiesOf } from '../../storybook';
+import {
+  storiesOf,
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes
+} from '../../storybook';
 
 storiesOf('Spinner', module)
+  .add('default', createArgsStory(Spinner), {
+    args: {
+      children: 'Iam Spinner Component',
+      autoContrast: Spinner.defaultProps?.autoContrast,
+      ...createSxArgs(Spinner)
+    },
+    argTypes: {
+      autoContrast: {
+        options: ['A', 'AA', 'AAA', false],
+        control: 'select'
+      },
+      ...sxArgTypes
+    }
+  })
+
   .add(
     'size',
     () => (
@@ -40,6 +60,7 @@ storiesOf('Spinner', module)
       status: { type: 'beta' }
     }
   )
+
   .add('like theme-ui', () => <Spinner color="primary" />, {
     component: Spinner,
     status: { type: 'beta' }
