@@ -23,7 +23,7 @@
  */
 
 import React from 'react';
-import { action } from '@storybook/addon-action';
+import { action } from '@storybook/addon-actions';
 import Box from '../Box';
 import Switch from '.';
 import {
