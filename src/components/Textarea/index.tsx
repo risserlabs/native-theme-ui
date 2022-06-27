@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 01:29:36
- * Modified By: Clay Risser
+ * Last Modified: 27-06-2022 04:17:11
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,25 +22,31 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
+import React from 'react';
 import { TextInput as DTextInput, SxProp } from 'dripsy';
 import { TextInputProps as RNTextInputProps } from 'react-native';
-import { useAutoContrast } from '@risserlabs/auto-contrast';
+import { AutoContrast } from '@risserlabs/auto-contrast';
+import { DripsyFC } from '../../dripsyHelper';
 import useThemeLookup from '../../hooks/useThemeLookup';
 
-export interface TextareaProps extends RNTextInputProps {
+type TextareaProps = RNTextInputProps & {
   sx?: SxProp;
-  selectionColor?: string;
-  placeholderTextColor?: string;
-  underlineColorAndroid?: string;
-}
+  autoContrast?: AutoContrast;
+};
 
-const Textarea: FC<TextareaProps> = (props: TextareaProps) => {
+//export interface TextareaProps extends RNTextInputProps {
+//sx?: SxProp;
+//selectionColor?: string;
+//placeholderTextColor?: string;
+//underlineColorAndroid?: string;
+//}
+
+const Textarea: DripsyFC<TextareaProps> = (props: TextareaProps) => {
   const themeLookup = useThemeLookup();
-  const sx = useAutoContrast(props, {
-    ...styles.input,
+  const sx: SxProp = {
+    ...Textarea.defaultSx,
     ...props.sx
-  });
+  };
   return (
     <DTextInput
       {...props}
@@ -58,20 +64,24 @@ Textarea.defaultProps = {
   numberOfLines: 4
 };
 
-export const styles = {
-  input: {
-    display: 'block',
-    width: '100%',
-    p: 2,
-    margin: 0,
-    minWidth: 0,
-    // appearance: 'none',
-    fontSize: 1,
-    border: '1px solid',
-    borderRadius: 4,
-    color: 'text',
-    bg: 'transparent'
-  }
+Textarea.defaultSx = {
+  bg: 'transparent'
 };
+
+//export const styles = {
+//input: {
+//display: 'block',
+//width: '100%',
+//p: 2,
+//margin: 0,
+//minWidth: 0,
+// appearance: 'none',
+//fontSize: 1,
+//border: '1px solid',
+//borderRadius: 4,
+//color: 'text',
+//bg: 'transparent'
+//}
+//};
 
 export default Textarea;
