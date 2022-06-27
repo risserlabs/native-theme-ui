@@ -4,7 +4,7 @@
  * File Created: 27-06-2022 10:03:43
  * Author: Ajithkrm6
  * -----
- * Last Modified: 27-06-2022 10:03:46
+ * Last Modified: 27-06-2022 16:18:08
  * Modified By: Ajithkrm6
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -21,3 +21,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import React from 'react';
+import { DripsyFC } from '../../dripsyHelper';
+import { AutoContrast } from '@risserlabs/auto-contrast';
+import Box, { BoxProps } from '../Box';
+
+type GridProps = BoxProps & {
+  autoContrast?: AutoContrast;
+};
+
+const Grid: DripsyFC<GridProps> = (props: GridProps) => {
+  return <Box {...props} />;
+};
+Grid.defaultSx = {
+  display: 'grid'
+  //gridGap: gap,
+};
+export default Grid;
