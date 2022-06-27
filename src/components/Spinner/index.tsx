@@ -22,20 +22,25 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
+import React from 'react';
 import { ActivityIndicator as DActivityIndicator, SxProp } from 'dripsy';
 import { ActivityIndicatorProps as RNActivityIndicator } from 'react-native';
 import useThemeLookup from '../../hooks/useThemeLookup';
 import { DripsyFC } from '../../dripsyHelper';
+import { AutoContrast } from '@risserlabs/auto-contrast';
 
-export interface ActivityIndicatorProps extends RNActivityIndicator {
+export type SpinnerProps = RNActivityIndicator & {
+  autoContrast?: AutoContrast;
   sx?: SxProp;
   color?: string;
-}
+};
 
-const Spinner: DripsyFC<ActivityIndicatorProps> = (
-  props: ActivityIndicatorProps
-) => {
+//export interface ActivityIndicatorProps extends RNActivityIndicator {
+// sx?: SxProp;
+//color?: string;
+//}
+
+const Spinner: DripsyFC<SpinnerProps> = (props: SpinnerProps) => {
   const themeLookup = useThemeLookup();
   const sxProp: SxProp = { ...styles.spinner, ...props.sx };
 
