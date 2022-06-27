@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:46
- * Modified By: Clay Risser
+ * Last Modified: 27-06-2022 03:43:30
+ * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -23,11 +23,38 @@
  */
 
 import React from 'react';
+import { action } from '@storybook/addon-action';
 import Box from '../Box';
 import Switch from '.';
-import { storiesOf } from '../../storybook';
+import { storiesOf,
+         createArgsStory,
+         createSxArgs,
+         sxArgsTypes } from '../../storybook';
 
 storiesOf('Switch', module)
+  .add(
+    'default',
+    createArgsStory(Switch,{
+      onChange: action('onChange')
+      onValueChange:action ('onValueChange'),
+      
+    }),
+    {
+      args: {
+        children: 'Iam switch component',
+        defaultChecked: Switch.defaultProps?.autoContrast,
+        ...createSxArgs(Switch)
+      },
+      argTypes: {
+        autoContrast: {
+          options: ['A','AA','AAA',false],
+          control: 'select'
+        },
+        defaultChecked: {control: { type: 'boolean'}},
+        ...sxArgsTypes
+      }
+    }
+  )
   .add(
     'default',
     () => (

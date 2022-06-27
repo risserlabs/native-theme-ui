@@ -1,10 +1,10 @@
 /**
- * File: /components/Checkbox/Checkbox.stories.tsx
+ * File: /components/Slider/Slider.stories.tsx
  * Project: -
- * File Created: 15-06-2022 06:37:48
+ * File Created: 27-06-2022 00:27:56
  * Author: Lavanya Katari
  * -----
- * Last Modified: 27-06-2022 04:48:13
+ * Last Modified: 27-06-2022 01:05:26
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,35 +22,29 @@
  * limitations under the License.
  */
 
+ 
 import React from 'react';
-import { action } from '@storybook/addon-actions';
+import { storiesOf } from '../../storybook';
+import Box from '../Box';
 import {
   storiesOf,
   createArgsStory,
   createSxArgs,
   sxArgTypes
 } from '../../storybook';
-import CheckBox from './index';
-
-storiesOf('CheckBox', module)
-  .add(
-    'default',
-    createArgsStory(CheckBox, {
-      onChange: action('onChange'),
-      onValueChange: action('onValueChange')
-    }),
-    {
-      args: {
-        defaultChecked: CheckBox.defaultProps?.defaultChecked,
-        ...createSxArgs(CheckBox)
+import Slider from './index';
+storiesOf('Slider', module)
+  .add('default', createArgsStory(Slider), {
+    args: {
+      children: 'Slider',
+      ...createSxArgs(Slider)
+    },
+    argTypes: {
+      autoContrast: {
+        options: ['A', 'AA', 'AAA', false]
       },
-      argTypes: {
-        autoContrast:{
-          options:['A','AA','AAA',false]
-        },
-        defaultChecked: { control: { type: 'boolean' } },
-        ...sxArgTypes
-      }
+      ...sxArgTypes
     }
-  )
-  .add('with background', () => <CheckBox></CheckBox>);
+  })
+  .add('with background', () => <Box sx={{ bg: 'background', p: 4 }}></Box>),
+  .add('with background', () => <Slider></Slider>);
