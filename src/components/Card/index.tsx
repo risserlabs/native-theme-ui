@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 24-06-2022 03:38:26
- * Modified By: Lavanya Katari
+ * Last Modified: 27-06-2022 10:36:55
+ * Modified By: Ajithkrm6
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
+import React from 'react';
 import { View as DView, SxProp } from 'dripsy';
 import { ViewProps as RNViewProps } from 'react-native';
 import { DripsyFC } from '../../dripsyHelper';

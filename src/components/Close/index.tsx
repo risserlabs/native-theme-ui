@@ -4,13 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
-<<<<<<< HEAD
- * Last Modified: 24-06-2022 11:09:20
+ * Last Modified: 24-06-2022 17:21:43
  * Modified By: Ajithkrm6
-=======
- * Last Modified: 24-06-2022 01:28:06
- * Modified By: K S R P BHUSHAN
->>>>>>> 49426c223a1740d5457bca87d0fbaeb49f7f8f04
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -74,11 +69,7 @@ Close.defaultProps = {
 };
 
 Close.defaultSx = {
-<<<<<<< HEAD
-  // close: { bg: 'transparent' }
-=======
   bg: 'transparent'
->>>>>>> 49426c223a1740d5457bca87d0fbaeb49f7f8f04
 };
 
 //export const styles = {
