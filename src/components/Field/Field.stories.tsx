@@ -1,10 +1,10 @@
 /**
- * File: /components/Slider/Slider.stories.tsx
+ * File: /components/Field/Field.stories.tsx
  * Project: -
- * File Created: 20-06-2022 06:25:43
+ * File Created: 27-06-2022 04:22:36
  * Author: Lavanya Katari
  * -----
- * Last Modified: 24-06-2022 01:39:00
+ * Last Modified: 27-06-2022 04:41:59
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,29 +22,9 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import React { FC } from 'react'
+import { storiesOf } from '../../storybook'
+import Field from './index'
+storiesOf ('Field',module)
+.add('with background', () => <Field></Field>);
 
-import Box from '../Box';
-import {
-  storiesOf,
-  createArgsStory,
-  createSxArgs,
-  sxArgTypes
-} from '../../storybook';
-import Slider from './index';
-
-storiesOf('Slider', module)
-  .add('default', createArgsStory(Slider), {
-    args: {
-      children: 'Slider',
-      ...createSxArgs(Slider)
-    },
-    argTypes: {
-      autoContrast: {
-        options: ['A', 'AA', 'AAA', false]
-      },
-      ...sxArgTypes
-    }
-  })
-  .add('with background', () => <Box sx={{ bg: 'background', p: 4 }}></Box>);
-//.add('with background', () => <Slider></Slider>);

@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:42
- * Modified By: Clay Risser
+ * Last Modified: 27-06-2022 01:57:05
+ * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,18 +22,30 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
+import React from 'react';
 import { Switch as RNSwitch, SwitchProps as RNSwitchProps } from 'react-native';
 import useThemeLookup from '../../hooks/useThemeLookup';
+import { DripsyFC } from '../../dripsyHelper';
+import { SxProp } from 'dripsy';
+import { AutoContrast } from '@risserlabs/auto-contrast';
+export type SwitchProps =RNSwitchProps & {
+  sx? : SxProps;
+  defaultChecked?: boolean;
+  autocontrast?: Autocontrast;
+};
 
-export interface SwitchProps extends RNSwitchProps {
-  ios_backgroundColor?: string;
-  thumbColor?: string;
-  trackColor?: { false?: string; true?: string };
-}
+//export interface SwitchProps extends RNSwitchProps {
+ // ios_backgroundColor?: string;
+  //thumbColor?: string;
+  //trackColor?: { false?: string; true?: string };}
 
-const Switch: FC<SwitchProps> = (props: SwitchProps) => {
+const Switch: DripsyFC<SwitchProps> = (props: SwitchProps) => {
   const themeLookup = useThemeLookup();
+  const RNSwitchProps = { ...props };
+  delete RNSwitchProps.sx;
+  if (props.defaultChecked){
+    RNSwitchProps.value = true;
+  }
 
   return (
     <RNSwitch
@@ -49,5 +61,6 @@ const Switch: FC<SwitchProps> = (props: SwitchProps) => {
 };
 
 Switch.defaultProps = {};
+Switch.defaultSx = {};
 
 export default Switch;
