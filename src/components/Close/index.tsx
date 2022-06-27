@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 27-06-2022 16:17:56
- * Modified By: Ajithkrm6
+ * Last Modified: 27-06-2022 06:21:15
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -27,7 +27,6 @@ import { SxProp } from 'dripsy';
 import { DripsyFC } from '../../dripsyHelper';
 import Pressable from '../Pressable';
 import { PressableProps as RNPressableProps } from 'react-native';
-import { DripsyFC } from '../../dripsyHelper';
 import { AutoContrast } from '@risserlabs/auto-contrast';
 const x = (
   <svg

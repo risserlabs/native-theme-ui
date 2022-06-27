@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 27-06-2022 03:43:30
- * Modified By: Lavanya Katari
+ * Last Modified: 27-06-2022 06:19:54
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -26,18 +26,19 @@ import React from 'react';
 import { action } from '@storybook/addon-action';
 import Box from '../Box';
 import Switch from '.';
-import { storiesOf,
-         createArgsStory,
-         createSxArgs,
-         sxArgsTypes } from '../../storybook';
+import {
+  storiesOf,
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes
+} from '../../storybook';
 
 storiesOf('Switch', module)
   .add(
     'default',
-    createArgsStory(Switch,{
-      onChange: action('onChange')
-      onValueChange:action ('onValueChange'),
-      
+    createArgsStory(Switch, {
+      onChange: action('onChange'),
+      onValueChange: action('onValueChange')
     }),
     {
       args: {
@@ -47,11 +48,11 @@ storiesOf('Switch', module)
       },
       argTypes: {
         autoContrast: {
-          options: ['A','AA','AAA',false],
+          options: ['A', 'AA', 'AAA', false],
           control: 'select'
         },
-        defaultChecked: {control: { type: 'boolean'}},
-        ...sxArgsTypes
+        defaultChecked: { control: { type: 'boolean' } },
+        ...sxArgTypes
       }
     }
   )

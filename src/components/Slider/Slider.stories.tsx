@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 00:27:56
  * Author: Lavanya Katari
  * -----
- * Last Modified: 27-06-2022 01:05:26
- * Modified By: Lavanya Katari
+ * Last Modified: 27-06-2022 06:20:54
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,9 +22,7 @@
  * limitations under the License.
  */
 
- 
 import React from 'react';
-import { storiesOf } from '../../storybook';
 import Box from '../Box';
 import {
   storiesOf,
@@ -46,5 +44,5 @@ storiesOf('Slider', module)
       ...sxArgTypes
     }
   })
-  .add('with background', () => <Box sx={{ bg: 'background', p: 4 }}></Box>),
+  .add('with background', () => <Box sx={{ bg: 'background', p: 4 }}></Box>)
   .add('with background', () => <Slider></Slider>);

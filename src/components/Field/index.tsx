@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 04:20:16
  * Author: Lavanya Katari
  * -----
- * Last Modified: 27-06-2022 04:39:57
- * Modified By: Lavanya Katari
+ * Last Modified: 27-06-2022 06:22:08
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,16 +22,14 @@
  * limitations under the License.
  */
 
- import React,{ FC } from 'react'
- import { AutoContrast } from '@risserlabs/auto-contrast';
- export type Field = {
-     autoContrast?: AutoContrast;
- }
- const Field: FC <FieldProps>={Props:FieldProps} => {
-     return (
-         <div>Field component</div>
-     );
- };
- export default Field;
- 
- 
+import React, { FC } from 'react';
+import { AutoContrast } from '@risserlabs/auto-contrast';
+export type Field = {
+  autoContrast?: AutoContrast;
+};
+
+const Field: FC<FieldProps> = ({ Props: FieldProps }) => {
+  return <div>Field component</div>;
+};
+
+export default Field;

@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 04:22:36
  * Author: Lavanya Katari
  * -----
- * Last Modified: 27-06-2022 04:41:59
- * Modified By: Lavanya Katari
+ * Last Modified: 27-06-2022 06:16:49
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,9 +22,8 @@
  * limitations under the License.
  */
 
-import React { FC } from 'react'
-import { storiesOf } from '../../storybook'
-import Field from './index'
-storiesOf ('Field',module)
-.add('with background', () => <Field></Field>);
+import React, { FC } from 'react';
+import { storiesOf } from '../../storybook';
+import Field from './index';
 
+storiesOf('Field', module).add('with background', () => <Field></Field>);
