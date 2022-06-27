@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:57:25
+ * Last Modified: 24-06-2022 06:19:32
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,61 +24,45 @@
 
 import React from 'react';
 import Box from '../Box';
-import Progress from '.';
-import { storiesOf } from '../../storybook';
+import Progress from './index';
+import {
+  storiesOf,
+  createArgsStory,
+  createSxArgs,
+  createSxArgTypes,
+  Args
+} from '../../storybook';
 
 storiesOf('Progress', module)
-  .add('default 50% progress', () => <Progress max={100} value={50} />, {
-    component: Progress,
-    status: { type: 'beta' }
-  })
-  .add('40% progress', () => <Progress max={100} value={40} />, {
-    component: Progress,
-    status: { type: 'beta' }
-  })
-  .add(
-    'progress with max=200 and value=80',
-    () => <Progress max={200} value={80} />,
-    {
-      component: Progress,
-      status: { type: 'beta' }
+  .add('default', createArgsStory(Progress), {
+    args: {
+      value: Progress.defaultProps?.value,
+      max: Progress.defaultProps?.max,
+      ...createSxArgs(Progress, ['sxP'])
+    },
+    argTypes: {
+      value: { control: { type: 'number' } },
+      max: { control: { type: 'number' } },
+      ...createSxArgTypes(['sxP'])
     }
-  )
+  })
   .add(
-    'like theme-ui',
-    () => (
-      <Progress max={1} value={1 / 2}>
-        50%
-      </Progress>
-    ),
-    {
-      component: Progress,
-      status: { type: 'beta' }
-    }
-  )
-  .add(
-    'with background with 70%',
-    () => (
-      <Box sx={{ bg: 'black', p: 4 }}>
-        <Progress max={100} value={70}>
-          70%
-        </Progress>
+    'with background',
+    (args: Args) => (
+      <Box sx={{ bg: args.background, p: 4, width: '100%' }}>
+        <Progress max={args.max} value={args.value} />
       </Box>
     ),
     {
-      component: Progress,
-      status: { type: 'beta' }
-    }
-  )
-  .add(
-    'with background with 70%',
-    () => (
-      <Box sx={{ bg: 'black', p: 4 }}>
-        <Progress max={100} value={70} />
-      </Box>
-    ),
-    {
-      component: Progress,
-      status: { type: 'beta' }
+      args: {
+        background: 'background',
+        value: 50,
+        max: 100
+      },
+      argTypes: {
+        background: { control: { type: 'color' } },
+        value: { control: { type: 'number' } },
+        max: { control: { type: 'number' } }
+      }
     }
   );

@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 23-06-2022 07:44:23
+ * Last Modified: 24-06-2022 06:28:01
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,69 +22,108 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { View, SxProp } from 'dripsy';
-import { ViewProps } from 'react-native';
+import React from 'react';
+import { SxProp, Sx, View } from 'dripsy';
+import { DripsyFC, DViewProps } from '../../dripsyHelper';
 
-export type ProgressProps = {
-  sx?: SxProp;
+export type ProgressProps = Omit<
+  DViewProps,
+  | 'p'
+  | 'pb'
+  | 'pl'
+  | 'pr'
+  | 'pt'
+  | 'padding'
+  | 'paddingBottom'
+  | 'paddingLeft'
+  | 'paddingRight'
+  | 'paddingTop'
+> & {
   max?: number;
   value?: number;
 };
 
-const Progress: FC<ProgressProps> = (props: ProgressProps) => {
-  let max: any = props.max;
-  let factor = max / 100;
-  max = max / factor;
-  let value: any = props.value;
-  value = value / factor;
+const Progress: DripsyFC<ProgressProps> = (props: ProgressProps) => {
+  const max = props.max || 100;
+  const value = props.value || 0;
+
+  const sx = {
+    ...Progress.defaultSx,
+    ...props.sx
+  };
 
   const sxMax: SxProp = {
-    ...styles.progress,
-    ...props.sx,
-    bg: 'gray',
-    width: props.value ? `${max}%` : '100%'
+    ...sx
   };
 
   const sxValue: SxProp = {
-    ...styles.progress,
-    ...props.sx,
-    position: 'fixed',
-    bg: 'primary',
-    width: props.value ? `${value}%` : '100%'
+    ...sx,
+    bg: (sx as Sx).color as string,
+    width: `${Math.max(Math.min(value / max, 1), 0) * 100}%`
   };
 
+  delete sxMax.color;
+  delete sxMax.p;
+  delete sxMax.padding;
+  delete sxMax.paddingBottom;
+  delete sxMax.paddingLeft;
+  delete sxMax.paddingRight;
+  delete sxMax.paddingTop;
+  delete sxMax.pb;
+  delete sxMax.pl;
+  delete sxMax.pr;
+  delete sxMax.pt;
+  delete sxValue.p;
+  delete sxValue.padding;
+  delete sxValue.paddingBottom;
+  delete sxValue.paddingLeft;
+  delete sxValue.paddingRight;
+  delete sxValue.paddingTop;
+  delete sxValue.pb;
+  delete sxValue.pl;
+  delete sxValue.pr;
+  delete sxValue.pt;
+  delete sxValue.color;
+  delete sxValue.m;
+  delete sxValue.margin;
+  delete sxValue.marginBottom;
+  delete sxValue.marginLeft;
+  delete sxValue.marginRight;
+  delete sxValue.marginTop;
+  delete sxValue.mb;
+  delete sxValue.ml;
+  delete sxValue.mr;
+  delete sxValue.mt;
+
   return (
-    <View>
-      <View sx={{ ...sxMax }} />
-      <View sx={{ ...sxValue }} />
+    <View sx={sxMax}>
+      <View sx={sxValue} />
     </View>
   );
 };
 
 Progress.defaultProps = {};
 
-export const styles = {
-  progress: {
-    display: 'block',
-    height: '5px',
-    margin: 0,
-    marginRight: '20px',
-    padding: 0,
-    overflow: 'hidden',
-    color: 'primary',
-    borderRadius: 9999,
-    border: 'none',
-    '&::-webkit-progress-bar': {
-      bg: 'transparent'
-    },
-    '&::-webkit-progress-value': {
-      bg: 'currentcolor'
-    },
-    '&::-moz-progress-bar': {
-      bg: 'currentcolor'
-    }
-  }
+Progress.defaultSx = {
+  display: 'block',
+  height: '5px',
+  margin: 0,
+  marginRight: '20px',
+  padding: 0,
+  bg: 'gray',
+  overflow: 'hidden',
+  color: 'primary',
+  borderRadius: 9999,
+  border: 'none'
+  // '&::-webkit-progress-bar': {
+  //   bg: 'transparent'
+  // },
+  // '&::-webkit-progress-value': {
+  //   bg: 'currentcolor'
+  // },
+  // '&::-moz-progress-bar': {
+  //   bg: 'currentcolor'
+  // }
 };
 
 export default Progress;

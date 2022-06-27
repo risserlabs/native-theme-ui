@@ -4,7 +4,7 @@
  * File Created: 27-06-2022 10:04:09
  * Author: Ajithkrm6
  * -----
- * Last Modified: 27-06-2022 12:46:27
+ * Last Modified: 27-06-2022 16:14:56
  * Modified By: Ajithkrm6
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -34,6 +34,7 @@ import {
 storiesOf('Grid', module)
   .add('default', createArgsStory(Grid), {
     args: {
+      children: 'I am a Grid',
       ...createSxArgs
     },
     argTypes: {

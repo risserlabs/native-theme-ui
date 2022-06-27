@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:58:00
- * Modified By: Clay Risser
+ * Last Modified: 27-06-2022 05:12:47
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -24,14 +24,34 @@
 
 import React from 'react';
 import { Box } from 'dripsy';
-import { storiesOf } from '../../storybook';
 import Textarea from '.';
+import {
+  storiesOf,
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes
+} from '../../storybook';
 
 storiesOf('Textarea', module)
-  .add('full width', () => <Textarea />, {
-    component: Textarea,
-    status: { type: 'beta' }
+  //.add('full width', () => <Textarea />, {
+  //component: Textarea,
+  //status: { type: 'beta' }
+  //})
+
+  .add('default', createArgsStory(Textarea), {
+    args: {
+      children: 'Textarea',
+      ...createSxArgs(Textarea)
+    },
+    argTypes: {
+      autoContrast: {
+        options: ['A', 'AA', 'AAA', false],
+        control: 'select'
+      },
+      ...sxArgTypes
+    }
   })
+
   .add(
     'with placeholder',
     () => (

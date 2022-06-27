@@ -4,8 +4,8 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 24-06-2022 01:24:15
- * Modified By: Harikittu46
+ * Last Modified: 24-06-2022 06:01:32
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -75,11 +75,13 @@ export function createArgsStory(
 
 export function createSxArgs(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  C: ComponentType<any> & { defaultSx: SxProp }
+  C: ComponentType<any> & { defaultSx: SxProp },
+  omit: string[] = []
 ) {
+  const omitSet = new Set(omit);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const DC = C as ComponentType<any> & { defaultSx: Sx };
-  return {
+  return Object.entries({
     sxBg: DC.defaultSx?.bg,
     sxM: DC.defaultSx?.m,
     sxP: DC.defaultSx?.p,
@@ -92,7 +94,10 @@ export function createSxArgs(
     sxMinWidth: DC.defaultSx?.minWidth,
     sxMaxWidth: DC.defaultSx?.minWidth,
     sxBorderColor: DC.defaultSx?.borderColor
-  };
+  }).reduce((sxArgs: Args, [key, value]: [string, unknown]) => {
+    if (!omitSet.has(key)) sxArgs[key] = value;
+    return sxArgs;
+  }, {});
 }
 
 export const sxArgTypes = {
@@ -110,6 +115,22 @@ export const sxArgTypes = {
   },
   sxBorderColor: { control: { type: 'color' } }
 };
+
+export function createSxArgTypes(omit: string[] = []) {
+  const omitSet = new Set(omit);
+  return Object.entries(sxArgTypes).reduce(
+    (
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      sxArgTypes: Record<string, Record<string, any>>,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      [key, value]: [string, Record<string, any>]
+    ) => {
+      if (!omitSet.has(key)) sxArgTypes[key] = value;
+      return sxArgTypes;
+    },
+    {}
+  );
+}
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type Args = Record<string, any>;

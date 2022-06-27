@@ -26,24 +26,30 @@ import React, { FC } from 'react';
 import { SxProp, View as DView } from 'dripsy';
 import { ViewProps as RNViewProps } from 'react-native';
 import Text from '../Text';
+import { DripsyFC } from '../../dripsyHelper';
+import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
 
-export interface ViewProps extends RNViewProps {
+export type BadgeProps = RNViewProps & {
+  autoContrast?: AutoContrast;
   sx?: SxProp;
-  variant?: String;
-}
+  variant?: string;
+};
+//export interface ViewProps extends RNViewProps {
 
-const Badge: FC<ViewProps> = (props: ViewProps) => {
-  let style =
-    props.variant === 'accent'
-      ? styles.badge.accent
-      : props.variant === 'outline'
-      ? styles.badge.outline
-      : styles.badge.circle;
-  const sx: SxProp = {
-    ...style,
-    ...props.sx,
-    ...props.variant
-  };
+//}
+
+const Badge: DripsyFC<BadgeProps> = (props: BadgeProps) => {
+  // const style =
+  //props.variant === 'accent'
+  //? styles.badge.accent
+  // : props.variant === 'outline'
+  //? styles.badge.outline
+  // : styles.badge.circle;
+  const sx = useAutoContrast(props, {
+    ...Badge.defaultSx,
+    ...props.sx
+  });
+
   return <DView sx={{ ...sx }}>{props.children}</DView>;
 };
 
@@ -51,47 +57,17 @@ Badge.defaultProps = {
   sx: {},
   variant: 'accent'
 };
-
-export const styles = {
-  badge: {
-    accent: {
-      width: 50,
-      height: 20,
-      display: 'flex',
-      fontWeight: 'bold',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontSize: '70%',
-      borderRadius: 2,
-      color: 'white',
-      bg: 'primary'
-    },
-    outline: {
-      width: 50,
-      height: 20,
-      display: 'flex',
-      fontWeight: 'bold',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontSize: '70%',
-      borderRadius: 2,
-      color: 'primary',
-      border: '2px solid',
-      borderColor: 'primary'
-    },
-    circle: {
-      width: 20,
-      height: 20,
-      display: 'flex',
-      fontWeight: 'bold',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontSize: '60%',
-      borderRadius: '50%',
-      color: 'white',
-      bg: 'primary'
-    }
-  }
+Badge.defaultSx = {
+  width: 50,
+  height: 20,
+  display: 'flex',
+  fontWeight: 'bold',
+  alignItems: 'center',
+  justifyContent: 'center',
+  fontSize: '70%',
+  borderRadius: 2,
+  color: 'white',
+  bg: 'primary'
 };
 
 export default Badge;

@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:55:56
+ * Last Modified: 24-06-2022 06:42:24
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,22 +25,46 @@
 import React from 'react';
 import Box from '../Box';
 import Divider from '.';
-import { storiesOf } from '../../storybook';
+import {
+  storiesOf,
+  createArgsStory,
+  Args,
+  createSxArgs,
+  sxArgTypes
+} from '../../storybook';
 
 storiesOf('Divider', module)
-  .add('default', () => <Divider sx={{ borderBottomColor: 'primary' }} />, {
-    component: Divider,
-    status: { type: 'beta' }
+  .add('default', createArgsStory(Divider), {
+    args: {
+      autoContrast: Divider.defaultProps?.autoContrast,
+      ...createSxArgs(Divider)
+    },
+    argTypes: {
+      autoContrast: {
+        options: ['A', 'AA', 'AAA', false],
+        control: 'select'
+      },
+      ...sxArgTypes
+    }
   })
   .add(
     'with background',
-    () => (
-      <Box sx={{ bg: 'red', p: 4 }}>
-        <Divider sx={{ borderBottomColor: 'primary' }} />
+    (args: Args) => (
+      <Box sx={{ bg: args.background, p: 4, width: '100%' }}>
+        <Divider autoContrast={args.autoContrast} />
       </Box>
     ),
     {
-      component: Divider,
-      status: { type: 'beta' }
+      args: {
+        background: 'background',
+        autoContrast: 'AAA'
+      },
+      argTypes: {
+        background: { control: 'color' },
+        autoContrast: {
+          options: ['A', 'AA', 'AAA', false],
+          control: 'select'
+        }
+      }
     }
   );

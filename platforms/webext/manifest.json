@@ -3,9 +3,9 @@
   "name": "multiplatform-framework",
   "version": "0.0.1",
   "description": "write once, render anywhere",
-  "author": "BitSpur, Inc.",
+  "author": "Risser Labs LLC",
   "developer": {
-    "name": "BitSpur, Inc.",
+    "name": "Risser Labs LLC",
     "url": "https://bitspur.com"
   },
   "devtools_page": "out/devtools.html",

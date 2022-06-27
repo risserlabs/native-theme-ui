@@ -1,11 +1,11 @@
 /**
- * File: /components/Avatar/Avatar.stories.tsx
+ * File: /components/Slider/Slider.stories.tsx
  * Project: -
- * File Created: 13-06-2022 00:51:44
- * Author: Clay Risser
+ * File Created: 27-06-2022 00:27:56
+ * Author: Lavanya Katari
  * -----
- * Last Modified: 13-06-2022 00:55:12
- * Modified By: Clay Risser
+ * Last Modified: 27-06-2022 01:05:26
+ * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,27 +22,29 @@
  * limitations under the License.
  */
 
+ 
 import React from 'react';
+import { storiesOf } from '../../storybook';
+import Box from '../Box';
 import {
   storiesOf,
   createArgsStory,
-  sxArgTypes,
-  createSxArgs
+  createSxArgs,
+  sxArgTypes
 } from '../../storybook';
-import Avatar from '.';
-
-storiesOf('Avatar', module).add('Simple Avatar', createArgsStory(Avatar), {
-  args: {
-    src: 'https://picsum.photos/200/300',
-    children: 'Iam Avatar',
-    autoContrast: Avatar.defaultProps?.autoContrast,
-    ...createSxArgs(Avatar)
-  },
-  argTypes: {
-    autoContrast: {
-      options: ['A', 'AA', 'AAA', false],
-      control: 'Select'
+import Slider from './index';
+storiesOf('Slider', module)
+  .add('default', createArgsStory(Slider), {
+    args: {
+      children: 'Slider',
+      ...createSxArgs(Slider)
     },
-    ...sxArgTypes
-  }
-});
+    argTypes: {
+      autoContrast: {
+        options: ['A', 'AA', 'AAA', false]
+      },
+      ...sxArgTypes
+    }
+  })
+  .add('with background', () => <Box sx={{ bg: 'background', p: 4 }}></Box>),
+  .add('with background', () => <Slider></Slider>);

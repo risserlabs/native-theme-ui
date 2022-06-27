@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 24-06-2022 04:00:11
+ * Last Modified: 27-06-2022 04:02:28
  * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -27,7 +27,6 @@ import { DripsyFC } from '../../dripsyHelper';
 import { Text as DText, SxProp } from 'dripsy';
 import { TextProps as RNTextProps } from 'react-native';
 import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
-import { LabelProps } from 'theme-ui';
 
 type LabelProps = RNTextProps & {
   sx?: SxProp;
