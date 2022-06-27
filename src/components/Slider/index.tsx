@@ -23,22 +23,22 @@
  */
 
 import React from 'react';
-import Slider from '@react-native-community/slider';
+import RNCSlider from '@react-native-community/slider';
 import { AutoContrast } from '@risserlabs/auto-contrast';
 import { SxProp } from 'dripsy';
 import { DripsyFC } from '../../dripsyHelper';
 import Box from '../Box';
-export type SliderProps = {
 
-//export type SliderProps = ESliderProps & {
+export type SliderProps = {
+  //export type SliderProps = ESliderProps & {
   sx?: SxProp;
   autoContrast?: AutoContrast;
 };
-const Slider: FC<SliderProps> = (props: SliderProps) => {
+
 const Slider: DripsyFC<SliderProps> = (props: SliderProps) => {
   const eSliderProps = { ...props };
   delete eSliderProps.sx;
-}
+  return <RNCSlider />;
 };
 
 Slider.defaultSx = {
