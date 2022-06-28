@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 04:20:16
  * Author: Lavanya Katari
  * -----
- * Last Modified: 27-06-2022 06:22:08
- * Modified By: Ajith Kumar
+ * Last Modified: 28-06-2022 03:27:42
+ * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,14 +22,17 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
+import React from 'react';
 import { AutoContrast } from '@risserlabs/auto-contrast';
-export type Field = {
+import { DripsyFC } from '../../dripsyHelper';
+import { SxProp } from 'dripsy';
+export type FieldProps = {
   autoContrast?: AutoContrast;
+  sx?: SxProp;
 };
 
-const Field: FC<FieldProps> = ({ Props: FieldProps }) => {
-  return <div>Field component</div>;
+const Field: DripsyFC<FieldProps> = (props: FieldProps) => {
+  return <div {...props}>Field component</div>;
 };
-
+Field.defaultSx = {};
 export default Field;

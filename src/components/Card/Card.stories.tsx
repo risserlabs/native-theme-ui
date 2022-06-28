@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 27-06-2022 00:59:46
+ * Last Modified: 28-06-2022 01:40:57
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,28 +24,29 @@
 
 import React from 'react';
 import Card from './index';
-import { 
+import {
   storiesOf,
   createArgsStory,
   createSxArgs,
   ArgTypes,
-  sxArgTypes } from '../../storybook';
+  sxArgTypes
+} from '../../storybook';
 
 storiesOf('Card', module)
-.add('default',createArgsStory(Card),
-{
-  args:{
-    children:'i am a card',
-    ...createSxArgs(Card)
-  },
-  argTypes:{
-    autoContrast:{
-      options:['A','AA','AAA',false]
-  },
-    ...sxArgTypes
-  }
-})
-.add(
+  .add('default', createArgsStory(Card), {
+    args: {
+      children: 'i am a card',
+      ...createSxArgs(Card)
+    },
+    argTypes: {
+      autoContrast: {
+        options: ['A', 'AA', 'AAA', false],
+        control: 'select'
+      },
+      ...sxArgTypes
+    }
+  })
+  .add(
     'simple card',
     () => (
       <Card

@@ -4,7 +4,7 @@
  * File Created: 15-06-2022 06:37:48
  * Author: Lavanya Katari
  * -----
- * Last Modified: 27-06-2022 04:48:13
+ * Last Modified: 28-06-2022 01:42:06
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -45,8 +45,9 @@ storiesOf('CheckBox', module)
         ...createSxArgs(CheckBox)
       },
       argTypes: {
-        autoContrast:{
-          options:['A','AA','AAA',false]
+        autoContrast: {
+          options: ['A', 'AA', 'AAA', false],
+          control: 'select'
         },
         defaultChecked: { control: { type: 'boolean' } },
         ...sxArgTypes

@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 27-06-2022 06:19:54
- * Modified By: Ajith Kumar
+ * Last Modified: 27-06-2022 23:26:04
+ * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -43,7 +43,7 @@ storiesOf('Switch', module)
     {
       args: {
         children: 'Iam switch component',
-        defaultChecked: Switch.defaultProps?.autoContrast,
+        defaultChecked: Switch.defaultProps?.defaultChecked,
         ...createSxArgs(Switch)
       },
       argTypes: {

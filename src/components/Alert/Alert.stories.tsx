@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:55:02
- * Modified By: Clay Risser
+ * Last Modified: 28-06-2022 01:39:27
+ * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -25,9 +25,27 @@
 import React from 'react';
 import Close from '../Close';
 import Alert from '.';
-import { storiesOf } from '../../storybook';
+import {
+  createArgsStory,
+  createSxArgs,
+  storiesOf,
+  sxArgTypes
+} from '../../storybook';
 
 storiesOf('Alert', module)
+  .add('default', createArgsStory(Alert), {
+    args: {
+      children: 'I am Alert',
+      ...createSxArgs(Alert)
+    },
+    argTypes: {
+      autoContrast: {
+        option: ['A', 'AA', 'AAA', false],
+        control: 'select'
+      },
+      ...sxArgTypes
+    }
+  })
   .add(
     'default',
     () => (

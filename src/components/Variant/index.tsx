@@ -1,10 +1,10 @@
 /**
- * File: /components/Radio/index.tsx
+ * File: /components/Variants/index.tsx
  * Project: -
- * File Created: 20-06-2022 07:09:45
+ * File Created: 27-06-2022 23:52:10
  * Author: Lavanya Katari
  * -----
- * Last Modified: 28-06-2022 04:25:46
+ * Last Modified: 28-06-2022 03:40:55
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -26,27 +26,13 @@ import React from 'react';
 import { AutoContrast } from '@risserlabs/auto-contrast';
 import { DripsyFC } from '../../dripsyHelper';
 import { SxProp } from 'dripsy';
-
-type RadioProps = {
+export type VariantProps = {
   autoContrast?: AutoContrast;
   sx?: SxProp;
 };
-const Radio: DripsyFC<RadioProps> = (props: RadioProps) => {
-  const sx: SxProp = {
-    ...Radio.defaultSx,
-    ...props.sx
-  };
 
-  return (
-    <div
-      style={{
-        backgroundColor: 'yellow'
-      }}
-    >
-      Radio component
-    </div>
-  );
+const Variant: DripsyFC<VariantProps> = (props: VariantProps) => {
+  return <div {...props}>Variants component</div>;
 };
-Radio.defaultSx = {};
-
-export default Radio;
+Variant.defaultSx = {};
+export default Variant;

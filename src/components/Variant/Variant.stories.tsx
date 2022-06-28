@@ -1,10 +1,10 @@
 /**
- * File: /components/Radio/index.tsx
+ * File: /components/Variant/Variant.stories.tsx
  * Project: -
- * File Created: 20-06-2022 07:09:45
+ * File Created: 27-06-2022 23:52:56
  * Author: Lavanya Katari
  * -----
- * Last Modified: 28-06-2022 04:25:46
+ * Last Modified: 28-06-2022 04:28:51
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,30 +23,7 @@
  */
 
 import React from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
-import { DripsyFC } from '../../dripsyHelper';
-import { SxProp } from 'dripsy';
+import { storiesOf } from '../../storybook';
+import Variant from './index';
 
-type RadioProps = {
-  autoContrast?: AutoContrast;
-  sx?: SxProp;
-};
-const Radio: DripsyFC<RadioProps> = (props: RadioProps) => {
-  const sx: SxProp = {
-    ...Radio.defaultSx,
-    ...props.sx
-  };
-
-  return (
-    <div
-      style={{
-        backgroundColor: 'yellow'
-      }}
-    >
-      Radio component
-    </div>
-  );
-};
-Radio.defaultSx = {};
-
-export default Radio;
+storiesOf('Variant', module).add('with background', () => <Variant></Variant>);

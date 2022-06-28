@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 27-06-2022 01:57:05
+ * Last Modified: 28-06-2022 05:07:11
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -28,22 +28,23 @@ import useThemeLookup from '../../hooks/useThemeLookup';
 import { DripsyFC } from '../../dripsyHelper';
 import { SxProp } from 'dripsy';
 import { AutoContrast } from '@risserlabs/auto-contrast';
-export type SwitchProps =RNSwitchProps & {
-  sx? : SxProps;
+export type SwitchProps = RNSwitchProps & {
+  sx?: SxProp;
   defaultChecked?: boolean;
-  autocontrast?: Autocontrast;
+  autocontrast?: AutoContrast;
 };
 
 //export interface SwitchProps extends RNSwitchProps {
- // ios_backgroundColor?: string;
-  //thumbColor?: string;
-  //trackColor?: { false?: string; true?: string };}
+// ios_backgroundColor?: string;
+//thumbColor?: string;
+//trackColor?: { false?: string; true?: string };}
 
 const Switch: DripsyFC<SwitchProps> = (props: SwitchProps) => {
   const themeLookup = useThemeLookup();
+
   const RNSwitchProps = { ...props };
   delete RNSwitchProps.sx;
-  if (props.defaultChecked){
+  if (props.defaultChecked) {
     RNSwitchProps.value = true;
   }
 
@@ -61,6 +62,17 @@ const Switch: DripsyFC<SwitchProps> = (props: SwitchProps) => {
 };
 
 Switch.defaultProps = {};
-Switch.defaultSx = {};
+Switch.defaultSx = {
+  display: 'block',
+  height: '5px',
+  margin: 0,
+  marginRight: '20px',
+  padding: 0,
+  bg: 'gray',
+  overflow: 'hidden',
+  color: 'primary',
+  borderRadius: 9999,
+  border: 'none'
+};
 
 export default Switch;
