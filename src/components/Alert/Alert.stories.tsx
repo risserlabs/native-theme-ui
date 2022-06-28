@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 28-06-2022 06:14:31
+ * Last Modified: 28-06-2022 08:08:24
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -32,46 +32,30 @@ import {
   sxArgTypes
 } from '../../storybook';
 
-storiesOf('Alert', module)
+storiesOf('atoms/Alert', module)
+  .addParameters({
+    status: { type: 'beta' }
+  })
   .add('default', createArgsStory(Alert), {
     args: {
       children: 'I am Alert',
+      variant: Alert.defaultProps?.variant,
       ...createSxArgs(Alert)
     },
     argTypes: {
       autoContrast: {
-        option: ['A', 'AA', 'AAA', false],
+        options: ['A', 'AA', 'AAA', false],
+        control: 'select'
+      },
+      variant: {
+        options: ['primary', 'muted'],
         control: 'select'
       },
       ...sxArgTypes
     }
   })
-  .add(
-    'default',
-    () => (
-      <>
-        <Alert variant="primary" sx={{ mb: 1 }}>
-          Primary
-        </Alert>
-        <Alert variant="secondary" sx={{ mb: 1 }}>
-          Secondary
-        </Alert>
-      </>
-    ),
-    {
-      component: Alert,
-      status: { type: 'beta' }
-    }
-  )
-  .add(
-    'like theme ui',
-    () => (
-      <Alert>
-        Beep boop, this is an alert! <Close />
-      </Alert>
-    ),
-    {
-      component: Alert,
-      status: { type: 'beta' }
-    }
-  );
+  .add('like theme ui', () => (
+    <Alert>
+      Beep boop, this is an alert! <Close />
+    </Alert>
+  ));

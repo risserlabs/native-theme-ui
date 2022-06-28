@@ -4,7 +4,7 @@
  * File Created: 14-06-2022 07:52:25
  * Author: Clay Risser
  * -----
- * Last Modified: 24-06-2022 06:27:54
+ * Last Modified: 28-06-2022 07:19:18
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -566,3 +566,6 @@ export type DViewProps = import('@dripsy/core').StyledProps<
   );
 
 export type DripsyFC<P> = FC<P> & { defaultSx: SxProp };
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type PatchStyledProps<P> = P & any;

@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 28-06-2022 06:18:24
+ * Last Modified: 28-06-2022 08:03:00
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,31 +23,31 @@
  */
 
 import React from 'react';
-import { DripsyFinalTheme, DripsyVariant, SxProp } from 'dripsy';
+import { styled } from 'dripsy';
+import { useAutoContrast } from '@risserlabs/auto-contrast';
 import Box, { BoxProps } from '../Box';
-import useThemeLookup from '../../hooks/useThemeLookup';
-import { DripsyFC } from '../../dripsyHelper';
+import { DripsyFC, PatchStyledProps } from '../../dripsyHelper';
 
 export type AlertProps = BoxProps;
 
+const StyledBox = styled(Box, {
+  themeKey: 'alerts',
+  defaultVariant: 'primary'
+})({});
+
 const Alert: DripsyFC<AlertProps> = (props: AlertProps) => {
-  const themeLookup = useThemeLookup();
-  const sx: SxProp = {
-    flexDirection: 'row',
+  const sx = useAutoContrast(props, {
     ...Alert.defaultSx,
-    ...props.sx,
-    ...(props.variant ? { bg: themeLookup('color', props.variant) } : {})
-  };
+    ...props.sx
+  });
+  const styledBoxProps = { ...props };
+  delete styledBoxProps.autoContrast;
   return (
-    <Box {...props} sx={sx}>
-      {props.children}
-    </Box>
+    <StyledBox {...(styledBoxProps as PatchStyledProps<BoxProps>)} sx={sx} />
   );
 };
 
-Alert.defaultProps = {
-  variant: 'primary' as DripsyVariant<keyof DripsyFinalTheme>
-};
+Alert.defaultProps = {};
 
 Alert.defaultSx = {
   display: 'flex',
@@ -56,8 +56,6 @@ Alert.defaultSx = {
   px: 3,
   py: 2,
   fontWeight: 'bold',
-  color: 'white',
-  bg: 'primary',
   borderRadius: 4
 };
 

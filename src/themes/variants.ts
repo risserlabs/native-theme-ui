@@ -1,10 +1,10 @@
 /**
- * File: /themes/main.ts
+ * File: /themes/variants.ts
  * Project: -
- * File Created: 23-01-2022 02:18:40
+ * File Created: 28-06-2022 07:42:41
  * Author: Clay Risser
  * -----
- * Last Modified: 28-06-2022 07:43:26
+ * Last Modified: 28-06-2022 08:07:47
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,25 +22,17 @@
  * limitations under the License.
  */
 
-import { base } from '@theme-ui/presets';
-import { makeTheme } from 'dripsy';
-import { BaseTheme } from './index';
-import variants from './variants';
+const variants = {
+  alerts: {
+    primary: {
+      color: 'background',
+      bg: 'primary'
+    },
+    muted: {
+      color: 'text',
+      bg: 'muted'
+    }
+  }
+};
 
-const theme = makeTheme<BaseTheme>({
-  ...base,
-  ...variants,
-  types: {
-    strictVariants: false
-  },
-  colors: {
-    ...base.colors,
-    textPrimary: '#ffffff'
-  },
-  fontWeights: {},
-  autoContrast: true
-});
-
-export type MainTheme = typeof theme;
-
-export default theme;
+export default variants;

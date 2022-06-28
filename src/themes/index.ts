@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 02-03-2022 08:28:12
+ * Last Modified: 28-06-2022 07:43:30
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,10 +22,11 @@
  * limitations under the License.
  */
 
-import { DripsyBaseTheme, makeTheme } from 'dripsy';
 import * as presets from '@theme-ui/presets';
-import main from './main';
 import { AutoContrast } from '@risserlabs/auto-contrast';
+import { DripsyBaseTheme, makeTheme } from 'dripsy';
+import main from './main';
+import variants from './variants';
 
 export const base = wrapTheme(presets.base);
 export const bootstrap = wrapTheme(presets.bootstrap);
@@ -44,6 +45,7 @@ export const tosh = wrapTheme(presets.tosh);
 function wrapTheme(theme: Record<string, unknown>) {
   return makeTheme<BaseTheme>({
     ...theme,
+    ...variants,
     autoContrast: 'AAA'
   });
 }

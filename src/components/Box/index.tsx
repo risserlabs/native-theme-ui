@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 28-06-2022 06:58:38
+ * Last Modified: 28-06-2022 08:07:37
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -37,11 +37,12 @@ export type BoxProps = Omit<DBoxProps, 'variant'> & {
 };
 
 const Box: DripsyFC<BoxProps> = (props: BoxProps) => {
-  const sx = useAutoContrast(props, {
-    ...Box.defaultSx,
-    ...props.sx
-  });
-  console.log('c', props.children);
+  const sx = props.style
+    ? undefined
+    : useAutoContrast(props, {
+        ...Box.defaultSx,
+        ...props.sx
+      });
   return (
     <DBox {...(props as DBoxProps)} sx={sx}>
       <BackgroundColorProvider sx={sx}>
