@@ -4,13 +4,8 @@
  * File Created: 27-06-2022 04:20:16
  * Author: Lavanya Katari
  * -----
-<<<<<<< HEAD
- * Last Modified: 28-06-2022 05:38:03
- * Modified By: Lavanya Katari
-=======
- * Last Modified: 28-06-2022 05:38:03
- * Modified By: Lavanya Katari
->>>>>>> 98c567ba0c7c6db44c168b16c81b14f86583c291
+ * Last Modified: 28-06-2022 06:06:28
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -28,7 +23,7 @@
  */
 
 import React from 'react';
-import { Box as DBOX } from 'dripsy';
+import { Box as DBox } from 'dripsy';
 import {
   BackgroundColorProvider,
   AutoContrast,
@@ -38,7 +33,6 @@ import { DBoxProps, DripsyFC } from '../../dripsyHelper';
 
 export type FieldProps = DBoxProps & {
   autoContrast?: AutoContrast;
-  sx?: SxProp;
 };
 
 const Field: DripsyFC<FieldProps> = (props: FieldProps) => {
@@ -47,11 +41,11 @@ const Field: DripsyFC<FieldProps> = (props: FieldProps) => {
     ...props.sx
   });
   return (
-    <DBOX {...props} sx={sx}>
+    <DBox {...props} sx={sx}>
       <BackgroundColorProvider sx={sx}>
         {props.children}
       </BackgroundColorProvider>
-    </DBOX>
+    </DBox>
   );
 };
 

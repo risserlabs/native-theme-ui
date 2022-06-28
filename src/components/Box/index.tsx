@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 22-06-2022 08:04:54
+ * Last Modified: 28-06-2022 06:16:33
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -31,8 +31,9 @@ import {
 } from '@risserlabs/auto-contrast';
 import { DBoxProps, DripsyFC } from '../../dripsyHelper';
 
-export type BoxProps = DBoxProps & {
+export type BoxProps = Omit<DBoxProps, 'variant'> & {
   autoContrast?: AutoContrast;
+  variant?: string;
 };
 
 const Box: DripsyFC<BoxProps> = (props: BoxProps) => {
@@ -41,7 +42,7 @@ const Box: DripsyFC<BoxProps> = (props: BoxProps) => {
     ...props.sx
   });
   return (
-    <DBox {...props} sx={sx}>
+    <DBox {...(props as DBoxProps)} sx={sx}>
       <BackgroundColorProvider sx={sx}>
         {props.children}
       </BackgroundColorProvider>

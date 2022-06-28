@@ -4,8 +4,8 @@
  * File Created: 20-06-2022 00:46:04
  * Author: Manikanta
  * -----
- * Last Modified: 28-06-2022 04:08:05
- * Modified By: Manikanta
+ * Last Modified: 28-06-2022 06:08:20
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -24,20 +24,19 @@
 
 import React from 'react';
 import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
-import { E as DE, SxProp } from 'dripsy';
-import { DripsyFC } from '../../dripsyHelper';
+import { Box as DBox } from 'dripsy';
+import { DripsyFC, DBoxProps } from '../../dripsyHelper';
 
-export type EmbedProps = {
+export type EmbedProps = DBoxProps & {
   autoContrast?: AutoContrast;
-  sx?: SxProp;
-  variant?: string;
 };
+
 const Embed: DripsyFC<EmbedProps> = (props: EmbedProps) => {
   const sx = useAutoContrast(props, {
     ...Embed.defaultSx,
     ...props.sx
   });
-  return <DE {...props} sx={sx} />;
+  return <DBox {...props} sx={sx} />;
 };
 
 Embed.defaultProps = {};

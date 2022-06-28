@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 03:42:37
  * Author: Harikittu46
  * -----
- * Last Modified: 27-06-2022 03:45:42
- * Modified By: Harikittu46
+ * Last Modified: 28-06-2022 06:19:00
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -28,7 +28,7 @@ import { AutoContrast } from '@risserlabs/auto-contrast';
 type AspectRatioProps = {
   autoContrast?: AutoContrast;
 };
-const AspectRatio: FC<AspectRatioProps> = (props: AspectRatioProps) => {
+const AspectRatio: FC<AspectRatioProps> = () => {
   return (
     <div
       style={{

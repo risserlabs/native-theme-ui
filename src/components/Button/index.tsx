@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 07:34:18
  * Author: Clay Risser
  * -----
- * Last Modified: 23-06-2022 05:44:07
- * Modified By: K S R P BHUSHAN
+ * Last Modified: 28-06-2022 06:17:47
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -31,10 +31,11 @@ import {
 } from '@risserlabs/auto-contrast';
 import { DripsyFC, DPressableProps } from '../../dripsyHelper';
 
-type ButtonProps = DPressableProps & {
+type ButtonProps = Omit<DPressableProps, 'variant'> & {
   autoContrast?: AutoContrast;
   children?: ReactNode;
   hidden?: boolean;
+  variant?: string;
 };
 
 const Button: DripsyFC<ButtonProps> = (props: ButtonProps) => {
@@ -44,7 +45,7 @@ const Button: DripsyFC<ButtonProps> = (props: ButtonProps) => {
     ...props.sx
   });
   return (
-    <DPressable {...props} sx={sx}>
+    <DPressable {...(props as DPressableProps)} sx={sx}>
       <BackgroundColorProvider sx={sx}>
         {props.children}
       </BackgroundColorProvider>

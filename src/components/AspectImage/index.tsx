@@ -4,8 +4,8 @@
  * File Created: 23-06-2022 03:43:01
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 23-06-2022 04:03:06
- * Modified By: K S R P BHUSHAN
+ * Last Modified: 28-06-2022 06:18:46
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -28,7 +28,7 @@ import { AutoContrast } from '@risserlabs/auto-contrast';
 type AspectImageProps = {
   autoContrast?: AutoContrast;
 };
-const AspectImage: FC<AspectImageProps> = (props: AspectImageProps) => {
+const AspectImage: FC<AspectImageProps> = () => {
   return (
     <div
       style={{

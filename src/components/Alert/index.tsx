@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 28-06-2022 03:53:55
- * Modified By: Lavanya Katari
+ * Last Modified: 28-06-2022 06:18:24
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -23,31 +23,14 @@
  */
 
 import React from 'react';
-import { Text as DText, SxProp } from 'dripsy';
-import Box from '../Box';
-import { TextProps as RNTextProps } from 'react-native';
-import { AutoContrast } from '@risserlabs/auto-contrast';
+import { DripsyFinalTheme, DripsyVariant, SxProp } from 'dripsy';
+import Box, { BoxProps } from '../Box';
 import useThemeLookup from '../../hooks/useThemeLookup';
 import { DripsyFC } from '../../dripsyHelper';
 
-type VARIANTS =
-  | 'accent'
-  | 'muted'
-  | 'secondary'
-  | 'primary'
-  | 'highlight'
-  | undefined;
-//export interface TextProps extends RNTextProps {
-//sx?: SxProp;
-// variant?: VARIANTS;
-//}
-export type TextProps = RNTextProps & {
-  autoContrast?: AutoContrast;
-  sx?: SxProp;
-  variant?: VARIANTS;
-};
+export type AlertProps = BoxProps;
 
-const Alert: DripsyFC<TextProps> = (props: TextProps) => {
+const Alert: DripsyFC<AlertProps> = (props: AlertProps) => {
   const themeLookup = useThemeLookup();
   const sx: SxProp = {
     flexDirection: 'row',
@@ -55,20 +38,16 @@ const Alert: DripsyFC<TextProps> = (props: TextProps) => {
     ...props.sx,
     ...(props.variant ? { bg: themeLookup('color', props.variant) } : {})
   };
-
   return (
-    <Box {...props} sx={{ ...sx }}>
+    <Box {...props} sx={sx}>
       {props.children}
     </Box>
   );
 };
 
 Alert.defaultProps = {
-  variant: 'primary'
+  variant: 'primary' as DripsyVariant<keyof DripsyFinalTheme>
 };
-
-//export const styles = {
-// alert: {}};
 
 Alert.defaultSx = {
   display: 'flex',
@@ -81,4 +60,5 @@ Alert.defaultSx = {
   bg: 'primary',
   borderRadius: 4
 };
+
 export default Alert;

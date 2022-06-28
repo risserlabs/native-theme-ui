@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 28-06-2022 03:42:43
- * Modified By: K S R P BHUSHAN
+ * Last Modified: 28-06-2022 06:04:23
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,10 +22,10 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
+import { BackgroundColorProvider } from '@risserlabs/auto-contrast';
 import { Pressable as DPressable, SxProp } from 'dripsy';
 import { PressableProps as RNPressableProps } from 'react-native';
-import { BackgroundColorProvider } from '@risserlabs/auto-contrast';
 
 export interface PressableProps extends RNPressableProps {
   hidden?: boolean;
@@ -41,7 +41,7 @@ const Pressable: FC<PressableProps> = (props: PressableProps) => {
   return (
     <DPressable {...props} sx={sx}>
       <BackgroundColorProvider sx={sx}>
-        {props.children}
+        {props.children as ReactNode}
       </BackgroundColorProvider>
     </DPressable>
   );
