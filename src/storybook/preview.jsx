@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 22-06-2022 07:15:38
+ * Last Modified: 28-06-2022 06:33:27
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -34,13 +34,7 @@ import * as themes from '../themes';
 export const parameters = {
   globalsControls: {},
   status: {
-    statuses: {
-      released: {
-        background: '#0000ff',
-        color: '#ffffff',
-        description: 'This component is stable and released'
-      }
-    }
+    statuses: {}
   },
   darkMode: {
     dark: { ...storybookThemes.dark },

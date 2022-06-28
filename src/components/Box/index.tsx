@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 28-06-2022 06:16:33
+ * Last Modified: 28-06-2022 06:58:38
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -41,6 +41,7 @@ const Box: DripsyFC<BoxProps> = (props: BoxProps) => {
     ...Box.defaultSx,
     ...props.sx
   });
+  console.log('c', props.children);
   return (
     <DBox {...(props as DBoxProps)} sx={sx}>
       <BackgroundColorProvider sx={sx}>
@@ -56,7 +57,8 @@ Box.defaultSx = {
   boxSizing: 'border-box',
   display: 'inline-block',
   margin: 0,
-  minWidth: 0
+  minWidth: 0,
+  width: '100%'
 };
 
 export default Box;

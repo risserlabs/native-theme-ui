@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 24-06-2022 06:01:32
+ * Last Modified: 28-06-2022 06:56:18
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -29,7 +29,7 @@ export * from './storybook';
 export function getProps(args: Record<string, unknown>) {
   return Object.entries(args).reduce(
     (props: Record<string, unknown>, [key, value]: [string, unknown]) => {
-      if (key.substring(0, 2) !== 'sx') {
+      if (key.substring(0, 2) !== 'sx' && key[2].toUpperCase() !== key[2]) {
         props[key] = value;
       }
       return props;
@@ -41,7 +41,7 @@ export function getProps(args: Record<string, unknown>) {
 export function getSx(args: Record<string, unknown>) {
   return Object.entries(args).reduce(
     (sx: Record<string, unknown>, [key, value]: [string, unknown]) => {
-      if (key.substring(0, 2) === 'sx') {
+      if (key.substring(0, 2) === 'sx' && key[2].toUpperCase() === key[2]) {
         sx[key[2].toLocaleLowerCase() + key.substring(3)] = value;
       }
       return sx;
@@ -64,7 +64,9 @@ export function createArgsStory(
         if (typeof value === 'string' && !Number.isNaN(Number(value))) {
           value = Number(value);
         }
-        sxArgs[key] = value;
+        if (!(typeof value === 'number' && value === 0)) {
+          sxArgs[key] = value;
+        }
         return sxArgs;
       },
       {}
@@ -101,19 +103,18 @@ export function createSxArgs(
 }
 
 export const sxArgTypes = {
-  sxBg: { control: { type: 'color' } },
-  sxColor: { control: { type: 'color' } },
+  sxBg: { control: 'color' },
+  sxColor: { control: 'color' },
   sxM: { control: 'number' },
   sxP: { control: 'number' },
-  sxHeight: { control: 'number' },
+  sxHeight: { control: 'text' },
   sxWidth: { control: 'text' },
-  sxMinWidth: { control: 'text' },
-  sxMaxWidth: { control: 'text' },
-  sxBorderWidth: { control: 'text' },
-  sxBorderRadius: {
-    control: { type: 'text' }
-  },
-  sxBorderColor: { control: { type: 'color' } }
+  sxMinWidth: { control: 'number' },
+  sxMaxWidth: { control: 'number' },
+  sxBorderWidth: { control: 'number' },
+  sxBorderRadius: { control: 'text' },
+  sxBorderColor: { control: { type: 'color' } },
+  sxFontSize: { control: 'number' }
 };
 
 export function createSxArgTypes(omit: string[] = []) {

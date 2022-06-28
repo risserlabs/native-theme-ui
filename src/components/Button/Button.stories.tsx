@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 07:34:26
  * Author: Clay Risser
  * -----
- * Last Modified: 23-06-2022 07:07:52
+ * Last Modified: 28-06-2022 06:30:54
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -34,7 +34,7 @@ import {
 import Button from './index';
 import Text from '../Text';
 
-storiesOf('Button', module)
+storiesOf('atoms/Button', module)
   .add(
     'default',
     createArgsStory(Button, {
