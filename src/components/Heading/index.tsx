@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:56:30
- * Modified By: Clay Risser
+ * Last Modified: 28-06-2022 01:03:00
+ * Modified By: Hari Krishna
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,40 +22,47 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
+import React from 'react';
 import { SxProp } from 'dripsy';
 import Text from '../Text';
 import { TextProps as RNTextProps } from 'react-native';
 import useThemeLookup from '../../hooks/useThemeLookup';
+import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
+import { DripsyFC } from '../../dripsyHelper';
 
 type HEADINGS = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-export interface HeadingProps extends RNTextProps {
+//export interface HeadingProps extends RNTextProps {
+// as: HEADINGS;
+//}
+
+export type HeadingProps = RNTextProps & {
+  autoContrast?: AutoContrast;
   sx?: SxProp;
-  as: HEADINGS;
-}
+};
 
-const Heading: FC<HeadingProps> = (_props: HeadingProps) => {
-  const themeLookup = useThemeLookup();
+const Heading: DripsyFC<HeadingProps> = (props: HeadingProps) => {
+  // const themeLookup = useThemeLookup();
 
-  const { as, ...props } = _props;
-  const sx: SxProp = {
-    ...themeLookup('styles', as),
-    ...styles.heading,
+  // const { as, ...props } = props;
+  // const sx: SxProp = {
+  // ...themeLookup('styles', as),
+  //   ...styles.heading,
+  // ...props.sx
+
+  const sx = useAutoContrast(props, {
+    ...Heading.defaultSx,
     ...props.sx
-  };
+  });
+
   return <Text {...props} sx={{ ...sx }} />;
 };
 
-Heading.defaultProps = {
-  as: 'h1'
-};
+Heading.defaultProps = {};
 
-export const styles = {
-  heading: {
-    fontFamily: 'heading',
-    fontWeight: 'heading',
-    lineHeight: 'heading'
-  }
+Heading.defaultSx = {
+  fontFamily: 'heading',
+  fontWeight: 'heading',
+  lineHeight: 'heading'
 };
 
 export default Heading;

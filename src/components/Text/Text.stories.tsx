@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 24-06-2022 03:49:27
- * Modified By: Harikittu46
+ * Last Modified: 27-06-2022 23:25:41
+ * Modified By: Hari Krishna
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -47,7 +47,8 @@ storiesOf('Text', module)
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', false]
+        options: ['A', 'AA', 'AAA', false],
+        control: 'select'
       },
       ...sxArgTypes
     }
