@@ -4,8 +4,8 @@
  * File Created: 20-06-2022 07:09:45
  * Author: Lavanya Katari
  * -----
- * Last Modified: 23-06-2022 14:59:17
- * Modified By: Ajithkrm6
+ * Last Modified: 28-06-2022 02:19:08
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,13 +22,20 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
+import React from 'react';
+import { DripsyFC } from '../../dripsyHelper';
 import { AutoContrast } from '@risserlabs/auto-contrast';
+import { SxProp } from 'dripsy';
 
 type RadioProps = {
   autoContrast?: AutoContrast;
+  sx?: SxProp;
 };
-const Radio: FC<RadioProps> = (props: RadioProps) => {
+const Radio: DripsyFC<RadioProps> = (props: RadioProps) => {
+  const sx: SxProp = {
+    ...Radio.defaultSx,
+    ...props.sx
+  };
   return (
     <div
       style={{
@@ -39,4 +46,6 @@ const Radio: FC<RadioProps> = (props: RadioProps) => {
     </div>
   );
 };
+
+Radio.defaultSx = {};
 export default Radio;

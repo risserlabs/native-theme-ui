@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 24-06-2022 11:37:38
- * Modified By: Ajithkrm6
+ * Last Modified: 28-06-2022 01:18:19
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -43,9 +43,10 @@ storiesOf('Donut', module)
       children: 'I am a donut',
       ...createSxArgs(Donut)
     },
-    argtypes: {
+    argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', false]
+        options: ['A', 'AA', 'AAA', false],
+        control: 'select'
       },
       ...sxArgTypes
     }
