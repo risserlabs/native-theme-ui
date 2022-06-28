@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:56:28
- * Modified By: Clay Risser
+ * Last Modified: 28-06-2022 05:13:59
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -26,47 +26,75 @@ import React from 'react';
 import { View } from 'dripsy';
 import Box from '../Box';
 import Heading from '.';
-import { storiesOf } from '../../storybook';
+import {
+  storiesOf,
+  Args,
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes
+} from '../../storybook';
 
 storiesOf('Heading', module)
-  .add(
-    'variants',
-    () => (
-      <Box>
-        <Heading as="h1" sx={{ color: 'primary', lineHeight: 30 }}>
-          h1
-        </Heading>
-        <Heading as="h2" sx={{ color: 'primary', lineHeight: 30 }}>
-          h2
-        </Heading>
-        <Heading as="h3" sx={{ color: 'primary', lineHeight: 27 }}>
-          h3
-        </Heading>
-        <Heading as="h4" sx={{ color: 'primary', lineHeight: 25 }}>
-          h4
-        </Heading>
-        <Heading as="h5" sx={{ color: 'primary', lineHeight: 20 }}>
-          h5
-        </Heading>
-        <Heading as="h6" sx={{ color: 'primary', lineHeight: 20 }}>
-          h6
-        </Heading>
-      </Box>
-    ),
-    {
-      component: Heading,
-      status: { type: 'beta' }
+  // .add(
+  // 'variants',
+  //  () => (
+  // <Box>
+  //   <Heading as="h1" sx={{ color: 'primary', lineHeight: 30 }}>
+  // h1
+  // </Heading>
+  // <Heading as="h2" sx={{ color: 'primary', lineHeight: 30 }}>
+  //  h2
+  // </Heading>
+  // <Heading as="h3" sx={{ color: 'primary', lineHeight: 27 }}>
+  // h3
+  // </Heading>
+  // <Heading as="h4" sx={{ color: 'primary', lineHeight: 25 }}>
+  // h4
+  // </Heading>
+  // <Heading as="h5" sx={{ color: 'primary', lineHeight: 20 }}>
+  // h5
+  // </Heading>
+  // <Heading as="h6" sx={{ color: 'primary', lineHeight: 20 }}>
+  // h6
+  // </Heading>
+  // </Box>
+  // ),
+  // {
+  //  component: Heading,
+  //  status: { type: 'beta' }
+  // }
+  // )
+  .add('default', createArgsStory(Heading), {
+    args: {
+      children: 'Heading',
+      ...createSxArgs(Heading)
+    },
+    argTypes: {
+      autoContrast: {
+        options: ['A', 'AA', 'AAA', 'false'],
+        control: 'select'
+      },
+      ...sxArgTypes
     }
-  )
+  })
   .add(
     'with background',
     () => (
       <Box sx={{ bg: 'background', p: 4 }}>
-        <Heading as="h1">Hello, world!</Heading>
+        <Heading>Hello Heading!</Heading>
       </Box>
     ),
     {
-      component: Heading,
-      status: { type: 'beta' }
+      args: {
+        background: 'black',
+        autoContrast: 'AAA'
+      },
+      argTypes: {
+        background: { control: { type: 'color' } },
+        autoContrast: {
+          options: ['A', 'AA', 'AAA', false],
+          control: 'select'
+        }
+      }
     }
   );
