@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 10:04:09
  * Author: Ajithkrm6
  * -----
- * Last Modified: 27-06-2022 16:14:56
- * Modified By: Ajithkrm6
+ * Last Modified: 28-06-2022 01:39:50
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -38,14 +38,21 @@ storiesOf('Grid', module)
       ...createSxArgs
     },
     argTypes: {
+      autoContrast: {
+        options: ['A', 'AA', 'AAA', false],
+        control: 'select'
+      },
       ...sxArgTypes
     }
   })
-  .add('like theme Ui', () => (
-    <Grid width={[128, null, 192]}>
-      <Box sx={{ bg: 'primary' }}>Box1</Box>
-      <Box sx={{ bg: 'muted' }}>Box2</Box>
-      <Box sx={{ bg: 'secondary' }}>Box3</Box>
-      <Box sx={{ bg: 'muted' }}>Box4</Box>
-    </Grid>
-  ));
+  .add(
+    'like theme Ui',
+    () => (
+      <Grid>
+        <Box sx={{ bg: 'primary' }}>Box1</Box>
+        <Box sx={{ bg: 'secondary' }}>Box2</Box>
+        <Box sx={{ bg: 'muted' }}>Box3</Box>
+      </Grid>
+    ),
+    createArgsStory(Grid)
+  );
