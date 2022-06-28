@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 24-06-2022 14:09:03
- * Modified By: Ajithkrm6
+ * Last Modified: 28-06-2022 01:56:41
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -81,7 +81,9 @@ Donut.defaultSx = {
   strokeWidth: 2,
   fill: 'none',
   stroke: 'currentcolor',
-  color: 'primary'
+  color: 'primary',
+  borderColor: 'secondary',
+  fontSize: 'text'
 };
 
 export default Donut;

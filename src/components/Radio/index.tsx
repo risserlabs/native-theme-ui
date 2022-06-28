@@ -4,7 +4,7 @@
  * File Created: 20-06-2022 07:09:45
  * Author: Lavanya Katari
  * -----
- * Last Modified: 28-06-2022 04:25:46
+ * Last Modified: 28-06-2022 05:39:52
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,8 +23,8 @@
  */
 
 import React from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
 import { DripsyFC } from '../../dripsyHelper';
+import { AutoContrast } from '@risserlabs/auto-contrast';
 import { SxProp } from 'dripsy';
 
 type RadioProps = {
@@ -36,7 +36,6 @@ const Radio: DripsyFC<RadioProps> = (props: RadioProps) => {
     ...Radio.defaultSx,
     ...props.sx
   };
-
   return (
     <div
       style={{
@@ -47,6 +46,6 @@ const Radio: DripsyFC<RadioProps> = (props: RadioProps) => {
     </div>
   );
 };
-Radio.defaultSx = {};
 
+Radio.defaultSx = {};
 export default Radio;

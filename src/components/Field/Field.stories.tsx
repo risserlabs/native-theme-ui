@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 04:22:36
  * Author: Lavanya Katari
  * -----
- * Last Modified: 27-06-2022 06:16:49
- * Modified By: Ajith Kumar
+ * Last Modified: 28-06-2022 04:47:54
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -23,7 +23,77 @@
  */
 
 import React, { FC } from 'react';
-import { storiesOf } from '../../storybook';
-import Field from './index';
+import {
+  storiesOf,
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes
+} from '../../storybook';
+import { View } from 'dripsy';
+import Box from './index';
+import Text from '../Text';
+import Field from '.';
 
-storiesOf('Field', module).add('with background', () => <Field></Field>);
+storiesOf('Field', module)
+  .add('default', createArgsStory(Field), {
+    args: {
+      children: 'I am a field',
+      autoContrast: Field.defaultProps?.autoContrast,
+      ...createSxArgs(Field)
+    },
+    argTypes: {
+      autoContrast: {
+        options: ['A', 'AA', 'AAA', false],
+        control: 'select'
+      },
+      ...sxArgTypes
+    }
+  })
+  .add('with background', () => (
+    <Field sx={{ bg: 'secondary' }}>
+      <Text>Hello, world</Text>
+    </Field>
+  ))
+  .add('like theme-ui', () => (
+    <Box
+      sx={{
+        p: 4,
+        color: 'white',
+        bg: 'primary'
+      }}
+    >
+      <Text>Beep</Text>
+    </Box>
+  ))
+  .add('multiple', () => {
+    const style = {
+      Field: {
+        color: 'white',
+        height: 100,
+        width: 300,
+        margin: 3
+      },
+      Field1: {
+        bg: 'primary'
+      },
+      Field2: {
+        bg: 'secondary'
+      }
+    };
+    return (
+      <View sx={{ flex: 1, flexDirection: 'row', flexWrap: 'wrap' }}>
+        <Field
+          sx={{
+            ...style.Field,
+            ...style.Field1
+          }}
+        />
+        <Field
+          sx={{
+            ...style.Field,
+            ...style.Field2
+          }}
+        />
+      </View>
+    );
+  });

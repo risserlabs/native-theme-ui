@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:55:30
- * Modified By: Clay Risser
+ * Last Modified: 28-06-2022 05:16:31
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -23,6 +23,8 @@
  */
 
 import React from 'react';
+import Box from '../Box';
+import Text from '../Text';
 import {
   storiesOf,
   createSxArgs,
@@ -34,7 +36,7 @@ import Badge from '.';
 storiesOf('Badge', module)
   .add('default', createArgsStory(Badge), {
     args: {
-      children: 'Iam Badge Component',
+      children: 'Badge',
       autoContrast: Badge.defaultProps?.autoContrast,
       ...createSxArgs(Badge)
     },
@@ -46,15 +48,43 @@ storiesOf('Badge', module)
       ...sxArgTypes
     }
   })
-  .add('Accent Badge', () => <Badge variant="accent">Badge</Badge>, {
-    component: Badge,
-    status: { type: 'beta' }
-  })
+  .add(
+    'Accent Badge',
+    () => (
+      <Text>
+        <Badge variant="accent" sx={{ padding: '70', borderRadius: 100 }}>
+          This is a badge2323
+        </Badge>
+      </Text>
+    ),
+    {
+      args: {
+        ...createSxArgs(Badge)
+      },
+      argTypes: {
+        autoContrast: {
+          options: ['A', 'AA', 'AAA', false],
+          control: 'select'
+        }
+      }
+    }
+  )
   .add('Outline Badge', () => <Badge variant="outline">Badge</Badge>, {
     component: Badge,
     status: { type: 'beta' }
   })
-  .add('Circle Badge', () => <Badge variant="circle">16</Badge>, {
-    component: Badge,
-    status: { type: 'beta' }
-  });
+  .add(
+    'Circle Badge',
+    () => (
+      <Badge
+        variant="circle"
+        sx={{ borderRadius: 9999, height: 40, width: 50 }}
+      >
+        16
+      </Badge>
+    ),
+    {
+      component: Badge,
+      status: { type: 'beta' }
+    }
+  );

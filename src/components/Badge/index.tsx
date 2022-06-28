@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:55:35
- * Modified By: Clay Risser
+ * Last Modified: 28-06-2022 04:47:03
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,10 +22,9 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
+import React from 'react';
 import { SxProp, View as DView } from 'dripsy';
 import { ViewProps as RNViewProps } from 'react-native';
-import Text from '../Text';
 import { DripsyFC } from '../../dripsyHelper';
 import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
 
@@ -45,6 +44,7 @@ const Badge: DripsyFC<BadgeProps> = (props: BadgeProps) => {
   // : props.variant === 'outline'
   //? styles.badge.outline
   // : styles.badge.circle;
+
   const sx = useAutoContrast(props, {
     ...Badge.defaultSx,
     ...props.sx

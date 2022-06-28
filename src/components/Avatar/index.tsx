@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:55:18
- * Modified By: Clay Risser
+ * Last Modified: 28-06-2022 03:58:15
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -21,7 +21,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import React from 'react';
 import { SxProp, View as DView } from 'dripsy';
 import { ViewProps as RNViewProps } from 'react-native';
@@ -30,12 +29,12 @@ import Image from '../Image';
 import { DripsyFC } from '../../dripsyHelper';
 import { AutoContrast } from '@risserlabs/auto-contrast';
 
-type ViewProps = RNViewProps & {
+export type AvatarProps = RNViewProps & {
+  autoContrast?: AutoContrast;
   sx?: SxProp;
   isImage?: boolean;
   name?: string;
   uri?: string;
-  autoContrast?: AutoContrast;
 };
 
 //export interface ViewProps extends RNViewProps {
@@ -45,25 +44,12 @@ type ViewProps = RNViewProps & {
 //uri?: string;
 //}
 
-const Avatar: DripsyFC<ViewProps> = (props: ViewProps) => {
+const Avatar: DripsyFC<AvatarProps> = (props: AvatarProps) => {
   const sx: SxProp = {
     ...Avatar.defaultSx,
     ...props.sx
   };
-  return (
-    <DView {...props} sx={sx}>
-      {props.isImage ? (
-        <Image
-          source={{
-            uri: props.uri
-          }}
-          sx={styles.image}
-        />
-      ) : (
-        <Text>{props.name}</Text>
-      )}
-    </DView>
-  );
+  return <DView sx={{ ...sx }}>{props.children}</DView>;
 };
 
 Avatar.defaultProps = {
@@ -78,7 +64,6 @@ Avatar.defaultSx = {
   border: 0,
   alignItems: 'center',
   justifyContent: 'center',
-
   width: 50,
   height: 50,
   borderRadius: 25,
