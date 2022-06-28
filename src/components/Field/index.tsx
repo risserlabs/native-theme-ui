@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 04:20:16
  * Author: Lavanya Katari
  * -----
- * Last Modified: 27-06-2022 06:22:08
- * Modified By: Ajith Kumar
+ * Last Modified: 28-06-2022 04:47:48
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,14 +22,38 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
-export type Field = {
+import React from 'react';
+import { Box as DBOX } from 'dripsy';
+import {
+  BackgroundColorProvider,
+  AutoContrast,
+  useAutoContrast
+} from '@risserlabs/auto-contrast';
+import { DBoxProps, DripsyFC } from '../../dripsyHelper';
+
+export type FieldProps = DBoxProps & {
   autoContrast?: AutoContrast;
 };
 
-const Field: FC<FieldProps> = ({ Props: FieldProps }) => {
-  return <div>Field component</div>;
+const Field: DripsyFC<FieldProps> = (props: FieldProps) => {
+  const sx = useAutoContrast(props, {
+    ...Field.defaultSx,
+    ...props.sx
+  });
+  return (
+    <DBOX {...props} sx={sx}>
+      <BackgroundColorProvider sx={sx}>
+        {props.children}
+      </BackgroundColorProvider>
+    </DBOX>
+  );
 };
 
+Field.defaultProps = {};
+Field.defaultSx = {
+  boxSizing: 'border-box',
+  display: 'inline-block',
+  margin: 0,
+  minWidth: 0
+};
 export default Field;
