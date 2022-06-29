@@ -4,7 +4,7 @@
  * File Created: 20-06-2022 07:09:30
  * Author: Lavanya Katari
  * -----
- * Last Modified: 22-06-2022 03:55:46
+ * Last Modified: 29-06-2022 06:01:30
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,7 +23,25 @@
  */
 
 import React from "react";
-import { storiesOf } from "../../storybook";
+import {
+  storiesOf,
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes,
+} from "../../storybook";
 import Radio from "./index";
 
-storiesOf("Radio", module).add("with background", () => <Radio></Radio>);
+storiesOf("Radio", module)
+  .add("default", createArgsStory(Radio), {
+    args: {
+      children: "I Am Radio component",
+      ...createSxArgs(Radio),
+    },
+    argTypes: {
+      autoContrast: {
+        options: ["A", "AA", "AAA", false],
+      },
+      ...sxArgTypes,
+    },
+  })
+  .add("with background", () => <Radio></Radio>);

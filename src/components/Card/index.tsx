@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 27-06-2022 16:13:44
- * Modified By: Ajithkrm6
+ * Last Modified: 29-06-2022 04:26:06
+ * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -28,6 +28,7 @@ import { View as DView, SxProp } from "dripsy";
 import { ViewProps as RNViewProps } from "react-native";
 import { DripsyFC } from "../../dripsyHelper";
 type CardProps = RNViewProps & {
+  autoContrast?: AutoContrast;
   sx?: SxProp;
 };
 const Card: DripsyFC<CardProps> = (props: CardProps) => {
