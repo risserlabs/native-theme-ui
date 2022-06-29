@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 02-03-2022 08:08:59
+ * Last Modified: 29-06-2022 05:54:18
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -36,6 +36,7 @@ import "./rn-addons";
 import * as themes from "../themes";
 
 addDecorator(withKnobs);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 addDecorator((Root: any) => (
   <DripsyProvider theme={themes.main as never}>
     <Root />

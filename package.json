@@ -12,6 +12,7 @@
   "license": "Apache-2.0",
   "author": "Risser Labs LLC <howdy@bitspur.com> (https://bitspur.com)",
   "workspaces": [
+    "expo",
     "src",
     "platforms/*"
   ],
@@ -27,7 +28,7 @@
   "devDependencies": {
     "@types/prettier": "^2.6.3",
     "cspell": "^6.1.2",
-    "expo": "^44.0.6",
+    "expo": "~45.0.6",
     "prettier": "^2.6.2"
   }
 }

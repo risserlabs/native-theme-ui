@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 28-06-2022 06:56:18
+ * Last Modified: 29-06-2022 05:59:47
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -29,7 +29,10 @@ export * from "./storybook";
 export function getProps(args: Record<string, unknown>) {
   return Object.entries(args).reduce(
     (props: Record<string, unknown>, [key, value]: [string, unknown]) => {
-      if (key.substring(0, 2) !== "sx" && key[2].toUpperCase() !== key[2]) {
+      if (
+        key.length <= 2 ||
+        (key.substring(0, 2) !== "sx" && key[2].toUpperCase() !== key[2])
+      ) {
         props[key] = value;
       }
       return props;
@@ -41,7 +44,11 @@ export function getProps(args: Record<string, unknown>) {
 export function getSx(args: Record<string, unknown>) {
   return Object.entries(args).reduce(
     (sx: Record<string, unknown>, [key, value]: [string, unknown]) => {
-      if (key.substring(0, 2) === "sx" && key[2].toUpperCase() === key[2]) {
+      if (
+        key.length > 2 &&
+        key.substring(0, 2) === "sx" &&
+        key[2].toUpperCase() === key[2]
+      ) {
         sx[key[2].toLocaleLowerCase() + key.substring(3)] = value;
       }
       return sx;
@@ -52,7 +59,7 @@ export function getSx(args: Record<string, unknown>) {
 
 export function createArgsStory(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  C: ComponentType<any>,
+  C: any,
   props?: Record<string, unknown>,
   children?: ReactNode
 ) {

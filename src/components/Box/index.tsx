@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 29-06-2022 05:37:42
+ * Last Modified: 29-06-2022 05:50:24
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -29,11 +29,10 @@ import {
   useAutoContrast,
   AutoContrast,
 } from "@risserlabs/auto-contrast";
-import { DBoxProps, DripsyFC } from "../../dripsyHelper";
+import { DBoxProps, DripsyFC, PatchVariant } from "../../dripsyHelper";
 
-export type BoxProps = Omit<DBoxProps, "variant"> & {
+export type BoxProps = PatchVariant<DBoxProps> & {
   autoContrast?: AutoContrast;
-  variant?: string;
 };
 
 const Box: DripsyFC<BoxProps> = (props: BoxProps) => {
