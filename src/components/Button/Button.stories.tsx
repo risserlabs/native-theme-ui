@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 07:34:26
  * Author: Clay Risser
  * -----
- * Last Modified: 28-06-2022 06:30:54
+ * Last Modified: 29-06-2022 08:09:05
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -62,6 +62,19 @@ storiesOf("atoms/Button", module)
       },
     }
   )
+  .add("like theme-ui", () => (
+    <>
+      <Button sx={{ mr: 2 }} onPress={action("beep")}>
+        Beep
+      </Button>
+      <Button variant="secondary" sx={{ mr: 2 }} onPress={action("boop")}>
+        Boop
+      </Button>
+      <Button sx={{ mr: 2 }} hidden>
+        Hidden
+      </Button>
+    </>
+  ))
   .add(
     "with autocontrast",
     (args: Args) => (

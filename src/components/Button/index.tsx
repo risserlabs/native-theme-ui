@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 07:34:18
  * Author: Clay Risser
  * -----
- * Last Modified: 28-06-2022 06:17:47
+ * Last Modified: 29-06-2022 08:12:39
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -30,6 +30,8 @@ import {
   BackgroundColorProvider,
 } from "@risserlabs/auto-contrast";
 import { DripsyFC, DPressableProps } from "../../dripsyHelper";
+import Text from "../Text";
+import { ProgressBarAndroidComponent } from "react-native";
 
 type ButtonProps = Omit<DPressableProps, "variant"> & {
   autoContrast?: AutoContrast;
@@ -44,11 +46,15 @@ const Button: DripsyFC<ButtonProps> = (props: ButtonProps) => {
     display: props.hidden ? "none" : "inline-block",
     ...props.sx,
   });
+  const children =
+    typeof props.children === "string" ? (
+      <Text autoContrast={props.autoContrast}>{props.children}</Text>
+    ) : (
+      props.children
+    );
   return (
     <DPressable {...(props as DPressableProps)} sx={sx}>
-      <BackgroundColorProvider sx={sx}>
-        {props.children}
-      </BackgroundColorProvider>
+      <BackgroundColorProvider sx={sx}>{children}</BackgroundColorProvider>
     </DPressable>
   );
 };
