@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 24-06-2022 03:56:26
- * Modified By: Harikittu46
+ * Last Modified: 28-06-2022 23:22:25
+ * Modified By: Hari Krishna
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -42,6 +42,10 @@ const Text: DripsyFC<TextProps> = (props: TextProps) => {
 };
 Text.defaultProps = {};
 
-Text.defaultSx = {};
+Text.defaultSx = {
+  fontSize: 2,
+  fontWeight: 'bold',
+  display: 'block'
+};
 
 export default Text;
