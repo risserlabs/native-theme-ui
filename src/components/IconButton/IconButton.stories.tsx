@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:56:34
- * Modified By: Clay Risser
+ * Last Modified: 29-06-2022 04:24:44
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -23,10 +23,30 @@
  */
 
 import React from 'react';
-import { storiesOf } from '../../storybook';
+import {
+  storiesOf,
+  createArgsStory,
+  sxArgTypes,
+  createSxArgs
+} from '../../storybook';
 import IconButton from '.';
 
 storiesOf('IconButton', module)
+  .add('default Icon', createArgsStory(IconButton), {
+    args: {
+      children: 'Iam Icon Button ',
+      autoContrast: IconButton.defaultProps?.autoContrast,
+      ...createSxArgs(IconButton)
+    },
+    argTypes: {
+      autoContrast: {
+        options: ['A', 'AA', 'AAA', false],
+        control: 'select'
+      },
+      ...sxArgTypes
+    }
+  })
+
   .add(
     'Home IconButton',
     () => (
