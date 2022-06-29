@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 28-06-2022 08:03:00
- * Modified By: Clay Risser
+ * Last Modified: 29-06-2022 00:02:42
+ * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -50,7 +50,6 @@ const Alert: DripsyFC<AlertProps> = (props: AlertProps) => {
 Alert.defaultProps = {};
 
 Alert.defaultSx = {
-  display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
   px: 3,

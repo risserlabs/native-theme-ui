@@ -4,7 +4,7 @@
  * File Created: 15-06-2022 06:37:48
  * Author: Lavanya Katari
  * -----
- * Last Modified: 28-06-2022 01:42:06
+ * Last Modified: 29-06-2022 04:09:46
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,9 +23,11 @@
  */
 
 import React from 'react';
+import Box from '../Box';
 import { action } from '@storybook/addon-actions';
 import {
   storiesOf,
+  Args,
   createArgsStory,
   createSxArgs,
   sxArgTypes
@@ -54,4 +56,30 @@ storiesOf('CheckBox', module)
       }
     }
   )
-  .add('with background', () => <CheckBox></CheckBox>);
+  .add(
+    'with background',
+
+    (args: Args) => (
+      <Box
+        sx={{
+          padding: 2,
+          bg: args.background
+        }}
+      >
+        <CheckBox autoContrast={args.autoContrast}>I am a paragraph</CheckBox>
+      </Box>
+    ),
+    {
+      args: {
+        background: 'Purple',
+        autoContrast: 'AA'
+      },
+      argTypes: {
+        background: { control: { type: 'color' } },
+        autoContrast: {
+          options: ['A', 'AA', 'AAA', false],
+          control: 'select'
+        }
+      }
+    }
+  );

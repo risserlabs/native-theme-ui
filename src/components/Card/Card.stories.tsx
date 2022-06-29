@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 28-06-2022 01:40:57
+ * Last Modified: 29-06-2022 04:24:30
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,11 +24,12 @@
 
 import React from 'react';
 import Card from './index';
+import Box from '../Box';
 import {
   storiesOf,
+  Args,
   createArgsStory,
   createSxArgs,
-  ArgTypes,
   sxArgTypes
 } from '../../storybook';
 
@@ -64,5 +65,32 @@ storiesOf('Card', module)
     {
       component: Card,
       status: { type: 'beta' }
+    }
+  )
+  .add(
+    'with background',
+
+    (args: Args) => (
+      <Box
+        sx={{
+          padding: 2,
+          bg: args.background
+        }}
+      >
+        <Card autoContrast={args.autoContrast}>I am a Card</Card>
+      </Box>
+    ),
+    {
+      args: {
+        background: 'Purple',
+        autoContrast: 'AAA'
+      },
+      argTypes: {
+        background: { control: { type: 'color' } },
+        autoContrast: {
+          options: ['A', 'AA', 'AAA', false],
+          control: 'select'
+        }
+      }
     }
   );
