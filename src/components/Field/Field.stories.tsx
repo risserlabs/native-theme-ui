@@ -4,7 +4,7 @@
  * File Created: 27-06-2022 04:22:36
  * Author: Lavanya Katari
  * -----
- * Last Modified: 28-06-2022 04:47:54
+ * Last Modified: 29-06-2022 04:39:08
  * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,7 +22,8 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
+import React from 'react';
+import Box from '../Box';
 import {
   storiesOf,
   createArgsStory,
@@ -30,7 +31,7 @@ import {
   sxArgTypes
 } from '../../storybook';
 import { View } from 'dripsy';
-import Box from './index';
+import Input from './index';
 import Text from '../Text';
 import Field from '.';
 
@@ -55,13 +56,7 @@ storiesOf('Field', module)
     </Field>
   ))
   .add('like theme-ui', () => (
-    <Box
-      sx={{
-        p: 4,
-        color: 'white',
-        bg: 'primary'
-      }}
-    >
+    <Box sx={{ p: 4, color: 'yellow', bg: 'black' }}>
       <Text>Beep</Text>
     </Box>
   ))
