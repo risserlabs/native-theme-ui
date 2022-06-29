@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 28-06-2022 05:13:59
- * Modified By: Harikittu46
+ * Last Modified: 29-06-2022 01:33:04
+ * Modified By: Hari Krishna
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -25,7 +25,7 @@
 import React from 'react';
 import { View } from 'dripsy';
 import Box from '../Box';
-import Heading from '.';
+import Heading from './index';
 import {
   storiesOf,
   Args,
@@ -35,9 +35,9 @@ import {
 } from '../../storybook';
 
 storiesOf('Heading', module)
-  // .add(
-  // 'variants',
-  //  () => (
+  //  .add(
+  //   'variants',
+  //    () => (
   // <Box>
   //   <Heading as="h1" sx={{ color: 'primary', lineHeight: 30 }}>
   // h1

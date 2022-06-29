@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 28-06-2022 01:03:00
+ * Last Modified: 29-06-2022 01:58:53
  * Modified By: Hari Krishna
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,10 +25,12 @@
 import React from 'react';
 import { SxProp } from 'dripsy';
 import Text from '../Text';
+import Box, { BoxProps } from '../Box';
 import { TextProps as RNTextProps } from 'react-native';
 import useThemeLookup from '../../hooks/useThemeLookup';
 import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
-import { DripsyFC } from '../../dripsyHelper';
+import { DripsyFC, PatchStyledProps } from '../../dripsyHelper';
+import { styled } from 'dripsy';
 
 type HEADINGS = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 //export interface HeadingProps extends RNTextProps {
@@ -54,7 +56,16 @@ const Heading: DripsyFC<HeadingProps> = (props: HeadingProps) => {
     ...props.sx
   });
 
-  return <Text {...props} sx={{ ...sx }} />;
+  const StyledBox = styled(Box, {
+    themeKey: 'alerts',
+    defaultVariant: ''
+  })({});
+
+  const styledBoxProps = { ...props };
+  delete styledBoxProps.autoContrast;
+  return (
+    <StyledBox {...(styledBoxProps as PatchStyledProps<BoxProps>)} sx={sx} />
+  );
 };
 
 Heading.defaultProps = {};
