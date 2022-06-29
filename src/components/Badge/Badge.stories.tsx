@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 28-06-2022 05:16:31
+ * Last Modified: 29-06-2022 03:38:32
  * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,7 +24,6 @@
 
 import React from 'react';
 import Box from '../Box';
-import Text from '../Text';
 import {
   storiesOf,
   createSxArgs,
@@ -48,30 +47,15 @@ storiesOf('Badge', module)
       ...sxArgTypes
     }
   })
-  .add(
-    'Accent Badge',
-    () => (
-      <Text>
-        <Badge variant="accent" sx={{ padding: '70', borderRadius: 100 }}>
-          This is a badge2323
-        </Badge>
-      </Text>
-    ),
-    {
-      args: {
-        ...createSxArgs(Badge)
-      },
-      argTypes: {
-        autoContrast: {
-          options: ['A', 'AA', 'AAA', false],
-          control: 'select'
-        }
-      }
-    }
-  )
+  .add('Accent Badge', () => (
+    <Box>
+      <Badge variant="accent" sx={{ padding: '70', borderRadius: 100 }}>
+        This is a badge
+      </Badge>
+    </Box>
+  ))
   .add('Outline Badge', () => <Badge variant="outline">Badge</Badge>, {
-    component: Badge,
-    status: { type: 'beta' }
+    component: Badge
   })
   .add(
     'Circle Badge',
@@ -84,7 +68,6 @@ storiesOf('Badge', module)
       </Badge>
     ),
     {
-      component: Badge,
-      status: { type: 'beta' }
+      component: Badge
     }
   );
