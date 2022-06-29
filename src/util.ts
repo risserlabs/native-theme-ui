@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import { SxProp } from 'dripsy';
+import { SxProp } from "dripsy";
 
 export function splitTouchableProps<T>(
   props: Record<string, unknown>
@@ -32,7 +32,7 @@ export function splitTouchableProps<T>(
   Object.entries(clonedProps).forEach(([key, prop]: [string, unknown]) => {
     if (
       key.length >= 3 &&
-      key.substring(0, 2) === 'on' &&
+      key.substring(0, 2) === "on" &&
       key[2] === key[2].toUpperCase()
     ) {
       touchableProps[key] = prop;
@@ -69,7 +69,7 @@ export function createSplitProps<
     const clonedProps = { ...props };
     const sx = {
       ...defaultSx,
-      ...((props as { sx?: SxProp }).sx || {})
+      ...((props as { sx?: SxProp }).sx || {}),
     };
     const propsSetsIds = Object.keys(propsSetsMap);
     const sxsSetsIds = Object.keys(sxsSetsMap);
@@ -86,7 +86,7 @@ export function createSplitProps<
           return;
         }
       }
-      if (lastPropsSetId && key !== 'sx') propsMap[lastPropsSetId][key] = prop;
+      if (lastPropsSetId && key !== "sx") propsMap[lastPropsSetId][key] = prop;
     });
     Object.entries(sx).forEach(([key, value]: [string, unknown]) => {
       for (const sxsSetId of sxsSetsIds) {
@@ -106,7 +106,7 @@ export function createSplitProps<
     return {
       ...(propsMap as unknown as SplitProps),
       ...(sxsMap as unknown as SplitSx),
-      sx
+      sx,
     };
   };
 }

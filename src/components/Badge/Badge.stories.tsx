@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 28-06-2022 05:16:31
+ * Last Modified: 29-06-2022 03:38:32
  * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,59 +22,43 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import Box from '../Box';
-import Text from '../Text';
+import React from "react";
+import Box from "../Box";
 import {
   storiesOf,
   createSxArgs,
   createArgsStory,
-  sxArgTypes
-} from '../../storybook';
-import Badge from '.';
+  sxArgTypes,
+} from "../../storybook";
+import Badge from ".";
 
-storiesOf('Badge', module)
-  .add('default', createArgsStory(Badge), {
+storiesOf("Badge", module)
+  .add("default", createArgsStory(Badge), {
     args: {
-      children: 'Badge',
+      children: "Badge",
       autoContrast: Badge.defaultProps?.autoContrast,
-      ...createSxArgs(Badge)
+      ...createSxArgs(Badge),
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', false],
-        control: 'select'
+        options: ["A", "AA", "AAA", false],
+        control: "select",
       },
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
-  .add(
-    'Accent Badge',
-    () => (
-      <Text>
-        <Badge variant="accent" sx={{ padding: '70', borderRadius: 100 }}>
-          This is a badge2323
-        </Badge>
-      </Text>
-    ),
-    {
-      args: {
-        ...createSxArgs(Badge)
-      },
-      argTypes: {
-        autoContrast: {
-          options: ['A', 'AA', 'AAA', false],
-          control: 'select'
-        }
-      }
-    }
-  )
-  .add('Outline Badge', () => <Badge variant="outline">Badge</Badge>, {
+  .add("Accent Badge", () => (
+    <Box>
+      <Badge variant="accent" sx={{ padding: "70", borderRadius: 100 }}>
+        This is a badge
+      </Badge>
+    </Box>
+  ))
+  .add("Outline Badge", () => <Badge variant="outline">Badge</Badge>, {
     component: Badge,
-    status: { type: 'beta' }
   })
   .add(
-    'Circle Badge',
+    "Circle Badge",
     () => (
       <Badge
         variant="circle"
@@ -85,6 +69,5 @@ storiesOf('Badge', module)
     ),
     {
       component: Badge,
-      status: { type: 'beta' }
     }
   );

@@ -22,12 +22,12 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { SxProp } from 'dripsy';
-import { DripsyFC } from '../../dripsyHelper';
-import Pressable from '../Pressable';
-import { PressableProps as RNPressableProps } from 'react-native';
-import { AutoContrast } from '@risserlabs/auto-contrast';
+import React from "react";
+import { SxProp } from "dripsy";
+import { DripsyFC } from "../../dripsyHelper";
+import Pressable from "../Pressable";
+import { PressableProps as RNPressableProps } from "react-native";
+import { AutoContrast } from "@risserlabs/auto-contrast";
 const x = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +51,7 @@ type CloseProps = RNPressableProps & {
 const Close: DripsyFC<CloseProps> = (props: CloseProps) => {
   const sx: SxProp = {
     ...Close.defaultSx,
-    ...props.sx
+    ...props.sx,
   };
 
   //todo: replace Pressable with Icon button (Icon button wrapping is not done yet)
@@ -64,11 +64,11 @@ const Close: DripsyFC<CloseProps> = (props: CloseProps) => {
 };
 
 Close.defaultProps = {
-  sx: {}
+  sx: {},
 };
 
 Close.defaultSx = {
-  bg: 'transparent'
+  bg: "transparent",
 };
 
 //export const styles = {

@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:56:38
- * Modified By: Clay Risser
+ * Last Modified: 29-06-2022 04:20:03
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,31 +22,36 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { SxProp } from 'dripsy';
+import React, { FC } from "react";
+import { SxProp } from "dripsy";
 import {
   PressableProps as RNPressableProps,
   ImageProps as RNImageProps,
-  ImageSourcePropType
-} from 'react-native';
-import Pressable from '../Pressable';
-import Image from '../Image';
+  ImageSourcePropType,
+} from "react-native";
+import Pressable from "../Pressable";
+import Image from "../Image";
+import { DripsyFC } from "../../dripsyHelper";
+import { AutoContrast } from "@risserlabs/auto-contrast";
 export interface PressableProps extends RNPressableProps {
   sx?: SxProp;
 }
 export interface ImageProps extends RNImageProps {
+  autoContrast?: AutoContrast;
   source: ImageSourcePropType;
   iconSx?: SxProp;
   // tintColor?: string;
 }
-type Props = PressableProps & ImageProps;
-const IconButton: FC<Props> = (props: PressableProps & ImageProps) => {
+type IconButtonProps = PressableProps & ImageProps;
+const IconButton: DripsyFC<IconButtonProps> = (
+  props: PressableProps & ImageProps
+) => {
   const sx: SxProp = {
-    ...styles.pressable,
-    ...props.sx
+    ...IconButton.defaultSx,
+    ...props.sx,
   };
   const iconsx: SxProp = {
-    ...props.iconSx
+    ...props.iconSx,
   };
 
   return (
@@ -58,16 +63,14 @@ const IconButton: FC<Props> = (props: PressableProps & ImageProps) => {
 
 IconButton.defaultProps = {
   sx: {},
-  iconSx: {}
+  iconSx: {},
 };
 
-export const styles = {
-  pressable: {
-    maxWidth: '100%',
-    bg: 'primary',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
+IconButton.defaultSx = {
+  maxWidth: "100%",
+  bg: "primary",
+  alignItems: "center",
+  justifyContent: "center",
 };
 
 export default IconButton;

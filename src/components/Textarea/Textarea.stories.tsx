@@ -22,52 +22,52 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { Box } from 'dripsy';
-import Textarea from '.';
+import React from "react";
+import { Box } from "dripsy";
+import Textarea from ".";
 import {
   storiesOf,
   createArgsStory,
   createSxArgs,
-  sxArgTypes
-} from '../../storybook';
+  sxArgTypes,
+} from "../../storybook";
 
-storiesOf('Textarea', module)
+storiesOf("Textarea", module)
   //.add('full width', () => <Textarea />, {
   //component: Textarea,
   //status: { type: 'beta' }
   //})
 
-  .add('default', createArgsStory(Textarea), {
+  .add("default", createArgsStory(Textarea), {
     args: {
-      children: 'Textarea',
-      ...createSxArgs(Textarea)
+      children: "Textarea",
+      ...createSxArgs(Textarea),
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', false],
-        control: 'select'
+        options: ["A", "AA", "AAA", false],
+        control: "select",
       },
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
 
   .add(
-    'with placeholder',
+    "with placeholder",
     () => (
       <Textarea
         placeholderTextColor="primary"
         placeholder="hello"
-        sx={{ borderColor: 'blue', maxWidth: 200 }}
+        sx={{ borderColor: "blue", maxWidth: 200 }}
       />
     ),
     {
       component: Textarea,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   )
   .add(
-    'like theme-ui',
+    "like theme-ui",
     () => (
       <Box>
         <Textarea defaultValue="Hello" />
@@ -75,18 +75,18 @@ storiesOf('Textarea', module)
     ),
     {
       component: Textarea,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   )
   .add(
-    'with background',
+    "with background",
     () => (
-      <Box sx={{ bg: 'background', p: 4 }}>
+      <Box sx={{ bg: "background", p: 4 }}>
         <Textarea />
       </Box>
     ),
     {
       component: Textarea,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   );

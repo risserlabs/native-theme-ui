@@ -12,7 +12,7 @@
     "@emotion/react": "^11.9.3",
     "@react-native-community/slider": "^4.2.3",
     "@react-native-picker/picker": "^2.4.1",
-    "@risserlabs/auto-contrast": "0.2.0",
+    "@risserlabs/auto-contrast": "0.2.1",
     "core-js": "^3.22.8",
     "dripsy": "^3.6.0",
     "expo": "^44.0.6",

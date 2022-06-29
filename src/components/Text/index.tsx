@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 24-06-2022 03:56:26
- * Modified By: Harikittu46
+ * Last Modified: 28-06-2022 23:22:25
+ * Modified By: Hari Krishna
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,11 +22,11 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { Text as DText, SxProp } from 'dripsy';
-import { TextProps as RNTextProps } from 'react-native';
-import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
-import { DripsyFC } from '../../dripsyHelper';
+import React from "react";
+import { Text as DText, SxProp } from "dripsy";
+import { TextProps as RNTextProps } from "react-native";
+import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
+import { DripsyFC } from "../../dripsyHelper";
 
 export type TextProps = RNTextProps & {
   autoContrast?: AutoContrast;
@@ -36,12 +36,16 @@ export type TextProps = RNTextProps & {
 const Text: DripsyFC<TextProps> = (props: TextProps) => {
   const sx = useAutoContrast(props, {
     ...Text.defaultSx,
-    ...props.sx
+    ...props.sx,
   });
   return <DText {...props} sx={sx}></DText>;
 };
 Text.defaultProps = {};
 
-Text.defaultSx = {};
+Text.defaultSx = {
+  fontSize: 2,
+  fontWeight: "bold",
+  display: "block",
+};
 
 export default Text;

@@ -22,10 +22,10 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
-import { P as DP } from 'dripsy';
-import { DPProps, DripsyFC } from '../../dripsyHelper';
+import React from "react";
+import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
+import { P as DP } from "dripsy";
+import { DPProps, DripsyFC } from "../../dripsyHelper";
 
 export type ParagraphProps = DPProps & {
   autoContrast?: AutoContrast;
@@ -34,7 +34,7 @@ export type ParagraphProps = DPProps & {
 const Paragraph: DripsyFC<ParagraphProps> = (props: ParagraphProps) => {
   const sx = useAutoContrast(props, {
     ...Paragraph.defaultSx,
-    ...props.sx
+    ...props.sx,
   });
   return <DP {...props} sx={sx} />;
 };
@@ -42,9 +42,9 @@ const Paragraph: DripsyFC<ParagraphProps> = (props: ParagraphProps) => {
 Paragraph.defaultProps = {};
 
 Paragraph.defaultSx = {
-  fontFamily: 'SofiaPro-Bold',
-  fontWeight: 'body',
-  lineHeight: 'body'
+  fontFamily: "SofiaPro-Bold",
+  fontWeight: "body",
+  lineHeight: "body",
 };
 
 export default Paragraph;

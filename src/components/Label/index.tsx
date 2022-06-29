@@ -22,11 +22,11 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { DripsyFC } from '../../dripsyHelper';
-import { Text as DText, SxProp } from 'dripsy';
-import { TextProps as RNTextProps } from 'react-native';
-import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
+import React from "react";
+import { DripsyFC } from "../../dripsyHelper";
+import { Text as DText, SxProp } from "dripsy";
+import { TextProps as RNTextProps } from "react-native";
+import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
 
 type LabelProps = RNTextProps & {
   sx?: SxProp;
@@ -41,20 +41,20 @@ type LabelProps = RNTextProps & {
 const Label: DripsyFC<LabelProps> = (props: LabelProps) => {
   const sx: SxProp = {
     ...Label.defaultSx,
-    ...props.sx
+    ...props.sx,
   };
 
   return <DText {...props} sx={sx} />;
 };
 
 Label.defaultProps = {
-  sx: {}
+  sx: {},
 };
 Label.defaultSx = {
-  color: 'text',
+  color: "text",
   fontWeight: 700,
   height: 10,
-  width: 10
+  width: 10,
 };
 //export const styles = {
 //text: {

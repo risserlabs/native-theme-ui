@@ -22,49 +22,49 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { action } from '@storybook/addon-actions';
-import Pressable from '.';
-import { storiesOf } from '../../storybook';
-import Text from '../Text';
-import Box from '../Box';
+import React from "react";
+import { action } from "@storybook/addon-actions";
+import Pressable from ".";
+import { storiesOf } from "../../storybook";
+import Text from "../Text";
+import Box from "../Box";
 
-storiesOf('Pressable', module)
+storiesOf("Pressable", module)
   .add(
-    'with text',
+    "with text",
     () => (
-      <Pressable onPress={action('clicked-text')}>
+      <Pressable onPress={action("clicked-text")}>
         <Text>Button text</Text>
       </Pressable>
     ),
     {
       component: Pressable,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   )
   .add(
-    'with some emoji',
+    "with some emoji",
     () => (
-      <Pressable onPress={action('clicked-emoji')}>
+      <Pressable onPress={action("clicked-emoji")}>
         <Text>😀 😎 👍 💯 :)</Text>
       </Pressable>
     ),
     {
       component: Pressable,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   )
   .add(
-    'with background',
+    "with background",
     () => (
-      <Box sx={{ bg: 'background', p: 4 }}>
-        <Pressable onPress={action('clicked-text')}>
+      <Box sx={{ bg: "background", p: 4 }}>
+        <Pressable onPress={action("clicked-text")}>
           <Text>Button text</Text>
         </Pressable>
       </Box>
     ),
     {
       component: Text,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   );

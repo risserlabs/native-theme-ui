@@ -22,10 +22,10 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
-import { DripsyFC } from '../../dripsyHelper';
-import { SxProp } from 'dripsy';
+import React from "react";
+import { AutoContrast } from "@risserlabs/auto-contrast";
+import { DripsyFC } from "../../dripsyHelper";
+import { SxProp } from "dripsy";
 
 type FormProps = {
   autoContrast?: AutoContrast;
@@ -34,7 +34,7 @@ type FormProps = {
 const Forms: DripsyFC<FormProps> = (props: FormProps) => {
   const sx: SxProp = {
     ...Forms.defaultSx,
-    ...props.sx
+    ...props.sx,
   };
   return <div>Form component</div>;
 };

@@ -22,61 +22,61 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { action } from '@storybook/addon-actions';
+import React from "react";
+import { action } from "@storybook/addon-actions";
 import {
   Args,
   createArgsStory,
   createSxArgs,
   storiesOf,
-  sxArgTypes
-} from '../../storybook';
-import Button from './index';
-import Text from '../Text';
+  sxArgTypes,
+} from "../../storybook";
+import Button from "./index";
+import Text from "../Text";
 
-storiesOf('atoms/Button', module)
+storiesOf("atoms/Button", module)
   .add(
-    'default',
+    "default",
     createArgsStory(Button, {
-      onPress: action('I was pressed'),
-      onLongPress: action('I was long pressed'),
-      onPressIn: action('I was pressed in'),
-      onPressOut: action('I was pressed out')
+      onPress: action("I was pressed"),
+      onLongPress: action("I was long pressed"),
+      onPressIn: action("I was pressed in"),
+      onPressOut: action("I was pressed out"),
     }),
     {
       args: {
-        children: 'Click Me',
+        children: "Click Me",
         hidden: Button.defaultProps?.hidden,
         autoContrast: Button.defaultProps?.autoContrast,
         disabled: Button.defaultProps?.disabled,
-        ...createSxArgs(Button)
+        ...createSxArgs(Button),
       },
       argTypes: {
-        hidden: { control: { type: 'boolean' } },
-        disabled: { control: { type: 'boolean' } },
+        hidden: { control: { type: "boolean" } },
+        disabled: { control: { type: "boolean" } },
         autoContrast: {
-          options: ['A', 'AA', 'AAA', false],
-          control: 'select'
+          options: ["A", "AA", "AAA", false],
+          control: "select",
         },
-        ...sxArgTypes
-      }
+        ...sxArgTypes,
+      },
     }
   )
   .add(
-    'with autocontrast',
+    "with autocontrast",
     (args: Args) => (
       <Button sx={{ bg: args.background }}>
         <Text autoContrast={args.autoContrast}>hello</Text>
       </Button>
     ),
     {
-      args: { autoContrast: 'AAA', background: 'black' },
+      args: { autoContrast: "AAA", background: "black" },
       argTypes: {
         autoContrast: {
-          options: ['A', 'AA', 'AAA', false],
-          control: 'select'
+          options: ["A", "AA", "AAA", false],
+          control: "select",
         },
-        background: { control: { type: 'color' } }
-      }
+        background: { control: { type: "color" } },
+      },
     }
   );

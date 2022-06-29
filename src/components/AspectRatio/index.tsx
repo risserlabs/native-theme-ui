@@ -22,8 +22,8 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
+import React, { FC } from "react";
+import { AutoContrast } from "@risserlabs/auto-contrast";
 
 type AspectRatioProps = {
   autoContrast?: AutoContrast;
@@ -32,7 +32,7 @@ const AspectRatio: FC<AspectRatioProps> = () => {
   return (
     <div
       style={{
-        backgroundColor: 'red'
+        backgroundColor: "red",
       }}
     >
       AspectRatio component

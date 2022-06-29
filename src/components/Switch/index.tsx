@@ -22,6 +22,7 @@
  * limitations under the License.
  */
 
+<<<<<<< HEAD
 import React from 'react';
 import { styled } from 'dripsy';
 import { Switch as RNSwitch, SwitchProps as RNSwitchProps } from 'react-native';
@@ -30,6 +31,14 @@ import useThemeLookup from '../../hooks/useThemeLookup';
 import { DripsyFC, PatchStyledProps } from '../../dripsyHelper';
 import { SxProp } from 'dripsy';
 import { AutoContrast } from '@risserlabs/auto-contrast';
+=======
+import React from "react";
+import { Switch as RNSwitch, SwitchProps as RNSwitchProps } from "react-native";
+import useThemeLookup from "../../hooks/useThemeLookup";
+import { DripsyFC } from "../../dripsyHelper";
+import { SxProp } from "dripsy";
+import { AutoContrast } from "@risserlabs/auto-contrast";
+>>>>>>> 652f426066bb71d2a3cd07ab20918182bc323d35
 export type SwitchProps = RNSwitchProps & {
   sx?: SxProp;
   defaultChecked?: boolean;
@@ -53,11 +62,11 @@ const Switch: DripsyFC<SwitchProps> = (props: SwitchProps) => {
   return (
     <RNSwitch
       {...props}
-      ios_backgroundColor={themeLookup('color', props.ios_backgroundColor)}
-      thumbColor={themeLookup('color', props.thumbColor)}
+      ios_backgroundColor={themeLookup("color", props.ios_backgroundColor)}
+      thumbColor={themeLookup("color", props.thumbColor)}
       trackColor={{
-        false: themeLookup('color', props.trackColor?.false),
-        true: themeLookup('color', props.trackColor?.true)
+        false: themeLookup("color", props.trackColor?.false),
+        true: themeLookup("color", props.trackColor?.true),
       }}
     />
   );
@@ -65,16 +74,16 @@ const Switch: DripsyFC<SwitchProps> = (props: SwitchProps) => {
 
 Switch.defaultProps = {};
 Switch.defaultSx = {
-  display: 'block',
-  height: '5px',
+  display: "block",
+  height: "5px",
   margin: 0,
-  marginRight: '20px',
+  marginRight: "20px",
   padding: 0,
-  bg: 'gray',
-  overflow: 'hidden',
-  color: 'primary',
+  bg: "gray",
+  overflow: "hidden",
+  color: "primary",
   borderRadius: 9999,
-  border: 'none'
+  border: "none",
 };
 
 export default Switch;

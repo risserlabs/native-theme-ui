@@ -22,16 +22,16 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import Box, { BoxProps } from '../Box';
-import { DripsyFC } from '../../dripsyHelper';
+import React from "react";
+import Box, { BoxProps } from "../Box";
+import { DripsyFC } from "../../dripsyHelper";
 
 export type MessageProps = BoxProps;
 
 const Message: DripsyFC<MessageProps> = (props: MessageProps) => {
   const sx = {
     ...Message.defaultSx,
-    ...props.sx
+    ...props.sx,
   };
   return <Box {...props} sx={sx} />;
 };
@@ -42,10 +42,10 @@ Message.defaultSx = {
   padding: 3,
   paddingLeft: (t) => t.space && Number(t.space[3]) - Number(t.space[1]),
   borderLeftWidth: (t) => t.space && Number(t.space[1]),
-  borderLeftStyle: 'solid',
-  borderLeftColor: 'primary',
+  borderLeftStyle: "solid",
+  borderLeftColor: "primary",
   borderRadius: 4,
-  bg: 'highlight'
+  bg: "highlight",
 };
 
 export default Message;

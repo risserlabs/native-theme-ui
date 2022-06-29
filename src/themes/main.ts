@@ -22,23 +22,23 @@
  * limitations under the License.
  */
 
-import { base } from '@theme-ui/presets';
-import { makeTheme } from 'dripsy';
-import { BaseTheme } from './index';
-import variants from './variants';
+import { base } from "@theme-ui/presets";
+import { makeTheme } from "dripsy";
+import { BaseTheme } from "./index";
+import variants from "./variants";
 
 const theme = makeTheme<BaseTheme>({
   ...base,
   ...variants,
   types: {
-    strictVariants: false
+    strictVariants: false,
   },
   colors: {
     ...base.colors,
-    textPrimary: '#ffffff'
+    textPrimary: "#ffffff",
   },
   fontWeights: {},
-  autoContrast: true
+  autoContrast: true,
 });
 
 export type MainTheme = typeof theme;

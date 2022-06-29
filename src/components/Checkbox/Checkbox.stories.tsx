@@ -4,7 +4,7 @@
  * File Created: 15-06-2022 06:37:48
  * Author: Lavanya Katari
  * -----
- * Last Modified: 29-06-2022 04:09:46
+ * Last Modified: 29-06-2022 06:01:39
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,48 +22,48 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import Box from '../Box';
-import { action } from '@storybook/addon-actions';
+import React from "react";
+import Box from "../Box";
+import { action } from "@storybook/addon-actions";
 import {
   storiesOf,
   Args,
   createArgsStory,
   createSxArgs,
-  sxArgTypes
-} from '../../storybook';
-import CheckBox from './index';
+  sxArgTypes,
+} from "../../storybook";
+import CheckBox from "./index";
 
-storiesOf('CheckBox', module)
+storiesOf("CheckBox", module)
   .add(
-    'default',
+    "default",
     createArgsStory(CheckBox, {
-      onChange: action('onChange'),
-      onValueChange: action('onValueChange')
+      onChange: action("onChange"),
+      onValueChange: action("onValueChange"),
     }),
     {
       args: {
         defaultChecked: CheckBox.defaultProps?.defaultChecked,
-        ...createSxArgs(CheckBox)
+        ...createSxArgs(CheckBox),
       },
       argTypes: {
         autoContrast: {
-          options: ['A', 'AA', 'AAA', false],
-          control: 'select'
+          options: ["A", "AA", "AAA", false],
+          control: "select",
         },
-        defaultChecked: { control: { type: 'boolean' } },
-        ...sxArgTypes
-      }
+        defaultChecked: { control: { type: "boolean" } },
+        ...sxArgTypes,
+      },
     }
   )
   .add(
-    'with background',
+    "with background",
 
     (args: Args) => (
       <Box
         sx={{
           padding: 2,
-          bg: args.background
+          bg: args.background,
         }}
       >
         <CheckBox autoContrast={args.autoContrast}>I am a paragraph</CheckBox>
@@ -71,15 +71,15 @@ storiesOf('CheckBox', module)
     ),
     {
       args: {
-        background: 'Purple',
-        autoContrast: 'AA'
+        background: "Purple",
+        autoContrast: "AA",
       },
       argTypes: {
-        background: { control: { type: 'color' } },
+        background: { control: { type: "color" } },
         autoContrast: {
-          options: ['A', 'AA', 'AAA', false],
-          control: 'select'
-        }
-      }
+          options: ["A", "AA", "AAA", false],
+          control: "select",
+        },
+      },
     }
   );

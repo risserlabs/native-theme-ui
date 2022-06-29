@@ -4,7 +4,7 @@
  * File Created: 20-06-2022 07:09:45
  * Author: Lavanya Katari
  * -----
- * Last Modified: 29-06-2022 00:53:38
+ * Last Modified: 29-06-2022 06:01:20
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,10 +22,10 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { DripsyFC } from '../../dripsyHelper';
-import { AutoContrast } from '@risserlabs/auto-contrast';
-import { SxProp } from 'dripsy';
+import React from "react";
+import { DripsyFC } from "../../dripsyHelper";
+import { AutoContrast } from "@risserlabs/auto-contrast";
+import { SxProp } from "dripsy";
 
 export type RadioProps = {
   autoContrast?: AutoContrast;
@@ -34,20 +34,20 @@ export type RadioProps = {
 const Radio: DripsyFC<RadioProps> = (props: RadioProps) => {
   const sx: SxProp = {
     ...Radio.defaultSx,
-    ...props.sx
+    ...props.sx,
   };
   return <div>Radio component</div>;
 };
 
 Radio.defaultProps = {};
 Radio.defaultSx = {
-  maxWidth: '100%',
-  bg: 'primary',
+  maxWidth: "100%",
+  bg: "primary",
   border: 0,
   width: 50,
   height: 50,
   borderRadius: 25,
   borderWidth: 1,
-  borderColor: 'primary'
+  borderColor: "primary",
 };
 export default Radio;

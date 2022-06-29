@@ -22,12 +22,12 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
-import { Picker as EPicker, PickerProps } from '@react-native-picker/picker';
-import { createThemedComponent, SxProp } from 'dripsy';
-import { DripsyFC } from '../../dripsyHelper';
-import Option from './Option';
+import React from "react";
+import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
+import { Picker as EPicker, PickerProps } from "@react-native-picker/picker";
+import { createThemedComponent, SxProp } from "dripsy";
+import { DripsyFC } from "../../dripsyHelper";
+import Option from "./Option";
 
 const DPicker = createThemedComponent(EPicker);
 
@@ -43,7 +43,7 @@ const Select: DripsyFC<SelectProps> & { Option: typeof Option } = (
     props,
     {
       ...Select.defaultSx,
-      ...props.sx
+      ...props.sx,
     },
     true
   );
@@ -55,19 +55,19 @@ Select.Option = Option;
 Select.defaultProps = {};
 
 Select.defaultSx = {
-  display: 'block',
-  width: '100%',
+  display: "block",
+  width: "100%",
   p: 2,
-  appearance: 'none',
-  fontSize: 'inherit',
-  lineHeight: 'inherit',
-  border: '1px solid',
+  appearance: "none",
+  fontSize: "inherit",
+  lineHeight: "inherit",
+  border: "1px solid",
   borderRadius: 4,
-  borderColor: 'blue',
-  color: 'inherit'
+  borderColor: "blue",
+  color: "inherit",
   //backgroundColor: (theme) => get(theme, 'colors.background', null),
 };
 
 export default Select;
 
-export * from './Option';
+export * from "./Option";

@@ -22,12 +22,12 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { TextInput as DTextInput, SxProp } from 'dripsy';
-import { TextInputProps as RNTextInputProps } from 'react-native';
-import { AutoContrast } from '@risserlabs/auto-contrast';
-import { DripsyFC } from '../../dripsyHelper';
-import useThemeLookup from '../../hooks/useThemeLookup';
+import React from "react";
+import { TextInput as DTextInput, SxProp } from "dripsy";
+import { TextInputProps as RNTextInputProps } from "react-native";
+import { AutoContrast } from "@risserlabs/auto-contrast";
+import { DripsyFC } from "../../dripsyHelper";
+import useThemeLookup from "../../hooks/useThemeLookup";
 
 type TextareaProps = RNTextInputProps & {
   sx?: SxProp;
@@ -45,15 +45,15 @@ const Textarea: DripsyFC<TextareaProps> = (props: TextareaProps) => {
   const themeLookup = useThemeLookup();
   const sx: SxProp = {
     ...Textarea.defaultSx,
-    ...props.sx
+    ...props.sx,
   };
   return (
     <DTextInput
       {...props}
       multiline
-      placeholderTextColor={themeLookup('color', props.placeholderTextColor)}
-      selectionColor={themeLookup('color', props.selectionColor)}
-      underlineColorAndroid={themeLookup('color', props.underlineColorAndroid)}
+      placeholderTextColor={themeLookup("color", props.placeholderTextColor)}
+      selectionColor={themeLookup("color", props.selectionColor)}
+      underlineColorAndroid={themeLookup("color", props.underlineColorAndroid)}
       sx={sx}
     />
   );
@@ -61,11 +61,11 @@ const Textarea: DripsyFC<TextareaProps> = (props: TextareaProps) => {
 
 Textarea.defaultProps = {
   sx: {},
-  numberOfLines: 4
+  numberOfLines: 4,
 };
 
 Textarea.defaultSx = {
-  bg: 'transparent'
+  bg: "transparent",
 };
 
 //export const styles = {

@@ -22,47 +22,47 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import React from "react";
 import {
   Args,
   createArgsStory,
   createSxArgs,
   storiesOf,
-  sxArgTypes
-} from '../../storybook';
-import Select from './index';
-import Box from '../Box';
+  sxArgTypes,
+} from "../../storybook";
+import Select from "./index";
+import Box from "../Box";
 
-storiesOf('Select', module)
+storiesOf("Select", module)
   .add(
-    'default',
+    "default",
     createArgsStory(Select, {}, [
       <Select.Option key="0">BMW</Select.Option>,
       <Select.Option key="1">AUDI</Select.Option>,
       <Select.Option key="2">FORD</Select.Option>,
-      <Select.Option key="3">SUZUKI</Select.Option>
+      <Select.Option key="3">SUZUKI</Select.Option>,
     ]),
     {
       args: {
         autoContrast: Select.defaultProps?.autoContrast,
-        ...createSxArgs(Select)
+        ...createSxArgs(Select),
       },
       argTypes: {
         autoContrast: {
-          options: ['A', 'AA', 'AAA', false],
-          control: 'select'
+          options: ["A", "AA", "AAA", false],
+          control: "select",
         },
-        ...sxArgTypes
-      }
+        ...sxArgTypes,
+      },
     }
   )
   .add(
-    'with background',
+    "with background",
     (args: Args) => (
       <Box
         sx={{
           padding: 2,
-          bg: args.background
+          bg: args.background,
         }}
       >
         <Select autoContrast={args.autoContrast}>
@@ -75,15 +75,15 @@ storiesOf('Select', module)
     ),
     {
       args: {
-        background: 'black',
-        autoContrast: 'AAA'
+        background: "black",
+        autoContrast: "AAA",
       },
       argTypes: {
-        background: { control: { type: 'color' } },
+        background: { control: { type: "color" } },
         autoContrast: {
-          options: ['A', 'AA', 'AAA', false],
-          control: 'select'
-        }
-      }
+          options: ["A", "AA", "AAA", false],
+          control: "select",
+        },
+      },
     }
   );

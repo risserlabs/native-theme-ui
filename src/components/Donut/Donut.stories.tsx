@@ -22,50 +22,50 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import Box from '../Box';
-import Donut from '.';
+import React from "react";
+import Box from "../Box";
+import Donut from ".";
 import {
   storiesOf,
   createArgsStory,
   createSxArgs,
-  sxArgTypes
-} from '../../storybook';
+  sxArgTypes,
+} from "../../storybook";
 
-storiesOf('Donut', module)
+storiesOf("Donut", module)
   //..add('default 50% Donut', () => <Donut max={100} value={50} />, {
   //component: Donut,
   //status: { type: 'beta' }
   //})
 
-  .add('default', createArgsStory(Donut), {
+  .add("default", createArgsStory(Donut), {
     args: {
-      children: 'I am a donut',
-      ...createSxArgs(Donut)
+      children: "I am a donut",
+      ...createSxArgs(Donut),
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', false],
-        control: 'select'
+        options: ["A", "AA", "AAA", false],
+        control: "select",
       },
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
 
-  .add('40% Donut', () => <Donut max={100} value={40} />, {
+  .add("40% Donut", () => <Donut max={100} value={40} />, {
     component: Donut,
-    status: { type: 'beta' }
+    status: { type: "beta" },
   })
   .add(
-    'Donut with max=200 and value=80',
+    "Donut with max=200 and value=80",
     () => <Donut max={200} value={80} />,
     {
       component: Donut,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   )
   .add(
-    'like theme-ui',
+    "like theme-ui",
     () => (
       <Donut max={1} value={1 / 2}>
         50%
@@ -73,13 +73,13 @@ storiesOf('Donut', module)
     ),
     {
       component: Donut,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   )
   .add(
-    'with background with 70%',
+    "with background with 70%",
     () => (
-      <Box sx={{ bg: 'black', p: 4 }}>
+      <Box sx={{ bg: "black", p: 4 }}>
         <Donut max={100} value={70}>
           70%
         </Donut>
@@ -87,18 +87,18 @@ storiesOf('Donut', module)
     ),
     {
       component: Donut,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   )
   .add(
-    'with background with 70%',
+    "with background with 70%",
     () => (
-      <Box sx={{ bg: 'black', p: 4 }}>
+      <Box sx={{ bg: "black", p: 4 }}>
         <Donut max={100} value={70} />
       </Box>
     ),
     {
       component: Donut,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   );

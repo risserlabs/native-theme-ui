@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-06-2022 00:56:34
- * Modified By: Clay Risser
+ * Last Modified: 29-06-2022 04:24:44
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,44 +22,64 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { storiesOf } from '../../storybook';
-import IconButton from '.';
+import React from "react";
+import {
+  storiesOf,
+  createArgsStory,
+  sxArgTypes,
+  createSxArgs,
+} from "../../storybook";
+import IconButton from ".";
 
-storiesOf('IconButton', module)
+storiesOf("IconButton", module)
+  .add("default Icon", createArgsStory(IconButton), {
+    args: {
+      children: "Iam Icon Button ",
+      autoContrast: IconButton.defaultProps?.autoContrast,
+      ...createSxArgs(IconButton),
+    },
+    argTypes: {
+      autoContrast: {
+        options: ["A", "AA", "AAA", false],
+        control: "select",
+      },
+      ...sxArgTypes,
+    },
+  })
+
   .add(
-    'Home IconButton',
+    "Home IconButton",
     () => (
       <IconButton
-        source={require('../../assets/homeIcon.png')}
+        source={require("../../assets/homeIcon.png")}
         iconSx={{
           width: 30,
           height: 30,
-          overflow: 'hidden'
+          overflow: "hidden",
         }}
-        onPress={() => console.log('HOME ICON PRESSED')}
+        onPress={() => console.log("HOME ICON PRESSED")}
       />
     ),
     {
       component: IconButton,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   )
   .add(
-    'Notification IconButton',
+    "Notification IconButton",
     () => (
       <IconButton
-        source={require('../../assets/notificationIcon.png')}
+        source={require("../../assets/notificationIcon.png")}
         iconSx={{
           width: 30,
           height: 30,
-          overflow: 'hidden'
+          overflow: "hidden",
         }}
-        onPress={() => console.log('NOTIFICATION ICON PRESSED')}
+        onPress={() => console.log("NOTIFICATION ICON PRESSED")}
       />
     ),
     {
       component: IconButton,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   );

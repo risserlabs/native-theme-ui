@@ -22,43 +22,43 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import Box from '../Box';
-import Close from '.';
+import React from "react";
+import Box from "../Box";
+import Close from ".";
 import {
   storiesOf,
   createArgsStory,
   createSxArgs,
-  sxArgTypes
-} from '../../storybook';
+  sxArgTypes,
+} from "../../storybook";
 
-storiesOf('atoms/Button/Close', module)
+storiesOf("atoms/Button/Close", module)
   //.add('default', () => <Close sx={{ color: 'primary' }} />, {
   //component: Close,
   //status: { type: 'beta' }
   //})
 
-  .add('default', createArgsStory(Close), {
+  .add("default", createArgsStory(Close), {
     args: {
-      children: 'Close',
-      ...createSxArgs(Close)
+      children: "Close",
+      ...createSxArgs(Close),
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', false]
+        options: ["A", "AA", "AAA", false],
       },
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
   .add(
-    'with background',
+    "with background",
     () => (
-      <Box sx={{ bg: 'background', p: 4 }}>
-        <Close sx={{ color: 'primary' }} />
+      <Box sx={{ bg: "background", p: 4 }}>
+        <Close sx={{ color: "primary" }} />
       </Box>
     ),
     {
       component: Close,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   );

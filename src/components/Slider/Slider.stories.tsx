@@ -22,27 +22,27 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import Box from '../Box';
+import React from "react";
+import Box from "../Box";
 import {
   storiesOf,
   createArgsStory,
   createSxArgs,
-  sxArgTypes
-} from '../../storybook';
-import Slider from './index';
-storiesOf('Slider', module)
-  .add('default', createArgsStory(Slider), {
+  sxArgTypes,
+} from "../../storybook";
+import Slider from "./index";
+storiesOf("Slider", module)
+  .add("default", createArgsStory(Slider), {
     args: {
-      children: 'Slider',
-      ...createSxArgs(Slider)
+      children: "Slider",
+      ...createSxArgs(Slider),
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', false]
+        options: ["A", "AA", "AAA", false],
       },
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
-  .add('with background', () => <Box sx={{ bg: 'background', p: 4 }}></Box>)
-  .add('with background', () => <Slider></Slider>);
+  .add("with background", () => <Box sx={{ bg: "background", p: 4 }}></Box>)
+  .add("with background", () => <Slider></Slider>);

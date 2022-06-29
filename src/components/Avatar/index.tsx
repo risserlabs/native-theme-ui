@@ -21,13 +21,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import React from 'react';
-import { SxProp, View as DView } from 'dripsy';
-import { ViewProps as RNViewProps } from 'react-native';
-import Text from '../Text';
-import Image from '../Image';
-import { DripsyFC } from '../../dripsyHelper';
-import { AutoContrast } from '@risserlabs/auto-contrast';
+import React from "react";
+import { SxProp, View as DView } from "dripsy";
+import { ViewProps as RNViewProps } from "react-native";
+import Text from "../Text";
+import Image from "../Image";
+import { DripsyFC } from "../../dripsyHelper";
+import { AutoContrast } from "@risserlabs/auto-contrast";
 
 export type AvatarProps = RNViewProps & {
   autoContrast?: AutoContrast;
@@ -47,7 +47,7 @@ export type AvatarProps = RNViewProps & {
 const Avatar: DripsyFC<AvatarProps> = (props: AvatarProps) => {
   const sx: SxProp = {
     ...Avatar.defaultSx,
-    ...props.sx
+    ...props.sx,
   };
   return <DView sx={{ ...sx }}>{props.children}</DView>;
 };
@@ -55,21 +55,21 @@ const Avatar: DripsyFC<AvatarProps> = (props: AvatarProps) => {
 Avatar.defaultProps = {
   sx: {},
   isImage: false,
-  name: '',
-  uri: ''
+  name: "",
+  uri: "",
 };
 Avatar.defaultSx = {
-  maxWidth: '100%',
-  bg: 'primary',
+  maxWidth: "100%",
+  bg: "primary",
   border: 0,
-  alignItems: 'center',
-  justifyContent: 'center',
+  alignItems: "center",
+  justifyContent: "center",
   width: 50,
   height: 50,
   borderRadius: 25,
-  overflow: 'hidden',
+  overflow: "hidden",
   borderWidth: 1,
-  borderColor: 'primary'
+  borderColor: "primary",
 };
 
 export default Avatar;

@@ -22,8 +22,8 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { storiesOf } from '../../storybook';
-import Variant from './index';
+import React from "react";
+import { storiesOf } from "../../storybook";
+import Variant from "./index";
 
-storiesOf('Variant', module).add('with background', () => <Variant></Variant>);
+storiesOf("Variant", module).add("with background", () => <Variant></Variant>);

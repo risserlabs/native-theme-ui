@@ -22,37 +22,37 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import React from "react";
 import {
   storiesOf,
   createArgsStory,
   sxArgTypes,
-  createSxArgs
-} from '../../storybook';
-import Avatar from '.';
+  createSxArgs,
+} from "../../storybook";
+import Avatar from ".";
 
-storiesOf('Avatar', module)
-  .add('Default', createArgsStory(Avatar), {
+storiesOf("Avatar", module)
+  .add("Default", createArgsStory(Avatar), {
     args: {
-      children: 'Iam Avatar',
+      children: "Iam Avatar",
       autoContrast: Avatar.defaultProps?.autoContrast,
-      ...createSxArgs(Avatar)
+      ...createSxArgs(Avatar),
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', false],
-        control: 'Select'
+        options: ["A", "AA", "AAA", false],
+        control: "Select",
       },
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
 
-  .add('Simple Avatar', () => <Avatar />, {
+  .add("Simple Avatar", () => <Avatar />, {
     component: Avatar,
-    status: { type: 'beta' }
+    status: { type: "beta" },
   })
 
-  .add('image Avatar', () => <Avatar />, {
+  .add("image Avatar", () => <Avatar />, {
     component: Avatar,
-    status: { type: 'beta' }
+    status: { type: "beta" },
   });

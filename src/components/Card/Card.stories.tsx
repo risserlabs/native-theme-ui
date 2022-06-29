@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 29-06-2022 04:24:30
+ * Last Modified: 29-06-2022 06:00:53
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,41 +22,41 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import Card from './index';
-import Box from '../Box';
+import React from "react";
+import Card from "./index";
+import Box from "../Box";
 import {
   storiesOf,
   Args,
   createArgsStory,
   createSxArgs,
-  sxArgTypes
-} from '../../storybook';
+  sxArgTypes,
+} from "../../storybook";
 
-storiesOf('Card', module)
-  .add('default', createArgsStory(Card), {
+storiesOf("Card", module)
+  .add("default", createArgsStory(Card), {
     args: {
-      children: 'i am a card',
-      ...createSxArgs(Card)
+      children: "i am a card",
+      ...createSxArgs(Card),
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', false],
-        control: 'select'
+        options: ["A", "AA", "AAA", false],
+        control: "select",
       },
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
   .add(
-    'simple card',
+    "simple card",
     () => (
       <Card
         sx={{
           height: 300,
           width: 200,
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center'
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         Simple Card
@@ -64,17 +64,17 @@ storiesOf('Card', module)
     ),
     {
       component: Card,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   )
   .add(
-    'with background',
+    "with background",
 
     (args: Args) => (
       <Box
         sx={{
           padding: 2,
-          bg: args.background
+          bg: args.background,
         }}
       >
         <Card autoContrast={args.autoContrast}>I am a Card</Card>
@@ -82,15 +82,15 @@ storiesOf('Card', module)
     ),
     {
       args: {
-        background: 'Purple',
-        autoContrast: 'AAA'
+        background: "Purple",
+        autoContrast: "AAA",
       },
       argTypes: {
-        background: { control: { type: 'color' } },
+        background: { control: { type: "color" } },
         autoContrast: {
-          options: ['A', 'AA', 'AAA', false],
-          control: 'select'
-        }
-      }
+          options: ["A", "AA", "AAA", false],
+          control: "select",
+        },
+      },
     }
   );

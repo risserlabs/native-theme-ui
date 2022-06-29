@@ -22,10 +22,10 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { View, Sx, SxProp } from 'dripsy';
-import { DripsyFC, DViewProps } from '../../dripsyHelper';
-import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
+import React from "react";
+import { View, Sx, SxProp } from "dripsy";
+import { DripsyFC, DViewProps } from "../../dripsyHelper";
+import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
 
 type DividerProps = DViewProps & {
   autoContrast?: AutoContrast;
@@ -35,7 +35,7 @@ const Divider: DripsyFC<DividerProps> = (props: DividerProps) => {
   const mergedSx: SxProp = {
     ...Divider.defaultSx,
     ...props.sx,
-    color: (props.sx as Sx)?.bg
+    color: (props.sx as Sx)?.bg,
   };
   delete mergedSx.bg;
   const sx = useAutoContrast(props, mergedSx);
@@ -47,13 +47,13 @@ const Divider: DripsyFC<DividerProps> = (props: DividerProps) => {
 Divider.defaultProps = {};
 
 Divider.defaultSx = {
-  bg: 'gray',
+  bg: "gray",
   m: 0,
   height: 1,
-  width: '100%',
+  width: "100%",
   my: 2,
   border: 0,
-  borderBottom: '1px solid'
+  borderBottom: "1px solid",
 };
 
 export default Divider;

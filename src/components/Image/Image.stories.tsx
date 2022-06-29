@@ -22,44 +22,44 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import React from "react";
 import {
   storiesOf,
   createArgsStory,
   createSxArgs,
-  sxArgTypes
-} from '../../storybook';
-import Image from './index';
+  sxArgTypes,
+} from "../../storybook";
+import Image from "./index";
 
-storiesOf('Image', module)
-  .add('default', createArgsStory(Image), {
+storiesOf("Image", module)
+  .add("default", createArgsStory(Image), {
     args: {
-      src: 'https://picsum.photos/200/300',
-      ...createSxArgs(Image)
+      src: "https://picsum.photos/200/300",
+      ...createSxArgs(Image),
     },
     argTypes: {
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
   .add(
-    'Styled image',
+    "Styled image",
     () => (
       <Image
         source={{
-          uri: 'https://source.unsplash.com/user/c_v_r/1900x800'
+          uri: "https://source.unsplash.com/user/c_v_r/1900x800",
         }}
         sx={{
           width: 150,
           height: 150,
           borderRadius: 150 / 2,
-          overflow: 'hidden',
+          overflow: "hidden",
           borderWidth: 3,
-          borderColor: 'primary'
+          borderColor: "primary",
         }}
       />
     ),
     {
       component: Image,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   );

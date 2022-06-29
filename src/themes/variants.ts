@@ -4,7 +4,7 @@
  * File Created: 28-06-2022 07:42:41
  * Author: Clay Risser
  * -----
- * Last Modified: 28-06-2022 08:07:47
+ * Last Modified: 29-06-2022 05:43:12
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,14 +25,14 @@
 const variants = {
   alerts: {
     primary: {
-      color: 'background',
-      bg: 'primary'
+      color: "background",
+      bg: "primary",
     },
     muted: {
-      color: 'text',
-      bg: 'muted'
-    }
-  }
+      color: "text",
+      bg: "muted",
+    },
+  },
 };
 
 export default variants;

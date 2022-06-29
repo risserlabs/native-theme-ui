@@ -22,10 +22,10 @@
  * limitations under the License.
  */
 
-import React, { FC, ReactNode } from 'react';
-import { BackgroundColorProvider } from '@risserlabs/auto-contrast';
-import { Pressable as DPressable, SxProp } from 'dripsy';
-import { PressableProps as RNPressableProps } from 'react-native';
+import React, { FC, ReactNode } from "react";
+import { BackgroundColorProvider } from "@risserlabs/auto-contrast";
+import { Pressable as DPressable, SxProp } from "dripsy";
+import { PressableProps as RNPressableProps } from "react-native";
 
 export interface PressableProps extends RNPressableProps {
   hidden?: boolean;
@@ -34,9 +34,9 @@ export interface PressableProps extends RNPressableProps {
 
 const Pressable: FC<PressableProps> = (props: PressableProps) => {
   const sx: SxProp = {
-    display: props.hidden ? undefined : 'inline-block',
+    display: props.hidden ? undefined : "inline-block",
     ...styles.pressable,
-    ...props.sx
+    ...props.sx,
   };
   return (
     <DPressable {...props} sx={sx}>
@@ -49,23 +49,23 @@ const Pressable: FC<PressableProps> = (props: PressableProps) => {
 
 Pressable.defaultProps = {
   children: null,
-  sx: {}
+  sx: {},
 };
 
 export const styles = {
   pressable: {
     // appearance: 'none',
-    bg: 'primary',
+    bg: "primary",
     border: 0,
     borderRadius: 4,
-    color: 'white',
-    fontSize: 'inherit',
-    lineHeight: 'inherit',
+    color: "white",
+    fontSize: "inherit",
+    lineHeight: "inherit",
     px: 3,
-    py: 2
+    py: 2,
     // textAlign: 'center',
     // textDecoration: 'none'
-  }
+  },
 };
 
 export default Pressable;

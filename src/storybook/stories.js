@@ -22,5 +22,5 @@
  * limitations under the License.
  */
 
-import '../components/Pressable/Pressable.stories';
-import '../components/Welcome/Welcome.stories';
+import "../components/Pressable/Pressable.stories";
+import "../components/Welcome/Welcome.stories";

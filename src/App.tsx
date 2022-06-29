@@ -22,4 +22,4 @@
  * limitations under the License.
  */
 
-export { default } from './storybook/expo';
+export { default } from "./storybook/expo";

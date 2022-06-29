@@ -22,23 +22,23 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { SxProp } from 'dripsy';
-import Link, { LinkProps } from '../Link';
-import { DripsyFC } from '../../dripsyHelper';
+import React from "react";
+import { SxProp } from "dripsy";
+import Link, { LinkProps } from "../Link";
+import { DripsyFC } from "../../dripsyHelper";
 
 export type NavLinkProps = LinkProps;
 
 const NavLink: DripsyFC<NavLinkProps> = (props: NavLinkProps) => {
   const sx: SxProp = {
     ...NavLink.defaultSx,
-    ...props.sx
+    ...props.sx,
   };
   return <Link {...props} sx={sx} />;
 };
 
 NavLink.defaultProps = {
-  children: null
+  children: null,
 };
 
 NavLink.defaultSx = {};

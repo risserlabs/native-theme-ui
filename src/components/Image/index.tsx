@@ -22,9 +22,9 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { SxProp, Image as DImage } from 'dripsy';
-import { DImageProps, DripsyFC } from '../../dripsyHelper';
+import React from "react";
+import { SxProp, Image as DImage } from "dripsy";
+import { DImageProps, DripsyFC } from "../../dripsyHelper";
 
 export type ImageProps = DImageProps & {
   src?: string;
@@ -33,7 +33,7 @@ export type ImageProps = DImageProps & {
 const Image: DripsyFC<ImageProps> = (props: ImageProps) => {
   const sx: SxProp = {
     ...Image.defaultSx,
-    ...props.sx
+    ...props.sx,
   };
   const dImageProps = { ...props };
   if (props.src) dImageProps.source = { uri: props.src };
@@ -42,12 +42,12 @@ const Image: DripsyFC<ImageProps> = (props: ImageProps) => {
 };
 
 Image.defaultProps = {
-  sx: {}
+  sx: {},
 };
 
 Image.defaultSx = {
-  maxWidth: '100%',
-  height: 'auto'
+  maxWidth: "100%",
+  height: "auto",
 };
 
 export default Image;

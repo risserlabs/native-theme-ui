@@ -22,40 +22,40 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import React from "react";
 import {
   storiesOf,
   createArgsStory,
   createSxArgs,
   sxArgTypes,
-  Args
-} from '../../storybook';
-import Link from './index';
-import Box from '../Box';
+  Args,
+} from "../../storybook";
+import Link from "./index";
+import Box from "../Box";
 
-storiesOf('Link', module)
-  .add('default', createArgsStory(Link), {
+storiesOf("Link", module)
+  .add("default", createArgsStory(Link), {
     args: {
-      children: 'Click Me',
-      href: 'https://example.com',
+      children: "Click Me",
+      href: "https://example.com",
       autoContrast: Link.defaultProps?.autoContrast,
-      ...createSxArgs(Link)
+      ...createSxArgs(Link),
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', false],
-        control: 'select'
+        options: ["A", "AA", "AAA", false],
+        control: "select",
       },
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
   .add(
-    'with background',
+    "with background",
     (args: Args) => (
       <Box
         sx={{
           padding: 2,
-          bg: args.background
+          bg: args.background,
         }}
       >
         <Link autoContrast={args.autoContrast} href="https://example.com">
@@ -65,15 +65,15 @@ storiesOf('Link', module)
     ),
     {
       args: {
-        background: 'black',
-        autoContrast: 'AAA'
+        background: "black",
+        autoContrast: "AAA",
       },
       argTypes: {
-        background: { control: { type: 'color' } },
+        background: { control: { type: "color" } },
         autoContrast: {
-          options: ['A', 'AA', 'AAA', false],
-          control: 'select'
-        }
-      }
+          options: ["A", "AA", "AAA", false],
+          control: "select",
+        },
+      },
     }
   );

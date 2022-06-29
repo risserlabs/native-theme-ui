@@ -22,39 +22,39 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import Close from '../Close';
-import Alert from '.';
+import React from "react";
+import Close from "../Close";
+import Alert from ".";
 import {
   createArgsStory,
   createSxArgs,
   storiesOf,
-  sxArgTypes
-} from '../../storybook';
+  sxArgTypes,
+} from "../../storybook";
 
-storiesOf('atoms/Alert', module)
+storiesOf("atoms/Alert", module)
   .addParameters({
-    status: { type: 'beta' }
+    status: { type: "beta" },
   })
-  .add('default', createArgsStory(Alert), {
+  .add("default", createArgsStory(Alert), {
     args: {
-      children: 'I am Alert',
+      children: "I am Alert",
       variant: Alert.defaultProps?.variant,
-      ...createSxArgs(Alert)
+      ...createSxArgs(Alert),
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', false],
-        control: 'select'
+        options: ["A", "AA", "AAA", false],
+        control: "select",
       },
       variant: {
-        options: ['primary', 'muted'],
-        control: 'select'
+        options: ["primary", "muted"],
+        control: "select",
       },
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
-  .add('like theme ui', () => (
+  .add("like theme ui", () => (
     <Alert>
       Beep boop, this is an alert! <Close />
     </Alert>

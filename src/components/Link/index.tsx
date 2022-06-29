@@ -22,10 +22,10 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
-import { A as DA } from 'dripsy';
-import { DAProps, DripsyFC } from '../../dripsyHelper';
+import React from "react";
+import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
+import { A as DA } from "dripsy";
+import { DAProps, DripsyFC } from "../../dripsyHelper";
 
 export type LinkProps = Partial<DAProps> & {
   autoContrast?: AutoContrast;
@@ -34,7 +34,7 @@ export type LinkProps = Partial<DAProps> & {
 const Link: DripsyFC<LinkProps> = (props: LinkProps) => {
   const sx = useAutoContrast(props, {
     ...Link.defaultSx,
-    ...props.sx
+    ...props.sx,
   });
   return <DA {...(props as DAProps)} sx={sx} />;
 };
@@ -42,10 +42,10 @@ const Link: DripsyFC<LinkProps> = (props: LinkProps) => {
 Link.defaultProps = {};
 
 Link.defaultSx = {
-  color: 'inherit',
-  textDecoration: 'none',
-  fontWeight: 'bold',
-  display: 'inline-block'
+  color: "inherit",
+  textDecoration: "none",
+  fontWeight: "bold",
+  display: "inline-block",
   //'&:hover, &:focus, &.active': {
   //color: 'primary',
   //};

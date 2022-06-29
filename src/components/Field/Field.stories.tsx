@@ -4,7 +4,7 @@
  * File Created: 27-06-2022 04:22:36
  * Author: Lavanya Katari
  * -----
- * Last Modified: 28-06-2022 04:47:54
+ * Last Modified: 29-06-2022 04:39:08
  * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,76 +22,71 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
+import React from "react";
+import Box from "../Box";
 import {
   storiesOf,
   createArgsStory,
   createSxArgs,
-  sxArgTypes
-} from '../../storybook';
-import { View } from 'dripsy';
-import Box from './index';
-import Text from '../Text';
-import Field from '.';
+  sxArgTypes,
+} from "../../storybook";
+import { View } from "dripsy";
+import Input from "./index";
+import Text from "../Text";
+import Field from ".";
 
-storiesOf('Field', module)
-  .add('default', createArgsStory(Field), {
+storiesOf("Field", module)
+  .add("default", createArgsStory(Field), {
     args: {
-      children: 'I am a field',
+      children: "I am a field",
       autoContrast: Field.defaultProps?.autoContrast,
-      ...createSxArgs(Field)
+      ...createSxArgs(Field),
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', false],
-        control: 'select'
+        options: ["A", "AA", "AAA", false],
+        control: "select",
       },
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
-  .add('with background', () => (
-    <Field sx={{ bg: 'secondary' }}>
+  .add("with background", () => (
+    <Field sx={{ bg: "secondary" }}>
       <Text>Hello, world</Text>
     </Field>
   ))
-  .add('like theme-ui', () => (
-    <Box
-      sx={{
-        p: 4,
-        color: 'white',
-        bg: 'primary'
-      }}
-    >
+  .add("like theme-ui", () => (
+    <Box sx={{ p: 4, color: "yellow", bg: "black" }}>
       <Text>Beep</Text>
     </Box>
   ))
-  .add('multiple', () => {
+  .add("multiple", () => {
     const style = {
       Field: {
-        color: 'white',
+        color: "white",
         height: 100,
         width: 300,
-        margin: 3
+        margin: 3,
       },
       Field1: {
-        bg: 'primary'
+        bg: "primary",
       },
       Field2: {
-        bg: 'secondary'
-      }
+        bg: "secondary",
+      },
     };
     return (
-      <View sx={{ flex: 1, flexDirection: 'row', flexWrap: 'wrap' }}>
+      <View sx={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
         <Field
           sx={{
             ...style.Field,
-            ...style.Field1
+            ...style.Field1,
           }}
         />
         <Field
           sx={{
             ...style.Field,
-            ...style.Field2
+            ...style.Field2,
           }}
         />
       </View>

@@ -22,85 +22,85 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { View } from 'dripsy';
+import React from "react";
+import { View } from "dripsy";
 import {
   storiesOf,
   createArgsStory,
   createSxArgs,
-  sxArgTypes
-} from '../../storybook';
-import Box from './index';
-import Text from '../Text';
+  sxArgTypes,
+} from "../../storybook";
+import Box from "./index";
+import Text from "../Text";
 
-storiesOf('atoms/Box', module)
+storiesOf("atoms/Box", module)
   .addParameters({
-    status: { type: 'beta' }
+    status: { type: "beta" },
   })
-  .add('default', createArgsStory(Box), {
+  .add("default", createArgsStory(Box), {
     args: {
-      children: 'I am a box',
+      children: "I am a box",
       autoContrast: Box.defaultProps?.autoContrast,
-      ...createSxArgs(Box)
+      ...createSxArgs(Box),
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', false],
-        control: 'select'
+        options: ["A", "AA", "AAA", false],
+        control: "select",
       },
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
-  .add('like theme-ui', () => (
+  .add("like theme-ui", () => (
     <Box
       sx={{
         p: 4,
-        color: 'white',
-        bg: 'primary'
+        color: "white",
+        bg: "primary",
       }}
     >
       <Text>Beep</Text>
     </Box>
   ))
-  .add('multiple', () => {
+  .add("multiple", () => {
     const style = {
       box: {
-        color: 'white',
+        color: "white",
         height: 200,
         width: 200,
-        margin: 4
+        margin: 4,
       },
       box1: {
-        bg: 'primary'
+        bg: "primary",
       },
       box2: {
-        bg: 'secondary'
-      }
+        bg: "secondary",
+      },
     };
     return (
-      <View sx={{ flex: 1, flexDirection: 'row', flexWrap: 'wrap' }}>
+      <View sx={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
         <Box
           sx={{
             ...style.box,
-            ...style.box1
+            ...style.box1,
           }}
         />
         <Box
           sx={{
             ...style.box,
-            ...style.box2
+            ...style.box2,
           }}
         />
         <Box
           sx={{
             ...style.box,
-            ...style.box1
+            ...style.box1,
           }}
         />
         <Box
           sx={{
             ...style.box,
-            ...style.box2
+            ...style.box2,
           }}
         />
       </View>

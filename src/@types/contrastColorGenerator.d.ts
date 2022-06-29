@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-declare module 'contrast-color-generator' {
+declare module "contrast-color-generator" {
   export interface Color {
     hexStr: string;
   }

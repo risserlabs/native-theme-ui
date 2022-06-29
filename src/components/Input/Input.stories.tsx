@@ -22,36 +22,36 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { Box } from 'dripsy';
-import { action } from '@storybook/addon-actions';
+import React from "react";
+import { Box } from "dripsy";
+import { action } from "@storybook/addon-actions";
 import {
   storiesOf,
   createArgsStory,
   createSxArgs,
-  sxArgTypes
-} from '../../storybook';
-import Input from './index';
+  sxArgTypes,
+} from "../../storybook";
+import Input from "./index";
 
-storiesOf('Input', module)
+storiesOf("Input", module)
   .add(
-    'default',
+    "default",
     createArgsStory(Input, {
-      onBlur: action('onBlur'),
-      onChange: action('onChange'),
-      onFocus: action('onFocus')
+      onBlur: action("onBlur"),
+      onChange: action("onChange"),
+      onFocus: action("onFocus"),
     }),
     {
       args: {
-        ...createSxArgs(Input)
+        ...createSxArgs(Input),
       },
       argTypes: {
-        ...sxArgTypes
-      }
+        ...sxArgTypes,
+      },
     }
   )
   .add(
-    'like theme-ui',
+    "like theme-ui",
     () => (
       <Box>
         <Input defaultValue="Hello" />
@@ -59,18 +59,18 @@ storiesOf('Input', module)
     ),
     {
       component: Input,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   )
   .add(
-    'with background',
+    "with background",
     () => (
-      <Box sx={{ bg: 'background', p: 4 }}>
+      <Box sx={{ bg: "background", p: 4 }}>
         <Input />
       </Box>
     ),
     {
       component: Input,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   );

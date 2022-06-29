@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 28-06-2022 05:13:59
- * Modified By: Harikittu46
+ * Last Modified: 29-06-2022 01:33:04
+ * Modified By: Hari Krishna
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,22 +22,22 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { View } from 'dripsy';
-import Box from '../Box';
-import Heading from '.';
+import React from "react";
+import { View } from "dripsy";
+import Box from "../Box";
+import Heading from "./index";
 import {
   storiesOf,
   Args,
   createArgsStory,
   createSxArgs,
-  sxArgTypes
-} from '../../storybook';
+  sxArgTypes,
+} from "../../storybook";
 
-storiesOf('Heading', module)
-  // .add(
-  // 'variants',
-  //  () => (
+storiesOf("Heading", module)
+  //  .add(
+  //   'variants',
+  //    () => (
   // <Box>
   //   <Heading as="h1" sx={{ color: 'primary', lineHeight: 30 }}>
   // h1
@@ -64,37 +64,37 @@ storiesOf('Heading', module)
   //  status: { type: 'beta' }
   // }
   // )
-  .add('default', createArgsStory(Heading), {
+  .add("default", createArgsStory(Heading), {
     args: {
-      children: 'Heading',
-      ...createSxArgs(Heading)
+      children: "Heading",
+      ...createSxArgs(Heading),
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', 'false'],
-        control: 'select'
+        options: ["A", "AA", "AAA", "false"],
+        control: "select",
       },
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
   .add(
-    'with background',
+    "with background",
     () => (
-      <Box sx={{ bg: 'background', p: 4 }}>
+      <Box sx={{ bg: "background", p: 4 }}>
         <Heading>Hello Heading!</Heading>
       </Box>
     ),
     {
       args: {
-        background: 'black',
-        autoContrast: 'AAA'
+        background: "black",
+        autoContrast: "AAA",
       },
       argTypes: {
-        background: { control: { type: 'color' } },
+        background: { control: { type: "color" } },
         autoContrast: {
-          options: ['A', 'AA', 'AAA', false],
-          control: 'select'
-        }
-      }
+          options: ["A", "AA", "AAA", false],
+          control: "select",
+        },
+      },
     }
   );

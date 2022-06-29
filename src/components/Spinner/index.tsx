@@ -22,12 +22,12 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { ActivityIndicator as DActivityIndicator, SxProp } from 'dripsy';
-import { ActivityIndicatorProps as RNActivityIndicator } from 'react-native';
-import useThemeLookup from '../../hooks/useThemeLookup';
-import { DripsyFC } from '../../dripsyHelper';
-import { AutoContrast } from '@risserlabs/auto-contrast';
+import React from "react";
+import { ActivityIndicator as DActivityIndicator, SxProp } from "dripsy";
+import { ActivityIndicatorProps as RNActivityIndicator } from "react-native";
+import useThemeLookup from "../../hooks/useThemeLookup";
+import { DripsyFC } from "../../dripsyHelper";
+import { AutoContrast } from "@risserlabs/auto-contrast";
 
 export type SpinnerProps = RNActivityIndicator & {
   autoContrast?: AutoContrast;
@@ -47,7 +47,7 @@ const Spinner: DripsyFC<SpinnerProps> = (props: SpinnerProps) => {
   return (
     <DActivityIndicator
       {...props}
-      color={themeLookup('color', props.color)}
+      color={themeLookup("color", props.color)}
       sx={sxProp}
     />
   );
@@ -55,11 +55,11 @@ const Spinner: DripsyFC<SpinnerProps> = (props: SpinnerProps) => {
 
 Spinner.defaultProps = {
   sx: {},
-  size: 48
+  size: 48,
 };
 
 export const styles = {
-  spinner: {}
+  spinner: {},
 };
 Spinner.defaultSx = {};
 export default Spinner;

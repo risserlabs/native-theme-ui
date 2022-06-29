@@ -22,22 +22,22 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { SxProp, Sx, View } from 'dripsy';
-import { DripsyFC, DViewProps } from '../../dripsyHelper';
+import React from "react";
+import { SxProp, Sx, View } from "dripsy";
+import { DripsyFC, DViewProps } from "../../dripsyHelper";
 
 export type ProgressProps = Omit<
   DViewProps,
-  | 'p'
-  | 'pb'
-  | 'pl'
-  | 'pr'
-  | 'pt'
-  | 'padding'
-  | 'paddingBottom'
-  | 'paddingLeft'
-  | 'paddingRight'
-  | 'paddingTop'
+  | "p"
+  | "pb"
+  | "pl"
+  | "pr"
+  | "pt"
+  | "padding"
+  | "paddingBottom"
+  | "paddingLeft"
+  | "paddingRight"
+  | "paddingTop"
 > & {
   max?: number;
   value?: number;
@@ -49,17 +49,17 @@ const Progress: DripsyFC<ProgressProps> = (props: ProgressProps) => {
 
   const sx = {
     ...Progress.defaultSx,
-    ...props.sx
+    ...props.sx,
   };
 
   const sxMax: SxProp = {
-    ...sx
+    ...sx,
   };
 
   const sxValue: SxProp = {
     ...sx,
     bg: (sx as Sx).color as string,
-    width: `${Math.max(Math.min(value / max, 1), 0) * 100}%`
+    width: `${Math.max(Math.min(value / max, 1), 0) * 100}%`,
   };
 
   delete sxMax.color;
@@ -105,16 +105,16 @@ const Progress: DripsyFC<ProgressProps> = (props: ProgressProps) => {
 Progress.defaultProps = {};
 
 Progress.defaultSx = {
-  display: 'block',
-  height: '5px',
+  display: "block",
+  height: "5px",
   margin: 0,
-  marginRight: '20px',
+  marginRight: "20px",
   padding: 0,
-  bg: 'gray',
-  overflow: 'hidden',
-  color: 'primary',
+  bg: "gray",
+  overflow: "hidden",
+  color: "primary",
   borderRadius: 9999,
-  border: 'none'
+  border: "none",
   // '&::-webkit-progress-bar': {
   //   bg: 'transparent'
   // },

@@ -23,96 +23,96 @@
  */
 
 const isNative =
-  process.argv.join(' ').indexOf('@storybook/react-native-server') > -1;
+  process.argv.join(" ").indexOf("@storybook/react-native-server") > -1;
 
 const babelConfig = {
   presets: [],
   plugins: [
-    ['@babel/plugin-proposal-private-methods', { loose: true }],
-    ['@babel/plugin-proposal-private-property-in-object', { loose: true }],
-    ['@babel/plugin-proposal-class-properties', { loose: true }],
-    'babel-plugin-macros',
-    'babel-plugin-transform-typescript-metadata',
-    ['@babel/plugin-proposal-decorators', { legacy: true }],
-    '@babel/plugin-proposal-optional-chaining',
-    '@babel/plugin-transform-runtime'
-  ]
+    ["@babel/plugin-proposal-private-methods", { loose: true }],
+    ["@babel/plugin-proposal-private-property-in-object", { loose: true }],
+    ["@babel/plugin-proposal-class-properties", { loose: true }],
+    "babel-plugin-macros",
+    "babel-plugin-transform-typescript-metadata",
+    ["@babel/plugin-proposal-decorators", { legacy: true }],
+    "@babel/plugin-proposal-optional-chaining",
+    "@babel/plugin-transform-runtime",
+  ],
 };
 
 module.exports = {
-  stories: ['../**/*.stories.@(js|jsx|ts|tsx|md|mdx)'],
-  logLevel: 'debug',
+  stories: ["../**/*.stories.@(js|jsx|ts|tsx|md|mdx)"],
+  logLevel: "debug",
   addons: [
     ...(isNative
       ? []
       : [
-          '@etchteam/storybook-addon-status',
-          '@luigiminardim/storybook-addon-globals-controls',
-          '@pbutlewski/storybook-html',
-          '@storybook/addon-a11y',
-          '@storybook/addon-ie11',
-          '@storybook/addon-links',
-          '@storybook/addon-storyshots',
-          '@storybook/addon-storysource',
-          'addon-screen-reader',
-          'storybook-addon-breakpoints',
-          'storybook-addon-grid',
-          'storybook-addon-paddings',
-          'storybook-addon-themes',
-          'storybook-color-picker',
-          'storybook-dark-mode',
-          'storybook-mobile',
+          "@etchteam/storybook-addon-status",
+          "@luigiminardim/storybook-addon-globals-controls",
+          "@pbutlewski/storybook-html",
+          "@storybook/addon-a11y",
+          "@storybook/addon-ie11",
+          "@storybook/addon-links",
+          "@storybook/addon-storyshots",
+          "@storybook/addon-storysource",
+          "addon-screen-reader",
+          "storybook-addon-breakpoints",
+          "storybook-addon-grid",
+          "storybook-addon-paddings",
+          "storybook-addon-themes",
+          "storybook-color-picker",
+          "storybook-dark-mode",
+          "storybook-mobile",
           {
-            name: '@storybook/addon-react-native-web',
+            name: "@storybook/addon-react-native-web",
             options: {
               babelPlugins: babelConfig.plugins,
               modulesToTranspile: [
-                'dripsy',
-                '@dripsy/core',
-                'react-native-swipe-gestures'
-              ]
-            }
+                "dripsy",
+                "@dripsy/core",
+                "react-native-swipe-gestures",
+              ],
+            },
           },
           {
-            name: '@storybook/addon-essentials',
+            name: "@storybook/addon-essentials",
             options: {
               actions: true,
               backgrounds: false,
               controls: true,
               docs: true,
               toolbars: true,
-              viewport: true
-            }
-          }
-        ])
+              viewport: true,
+            },
+          },
+        ]),
   ],
   typescript: {
     check: true,
     checkOptions: {},
-    reactDocgenTypescriptOptions: {}
+    reactDocgenTypescriptOptions: {},
   },
   core: {
-    builder: 'webpack5'
+    builder: "webpack5",
   },
   features: {
     buildStoriesJson: false,
     postcss: false,
-    storyStoreV7: false
+    storyStoreV7: false,
   },
   webpackFinal: (webpackConfig) => {
     patchBabel(webpackConfig, {
       ...babelConfig,
-      plugins: [...(babelConfig.plugins || [])]
+      plugins: [...(babelConfig.plugins || [])],
     });
     return { ...webpackConfig };
-  }
+  },
 };
 
 function patchBabel(webpackConfig, babelConfig) {
   webpackConfig.module.rules.forEach((rule) => {
     if (Array.isArray(rule.use)) {
       rule.use.forEach((item) => {
-        if (item.loader?.indexOf('babel-loader') > -1) {
+        if (item.loader?.indexOf("babel-loader") > -1) {
           const plugins = [...(babelConfig.plugins || [])];
           const presets = [...(babelConfig.presets || [])];
           const pluginsSet = new Set(
@@ -147,7 +147,7 @@ function patchBabel(webpackConfig, babelConfig) {
             ...item.options,
             ...babelConfig,
             plugins,
-            presets
+            presets,
           };
         }
       });
