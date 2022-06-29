@@ -22,11 +22,11 @@
  * limitations under the License.
  */
 
-import * as presets from '@theme-ui/presets';
-import { AutoContrast } from '@risserlabs/auto-contrast';
-import { DripsyBaseTheme, makeTheme } from 'dripsy';
-import main from './main';
-import variants from './variants';
+import * as presets from "@theme-ui/presets";
+import { AutoContrast } from "@risserlabs/auto-contrast";
+import { DripsyBaseTheme, makeTheme } from "dripsy";
+import main from "./main";
+import variants from "./variants";
 
 export const base = wrapTheme(presets.base);
 export const bootstrap = wrapTheme(presets.bootstrap);
@@ -46,7 +46,7 @@ function wrapTheme(theme: Record<string, unknown>) {
   return makeTheme<BaseTheme>({
     ...theme,
     ...variants,
-    autoContrast: 'AAA'
+    autoContrast: "AAA",
   });
 }
 

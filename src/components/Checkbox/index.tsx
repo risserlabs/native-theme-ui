@@ -22,12 +22,12 @@
  * limitations under the License.
  */
 
-import ECheckbox, { CheckboxProps as ECheckboxProps } from 'expo-checkbox';
-import React from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
-import { SxProp } from 'dripsy';
-import { DripsyFC } from '../../dripsyHelper';
-import Box from '../Box';
+import ECheckbox, { CheckboxProps as ECheckboxProps } from "expo-checkbox";
+import React from "react";
+import { AutoContrast } from "@risserlabs/auto-contrast";
+import { SxProp } from "dripsy";
+import { DripsyFC } from "../../dripsyHelper";
+import Box from "../Box";
 
 export type CheckboxProps = ECheckboxProps & {
   sx?: SxProp;

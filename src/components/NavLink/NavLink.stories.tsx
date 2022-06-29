@@ -22,31 +22,31 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import Box from '../Box';
-import Link from '.';
-import { storiesOf } from '../../storybook';
+import React from "react";
+import Box from "../Box";
+import Link from ".";
+import { storiesOf } from "../../storybook";
 
-storiesOf('NavLink', module)
+storiesOf("NavLink", module)
   .add(
-    'default',
+    "default",
     () => (
       <Link href="https://theme-ui.com/components/link">Hello, world!</Link>
     ),
     {
       component: Link,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   )
   .add(
-    'with background',
+    "with background",
     () => (
-      <Box sx={{ bg: 'background', p: 4 }}>
+      <Box sx={{ bg: "background", p: 4 }}>
         <Link href="https://theme-ui.com/components/link">Hello, world!</Link>
       </Box>
     ),
     {
       component: Link,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   );

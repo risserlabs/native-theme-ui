@@ -22,64 +22,64 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import React from "react";
 import {
   storiesOf,
   createArgsStory,
   sxArgTypes,
-  createSxArgs
-} from '../../storybook';
-import IconButton from '.';
+  createSxArgs,
+} from "../../storybook";
+import IconButton from ".";
 
-storiesOf('IconButton', module)
-  .add('default Icon', createArgsStory(IconButton), {
+storiesOf("IconButton", module)
+  .add("default Icon", createArgsStory(IconButton), {
     args: {
-      children: 'Iam Icon Button ',
+      children: "Iam Icon Button ",
       autoContrast: IconButton.defaultProps?.autoContrast,
-      ...createSxArgs(IconButton)
+      ...createSxArgs(IconButton),
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', false],
-        control: 'select'
+        options: ["A", "AA", "AAA", false],
+        control: "select",
       },
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
 
   .add(
-    'Home IconButton',
+    "Home IconButton",
     () => (
       <IconButton
-        source={require('../../assets/homeIcon.png')}
+        source={require("../../assets/homeIcon.png")}
         iconSx={{
           width: 30,
           height: 30,
-          overflow: 'hidden'
+          overflow: "hidden",
         }}
-        onPress={() => console.log('HOME ICON PRESSED')}
+        onPress={() => console.log("HOME ICON PRESSED")}
       />
     ),
     {
       component: IconButton,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   )
   .add(
-    'Notification IconButton',
+    "Notification IconButton",
     () => (
       <IconButton
-        source={require('../../assets/notificationIcon.png')}
+        source={require("../../assets/notificationIcon.png")}
         iconSx={{
           width: 30,
           height: 30,
-          overflow: 'hidden'
+          overflow: "hidden",
         }}
-        onPress={() => console.log('NOTIFICATION ICON PRESSED')}
+        onPress={() => console.log("NOTIFICATION ICON PRESSED")}
       />
     ),
     {
       component: IconButton,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   );

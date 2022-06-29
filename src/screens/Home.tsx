@@ -1,5 +1,5 @@
-import React, { FC } from 'react';
-import { Text } from 'react-native';
+import React, { FC } from "react";
+import { Text } from "react-native";
 
 export interface HomeScreenProps {}
 

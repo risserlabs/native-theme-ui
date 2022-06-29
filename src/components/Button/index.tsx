@@ -22,16 +22,16 @@
  * limitations under the License.
  */
 
-import React, { ReactNode } from 'react';
-import { Pressable as DPressable } from 'dripsy';
+import React, { ReactNode } from "react";
+import { Pressable as DPressable } from "dripsy";
 import {
   AutoContrast,
   useAutoContrast,
-  BackgroundColorProvider
-} from '@risserlabs/auto-contrast';
-import { DripsyFC, DPressableProps } from '../../dripsyHelper';
+  BackgroundColorProvider,
+} from "@risserlabs/auto-contrast";
+import { DripsyFC, DPressableProps } from "../../dripsyHelper";
 
-type ButtonProps = Omit<DPressableProps, 'variant'> & {
+type ButtonProps = Omit<DPressableProps, "variant"> & {
   autoContrast?: AutoContrast;
   children?: ReactNode;
   hidden?: boolean;
@@ -41,8 +41,8 @@ type ButtonProps = Omit<DPressableProps, 'variant'> & {
 const Button: DripsyFC<ButtonProps> = (props: ButtonProps) => {
   const sx = useAutoContrast(props, {
     ...Button.defaultSx,
-    display: props.hidden ? 'none' : 'inline-block',
-    ...props.sx
+    display: props.hidden ? "none" : "inline-block",
+    ...props.sx,
   });
   return (
     <DPressable {...(props as DPressableProps)} sx={sx}>
@@ -56,18 +56,18 @@ const Button: DripsyFC<ButtonProps> = (props: ButtonProps) => {
 Button.defaultProps = {};
 
 Button.defaultSx = {
-  appearance: 'none',
-  bg: 'primary',
+  appearance: "none",
+  bg: "primary",
   border: 0,
   borderRadius: 4,
-  color: 'white',
-  fontSize: 'inherit',
-  lineHeight: 'inherit',
+  color: "white",
+  fontSize: "inherit",
+  lineHeight: "inherit",
   px: 3,
   py: 2,
-  textAlign: 'center',
-  textDecoration: 'none',
-  userSelect: 'none'
+  textAlign: "center",
+  textDecoration: "none",
+  userSelect: "none",
 };
 
 export default Button;

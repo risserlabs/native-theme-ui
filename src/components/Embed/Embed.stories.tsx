@@ -22,26 +22,26 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import React from "react";
 import {
   storiesOf,
   createArgsStory,
   createSxArgs,
-  sxArgTypes
-} from '../../storybook';
-import Embed from './index';
+  sxArgTypes,
+} from "../../storybook";
+import Embed from "./index";
 
-storiesOf('Embed', module).add('default', createArgsStory(Embed), {
+storiesOf("Embed", module).add("default", createArgsStory(Embed), {
   args: {
-    children: 'I am a Embed Component',
+    children: "I am a Embed Component",
     autoContrast: Embed.defaultProps?.autoContrast,
-    ...createSxArgs(Embed)
+    ...createSxArgs(Embed),
   },
   argTypes: {
     autoContrast: {
-      options: ['A', 'AA', 'AAA', false],
-      control: 'select'
+      options: ["A", "AA", "AAA", false],
+      control: "select",
     },
-    ...sxArgTypes
-  }
+    ...sxArgTypes,
+  },
 });

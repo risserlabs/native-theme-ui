@@ -22,8 +22,8 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
+import React, { FC } from "react";
+import { AutoContrast } from "@risserlabs/auto-contrast";
 
 type AspectImageProps = {
   autoContrast?: AutoContrast;
@@ -32,7 +32,7 @@ const AspectImage: FC<AspectImageProps> = () => {
   return (
     <div
       style={{
-        backgroundColor: 'green'
+        backgroundColor: "green",
       }}
     >
       AspectImage component

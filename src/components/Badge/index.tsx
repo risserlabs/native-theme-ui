@@ -22,11 +22,11 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { SxProp, View as DView } from 'dripsy';
-import { ViewProps as RNViewProps } from 'react-native';
-import { DripsyFC } from '../../dripsyHelper';
-import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
+import React from "react";
+import { SxProp, View as DView } from "dripsy";
+import { ViewProps as RNViewProps } from "react-native";
+import { DripsyFC } from "../../dripsyHelper";
+import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
 
 export type BadgeProps = RNViewProps & {
   autoContrast?: AutoContrast;
@@ -47,7 +47,7 @@ const Badge: DripsyFC<BadgeProps> = (props: BadgeProps) => {
 
   const sx = useAutoContrast(props, {
     ...Badge.defaultSx,
-    ...props.sx
+    ...props.sx,
   });
 
   return <DView sx={{ ...sx }}>{props.children}</DView>;
@@ -55,19 +55,19 @@ const Badge: DripsyFC<BadgeProps> = (props: BadgeProps) => {
 
 Badge.defaultProps = {
   sx: {},
-  variant: 'accent'
+  variant: "accent",
 };
 Badge.defaultSx = {
   width: 50,
   height: 20,
-  display: 'flex',
-  fontWeight: 'bold',
-  alignItems: 'center',
-  justifyContent: 'center',
-  fontSize: '70%',
+  display: "flex",
+  fontWeight: "bold",
+  alignItems: "center",
+  justifyContent: "center",
+  fontSize: "70%",
   borderRadius: 2,
-  color: 'white',
-  bg: 'primary'
+  color: "white",
+  bg: "primary",
 };
 
 export default Badge;

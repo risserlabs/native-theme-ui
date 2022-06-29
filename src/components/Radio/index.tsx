@@ -22,10 +22,10 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { DripsyFC } from '../../dripsyHelper';
-import { AutoContrast } from '@risserlabs/auto-contrast';
-import { SxProp } from 'dripsy';
+import React from "react";
+import { DripsyFC } from "../../dripsyHelper";
+import { AutoContrast } from "@risserlabs/auto-contrast";
+import { SxProp } from "dripsy";
 
 type RadioProps = {
   autoContrast?: AutoContrast;
@@ -34,12 +34,12 @@ type RadioProps = {
 const Radio: DripsyFC<RadioProps> = (props: RadioProps) => {
   const sx: SxProp = {
     ...Radio.defaultSx,
-    ...props.sx
+    ...props.sx,
   };
   return (
     <div
       style={{
-        backgroundColor: 'yellow'
+        backgroundColor: "yellow",
       }}
     >
       Radio component

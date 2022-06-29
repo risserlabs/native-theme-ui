@@ -22,84 +22,84 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { Box, Text } from 'dripsy';
+import React from "react";
+import { Box, Text } from "dripsy";
 import {
   createArgsStory,
   storiesOf,
   createSxArgs,
-  sxArgTypes
-} from '../../storybook';
-import Flex from '.';
+  sxArgTypes,
+} from "../../storybook";
+import Flex from ".";
 
-storiesOf('Flex', module)
-  .add('default', createArgsStory(Flex), {
+storiesOf("Flex", module)
+  .add("default", createArgsStory(Flex), {
     args: {
-      children: 'I am Flex ',
-      ...createSxArgs
+      children: "I am Flex ",
+      ...createSxArgs,
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', false],
-        control: 'select'
+        options: ["A", "AA", "AAA", false],
+        control: "select",
       },
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
   .add(
-    'flex row',
+    "flex row",
     () => (
       <Flex>
-        <Box sx={{ bg: 'primary', p: 4 }}>
+        <Box sx={{ bg: "primary", p: 4 }}>
           <Text>Hello, world!</Text>
-        </Box>{' '}
-        <Box sx={{ bg: 'primary', p: 4 }}>
+        </Box>{" "}
+        <Box sx={{ bg: "primary", p: 4 }}>
           <Text>Hello, world!</Text>
-        </Box>{' '}
-        <Box sx={{ bg: 'primary', p: 4 }}>
+        </Box>{" "}
+        <Box sx={{ bg: "primary", p: 4 }}>
           <Text>Hello, world!</Text>
         </Box>
       </Flex>
     ),
     {
       component: Flex,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   )
   .add(
-    'flex column',
+    "flex column",
     () => (
-      <Flex sx={{ flexDirection: 'column' }}>
-        <Box sx={{ bg: 'primary', p: 4 }}>
+      <Flex sx={{ flexDirection: "column" }}>
+        <Box sx={{ bg: "primary", p: 4 }}>
           <Text>Hello, world!</Text>
-        </Box>{' '}
-        <Box sx={{ bg: 'primary', p: 4 }}>
+        </Box>{" "}
+        <Box sx={{ bg: "primary", p: 4 }}>
           <Text>Hello, world!</Text>
-        </Box>{' '}
-        <Box sx={{ bg: 'primary', p: 4 }}>
+        </Box>{" "}
+        <Box sx={{ bg: "primary", p: 4 }}>
           <Text>Hello, world!</Text>
         </Box>
       </Flex>
     ),
     {
       component: Flex,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   )
   .add(
-    'like theme ui',
+    "like theme ui",
     () => (
       <Flex>
-        <Box sx={{ bg: 'primary', p: 2, flex: '1 1 auto' }}>
+        <Box sx={{ bg: "primary", p: 2, flex: "1 1 auto" }}>
           <Text>Hello, world!</Text>
-        </Box>{' '}
-        <Box sx={{ bg: 'primary', p: 2 }}>
+        </Box>{" "}
+        <Box sx={{ bg: "primary", p: 2 }}>
           <Text>Hello, world!</Text>
-        </Box>{' '}
+        </Box>{" "}
       </Flex>
     ),
     {
       component: Flex,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   );

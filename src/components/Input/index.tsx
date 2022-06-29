@@ -22,11 +22,11 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { TextInput as DTextInput } from 'dripsy';
-import { useAutoContrast, AutoContrast } from '@risserlabs/auto-contrast';
-import useThemeLookup from '../../hooks/useThemeLookup';
-import { DripsyFC, DTextInputProps } from '../../dripsyHelper';
+import React from "react";
+import { TextInput as DTextInput } from "dripsy";
+import { useAutoContrast, AutoContrast } from "@risserlabs/auto-contrast";
+import useThemeLookup from "../../hooks/useThemeLookup";
+import { DripsyFC, DTextInputProps } from "../../dripsyHelper";
 
 export type InputProps = DTextInputProps & {
   autoContrast?: AutoContrast;
@@ -36,14 +36,14 @@ const Input: DripsyFC<InputProps> = (props: InputProps) => {
   const themeLookup = useThemeLookup();
   const sx = useAutoContrast(props, {
     ...Input.defaultSx,
-    ...props.sx
+    ...props.sx,
   });
   return (
     <DTextInput
       {...props}
-      placeholderTextColor={themeLookup('color', props.placeholderTextColor)}
-      selectionColor={themeLookup('color', props.selectionColor)}
-      underlineColorAndroid={themeLookup('color', props.underlineColorAndroid)}
+      placeholderTextColor={themeLookup("color", props.placeholderTextColor)}
+      selectionColor={themeLookup("color", props.selectionColor)}
+      underlineColorAndroid={themeLookup("color", props.underlineColorAndroid)}
       sx={sx}
     />
   );
@@ -52,18 +52,18 @@ const Input: DripsyFC<InputProps> = (props: InputProps) => {
 Input.defaultProps = {};
 
 Input.defaultSx = {
-  display: 'block',
-  width: '100%',
+  display: "block",
+  width: "100%",
   p: 2,
   margin: 0,
   minWidth: 0,
-  appearance: 'none',
+  appearance: "none",
   fontSize: 1,
   lineHeight: 1,
-  border: '1px solid',
+  border: "1px solid",
   borderRadius: 4,
-  color: 'text',
-  bg: 'transparent'
+  color: "text",
+  bg: "transparent",
 };
 
 export default Input;

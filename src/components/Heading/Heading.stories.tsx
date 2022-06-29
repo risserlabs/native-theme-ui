@@ -22,19 +22,19 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { View } from 'dripsy';
-import Box from '../Box';
-import Heading from './index';
+import React from "react";
+import { View } from "dripsy";
+import Box from "../Box";
+import Heading from "./index";
 import {
   storiesOf,
   Args,
   createArgsStory,
   createSxArgs,
-  sxArgTypes
-} from '../../storybook';
+  sxArgTypes,
+} from "../../storybook";
 
-storiesOf('Heading', module)
+storiesOf("Heading", module)
   //  .add(
   //   'variants',
   //    () => (
@@ -64,37 +64,37 @@ storiesOf('Heading', module)
   //  status: { type: 'beta' }
   // }
   // )
-  .add('default', createArgsStory(Heading), {
+  .add("default", createArgsStory(Heading), {
     args: {
-      children: 'Heading',
-      ...createSxArgs(Heading)
+      children: "Heading",
+      ...createSxArgs(Heading),
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', 'false'],
-        control: 'select'
+        options: ["A", "AA", "AAA", "false"],
+        control: "select",
       },
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
   .add(
-    'with background',
+    "with background",
     () => (
-      <Box sx={{ bg: 'background', p: 4 }}>
+      <Box sx={{ bg: "background", p: 4 }}>
         <Heading>Hello Heading!</Heading>
       </Box>
     ),
     {
       args: {
-        background: 'black',
-        autoContrast: 'AAA'
+        background: "black",
+        autoContrast: "AAA",
       },
       argTypes: {
-        background: { control: { type: 'color' } },
+        background: { control: { type: "color" } },
         autoContrast: {
-          options: ['A', 'AA', 'AAA', false],
-          control: 'select'
-        }
-      }
+          options: ["A", "AA", "AAA", false],
+          control: "select",
+        },
+      },
     }
   );

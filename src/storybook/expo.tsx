@@ -22,18 +22,18 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import asyncStorage from '@react-native-async-storage/async-storage';
-import { DripsyProvider } from 'dripsy';
-import { Platform } from 'react-native';
-import { withKnobs } from '@storybook/addon-knobs';
+import React from "react";
+import asyncStorage from "@react-native-async-storage/async-storage";
+import { DripsyProvider } from "dripsy";
+import { Platform } from "react-native";
+import { withKnobs } from "@storybook/addon-knobs";
 import {
   getStorybookUI,
   configure,
-  addDecorator
-} from '@storybook/react-native';
-import './rn-addons';
-import * as themes from '../themes';
+  addDecorator,
+} from "@storybook/react-native";
+import "./rn-addons";
+import * as themes from "../themes";
 
 addDecorator(withKnobs);
 addDecorator((Root: any) => (
@@ -43,12 +43,12 @@ addDecorator((Root: any) => (
 ));
 
 configure(() => {
-  require('./stories');
+  require("./stories");
 }, module);
 
 const StorybookUIRoot = getStorybookUI({
-  host: Platform.OS === 'android' ? '10.0.2.2' : '0.0.0.0',
-  asyncStorage
+  host: Platform.OS === "android" ? "10.0.2.2" : "0.0.0.0",
+  asyncStorage,
 });
 
 export default StorybookUIRoot;

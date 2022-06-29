@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 28-06-2022 08:07:37
+ * Last Modified: 29-06-2022 05:37:42
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,27 +22,25 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { Box as DBox } from 'dripsy';
+import React from "react";
+import { Box as DBox } from "dripsy";
 import {
   BackgroundColorProvider,
   useAutoContrast,
-  AutoContrast
-} from '@risserlabs/auto-contrast';
-import { DBoxProps, DripsyFC } from '../../dripsyHelper';
+  AutoContrast,
+} from "@risserlabs/auto-contrast";
+import { DBoxProps, DripsyFC } from "../../dripsyHelper";
 
-export type BoxProps = Omit<DBoxProps, 'variant'> & {
+export type BoxProps = Omit<DBoxProps, "variant"> & {
   autoContrast?: AutoContrast;
   variant?: string;
 };
 
 const Box: DripsyFC<BoxProps> = (props: BoxProps) => {
-  const sx = props.style
-    ? undefined
-    : useAutoContrast(props, {
-        ...Box.defaultSx,
-        ...props.sx
-      });
+  const sx = useAutoContrast(props, {
+    ...Box.defaultSx,
+    ...props.sx,
+  });
   return (
     <DBox {...(props as DBoxProps)} sx={sx}>
       <BackgroundColorProvider sx={sx}>
@@ -55,11 +53,10 @@ const Box: DripsyFC<BoxProps> = (props: BoxProps) => {
 Box.defaultProps = {};
 
 Box.defaultSx = {
-  boxSizing: 'border-box',
-  display: 'inline-block',
+  boxSizing: "border-box",
   margin: 0,
   minWidth: 0,
-  width: '100%'
+  width: "100%",
 };
 
 export default Box;

@@ -22,40 +22,40 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import Card from './index';
+import React from "react";
+import Card from "./index";
 import {
   storiesOf,
   createArgsStory,
   createSxArgs,
   ArgTypes,
-  sxArgTypes
-} from '../../storybook';
+  sxArgTypes,
+} from "../../storybook";
 
-storiesOf('Card', module)
-  .add('default', createArgsStory(Card), {
+storiesOf("Card", module)
+  .add("default", createArgsStory(Card), {
     args: {
-      children: 'i am a card',
-      ...createSxArgs(Card)
+      children: "i am a card",
+      ...createSxArgs(Card),
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', false],
-        control: 'select'
+        options: ["A", "AA", "AAA", false],
+        control: "select",
       },
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
   .add(
-    'simple card',
+    "simple card",
     () => (
       <Card
         sx={{
           height: 300,
           width: 200,
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center'
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         Simple Card
@@ -63,6 +63,6 @@ storiesOf('Card', module)
     ),
     {
       component: Card,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   );

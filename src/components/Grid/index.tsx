@@ -22,10 +22,10 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { DripsyFC } from '../../dripsyHelper';
-import { AutoContrast } from '@risserlabs/auto-contrast';
-import Box, { BoxProps } from '../Box';
+import React from "react";
+import { DripsyFC } from "../../dripsyHelper";
+import { AutoContrast } from "@risserlabs/auto-contrast";
+import Box, { BoxProps } from "../Box";
 
 type GridProps = BoxProps & {
   autoContrast?: AutoContrast;
@@ -35,7 +35,7 @@ const Grid: DripsyFC<GridProps> = (props: GridProps) => {
   return <Box {...props} />;
 };
 Grid.defaultSx = {
-  display: 'grid'
+  display: "grid",
   //gridGap: gap,
 };
 export default Grid;

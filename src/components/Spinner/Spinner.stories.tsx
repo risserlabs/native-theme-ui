@@ -22,58 +22,58 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { Box } from 'dripsy';
-import Spinner from '.';
+import React from "react";
+import { Box } from "dripsy";
+import Spinner from ".";
 import {
   storiesOf,
   createArgsStory,
   createSxArgs,
-  sxArgTypes
-} from '../../storybook';
+  sxArgTypes,
+} from "../../storybook";
 
-storiesOf('Spinner', module)
-  .add('default', createArgsStory(Spinner), {
+storiesOf("Spinner", module)
+  .add("default", createArgsStory(Spinner), {
     args: {
-      children: 'Iam Spinner Component',
+      children: "Iam Spinner Component",
       autoContrast: Spinner.defaultProps?.autoContrast,
-      ...createSxArgs(Spinner)
+      ...createSxArgs(Spinner),
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', false],
-        control: 'select'
+        options: ["A", "AA", "AAA", false],
+        control: "select",
       },
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
 
   .add(
-    'size',
+    "size",
     () => (
-      <div style={{ display: 'flex', gap: 10 }}>
+      <div style={{ display: "flex", gap: 10 }}>
         <Spinner size="small" /> <Spinner size="large" />
       </div>
     ),
     {
       component: Spinner,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   )
 
-  .add('like theme-ui', () => <Spinner color="primary" />, {
+  .add("like theme-ui", () => <Spinner color="primary" />, {
     component: Spinner,
-    status: { type: 'beta' }
+    status: { type: "beta" },
   })
   .add(
-    'with background',
+    "with background",
     () => (
-      <Box sx={{ bg: 'background', p: 4 }}>
+      <Box sx={{ bg: "background", p: 4 }}>
         <Spinner />
       </Box>
     ),
     {
       component: Spinner,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   );

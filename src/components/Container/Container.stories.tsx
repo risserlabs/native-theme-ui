@@ -26,21 +26,21 @@ import {
   storiesOf,
   createArgsStory,
   createSxArgs,
-  sxArgTypes
-} from '../../storybook';
-import Container from './index';
+  sxArgTypes,
+} from "../../storybook";
+import Container from "./index";
 
-storiesOf('Container', module).add('default', createArgsStory(Container), {
+storiesOf("Container", module).add("default", createArgsStory(Container), {
   args: {
-    children: 'I am a Container',
+    children: "I am a Container",
     autoContrast: Container.defaultProps?.autoContrast,
-    ...createSxArgs(Container)
+    ...createSxArgs(Container),
   },
   argTypes: {
     autoContrast: {
-      options: ['A', 'AA', 'AAA', false],
-      control: 'select'
+      options: ["A", "AA", "AAA", false],
+      control: "select",
     },
-    ...sxArgTypes
-  }
+    ...sxArgTypes,
+  },
 });

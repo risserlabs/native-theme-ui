@@ -22,11 +22,11 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { SxProp } from 'dripsy';
-import { ViewProps } from 'react-native';
-import Box from '../Box/index';
-import { DripsyFC } from '../../dripsyHelper';
+import React from "react";
+import { SxProp } from "dripsy";
+import { ViewProps } from "react-native";
+import Box from "../Box/index";
+import { DripsyFC } from "../../dripsyHelper";
 
 export interface FlexProps extends ViewProps {
   sx?: SxProp;
@@ -34,17 +34,17 @@ export interface FlexProps extends ViewProps {
 
 const Flex: DripsyFC<FlexProps> = (props: FlexProps) => {
   const sx: SxProp = {
-    flexDirection: 'row',
+    flexDirection: "row",
     ...Flex.defaultSx,
     ...props.sx,
-    display: 'flex'
+    display: "flex",
   };
   return <Box {...props} sx={sx} />;
 };
 
 Flex.defaultProps = {};
 Flex.defaultSx = {
-  flex: {}
+  flex: {},
 };
 
 //export const styles = {

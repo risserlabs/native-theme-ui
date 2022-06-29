@@ -22,10 +22,10 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
+import React, { FC } from "react";
+import { AutoContrast } from "@risserlabs/auto-contrast";
 // import { Pressable as RNPressable } from 'react-native';
-import { Pressable as DPressable, SxProp } from 'dripsy';
+import { Pressable as DPressable, SxProp } from "dripsy";
 type MenuButtonProps = {
   autoContrast?: AutoContrast;
   sx?: SxProp;

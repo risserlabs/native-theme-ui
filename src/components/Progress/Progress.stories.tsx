@@ -22,47 +22,47 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import Box from '../Box';
-import Progress from './index';
+import React from "react";
+import Box from "../Box";
+import Progress from "./index";
 import {
   storiesOf,
   createArgsStory,
   createSxArgs,
   createSxArgTypes,
-  Args
-} from '../../storybook';
+  Args,
+} from "../../storybook";
 
-storiesOf('Progress', module)
-  .add('default', createArgsStory(Progress), {
+storiesOf("Progress", module)
+  .add("default", createArgsStory(Progress), {
     args: {
       value: Progress.defaultProps?.value,
       max: Progress.defaultProps?.max,
-      ...createSxArgs(Progress, ['sxP'])
+      ...createSxArgs(Progress, ["sxP"]),
     },
     argTypes: {
-      value: { control: { type: 'number' } },
-      max: { control: { type: 'number' } },
-      ...createSxArgTypes(['sxP'])
-    }
+      value: { control: { type: "number" } },
+      max: { control: { type: "number" } },
+      ...createSxArgTypes(["sxP"]),
+    },
   })
   .add(
-    'with background',
+    "with background",
     (args: Args) => (
-      <Box sx={{ bg: args.background, p: 4, width: '100%' }}>
+      <Box sx={{ bg: args.background, p: 4, width: "100%" }}>
         <Progress max={args.max} value={args.value} />
       </Box>
     ),
     {
       args: {
-        background: 'background',
+        background: "background",
         value: 50,
-        max: 100
+        max: 100,
       },
       argTypes: {
-        background: { control: { type: 'color' } },
-        value: { control: { type: 'number' } },
-        max: { control: { type: 'number' } }
-      }
+        background: { control: { type: "color" } },
+        value: { control: { type: "number" } },
+        max: { control: { type: "number" } },
+      },
     }
   );

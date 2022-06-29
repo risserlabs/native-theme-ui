@@ -22,44 +22,44 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { DripsyProvider } from 'dripsy';
-import { addDecorator } from '@storybook/react';
-import { themes as storybookThemes } from '@storybook/theming';
-import { withDesign } from 'storybook-addon-designs';
-import { withGlobals } from '@luigiminardim/storybook-addon-globals-controls';
-import { withThemes } from 'storybook-addon-themes/react';
-import * as themes from '../themes';
+import React from "react";
+import { DripsyProvider } from "dripsy";
+import { addDecorator } from "@storybook/react";
+import { themes as storybookThemes } from "@storybook/theming";
+import { withDesign } from "storybook-addon-designs";
+import { withGlobals } from "@luigiminardim/storybook-addon-globals-controls";
+import { withThemes } from "storybook-addon-themes/react";
+import * as themes from "../themes";
 
 export const parameters = {
   globalsControls: {},
   status: {
-    statuses: {}
+    statuses: {},
   },
   darkMode: {
     dark: { ...storybookThemes.dark },
-    light: { ...storybookThemes.normal }
+    light: { ...storybookThemes.normal },
   },
   paddings: {
-    default: 'Small'
+    default: "Small",
   },
   themes: {
-    default: 'main',
+    default: "main",
     clearable: false,
     onChange: (theme) => {
-      console.log('theme', theme);
+      console.log("theme", theme);
     },
     list: Object.entries(themes).map(([name, theme]) => ({
       name,
       themeUI: theme,
-      color: theme.colors.primary
+      color: theme.colors.primary,
     })),
     Decorator: (props) => (
       <DripsyProvider theme={props.theme.themeUI}>
         {props.children}
       </DripsyProvider>
-    )
-  }
+    ),
+  },
 };
 
 export const loaders = [];
@@ -72,9 +72,9 @@ addDecorator(withThemes);
 
 export const globalTypes = {
   boolean: {
-    name: 'Boolean',
-    description: 'Boolean Description',
+    name: "Boolean",
+    description: "Boolean Description",
     defaultValue: true,
-    control: { type: 'boolean' }
-  }
+    control: { type: "boolean" },
+  },
 };

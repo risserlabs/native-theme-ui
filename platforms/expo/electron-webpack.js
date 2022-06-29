@@ -1,5 +1,5 @@
-const { withExpoAdapter } = require('@expo/electron-adapter');
+const { withExpoAdapter } = require("@expo/electron-adapter");
 
 module.exports = withExpoAdapter({
-  projectRoot: __dirname
+  projectRoot: __dirname,
 });

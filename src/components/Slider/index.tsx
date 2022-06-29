@@ -22,12 +22,12 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import RNCSlider from '@react-native-community/slider';
-import { AutoContrast } from '@risserlabs/auto-contrast';
-import { SxProp } from 'dripsy';
-import { DripsyFC } from '../../dripsyHelper';
-import Box from '../Box';
+import React from "react";
+import RNCSlider from "@react-native-community/slider";
+import { AutoContrast } from "@risserlabs/auto-contrast";
+import { SxProp } from "dripsy";
+import { DripsyFC } from "../../dripsyHelper";
+import Box from "../Box";
 export type SliderProps = {
   //export type SliderProps = ESliderProps & {
   sx?: SxProp;
@@ -41,13 +41,13 @@ const Slider: DripsyFC<SliderProps> = (props: SliderProps) => {
 };
 
 Slider.defaultSx = {
-  display: 'block',
-  width: '100%',
+  display: "block",
+  width: "100%",
   height: 8,
-  cursor: 'pointer',
-  appearance: 'none',
+  cursor: "pointer",
+  appearance: "none",
   borderRadius: 9999,
-  color: 'inherit',
-  bg: 'purple'
+  color: "inherit",
+  bg: "purple",
 };
 export default Slider;

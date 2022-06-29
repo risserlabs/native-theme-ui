@@ -22,17 +22,17 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
-import { SxProp } from 'dripsy';
+import React, { FC } from "react";
+import { SxProp } from "dripsy";
 import {
   PressableProps as RNPressableProps,
   ImageProps as RNImageProps,
-  ImageSourcePropType
-} from 'react-native';
-import Pressable from '../Pressable';
-import Image from '../Image';
-import { DripsyFC } from '../../dripsyHelper';
-import { AutoContrast } from '@risserlabs/auto-contrast';
+  ImageSourcePropType,
+} from "react-native";
+import Pressable from "../Pressable";
+import Image from "../Image";
+import { DripsyFC } from "../../dripsyHelper";
+import { AutoContrast } from "@risserlabs/auto-contrast";
 export interface PressableProps extends RNPressableProps {
   sx?: SxProp;
 }
@@ -48,10 +48,10 @@ const IconButton: DripsyFC<IconButtonProps> = (
 ) => {
   const sx: SxProp = {
     ...IconButton.defaultSx,
-    ...props.sx
+    ...props.sx,
   };
   const iconsx: SxProp = {
-    ...props.iconSx
+    ...props.iconSx,
   };
 
   return (
@@ -63,14 +63,14 @@ const IconButton: DripsyFC<IconButtonProps> = (
 
 IconButton.defaultProps = {
   sx: {},
-  iconSx: {}
+  iconSx: {},
 };
 
 IconButton.defaultSx = {
-  maxWidth: '100%',
-  bg: 'primary',
-  alignItems: 'center',
-  justifyContent: 'center'
+  maxWidth: "100%",
+  bg: "primary",
+  alignItems: "center",
+  justifyContent: "center",
 };
 
 export default IconButton;

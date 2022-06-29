@@ -22,49 +22,49 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import Box from '../Box';
-import Divider from '.';
+import React from "react";
+import Box from "../Box";
+import Divider from ".";
 import {
   storiesOf,
   createArgsStory,
   Args,
   createSxArgs,
-  sxArgTypes
-} from '../../storybook';
+  sxArgTypes,
+} from "../../storybook";
 
-storiesOf('Divider', module)
-  .add('default', createArgsStory(Divider), {
+storiesOf("Divider", module)
+  .add("default", createArgsStory(Divider), {
     args: {
       autoContrast: Divider.defaultProps?.autoContrast,
-      ...createSxArgs(Divider)
+      ...createSxArgs(Divider),
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', false],
-        control: 'select'
+        options: ["A", "AA", "AAA", false],
+        control: "select",
       },
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
   .add(
-    'with background',
+    "with background",
     (args: Args) => (
-      <Box sx={{ bg: args.background, p: 4, width: '100%' }}>
+      <Box sx={{ bg: args.background, p: 4, width: "100%" }}>
         <Divider autoContrast={args.autoContrast} />
       </Box>
     ),
     {
       args: {
-        background: 'background',
-        autoContrast: 'AAA'
+        background: "background",
+        autoContrast: "AAA",
       },
       argTypes: {
-        background: { control: 'color' },
+        background: { control: "color" },
         autoContrast: {
-          options: ['A', 'AA', 'AAA', false],
-          control: 'select'
-        }
-      }
+          options: ["A", "AA", "AAA", false],
+          control: "select",
+        },
+      },
     }
   );

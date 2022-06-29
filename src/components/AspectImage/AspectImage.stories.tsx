@@ -22,10 +22,10 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { storiesOf } from '../../storybook';
-import AspectImage from './index';
+import React from "react";
+import { storiesOf } from "../../storybook";
+import AspectImage from "./index";
 
-storiesOf('AspectImage', module).add('with background', () => (
+storiesOf("AspectImage", module).add("with background", () => (
   <AspectImage></AspectImage>
 ));

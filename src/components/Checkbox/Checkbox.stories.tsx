@@ -22,36 +22,36 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { action } from '@storybook/addon-actions';
+import React from "react";
+import { action } from "@storybook/addon-actions";
 import {
   storiesOf,
   createArgsStory,
   createSxArgs,
-  sxArgTypes
-} from '../../storybook';
-import CheckBox from './index';
+  sxArgTypes,
+} from "../../storybook";
+import CheckBox from "./index";
 
-storiesOf('CheckBox', module)
+storiesOf("CheckBox", module)
   .add(
-    'default',
+    "default",
     createArgsStory(CheckBox, {
-      onChange: action('onChange'),
-      onValueChange: action('onValueChange')
+      onChange: action("onChange"),
+      onValueChange: action("onValueChange"),
     }),
     {
       args: {
         defaultChecked: CheckBox.defaultProps?.defaultChecked,
-        ...createSxArgs(CheckBox)
+        ...createSxArgs(CheckBox),
       },
       argTypes: {
         autoContrast: {
-          options: ['A', 'AA', 'AAA', false],
-          control: 'select'
+          options: ["A", "AA", "AAA", false],
+          control: "select",
         },
-        defaultChecked: { control: { type: 'boolean' } },
-        ...sxArgTypes
-      }
+        defaultChecked: { control: { type: "boolean" } },
+        ...sxArgTypes,
+      },
     }
   )
-  .add('with background', () => <CheckBox></CheckBox>);
+  .add("with background", () => <CheckBox></CheckBox>);

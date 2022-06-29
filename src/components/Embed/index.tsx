@@ -22,10 +22,10 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
-import { Box as DBox } from 'dripsy';
-import { DripsyFC, DBoxProps } from '../../dripsyHelper';
+import React from "react";
+import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
+import { Box as DBox } from "dripsy";
+import { DripsyFC, DBoxProps } from "../../dripsyHelper";
 
 export type EmbedProps = DBoxProps & {
   autoContrast?: AutoContrast;
@@ -34,7 +34,7 @@ export type EmbedProps = DBoxProps & {
 const Embed: DripsyFC<EmbedProps> = (props: EmbedProps) => {
   const sx = useAutoContrast(props, {
     ...Embed.defaultSx,
-    ...props.sx
+    ...props.sx,
   });
   return <DBox {...props} sx={sx} />;
 };

@@ -21,37 +21,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import React from 'react';
-import Grid from './index';
-import Box from '../Box';
+import React from "react";
+import Grid from "./index";
+import Box from "../Box";
 import {
   storiesOf,
   createArgsStory,
   createSxArgs,
-  sxArgTypes
-} from '../../storybook';
+  sxArgTypes,
+} from "../../storybook";
 
-storiesOf('Grid', module)
-  .add('default', createArgsStory(Grid, {}), {
+storiesOf("Grid", module)
+  .add("default", createArgsStory(Grid, {}), {
     args: {
-      children: 'I am a Grid',
-      ...createSxArgs
+      children: "I am a Grid",
+      ...createSxArgs,
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', false],
-        control: 'select'
+        options: ["A", "AA", "AAA", false],
+        control: "select",
       },
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
   .add(
-    'like theme Ui',
+    "like theme Ui",
     () => (
       <Grid>
-        <Box sx={{ bg: 'primary' }}>Box1</Box>
-        <Box sx={{ bg: 'secondary' }}>Box2</Box>
-        <Box sx={{ bg: 'muted' }}>Box3</Box>
+        <Box sx={{ bg: "primary" }}>Box1</Box>
+        <Box sx={{ bg: "secondary" }}>Box2</Box>
+        <Box sx={{ bg: "muted" }}>Box3</Box>
       </Grid>
     ),
     createArgsStory(Grid)

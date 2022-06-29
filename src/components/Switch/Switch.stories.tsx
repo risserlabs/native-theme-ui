@@ -22,72 +22,72 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { action } from '@storybook/addon-actions';
-import Box from '../Box';
-import Switch from '.';
+import React from "react";
+import { action } from "@storybook/addon-actions";
+import Box from "../Box";
+import Switch from ".";
 import {
   storiesOf,
   createArgsStory,
   createSxArgs,
-  sxArgTypes
-} from '../../storybook';
+  sxArgTypes,
+} from "../../storybook";
 
-storiesOf('Switch', module)
+storiesOf("Switch", module)
   .add(
-    'default',
+    "default",
     createArgsStory(Switch, {
-      onChange: action('onChange'),
-      onValueChange: action('onValueChange')
+      onChange: action("onChange"),
+      onValueChange: action("onValueChange"),
     }),
     {
       args: {
-        children: 'Iam switch component',
+        children: "Iam switch component",
         defaultChecked: Switch.defaultProps?.defaultChecked,
-        ...createSxArgs(Switch)
+        ...createSxArgs(Switch),
       },
       argTypes: {
         autoContrast: {
-          options: ['A', 'AA', 'AAA', false],
-          control: 'select'
+          options: ["A", "AA", "AAA", false],
+          control: "select",
         },
-        defaultChecked: { control: { type: 'boolean' } },
-        ...sxArgTypes
-      }
+        defaultChecked: { control: { type: "boolean" } },
+        ...sxArgTypes,
+      },
     }
   )
   .add(
-    'default',
+    "default",
     () => (
       <>
         <Switch
-          trackColor={{ false: '#767577', true: '#81b0ff' }}
+          trackColor={{ false: "#767577", true: "#81b0ff" }}
           ios_backgroundColor="#3e3e3e"
         />
         <Switch
-          trackColor={{ false: '#767577', true: 'primary' }}
+          trackColor={{ false: "#767577", true: "primary" }}
           ios_backgroundColor="#3e3e3e"
-          thumbColor={'red'}
+          thumbColor={"red"}
           value={true}
         />
         <Switch
-          trackColor={{ false: '#767577', true: 'primary' }}
+          trackColor={{ false: "#767577", true: "primary" }}
           ios_backgroundColor="#3e3e3e"
-          thumbColor={'primary'}
+          thumbColor={"primary"}
         />
       </>
     ),
     {
       component: Switch,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   )
   .add(
-    'with background',
+    "with background",
     () => (
-      <Box sx={{ bg: 'background', p: 4 }}>
+      <Box sx={{ bg: "background", p: 4 }}>
         <Switch
-          trackColor={{ false: '#767577', true: 'primary' }}
+          trackColor={{ false: "#767577", true: "primary" }}
           ios_backgroundColor="#3e3e3e"
           value={true}
         />
@@ -95,6 +95,6 @@ storiesOf('Switch', module)
     ),
     {
       component: Switch,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   );

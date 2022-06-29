@@ -22,8 +22,8 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { storiesOf } from '../../storybook';
-import Forms from './index';
+import React from "react";
+import { storiesOf } from "../../storybook";
+import Forms from "./index";
 
-storiesOf('Forms', module).add('with background', () => <Forms></Forms>);
+storiesOf("Forms", module).add("with background", () => <Forms></Forms>);

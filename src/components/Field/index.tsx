@@ -22,14 +22,14 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { TextInput as DTextInput } from 'dripsy';
+import React from "react";
+import { TextInput as DTextInput } from "dripsy";
 import {
   BackgroundColorProvider,
   AutoContrast,
-  useAutoContrast
-} from '@risserlabs/auto-contrast';
-import { DTextInputProps, DripsyFC } from '../../dripsyHelper';
+  useAutoContrast,
+} from "@risserlabs/auto-contrast";
+import { DTextInputProps, DripsyFC } from "../../dripsyHelper";
 
 export type FieldProps = DTextInputProps & {
   autoContrast?: AutoContrast;
@@ -38,7 +38,7 @@ export type FieldProps = DTextInputProps & {
 const Field: DripsyFC<FieldProps> = (props: FieldProps) => {
   const sx = useAutoContrast(props, {
     ...Field.defaultSx,
-    ...props.sx
+    ...props.sx,
   });
   return (
     <DTextInput {...props} sx={sx}>
@@ -51,9 +51,9 @@ const Field: DripsyFC<FieldProps> = (props: FieldProps) => {
 
 Field.defaultProps = {};
 Field.defaultSx = {
-  boxSizing: 'border-box',
-  display: 'inline-block',
+  boxSizing: "border-box",
+  display: "inline-block",
   margin: 0,
-  minWidth: 0
+  minWidth: 0,
 };
 export default Field;

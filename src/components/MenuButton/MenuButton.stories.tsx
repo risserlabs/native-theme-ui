@@ -22,14 +22,14 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { storiesOf } from '../../storybook';
-import MenuButton from './index';
+import React from "react";
+import { storiesOf } from "../../storybook";
+import MenuButton from "./index";
 
-storiesOf('MenuButton', module)
-  .add('with green color', () => (
-    <MenuButton sx={{ backgroundColor: 'green' }} />
+storiesOf("MenuButton", module)
+  .add("with green color", () => (
+    <MenuButton sx={{ backgroundColor: "green" }} />
   ))
-  .add('with blue color', () => (
-    <MenuButton sx={{ backgroundColor: 'blue' }} />
+  .add("with blue color", () => (
+    <MenuButton sx={{ backgroundColor: "blue" }} />
   ));

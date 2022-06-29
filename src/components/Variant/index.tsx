@@ -22,10 +22,10 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
-import { DripsyFC } from '../../dripsyHelper';
-import { SxProp } from 'dripsy';
+import React from "react";
+import { AutoContrast } from "@risserlabs/auto-contrast";
+import { DripsyFC } from "../../dripsyHelper";
+import { SxProp } from "dripsy";
 export type VariantProps = {
   autoContrast?: AutoContrast;
   sx?: SxProp;

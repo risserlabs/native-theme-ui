@@ -22,71 +22,71 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import Box from '../Box';
+import React from "react";
+import Box from "../Box";
 import {
   storiesOf,
   createArgsStory,
   createSxArgs,
-  sxArgTypes
-} from '../../storybook';
-import { View } from 'dripsy';
-import Input from './index';
-import Text from '../Text';
-import Field from '.';
+  sxArgTypes,
+} from "../../storybook";
+import { View } from "dripsy";
+import Input from "./index";
+import Text from "../Text";
+import Field from ".";
 
-storiesOf('Field', module)
-  .add('default', createArgsStory(Field), {
+storiesOf("Field", module)
+  .add("default", createArgsStory(Field), {
     args: {
-      children: 'I am a field',
+      children: "I am a field",
       autoContrast: Field.defaultProps?.autoContrast,
-      ...createSxArgs(Field)
+      ...createSxArgs(Field),
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', false],
-        control: 'select'
+        options: ["A", "AA", "AAA", false],
+        control: "select",
       },
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
-  .add('with background', () => (
-    <Field sx={{ bg: 'secondary' }}>
+  .add("with background", () => (
+    <Field sx={{ bg: "secondary" }}>
       <Text>Hello, world</Text>
     </Field>
   ))
-  .add('like theme-ui', () => (
-    <Box sx={{ p: 4, color: 'yellow', bg: 'black' }}>
+  .add("like theme-ui", () => (
+    <Box sx={{ p: 4, color: "yellow", bg: "black" }}>
       <Text>Beep</Text>
     </Box>
   ))
-  .add('multiple', () => {
+  .add("multiple", () => {
     const style = {
       Field: {
-        color: 'white',
+        color: "white",
         height: 100,
         width: 300,
-        margin: 3
+        margin: 3,
       },
       Field1: {
-        bg: 'primary'
+        bg: "primary",
       },
       Field2: {
-        bg: 'secondary'
-      }
+        bg: "secondary",
+      },
     };
     return (
-      <View sx={{ flex: 1, flexDirection: 'row', flexWrap: 'wrap' }}>
+      <View sx={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
         <Field
           sx={{
             ...style.Field,
-            ...style.Field1
+            ...style.Field1,
           }}
         />
         <Field
           sx={{
             ...style.Field,
-            ...style.Field2
+            ...style.Field2,
           }}
         />
       </View>

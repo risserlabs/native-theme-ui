@@ -22,39 +22,39 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import React from "react";
 import {
   storiesOf,
   Args,
   createArgsStory,
   createSxArgs,
-  sxArgTypes
-} from '../../storybook';
-import Paragraph from './index';
-import Box from '../Box';
+  sxArgTypes,
+} from "../../storybook";
+import Paragraph from "./index";
+import Box from "../Box";
 
-storiesOf('Paragraph', module)
-  .add('default', createArgsStory(Paragraph), {
+storiesOf("Paragraph", module)
+  .add("default", createArgsStory(Paragraph), {
     args: {
-      children: 'I am a paragraph',
+      children: "I am a paragraph",
       autoContrast: Paragraph.defaultProps?.autoContrast,
-      ...createSxArgs(Paragraph)
+      ...createSxArgs(Paragraph),
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', false],
-        control: 'select'
+        options: ["A", "AA", "AAA", false],
+        control: "select",
       },
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
   .add(
-    'with background',
+    "with background",
     (args: Args) => (
       <Box
         sx={{
           padding: 2,
-          bg: args.background
+          bg: args.background,
         }}
       >
         <Paragraph autoContrast={args.autoContrast}>I am a paragraph</Paragraph>
@@ -62,15 +62,15 @@ storiesOf('Paragraph', module)
     ),
     {
       args: {
-        background: 'black',
-        autoContrast: 'AAA'
+        background: "black",
+        autoContrast: "AAA",
       },
       argTypes: {
-        background: { control: { type: 'color' } },
+        background: { control: { type: "color" } },
         autoContrast: {
-          options: ['A', 'AA', 'AAA', false],
-          control: 'select'
-        }
-      }
+          options: ["A", "AA", "AAA", false],
+          control: "select",
+        },
+      },
     }
   );

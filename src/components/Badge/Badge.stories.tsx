@@ -22,43 +22,43 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import Box from '../Box';
+import React from "react";
+import Box from "../Box";
 import {
   storiesOf,
   createSxArgs,
   createArgsStory,
-  sxArgTypes
-} from '../../storybook';
-import Badge from '.';
+  sxArgTypes,
+} from "../../storybook";
+import Badge from ".";
 
-storiesOf('Badge', module)
-  .add('default', createArgsStory(Badge), {
+storiesOf("Badge", module)
+  .add("default", createArgsStory(Badge), {
     args: {
-      children: 'Badge',
+      children: "Badge",
       autoContrast: Badge.defaultProps?.autoContrast,
-      ...createSxArgs(Badge)
+      ...createSxArgs(Badge),
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', false],
-        control: 'select'
+        options: ["A", "AA", "AAA", false],
+        control: "select",
       },
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
-  .add('Accent Badge', () => (
+  .add("Accent Badge", () => (
     <Box>
-      <Badge variant="accent" sx={{ padding: '70', borderRadius: 100 }}>
+      <Badge variant="accent" sx={{ padding: "70", borderRadius: 100 }}>
         This is a badge
       </Badge>
     </Box>
   ))
-  .add('Outline Badge', () => <Badge variant="outline">Badge</Badge>, {
-    component: Badge
+  .add("Outline Badge", () => <Badge variant="outline">Badge</Badge>, {
+    component: Badge,
   })
   .add(
-    'Circle Badge',
+    "Circle Badge",
     () => (
       <Badge
         variant="circle"
@@ -68,6 +68,6 @@ storiesOf('Badge', module)
       </Badge>
     ),
     {
-      component: Badge
+      component: Badge,
     }
   );

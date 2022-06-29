@@ -22,10 +22,10 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { storiesOf } from '../../storybook';
-import AspectRatio from './index';
+import React from "react";
+import { storiesOf } from "../../storybook";
+import AspectRatio from "./index";
 
-storiesOf('AspectRatio', module).add('with background', () => (
+storiesOf("AspectRatio", module).add("with background", () => (
   <AspectRatio></AspectRatio>
 ));

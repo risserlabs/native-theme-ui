@@ -22,13 +22,13 @@
  * limitations under the License.
  */
 
-import React, { FC } from 'react';
+import React, { FC } from "react";
 import {
   Picker as EPicker,
-  PickerItemProps
-} from '@react-native-picker/picker';
+  PickerItemProps,
+} from "@react-native-picker/picker";
 
-export type OptionProps = Omit<PickerItemProps, 'label'> & {
+export type OptionProps = Omit<PickerItemProps, "label"> & {
   children?: string;
 };
 

@@ -22,45 +22,45 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import Box from '../Box';
-import Label from '.';
+import React from "react";
+import Box from "../Box";
+import Label from ".";
 import {
   storiesOf,
   createArgsStory,
   createSxArgs,
-  sxArgTypes
-} from '../../storybook';
+  sxArgTypes,
+} from "../../storybook";
 
-storiesOf('Label', module)
+storiesOf("Label", module)
   //.add('default', () => <Label>Form Label</Label>, {
   //component: Label,
   //status: { type: 'beta' }
   //})
 
-  .add('default', createArgsStory(Label), {
+  .add("default", createArgsStory(Label), {
     args: {
-      children: 'Label',
+      children: "Label",
       autoContrast: Label.defaultProps?.autoContrast,
-      ...createSxArgs(Label)
+      ...createSxArgs(Label),
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', false],
-        control: 'select'
+        options: ["A", "AA", "AAA", false],
+        control: "select",
       },
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
   .add(
-    'with background',
+    "with background",
     () => (
-      <Box sx={{ bg: 'background', p: 4 }}>
+      <Box sx={{ bg: "background", p: 4 }}>
         <Label>Form Label</Label>
       </Box>
     ),
     {
       component: Label,
-      status: { type: 'beta' }
+      status: { type: "beta" },
     }
   );

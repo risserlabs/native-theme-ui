@@ -22,11 +22,11 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { Text as DText, SxProp } from 'dripsy';
-import { TextProps as RNTextProps } from 'react-native';
-import { AutoContrast, useAutoContrast } from '@risserlabs/auto-contrast';
-import { DripsyFC } from '../../dripsyHelper';
+import React from "react";
+import { Text as DText, SxProp } from "dripsy";
+import { TextProps as RNTextProps } from "react-native";
+import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
+import { DripsyFC } from "../../dripsyHelper";
 
 export type TextProps = RNTextProps & {
   autoContrast?: AutoContrast;
@@ -36,7 +36,7 @@ export type TextProps = RNTextProps & {
 const Text: DripsyFC<TextProps> = (props: TextProps) => {
   const sx = useAutoContrast(props, {
     ...Text.defaultSx,
-    ...props.sx
+    ...props.sx,
   });
   return <DText {...props} sx={sx}></DText>;
 };
@@ -44,8 +44,8 @@ Text.defaultProps = {};
 
 Text.defaultSx = {
   fontSize: 2,
-  fontWeight: 'bold',
-  display: 'block'
+  fontWeight: "bold",
+  display: "block",
 };
 
 export default Text;

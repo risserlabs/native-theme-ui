@@ -22,45 +22,45 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import React from "react";
 //import Paragraph from '../Paragraph';
-import Box from '../Box';
-import Text from './index';
+import Box from "../Box";
+import Text from "./index";
 import {
   Args,
   createArgsStory,
   createSxArgs,
   storiesOf,
-  sxArgTypes
-} from '../../storybook';
+  sxArgTypes,
+} from "../../storybook";
 
-storiesOf('Text', module)
+storiesOf("Text", module)
   //.add('default', () => <Text>Hello, world!</Text>, {
   //component: Text,
   //status: { type: 'beta' }
   //})
 
-  .add('default', createArgsStory(Text), {
+  .add("default", createArgsStory(Text), {
     args: {
-      children: 'I am Text Editor',
-      ...createSxArgs(Text)
+      children: "I am Text Editor",
+      ...createSxArgs(Text),
     },
     argTypes: {
       autoContrast: {
-        options: ['A', 'AA', 'AAA', false],
-        control: 'select'
+        options: ["A", "AA", "AAA", false],
+        control: "select",
       },
-      ...sxArgTypes
-    }
+      ...sxArgTypes,
+    },
   })
   .add(
-    'with background',
+    "with background",
     (args: Args) => (
       <Box
         sx={{
           bg: args.background,
           p: 4,
-          fontWeight: 'bold'
+          fontWeight: "bold",
         }}
       >
         <Text>Hello, world!</Text>
@@ -68,11 +68,11 @@ storiesOf('Text', module)
     ),
     {
       argTypes: {
-        background: { control: { type: 'color' } },
+        background: { control: { type: "color" } },
         autoContrast: {
-          options: ['A', 'AA', 'AAA', false],
-          control: 'select'
-        }
-      }
+          options: ["A", "AA", "AAA", false],
+          control: "select",
+        },
+      },
     }
   );

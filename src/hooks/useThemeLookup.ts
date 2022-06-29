@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import { useSx } from 'dripsy';
+import { useSx } from "dripsy";
 
 export default function useThemeLookup() {
   const sx = useSx();

@@ -26,16 +26,16 @@ import {
   storiesOf,
   createArgsStory,
   createSxArgs,
-  sxArgTypes
-} from '../../storybook';
-import Message from './index';
+  sxArgTypes,
+} from "../../storybook";
+import Message from "./index";
 
-storiesOf('Message', module).add('default', createArgsStory(Message), {
+storiesOf("Message", module).add("default", createArgsStory(Message), {
   args: {
-    children: 'I am a message',
-    ...createSxArgs(Message)
+    children: "I am a message",
+    ...createSxArgs(Message),
   },
   argTypes: {
-    ...sxArgTypes
-  }
+    ...sxArgTypes,
+  },
 });

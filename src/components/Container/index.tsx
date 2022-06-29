@@ -22,9 +22,9 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import Box, { BoxProps } from '../Box';
-import { DripsyFC } from '../../dripsyHelper';
+import React from "react";
+import Box, { BoxProps } from "../Box";
+import { DripsyFC } from "../../dripsyHelper";
 
 export type ContainerProps = BoxProps;
 

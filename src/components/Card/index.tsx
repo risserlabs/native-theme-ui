@@ -22,18 +22,18 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { AutoContrast } from '@risserlabs/auto-contrast';
-import { View as DView, SxProp } from 'dripsy';
-import { ViewProps as RNViewProps } from 'react-native';
-import { DripsyFC } from '../../dripsyHelper';
+import React from "react";
+import { AutoContrast } from "@risserlabs/auto-contrast";
+import { View as DView, SxProp } from "dripsy";
+import { ViewProps as RNViewProps } from "react-native";
+import { DripsyFC } from "../../dripsyHelper";
 type CardProps = RNViewProps & {
   sx?: SxProp;
 };
 const Card: DripsyFC<CardProps> = (props: CardProps) => {
   const sx: SxProp = {
     ...Card.defaultSx,
-    ...props.sx
+    ...props.sx,
   };
   return (
     <DView {...props} sx={sx}>
@@ -44,13 +44,13 @@ const Card: DripsyFC<CardProps> = (props: CardProps) => {
 
 Card.defaultProps = {
   children: null,
-  sx: {}
+  sx: {},
 };
 
 Card.defaultSx = {
-  boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
-  transition: '0.3s',
-  padding: '4px 16px',
-  borderRadius: '2%'
+  boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
+  transition: "0.3s",
+  padding: "4px 16px",
+  borderRadius: "2%",
 };
 export default Card;

@@ -22,12 +22,12 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import React from "react";
 //  import { View, SxProp } from 'dripsy';
-import { Box as DBox, SxProp } from 'dripsy';
-import { ViewProps } from 'react-native';
-import { DripsyFC } from '../../dripsyHelper';
-import { AutoContrast } from '@risserlabs/auto-contrast';
+import { Box as DBox, SxProp } from "dripsy";
+import { ViewProps } from "react-native";
+import { DripsyFC } from "../../dripsyHelper";
+import { AutoContrast } from "@risserlabs/auto-contrast";
 
 type DonutProps = ViewProps & {
   sx?: SxProp;
@@ -53,7 +53,7 @@ const Donut: DripsyFC<DonutProps> = (props: DonutProps) => {
 
   const sx: SxProp = {
     ...Donut.defaultSx,
-    ...props.sx
+    ...props.sx,
   };
 
   return (
@@ -74,16 +74,16 @@ const Donut: DripsyFC<DonutProps> = (props: DonutProps) => {
 Donut.defaultProps = {};
 
 Donut.defaultSx = {
-  border: '3px solid black',
-  width: '50px',
-  height: '50px',
-  borderRadius: '50px',
+  border: "3px solid black",
+  width: "50px",
+  height: "50px",
+  borderRadius: "50px",
   strokeWidth: 2,
-  fill: 'none',
-  stroke: 'currentcolor',
-  color: 'primary',
-  borderColor: 'secondary',
-  fontSize: 'text'
+  fill: "none",
+  stroke: "currentcolor",
+  color: "primary",
+  borderColor: "secondary",
+  fontSize: "text",
 };
 
 export default Donut;

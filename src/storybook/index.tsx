@@ -22,14 +22,14 @@
  * limitations under the License.
  */
 
-import React, { ComponentType, ReactNode } from 'react';
-import { SxProp, Sx } from 'dripsy';
-export * from './storybook';
+import React, { ComponentType, ReactNode } from "react";
+import { SxProp, Sx } from "dripsy";
+export * from "./storybook";
 
 export function getProps(args: Record<string, unknown>) {
   return Object.entries(args).reduce(
     (props: Record<string, unknown>, [key, value]: [string, unknown]) => {
-      if (key.substring(0, 2) !== 'sx' && key[2].toUpperCase() !== key[2]) {
+      if (key.substring(0, 2) !== "sx" && key[2].toUpperCase() !== key[2]) {
         props[key] = value;
       }
       return props;
@@ -41,7 +41,7 @@ export function getProps(args: Record<string, unknown>) {
 export function getSx(args: Record<string, unknown>) {
   return Object.entries(args).reduce(
     (sx: Record<string, unknown>, [key, value]: [string, unknown]) => {
-      if (key.substring(0, 2) === 'sx' && key[2].toUpperCase() === key[2]) {
+      if (key.substring(0, 2) === "sx" && key[2].toUpperCase() === key[2]) {
         sx[key[2].toLocaleLowerCase() + key.substring(3)] = value;
       }
       return sx;
@@ -61,10 +61,10 @@ export function createArgsStory(
   return function StoryComponent(args: Record<string, unknown>) {
     const sxArgs = Object.entries(getSx(args)).reduce(
       (sxArgs: Args, [key, value]: [string, unknown]) => {
-        if (typeof value === 'string' && !Number.isNaN(Number(value))) {
+        if (typeof value === "string" && !Number.isNaN(Number(value))) {
           value = Number(value);
         }
-        if (!(typeof value === 'number' && value === 0)) {
+        if (!(typeof value === "number" && value === 0)) {
           sxArgs[key] = value;
         }
         return sxArgs;
@@ -95,7 +95,7 @@ export function createSxArgs(
     sxBorderRadius: DC.defaultSx?.borderRadius,
     sxMinWidth: DC.defaultSx?.minWidth,
     sxMaxWidth: DC.defaultSx?.minWidth,
-    sxBorderColor: DC.defaultSx?.borderColor
+    sxBorderColor: DC.defaultSx?.borderColor,
   }).reduce((sxArgs: Args, [key, value]: [string, unknown]) => {
     if (!omitSet.has(key)) sxArgs[key] = value;
     return sxArgs;
@@ -103,18 +103,18 @@ export function createSxArgs(
 }
 
 export const sxArgTypes = {
-  sxBg: { control: 'color' },
-  sxColor: { control: 'color' },
-  sxM: { control: 'number' },
-  sxP: { control: 'number' },
-  sxHeight: { control: 'text' },
-  sxWidth: { control: 'text' },
-  sxMinWidth: { control: 'number' },
-  sxMaxWidth: { control: 'number' },
-  sxBorderWidth: { control: 'number' },
-  sxBorderRadius: { control: 'text' },
-  sxBorderColor: { control: { type: 'color' } },
-  sxFontSize: { control: 'number' }
+  sxBg: { control: "color" },
+  sxColor: { control: "color" },
+  sxM: { control: "number" },
+  sxP: { control: "number" },
+  sxHeight: { control: "text" },
+  sxWidth: { control: "text" },
+  sxMinWidth: { control: "number" },
+  sxMaxWidth: { control: "number" },
+  sxBorderWidth: { control: "number" },
+  sxBorderRadius: { control: "text" },
+  sxBorderColor: { control: { type: "color" } },
+  sxFontSize: { control: "number" },
 };
 
 export function createSxArgTypes(omit: string[] = []) {

@@ -22,8 +22,8 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { storiesOf } from '../../storybook';
-import Radio from './index';
+import React from "react";
+import { storiesOf } from "../../storybook";
+import Radio from "./index";
 
-storiesOf('Radio', module).add('with background', () => <Radio></Radio>);
+storiesOf("Radio", module).add("with background", () => <Radio></Radio>);
