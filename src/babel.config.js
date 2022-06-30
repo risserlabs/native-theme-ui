@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 01-03-2022 14:01:51
+ * Last Modified: 30-06-2022 07:44:19
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,26 +23,20 @@
  */
 
 module.exports = (api) => {
-  const isNative =
-    process.argv.join(" ").indexOf("@storybook/react-native-server") > -1;
+  const platform =
+    process.argv.join(" ").indexOf("expo-cli") > -1 ||
+    process.argv.join(" ").indexOf("jest-worker") > -1
+      ? "STORYBOOK_EXPO"
+      : process.argv.join(" ").indexOf("@storybook/react-native-server") > -1
+      ? "STORYBOOK_NATIVE"
+      : "STORYBOOK_WEB";
   api.cache(true);
   return {
     presets: ["babel-preset-expo"],
     plugins: [
-      ...(isNative
-        ? [
-            "@babel/plugin-proposal-private-methods",
-            "@babel/plugin-proposal-private-property-in-object",
-            "@babel/plugin-proposal-class-properties",
-          ]
-        : [
-            ["@babel/plugin-proposal-private-methods", { loose: true }],
-            [
-              "@babel/plugin-proposal-private-property-in-object",
-              { loose: true },
-            ],
-            ["@babel/plugin-proposal-class-properties", { loose: true }],
-          ]),
+      ["@babel/plugin-proposal-private-methods", { loose: true }],
+      ["@babel/plugin-proposal-private-property-in-object", { loose: true }],
+      ["@babel/plugin-proposal-class-properties", { loose: true }],
       "babel-plugin-macros",
       "babel-plugin-transform-typescript-metadata",
       ["@babel/plugin-proposal-decorators", { legacy: true }],
@@ -51,7 +45,11 @@ module.exports = (api) => {
     ],
     env: {
       development: {
-        plugins: ["babel-plugin-typescript-to-proptypes"],
+        plugins: [
+          ...(platform === "STORYBOOK_WEB"
+            ? ["babel-plugin-typescript-to-proptypes"]
+            : []),
+        ],
       },
       production: {
         plugins: [

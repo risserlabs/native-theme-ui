@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 28-06-2022 06:33:27
+ * Last Modified: 30-06-2022 07:49:29
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -47,7 +47,7 @@ export const parameters = {
     default: "main",
     clearable: false,
     onChange: (theme) => {
-      console.log("theme", theme);
+      console.info("theme", theme);
     },
     list: Object.entries(themes).map(([name, theme]) => ({
       name,

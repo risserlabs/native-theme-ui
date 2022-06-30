@@ -3,7 +3,7 @@
 # File Created: 04-12-2021 02:19:00
 # Author: Clay Risser <email@clayrisser.com>
 # -----
-# Last Modified: 23-06-2022 06:47:36
+# Last Modified: 30-06-2022 06:20:40
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -21,12 +21,12 @@
 # limitations under the License.
 
 export MKPM_PACKAGES_DEFAULT := \
+	yarn=0.0.3 \
 	envcache=0.1.0 \
 	mkchain=0.1.0 \
 	docker=0.0.16 \
 	dotenv=0.0.9 \
-	gnu=0.0.3 \
-	yarn=0.0.1
+	gnu=0.0.3
 
 export MKPM_REPO_DEFAULT := \
 	https://gitlab.com/risserlabs/community/mkpm-stable.git

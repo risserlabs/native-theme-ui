@@ -1,10 +1,10 @@
 /**
- * File: /metro.config.js
+ * File: /_metro.config.js
  * Project: -
- * File Created: 29-06-2022 07:40:41
+ * File Created: 30-06-2022 05:39:38
  * Author: Clay Risser
  * -----
- * Last Modified: 29-06-2022 07:41:02
+ * Last Modified: 30-06-2022 05:40:21
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,4 +22,7 @@
  * limitations under the License.
  */
 
-module.exports = {};
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { createMetroConfiguration } = require("expo-yarn-workspaces");
+
+module.exports = createMetroConfiguration(__dirname);

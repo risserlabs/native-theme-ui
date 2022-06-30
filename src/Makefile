@@ -3,7 +3,7 @@
 # File Created: 23-01-2022 02:18:40
 # Author: Clay Risser
 # -----
-# Last Modified: 13-06-2022 02:57:51
+# Last Modified: 30-06-2022 07:04:58
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -92,15 +92,15 @@ start@storybook-native: ~install ##
 
 .PHONY: start@storybook-web
 start@storybook-web: ~install ##
-	@$(EXPO) start --web
+	@$(EXPO) start -c --web $(ARGS)
 
 .PHONY: start@storybook-android
 start@storybook-android: ~install ##
-	@$(EXPO) start --android
+	@$(EXPO) start -c --android $(ARGS)
 
 .PHONY: start@storybook-ios
 start@storybook-ios: ~install ##
-	@$(EXPO) start --ios
+	@$(EXPO) start -c --ios $(ARGS)
 
 .PHONY: eject
 eject: ~install ##
