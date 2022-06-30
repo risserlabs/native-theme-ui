@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 29-06-2022 00:13:44
- * Modified By: Lavanya Katari
+ * Last Modified: 30-06-2022 05:21:28
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,23 +22,12 @@
  * limitations under the License.
  */
 
-<<<<<<< HEAD
-import React from 'react';
-import { styled } from 'dripsy';
-import { Switch as RNSwitch, SwitchProps as RNSwitchProps } from 'react-native';
-import useThemeLookup from '../../hooks/useThemeLookup';
-
-import { DripsyFC, PatchStyledProps } from '../../dripsyHelper';
-import { SxProp } from 'dripsy';
-import { AutoContrast } from '@risserlabs/auto-contrast';
-=======
 import React from "react";
 import { Switch as RNSwitch, SwitchProps as RNSwitchProps } from "react-native";
 import useThemeLookup from "../../hooks/useThemeLookup";
 import { DripsyFC } from "../../dripsyHelper";
 import { SxProp } from "dripsy";
 import { AutoContrast } from "@risserlabs/auto-contrast";
->>>>>>> 652f426066bb71d2a3cd07ab20918182bc323d35
 export type SwitchProps = RNSwitchProps & {
   sx?: SxProp;
   defaultChecked?: boolean;
