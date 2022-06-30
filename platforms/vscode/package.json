@@ -48,7 +48,7 @@
     "@expo/next-adapter": "^4.0.7",
     "@next/bundle-analyzer": "^12.1.6",
     "@types/prettier": "^2.6.3",
-    "@types/react": "^17.0.47",
+    "@types/react": "^18.0.14",
     "@types/react-native": "^0.66.19",
     "@typescript-eslint/eslint-plugin": "^5.30.0",
     "@typescript-eslint/parser": "^5.30.0",
