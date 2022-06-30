@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 30-06-2022 08:49:28
+ * Last Modified: 30-06-2022 11:10:44
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -29,10 +29,20 @@ module.exports = (api) => {
       ? "STORYBOOK_EXPO"
       : process.argv.join(" ").indexOf("@storybook/react-native-server") > -1
       ? "STORYBOOK_NATIVE"
-      : "STORYBOOK_WEB";
+      : process.argv.join(" ").indexOf("babel") > -1
+      ? "BABEL_BUILD"
+      : null;
   api.cache(true);
   return {
-    presets: ["babel-preset-expo"],
+    presets: [
+      ...(platform === "BABEL_BUILD"
+        ? [
+            "@babel/preset-typescript",
+            "@babel/preset-flow",
+            "@babel/preset-react",
+          ]
+        : ["babel-preset-expo"]),
+    ],
     plugins: [
       ["@babel/plugin-proposal-private-methods", { loose: true }],
       ["@babel/plugin-proposal-private-property-in-object", { loose: true }],
@@ -46,9 +56,7 @@ module.exports = (api) => {
     env: {
       development: {
         plugins: [
-          ...(platform === "STORYBOOK_WEB"
-            ? ["babel-plugin-typescript-to-proptypes"]
-            : []),
+          ...(platform ? [] : ["babel-plugin-typescript-to-proptypes"]),
         ],
       },
       production: {
@@ -60,6 +68,90 @@ module.exports = (api) => {
               ignoreFilenames: ["node_modules"],
             },
           ],
+        ],
+      },
+      esm: {
+        presets: [
+          [
+            "@babel/preset-env",
+            {
+              corejs: 3,
+              modules: false,
+              spec: true,
+              useBuiltIns: "usage",
+              targets: {
+                node: "6",
+                browsers: [
+                  "ie >= 11",
+                  "last 3 chrome major versions",
+                  "last 3 chromeandroid major versions",
+                  "last 3 edge major versions",
+                  "last 3 firefox major versions",
+                  "last 3 ios major versions",
+                  "last 3 safari major versions",
+                ],
+              },
+            },
+          ],
+        ],
+        ignore: [
+          "**/*.d.ts",
+          "**/*.d.tsx",
+          "**/*.spec.js",
+          "**/*.spec.jsx",
+          "**/*.spec.ts",
+          "**/*.spec.tsx",
+          "**/*.stories.js",
+          "**/*.stories.jsx",
+          "**/*.stories.ts",
+          "**/*.stories.tsx",
+          "**/*.test.js",
+          "**/*.test.jsx",
+          "**/*.test.ts",
+          "**/*.test.tsx",
+          "src/@types",
+        ],
+      },
+      umd: {
+        presets: [
+          [
+            "@babel/preset-env",
+            {
+              corejs: 3,
+              modules: "umd",
+              spec: true,
+              useBuiltIns: "usage",
+              targets: {
+                node: "6",
+                browsers: [
+                  "ie >= 11",
+                  "last 3 chrome major versions",
+                  "last 3 chromeandroid major versions",
+                  "last 3 edge major versions",
+                  "last 3 firefox major versions",
+                  "last 3 ios major versions",
+                  "last 3 safari major versions",
+                ],
+              },
+            },
+          ],
+        ],
+        ignore: [
+          "**/*.d.ts",
+          "**/*.d.tsx",
+          "**/*.spec.js",
+          "**/*.spec.jsx",
+          "**/*.spec.ts",
+          "**/*.spec.tsx",
+          "**/*.stories.js",
+          "**/*.stories.jsx",
+          "**/*.stories.ts",
+          "**/*.stories.tsx",
+          "**/*.test.js",
+          "**/*.test.jsx",
+          "**/*.test.ts",
+          "**/*.test.tsx",
+          "src/@types",
         ],
       },
     },

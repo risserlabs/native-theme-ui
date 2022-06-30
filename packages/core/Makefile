@@ -3,7 +3,7 @@
 # File Created: 30-06-2022 08:16:45
 # Author: Clay Risser
 # -----
-# Last Modified: 30-06-2022 08:52:01
+# Last Modified: 30-06-2022 12:10:22
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -58,6 +58,16 @@ ACTIONS += test~lint ##
 $(ACTION)/test: $(call git_deps,\.([jt]sx?)$$)
 	-@$(call jest,$?,$(ARGS))
 	@$(call done,test)
+
+ACTIONS += build~test ##
+BUILD_TARGET := lib/index.js
+lib/index.js:
+	@$(call reset,build)
+$(ACTION)/build: $(call git_deps,\.([jt]sx?)$$)
+	@$(BABEL) --env-name umd src -d lib --extensions '.js,.jsx,.ts,.tsx' --source-maps
+	@$(BABEL) --env-name esm src -d es --extensions '.js,.jsx,.ts,.tsx' --source-maps
+	@$(TSC) -p tsconfig.build.json -d
+	@$(call done,build)
 
 ACTIONS += build@storybook~test ##
 BUILD@STORYBOOK_TARGETS := storybook-static/index.html
@@ -143,8 +153,10 @@ vr-approve: ##
 postinstall:
 	@$(EXPO_YARN_WORKSPACES) postinstall
 
-.PHONY: build
-build: build@storybook build@storybook-web build@storybook-android build@storybook-ios ##
+.PHONY: publish +publish
+publish: | ~build +publish
++publish:
+	@npm publish --access=public
 
 .PHONY: clean
 clean: ##

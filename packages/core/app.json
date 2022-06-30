@@ -4,6 +4,7 @@
     "slug": "native-theme-ui",
     "version": "0.0.1",
     "orientation": "portrait",
+    "entryPoint": "./index.js",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
