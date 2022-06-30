@@ -1,9 +1,9 @@
 # File: /Makefile
-# Project: multiplatform-framework
+# Project: native-theme-ui
 # File Created: 04-12-2021 07:22:50
 # Author: Clay Risser <email@clayrisser.com>
 # -----
-# Last Modified: 30-06-2022 06:23:14
+# Last Modified: 30-06-2022 08:48:53
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -103,7 +103,7 @@ help: $(MKCHAIN_HELP)
 
 .PHONY: %
 %:
-	@$(MAKE) -s src/$@
+	@$(MAKE) -s core/$@
 
 CACHE_ENVS += \
 

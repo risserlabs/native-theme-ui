@@ -1,4 +1,4 @@
-# multiplatform-framework
+# native-theme-ui
 
 > write once, render anywhere
 
