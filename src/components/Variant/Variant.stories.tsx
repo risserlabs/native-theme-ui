@@ -23,7 +23,49 @@
  */
 
 import React from "react";
-import { storiesOf } from "../../storybook";
-import Variant from "./index";
+import Box from "../Box";
+import {
+  storiesOf,
+  Args,
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes,
+} from "../../storybook";
+import Variant from ".";
 
-storiesOf("Variant", module).add("with background", () => <Variant></Variant>);
+storiesOf("Variant", module)
+  .add("default", createArgsStory(Variant), {
+    args: {
+      children: " I Am a Variant",
+      ...createSxArgs(Variant),
+    },
+    argTypes: {
+      autoContrast: {
+        options: ["A", "AA", "AAA", false],
+        controls: "select",
+      },
+      ...sxArgTypes,
+    },
+  })
+  .add(
+    "with background",
+    (args: Args) => (
+      <Box
+        sx={{
+          bg: args.background,
+          p: 4,
+        }}
+      >
+        <Variant>Hello</Variant>
+      </Box>
+    ),
+    {
+      argTypes: {
+        background: { control: { type: "color" } },
+        autoContrast: {
+          options: ["A", "AA", "AAA", false],
+          control: "select",
+        },
+      },
+    }
+  );
