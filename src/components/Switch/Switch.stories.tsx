@@ -43,7 +43,7 @@ storiesOf("Switch", module)
     {
       args: {
         children: "Iam switch component",
-        defaultChecked: Switch.defaultProps?.defaultChecked,
+        defaultChecked: Switch.defaultProps?.autocontrast,
         ...createSxArgs(Switch),
       },
       argTypes: {

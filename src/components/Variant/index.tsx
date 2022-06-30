@@ -26,13 +26,25 @@ import React from "react";
 import { AutoContrast } from "@risserlabs/auto-contrast";
 import { DripsyFC } from "../../dripsyHelper";
 import { SxProp } from "dripsy";
+import Box from "../Box";
 export type VariantProps = {
   autoContrast?: AutoContrast;
   sx?: SxProp;
 };
 
 const Variant: DripsyFC<VariantProps> = (props: VariantProps) => {
+  const sx: SxProp = {
+    ...Variant.defaultSx,
+    ...props.sx,
+  };
   return <div {...props}>Variants component</div>;
 };
-Variant.defaultSx = {};
+Variant.defaultProps = {};
+Variant.defaultSx = {
+  boxSizing: "border-box",
+  display: "inline-block",
+  margin: 0,
+  minWidth: 0,
+  maxWidth: 0,
+};
 export default Variant;
