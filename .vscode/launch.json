@@ -1,0 +1,39 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "VSCode Run Extension in Browser",
+      "request": "launch",
+      "runtimeArgs": ["run-script", "vscode:run-in-browser"],
+      "runtimeExecutable": "npm",
+      "type": "pwa-node",
+      "outFiles": ["${workspaceFolder}/platforms/vscode/dist/**/*.js"],
+      "preLaunchTask": "npm: vscode:watch"
+    },
+    {
+      "name": "VSCode Run Extension",
+      "type": "pwa-extensionHost",
+      "debugWebWorkerHost": true,
+      "request": "launch",
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}/platforms/vscode",
+        "--extensionDevelopmentKind=web"
+      ],
+      "outFiles": ["${workspaceFolder}/platforms/vscode/dist/**/*.js"],
+      "preLaunchTask": "npm: vscode:watch"
+    },
+    {
+      "name": "VSCode Extension Tests",
+      "type": "extensionHost",
+      "debugWebWorkerHost": true,
+      "request": "launch",
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}/platforms/vscode",
+        "--extensionDevelopmentKind=web",
+        "--extensionTestsPath=${workspaceFolder}/platforms/vscode/dist/test/suite/index"
+      ],
+      "outFiles": ["${workspaceFolder}/platforms/vscode/dist/**/*.js"],
+      "preLaunchTask": "npm: vscode:watch"
+    }
+  ]
+}

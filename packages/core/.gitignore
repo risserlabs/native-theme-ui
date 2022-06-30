@@ -1,0 +1,20 @@
+# expo
+*.jks
+*.key
+*.mobileprovision
+*.orig.*
+*.p12
+*.p8
+.DS_Store
+.expo/
+dist/
+node_modules/
+npm-debug.*
+web-build/
+
+# application
+/.loki/.gitignore
+/.loki/current
+/.loki/difference
+/storybook-static
+tsconfig.tsbuildinfo

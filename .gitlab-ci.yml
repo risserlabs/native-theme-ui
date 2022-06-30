@@ -1,0 +1,14 @@
+stages:
+  - test
+
+visual-regression:
+  stage: test
+  image: registry.gitlab.com/risserlabs/community/images/loki:0.0.1
+  script:
+    - yarn
+    - make -s src/vr-test || true
+  artifacts:
+    paths:
+      - src/.loki
+    expire_in: 1 week
+  when: manual
