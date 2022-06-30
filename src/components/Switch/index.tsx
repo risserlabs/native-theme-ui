@@ -4,8 +4,17 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 30-06-2022 05:24:23
+
+ * Last Modified: 30-06-2022 05:39:43
  * Modified By: K S R P BHUSHAN
+=======
+<<<<<<< HEAD
+ * Last Modified: 30-06-2022 05:39:43
+ * Modified By: K S R P BHUSHAN
+=======
+ * Last Modified: 30-06-2022 05:39:43
+ * Modified By: K S R P BHUSHAN
+
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -25,12 +34,12 @@
 import React from "react";
 import { Switch as RNSwitch, SwitchProps as RNSwitchProps } from "react-native";
 import useThemeLookup from "../../hooks/useThemeLookup";
+
 import { DripsyFC } from "../../dripsyHelper";
 import { SxProp } from "dripsy";
 import { AutoContrast } from "@risserlabs/auto-contrast";
 export type SwitchProps = RNSwitchProps & {
   sx?: SxProp;
-  defaultChecked?: boolean;
   autocontrast?: AutoContrast;
 };
 
@@ -41,12 +50,6 @@ export type SwitchProps = RNSwitchProps & {
 
 const Switch: DripsyFC<SwitchProps> = (props: SwitchProps) => {
   const themeLookup = useThemeLookup();
-
-  const RNSwitchProps = { ...props };
-  delete RNSwitchProps.sx;
-  if (props.defaultChecked) {
-    RNSwitchProps.value = true;
-  }
 
   return (
     <RNSwitch

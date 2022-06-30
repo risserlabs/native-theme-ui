@@ -49,6 +49,7 @@ storiesOf("Card", module)
   })
   .add(
     "simple card",
+
     () => (
       <Card
         sx={{
@@ -62,6 +63,7 @@ storiesOf("Card", module)
         Simple Card
       </Card>
     ),
+
     {
       component: Card,
       status: { type: "beta" },
