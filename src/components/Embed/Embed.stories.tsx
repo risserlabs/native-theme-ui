@@ -4,7 +4,7 @@
  * File Created: 27-06-2022 05:47:44
  * Author: Ajith Kumar
  * -----
- * Last Modified: 28-06-2022 04:18:06
+ * Last Modified: 30-06-2022 04:55:24
  * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -31,17 +31,21 @@ import {
 } from "../../storybook";
 import Embed from "./index";
 
-storiesOf("Embed", module).add("default", createArgsStory(Embed), {
-  args: {
-    children: "I am a Embed Component",
-    autoContrast: Embed.defaultProps?.autoContrast,
-    ...createSxArgs(Embed),
-  },
-  argTypes: {
-    autoContrast: {
-      options: ["A", "AA", "AAA", false],
-      control: "select",
+storiesOf("Embed", module)
+  .add("default", createArgsStory(Embed), {
+    args: {
+      Children: "Embed Component",
+      autoContrast: Embed.defaultProps?.autoContrast,
+      ...createSxArgs(Embed),
     },
-    ...sxArgTypes,
-  },
-});
+    argTypes: {
+      autoContrast: {
+        options: ["A", "AA", "AAA", false],
+        control: "select",
+      },
+      ...sxArgTypes,
+    },
+  })
+  .add("Like Theme-UI", () => <Embed />, {
+    component: "Embed",
+  });

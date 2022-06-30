@@ -4,8 +4,8 @@
  * File Created: 20-06-2022 00:46:04
  * Author: Manikanta
  * -----
- * Last Modified: 28-06-2022 06:08:20
- * Modified By: Clay Risser
+ * Last Modified: 30-06-2022 04:28:45
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -41,6 +41,10 @@ const Embed: DripsyFC<EmbedProps> = (props: EmbedProps) => {
 
 Embed.defaultProps = {};
 
-Embed.defaultSx = {};
+Embed.defaultSx = {
+  padding: "100",
+  width: "100",
+  height: "100",
+};
 
 export default Embed;
