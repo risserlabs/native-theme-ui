@@ -1,0 +1,13 @@
+diff --git a/preset.js b/preset.js
+index 91802204b4eb8c2622f3b8e936f67871da262fce..555ab52e90bdfb7b1ad6a67e28bb9a0d23ea897f 100644
+--- a/preset.js
++++ b/preset.js
+@@ -65,7 +65,7 @@ module.exports = {
+             '@babel/preset-react',
+             'module:metro-react-native-babel-preset',
+           ],
+-          plugins: ['@babel/plugin-proposal-class-properties', ...babelPlugins],
++          plugins: [...babelPlugins],
+         },
+       });
+     }
