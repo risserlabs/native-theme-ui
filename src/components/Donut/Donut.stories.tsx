@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 28-06-2022 05:22:01
- * Modified By: Manikanta
+ * Last Modified: 30-06-2022 08:13:57
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -83,18 +83,6 @@ storiesOf("Donut", module)
         <Donut max={100} value={70}>
           70%
         </Donut>
-      </Box>
-    ),
-    {
-      component: Donut,
-      status: { type: "beta" },
-    }
-  )
-  .add(
-    "with background with 70%",
-    () => (
-      <Box sx={{ bg: "black", p: 4 }}>
-        <Donut max={100} value={70} />
       </Box>
     ),
     {

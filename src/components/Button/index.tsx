@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 07:34:18
  * Author: Clay Risser
  * -----
- * Last Modified: 29-06-2022 08:12:39
+ * Last Modified: 30-06-2022 08:12:46
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -31,7 +31,6 @@ import {
 } from "@risserlabs/auto-contrast";
 import { DripsyFC, DPressableProps } from "../../dripsyHelper";
 import Text from "../Text";
-import { ProgressBarAndroidComponent } from "react-native";
 
 type ButtonProps = Omit<DPressableProps, "variant"> & {
   autoContrast?: AutoContrast;
@@ -62,6 +61,7 @@ const Button: DripsyFC<ButtonProps> = (props: ButtonProps) => {
 Button.defaultProps = {};
 
 Button.defaultSx = {
+  alignSelf: "flex-start",
   appearance: "none",
   bg: "primary",
   border: 0,

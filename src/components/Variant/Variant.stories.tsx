@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 23:52:56
  * Author: Lavanya Katari
  * -----
- * Last Modified: 28-06-2022 04:28:51
- * Modified By: Lavanya Katari
+ * Last Modified: 30-06-2022 07:59:34
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -55,9 +55,7 @@ storiesOf("Variant", module)
           bg: args.background,
           p: 4,
         }}
-      >
-        <Variant>Hello</Variant>
-      </Box>
+      ></Box>
     ),
     {
       argTypes: {

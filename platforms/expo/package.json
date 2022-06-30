@@ -32,7 +32,7 @@
     "@expo/electron-adapter": "^0.0.55",
     "@expo/webpack-config": "^0.16.25",
     "@types/prettier": "^2.6.3",
-    "@types/react": "^18.0.14",
+    "@types/react": "~17.0.47",
     "@types/react-native": "^0.66.19",
     "@typescript-eslint/eslint-plugin": "^5.30.0",
     "@typescript-eslint/parser": "^5.30.0",

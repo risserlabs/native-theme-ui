@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 28-06-2022 23:22:25
- * Modified By: Hari Krishna
+ * Last Modified: 30-06-2022 08:13:22
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -45,7 +45,6 @@ Text.defaultProps = {};
 Text.defaultSx = {
   fontSize: 2,
   fontWeight: "bold",
-  display: "block",
 };
 
 export default Text;

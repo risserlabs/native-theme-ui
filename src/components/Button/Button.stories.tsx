@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 07:34:26
  * Author: Clay Risser
  * -----
- * Last Modified: 29-06-2022 08:09:05
+ * Last Modified: 30-06-2022 08:09:17
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -33,6 +33,7 @@ import {
 } from "../../storybook";
 import Button from "./index";
 import Text from "../Text";
+import Box from "../Box";
 
 storiesOf("atoms/Button", module)
   .add(
@@ -63,7 +64,7 @@ storiesOf("atoms/Button", module)
     }
   )
   .add("like theme-ui", () => (
-    <>
+    <Box>
       <Button sx={{ mr: 2 }} onPress={action("beep")}>
         Beep
       </Button>
@@ -73,7 +74,7 @@ storiesOf("atoms/Button", module)
       <Button sx={{ mr: 2 }} hidden>
         Hidden
       </Button>
-    </>
+    </Box>
   ))
   .add(
     "with autocontrast",

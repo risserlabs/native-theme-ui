@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 29-06-2022 05:50:24
+ * Last Modified: 30-06-2022 08:10:38
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -53,6 +53,8 @@ Box.defaultProps = {};
 
 Box.defaultSx = {
   boxSizing: "border-box",
+  display: "flex",
+  flexDirection: "row",
   margin: 0,
   minWidth: 0,
   width: "100%",
