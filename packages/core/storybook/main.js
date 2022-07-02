@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 30-06-2022 08:49:28
+ * Last Modified: 02-07-2022 06:45:21
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,8 +22,8 @@
  * limitations under the License.
  */
 
-const isNative =
-  process.argv.join(" ").indexOf("@storybook/react-native-server") > -1;
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const platform = require("../platform");
 
 const babelConfig = {
   presets: [],
@@ -43,7 +43,7 @@ module.exports = {
   stories: ["../**/*.stories.@(js|jsx|ts|tsx|md|mdx)"],
   logLevel: "debug",
   addons: [
-    ...(isNative
+    ...(platform === "STORYBOOK_EXPO"
       ? []
       : [
           "@etchteam/storybook-addon-status",
@@ -86,27 +86,33 @@ module.exports = {
           },
         ]),
   ],
-  typescript: {
-    check: true,
-    checkOptions: {},
-    reactDocgenTypescriptOptions: {},
-  },
-  core: {
-    builder: "webpack5",
-  },
-  features: {
-    buildStoriesJson: false,
-    postcss: false,
-    storyStoreV7: false,
-  },
-  webpackFinal: (webpackConfig) => {
-    patchBabel(webpackConfig, {
-      ...babelConfig,
-      plugins: [...(babelConfig.plugins || [])],
-    });
-    return { ...webpackConfig };
-  },
+  ...(platform === "STORYBOOK_EXPO"
+    ? {}
+    : {
+        typescript: {
+          check: true,
+          checkOptions: {},
+          reactDocgenTypescriptOptions: {},
+        },
+        core: {
+          builder: "webpack5",
+        },
+        features: {
+          buildStoriesJson: false,
+          postcss: false,
+          storyStoreV7: false,
+        },
+        webpackFinal: (webpackConfig) => {
+          patchBabel(webpackConfig, {
+            ...babelConfig,
+            plugins: [...(babelConfig.plugins || [])],
+          });
+          return { ...webpackConfig };
+        },
+      }),
 };
+
+console.log(module.exports);
 
 function patchBabel(webpackConfig, babelConfig) {
   webpackConfig.module.rules.forEach((rule) => {

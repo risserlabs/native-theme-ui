@@ -1,10 +1,10 @@
 /**
- * File: /storybook/storybook.web.ts
+ * File: /platform.js
  * Project: @native-theme-ui/core
- * File Created: 23-01-2022 02:18:40
+ * File Created: 02-07-2022 06:42:04
  * Author: Clay Risser
  * -----
- * Last Modified: 02-07-2022 06:48:32
+ * Last Modified: 02-07-2022 06:48:15
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,4 +22,14 @@
  * limitations under the License.
  */
 
-export * from "@risserlabs/storybook-react-native";
+module.exports =
+  process.argv.join(" ").indexOf("expo-cli") > -1 ||
+  process.argv.join(" ").indexOf("jest-worker") > -1
+    ? "STORYBOOK_EXPO"
+    : process.argv
+        .join(" ")
+        .indexOf("@risserlabs/storybook-react-native-server") > -1
+    ? "STORYBOOK_NATIVE"
+    : process.argv.join(" ").indexOf("babel") > -1
+    ? "BABEL_BUILD"
+    : null;
