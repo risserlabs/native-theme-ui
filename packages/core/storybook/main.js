@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 02-07-2022 06:45:21
+ * Last Modified: 02-07-2022 14:28:59
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -21,9 +21,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const platform = require("../platform");
 
 const babelConfig = {
   presets: [],
@@ -43,76 +40,66 @@ module.exports = {
   stories: ["../**/*.stories.@(js|jsx|ts|tsx|md|mdx)"],
   logLevel: "debug",
   addons: [
-    ...(platform === "STORYBOOK_EXPO"
-      ? []
-      : [
-          "@etchteam/storybook-addon-status",
-          "@luigiminardim/storybook-addon-globals-controls",
-          "@pbutlewski/storybook-html",
-          "@storybook/addon-a11y",
-          "@storybook/addon-ie11",
-          "@storybook/addon-links",
-          "@storybook/addon-storyshots",
-          "@storybook/addon-storysource",
-          "addon-screen-reader",
-          "storybook-addon-breakpoints",
-          "storybook-addon-grid",
-          "storybook-addon-paddings",
-          "storybook-addon-themes",
-          "storybook-color-picker",
-          "storybook-dark-mode",
-          "storybook-mobile",
-          {
-            name: "@storybook/addon-react-native-web",
-            options: {
-              babelPlugins: babelConfig.plugins,
-              modulesToTranspile: [
-                "dripsy",
-                "@dripsy/core",
-                "react-native-swipe-gestures",
-              ],
-            },
-          },
-          {
-            name: "@storybook/addon-essentials",
-            options: {
-              actions: true,
-              backgrounds: false,
-              controls: true,
-              docs: true,
-              toolbars: true,
-              viewport: true,
-            },
-          },
-        ]),
+    "@etchteam/storybook-addon-status",
+    "@luigiminardim/storybook-addon-globals-controls",
+    "@pbutlewski/storybook-html",
+    "@storybook/addon-a11y",
+    "@storybook/addon-ie11",
+    "@storybook/addon-links",
+    "@storybook/addon-storyshots",
+    "@storybook/addon-storysource",
+    "addon-screen-reader",
+    "storybook-addon-breakpoints",
+    "storybook-addon-grid",
+    "storybook-addon-paddings",
+    "storybook-addon-themes",
+    "storybook-color-picker",
+    "storybook-dark-mode",
+    "storybook-mobile",
+    {
+      name: "@storybook/addon-react-native-web",
+      options: {
+        babelPlugins: babelConfig.plugins,
+        modulesToTranspile: [
+          "dripsy",
+          "@dripsy/core",
+          "react-native-swipe-gestures",
+        ],
+      },
+    },
+    {
+      name: "@storybook/addon-essentials",
+      options: {
+        actions: true,
+        backgrounds: false,
+        controls: true,
+        docs: true,
+        toolbars: true,
+        viewport: true,
+      },
+    },
   ],
-  ...(platform === "STORYBOOK_EXPO"
-    ? {}
-    : {
-        typescript: {
-          check: true,
-          checkOptions: {},
-          reactDocgenTypescriptOptions: {},
-        },
-        core: {
-          builder: "webpack5",
-        },
-        features: {
-          buildStoriesJson: false,
-          postcss: false,
-          storyStoreV7: false,
-        },
-        webpackFinal: (webpackConfig) => {
-          patchBabel(webpackConfig, {
-            ...babelConfig,
-            plugins: [...(babelConfig.plugins || [])],
-          });
-          return { ...webpackConfig };
-        },
-      }),
+  typescript: {
+    check: true,
+    checkOptions: {},
+    reactDocgenTypescriptOptions: {},
+  },
+  core: {
+    builder: "webpack5",
+  },
+  features: {
+    buildStoriesJson: false,
+    postcss: false,
+    storyStoreV7: false,
+  },
+  webpackFinal: (webpackConfig) => {
+    patchBabel(webpackConfig, {
+      ...babelConfig,
+      plugins: [...(babelConfig.plugins || [])],
+    });
+    return { ...webpackConfig };
+  },
 };
-
-console.log(module.exports);
 
 function patchBabel(webpackConfig, babelConfig) {
   webpackConfig.module.rules.forEach((rule) => {

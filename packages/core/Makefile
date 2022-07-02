@@ -3,7 +3,7 @@
 # File Created: 30-06-2022 08:16:45
 # Author: Clay Risser
 # -----
-# Last Modified: 30-06-2022 12:10:22
+# Last Modified: 02-07-2022 12:58:12
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -69,6 +69,11 @@ $(ACTION)/build: $(call git_deps,\.([jt]sx?)$$)
 	@$(TSC) -p tsconfig.build.json -d
 	@$(call done,build)
 
+ACTIONS += prepare@storybook-ondevice~install ##
+$(ACTION)/prepare@storybook-ondevice: $(call git_deps,\.([jt]sx?)$$)
+	@$(SB_RN_GET_STORIES) --config-path $(CURDIR)/storybook/ondevice
+	@$(call done,prepare@storybook-ondevice)
+
 ACTIONS += build@storybook~test ##
 BUILD@STORYBOOK_TARGETS := storybook-static/index.html
 storybook-static/index.html:
@@ -103,7 +108,7 @@ start@storybook-native: | ~install +start@storybook-native ##
 	@$(STORYBOOK_NATIVE_SERVER) -c storybook
 
 .PHONY: start@storybook-web +start@storybook-web
-start@storybook-web: | ~install +start@storybook-web ##
+start@storybook-web: | ~prepare@storybook-ondevice +start@storybook-web ##
 +start@storybook-web:
 	@$(EXPO) start -c --web $(ARGS)
 

@@ -1,10 +1,10 @@
 /**
- * File: /storybook/storybook.web.ts
+ * File: /storybook/ondevice/expo.tsx
  * Project: @native-theme-ui/core
- * File Created: 23-01-2022 02:18:40
+ * File Created: 02-07-2022 12:47:49
  * Author: Clay Risser
  * -----
- * Last Modified: 02-07-2022 13:07:22
+ * Last Modified: 02-07-2022 14:08:56
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,4 +22,17 @@
  * limitations under the License.
  */
 
-export * from "@storybook/react-native";
+import React from "react";
+import { Platform } from "react-native";
+import { getStorybookUI, addDecorator } from "@storybook/react-native";
+import { DripsyProvider } from "dripsy";
+import * as themes from "../../themes";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// addDecorator();
+
+import "./storybook.requires";
+
+export default getStorybookUI({
+  host: Platform.OS === "android" ? "10.0.2.2" : "0.0.0.0",
+});

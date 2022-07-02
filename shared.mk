@@ -3,7 +3,7 @@
 # File Created: 23-01-2022 02:18:40
 # Author: Clay Risser
 # -----
-# Last Modified: 02-07-2022 06:48:00
+# Last Modified: 02-07-2022 13:04:55
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -32,12 +32,13 @@ export GM ?= command gm
 export JEST ?= $(call yarn_binary,jest)
 export LOKI ?= $(call yarn_binary,loki)
 export PRETTIER ?= $(call yarn_binary,prettier)
+export SB_RN_GET_STORIES ?= $(call yarn_binary,sb-rn-get-stories)
 export TSC ?= $(call yarn_binary,tsc)
 export WATCHMAN ?= watchman
 export STORYBOOK_NATIVE_SERVER ?= node $(call ternary,$(TEST) -f \
 	$(PROJECT_ROOT)/node_modules/@risserlabs/storybook-react-native-server/bin/index.js,$(PROJECT_ROOT)/node_modules/@risserlabs/storybook-react-native-server/bin/index.js,$(CURDIR)/node_modules/@risserlabs/storybook-react-native-server/bin/index.js) 
 export STORYBOOK_SERVER ?= node $(call ternary,$(TEST) -f \
-	$(PROJECT_ROOT)/node_modules/@risserlabs/storybook-react/bin/index.js,$(PROJECT_ROOT)/node_modules/@storybook/react/bin/index.js,$(CURDIR)/node_modules/@storybook/react/bin/index.js) 
+	$(PROJECT_ROOT)/node_modules/@storybook/react/bin/index.js,$(PROJECT_ROOT)/node_modules/@storybook/react/bin/index.js,$(CURDIR)/node_modules/@storybook/react/bin/index.js) 
 
 CACHE_ENVS += \
 	BABEL \

@@ -2,10 +2,11 @@
 /.loki/.gitignore
 /.loki/current
 /.loki/difference
-/storybook-static
-tsconfig.tsbuildinfo
-/lib
 /es
+/lib
+/storybook-static
+/storybook/ondevice/storybook.requires.js
+tsconfig.tsbuildinfo
 
 # expo
 *.jks

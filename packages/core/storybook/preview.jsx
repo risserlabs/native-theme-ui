@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 30-06-2022 08:49:28
+ * Last Modified: 02-07-2022 14:27:13
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,7 +24,6 @@
 
 import React from "react";
 import { DripsyProvider } from "dripsy";
-import { addDecorator } from "@storybook/react";
 import { themes as storybookThemes } from "@storybook/theming";
 import { withDesign } from "storybook-addon-designs";
 import { withGlobals } from "@luigiminardim/storybook-addon-globals-controls";
@@ -55,20 +54,19 @@ export const parameters = {
       color: theme.colors.primary,
     })),
     Decorator: (props) => (
+      // eslint-disable-next-line react/prop-types
       <DripsyProvider theme={props.theme.themeUI}>
+        {/* eslint-disable-next-line react/prop-types */}
         {props.children}
       </DripsyProvider>
     ),
   },
 };
 
-export const loaders = [];
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const withDisplayGlobals = withGlobals((Story, _globalValues) => <Story />);
 
-addDecorator(withDesign);
-addDecorator(withDisplayGlobals);
-addDecorator(withThemes);
+export const decorators = [withDesign, withDisplayGlobals, withThemes];
 
 export const globalTypes = {
   boolean: {

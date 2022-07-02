@@ -1,10 +1,10 @@
 /**
- * File: /storybook/storybook.web.ts
+ * File: /storybook/ondevice/preview.js
  * Project: @native-theme-ui/core
- * File Created: 23-01-2022 02:18:40
+ * File Created: 02-07-2022 12:47:30
  * Author: Clay Risser
  * -----
- * Last Modified: 02-07-2022 13:07:22
+ * Last Modified: 02-07-2022 14:10:38
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,4 +22,21 @@
  * limitations under the License.
  */
 
-export * from "@storybook/react-native";
+import { withBackgrounds } from "@storybook/addon-ondevice-backgrounds";
+import withTheme from "./withTheme";
+
+export const decorators = [withTheme, withBackgrounds];
+
+export const parameters = {
+  backgrounds: [
+    { name: "plain", value: "white", default: true },
+    { name: "warm", value: "hotpink" },
+    { name: "cool", value: "deepskyblue" },
+  ],
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
+    },
+  },
+};

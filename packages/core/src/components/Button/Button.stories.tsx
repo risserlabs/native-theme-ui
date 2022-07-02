@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 07:34:26
  * Author: Clay Risser
  * -----
- * Last Modified: 30-06-2022 10:04:22
+ * Last Modified: 02-07-2022 14:54:15
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -57,7 +57,7 @@ storiesOf("atoms/Button", module)
         disabled: { control: { type: "boolean" } },
         autoContrast: {
           options: ["A", "AA", "AAA", false],
-          control: "select",
+          control: { type: "select" },
         },
         ...sxArgTypes,
       },

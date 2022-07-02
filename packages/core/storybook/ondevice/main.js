@@ -1,10 +1,10 @@
 /**
- * File: /storybook/storybook.web.ts
+ * File: /storybook/ondevice/main.js
  * Project: @native-theme-ui/core
- * File Created: 23-01-2022 02:18:40
+ * File Created: 02-07-2022 12:46:47
  * Author: Clay Risser
  * -----
- * Last Modified: 02-07-2022 13:07:22
+ * Last Modified: 02-07-2022 14:52:32
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,4 +22,15 @@
  * limitations under the License.
  */
 
-export * from "@storybook/react-native";
+module.exports = {
+  stories: [
+    "../../**/Button.stories.@(js|jsx|ts|tsx|md|mdx)",
+    // "../../**/*.stories.@(js|jsx|ts|tsx|md|mdx)",
+  ],
+  addons: [
+    "@storybook/addon-ondevice-notes",
+    "@storybook/addon-ondevice-controls",
+    "@storybook/addon-ondevice-backgrounds",
+    "@storybook/addon-ondevice-actions",
+  ],
+};

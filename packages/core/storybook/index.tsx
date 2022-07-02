@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 30-06-2022 10:48:03
+ * Last Modified: 02-07-2022 14:40:37
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -110,18 +110,18 @@ export function createSxArgs(
 }
 
 export const sxArgTypes = {
-  sxBg: { control: "color" },
-  sxColor: { control: "color" },
-  sxM: { control: "number" },
-  sxP: { control: "number" },
-  sxHeight: { control: "text" },
-  sxWidth: { control: "text" },
-  sxMinWidth: { control: "number" },
-  sxMaxWidth: { control: "number" },
-  sxBorderWidth: { control: "number" },
-  sxBorderRadius: { control: "text" },
+  sxBg: { control: { type: "color" } },
   sxBorderColor: { control: { type: "color" } },
-  sxFontSize: { control: "number" },
+  sxBorderRadius: { control: { type: "text" } },
+  sxBorderWidth: { control: { type: "text" } },
+  sxColor: { control: { type: "color" } },
+  sxFontSize: { control: { type: "text" } },
+  sxHeight: { control: { type: "text" } },
+  sxM: { control: { type: "text" } },
+  sxMaxWidth: { control: { type: "text" } },
+  sxMinWidth: { control: { type: "text" } },
+  sxP: { control: { type: "text" } },
+  sxWidth: { control: { type: "text" } },
 };
 
 export function createSxArgTypes(omit: string[] = []) {
