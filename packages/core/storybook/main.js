@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 06:56:49
+ * Last Modified: 03-07-2022 10:06:41
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -40,7 +40,12 @@ const babelConfig = {
 };
 
 module.exports = {
-  stories: ["../**/*.stories.@(js|jsx|ts|tsx|md|mdx)"],
+  stories: [
+    "../**/Button.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../**/Box.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../**/Text.stories.@(js|jsx|ts|tsx|md|mdx)",
+    // "../**/*.stories.@(js|jsx|ts|tsx|md|mdx)"
+  ],
   logLevel: "debug",
   addons: [
     "@etchteam/storybook-addon-status",
