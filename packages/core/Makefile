@@ -3,7 +3,7 @@
 # File Created: 30-06-2022 08:16:45
 # Author: Clay Risser
 # -----
-# Last Modified: 02-07-2022 12:58:12
+# Last Modified: 03-07-2022 06:37:26
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -100,7 +100,7 @@ $(ACTION)/build@storybook-ios: $(call git_deps,\.([jt]sx?)$$)
 .PHONY: start@storybook +start@storybook
 start@storybook: | ~install +start@storybook ##
 +start@storybook:
-	@$(STORYBOOK_SERVER) -c storybook -p 6006
+	@$(STORYBOOK_SERVER) --no-version-updates -c storybook -p 6006
 
 .PHONY: start@storybook-native +start@storybook-native
 start@storybook-native: | ~install +start@storybook-native ##

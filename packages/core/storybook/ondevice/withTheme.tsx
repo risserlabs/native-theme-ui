@@ -4,7 +4,7 @@
  * File Created: 02-07-2022 13:20:19
  * Author: Clay Risser
  * -----
- * Last Modified: 02-07-2022 14:13:37
+ * Last Modified: 03-07-2022 06:14:56
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,7 +25,6 @@
 import React, { ReactNode } from "react";
 import { DripsyProvider } from "dripsy";
 import { makeDecorator, LegacyStoryFn, StoryWrapper } from "@storybook/addons";
-import { StoryContext } from "@storybook/csf";
 import * as themes from "../../themes";
 
 const withTheme = makeDecorator({
@@ -35,7 +34,7 @@ const withTheme = makeDecorator({
   wrapper: ((
     getStory: LegacyStoryFn<ReactNode>,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    context: StoryContext<any, any>
+    context: any
   ) => {
     return (
       <DripsyProvider theme={themes.main as never}>

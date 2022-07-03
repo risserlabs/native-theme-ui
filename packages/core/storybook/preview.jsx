@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 02-07-2022 14:27:13
+ * Last Modified: 03-07-2022 06:32:39
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -68,11 +68,4 @@ const withDisplayGlobals = withGlobals((Story, _globalValues) => <Story />);
 
 export const decorators = [withDesign, withDisplayGlobals, withThemes];
 
-export const globalTypes = {
-  boolean: {
-    name: "Boolean",
-    description: "Boolean Description",
-    defaultValue: true,
-    control: { type: "boolean" },
-  },
-};
+export const globalTypes = {};
