@@ -1,14 +1,29 @@
 stages:
   - test
+  - publish
 
 visual-regression:
   stage: test
   image: registry.gitlab.com/risserlabs/community/images/loki:0.0.1
   script:
     - yarn
-    - make -s src/vr-test || true
+    - make -s vr-test || true
   artifacts:
     paths:
-      - src/.loki
+      - packages/core/.loki
     expire_in: 1 week
+  when: manual
+
+pages:
+  stage: publish
+  image: registry.gitlab.com/risserlabs/community/images/node:16.14.2
+  script:
+    - make -s build@storybook
+    - rm -rf public
+    - cp -r packages/core/storybook-static public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
   when: manual

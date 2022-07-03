@@ -134,15 +134,18 @@ export const sxArgTypes = {
 
 export function createSxArgTypes(omit: string[] = []) {
   const omitSet = new Set(omit);
-  return Object.entries(sxArgTypes).reduce((
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    sxArgTypes: Record<string, Record<string, any>>,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    [key, value]: [string, Record<string, any>]
-  ) => {
-    if (!omitSet.has(key)) sxArgTypes[key] = value;
-    return sxArgTypes;
-  }, {});
+  return Object.entries(sxArgTypes).reduce(
+    (
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      sxArgTypes: Record<string, Record<string, any>>,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      [key, value]: [string, Record<string, any>]
+    ) => {
+      if (!omitSet.has(key)) sxArgTypes[key] = value;
+      return sxArgTypes;
+    },
+    {}
+  );
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
