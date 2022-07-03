@@ -16,7 +16,7 @@ visual-regression:
 
 pages:
   stage: publish
-  image: registry.gitlab.com/risserlabs/community/images/node:16.14.2
+  image: registry.gitlab.com/risserlabs/community/images/loki:0.0.1
   script:
     - make -s build@storybook
     - rm -rf public
