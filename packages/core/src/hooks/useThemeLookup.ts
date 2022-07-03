@@ -1,10 +1,10 @@
 /**
- * File: /hooks/useThemeLookup.ts
+ * File: /src/hooks/useThemeLookup.ts
  * Project: @native-theme-ui/core
  * File Created: 13-06-2022 00:52:46
  * Author: Clay Risser
  * -----
- * Last Modified: 30-06-2022 08:49:28
+ * Last Modified: 03-07-2022 10:23:16
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import { useSx } from "dripsy";
+import { useSx } from "@dripsy/core";
 
 export default function useThemeLookup() {
   const sx = useSx();

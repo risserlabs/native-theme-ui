@@ -3,7 +3,7 @@
 # File Created: 04-12-2021 07:22:50
 # Author: Clay Risser <email@clayrisser.com>
 # -----
-# Last Modified: 30-06-2022 08:48:53
+# Last Modified: 03-07-2022 10:44:00
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -58,6 +58,9 @@ $(ACTION)/test: $(call git_deps,\.([jt]sx?)$$)
 ACTIONS += build ##
 $(ACTION)/build: $(call git_deps,\.([jt]sx?)$$)
 	@$(call workspace_foreach,build,$(ARGS))
+	@$(BABEL) --env-name umd src -d lib --extensions '.js,.jsx,.ts,.tsx' --source-maps
+	@$(BABEL) --env-name esm src -d es --extensions '.js,.jsx,.ts,.tsx' --source-maps
+	@$(TSC) -p tsconfig.build.json -d
 	@$(call done,build)
 
 .PHONY: upgrade

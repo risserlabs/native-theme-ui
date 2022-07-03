@@ -4,7 +4,7 @@
  * File Created: 14-06-2022 07:52:25
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 09:04:20
+ * Last Modified: 03-07-2022 10:23:15
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,7 +23,7 @@
  */
 
 import { FC } from "react";
-import { SxProp } from "dripsy";
+import { SxProp } from "@dripsy/core";
 import { TextInput as RNTextInput } from "react-native";
 
 export type DPressableProps = Pick<

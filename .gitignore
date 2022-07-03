@@ -1,14 +1,16 @@
 # app
 **/*.env
 *.hprof
+*.log
 .DS_Store
 .expo
 .vercel
 .yarn/install-state.gz
 .yarn/unplugged
+/es
+/lib
 node_modules/
 yarn-error.log
-*.log
 
 # mkpm
 **/.mkpm

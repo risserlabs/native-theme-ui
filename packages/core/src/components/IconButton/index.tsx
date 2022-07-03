@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 30-06-2022 10:23:50
+ * Last Modified: 03-07-2022 10:23:15
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,7 +23,7 @@
  */
 
 import React, { FC } from "react";
-import { SxProp } from "dripsy";
+import { SxProp } from "@dripsy/core";
 import {
   PressableProps as RNPressableProps,
   ImageProps as RNImageProps,

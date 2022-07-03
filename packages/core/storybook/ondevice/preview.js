@@ -4,7 +4,7 @@
  * File Created: 02-07-2022 12:47:30
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 07:07:07
+ * Last Modified: 03-07-2022 10:13:07
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -32,10 +32,4 @@ export const parameters = {
     { name: "light", value: "white", default: true },
     { name: "dark", value: "#262626" },
   ],
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/,
-    },
-  },
 };

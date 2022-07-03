@@ -4,7 +4,7 @@
  * File Created: 27-06-2022 04:22:36
  * Author: Lavanya Katari
  * -----
- * Last Modified: 03-07-2022 07:02:17
+ * Last Modified: 03-07-2022 10:23:15
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -30,7 +30,7 @@ import {
   createSxArgs,
   sxArgTypes,
 } from "../../../storybook";
-import { View } from "dripsy";
+import { View } from "@dripsy/core";
 import Input from "./index";
 import Text from "../Text";
 import Field from ".";

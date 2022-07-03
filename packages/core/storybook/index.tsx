@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 09:35:39
+ * Last Modified: 03-07-2022 10:23:16
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,7 +23,7 @@
  */
 
 import React, { ComponentType, ReactNode } from "react";
-import { SxProp, Sx } from "dripsy";
+import { SxProp, Sx } from "@dripsy/core";
 export * from "./storybook";
 
 export function getProps(args: Record<string, unknown>) {

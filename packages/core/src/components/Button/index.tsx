@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 07:34:18
  * Author: Clay Risser
  * -----
- * Last Modified: 02-07-2022 13:49:26
+ * Last Modified: 03-07-2022 10:23:16
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,7 +23,7 @@
  */
 
 import React, { ReactNode } from "react";
-import { Pressable as DPressable } from "dripsy";
+import { Pressable as DPressable } from "@dripsy/core";
 import {
   AutoContrast,
   useAutoContrast,

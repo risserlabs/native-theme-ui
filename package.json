@@ -10,6 +10,10 @@
   },
   "license": "Apache-2.0",
   "author": "Risser Labs LLC <howdy@risserlabs.com> (https://risserlabs.com)",
+  "files": [
+    "es",
+    "lib"
+  ],
   "workspaces": [
     "packages/*"
   ],
@@ -21,7 +25,27 @@
     "@types/react-native": "0.67.6"
   },
   "devDependencies": {
+    "@babel/cli": "^7.18.6",
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@babel/preset-flow": "^7.18.6",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@types/babel__preset-env": "^7.9.2",
+    "@types/eslint": "^8.4.5",
+    "@typescript-eslint/eslint-plugin": "^5.30.4",
+    "@typescript-eslint/parser": "^5.30.4",
     "cspell": "^6.2.2",
-    "prettier": "^2.7.1"
-  }
+    "eslint": "^8.19.0",
+    "eslint-plugin-react": "^7.30.1",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@native-theme-ui/core": "0.0.1"
+  },
+  "eslintIgnore": [
+    "es",
+    "lib"
+  ]
 }

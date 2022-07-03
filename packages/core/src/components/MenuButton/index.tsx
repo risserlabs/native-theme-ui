@@ -1,10 +1,10 @@
 /**
- * File: /components/MenuButton/index.tsx
+ * File: /src/components/MenuButton/index.tsx
  * Project: @native-theme-ui/core
  * File Created: 19-06-2022 06:50:27
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 30-06-2022 08:49:28
+ * Last Modified: 03-07-2022 10:23:15
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,7 +25,7 @@
 import React, { FC } from "react";
 import { AutoContrast } from "@risserlabs/auto-contrast";
 // import { Pressable as RNPressable } from 'react-native';
-import { Pressable as DPressable, SxProp } from "dripsy";
+import { Pressable as DPressable, SxProp } from "@dripsy/core";
 type MenuButtonProps = {
   autoContrast?: AutoContrast;
   sx?: SxProp;
