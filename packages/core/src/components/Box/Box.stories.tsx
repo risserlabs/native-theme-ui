@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 07:13:53
+ * Last Modified: 03-07-2022 09:01:19
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,9 +24,14 @@
 
 import React from "react";
 import { View } from "dripsy";
-import { createArgsStory, createSxArgs, sxArgTypes } from "../../../storybook";
 import Box from "./index";
 import Text from "../Text";
+import {
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes,
+  autoContrastArgType,
+} from "../../../storybook";
 
 export default {
   title: "components/Box",
@@ -43,13 +48,8 @@ box.args = {
   ...createSxArgs(Box),
 };
 box.argTypes = {
-  argTypes: {
-    autoContrast: {
-      options: ["A", "AA", "AAA", false],
-      control: { type: "select" },
-    },
-    ...sxArgTypes,
-  },
+  ...autoContrastArgType,
+  ...sxArgTypes,
 };
 
 export const likeThemeUi = () => (

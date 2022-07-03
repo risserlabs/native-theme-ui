@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 07:02:17
+ * Last Modified: 03-07-2022 09:08:44
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,56 +23,54 @@
  */
 
 import React from "react";
-//import Paragraph from '../Paragraph';
 import Box from "../Box";
 import Text from "./index";
 import {
   Args,
+  autoContrastArgType,
   createArgsStory,
   createSxArgs,
-  storiesOf,
   sxArgTypes,
 } from "../../../storybook";
 
-storiesOf("Text", module)
-  //.add('default', () => <Text>Hello, world!</Text>, {
-  //component: Text,
-  //status: { type: 'beta' }
-  //})
+export default {
+  title: "components/Text",
+  component: Text,
+  parameters: {
+    status: { type: "beta" },
+  },
+};
 
-  .add("default", createArgsStory(Text), {
-    args: {
-      children: "I am Text Editor",
-      ...createSxArgs(Text),
-    },
-    argTypes: {
-      autoContrast: {
-        options: ["A", "AA", "AAA", false],
-        control: { type: "select" },
-      },
-      ...sxArgTypes,
-    },
-  })
-  .add(
-    "with background",
-    (args: Args) => (
-      <Box
-        sx={{
-          bg: args.background,
-          p: 4,
-          fontWeight: "bold",
-        }}
-      >
-        <Text>Hello, world!</Text>
-      </Box>
-    ),
-    {
-      argTypes: {
-        background: { control: { type: "color" } },
-        autoContrast: {
-          options: ["A", "AA", "AAA", false],
-          control: { type: "select" },
-        },
-      },
-    }
-  );
+export const text = createArgsStory(Text);
+text.args = {
+  children: "I am some text",
+  autoContrast: Text.defaultProps?.autoContrast,
+  ...createSxArgs(Text),
+};
+text.argTypes = {
+  ...autoContrastArgType,
+  ...sxArgTypes,
+};
+
+export const withBackground = (args: Args) => (
+  <Box
+    sx={{
+      bg: args.background,
+      p: 4,
+      fontWeight: "bold",
+    }}
+  >
+    <Text>Hello, world!</Text>
+  </Box>
+);
+withBackground.args = {
+  background: "background",
+  autoContrast: "AAA",
+};
+withBackground.argTypes = {
+  background: { control: { type: "color" } },
+  autoContrast: {
+    options: ["A", "AA", "AAA", false],
+    control: { type: "select" },
+  },
+};

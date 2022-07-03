@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 07:34:26
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 07:20:50
+ * Last Modified: 03-07-2022 09:11:12
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,15 +24,16 @@
 
 import React from "react";
 import { action } from "@storybook/addon-actions";
+import Button from "./index";
+import Text from "../Text";
+import Box from "../Box";
 import {
   Args,
   createArgsStory,
   createSxArgs,
   sxArgTypes,
+  autoContrastArgType,
 } from "../../../storybook";
-import Button from "./index";
-import Text from "../Text";
-import Box from "../Box";
 
 export default {
   title: "components/Button",
@@ -42,26 +43,23 @@ export default {
   },
 };
 
-export const box = createArgsStory(Button, {
+export const button = createArgsStory(Button, {
   onPress: action("I was pressed"),
   onLongPress: action("I was long pressed"),
   onPressIn: action("I was pressed in"),
   onPressOut: action("I was pressed out"),
 });
-box.args = {
+button.args = {
   children: "Click Me",
   hidden: Button.defaultProps?.hidden,
   autoContrast: Button.defaultProps?.autoContrast,
   disabled: Button.defaultProps?.disabled,
   ...createSxArgs(Button),
 };
-box.argTypes = {
+button.argTypes = {
   hidden: { control: { type: "boolean" } },
   disabled: { control: { type: "boolean" } },
-  autoContrast: {
-    options: ["A", "AA", "AAA", false],
-    control: { type: "select" },
-  },
+  ...autoContrastArgType,
   ...sxArgTypes,
 };
 
@@ -86,9 +84,6 @@ export const withAutocontrast = (args: Args) => (
 );
 withAutocontrast.args = { autoContrast: "AAA", background: "black" };
 withAutocontrast.argTypes = {
-  autoContrast: {
-    options: ["A", "AA", "AAA", false],
-    control: { type: "select" },
-  },
+  ...autoContrastArgType,
   background: { control: { type: "color" } },
 };

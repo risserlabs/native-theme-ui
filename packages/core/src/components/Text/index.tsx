@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 30-06-2022 10:24:05
+ * Last Modified: 03-07-2022 09:04:47
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,14 +23,12 @@
  */
 
 import React from "react";
-import { Text as DText, SxProp } from "dripsy";
-import { TextProps as RNTextProps } from "react-native";
+import { Text as DText } from "dripsy";
 import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
-import { DripsyFC } from "../../dripsyHelper";
+import { DripsyFC, DTextProps } from "../../dripsyHelper";
 
-export type TextProps = RNTextProps & {
+export type TextProps = DTextProps & {
   autoContrast?: AutoContrast;
-  sx?: SxProp;
 };
 
 const Text: DripsyFC<TextProps> = (props: TextProps) => {
@@ -40,11 +38,9 @@ const Text: DripsyFC<TextProps> = (props: TextProps) => {
   });
   return <DText {...props} sx={sx}></DText>;
 };
+
 Text.defaultProps = {};
 
-Text.defaultSx = {
-  fontSize: 2,
-  fontWeight: "bold",
-};
+Text.defaultSx = {};
 
 export default Text;

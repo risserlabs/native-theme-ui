@@ -1,0 +1,36 @@
+diff --git a/dist/cjs/inferControls.js b/dist/cjs/inferControls.js
+index 61d74b4bae01573875fb6dd52201608f29c09e27..27dd1e9c10f66937ebd1936e985da930fd8ea1dc 100644
+--- a/dist/cjs/inferControls.js
++++ b/dist/cjs/inferControls.js
+@@ -37,7 +37,6 @@ var inferControl = function inferControl(argType, name, matchers) {
+       };
+     }
+ 
+-    _clientLogger.logger.warn("Addon controls: Control of type color only supports string, received \"".concat(controlType, "\" instead"));
+   } // args that end with date e.g. purchaseDate
+ 
+ 
+diff --git a/dist/esm/inferControls.js b/dist/esm/inferControls.js
+index 12fda4d46307ca935d48916f40ca331ab210c650..4eb86efe17c1a1251cad61e908ad6f8bc36f1d62 100644
+--- a/dist/esm/inferControls.js
++++ b/dist/esm/inferControls.js
+@@ -24,7 +24,6 @@ var inferControl = function inferControl(argType, name, matchers) {
+       };
+     }
+ 
+-    logger.warn("Addon controls: Control of type color only supports string, received \"".concat(controlType, "\" instead"));
+   } // args that end with date e.g. purchaseDate
+ 
+ 
+diff --git a/dist/modern/inferControls.js b/dist/modern/inferControls.js
+index ec306f12c944ec54ba18336ac3b71a5d054483b1..19f6bcf382d4c7c492b162fda9a080e759ea2fa5 100644
+--- a/dist/modern/inferControls.js
++++ b/dist/modern/inferControls.js
+@@ -25,7 +25,6 @@ const inferControl = (argType, name, matchers) => {
+       };
+     }
+ 
+-    logger.warn(`Addon controls: Control of type color only supports string, received "${controlType}" instead`);
+   } // args that end with date e.g. purchaseDate
+ 
+ 

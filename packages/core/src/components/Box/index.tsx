@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 30-06-2022 10:24:07
+ * Last Modified: 03-07-2022 08:50:05
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -29,6 +29,7 @@ import {
   useAutoContrast,
   AutoContrast,
 } from "@risserlabs/auto-contrast";
+import Text from "../Text";
 import { DBoxProps, DripsyFC, PatchVariant } from "../../dripsyHelper";
 
 export type BoxProps = PatchVariant<DBoxProps> & {
@@ -40,11 +41,15 @@ const Box: DripsyFC<BoxProps> = (props: BoxProps) => {
     ...Box.defaultSx,
     ...props.sx,
   });
+  const children =
+    typeof props.children === "string" ? (
+      <Text>{props.children}</Text>
+    ) : (
+      props.children
+    );
   return (
     <DBox {...(props as DBoxProps)} sx={sx}>
-      <BackgroundColorProvider sx={sx}>
-        {props.children}
-      </BackgroundColorProvider>
+      <BackgroundColorProvider sx={sx}>{children}</BackgroundColorProvider>
     </DBox>
   );
 };

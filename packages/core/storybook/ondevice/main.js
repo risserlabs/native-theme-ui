@@ -4,7 +4,7 @@
  * File Created: 02-07-2022 12:46:47
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 07:23:39
+ * Last Modified: 03-07-2022 09:02:25
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -26,7 +26,7 @@ module.exports = {
   stories: [
     "../../**/Button.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Box.stories.@(js|jsx|ts|tsx|md|mdx)",
-    "../../**/Close.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Text.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/*.stories.@(js|jsx|ts|tsx|md|mdx)",
   ],
   addons: [

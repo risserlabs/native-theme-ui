@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 07:23:19
+ * Last Modified: 03-07-2022 08:54:38
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -42,7 +42,7 @@ close.args = {
 };
 close.argTypes = {
   autoContrast: {
-    options: ["A", "AA", "AAA", false],
+    options: ["A", "AA", "AAA", "false"],
   },
   ...sxArgTypes,
 };

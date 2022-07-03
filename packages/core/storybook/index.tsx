@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 06:13:30
+ * Last Modified: 03-07-2022 09:35:39
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -110,6 +110,13 @@ export function createSxArgs(
   }, {});
 }
 
+export const autoContrastArgType = {
+  autoContrast: {
+    options: ["A", "AA", "AAA", false],
+    control: { type: "select" },
+  },
+};
+
 export const sxArgTypes = {
   sxBg: { control: { type: "color" } },
   sxBorderColor: { control: { type: "color" } },
@@ -127,18 +134,15 @@ export const sxArgTypes = {
 
 export function createSxArgTypes(omit: string[] = []) {
   const omitSet = new Set(omit);
-  return Object.entries(sxArgTypes).reduce(
-    (
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      sxArgTypes: Record<string, Record<string, any>>,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      [key, value]: [string, Record<string, any>]
-    ) => {
-      if (!omitSet.has(key)) sxArgTypes[key] = value;
-      return sxArgTypes;
-    },
-    {}
-  );
+  return Object.entries(sxArgTypes).reduce((
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    sxArgTypes: Record<string, Record<string, any>>,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    [key, value]: [string, Record<string, any>]
+  ) => {
+    if (!omitSet.has(key)) sxArgTypes[key] = value;
+    return sxArgTypes;
+  }, {});
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
