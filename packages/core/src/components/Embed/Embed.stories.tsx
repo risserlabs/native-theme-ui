@@ -4,7 +4,7 @@
  * File Created: 27-06-2022 05:47:44
  * Author: Ajith Kumar
  * -----
- * Last Modified: 30-06-2022 10:04:16
+ * Last Modified: 03-07-2022 07:02:17
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -41,7 +41,7 @@ storiesOf("Embed", module)
     argTypes: {
       autoContrast: {
         options: ["A", "AA", "AAA", false],
-        control: "select",
+        control: { type: "select" },
       },
       ...sxArgTypes,
     },

@@ -4,7 +4,7 @@
  * File Created: 29-06-2022 07:38:31
  * Author: Clay Risser
  * -----
- * Last Modified: 30-06-2022 08:49:28
+ * Last Modified: 03-07-2022 06:56:35
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,17 +24,15 @@
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const createExpoWebpackConfigAsync = require("@expo/webpack-config");
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const modulesToTranspile = require("./src/modulesToTranspile.json");
 
 module.exports = (config, argv) =>
   createExpoWebpackConfigAsync(
     {
       ...config,
       babel: {
-        dangerouslyAddModulePathsToTranspile: [
-          "dripsy",
-          "@dripsy/core",
-          "@react-native-community/datetimepicker",
-        ],
+        dangerouslyAddModulePathsToTranspile: modulesToTranspile,
       },
     },
     argv

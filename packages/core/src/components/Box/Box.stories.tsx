@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 30-06-2022 10:04:27
+ * Last Modified: 03-07-2022 07:13:53
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,85 +24,87 @@
 
 import React from "react";
 import { View } from "dripsy";
-import {
-  storiesOf,
-  createArgsStory,
-  createSxArgs,
-  sxArgTypes,
-} from "../../../storybook";
+import { createArgsStory, createSxArgs, sxArgTypes } from "../../../storybook";
 import Box from "./index";
 import Text from "../Text";
 
-storiesOf("atoms/Box", module)
-  .addParameters({
+export default {
+  title: "components/Box",
+  component: Box,
+  parameters: {
     status: { type: "beta" },
-  })
-  .add("default", createArgsStory(Box), {
-    args: {
-      children: "I am a box",
-      autoContrast: Box.defaultProps?.autoContrast,
-      ...createSxArgs(Box),
+  },
+};
+
+export const box = createArgsStory(Box);
+box.args = {
+  children: "I am a box",
+  autoContrast: Box.defaultProps?.autoContrast,
+  ...createSxArgs(Box),
+};
+box.argTypes = {
+  argTypes: {
+    autoContrast: {
+      options: ["A", "AA", "AAA", false],
+      control: { type: "select" },
     },
-    argTypes: {
-      autoContrast: {
-        options: ["A", "AA", "AAA", false],
-        control: "select",
-      },
-      ...sxArgTypes,
+    ...sxArgTypes,
+  },
+};
+
+export const likeThemeUi = () => (
+  <Box
+    sx={{
+      p: 4,
+      color: "white",
+      bg: "primary",
+    }}
+  >
+    <Text>Beep</Text>
+  </Box>
+);
+
+export const multiple = () => {
+  const style = {
+    box: {
+      color: "white",
+      height: 200,
+      width: 200,
+      margin: 4,
     },
-  })
-  .add("like theme-ui", () => (
-    <Box
-      sx={{
-        p: 4,
-        color: "white",
-        bg: "primary",
-      }}
-    >
-      <Text>Beep</Text>
-    </Box>
-  ))
-  .add("multiple", () => {
-    const style = {
-      box: {
-        color: "white",
-        height: 200,
-        width: 200,
-        margin: 4,
-      },
-      box1: {
-        bg: "primary",
-      },
-      box2: {
-        bg: "secondary",
-      },
-    };
-    return (
-      <View sx={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
-        <Box
-          sx={{
-            ...style.box,
-            ...style.box1,
-          }}
-        />
-        <Box
-          sx={{
-            ...style.box,
-            ...style.box2,
-          }}
-        />
-        <Box
-          sx={{
-            ...style.box,
-            ...style.box1,
-          }}
-        />
-        <Box
-          sx={{
-            ...style.box,
-            ...style.box2,
-          }}
-        />
-      </View>
-    );
-  });
+    box1: {
+      bg: "primary",
+    },
+    box2: {
+      bg: "secondary",
+    },
+  };
+  return (
+    <View sx={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
+      <Box
+        sx={{
+          ...style.box,
+          ...style.box1,
+        }}
+      />
+      <Box
+        sx={{
+          ...style.box,
+          ...style.box2,
+        }}
+      />
+      <Box
+        sx={{
+          ...style.box,
+          ...style.box1,
+        }}
+      />
+      <Box
+        sx={{
+          ...style.box,
+          ...style.box2,
+        }}
+      />
+    </View>
+  );
+};

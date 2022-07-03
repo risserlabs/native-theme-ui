@@ -4,7 +4,7 @@
  * File Created: 27-06-2022 23:52:56
  * Author: Lavanya Katari
  * -----
- * Last Modified: 30-06-2022 10:03:56
+ * Last Modified: 03-07-2022 07:02:17
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -62,7 +62,7 @@ storiesOf("Variant", module)
         background: { control: { type: "color" } },
         autoContrast: {
           options: ["A", "AA", "AAA", false],
-          control: "select",
+          control: { type: "select" },
         },
       },
     }

@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 06:31:07
+ * Last Modified: 03-07-2022 06:56:49
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -21,6 +21,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const modulesToTranspile = require("../src/modulesToTranspile.json");
 
 const babelConfig = {
   presets: [],
@@ -60,11 +63,7 @@ module.exports = {
       name: "@storybook/addon-react-native-web",
       options: {
         babelPlugins: babelConfig.plugins,
-        modulesToTranspile: [
-          "dripsy",
-          "@dripsy/core",
-          "react-native-swipe-gestures",
-        ],
+        modulesToTranspile,
       },
     },
     {

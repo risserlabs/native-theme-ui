@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 06:16:36
  * Author: Harikittu46
  * -----
- * Last Modified: 30-06-2022 10:04:01
+ * Last Modified: 03-07-2022 07:02:17
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -50,7 +50,7 @@ storiesOf("Select", module)
       argTypes: {
         autoContrast: {
           options: ["A", "AA", "AAA", false],
-          control: "select",
+          control: { type: "select" },
         },
         ...sxArgTypes,
       },
@@ -82,7 +82,7 @@ storiesOf("Select", module)
         background: { control: { type: "color" } },
         autoContrast: {
           options: ["A", "AA", "AAA", false],
-          control: "select",
+          control: { type: "select" },
         },
       },
     }

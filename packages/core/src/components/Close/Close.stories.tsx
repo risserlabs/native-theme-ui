@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 30-06-2022 10:04:19
+ * Last Modified: 03-07-2022 07:23:19
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,41 +24,31 @@
 
 import React from "react";
 import Box from "../Box";
-import Close from ".";
-import {
-  storiesOf,
-  createArgsStory,
-  createSxArgs,
-  sxArgTypes,
-} from "../../../storybook";
+import Close from "./index";
+import { createArgsStory, createSxArgs, sxArgTypes } from "../../../storybook";
 
-storiesOf("atoms/Button/Close", module)
-  //.add('default', () => <Close sx={{ color: 'primary' }} />, {
-  //component: Close,
-  //status: { type: 'beta' }
-  //})
+export default {
+  title: "components/Button/Close",
+  component: Close,
+  parameters: {
+    status: { type: "beta" },
+  },
+};
 
-  .add("default", createArgsStory(Close), {
-    args: {
-      children: "Close",
-      ...createSxArgs(Close),
-    },
-    argTypes: {
-      autoContrast: {
-        options: ["A", "AA", "AAA", false],
-      },
-      ...sxArgTypes,
-    },
-  })
-  .add(
-    "with background",
-    () => (
-      <Box sx={{ bg: "background", p: 4 }}>
-        <Close sx={{ color: "primary" }} />
-      </Box>
-    ),
-    {
-      component: Close,
-      status: { type: "beta" },
-    }
-  );
+export const close = createArgsStory(Close);
+close.args = {
+  children: "Close",
+  ...createSxArgs(Close),
+};
+close.argTypes = {
+  autoContrast: {
+    options: ["A", "AA", "AAA", false],
+  },
+  ...sxArgTypes,
+};
+
+export const withBackground = () => (
+  <Box sx={{ bg: "background", p: 4 }}>
+    <Close sx={{ color: "primary" }} />
+  </Box>
+);

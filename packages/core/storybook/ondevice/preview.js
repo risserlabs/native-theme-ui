@@ -4,7 +4,7 @@
  * File Created: 02-07-2022 12:47:30
  * Author: Clay Risser
  * -----
- * Last Modified: 02-07-2022 14:10:38
+ * Last Modified: 03-07-2022 07:07:07
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -29,9 +29,8 @@ export const decorators = [withTheme, withBackgrounds];
 
 export const parameters = {
   backgrounds: [
-    { name: "plain", value: "white", default: true },
-    { name: "warm", value: "hotpink" },
-    { name: "cool", value: "deepskyblue" },
+    { name: "light", value: "white", default: true },
+    { name: "dark", value: "#262626" },
   ],
   controls: {
     matchers: {

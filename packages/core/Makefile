@@ -3,7 +3,7 @@
 # File Created: 30-06-2022 08:16:45
 # Author: Clay Risser
 # -----
-# Last Modified: 03-07-2022 06:37:26
+# Last Modified: 03-07-2022 06:57:54
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -65,7 +65,9 @@ lib/index.js:
 	@$(call reset,build)
 $(ACTION)/build: $(call git_deps,\.([jt]sx?)$$)
 	@$(BABEL) --env-name umd src -d lib --extensions '.js,.jsx,.ts,.tsx' --source-maps
+	@$(CP) src/modulesToTranspile.json lib
 	@$(BABEL) --env-name esm src -d es --extensions '.js,.jsx,.ts,.tsx' --source-maps
+	@$(CP) src/modulesToTranspile.json es
 	@$(TSC) -p tsconfig.build.json -d
 	@$(call done,build)
 

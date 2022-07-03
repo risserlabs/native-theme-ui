@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 07:34:26
  * Author: Clay Risser
  * -----
- * Last Modified: 02-07-2022 14:54:15
+ * Last Modified: 03-07-2022 07:20:50
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -28,69 +28,67 @@ import {
   Args,
   createArgsStory,
   createSxArgs,
-  storiesOf,
   sxArgTypes,
 } from "../../../storybook";
 import Button from "./index";
 import Text from "../Text";
 import Box from "../Box";
 
-storiesOf("atoms/Button", module)
-  .add(
-    "default",
-    createArgsStory(Button, {
-      onPress: action("I was pressed"),
-      onLongPress: action("I was long pressed"),
-      onPressIn: action("I was pressed in"),
-      onPressOut: action("I was pressed out"),
-    }),
-    {
-      args: {
-        children: "Click Me",
-        hidden: Button.defaultProps?.hidden,
-        autoContrast: Button.defaultProps?.autoContrast,
-        disabled: Button.defaultProps?.disabled,
-        ...createSxArgs(Button),
-      },
-      argTypes: {
-        hidden: { control: { type: "boolean" } },
-        disabled: { control: { type: "boolean" } },
-        autoContrast: {
-          options: ["A", "AA", "AAA", false],
-          control: { type: "select" },
-        },
-        ...sxArgTypes,
-      },
-    }
-  )
-  .add("like theme-ui", () => (
-    <Box>
-      <Button sx={{ mr: 2 }} onPress={action("beep")}>
-        Beep
-      </Button>
-      <Button variant="secondary" sx={{ mr: 2 }} onPress={action("boop")}>
-        Boop
-      </Button>
-      <Button sx={{ mr: 2 }} hidden>
-        Hidden
-      </Button>
-    </Box>
-  ))
-  .add(
-    "with autocontrast",
-    (args: Args) => (
-      <Button sx={{ bg: args.background }}>
-        <Text autoContrast={args.autoContrast}>hello</Text>
-      </Button>
-    ),
-    {
-      args: { autoContrast: "AAA", background: "black" },
-      argTypes: {
-        autoContrast: {
-          options: ["A", "AA", "AAA", false],
-          control: "select",
-        },
-        background: { control: { type: "color" } },
-      },
-    }
-  );
+export default {
+  title: "components/Button",
+  component: Button,
+  parameters: {
+    status: { type: "beta" },
+  },
+};
+
+export const box = createArgsStory(Button, {
+  onPress: action("I was pressed"),
+  onLongPress: action("I was long pressed"),
+  onPressIn: action("I was pressed in"),
+  onPressOut: action("I was pressed out"),
+});
+box.args = {
+  children: "Click Me",
+  hidden: Button.defaultProps?.hidden,
+  autoContrast: Button.defaultProps?.autoContrast,
+  disabled: Button.defaultProps?.disabled,
+  ...createSxArgs(Button),
+};
+box.argTypes = {
+  hidden: { control: { type: "boolean" } },
+  disabled: { control: { type: "boolean" } },
+  autoContrast: {
+    options: ["A", "AA", "AAA", false],
+    control: { type: "select" },
+  },
+  ...sxArgTypes,
+};
+
+export const likeThemUi = () => (
+  <Box>
+    <Button sx={{ mr: 2 }} onPress={action("beep")}>
+      Beep
+    </Button>
+    <Button variant="secondary" sx={{ mr: 2 }} onPress={action("boop")}>
+      Boop
+    </Button>
+    <Button sx={{ mr: 2 }} hidden>
+      Hidden
+    </Button>
+  </Box>
+);
+
+export const withAutocontrast = (args: Args) => (
+  <Button sx={{ bg: args.background }}>
+    <Text autoContrast={args.autoContrast}>hello</Text>
+  </Button>
+);
+withAutocontrast.args = { autoContrast: "AAA", background: "black" };
+withAutocontrast.argTypes = {
+  autoContrast: {
+    options: ["A", "AA", "AAA", false],
+    control: { type: "select" },
+  },
+  background: { control: { type: "color" } },
+};

@@ -4,7 +4,7 @@
  * File Created: 15-06-2022 06:37:48
  * Author: Lavanya Katari
  * -----
- * Last Modified: 30-06-2022 10:04:20
+ * Last Modified: 03-07-2022 07:02:17
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -49,7 +49,7 @@ storiesOf("CheckBox", module)
       argTypes: {
         autoContrast: {
           options: ["A", "AA", "AAA", false],
-          control: "select",
+          control: { type: "select" },
         },
         defaultChecked: { control: { type: "boolean" } },
         ...sxArgTypes,
@@ -78,7 +78,7 @@ storiesOf("CheckBox", module)
         background: { control: { type: "color" } },
         autoContrast: {
           options: ["A", "AA", "AAA", false],
-          control: "select",
+          control: { type: "select" },
         },
       },
     }
