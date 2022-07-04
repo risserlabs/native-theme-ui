@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 10:14:43
+ * Last Modified: 04-07-2022 12:26:12
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -52,7 +52,7 @@ module.exports = {
     "@luigiminardim/storybook-addon-globals-controls",
     "@pbutlewski/storybook-html",
     "@storybook/addon-a11y",
-    "@storybook/addon-backgrounds",
+    // "@storybook/addon-backgrounds",
     "@storybook/addon-ie11",
     "@storybook/addon-links",
     "@storybook/addon-notes",
