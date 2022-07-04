@@ -21,7 +21,7 @@
 # limitations under the License.
 
 export MKPM_PACKAGES_DEFAULT := \
-	yarn=0.0.3 \
+	yarn=0.0.4 \
 	envcache=0.1.0 \
 	mkchain=0.1.0 \
 	docker=0.0.16 \

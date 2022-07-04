@@ -3,7 +3,7 @@
 # File Created: 04-12-2021 07:22:50
 # Author: Clay Risser <email@clayrisser.com>
 # -----
-# Last Modified: 03-07-2022 10:44:00
+# Last Modified: 04-07-2022 12:02:46
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -81,6 +81,15 @@ clean: ##
 .PHONY: purge
 purge: clean ##
 	@$(GIT) clean -fXd
+
+.PHONY: inc
+inc: ##
+	@$(NPM) version patch --git=false $(NOFAIL)
+
+.PHONY: publish +publish
+publish: | ~build +publish ##
++publish:
+	@$(NPM) publish --access=public
 
 .PHONY: count
 count: ## count lines of code in project

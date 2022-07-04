@@ -13,7 +13,7 @@ node_modules/
 yarn-error.log
 
 # mkpm
-**/.mkpm
 .mkpm/*
-!/.mkpm/.bootstrap.mk
+**/.mkpm/*
 !/.mkpm/.cache.tar.gz
+!/.mkpm/.bootstrap.mk

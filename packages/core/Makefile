@@ -3,7 +3,7 @@
 # File Created: 30-06-2022 08:16:45
 # Author: Clay Risser
 # -----
-# Last Modified: 03-07-2022 06:57:54
+# Last Modified: 04-07-2022 12:02:54
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -161,9 +161,13 @@ postinstall:
 	@$(EXPO_YARN_WORKSPACES) postinstall
 
 .PHONY: publish +publish
-publish: | ~build +publish
+publish: | ~build +publish ##
 +publish:
-	@npm publish --access=public
+	@$(NPM) publish --access=public
+
+.PHONY: inc
+inc: ##
+	@$(NPM) version patch --git=false $(NOFAIL)
 
 .PHONY: clean
 clean: ##
