@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 00:27:56
  * Author: Lavanya Katari
  * -----
- * Last Modified: 30-06-2022 10:04:00
- * Modified By: Clay Risser
+ * Last Modified: 05-07-2022 05:37:22
+ * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -25,24 +25,46 @@
 import React from "react";
 import Box from "../Box";
 import {
-  storiesOf,
+  autoContrastArgType,
   createArgsStory,
   createSxArgs,
   sxArgTypes,
 } from "../../../storybook";
 import Slider from "./index";
-storiesOf("Slider", module)
-  .add("default", createArgsStory(Slider), {
-    args: {
-      children: "Slider",
-      ...createSxArgs(Slider),
-    },
-    argTypes: {
-      autoContrast: {
-        options: ["A", "AA", "AAA", false],
-      },
-      ...sxArgTypes,
-    },
-  })
-  .add("with background", () => <Box sx={{ bg: "background", p: 4 }}></Box>)
-  .add("with background", () => <Slider></Slider>);
+export default {
+  title: "components/Slider",
+  component: Slider,
+  parameters: {
+    status: { type: "beta" },
+  },
+};
+export const slider = createArgsStory(Slider);
+slider.args = {
+  children: " I am a Slider",
+  autoContrast: Slider.defaultProps?.autoContrast,
+
+  ...createSxArgs(Slider),
+};
+slider.sxArgTypes = {
+  hidden: { slider: { type: "boolean" } },
+  disabled: { slider: { type: "boolean" } },
+  ...autoContrastArgType,
+  ...sxArgTypes,
+};
+export const withBackground = () => <Box sx={{ bg: "background", p: 4 }}></Box>;
+
+//storiesOf("Slider", module)
+//  .add("default", createArgsStory(Slider), {
+//    args: {
+//      children: "Slider",
+//      ...createSxArgs(Slider),
+//    },
+//    argTypes: {
+//      autoContrast: {
+//        options: ["A", "AA", "AAA", false],
+//      },
+//      ...sxArgTypes,
+//    },
+//  })
+//  .add("with background", () => <Box sx={{ bg: "background", p: 4 }}></Box>)
+//  .add("with background", () => <Slider></Slider>);

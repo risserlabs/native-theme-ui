@@ -4,7 +4,9 @@
  * File Created: 02-07-2022 12:46:47
  * Author: Clay Risser
  * -----
- * Last Modified: 05-07-2022 05:33:34
+ * Last Modified: 05-07-2022 06:20:46
+ * Modified By: Manikanta
+ * Last Modified: 05-07-2022 06:20:46
  * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -30,7 +32,11 @@ module.exports = {
     "../../**/Badge.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Avatar.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Divider.stories.@(js|jsx|ts|tsx|md|mdx)",
-    "../../**/Divider.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Paragraph.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Card.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Checkbox.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Alert.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Slider.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/*.stories.@(js|jsx|ts|tsx|md|mdx)",
   ],
   addons: [
