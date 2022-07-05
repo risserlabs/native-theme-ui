@@ -4,10 +4,17 @@
  * File Created: 02-07-2022 12:46:47
  * Author: Clay Risser
  * -----
- * Last Modified: 05-07-2022 06:18:49
+<<<<<<< HEAD
+ * Last Modified: 05-07-2022 06:23:45
  * Modified By: Hari Krishna
- * Last Modified: 05-07-2022 06:18:49
+ * Last Modified: 05-07-2022 06:23:45
  * Modified By: Hari Krishna
+=======
+ * Last Modified: 05-07-2022 06:23:45
+ * Modified By: Hari Krishna
+ * Last Modified: 05-07-2022 06:23:45
+ * Modified By: Hari Krishna
+>>>>>>> b4cfda4df92781824012ef5b3ab41527e6e2dbad
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -31,6 +38,10 @@ module.exports = {
     "../../**/Text.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Select.stories.@(js|jsx|ts|tsx|md|mdx)",
 
+    "../../**/Badge.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Avatar.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Divider.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Paragraph.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Card.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Checkbox.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Alert.stories.@(js|jsx|ts|tsx|md|mdx)",
