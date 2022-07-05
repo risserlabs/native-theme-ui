@@ -4,7 +4,7 @@
  * File Created: 20-06-2022 00:46:04
  * Author: Manikanta
  * -----
- * Last Modified: 30-06-2022 10:23:56
+ * Last Modified: 03-07-2022 10:23:15
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,7 +24,7 @@
 
 import React from "react";
 import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
-import { Box as DBox } from "dripsy";
+import { Box as DBox } from "@dripsy/core";
 import { DripsyFC, DBoxProps } from "../../dripsyHelper";
 
 export type EmbedProps = DBoxProps & {

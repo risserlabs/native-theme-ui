@@ -4,7 +4,7 @@
  * File Created: 02-07-2022 12:47:49
  * Author: Clay Risser
  * -----
- * Last Modified: 02-07-2022 14:08:56
+ * Last Modified: 03-07-2022 10:23:16
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,7 +25,7 @@
 import React from "react";
 import { Platform } from "react-native";
 import { getStorybookUI, addDecorator } from "@storybook/react-native";
-import { DripsyProvider } from "dripsy";
+import { DripsyProvider } from "@dripsy/core";
 import * as themes from "../../themes";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

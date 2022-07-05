@@ -1,10 +1,10 @@
 /**
- * File: /components/Pressable/index.tsx
+ * File: /src/components/Pressable/index.tsx
  * Project: @native-theme-ui/core
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 30-06-2022 08:49:28
+ * Last Modified: 03-07-2022 10:23:15
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,7 +24,7 @@
 
 import React, { FC, ReactNode } from "react";
 import { BackgroundColorProvider } from "@risserlabs/auto-contrast";
-import { Pressable as DPressable, SxProp } from "dripsy";
+import { Pressable as DPressable, SxProp } from "@dripsy/core";
 import { PressableProps as RNPressableProps } from "react-native";
 
 export interface PressableProps extends RNPressableProps {

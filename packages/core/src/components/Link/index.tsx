@@ -4,7 +4,7 @@
  * File Created: 22-06-2022 14:33:38
  * Author: Ajithkrm6
  * -----
- * Last Modified: 05-07-2022 00:53:20
+ * Last Modified: 05-07-2022 06:24:43
  * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,7 +24,7 @@
 
 import React from "react";
 import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
-import { A as DA } from "dripsy";
+import { A as DA } from "@dripsy/core";
 import { DAProps, DripsyFC } from "../../dripsyHelper";
 
 export type LinkProps = Partial<DAProps> & {

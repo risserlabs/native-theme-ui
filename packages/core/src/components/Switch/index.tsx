@@ -4,7 +4,7 @@
  * File Created: 30-06-2022 07:49:47
  * Author: Clay Risser
  * -----
- * Last Modified: 30-06-2022 10:23:41
+ * Last Modified: 03-07-2022 10:23:15
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -27,7 +27,7 @@ import { Switch as RNSwitch, SwitchProps as RNSwitchProps } from "react-native";
 import useThemeLookup from "../../hooks/useThemeLookup";
 
 import { DripsyFC } from "../../dripsyHelper";
-import { SxProp } from "dripsy";
+import { SxProp } from "@dripsy/core";
 import { AutoContrast } from "@risserlabs/auto-contrast";
 export type SwitchProps = RNSwitchProps & {
   sx?: SxProp;

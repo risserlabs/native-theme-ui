@@ -4,7 +4,7 @@
  * File Created: 27-06-2022 00:27:04
  * Author: Lavanya Katari
  * -----
- * Last Modified: 30-06-2022 10:23:43
+ * Last Modified: 03-07-2022 10:23:15
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,7 +25,7 @@
 import React from "react";
 import RNCSlider from "@react-native-community/slider";
 import { AutoContrast } from "@risserlabs/auto-contrast";
-import { SxProp } from "dripsy";
+import { SxProp } from "@dripsy/core";
 import { DripsyFC } from "../../dripsyHelper";
 import Box from "../Box";
 export type SliderProps = {

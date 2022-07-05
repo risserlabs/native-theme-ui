@@ -4,7 +4,7 @@
  * File Created: 28-02-2022 07:21:50
  * Author: Clay Risser
  * -----
- * Last Modified: 30-06-2022 11:21:11
+ * Last Modified: 03-07-2022 10:23:15
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import { SxProp } from "dripsy";
+import { SxProp } from "@dripsy/core";
 
 export function splitTouchableProps<T>(
   props: Record<string, unknown>

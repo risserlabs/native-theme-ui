@@ -4,7 +4,7 @@
  * File Created: 20-06-2022 05:48:50
  * Author: Clay Risser
  * -----
- * Last Modified: 30-06-2022 10:23:46
+ * Last Modified: 03-07-2022 10:23:15
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,7 +24,7 @@
 
 import React from "react";
 import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
-import { P as DP } from "dripsy";
+import { P as DP } from "@dripsy/core";
 import { DPProps, DripsyFC } from "../../dripsyHelper";
 
 export type ParagraphProps = DPProps & {

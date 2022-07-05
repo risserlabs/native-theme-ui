@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 01:05:11
  * Author: Lavanya Katari
  * -----
- * Last Modified: 30-06-2022 10:24:00
+ * Last Modified: 03-07-2022 10:23:15
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,7 +25,7 @@
 import ECheckbox, { CheckboxProps as ECheckboxProps } from "expo-checkbox";
 import React from "react";
 import { AutoContrast } from "@risserlabs/auto-contrast";
-import { SxProp } from "dripsy";
+import { SxProp } from "@dripsy/core";
 import { DripsyFC } from "../../dripsyHelper";
 import Box from "../Box";
 

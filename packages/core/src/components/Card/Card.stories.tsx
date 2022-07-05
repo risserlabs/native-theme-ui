@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 07:02:17
- * Modified By: Clay Risser
+ * Last Modified: 05-07-2022 00:59:52
+ * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -26,73 +26,86 @@ import React from "react";
 import Card from "./index";
 import Box from "../Box";
 import {
-  storiesOf,
   Args,
   createArgsStory,
   createSxArgs,
   sxArgTypes,
+  autoContrastArgType,
 } from "../../../storybook";
+export default {
+  title: "components/Card",
+  component: "Card",
+  parameters: {
+    status: { type: "beta" },
+  },
+};
+export const card = createArgsStory(Card);
+card.args = {
+  children: "I am a Card",
+  autoContrast: Card.defaultProps?.autoContrast,
+  ...createSxArgs(card),
+};
+card.argTypes = {
+  hidden: { control: { type: "boolean" } },
+  disabled: { control: { type: "boolean" } },
+  ...autoContrastArgType,
+  ...sxArgTypes,
+};
 
-storiesOf("Card", module)
-  .add("default", createArgsStory(Card), {
-    args: {
-      children: "i am a card",
-      ...createSxArgs(Card),
-    },
-    argTypes: {
-      autoContrast: {
-        options: ["A", "AA", "AAA", false],
-        control: { type: "select" },
-      },
-      ...sxArgTypes,
-    },
-  })
-  .add(
-    "simple card",
+//storiesOf("Card", module)
+//  .add("default", createArgsStory(Card), {
+//   args: {
+//     children: "i am a card",
+//    ...createSxArgs(Card),
+//  },
+//  argTypes: {
+//    autoContrast: {
+//      options: ["A", "AA", "AAA", false],
+//      control: { type: "select" },
+//    },
+//    ...sxArgTypes,
+//  },
+// })
+//.add(
+// "simple card",
+export const SimpleCard = () => (
+  <Card
+    sx={{
+      height: 300,
+      width: 200,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    }}
+  >
+    Simple Card
+  </Card>
+);
 
-    () => (
-      <Card
-        sx={{
-          height: 300,
-          width: 200,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        Simple Card
-      </Card>
-    ),
+// .add(
+//  "with background",
+export const withBackground = (args: Args) => (
+  <Box
+    sx={{
+      padding: 2,
+      bg: args.background,
+    }}
+  >
+    <Card autoContrast={args.autoContrast}>I am a Card</Card>{" "}
+  </Box>
+);
 
-    {
-      component: Card,
-      status: { type: "beta" },
-    }
-  )
-  .add(
-    "with background",
-
-    (args: Args) => (
-      <Box
-        sx={{
-          padding: 2,
-          bg: args.background,
-        }}
-      >
-        <Card autoContrast={args.autoContrast}>I am a Card</Card>
-      </Box>
-    ),
-    {
-      args: {
-        background: "Purple",
-        autoContrast: "AAA",
-      },
-      argTypes: {
-        background: { control: { type: "color" } },
-        autoContrast: {
-          options: ["A", "AA", "AAA", false],
-          control: { type: "select" },
-        },
-      },
-    }
-  );
+// {
+//  args: {
+//   background: "Purple",
+//    autoContrast: "AAA",
+// },
+//  argTypes: {
+//   background: { control: { type: "color" } },
+//    autoContrast: {
+//     options: ["A", "AA", "AAA", false],
+//     control: { type: "select" },
+//   },
+//  },
+//  }
+// );

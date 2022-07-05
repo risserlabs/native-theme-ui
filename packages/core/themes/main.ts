@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 30-06-2022 08:49:28
+ * Last Modified: 03-07-2022 10:23:16
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,7 +23,7 @@
  */
 
 import { base } from "@theme-ui/presets";
-import { makeTheme } from "dripsy";
+import { makeTheme } from "@dripsy/core";
 import { BaseTheme } from "./index";
 import variants from "./variants";
 
