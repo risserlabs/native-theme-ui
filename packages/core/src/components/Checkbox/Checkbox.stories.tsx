@@ -4,8 +4,8 @@
  * File Created: 15-06-2022 06:37:48
  * Author: Lavanya Katari
  * -----
- * Last Modified: 03-07-2022 07:02:17
- * Modified By: Clay Risser
+ * Last Modified: 05-07-2022 01:25:08
+ * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -26,60 +26,79 @@ import React from "react";
 import Box from "../Box";
 import { action } from "@storybook/addon-actions";
 import {
-  storiesOf,
   Args,
   createArgsStory,
   createSxArgs,
   sxArgTypes,
+  autoContrastArgType,
 } from "../../../storybook";
 import CheckBox from "./index";
+export default {
+  title: "components/CheckBox",
+  component: CheckBox,
+  parameters: {
+    status: { type: "beta" },
+  },
+};
+export const Checkbox = createArgsStory(CheckBox, {
+  onChange: action("onChange"),
+  onValueChange: action("onValueChange"),
+});
+Checkbox.args = {
+  children: " I am CheckBox",
+  autoContrast: CheckBox.defaultProps?.autoContrast,
+  ...createSxArgs(CheckBox),
+};
+Checkbox.argTypes = {
+  hidden: { control: { type: "boolean" } },
+  disabled: { control: { type: "boolean" } },
+  ...autoContrastArgType,
+  ...sxArgTypes,
+};
 
-storiesOf("CheckBox", module)
-  .add(
-    "default",
-    createArgsStory(CheckBox, {
-      onChange: action("onChange"),
-      onValueChange: action("onValueChange"),
-    }),
-    {
-      args: {
-        defaultChecked: CheckBox.defaultProps?.defaultChecked,
-        ...createSxArgs(CheckBox),
-      },
-      argTypes: {
-        autoContrast: {
-          options: ["A", "AA", "AAA", false],
-          control: { type: "select" },
-        },
-        defaultChecked: { control: { type: "boolean" } },
-        ...sxArgTypes,
-      },
-    }
-  )
-  .add(
-    "with background",
-
-    (args: Args) => (
-      <Box
-        sx={{
-          padding: 2,
-          bg: args.background,
-        }}
-      >
-        <CheckBox autoContrast={args.autoContrast}>I am a paragraph</CheckBox>
-      </Box>
-    ),
-    {
-      args: {
-        background: "Purple",
-        autoContrast: "AA",
-      },
-      argTypes: {
-        background: { control: { type: "color" } },
-        autoContrast: {
-          options: ["A", "AA", "AAA", false],
-          control: { type: "select" },
-        },
-      },
-    }
-  );
+//storiesOf("CheckBox", module)
+// .add(
+// "default",
+//   createArgsStory(CheckBox, {
+//   onChange: action("onChange"),
+// onValueChange: action("onValueChange"),
+// }),
+//  {
+//    args: {
+//      defaultChecked: CheckBox.defaultProps?.defaultChecked,
+//     ...createSxArgs(CheckBox),
+//    },
+//    argTypes: {
+//      autoContrast: {
+//        options: ["A", "AA", "AAA", false],
+//        control: { type: "select" },
+//     },
+//     defaultChecked: { control: { type: "boolean" } },
+//     ...sxArgTypes,
+//    },
+//   }
+//  )
+export const withBackground = (args: Args) => (
+  <Box
+    sx={{
+      padding: 2,
+      bg: args.background,
+    }}
+  >
+    <CheckBox autoContrast={args.autoContrast}>I am a paragraph</CheckBox>
+  </Box>
+);
+// {
+//  args: {
+//    background: "Purple",
+//     autoContrast: "AA",
+//  },
+//  argTypes: {
+//    background: { control: { type: "color" } },
+//   autoContrast: {
+//     options: ["A", "AA", "AAA", false],
+//      control: { type: "select" },
+//    },
+//   },
+//  }
+//  );
