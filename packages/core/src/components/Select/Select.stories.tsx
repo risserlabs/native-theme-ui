@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 06:16:36
  * Author: Harikittu46
  * -----
- * Last Modified: 03-07-2022 07:02:17
- * Modified By: Clay Risser
+ * Last Modified: 05-07-2022 04:34:40
+ * Modified By: Hari Krishna
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -23,67 +23,82 @@
  */
 
 import React from "react";
+import { action } from "@storybook/addon-actions";
 import {
   Args,
   createArgsStory,
   createSxArgs,
-  storiesOf,
   sxArgTypes,
+  autoContrastArgType,
 } from "../../../storybook";
 import Select from "./index";
 import Box from "../Box";
+//import Text from "../Text";
 
-storiesOf("Select", module)
-  .add(
-    "default",
-    createArgsStory(Select, {}, [
-      <Select.Option key="0">BMW</Select.Option>,
-      <Select.Option key="1">AUDI</Select.Option>,
-      <Select.Option key="2">FORD</Select.Option>,
-      <Select.Option key="3">SUZUKI</Select.Option>,
-    ]),
-    {
-      args: {
-        autoContrast: Select.defaultProps?.autoContrast,
-        ...createSxArgs(Select),
-      },
-      argTypes: {
-        autoContrast: {
-          options: ["A", "AA", "AAA", false],
-          control: { type: "select" },
-        },
-        ...sxArgTypes,
-      },
-    }
-  )
-  .add(
-    "with background",
-    (args: Args) => (
-      <Box
-        sx={{
-          padding: 2,
-          bg: args.background,
-        }}
-      >
-        <Select autoContrast={args.autoContrast}>
-          <Select.Option>BMW</Select.Option>
-          <Select.Option>AUDI</Select.Option>
-          <Select.Option>FORD</Select.Option>
-          <Select.Option>SUZUKI</Select.Option>
-        </Select>
-      </Box>
-    ),
-    {
-      args: {
-        background: "black",
-        autoContrast: "AAA",
-      },
-      argTypes: {
-        background: { control: { type: "color" } },
-        autoContrast: {
-          options: ["A", "AA", "AAA", false],
-          control: { type: "select" },
-        },
-      },
-    }
-  );
+export default {
+  title: "components/Select",
+  component: Select,
+  parameters: {
+    status: { type: "beta" },
+  },
+};
+
+export const select = createArgsStory(Select, {}, [
+  <Select.Option key="0">BMW</Select.Option>,
+  <Select.Option key="1">AUDI</Select.Option>,
+  <Select.Option key="2">FORD</Select.Option>,
+  <Select.Option key="3">SUZUKI</Select.Option>,
+]);
+
+(select.args = {
+  autoContrast: Select.defaultProps?.autoContrast,
+  ...createSxArgs(Select),
+}),
+  (select.argTypes = {
+    background: { control: { type: "color" } },
+    autoContrast: {
+      options: ["A", "AA", "AAA", false],
+      control: { type: "select" },
+      ...autoContrastArgType,
+      ...sxArgTypes,
+    },
+  });
+
+export const likeThemUi = (args: Args) => (
+  <Box
+    sx={{
+      padding: 2,
+      bg: args.background,
+    }}
+  >
+    <Select autoContrast={args.autoContrast}>
+      <Select.Option>BMW</Select.Option>
+      <Select.Option>AUDI</Select.Option>
+      <Select.Option>FORD</Select.Option>
+      <Select.Option>SUZUKI</Select.Option>
+    </Select>
+  </Box>
+);
+
+export const withAutocontrast = (args: Args) => (
+  <Select sx={{ bg: args.background }}>
+    <Select.Option>BMW</Select.Option>
+    <Select.Option>AUDI</Select.Option>
+    <Select.Option>FORD</Select.Option>
+    <Select.Option>SUZUKI</Select.Option>
+  </Select>
+);
+
+(withAutocontrast.args = {
+  background: "red",
+  autoContrast: "AAA",
+}),
+  (withAutocontrast.argTypes = {
+    ...autoContrastArgType,
+
+    background: { control: { type: "color" } },
+    autoContrast: {
+      options: ["A", "AA", "AAA", false],
+      control: { type: "select" },
+    },
+  });
