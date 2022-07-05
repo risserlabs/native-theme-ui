@@ -4,7 +4,7 @@
  * File Created: 28-02-2022 07:21:50
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 10:23:15
+ * Last Modified: 05-07-2022 06:31:40
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -48,10 +48,10 @@ export function createSplitProps<
   SplitSx = Record<string, Partial<SxProp>>
 >(
   propsSetsMap: Record<string, string[] | RegExp> = {},
-  lastPropsSetId?: string,
-  sxsSetsMap: Record<string, string[] | RegExp> = {},
-  lastSxsSetId?: string
+  sxsSetsMap: Record<string, string[] | RegExp> = {}
 ) {
+  const lastPropsSetId = "base";
+  const lastSxsSetId = "baseSx";
   return (
     props: Props,
     defaultSx: SxProp = {}
