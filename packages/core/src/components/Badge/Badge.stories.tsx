@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 07:02:17
- * Modified By: Clay Risser
+ * Last Modified: 05-07-2022 01:52:01
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -25,49 +25,58 @@
 import React from "react";
 import Box from "../Box";
 import {
-  storiesOf,
+  //storiesOf,
+  //Args,
   createSxArgs,
   createArgsStory,
   sxArgTypes,
+  autoContrastArgType,
 } from "../../../storybook";
 import Badge from ".";
 
-storiesOf("Badge", module)
-  .add("default", createArgsStory(Badge), {
-    args: {
-      children: "Badge",
-      autoContrast: Badge.defaultProps?.autoContrast,
-      ...createSxArgs(Badge),
-    },
-    argTypes: {
-      autoContrast: {
-        options: ["A", "AA", "AAA", false],
-        control: { type: "select" },
-      },
-      ...sxArgTypes,
-    },
-  })
-  .add("Accent Badge", () => (
-    <Box>
-      <Badge variant="accent" sx={{ padding: "70", borderRadius: 100 }}>
-        This is a badge
-      </Badge>
-    </Box>
-  ))
-  .add("Outline Badge", () => <Badge variant="outline">Badge</Badge>, {
-    component: Badge,
-  })
-  .add(
-    "Circle Badge",
-    () => (
-      <Badge
-        variant="circle"
-        sx={{ borderRadius: 9999, height: 40, width: 50 }}
-      >
-        16
-      </Badge>
-    ),
-    {
-      component: Badge,
-    }
-  );
+export default {
+  title: "components/Badge",
+  component: Badge,
+  parameters: {
+    status: { type: "beta" },
+  },
+};
+export const badge = createArgsStory(Badge);
+(badge.args = {
+  children: "Iam Badge Component",
+  autoContrast: Badge.defaultProps?.autoContrast,
+  ...createSxArgs(Badge),
+}),
+  (badge.argTypes = {
+    ...autoContrastArgType,
+    ...sxArgTypes,
+  });
+
+// storiesOf("Badge", module)
+//   .add("default", createArgsStory(Badge), {
+//     args: {
+//       children: "Badge",
+//       autoContrast: Badge.defaultProps?.autoContrast,
+//       ...createSxArgs(Badge),
+//     },
+//     argTypes: {
+//       autoContrast: {
+//         options: ["A", "AA", "AAA", false],
+//         control: { type: "select" },
+//       },
+//       ...sxArgTypes,
+//     },
+//  }),
+export const likeThemeUi = () => (
+  <Box>
+    <Badge variant="accent" sx={{ padding: "70", borderRadius: 100 }}>
+      This is a badge
+    </Badge>
+  </Box>
+);
+export const OutlineBadge = () => <Badge variant="outline">Badge</Badge>;
+export const CircleBadge = () => (
+  <Badge variant="circle" sx={{ borderRadius: 9999, height: 40, width: 50 }}>
+    16
+  </Badge>
+);

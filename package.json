@@ -36,6 +36,7 @@
     "@babel/preset-typescript": "^7.18.6",
     "@types/babel__preset-env": "^7.9.2",
     "@types/eslint": "^8.4.5",
+    "@types/react": "^18",
     "@typescript-eslint/eslint-plugin": "^5.30.4",
     "@typescript-eslint/parser": "^5.30.4",
     "cspell": "^6.2.2",
@@ -45,7 +46,8 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "@native-theme-ui/core": "0.0.2"
+    "@native-theme-ui/core": "0.0.2",
+    "react": "^18.2.0"
   },
   "eslintIgnore": [
     "es",
