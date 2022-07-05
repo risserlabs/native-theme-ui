@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 10:23:15
- * Modified By: Clay Risser
+ * Last Modified: 05-07-2022 01:36:10
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -23,70 +23,88 @@
  */
 
 import React from "react";
-import { Box } from "@dripsy/core";
+import { View } from "@dripsy/core";
 import Textarea from ".";
+import Text from "../Text";
 import {
-  storiesOf,
   createArgsStory,
   createSxArgs,
   sxArgTypes,
+  autoContrastArgType,
 } from "../../../storybook";
 
-storiesOf("Textarea", module)
-  //.add('full width', () => <Textarea />, {
-  //component: Textarea,
-  //status: { type: 'beta' }
-  //})
+export default {
+  title: "components/Textarea",
+  component: Textarea,
+  parameters: {
+    status: { type: "beta" },
+  },
+};
 
-  .add("default", createArgsStory(Textarea), {
-    args: {
-      children: "Textarea",
-      ...createSxArgs(Textarea),
-    },
-    argTypes: {
-      autoContrast: {
-        options: ["A", "AA", "AAA", false],
-        control: { type: "select" },
-      },
-      ...sxArgTypes,
-    },
-  })
+export const textarea = createArgsStory(Textarea);
+textarea.args = {
+  children: "I am a Text",
+  autoContrast: Textarea.defaultProps?.autoContrast,
+  ...createSxArgs(Textarea),
+};
+textarea.argTypes = {
+  ...autoContrastArgType,
+  ...sxArgTypes,
+};
 
-  .add(
-    "with placeholder",
-    () => (
+export const likeThemeUi = () => (
+  <Textarea
+    sx={{
+      p: 2,
+      color: "white",
+      bg: "primary",
+    }}
+  >
+    <Text>Beep</Text>
+  </Textarea>
+);
+
+export const multiple = () => {
+  const style = {
+    textarea: {
+      color: "white",
+      height: 200,
+      width: 200,
+      margin: 4,
+    },
+    textarea1: {
+      bg: "primary",
+    },
+    textarea2: {
+      bg: "secondary",
+    },
+  };
+  return (
+    <View sx={{ flex: 1, flexDirection: "row", flexWrap: "wrap" }}>
       <Textarea
-        placeholderTextColor="primary"
-        placeholder="hello"
-        sx={{ borderColor: "blue", maxWidth: 200 }}
+        sx={{
+          ...style.textarea,
+          ...style.textarea1,
+        }}
       />
-    ),
-    {
-      component: Textarea,
-      status: { type: "beta" },
-    }
-  )
-  .add(
-    "like theme-ui",
-    () => (
-      <Box>
-        <Textarea defaultValue="Hello" />
-      </Box>
-    ),
-    {
-      component: Textarea,
-      status: { type: "beta" },
-    }
-  )
-  .add(
-    "with background",
-    () => (
-      <Box sx={{ bg: "background", p: 4 }}>
-        <Textarea />
-      </Box>
-    ),
-    {
-      component: Textarea,
-      status: { type: "beta" },
-    }
+      <Textarea
+        sx={{
+          ...style.textarea,
+          ...style.textarea2,
+        }}
+      />
+      <Textarea
+        sx={{
+          ...style.textarea,
+          ...style.textarea1,
+        }}
+      />
+      <Textarea
+        sx={{
+          ...style.textarea,
+          ...style.textarea2,
+        }}
+      />
+    </View>
   );
+};

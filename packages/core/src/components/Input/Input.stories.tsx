@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 10:23:15
- * Modified By: Clay Risser
+ * Last Modified: 05-07-2022 04:48:02
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -26,51 +26,73 @@ import React from "react";
 import { Box } from "@dripsy/core";
 import { action } from "@storybook/addon-actions";
 import {
-  storiesOf,
   createArgsStory,
   createSxArgs,
   sxArgTypes,
+  autoContrastArgType,
 } from "../../../storybook";
 import Input from "./index";
 
-storiesOf("Input", module)
-  .add(
-    "default",
-    createArgsStory(Input, {
-      onBlur: action("onBlur"),
-      onChange: action("onChange"),
-      onFocus: action("onFocus"),
-    }),
-    {
-      args: {
-        ...createSxArgs(Input),
-      },
-      argTypes: {
-        ...sxArgTypes,
-      },
-    }
-  )
-  .add(
-    "like theme-ui",
-    () => (
-      <Box>
-        <Input defaultValue="Hello" />
-      </Box>
-    ),
-    {
-      component: Input,
-      status: { type: "beta" },
-    }
-  )
-  .add(
-    "with background",
-    () => (
-      <Box sx={{ bg: "background", p: 4 }}>
-        <Input />
-      </Box>
-    ),
-    {
-      component: Input,
-      status: { type: "beta" },
-    }
-  );
+export default {
+  title: "Components/Input",
+  component: Input,
+  parameters: {
+    status: { type: "beta" },
+  },
+};
+
+export const input = createArgsStory(Input, {
+  onBlur: action("onBlur"),
+  onChange: action("onChange"),
+  onFocus: action("onFocus"),
+});
+input.args = {
+  ...createSxArgs(Input),
+  autoContrast: Input.defaultProps?.autoContrast,
+};
+input.argTypes = {
+  ...autoContrastArgType,
+  ...sxArgTypes,
+};
+
+// storiesOf("Input", module)
+//   .add(
+//     "default",
+//     createArgsStory(Input, {
+//       onBlur: action("onBlur"),
+//       onChange: action("onChange"),
+//       onFocus: action("onFocus"),
+//     }),
+//     {
+//       args: {
+//         ...createSxArgs(Input),
+//       },
+//       argTypes: {
+//         ...sxArgTypes,
+//       },
+//     }
+//   )
+//   .add(
+//     "like theme-ui",
+//     () => (
+//       <Box>
+//         <Input defaultValue="Hello" />
+//       </Box>
+//     ),
+//     {
+//       component: Input,
+//       status: { type: "beta" },
+//     }
+//   )
+//   .add(
+//     "with background",
+//     () => (
+//       <Box sx={{ bg: "background", p: 4 }}>
+//         <Input />
+//       </Box>
+//     ),
+//     {
+//       component: Input,
+//       status: { type: "beta" },
+//     }
+//   );
