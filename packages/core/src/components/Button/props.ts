@@ -1,10 +1,10 @@
 /**
- * File: /src/components/Box/props.ts
+ * File: /src/components/Button/props.ts
  * Project: @native-theme-ui/core
- * File Created: 05-07-2022 06:24:30
+ * File Created: 05-07-2022 07:43:20
  * Author: Clay Risser
  * -----
- * Last Modified: 05-07-2022 07:54:00
+ * Last Modified: 05-07-2022 07:55:12
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,11 +23,16 @@
  */
 
 import { AutoContrast } from "@risserlabs/auto-contrast";
-import { createSplitProps } from "../../util";
-import { DBoxProps, PatchVariant } from "../../dripsyHelper";
 import { SxProp } from "dripsy";
+import { ReactNode } from "react";
+import { DPressableProps } from "../../dripsyHelper";
+import { createSplitProps } from "../../util";
 
-export type BasePropsBucket = PatchVariant<DBoxProps>;
+export type BasePropsBucket = Omit<DPressableProps, "variant"> & {
+  children?: ReactNode;
+  hidden?: boolean;
+  variant?: string;
+};
 
 export type TextPropsBucket = {
   autoContrast?: AutoContrast;
@@ -48,7 +53,7 @@ export interface SplitSxBuckets {
 }
 
 export const splitProps = createSplitProps<
-  BoxProps,
+  ButtonProps,
   SplitPropsBuckets,
   SplitSxBuckets
 >(
@@ -60,4 +65,4 @@ export const splitProps = createSplitProps<
   }
 );
 
-export type BoxProps = BasePropsBucket & TextPropsBucket;
+export type ButtonProps = BasePropsBucket & TextPropsBucket;

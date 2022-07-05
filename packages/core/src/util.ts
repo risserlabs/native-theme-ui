@@ -4,7 +4,7 @@
  * File Created: 28-02-2022 07:21:50
  * Author: Clay Risser
  * -----
- * Last Modified: 05-07-2022 06:31:40
+ * Last Modified: 05-07-2022 07:23:36
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -47,66 +47,63 @@ export function createSplitProps<
   SplitProps = Record<string, Record<string, unknown>>,
   SplitSx = Record<string, Partial<SxProp>>
 >(
-  propsSetsMap: Record<string, string[] | RegExp> = {},
-  sxsSetsMap: Record<string, string[] | RegExp> = {}
+  propsSetsMap?: Record<string, string[] | RegExp> | null,
+  sxsSetsMap?: Record<string, string[] | RegExp> | null
 ) {
-  const lastPropsSetId = "base";
+  const lastPropsSetId = "baseProps";
   const lastSxsSetId = "baseSx";
-  return (
-    props: Props,
-    defaultSx: SxProp = {}
-  ): SplitProps & SplitSx & { sx: SxProp } => {
+  return (props: Props, sx: SxProp = {}): SplitProps & SplitSx => {
     const propsMap: Record<string, Record<string, unknown>> = {};
     const sxsMap: Record<string, Record<string, unknown>> = {};
-    Object.keys(propsSetsMap).forEach(
-      (propsSetId: string) => (propsMap[propsSetId] = {})
-    );
-    Object.keys(sxsSetsMap).forEach(
-      (sxsSetId: string) => (sxsMap[sxsSetId] = {})
-    );
     if (lastPropsSetId) propsMap[lastPropsSetId] = {};
     if (lastSxsSetId) sxsMap[lastSxsSetId] = {};
-    const clonedProps = { ...props };
-    const sx = {
-      ...defaultSx,
-      ...((props as { sx?: SxProp }).sx || {}),
-    };
-    const propsSetsIds = Object.keys(propsSetsMap);
-    const sxsSetsIds = Object.keys(sxsSetsMap);
-    Object.entries(clonedProps).forEach(([key, prop]: [string, unknown]) => {
-      for (const propsSetId of propsSetsIds) {
-        const propsSet = propsMap[propsSetId];
-        const matcher = propsSetsMap[propsSetId];
-        if (
-          Array.isArray(matcher)
-            ? new Set(matcher).has(key)
-            : !!key.match(matcher)
-        ) {
-          propsSet[key] = prop;
-          return;
+    if (propsSetsMap) {
+      Object.keys(propsSetsMap).forEach(
+        (propsSetId: string) => (propsMap[propsSetId] = {})
+      );
+      const clonedProps = { ...props };
+      const propsSetsIds = Object.keys(propsSetsMap);
+      Object.entries(clonedProps).forEach(([key, prop]: [string, unknown]) => {
+        for (const propsSetId of propsSetsIds) {
+          const propsSet = propsMap[propsSetId];
+          const matcher = propsSetsMap[propsSetId];
+          if (
+            Array.isArray(matcher)
+              ? new Set(matcher).has(key)
+              : !!key.match(matcher)
+          ) {
+            propsSet[key] = prop;
+            return;
+          }
         }
-      }
-      if (lastPropsSetId && key !== "sx") propsMap[lastPropsSetId][key] = prop;
-    });
-    Object.entries(sx).forEach(([key, value]: [string, unknown]) => {
-      for (const sxsSetId of sxsSetsIds) {
-        const sxsSet = sxsMap[sxsSetId];
-        const matcher = sxsSetsMap[sxsSetId];
-        if (
-          Array.isArray(matcher)
-            ? new Set(matcher).has(key)
-            : !!key.match(matcher)
-        ) {
-          sxsSet[key] = value;
-          return;
+        if (lastPropsSetId && key !== "sx")
+          propsMap[lastPropsSetId][key] = prop;
+      });
+    }
+    if (sxsSetsMap) {
+      Object.keys(sxsSetsMap).forEach(
+        (sxsSetId: string) => (sxsMap[sxsSetId] = {})
+      );
+      const sxsSetsIds = Object.keys(sxsSetsMap);
+      Object.entries(sx).forEach(([key, value]: [string, unknown]) => {
+        for (const sxsSetId of sxsSetsIds) {
+          const sxsSet = sxsMap[sxsSetId];
+          const matcher = sxsSetsMap[sxsSetId];
+          if (
+            Array.isArray(matcher)
+              ? new Set(matcher).has(key)
+              : !!key.match(matcher)
+          ) {
+            sxsSet[key] = value;
+            return;
+          }
         }
-      }
-      if (lastSxsSetId) sxsMap[lastSxsSetId][key] = value;
-    });
+        if (lastSxsSetId) sxsMap[lastSxsSetId][key] = value;
+      });
+    }
     return {
       ...(propsMap as unknown as SplitProps),
       ...(sxsMap as unknown as SplitSx),
-      sx,
     };
   };
 }

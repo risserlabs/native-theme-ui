@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 07:34:18
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 10:23:16
+ * Last Modified: 05-07-2022 07:57:41
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,37 +22,30 @@
  * limitations under the License.
  */
 
-import React, { ReactNode } from "react";
+import React from "react";
 import { Pressable as DPressable } from "@dripsy/core";
-import {
-  AutoContrast,
-  useAutoContrast,
-  BackgroundColorProvider,
-} from "@risserlabs/auto-contrast";
+import { BackgroundColorProvider } from "@risserlabs/auto-contrast";
 import { DripsyFC, DPressableProps } from "../../dripsyHelper";
 import Text from "../Text";
-
-type ButtonProps = Omit<DPressableProps, "variant"> & {
-  autoContrast?: AutoContrast;
-  children?: ReactNode;
-  hidden?: boolean;
-  variant?: string;
-};
+import { ButtonProps, splitProps } from "./props";
 
 const Button: DripsyFC<ButtonProps> = (props: ButtonProps) => {
-  const sx = useAutoContrast(props, {
+  const sx = {
     ...Button.defaultSx,
     display: props.hidden ? "none" : "inline-block",
     ...props.sx,
-  });
+  };
+  const { baseProps, baseSx, textProps, textSx } = splitProps(props, sx);
   const children =
     typeof props.children === "string" ? (
-      <Text autoContrast={props.autoContrast}>{props.children}</Text>
+      <Text {...textProps} sx={textSx}>
+        {props.children}
+      </Text>
     ) : (
       props.children
     );
   return (
-    <DPressable {...(props as DPressableProps)} sx={sx}>
+    <DPressable {...(baseProps as DPressableProps)} sx={baseSx}>
       <BackgroundColorProvider sx={sx}>{children}</BackgroundColorProvider>
     </DPressable>
   );

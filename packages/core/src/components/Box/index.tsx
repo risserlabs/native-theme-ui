@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 05-07-2022 06:24:38
+ * Last Modified: 05-07-2022 07:42:26
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,31 +24,27 @@
 
 import React from "react";
 import { Box as DBox } from "@dripsy/core";
-import {
-  BackgroundColorProvider,
-  useAutoContrast,
-  AutoContrast,
-} from "@risserlabs/auto-contrast";
+import { BackgroundColorProvider } from "@risserlabs/auto-contrast";
 import Text from "../Text";
-import { DBoxProps, DripsyFC, PatchVariant } from "../../dripsyHelper";
-
-export type BoxProps = PatchVariant<DBoxProps> & {
-  autoContrast?: AutoContrast;
-};
+import { BoxProps, splitProps } from "./props";
+import { DBoxProps, DripsyFC } from "../../dripsyHelper";
 
 const Box: DripsyFC<BoxProps> = (props: BoxProps) => {
-  const sx = useAutoContrast(props, {
+  const sx = {
     ...Box.defaultSx,
     ...props.sx,
-  });
+  };
+  const { baseProps, baseSx, textProps, textSx } = splitProps(props, sx);
   const children =
     typeof props.children === "string" ? (
-      <Text>{props.children}</Text>
+      <Text {...textProps} sx={textSx}>
+        {props.children}
+      </Text>
     ) : (
       props.children
     );
   return (
-    <DBox {...(props as DBoxProps)} sx={sx}>
+    <DBox {...(baseProps as DBoxProps)} sx={baseSx}>
       <BackgroundColorProvider sx={sx}>{children}</BackgroundColorProvider>
     </DBox>
   );
@@ -64,5 +60,7 @@ Box.defaultSx = {
   minWidth: 0,
   width: "100%",
 };
+
+export type { BoxProps };
 
 export default Box;
