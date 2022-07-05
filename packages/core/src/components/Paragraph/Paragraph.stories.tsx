@@ -4,8 +4,8 @@
  * File Created: 20-06-2022 05:48:50
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 07:02:17
- * Modified By: Clay Risser
+ * Last Modified: 05-07-2022 05:30:45
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -24,53 +24,71 @@
 
 import React from "react";
 import {
-  storiesOf,
+  //storiesOf,
   Args,
   createArgsStory,
   createSxArgs,
   sxArgTypes,
+  autoContrastArgType,
 } from "../../../storybook";
 import Paragraph from "./index";
 import Box from "../Box";
 
-storiesOf("Paragraph", module)
-  .add("default", createArgsStory(Paragraph), {
-    args: {
-      children: "I am a paragraph",
-      autoContrast: Paragraph.defaultProps?.autoContrast,
-      ...createSxArgs(Paragraph),
-    },
-    argTypes: {
-      autoContrast: {
-        options: ["A", "AA", "AAA", false],
-        control: { type: "select" },
-      },
-      ...sxArgTypes,
-    },
-  })
-  .add(
-    "with background",
-    (args: Args) => (
-      <Box
-        sx={{
-          padding: 2,
-          bg: args.background,
-        }}
-      >
-        <Paragraph autoContrast={args.autoContrast}>I am a paragraph</Paragraph>
-      </Box>
-    ),
-    {
-      args: {
-        background: "black",
-        autoContrast: "AAA",
-      },
-      argTypes: {
-        background: { control: { type: "color" } },
-        autoContrast: {
-          options: ["A", "AA", "AAA", false],
-          control: { type: "select" },
-        },
-      },
-    }
-  );
+export default {
+  title: "components/Paragraph",
+  component: Paragraph,
+  parameters: {
+    status: { type: "beta" },
+  },
+};
+
+export const paragraph = createArgsStory(Paragraph);
+paragraph.args = {
+  children: "i am Paragraph",
+  autoContrast: Paragraph.defaultProps?.autoContrast,
+  ...createSxArgs(Paragraph),
+};
+paragraph.argTypes = {
+  ...autoContrastArgType,
+  ...sxArgTypes,
+};
+
+// storiesOf("Paragraph", module)
+//   .add("default", createArgsStory(Paragraph), {
+//     args: {
+//       children: "I am a paragraph",
+//       autoContrast: Paragraph.defaultProps?.autoContrast,
+//       ...createSxArgs(Paragraph),
+//     },
+//     argTypes: {
+//       autoContrast: {
+//         options: ["A", "AA", "AAA", false],
+//         control: { type: "select" },
+//       },
+//       ...sxArgTypes,
+//     },
+//   })
+export const withBackGround = (args: Args) => (
+  <Box
+    sx={{
+      padding: 2,
+      bg: args.background,
+    }}
+  >
+    <Paragraph autoContrast={args.autoContrast}>I am a paragraph</Paragraph>
+  </Box>
+);
+//   // {
+//   //   args: {
+//   //     background: "black",
+//   //     autoContrast: "AAA",
+//   //   },
+//   //   argTypes: {
+//   //     background: { control: { type: "color" } },
+//   //     autoContrast: {
+//   //       options: ["A", "AA", "AAA", false],
+//   //       control: { type: "select" },
+//   //     },
+//   //   },
+//   // }
+// );

@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 07:02:17
- * Modified By: Clay Risser
+ * Last Modified: 05-07-2022 05:40:01
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -26,45 +26,48 @@ import React from "react";
 import Box from "../Box";
 import Divider from ".";
 import {
-  storiesOf,
+  //storiesOf,
   createArgsStory,
   Args,
   createSxArgs,
   sxArgTypes,
+  autoContrastArgType,
 } from "../../../storybook";
 
-storiesOf("Divider", module)
-  .add("default", createArgsStory(Divider), {
-    args: {
-      autoContrast: Divider.defaultProps?.autoContrast,
-      ...createSxArgs(Divider),
-    },
-    argTypes: {
-      autoContrast: {
-        options: ["A", "AA", "AAA", false],
-        control: { type: "select" },
-      },
-      ...sxArgTypes,
-    },
-  })
-  .add(
-    "with background",
-    (args: Args) => (
-      <Box sx={{ bg: args.background, p: 4, width: "100%" }}>
-        <Divider autoContrast={args.autoContrast} />
-      </Box>
-    ),
-    {
-      args: {
-        background: "background",
-        autoContrast: "AAA",
-      },
-      argTypes: {
-        background: { control: { type: "color" } },
-        autoContrast: {
-          options: ["A", "AA", "AAA", false],
-          control: { type: "select" },
-        },
-      },
-    }
-  );
+export default {
+  title: "components/Divider",
+  component: Divider,
+  parameters: {
+    status: { type: "beta" },
+  },
+};
+export const divider = createArgsStory(Divider);
+(divider.args = {
+  children: "Iam Divider Component",
+  autoContrast: Divider.defaultProps?.autoContrast,
+  ...createSxArgs(Divider),
+}),
+  (divider.argTypes = {
+    ...autoContrastArgType,
+    ...sxArgTypes,
+  });
+
+// storiesOf("Divider", module)
+//   .add("default", createArgsStory(Divider), {
+//     args: {
+//       autoContrast: Divider.defaultProps?.autoContrast,
+//       ...createSxArgs(Divider),
+//     },
+//     argTypes: {
+//       autoContrast: {
+//         options: ["A", "AA", "AAA", false],
+//         control: { type: "select" },
+//       },
+//       ...sxArgTypes,
+//     },
+//   })
+export const withBackGround = (args: Args) => (
+  <Box sx={{ bg: args.background, p: 4, width: "100%" }}>
+    <Divider autoContrast={args.autoContrast} />
+  </Box>
+);

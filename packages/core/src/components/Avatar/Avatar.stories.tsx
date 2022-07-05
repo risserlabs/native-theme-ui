@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 07:02:17
- * Modified By: Clay Risser
+ * Last Modified: 05-07-2022 02:03:28
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -24,35 +24,48 @@
 
 import React from "react";
 import {
-  storiesOf,
+  // storiesOf,
   createArgsStory,
   sxArgTypes,
   createSxArgs,
+  autoContrastArgType,
 } from "../../../storybook";
 import Avatar from ".";
 
-storiesOf("Avatar", module)
-  .add("Default", createArgsStory(Avatar), {
-    args: {
-      children: "Iam Avatar",
-      autoContrast: Avatar.defaultProps?.autoContrast,
-      ...createSxArgs(Avatar),
-    },
-    argTypes: {
-      autoContrast: {
-        options: ["A", "AA", "AAA", false],
-        control: { type: "Select" },
-      },
-      ...sxArgTypes,
-    },
-  })
-
-  .add("Simple Avatar", () => <Avatar />, {
-    component: Avatar,
+export default {
+  title: "components/Avatar",
+  component: Avatar,
+  parameters: {
     status: { type: "beta" },
-  })
-
-  .add("image Avatar", () => <Avatar />, {
-    component: Avatar,
-    status: { type: "beta" },
+  },
+};
+export const avatar = createArgsStory(Avatar);
+(avatar.args = {
+  children: "Iam Avatar Component",
+  autoContrast: Avatar.defaultProps?.autoContrast,
+  ...createSxArgs(Avatar),
+}),
+  (avatar.argTypes = {
+    ...autoContrastArgType,
+    ...sxArgTypes,
   });
+
+// storiesOf("Avatar", module)
+//   .add("Default", createArgsStory(Avatar), {
+//     args: {
+//       children: "Iam Avatar",
+//       autoContrast: Avatar.defaultProps?.autoContrast,
+//       ...createSxArgs(Avatar),
+//     },
+//     argTypes: {
+//       autoContrast: {
+//         options: ["A", "AA", "AAA", false],
+//         control: { type: "Select" },
+//       },
+//       ...sxArgTypes,
+//     },
+//   })
+
+export const SimpleAvatar = () => <Avatar> Simple Avatar</Avatar>;
+
+export const imageAvatar = () => <Avatar> Image Avatar</Avatar>;

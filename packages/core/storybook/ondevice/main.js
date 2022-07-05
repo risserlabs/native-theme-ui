@@ -5,12 +5,25 @@
  * Author: Clay Risser
  * -----
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Last Modified: 05-07-2022 06:24:10
  * Modified By: K S R P BHUSHAN
 =======
  * Last Modified: 05-07-2022 06:24:10
  * Modified By: K S R P BHUSHAN
 >>>>>>> 91184ddbf991063d130e7f5d3dbbc172499df6a6
+=======
+ * Last Modified: 05-07-2022 06:23:45
+ * Modified By: Hari Krishna
+ * Last Modified: 05-07-2022 06:23:45
+ * Modified By: Hari Krishna
+=======
+ * Last Modified: 05-07-2022 06:23:45
+ * Modified By: Hari Krishna
+ * Last Modified: 05-07-2022 06:23:45
+ * Modified By: Hari Krishna
+>>>>>>> b4cfda4df92781824012ef5b3ab41527e6e2dbad
+>>>>>>> 6303fbe169b9fc7b99a464704943783ddb1201a9
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -32,8 +45,17 @@ module.exports = {
     "../../**/Button.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Box.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Text.stories.@(js|jsx|ts|tsx|md|mdx)",
+<<<<<<< HEAD
     "../../**/Textarea.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Input.stories.@(js|jsx|ts|tsx|md|mdx)",
+=======
+    "../../**/Select.stories.@(js|jsx|ts|tsx|md|mdx)",
+
+    "../../**/Badge.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Avatar.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Divider.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Paragraph.stories.@(js|jsx|ts|tsx|md|mdx)",
+>>>>>>> 6303fbe169b9fc7b99a464704943783ddb1201a9
     "../../**/Card.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Checkbox.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Alert.stories.@(js|jsx|ts|tsx|md|mdx)",
