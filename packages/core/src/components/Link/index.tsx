@@ -4,8 +4,8 @@
  * File Created: 22-06-2022 14:33:38
  * Author: Ajithkrm6
  * -----
- * Last Modified: 03-07-2022 10:23:15
- * Modified By: Clay Risser
+ * Last Modified: 05-07-2022 06:24:43
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -29,6 +29,7 @@ import { DAProps, DripsyFC } from "../../dripsyHelper";
 
 export type LinkProps = Partial<DAProps> & {
   autoContrast?: AutoContrast;
+  hidden?: boolean;
 };
 
 const Link: DripsyFC<LinkProps> = (props: LinkProps) => {

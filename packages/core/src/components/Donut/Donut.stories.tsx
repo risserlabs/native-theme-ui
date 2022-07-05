@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 07:02:17
- * Modified By: Clay Risser
+ * Last Modified: 05-07-2022 04:46:23
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -26,67 +26,103 @@ import React from "react";
 import Box from "../Box";
 import Donut from ".";
 import {
-  storiesOf,
   createArgsStory,
   createSxArgs,
   sxArgTypes,
+  autoContrastArgType,
 } from "../../../storybook";
 
-storiesOf("Donut", module)
-  //..add('default 50% Donut', () => <Donut max={100} value={50} />, {
-  //component: Donut,
-  //status: { type: 'beta' }
-  //})
-
-  .add("default", createArgsStory(Donut), {
-    args: {
-      children: "I am a donut",
-      ...createSxArgs(Donut),
-    },
-    argTypes: {
-      autoContrast: {
-        options: ["A", "AA", "AAA", false],
-        control: { type: "select" },
-      },
-      ...sxArgTypes,
-    },
-  })
-
-  .add("40% Donut", () => <Donut max={100} value={40} />, {
-    component: Donut,
+export default {
+  title: "Components/Donut",
+  component: Donut,
+  parameters: {
     status: { type: "beta" },
-  })
-  .add(
-    "Donut with max=200 and value=80",
-    () => <Donut max={200} value={80} />,
-    {
-      component: Donut,
-      status: { type: "beta" },
-    }
-  )
-  .add(
-    "like theme-ui",
-    () => (
-      <Donut max={1} value={1 / 2}>
-        50%
-      </Donut>
-    ),
-    {
-      component: Donut,
-      status: { type: "beta" },
-    }
-  )
-  .add(
-    "with background with 70%",
-    () => (
-      <Box sx={{ bg: "black", p: 4 }}>
-        <Donut max={100} value={70}>
-          70%
-        </Donut>
-      </Box>
-    ),
-    {
-      component: Donut,
-      status: { type: "beta" },
-    }
-  );
+  },
+};
+
+export const donut = createArgsStory(Donut);
+donut.args = {
+  children: "I am a donut",
+  ...createSxArgs(Donut),
+};
+donut.argTypes = {
+  ...autoContrastArgType,
+  ...sxArgTypes,
+};
+
+export const fortyPercentDonut = () => <Donut max={100} value={40} />;
+
+export const DonutWithMaxAndMin = () => <Donut max={200} value={80} />;
+
+export const likeThemeUi = () => (
+  <Donut max={1} value={1 / 2}>
+    50%{" "}
+  </Donut>
+);
+
+export const withSeventyPercent = () => (
+  <Box sx={{ bg: "black", p: 4 }}>
+    <Donut max={100} value={70}>
+      70%
+    </Donut>
+  </Box>
+);
+
+// storiesOf("Donut", module)
+//   //..add('default 50% Donut', () => <Donut max={100} value={50} />, {
+//   //component: Donut,
+//   //status: { type: 'beta' }
+//   //})
+
+//   .add("default", createArgsStory(Donut), {
+//     args: {
+//       children: "I am a donut",
+//       ...createSxArgs(Donut),
+//     },
+//     argTypes: {
+//       autoContrast: {
+//         options: ["A", "AA", "AAA", false],
+//         control: { type: "select" },
+//       },
+//       ...sxArgTypes,
+//     },
+//   })
+
+//   .add("40% Donut", () => <Donut max={100} value={40} />, {
+//     component: Donut,
+//     status: { type: "beta" },
+//   })
+//   .add(
+//     "Donut with max=200 and value=80",
+//     () => <Donut max={200} value={80} />,
+//     {
+//       component: Donut,
+//       status: { type: "beta" },
+//     }
+//   )
+//   .add(
+//     "like theme-ui",
+//     () => (
+//       <Donut max={1} value={1 / 2}>
+//         50%
+//       </Donut>
+//     ),
+//     {
+//       component: Donut,
+//       status: { type: "beta" },
+//     }
+//   )
+//   .add(
+//     "with background with 70%",
+//     () => (
+//       <Box sx={{ bg: "black", p: 4 }}>
+//         <Donut max={100} value={70}>
+//           70%
+//         </Donut>
+//       </Box>
+//     ),
+//     {
+//       component: Donut,
+//       status: { type: "beta" },
+//     }
+//   );
