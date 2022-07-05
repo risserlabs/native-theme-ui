@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 13:00:27
  * Author: ajithkrm6
  * -----
- * Last Modified: 03-07-2022 07:02:17
- * Modified By: Clay Risser
+ * Last Modified: 05-07-2022 00:55:54
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -23,24 +23,42 @@
  */
 
 import {
-  storiesOf,
   createArgsStory,
   createSxArgs,
   sxArgTypes,
+  autoContrastArgType,
 } from "../../../storybook";
+
 import Container from "./index";
 
-storiesOf("Container", module).add("default", createArgsStory(Container), {
-  args: {
-    children: "I am a Container",
-    autoContrast: Container.defaultProps?.autoContrast,
-    ...createSxArgs(Container),
+export default {
+  title: "components/Container",
+  component: Container,
+  parameters: {
+    status: { type: "beta" },
   },
-  argTypes: {
-    autoContrast: {
-      options: ["A", "AA", "AAA", false],
-      control: { type: "select" },
-    },
-    ...sxArgTypes,
-  },
-});
+};
+
+export const container = createArgsStory(Container);
+container.args = {
+  children: "I am Container",
+  autoContrast: Container.defaultProps?.autoContrast,
+  ...createSxArgs(Container),
+};
+container.argTypes = {
+  ...autoContrastArgType,
+  ...sxArgTypes,
+};
+//storiesOf("Container", module).add("default", createArgsStory(Container), {
+//args: {
+//children: "I am a Container",
+//autoContrast: Container.defaultProps?.autoContrast,
+//...createSxArgs(Container),
+//},
+//argTypes: {
+//autoContrast: {
+//options: ["A", "AA", "AAA", false],
+// control: { type: "select" },
+//},
+// ...sxArgTypes,
+// },});

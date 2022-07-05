@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 30-06-2022 10:04:05
- * Modified By: Clay Risser
+ * Last Modified: 05-07-2022 02:11:48
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -25,28 +25,76 @@
 import React from "react";
 import Box from "../Box";
 import Link from ".";
-import { storiesOf } from "../../../storybook";
+import {
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes,
+  Args,
+  autoContrastArgType,
+} from "../../../storybook";
+import NavLink from ".";
 
-storiesOf("NavLink", module)
-  .add(
-    "default",
-    () => (
-      <Link href="https://theme-ui.com/components/link">Hello, world!</Link>
-    ),
-    {
-      component: Link,
-      status: { type: "beta" },
-    }
-  )
-  .add(
-    "with background",
-    () => (
-      <Box sx={{ bg: "background", p: 4 }}>
-        <Link href="https://theme-ui.com/components/link">Hello, world!</Link>
-      </Box>
-    ),
-    {
-      component: Link,
-      status: { type: "beta" },
-    }
-  );
+export default {
+  title: "components/NavLink",
+  component: NavLink,
+  parameters: {
+    status: { type: "beta" },
+  },
+};
+
+export const navLink = createArgsStory(NavLink);
+navLink.args = {
+  children: "I am a NavLink",
+  href: "https://theme-ui.com/components/nav-link",
+  autoContrast: NavLink.defaultProps?.autoContrast,
+  ...createSxArgs(NavLink),
+};
+navLink.argTypes = {
+  ...autoContrastArgType,
+  ...sxArgTypes,
+};
+
+export const withBackground = (args: Args) => (
+  <Box sx={{ bg: args.background, p: 4 }}>
+    <Link
+      autoContrast={args.autoContrast}
+      href="https://theme-ui.com/components/nav-link"
+    >
+      Hello, world!
+    </Link>
+  </Box>
+);
+
+withBackground.args = {
+  autoContrast: "AAA",
+  background: "black",
+};
+withBackground.argTypes = {
+  ...autoContrastArgType,
+  background: { control: { type: "color" } },
+};
+
+// storiesOf("NavLink", module)
+//   .add(
+//     "default",
+//     () => (
+//       <Link href="https://theme-ui.com/components/link">Hello, world!</Link>
+//     ),
+//     {
+//       component: Link,
+//       status: { type: "beta" },
+//     }
+//   )
+
+//   .add(
+//     "with background",
+//     () => (
+//       <Box sx={{ bg: "background", p: 4 }}>
+//         <Link href="https://theme-ui.com/components/link">Hello, world!</Link>
+//       </Box>
+//     ),
+//     {
+//       component: Link,
+//       status: { type: "beta" },
+//     }
+//   );
