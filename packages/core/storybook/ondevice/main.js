@@ -5,12 +5,12 @@
  * Author: Clay Risser
  * -----
 
- * Last Modified: 06-07-2022 03:59:22
- * Modified By: Manikanta
- * Last Modified: 06-07-2022 03:59:22
- * Modified By: Manikanta
- * Last Modified: 06-07-2022 03:59:22
- * Modified By: Manikanta
+ * Last Modified: 06-07-2022 04:46:43
+ * Modified By: K S R P BHUSHAN
+ * Last Modified: 06-07-2022 04:46:43
+ * Modified By: K S R P BHUSHAN
+ * Last Modified: 06-07-2022 04:46:43
+ * Modified By: K S R P BHUSHAN
 
 
 
@@ -58,7 +58,7 @@ module.exports = {
     "../../**/Spinner.stories.@(js|jsx|ts|tsx|md|mdx)",
      "../../**/Grid.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Radio.stories.@(js|jsx|ts|tsx|md|mdx)",
-    // "../../**/*.stories.@(js|jsx|ts|tsx|md|mdx)",
+     "../../**/Progress.stories.@(js|jsx|ts|tsx|md|mdx)",
      "../../**/Label.stories.@(js|jsx|ts|tsx|md|mdx)",
      // "../../**/*.stories.@(js|jsx|ts|tsx|md|mdx)",
   ],
