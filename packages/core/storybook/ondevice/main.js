@@ -5,40 +5,40 @@
  * Author: Clay Risser
  * -----
 
- * Last Modified: 05-07-2022 23:29:10
- * Modified By: Ajith Kumar
+ * Last Modified: 06-07-2022 00:49:17
+ * Modified By: Manikanta
 
- * Last Modified: 05-07-2022 23:29:10
- * Modified By: Ajith Kumar
+ * Last Modified: 06-07-2022 00:49:17
+ * Modified By: Manikanta
 
- * Last Modified: 05-07-2022 23:29:10
- * Modified By: Ajith Kumar
- * Last Modified: 05-07-2022 23:29:10
- * Modified By: Ajith Kumar
+ * Last Modified: 06-07-2022 00:49:17
+ * Modified By: Manikanta
+ * Last Modified: 06-07-2022 00:49:17
+ * Modified By: Manikanta
 
- * Last Modified: 05-07-2022 23:29:10
- * Modified By: Ajith Kumar
- * Last Modified: 05-07-2022 23:29:10
- * Modified By: Ajith Kumar
-
-
- * Last Modified: 05-07-2022 23:29:10
- * Modified By: Ajith Kumar
- * Last Modified: 05-07-2022 23:29:10
- * Modified By: Ajith Kumar
- * Last Modified: 05-07-2022 23:29:10
- * Modified By: Ajith Kumar
+ * Last Modified: 06-07-2022 00:49:17
+ * Modified By: Manikanta
+ * Last Modified: 06-07-2022 00:49:17
+ * Modified By: Manikanta
 
 
- * Last Modified: 05-07-2022 23:29:10
- * Modified By: Ajith Kumar
- * Last Modified: 05-07-2022 23:29:10
- * Modified By: Ajith Kumar
+ * Last Modified: 06-07-2022 00:49:17
+ * Modified By: Manikanta
+ * Last Modified: 06-07-2022 00:49:17
+ * Modified By: Manikanta
+ * Last Modified: 06-07-2022 00:49:17
+ * Modified By: Manikanta
 
- * Last Modified: 05-07-2022 23:29:10
- * Modified By: Ajith Kumar
- * Last Modified: 05-07-2022 23:29:10
- * Modified By: Ajith Kumar
+
+ * Last Modified: 06-07-2022 00:49:17
+ * Modified By: Manikanta
+ * Last Modified: 06-07-2022 00:49:17
+ * Modified By: Manikanta
+
+ * Last Modified: 06-07-2022 00:49:17
+ * Modified By: Manikanta
+ * Last Modified: 06-07-2022 00:49:17
+ * Modified By: Manikanta
 
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -77,6 +77,9 @@ module.exports = {
     "../../**/Checkbox.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Alert.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Slider.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/IconButton.stories.@(js|jsx|ts|tsx|md|mdx)",
+
+
     // "../../**/*.stories.@(js|jsx|ts|tsx|md|mdx)",
   ],
   addons: [
