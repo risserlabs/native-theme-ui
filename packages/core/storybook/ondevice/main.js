@@ -5,12 +5,12 @@
  * Author: Clay Risser
  * -----
 
- * Last Modified: 06-07-2022 03:59:22
- * Modified By: Manikanta
- * Last Modified: 06-07-2022 03:59:22
- * Modified By: Manikanta
- * Last Modified: 06-07-2022 03:59:22
- * Modified By: Manikanta
+ * Last Modified: 06-07-2022 04:21:43
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 04:21:43
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 04:21:43
+ * Modified By: Lavanya Katari
 
 
 
@@ -61,6 +61,7 @@ module.exports = {
     // "../../**/*.stories.@(js|jsx|ts|tsx|md|mdx)",
      "../../**/Label.stories.@(js|jsx|ts|tsx|md|mdx)",
      // "../../**/*.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Variant.stories.@(js|jsx|ts|tsx|md|mdx)",
   ],
   addons: [
     "@storybook/addon-ondevice-controls",

@@ -4,7 +4,7 @@
  * File Created: 27-06-2022 23:52:56
  * Author: Lavanya Katari
  * -----
- * Last Modified: 06-07-2022 03:44:04
+ * Last Modified: 06-07-2022 04:47:47
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,45 +25,74 @@
 import React from "react";
 import Box from "../Box";
 import {
-  storiesOf,
   Args,
+  autoContrastArgType,
   createArgsStory,
-  createSxArgs,
   sxArgTypes,
 } from "../../../storybook";
 import Variant from ".";
+export default {
+  title: "components/Variants",
+  component: Variant,
+  parameters: {
+    status: { type: "beta" },
+  },
+};
+export const variant = createArgsStory(Variant);
+variant.args = {
+  children: " I am Variant",
+  autoContrast: Variant.defaultProps?.autoContrast,
+};
+variant.argTypes = {
+  hidden: { control: { type: "boolean" } },
+  disabled: { control: { type: "boolean" } },
+  ...autoContrastArgType,
+  ...sxArgTypes,
+};
+export const withBackground = (args: Args) => (
+  <Box
+    sx={{
+      bg: args.background,
+      p: 4,
+    }}
+  ></Box>
+);
+variant.argTypes = {
+  background: { control: { type: "color" } },
+  ...autoContrastArgType,
+};
 
-storiesOf("Variant", module)
-  .add("default", createArgsStory(Variant), {
-    args: {
-      children: " I Am a Variant",
-      ...createSxArgs(Variant),
-    },
-    argTypes: {
-      autoContrast: {
-        options: ["A", "AA", "AAA", false],
-        controls: "select",
-      },
-      ...sxArgTypes,
-    },
-  })
-  .add(
-    "with background",
-    (args: Args) => (
-      <Box
-        sx={{
-          bg: args.background,
-          p: 4,
-        }}
-      ></Box>
-    ),
-    {
-      argTypes: {
-        background: { control: { type: "color" } },
-        autoContrast: {
-          options: ["A", "AA", "AAA", false],
-          control: { type: "select" },
-        },
-      },
-    }
-  );
+//storiesOf("Variant", module)
+//  .add("default", createArgsStory(Variant), {
+//    args: {
+//      children: " I Am a Variant",
+//      ...createSxArgs(Variant),
+//    },
+//    argTypes: {
+//      autoContrast: {
+//        options: ["A", "AA", "AAA", false],
+//        controls: "select",
+//      },
+//      ...sxArgTypes,
+//    },
+//  })
+//  .add(
+//    "with background",
+//    (args: Args) => (
+//      <Box
+//        sx={{
+//          bg: args.background,
+//          p: 4,
+//        }}
+//      ></Box>
+//    ),
+//    {
+//      argTypes: {
+//        background: { control: { type: "color" } },
+//        autoContrast: {
+//          options: ["A", "AA", "AAA", false],
+//          control: { type: "select" },
+//        },
+//      },
+//    }
+//  );
