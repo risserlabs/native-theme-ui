@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 10:23:16
- * Modified By: Clay Risser
+ * Last Modified: 06-07-2022 02:16:35
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -26,54 +26,58 @@ import React from "react";
 import { Box } from "@dripsy/core";
 import Spinner from ".";
 import {
-  storiesOf,
+  //storiesOf,
   createArgsStory,
   createSxArgs,
   sxArgTypes,
+  autoContrastArgType,
 } from "../../../storybook";
 
-storiesOf("Spinner", module)
-  .add("default", createArgsStory(Spinner), {
-    args: {
-      children: "Iam Spinner Component",
-      autoContrast: Spinner.defaultProps?.autoContrast,
-      ...createSxArgs(Spinner),
-    },
-    argTypes: {
-      autoContrast: {
-        options: ["A", "AA", "AAA", false],
-        control: { type: "select" },
-      },
-      ...sxArgTypes,
-    },
-  })
-
-  .add(
-    "size",
-    () => (
-      <div style={{ display: "flex", gap: 10 }}>
-        <Spinner size="small" /> <Spinner size="large" />
-      </div>
-    ),
-    {
-      component: Spinner,
-      status: { type: "beta" },
-    }
-  )
-
-  .add("like theme-ui", () => <Spinner color="primary" />, {
-    component: Spinner,
+export default {
+  title: "components/Spinner",
+  component: Spinner,
+  parameters: {
     status: { type: "beta" },
-  })
-  .add(
-    "with background",
-    () => (
-      <Box sx={{ bg: "background", p: 4 }}>
-        <Spinner />
-      </Box>
-    ),
-    {
-      component: Spinner,
-      status: { type: "beta" },
-    }
-  );
+  },
+};
+
+export const spinner = createArgsStory(Spinner);
+spinner.args = {
+  autoContrast: spinner.defaultProps?.autoContrast,
+  ...createSxArgs(Spinner),
+};
+spinner.argTypes = {
+  ...autoContrastArgType,
+  ...sxArgTypes,
+};
+
+//storiesOf("Spinner", module)
+
+//   .add("default", createArgsStory(Spinner), {
+//     args: {
+//       children: "Iam Spinner Component",
+//       autoContrast: Spinner.defaultProps?.autoContrast,
+//       ...createSxArgs(Spinner),
+//     },
+//     argTypes: {
+//       autoContrast: {
+//         options: ["A", "AA", "AAA", false],
+//         control: { type: "select" },
+//       },
+//       ...sxArgTypes,
+//     },
+//   })
+
+export const size = () => (
+  <div style={{ display: "flex", gap: 10 }}>
+    <Spinner size="small" /> <Spinner size="large" />
+  </div>
+);
+
+export const likeThemeUi = () => <Spinner color="primary" />;
+
+export const withBackGround = () => (
+  <Box sx={{ bg: "background", p: 4 }}>
+    <Spinner />
+  </Box>
+);

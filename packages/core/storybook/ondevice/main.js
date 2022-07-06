@@ -5,73 +5,73 @@
  * Author: Clay Risser
  * -----
 
- * Last Modified: 06-07-2022 01:06:16
+ * Last Modified: 06-07-2022 02:23:32
  * Modified By: Manikanta
 
- * Last Modified: 06-07-2022 01:06:16
+ * Last Modified: 06-07-2022 02:23:32
  * Modified By: Manikanta
 
- * Last Modified: 06-07-2022 01:06:16
+ * Last Modified: 06-07-2022 02:23:32
  * Modified By: Manikanta
- * Last Modified: 06-07-2022 01:06:16
- * Modified By: Manikanta
-
- * Last Modified: 06-07-2022 01:06:16
- * Modified By: Manikanta
- * Last Modified: 06-07-2022 01:06:16
+ * Last Modified: 06-07-2022 02:23:32
  * Modified By: Manikanta
 
-
- * Last Modified: 06-07-2022 01:06:16
+ * Last Modified: 06-07-2022 02:23:32
  * Modified By: Manikanta
- * Last Modified: 06-07-2022 01:06:16
- * Modified By: Manikanta
- * Last Modified: 06-07-2022 01:06:16
+ * Last Modified: 06-07-2022 02:23:32
  * Modified By: Manikanta
 
 
- * Last Modified: 06-07-2022 01:06:16
+ * Last Modified: 06-07-2022 02:23:32
  * Modified By: Manikanta
- * Last Modified: 06-07-2022 01:06:16
+ * Last Modified: 06-07-2022 02:23:32
  * Modified By: Manikanta
-
- * Last Modified: 06-07-2022 01:06:16
- * Modified By: Manikanta
- * Last Modified: 06-07-2022 01:06:16
- * Modified By: Manikanta
- * Last Modified: 06-07-2022 01:06:16
- * Modified By: Manikanta
-
- * Last Modified: 06-07-2022 01:06:16
- * Modified By: Manikanta
-
- * Last Modified: 06-07-2022 01:06:16
- * Modified By: Manikanta
- * Last Modified: 06-07-2022 01:06:16
- * Modified By: Manikanta
-
- * Last Modified: 06-07-2022 01:06:16
- * Modified By: Manikanta
- * Last Modified: 06-07-2022 01:06:16
+ * Last Modified: 06-07-2022 02:23:32
  * Modified By: Manikanta
 
 
- * Last Modified: 06-07-2022 01:06:16
+ * Last Modified: 06-07-2022 02:23:32
  * Modified By: Manikanta
- * Last Modified: 06-07-2022 01:06:16
+ * Last Modified: 06-07-2022 02:23:32
  * Modified By: Manikanta
- * Last Modified: 06-07-2022 01:06:16
+
+ * Last Modified: 06-07-2022 02:23:32
+ * Modified By: Manikanta
+ * Last Modified: 06-07-2022 02:23:32
+ * Modified By: Manikanta
+ * Last Modified: 06-07-2022 02:23:32
+ * Modified By: Manikanta
+
+ * Last Modified: 06-07-2022 02:23:32
+ * Modified By: Manikanta
+
+ * Last Modified: 06-07-2022 02:23:32
+ * Modified By: Manikanta
+ * Last Modified: 06-07-2022 02:23:32
+ * Modified By: Manikanta
+
+ * Last Modified: 06-07-2022 02:23:32
+ * Modified By: Manikanta
+ * Last Modified: 06-07-2022 02:23:32
  * Modified By: Manikanta
 
 
- * Last Modified: 06-07-2022 01:06:16
+ * Last Modified: 06-07-2022 02:23:32
  * Modified By: Manikanta
- * Last Modified: 06-07-2022 01:06:16
+ * Last Modified: 06-07-2022 02:23:32
+ * Modified By: Manikanta
+ * Last Modified: 06-07-2022 02:23:32
  * Modified By: Manikanta
 
- * Last Modified: 06-07-2022 01:06:16
+
+ * Last Modified: 06-07-2022 02:23:32
  * Modified By: Manikanta
- * Last Modified: 06-07-2022 01:06:16
+ * Last Modified: 06-07-2022 02:23:32
+ * Modified By: Manikanta
+
+ * Last Modified: 06-07-2022 02:23:32
+ * Modified By: Manikanta
+ * Last Modified: 06-07-2022 02:23:32
  * Modified By: Manikanta
 
  * -----
@@ -113,7 +113,8 @@ module.exports = {
     "../../**/Slider.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/IconButton.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Flex.stories.@(js|jsx|ts|tsx|md|mdx)",
-     "../../**/Grid.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Grid.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Spinner.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/*.stories.@(js|jsx|ts|tsx|md|mdx)",
   ],
   addons: [
