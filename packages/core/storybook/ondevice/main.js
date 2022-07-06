@@ -5,39 +5,39 @@
  * Author: Clay Risser
  * -----
 
- * Last Modified: 05-07-2022 23:29:10
+ * Last Modified: 06-07-2022 00:37:42
  * Modified By: Ajith Kumar
 
- * Last Modified: 05-07-2022 23:29:10
+ * Last Modified: 06-07-2022 00:37:42
  * Modified By: Ajith Kumar
 
- * Last Modified: 05-07-2022 23:29:10
+ * Last Modified: 06-07-2022 00:37:42
  * Modified By: Ajith Kumar
- * Last Modified: 05-07-2022 23:29:10
- * Modified By: Ajith Kumar
-
- * Last Modified: 05-07-2022 23:29:10
- * Modified By: Ajith Kumar
- * Last Modified: 05-07-2022 23:29:10
+ * Last Modified: 06-07-2022 00:37:42
  * Modified By: Ajith Kumar
 
-
- * Last Modified: 05-07-2022 23:29:10
+ * Last Modified: 06-07-2022 00:37:42
  * Modified By: Ajith Kumar
- * Last Modified: 05-07-2022 23:29:10
- * Modified By: Ajith Kumar
- * Last Modified: 05-07-2022 23:29:10
+ * Last Modified: 06-07-2022 00:37:42
  * Modified By: Ajith Kumar
 
 
- * Last Modified: 05-07-2022 23:29:10
+ * Last Modified: 06-07-2022 00:37:42
  * Modified By: Ajith Kumar
- * Last Modified: 05-07-2022 23:29:10
+ * Last Modified: 06-07-2022 00:37:42
+ * Modified By: Ajith Kumar
+ * Last Modified: 06-07-2022 00:37:42
  * Modified By: Ajith Kumar
 
- * Last Modified: 05-07-2022 23:29:10
+
+ * Last Modified: 06-07-2022 00:37:42
  * Modified By: Ajith Kumar
- * Last Modified: 05-07-2022 23:29:10
+ * Last Modified: 06-07-2022 00:37:42
+ * Modified By: Ajith Kumar
+
+ * Last Modified: 06-07-2022 00:37:42
+ * Modified By: Ajith Kumar
+ * Last Modified: 06-07-2022 00:37:42
  * Modified By: Ajith Kumar
 
  * -----
@@ -77,6 +77,8 @@ module.exports = {
     "../../**/Checkbox.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Alert.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Slider.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Flex.stories.@(js|jsx|ts|tsx|md|mdx)",
+     "../../**/Grid.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/*.stories.@(js|jsx|ts|tsx|md|mdx)",
   ],
   addons: [

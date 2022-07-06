@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 10:04:09
  * Author: Ajithkrm6
  * -----
- * Last Modified: 03-07-2022 07:02:17
- * Modified By: Clay Risser
+ * Last Modified: 06-07-2022 00:22:25
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -25,34 +25,58 @@ import React from "react";
 import Grid from "./index";
 import Box from "../Box";
 import {
-  storiesOf,
   createArgsStory,
   createSxArgs,
   sxArgTypes,
+  autoContrastArgType,
 } from "../../../storybook";
 
-storiesOf("Grid", module)
-  .add("default", createArgsStory(Grid, {}), {
-    args: {
-      children: "I am a Grid",
-      ...createSxArgs,
-    },
-    argTypes: {
-      autoContrast: {
-        options: ["A", "AA", "AAA", false],
-        control: { type: "select" },
-      },
-      ...sxArgTypes,
-    },
-  })
-  .add(
-    "like theme Ui",
-    () => (
-      <Grid>
-        <Box sx={{ bg: "primary" }}>Box1</Box>
-        <Box sx={{ bg: "secondary" }}>Box2</Box>
-        <Box sx={{ bg: "muted" }}>Box3</Box>
-      </Grid>
-    ),
-    createArgsStory(Grid)
-  );
+export default {
+  title: "Components/Grid",
+  component: Grid,
+  parameters: {
+    type: { status: "beta" },
+  },
+};
+
+export const grid = createArgsStory(Grid);
+grid.args = {
+  children: "I am a Grid component",
+  ...createSxArgs,
+};
+grid.argTypes = {
+  ...autoContrastArgType,
+  ...sxArgTypes,
+};
+export const likeThemeUi = () => (
+  <Grid>
+    <Box sx={{ bg: "primary" }}>Box1</Box>
+    <Box sx={{ bg: "secondary" }}>Box2</Box>
+    <Box sx={{ bg: "muted" }}>Box3</Box>
+  </Grid>
+);
+// storiesOf("Grid", module)
+//   .add("default", createArgsStory(Grid, {}), {
+//     args: {
+//       children: "I am a Grid",
+//       ...createSxArgs,
+//     },
+//     argTypes: {
+//       autoContrast: {
+//         options: ["A", "AA", "AAA", false],
+//         control: { type: "select" },
+//       },
+//       ...sxArgTypes,
+//     },
+//   })
+//   .add(
+//     "like theme Ui",
+//     () => (
+//       <Grid>
+//         <Box sx={{ bg: "primary" }}>Box1</Box>
+//         <Box sx={{ bg: "secondary" }}>Box2</Box>
+//         <Box sx={{ bg: "muted" }}>Box3</Box>
+//       </Grid>
+//     ),
+//     createArgsStory(Grid)
+//   );
