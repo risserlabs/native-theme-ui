@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 07:02:17
- * Modified By: Clay Risser
+ * Last Modified: 06-07-2022 02:30:01
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -26,41 +26,96 @@ import React from "react";
 import Box from "../Box";
 import Label from ".";
 import {
-  storiesOf,
   createArgsStory,
   createSxArgs,
   sxArgTypes,
+  autoContrastArgType,
 } from "../../../storybook";
 
-storiesOf("Label", module)
-  //.add('default', () => <Label>Form Label</Label>, {
-  //component: Label,
-  //status: { type: 'beta' }
-  //})
+export default {
+  title: "Component/Label",
+  component: Label,
+  parameters: {
+    status: { type: "beta" },
+  },
+};
 
-  .add("default", createArgsStory(Label), {
-    args: {
-      children: "Label",
-      autoContrast: Label.defaultProps?.autoContrast,
-      ...createSxArgs(Label),
-    },
-    argTypes: {
-      autoContrast: {
-        options: ["A", "AA", "AAA", false],
-        control: { type: "select" },
-      },
-      ...sxArgTypes,
-    },
-  })
-  .add(
-    "with background",
-    () => (
-      <Box sx={{ bg: "background", p: 4 }}>
-        <Label>Form Label</Label>
-      </Box>
-    ),
-    {
-      component: Label,
-      status: { type: "beta" },
-    }
-  );
+export const label = createArgsStory(Label);
+label.args = {
+  children: "Label",
+  autoContrast: Label.defaultProps?.autoContrast,
+  ...createSxArgs(Label),
+};
+label.argTypes = {
+  ...autoContrastArgType,
+  ...sxArgTypes,
+};
+
+export const withBackground = () => (
+  <Box sx={{ bg: "background", p: 4 }}>
+    <Label>Form Label</Label>
+  </Box>
+);
+
+// storiesOf("Label", module)
+//   //.add('default', () => <Label>Form Label</Label>, {
+//   //component: Label,
+//   //status: { type: 'beta' }
+//   //})
+
+//   .add("default", createArgsStory(Label), {
+//     args: {
+// children: "Label",
+// autoContrast: Label.defaultProps?.autoContrast,
+// ...createSxArgs(Label),
+//     },
+//     argTypes: {
+//       autoContrast: {
+//         options: ["A", "AA", "AAA", false],
+//         control: { type: "select" },
+//       },
+//       ...sxArgTypes,
+//     },
+//   })
+//   .add(
+//     "with background",
+//     () => (
+// <Box sx={{ bg: "background", p: 4 }}>
+//   <Label>Form Label</Label>
+// </Box>
+//     )storiesOf("Label", module)
+//   //.add('default', () => <Label>Form Label</Label>, {
+//   //component: Label,
+//   //status: { type: 'beta' }
+//   //})
+
+//   .add("default", createArgsStory(Label), {
+//     args: {
+//       children: "Label",
+//       autoContrast: Label.defaultProps?.autoContrast,
+//       ...createSxArgs(Label),
+//     },
+//     argTypes: {
+//       autoContrast: {
+//         options: ["A", "AA", "AAA", false],
+//         control: { type: "select" },
+//       },
+//       ...sxArgTypes,
+//     },
+//   })
+//   .add(
+//     "with background",
+// () => (
+//     <Box sx={{ bg: "background", p: 4 }}>
+//       <Label>Form Label</Label>
+//     </Box>
+//   ),
+//   {
+//     component: Label,
+//     status: { type: "beta" },
+//   }
+// );
+//   {
+//     component: Label,
+//     status: { type: "beta" },
+//   }  )
