@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 10:23:16
- * Modified By: Clay Risser
+ * Last Modified: 06-07-2022 03:37:27
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -52,9 +52,7 @@ Label.defaultProps = {
 };
 Label.defaultSx = {
   color: "text",
-  fontWeight: 700,
-  height: 10,
-  width: 10,
+  fontWeight: "bold",
 };
 //export const styles = {
 //text: {
