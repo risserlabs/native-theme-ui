@@ -5,39 +5,209 @@
  * Author: Clay Risser
  * -----
 
- * Last Modified: 06-07-2022 01:50:16
+ * Last Modified: 06-07-2022 03:50:23
  * Modified By: Lavanya Katari
 
- * Last Modified: 06-07-2022 01:50:16
+ * Last Modified: 06-07-2022 03:50:23
  * Modified By: Lavanya Katari
 
- * Last Modified: 06-07-2022 01:50:16
+ * Last Modified: 06-07-2022 03:50:23
  * Modified By: Lavanya Katari
- * Last Modified: 06-07-2022 01:50:16
- * Modified By: Lavanya Katari
-
- * Last Modified: 06-07-2022 01:50:16
- * Modified By: Lavanya Katari
- * Last Modified: 06-07-2022 01:50:16
+ * Last Modified: 06-07-2022 03:50:23
  * Modified By: Lavanya Katari
 
-
- * Last Modified: 06-07-2022 01:50:16
+ * Last Modified: 06-07-2022 03:50:23
  * Modified By: Lavanya Katari
- * Last Modified: 06-07-2022 01:50:16
- * Modified By: Lavanya Katari
- * Last Modified: 06-07-2022 01:50:16
+ * Last Modified: 06-07-2022 03:50:23
  * Modified By: Lavanya Katari
 
 
- * Last Modified: 06-07-2022 01:50:16
+ * Last Modified: 06-07-2022 03:50:23
  * Modified By: Lavanya Katari
- * Last Modified: 06-07-2022 01:50:16
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
  * Modified By: Lavanya Katari
 
- * Last Modified: 06-07-2022 01:50:16
+
+ * Last Modified: 06-07-2022 03:50:23
  * Modified By: Lavanya Katari
- * Last Modified: 06-07-2022 01:50:16
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+
+ * Last Modified: 06-07-2022 03:50:23
+ * Modified By: Lavanya Katari
+ * Last Modified: 06-07-2022 03:50:23
  * Modified By: Lavanya Katari
 
  * -----
@@ -69,6 +239,7 @@ module.exports = {
     "../../**/Message.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Donut.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Select.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Heading.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Badge.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Avatar.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Divider.stories.@(js|jsx|ts|tsx|md|mdx)",
@@ -77,10 +248,13 @@ module.exports = {
     "../../**/Checkbox.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Alert.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Slider.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/IconButton.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Flex.stories.@(js|jsx|ts|tsx|md|mdx)",
      "../../**/Grid.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Radio.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/*.stories.@(js|jsx|ts|tsx|md|mdx)",
+     "../../**/Label.stories.@(js|jsx|ts|tsx|md|mdx)",
+     // "../../**/*.stories.@(js|jsx|ts|tsx|md|mdx)",
   ],
   addons: [
     "@storybook/addon-ondevice-controls",

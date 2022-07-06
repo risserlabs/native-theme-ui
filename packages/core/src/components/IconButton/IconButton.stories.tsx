@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 07:02:17
- * Modified By: Clay Risser
+ * Last Modified: 06-07-2022 00:41:54
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -24,62 +24,68 @@
 
 import React from "react";
 import {
-  storiesOf,
+  //storiesOf,
   createArgsStory,
   sxArgTypes,
   createSxArgs,
+  autoContrastArgType,
 } from "../../../storybook";
 import IconButton from ".";
 
-storiesOf("IconButton", module)
-  .add("default Icon", createArgsStory(IconButton), {
-    args: {
-      children: "Iam Icon Button ",
-      autoContrast: IconButton.defaultProps?.autoContrast,
-      ...createSxArgs(IconButton),
-    },
-    argTypes: {
-      autoContrast: {
-        options: ["A", "AA", "AAA", false],
-        control: { type: "select" },
-      },
-      ...sxArgTypes,
-    },
-  })
+export default {
+  title: "components/IconButton",
+  component: IconButton,
+  parameters: {
+    status: { type: "beta" },
+  },
+};
+export const iconButton = createArgsStory(IconButton);
+(iconButton.args = {
+  children: "Iam Icon Button Component",
+  autoContrast: IconButton.defaultProps?.autoContrast,
+  ...createSxArgs(IconButton),
+}),
+  (iconButton.argTypes = {
+    ...autoContrastArgType,
+    ...sxArgTypes,
+  });
 
-  .add(
-    "Home IconButton",
-    () => (
-      <IconButton
-        source={require("../../../assets/homeIcon.png")}
-        iconSx={{
-          width: 30,
-          height: 30,
-          overflow: "hidden",
-        }}
-        onPress={() => console.log("HOME ICON PRESSED")}
-      />
-    ),
-    {
-      component: IconButton,
-      status: { type: "beta" },
-    }
-  )
-  .add(
-    "Notification IconButton",
-    () => (
-      <IconButton
-        source={require("../../../assets/notificationIcon.png")}
-        iconSx={{
-          width: 30,
-          height: 30,
-          overflow: "hidden",
-        }}
-        onPress={() => console.log("NOTIFICATION ICON PRESSED")}
-      />
-    ),
-    {
-      component: IconButton,
-      status: { type: "beta" },
-    }
-  );
+// storiesOf("IconButton", module)
+//   .add("default Icon", createArgsStory(IconButton), {
+//     args: {
+//       children: "Iam Icon Button ",
+//       autoContrast: IconButton.defaultProps?.autoContrast,
+//       ...createSxArgs(IconButton),
+//     },
+//     argTypes: {
+//       autoContrast: {
+//         options: ["A", "AA", "AAA", false],
+//         control: { type: "select" },
+//       },
+//       ...sxArgTypes,
+//     },
+//   })
+
+export const HomeIconButton = () => (
+  <IconButton
+    source={require("../../../assets/homeIcon.png")}
+    iconSx={{
+      width: 30,
+      height: 30,
+      overflow: "hidden",
+    }}
+    onPress={() => console.log("HOME ICON PRESSED")}
+  />
+);
+
+export const NotificationIconButton = () => (
+  <IconButton
+    source={require("../../../assets/notificationIcon.png")}
+    iconSx={{
+      width: 30,
+      height: 30,
+      overflow: "hidden",
+    }}
+    onPress={() => console.log("NOTIFICATION ICON PRESSED")}
+  />
+);
