@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 10:23:15
- * Modified By: Clay Risser
+ * Last Modified: 06-07-2022 00:36:09
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -26,80 +26,137 @@ import React from "react";
 import { Box, Text } from "@dripsy/core";
 import {
   createArgsStory,
-  storiesOf,
   createSxArgs,
   sxArgTypes,
+  autoContrastArgType,
 } from "../../../storybook";
 import Flex from ".";
 
-storiesOf("Flex", module)
-  .add("default", createArgsStory(Flex), {
-    args: {
-      children: "I am Flex ",
-      ...createSxArgs,
-    },
-    argTypes: {
-      autoContrast: {
-        options: ["A", "AA", "AAA", false],
-        control: { type: "select" },
-      },
-      ...sxArgTypes,
-    },
-  })
-  .add(
-    "flex row",
-    () => (
-      <Flex>
-        <Box sx={{ bg: "primary", p: 4 }}>
-          <Text>Hello, world!</Text>
-        </Box>{" "}
-        <Box sx={{ bg: "primary", p: 4 }}>
-          <Text>Hello, world!</Text>
-        </Box>{" "}
-        <Box sx={{ bg: "primary", p: 4 }}>
-          <Text>Hello, world!</Text>
-        </Box>
-      </Flex>
-    ),
-    {
-      component: Flex,
-      status: { type: "beta" },
-    }
-  )
-  .add(
-    "flex column",
-    () => (
-      <Flex sx={{ flexDirection: "column" }}>
-        <Box sx={{ bg: "primary", p: 4 }}>
-          <Text>Hello, world!</Text>
-        </Box>{" "}
-        <Box sx={{ bg: "primary", p: 4 }}>
-          <Text>Hello, world!</Text>
-        </Box>{" "}
-        <Box sx={{ bg: "primary", p: 4 }}>
-          <Text>Hello, world!</Text>
-        </Box>
-      </Flex>
-    ),
-    {
-      component: Flex,
-      status: { type: "beta" },
-    }
-  )
-  .add(
-    "like theme ui",
-    () => (
-      <Flex>
-        <Box sx={{ bg: "primary", p: 2, flex: "1 1 auto" }}>
-          <Text>Hello, world!</Text>
-        </Box>{" "}
-        <Box sx={{ bg: "primary", p: 2 }}>
-          <Text>Hello, world!</Text>
-        </Box>{" "}
-      </Flex>
-    ),
-    {
-      component: Flex,
-      status: { type: "beta" },
-    }
-  );
+export default {
+  title: "Component/Flex",
+  component: Flex,
+  parameters: {
+    status: { type: "beta" },
+  },
+};
+
+export const flex = createArgsStory(Flex);
+flex.args = {
+  children: "I am a flex component",
+  ...createSxArgs(Flex),
+};
+flex.argTypes = {
+  ...autoContrastArgType,
+  ...sxArgTypes,
+};
+
+export const flexRow = () => (
+  <Flex>
+    <Box sx={{ bg: "primary", p: 4 }}>
+      <Text>Hello, world!</Text>
+    </Box>{" "}
+    <Box sx={{ bg: "primary", p: 4 }}>
+      <Text>Hello, world!</Text>
+    </Box>{" "}
+    <Box sx={{ bg: "primary", p: 4 }}>
+      <Text>Hello, world!</Text>
+    </Box>
+  </Flex>
+);
+
+export const flexColumn = () => (
+  <Flex sx={{ flexDirection: "column" }}>
+    <Box sx={{ bg: "primary", p: 4 }}>
+      <Text>Hello, world!</Text>
+    </Box>{" "}
+    <Box sx={{ bg: "primary", p: 4 }}>
+      <Text>Hello, world!</Text>
+    </Box>{" "}
+    <Box sx={{ bg: "primary", p: 4 }}>
+      <Text>Hello, world!</Text>
+    </Box>
+  </Flex>
+);
+
+export const likeThemeUi = () => (
+  <Flex>
+    <Box sx={{ bg: "primary", p: 2, flex: "1 1 auto" }}>
+      <Text>Hello, world!</Text>
+    </Box>{" "}
+    <Box sx={{ bg: "primary", p: 2 }}>
+      <Text>Hello, world!</Text>
+    </Box>{" "}
+  </Flex>
+);
+
+// storiesOf("Flex", module)
+//   .add("default", createArgsStory(Flex), {
+//     args: {
+//       children: "I am Flex ",
+//       ...createSxArgs,
+//     },
+//     argTypes: {
+//       autoContrast: {
+//         options: ["A", "AA", "AAA", false],
+//         control: { type: "select" },
+//       },
+//       ...sxArgTypes,
+//     },
+//   })
+//   .add(
+//     "flex row",
+//     () => (
+// <Flex>
+//   <Box sx={{ bg: "primary", p: 4 }}>
+//     <Text>Hello, world!</Text>
+//   </Box>{" "}
+//   <Box sx={{ bg: "primary", p: 4 }}>
+//     <Text>Hello, world!</Text>
+//   </Box>{" "}
+//   <Box sx={{ bg: "primary", p: 4 }}>
+//     <Text>Hello, world!</Text>
+//   </Box>
+// </Flex>
+//     ),
+//     {
+//       component: Flex,
+//       status: { type: "beta" },
+//     }
+//   )
+//   .add(
+//     "flex column",
+//     () => (
+// <Flex sx={{ flexDirection: "column" }}>
+//   <Box sx={{ bg: "primary", p: 4 }}>
+//     <Text>Hello, world!</Text>
+//   </Box>{" "}
+//   <Box sx={{ bg: "primary", p: 4 }}>
+//     <Text>Hello, world!</Text>
+//   </Box>{" "}
+//   <Box sx={{ bg: "primary", p: 4 }}>
+//     <Text>Hello, world!</Text>
+//   </Box>
+// </Flex>
+//     ),
+//     {
+//       component: Flex,
+//       status: { type: "beta" },
+//     }
+//   )
+//   .add(
+//     "like theme ui",
+//     () => (
+// <Flex>
+//   <Box sx={{ bg: "primary", p: 2, flex: "1 1 auto" }}>
+//     <Text>Hello, world!</Text>
+//   </Box>{" "}
+//   <Box sx={{ bg: "primary", p: 2 }}>
+//     <Text>Hello, world!</Text>
+//   </Box>{" "}
+// </Flex>
+//     ),
+//     {
+//       component: Flex,
+//       status: { type: "beta" },
+//     }
+//   );
