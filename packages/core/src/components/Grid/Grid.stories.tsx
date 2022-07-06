@@ -4,7 +4,7 @@
  * File Created: 27-06-2022 10:04:09
  * Author: Ajithkrm6
  * -----
- * Last Modified: 06-07-2022 00:22:25
+ * Last Modified: 06-07-2022 05:14:32
  * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -42,7 +42,7 @@ export default {
 export const grid = createArgsStory(Grid);
 grid.args = {
   children: "I am a Grid component",
-  ...createSxArgs,
+  ...createSxArgs(Grid),
 };
 grid.argTypes = {
   ...autoContrastArgType,
