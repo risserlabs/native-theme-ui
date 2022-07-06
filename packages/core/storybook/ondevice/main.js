@@ -5,107 +5,107 @@
  * Author: Clay Risser
  * -----
 
- * Last Modified: 06-07-2022 01:18:25
+ * Last Modified: 06-07-2022 03:38:59
  * Modified By: Harikittu46
 
- * Last Modified: 06-07-2022 01:18:25
+ * Last Modified: 06-07-2022 03:38:59
  * Modified By: Harikittu46
 
- * Last Modified: 06-07-2022 01:18:25
+ * Last Modified: 06-07-2022 03:38:59
  * Modified By: Harikittu46
- * Last Modified: 06-07-2022 01:18:25
- * Modified By: Harikittu46
-
- * Last Modified: 06-07-2022 01:18:25
- * Modified By: Harikittu46
- * Last Modified: 06-07-2022 01:18:25
+ * Last Modified: 06-07-2022 03:38:59
  * Modified By: Harikittu46
 
-
- * Last Modified: 06-07-2022 01:18:25
+ * Last Modified: 06-07-2022 03:38:59
  * Modified By: Harikittu46
- * Last Modified: 06-07-2022 01:18:25
- * Modified By: Harikittu46
- * Last Modified: 06-07-2022 01:18:25
+ * Last Modified: 06-07-2022 03:38:59
  * Modified By: Harikittu46
 
 
- * Last Modified: 06-07-2022 01:18:25
+ * Last Modified: 06-07-2022 03:38:59
  * Modified By: Harikittu46
- * Last Modified: 06-07-2022 01:18:25
+ * Last Modified: 06-07-2022 03:38:59
  * Modified By: Harikittu46
-
- * Last Modified: 06-07-2022 01:18:25
- * Modified By: Harikittu46
- * Last Modified: 06-07-2022 01:18:25
- * Modified By: Harikittu46
- * Last Modified: 06-07-2022 01:18:25
- * Modified By: Harikittu46
-
- * Last Modified: 06-07-2022 01:18:25
- * Modified By: Harikittu46
-
- * Last Modified: 06-07-2022 01:18:25
- * Modified By: Harikittu46
- * Last Modified: 06-07-2022 01:18:25
- * Modified By: Harikittu46
-
- * Last Modified: 06-07-2022 01:18:25
- * Modified By: Harikittu46
- * Last Modified: 06-07-2022 01:18:25
+ * Last Modified: 06-07-2022 03:38:59
  * Modified By: Harikittu46
 
 
- * Last Modified: 06-07-2022 01:18:25
+ * Last Modified: 06-07-2022 03:38:59
  * Modified By: Harikittu46
- * Last Modified: 06-07-2022 01:18:25
+ * Last Modified: 06-07-2022 03:38:59
  * Modified By: Harikittu46
- * Last Modified: 06-07-2022 01:18:25
+
+ * Last Modified: 06-07-2022 03:38:59
+ * Modified By: Harikittu46
+ * Last Modified: 06-07-2022 03:38:59
+ * Modified By: Harikittu46
+ * Last Modified: 06-07-2022 03:38:59
+ * Modified By: Harikittu46
+
+ * Last Modified: 06-07-2022 03:38:59
+ * Modified By: Harikittu46
+
+ * Last Modified: 06-07-2022 03:38:59
+ * Modified By: Harikittu46
+ * Last Modified: 06-07-2022 03:38:59
+ * Modified By: Harikittu46
+
+ * Last Modified: 06-07-2022 03:38:59
+ * Modified By: Harikittu46
+ * Last Modified: 06-07-2022 03:38:59
  * Modified By: Harikittu46
 
 
- * Last Modified: 06-07-2022 01:18:25
+ * Last Modified: 06-07-2022 03:38:59
  * Modified By: Harikittu46
- * Last Modified: 06-07-2022 01:18:25
+ * Last Modified: 06-07-2022 03:38:59
  * Modified By: Harikittu46
-
- * Last Modified: 06-07-2022 01:18:25
- * Modified By: Harikittu46
- * Last Modified: 06-07-2022 01:18:25
- * Modified By: Harikittu46
- * Last Modified: 06-07-2022 01:18:25
- * Modified By: Harikittu46
-
- * Last Modified: 06-07-2022 01:18:25
- * Modified By: Harikittu46
-
- * Last Modified: 06-07-2022 01:18:25
- * Modified By: Harikittu46
- * Last Modified: 06-07-2022 01:18:25
- * Modified By: Harikittu46
-
- * Last Modified: 06-07-2022 01:18:25
- * Modified By: Harikittu46
- * Last Modified: 06-07-2022 01:18:25
+ * Last Modified: 06-07-2022 03:38:59
  * Modified By: Harikittu46
 
 
- * Last Modified: 06-07-2022 01:18:25
+ * Last Modified: 06-07-2022 03:38:59
  * Modified By: Harikittu46
- * Last Modified: 06-07-2022 01:18:25
+ * Last Modified: 06-07-2022 03:38:59
  * Modified By: Harikittu46
- * Last Modified: 06-07-2022 01:18:25
+
+ * Last Modified: 06-07-2022 03:38:59
+ * Modified By: Harikittu46
+ * Last Modified: 06-07-2022 03:38:59
+ * Modified By: Harikittu46
+ * Last Modified: 06-07-2022 03:38:59
+ * Modified By: Harikittu46
+
+ * Last Modified: 06-07-2022 03:38:59
+ * Modified By: Harikittu46
+
+ * Last Modified: 06-07-2022 03:38:59
+ * Modified By: Harikittu46
+ * Last Modified: 06-07-2022 03:38:59
+ * Modified By: Harikittu46
+
+ * Last Modified: 06-07-2022 03:38:59
+ * Modified By: Harikittu46
+ * Last Modified: 06-07-2022 03:38:59
  * Modified By: Harikittu46
 
 
- * Last Modified: 06-07-2022 01:18:25
+ * Last Modified: 06-07-2022 03:38:59
  * Modified By: Harikittu46
- * Last Modified: 06-07-2022 01:18:25
+ * Last Modified: 06-07-2022 03:38:59
+ * Modified By: Harikittu46
+ * Last Modified: 06-07-2022 03:38:59
  * Modified By: Harikittu46
 
- * Last Modified: 06-07-2022 01:18:25
+
+ * Last Modified: 06-07-2022 03:38:59
  * Modified By: Harikittu46
- * Last Modified: 06-07-2022 01:18:25
+ * Last Modified: 06-07-2022 03:38:59
+ * Modified By: Harikittu46
+
+ * Last Modified: 06-07-2022 03:38:59
+ * Modified By: Harikittu46
+ * Last Modified: 06-07-2022 03:38:59
  * Modified By: Harikittu46
 
  * -----
@@ -137,6 +137,7 @@ module.exports = {
     "../../**/Message.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Donut.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Select.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Heading.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Badge.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Avatar.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Divider.stories.@(js|jsx|ts|tsx|md|mdx)",

@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 06-07-2022 00:58:47
+ * Last Modified: 06-07-2022 01:32:12
  * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -97,7 +97,7 @@ export const withBackground = (args: Args) => (
 );
 
 withBackground.args = {
-  background: "black",
+  background: "red",
   autoContrast: "AAA",
 };
 withBackground.argTypes = {
