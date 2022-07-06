@@ -4,8 +4,8 @@
  * File Created: 22-06-2022 04:27:49
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 05-07-2022 05:16:34
- * Modified By: Ajith Kumar
+ * Last Modified: 06-07-2022 08:07:51
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -32,7 +32,7 @@ import {
 import Message from "./index";
 
 export default {
-  title: "Component/Message",
+  title: "components/Message",
   component: Message,
   parameters: {
     status: { type: "beta" },
@@ -61,12 +61,3 @@ likeThemeUi.argTypes = {
   ...autoContrastArgType,
   background: { control: { type: "color" } },
 };
-// storiesOf("Message", module).add("default", createArgsStory(Message), {
-//   args: {
-//     children: "I am a message",
-//     ...createSxArgs(Message),
-//   },
-//   argTypes: {
-//     ...sxArgTypes,
-//   },
-// });

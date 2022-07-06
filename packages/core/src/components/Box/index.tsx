@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 05-07-2022 07:42:26
+ * Last Modified: 06-07-2022 08:00:05
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,18 +23,22 @@
  */
 
 import React from "react";
-import { Box as DBox } from "@dripsy/core";
+import { Box as DBox, Pressable as DPressable } from "@dripsy/core";
 import { BackgroundColorProvider } from "@risserlabs/auto-contrast";
 import Text from "../Text";
-import { BoxProps, splitProps } from "./props";
+import { BoxProps, splitProps, pressablePropKeys } from "./props";
 import { DBoxProps, DripsyFC } from "../../dripsyHelper";
+
+const pressablePropKeysSet = new Set(pressablePropKeys);
 
 const Box: DripsyFC<BoxProps> = (props: BoxProps) => {
   const sx = {
     ...Box.defaultSx,
     ...props.sx,
   };
-  const { baseProps, baseSx, textProps, textSx } = splitProps(props, sx);
+  const { baseProps, baseSx, textProps, pressableSx, textSx, pressableProps } =
+    splitProps(props, sx);
+
   const children =
     typeof props.children === "string" ? (
       <Text {...textProps} sx={textSx}>
@@ -43,10 +47,35 @@ const Box: DripsyFC<BoxProps> = (props: BoxProps) => {
     ) : (
       props.children
     );
-  return (
-    <DBox {...(baseProps as DBoxProps)} sx={baseSx}>
+
+  const isPressable = (() => {
+    const propKeys = Object.keys(props);
+    for (let i = 0; i < propKeys.length; i++) {
+      const propKey = propKeys[i];
+      if (pressablePropKeysSet.has(propKey)) return true;
+    }
+    return false;
+  })();
+
+  const renderBase = () => (
+    <DBox
+      {...(baseProps as DBoxProps)}
+      {...(isPressable ? {} : (pressableProps as Partial<DBoxProps>))}
+      sx={{
+        ...baseSx,
+        ...(isPressable ? {} : pressableSx),
+      }}
+    >
       <BackgroundColorProvider sx={sx}>{children}</BackgroundColorProvider>
     </DBox>
+  );
+
+  return isPressable ? (
+    <DPressable {...pressableProps} sx={pressableSx}>
+      {renderBase()}
+    </DPressable>
+  ) : (
+    renderBase()
   );
 };
 
@@ -54,11 +83,11 @@ Box.defaultProps = {};
 
 Box.defaultSx = {
   boxSizing: "border-box",
+  cursor: "auto",
   display: "flex",
   flexDirection: "row",
   margin: 0,
   minWidth: 0,
-  width: "100%",
 };
 
 export type { BoxProps };

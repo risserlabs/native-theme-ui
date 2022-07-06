@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 05-07-2022 07:13:24
+ * Last Modified: 06-07-2022 07:16:39
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -32,6 +32,7 @@ import {
   sxArgTypes,
   autoContrastArgType,
 } from "../../../storybook";
+import { action } from "@storybook/addon-actions";
 
 export default {
   title: "components/Box",
@@ -41,7 +42,9 @@ export default {
   },
 };
 
-export const box = createArgsStory(Box);
+export const box = createArgsStory(Box, {
+  onPress: action("onPress"),
+});
 box.args = {
   children: "I am a box",
   autoContrast: Box.defaultProps?.autoContrast,

@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 06-07-2022 00:36:09
- * Modified By: Ajith Kumar
+ * Last Modified: 06-07-2022 08:05:12
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -23,17 +23,18 @@
  */
 
 import React from "react";
-import { Box, Text } from "@dripsy/core";
 import {
   createArgsStory,
   createSxArgs,
   sxArgTypes,
   autoContrastArgType,
 } from "../../../storybook";
-import Flex from ".";
+import Box from "../Box";
+import Flex from "./index";
+import Text from "../Text";
 
 export default {
-  title: "Component/Flex",
+  title: "components/Flex",
   component: Flex,
   parameters: {
     status: { type: "beta" },
@@ -52,111 +53,37 @@ flex.argTypes = {
 
 export const flexRow = () => (
   <Flex>
-    <Box sx={{ bg: "primary", p: 4 }}>
-      <Text>Hello, world!</Text>
-    </Box>{" "}
-    <Box sx={{ bg: "primary", p: 4 }}>
-      <Text>Hello, world!</Text>
-    </Box>{" "}
-    <Box sx={{ bg: "primary", p: 4 }}>
-      <Text>Hello, world!</Text>
+    <Box autoContrast="AAA" sx={{ bg: "primary", p: 1, m: 1 }}>
+      Hello, world!
+    </Box>
+    <Box autoContrast="AAA" sx={{ bg: "secondary", p: 1, m: 1 }}>
+      Hello, world!
+    </Box>
+    <Box autoContrast="AAA" sx={{ bg: "primary", p: 1, m: 1 }}>
+      Hello, world!
     </Box>
   </Flex>
 );
 
 export const flexColumn = () => (
   <Flex sx={{ flexDirection: "column" }}>
-    <Box sx={{ bg: "primary", p: 4 }}>
-      <Text>Hello, world!</Text>
-    </Box>{" "}
-    <Box sx={{ bg: "primary", p: 4 }}>
-      <Text>Hello, world!</Text>
-    </Box>{" "}
-    <Box sx={{ bg: "primary", p: 4 }}>
-      <Text>Hello, world!</Text>
+    <Box autoContrast="AAA" sx={{ bg: "primary", p: 1, m: 1 }}>
+      Hello, world!
+    </Box>
+    <Box autoContrast="AAA" sx={{ bg: "secondary", p: 1, m: 1 }}>
+      Hello, world!
+    </Box>
+    <Box autoContrast="AAA" sx={{ bg: "primary", p: 1, m: 1 }}>
+      Hello, world!
     </Box>
   </Flex>
 );
 
 export const likeThemeUi = () => (
   <Flex>
-    <Box sx={{ bg: "primary", p: 2, flex: "1 1 auto" }}>
-      <Text>Hello, world!</Text>
-    </Box>{" "}
-    <Box sx={{ bg: "primary", p: 2 }}>
-      <Text>Hello, world!</Text>
-    </Box>{" "}
+    <Box sx={{ flex: "1 1 auto", p: 2, bg: "primary", color: "white" }}>
+      Flex
+    </Box>
+    <Box sx={{ bg: "muted", p: 2 }}>Box</Box>
   </Flex>
 );
-
-// storiesOf("Flex", module)
-//   .add("default", createArgsStory(Flex), {
-//     args: {
-//       children: "I am Flex ",
-//       ...createSxArgs,
-//     },
-//     argTypes: {
-//       autoContrast: {
-//         options: ["A", "AA", "AAA", false],
-//         control: { type: "select" },
-//       },
-//       ...sxArgTypes,
-//     },
-//   })
-//   .add(
-//     "flex row",
-//     () => (
-// <Flex>
-//   <Box sx={{ bg: "primary", p: 4 }}>
-//     <Text>Hello, world!</Text>
-//   </Box>{" "}
-//   <Box sx={{ bg: "primary", p: 4 }}>
-//     <Text>Hello, world!</Text>
-//   </Box>{" "}
-//   <Box sx={{ bg: "primary", p: 4 }}>
-//     <Text>Hello, world!</Text>
-//   </Box>
-// </Flex>
-//     ),
-//     {
-//       component: Flex,
-//       status: { type: "beta" },
-//     }
-//   )
-//   .add(
-//     "flex column",
-//     () => (
-// <Flex sx={{ flexDirection: "column" }}>
-//   <Box sx={{ bg: "primary", p: 4 }}>
-//     <Text>Hello, world!</Text>
-//   </Box>{" "}
-//   <Box sx={{ bg: "primary", p: 4 }}>
-//     <Text>Hello, world!</Text>
-//   </Box>{" "}
-//   <Box sx={{ bg: "primary", p: 4 }}>
-//     <Text>Hello, world!</Text>
-//   </Box>
-// </Flex>
-//     ),
-//     {
-//       component: Flex,
-//       status: { type: "beta" },
-//     }
-//   )
-//   .add(
-//     "like theme ui",
-//     () => (
-// <Flex>
-//   <Box sx={{ bg: "primary", p: 2, flex: "1 1 auto" }}>
-//     <Text>Hello, world!</Text>
-//   </Box>{" "}
-//   <Box sx={{ bg: "primary", p: 2 }}>
-//     <Text>Hello, world!</Text>
-//   </Box>{" "}
-// </Flex>
-//     ),
-//     {
-//       component: Flex,
-//       status: { type: "beta" },
-//     }
-//   );

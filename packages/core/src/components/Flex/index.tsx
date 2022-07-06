@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 10:23:15
+ * Last Modified: 06-07-2022 07:52:02
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,13 +24,10 @@
 
 import React from "react";
 import { SxProp } from "@dripsy/core";
-import { ViewProps } from "react-native";
-import Box from "../Box/index";
+import Box, { BoxProps } from "../Box";
 import { DripsyFC } from "../../dripsyHelper";
 
-export interface FlexProps extends ViewProps {
-  sx?: SxProp;
-}
+export type FlexProps = BoxProps;
 
 const Flex: DripsyFC<FlexProps> = (props: FlexProps) => {
   const sx: SxProp = {
@@ -43,12 +40,7 @@ const Flex: DripsyFC<FlexProps> = (props: FlexProps) => {
 };
 
 Flex.defaultProps = {};
-Flex.defaultSx = {
-  flex: {},
-};
 
-//export const styles = {
-//flex: {}
-//};
+Flex.defaultSx = {};
 
 export default Flex;

@@ -4,7 +4,7 @@
  * File Created: 05-07-2022 06:24:30
  * Author: Clay Risser
  * -----
- * Last Modified: 05-07-2022 07:54:00
+ * Last Modified: 06-07-2022 07:46:57
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,9 +23,9 @@
  */
 
 import { AutoContrast } from "@risserlabs/auto-contrast";
-import { createSplitProps } from "../../util";
-import { DBoxProps, PatchVariant } from "../../dripsyHelper";
 import { SxProp } from "dripsy";
+import { createSplitProps } from "../../util";
+import { DBoxProps, DPressableProps, PatchVariant } from "../../dripsyHelper";
 
 export type BasePropsBucket = PatchVariant<DBoxProps>;
 
@@ -33,19 +33,32 @@ export type TextPropsBucket = {
   autoContrast?: AutoContrast;
 };
 
+export type PressablePropsBucket = DPressableProps;
+
 export type BaseSxBucket = SxProp;
 
 export type TextSxBucket = Record<string, unknown>;
 
+export type PressableSxBucket = Record<string, unknown>;
+
 export interface SplitPropsBuckets {
   baseProps: BasePropsBucket;
   textProps: TextPropsBucket;
+  pressableProps: PressablePropsBucket;
 }
 
 export interface SplitSxBuckets {
   baseSx: BaseSxBucket;
   textSx: TextSxBucket;
+  pressableSx: PressableSxBucket;
 }
+
+export const pressablePropKeys = [
+  "onLongPress",
+  "onPress",
+  "onPressIn",
+  "onPressOut",
+];
 
 export const splitProps = createSplitProps<
   BoxProps,
@@ -54,10 +67,12 @@ export const splitProps = createSplitProps<
 >(
   {
     textProps: ["autoContrast"],
+    pressableProps: /^on/g,
   },
   {
     textSx: /^(font)|(text)|(color)/g,
+    pressableSx: ["cursor"],
   }
 );
 
-export type BoxProps = BasePropsBucket & TextPropsBucket;
+export type BoxProps = BasePropsBucket & TextPropsBucket & PressablePropsBucket;
