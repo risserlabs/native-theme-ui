@@ -5,39 +5,39 @@
  * Author: Clay Risser
  * -----
 
- * Last Modified: 05-07-2022 06:34:45
+ * Last Modified: 05-07-2022 23:29:10
  * Modified By: Ajith Kumar
 
- * Last Modified: 05-07-2022 06:34:45
+ * Last Modified: 05-07-2022 23:29:10
  * Modified By: Ajith Kumar
 
- * Last Modified: 05-07-2022 06:34:45
+ * Last Modified: 05-07-2022 23:29:10
  * Modified By: Ajith Kumar
- * Last Modified: 05-07-2022 06:34:45
- * Modified By: Ajith Kumar
-
- * Last Modified: 05-07-2022 06:34:45
- * Modified By: Ajith Kumar
- * Last Modified: 05-07-2022 06:34:45
+ * Last Modified: 05-07-2022 23:29:10
  * Modified By: Ajith Kumar
 
-
- * Last Modified: 05-07-2022 06:34:45
+ * Last Modified: 05-07-2022 23:29:10
  * Modified By: Ajith Kumar
- * Last Modified: 05-07-2022 06:34:45
- * Modified By: Ajith Kumar
- * Last Modified: 05-07-2022 06:34:45
+ * Last Modified: 05-07-2022 23:29:10
  * Modified By: Ajith Kumar
 
 
- * Last Modified: 05-07-2022 06:34:45
+ * Last Modified: 05-07-2022 23:29:10
  * Modified By: Ajith Kumar
- * Last Modified: 05-07-2022 06:34:45
+ * Last Modified: 05-07-2022 23:29:10
+ * Modified By: Ajith Kumar
+ * Last Modified: 05-07-2022 23:29:10
  * Modified By: Ajith Kumar
 
- * Last Modified: 05-07-2022 06:34:45
+
+ * Last Modified: 05-07-2022 23:29:10
  * Modified By: Ajith Kumar
- * Last Modified: 05-07-2022 06:34:45
+ * Last Modified: 05-07-2022 23:29:10
+ * Modified By: Ajith Kumar
+
+ * Last Modified: 05-07-2022 23:29:10
+ * Modified By: Ajith Kumar
+ * Last Modified: 05-07-2022 23:29:10
  * Modified By: Ajith Kumar
 
  * -----
@@ -61,25 +61,18 @@ module.exports = {
     "../../**/Button.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Box.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Text.stories.@(js|jsx|ts|tsx|md|mdx)",
-
-
     "../../**/Textarea.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Input.stories.@(js|jsx|ts|tsx|md|mdx)",
-
     "../../**/Container.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Link.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/NavLink.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Message.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Donut.stories.@(js|jsx|ts|tsx|md|mdx)",
-
-
     "../../**/Select.stories.@(js|jsx|ts|tsx|md|mdx)",
-
     "../../**/Badge.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Avatar.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Divider.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Paragraph.stories.@(js|jsx|ts|tsx|md|mdx)",
-
     "../../**/Card.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Checkbox.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Alert.stories.@(js|jsx|ts|tsx|md|mdx)",
