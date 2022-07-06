@@ -1,25 +1,11 @@
 /**
  * File: /storybook/ondevice/main.js
  * Project: @native-theme-ui/core
- * File Created: 02-07-2022 12:46:47
+ * File Created: 06-07-2022 05:42:28
  * Author: Clay Risser
  * -----
-
- * Last Modified: 06-07-2022 05:22:04
- * Modified By: K S R P BHUSHAN
- * Last Modified: 06-07-2022 05:22:04
- * Modified By: K S R P BHUSHAN
- * Last Modified: 06-07-2022 05:22:04
- * Modified By: K S R P BHUSHAN
- * Last Modified: 06-07-2022 05:22:04
- * Modified By: K S R P BHUSHAN
- * Last Modified: 06-07-2022 05:22:04
- * Modified By: K S R P BHUSHAN
- * Last Modified: 06-07-2022 05:22:04
- * Modified By: K S R P BHUSHAN
-
-
-
+ * Last Modified: 06-07-2022 08:55:00
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -62,11 +48,11 @@ module.exports = {
     "../../**/Flex.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Grid.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Spinner.stories.@(js|jsx|ts|tsx|md|mdx)",
-     "../../**/Grid.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Grid.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Radio.stories.@(js|jsx|ts|tsx|md|mdx)",
-     "../../**/Progress.stories.@(js|jsx|ts|tsx|md|mdx)",
-     "../../**/Label.stories.@(js|jsx|ts|tsx|md|mdx)",
-     // "../../**/*.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Progress.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Label.stories.@(js|jsx|ts|tsx|md|mdx)",
+    // "../../**/*.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Variant.stories.@(js|jsx|ts|tsx|md|mdx)",
   ],
   addons: [

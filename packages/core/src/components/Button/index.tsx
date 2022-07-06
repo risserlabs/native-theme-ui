@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 07:34:18
  * Author: Clay Risser
  * -----
- * Last Modified: 05-07-2022 07:57:41
+ * Last Modified: 06-07-2022 08:51:32
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,7 +25,7 @@
 import React from "react";
 import { Pressable as DPressable } from "@dripsy/core";
 import { BackgroundColorProvider } from "@risserlabs/auto-contrast";
-import { DripsyFC, DPressableProps } from "../../dripsyHelper";
+import { DripsyFC, DPressableProps, isText } from "../../dripsyHelper";
 import Text from "../Text";
 import { ButtonProps, splitProps } from "./props";
 
@@ -36,14 +36,13 @@ const Button: DripsyFC<ButtonProps> = (props: ButtonProps) => {
     ...props.sx,
   };
   const { baseProps, baseSx, textProps, textSx } = splitProps(props, sx);
-  const children =
-    typeof props.children === "string" ? (
-      <Text {...textProps} sx={textSx}>
-        {props.children}
-      </Text>
-    ) : (
-      props.children
-    );
+  const children = isText(props.children) ? (
+    <Text {...textProps} sx={textSx}>
+      {props.children}
+    </Text>
+  ) : (
+    props.children
+  );
   return (
     <DPressable {...(baseProps as DPressableProps)} sx={baseSx}>
       <BackgroundColorProvider sx={sx}>{children}</BackgroundColorProvider>

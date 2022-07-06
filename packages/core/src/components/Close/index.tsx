@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 10:23:15
+ * Last Modified: 06-07-2022 08:56:04
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,21 +24,10 @@
 
 import React from "react";
 import { SxProp } from "@dripsy/core";
-import { DripsyFC } from "../../dripsyHelper";
-import Pressable from "../Pressable";
 import { PressableProps as RNPressableProps } from "react-native";
 import { AutoContrast } from "@risserlabs/auto-contrast";
-const x = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    fill="currentcolor"
-    viewBox="0 0 24 24"
-  >
-    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
-  </svg>
-);
+import { DripsyFC } from "../../dripsyHelper";
+import Button from "../Button";
 
 type CloseProps = RNPressableProps & {
   sx?: SxProp;
@@ -56,11 +45,7 @@ const Close: DripsyFC<CloseProps> = (props: CloseProps) => {
 
   //todo: replace Pressable with Icon button (Icon button wrapping is not done yet)
 
-  return (
-    <Pressable {...props} sx={sx}>
-      {x}
-    </Pressable>
-  );
+  return <Button {...props} sx={sx} />;
 };
 
 Close.defaultProps = {
