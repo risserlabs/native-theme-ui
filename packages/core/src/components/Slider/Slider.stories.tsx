@@ -4,7 +4,7 @@
  * File Created: 27-06-2022 00:27:56
  * Author: Lavanya Katari
  * -----
- * Last Modified: 05-07-2022 05:37:22
+ * Last Modified: 06-07-2022 00:21:33
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,7 +23,6 @@
  */
 
 import React from "react";
-import Box from "../Box";
 import {
   autoContrastArgType,
   createArgsStory,
@@ -43,7 +42,7 @@ slider.args = {
   children: " I am a Slider",
   autoContrast: Slider.defaultProps?.autoContrast,
 
-  ...createSxArgs(Slider),
+  ...createSxArgs(slider),
 };
 slider.sxArgTypes = {
   hidden: { slider: { type: "boolean" } },
@@ -51,7 +50,8 @@ slider.sxArgTypes = {
   ...autoContrastArgType,
   ...sxArgTypes,
 };
-export const withBackground = () => <Box sx={{ bg: "background", p: 4 }}></Box>;
+//export const withBackground = () => <Box sx={{ bg: "background", p: 4 }}></Box>;
+export const withBackground = () => <Slider></Slider>;
 
 //storiesOf("Slider", module)
 //  .add("default", createArgsStory(Slider), {
