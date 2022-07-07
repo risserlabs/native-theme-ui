@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 05:47:44
  * Author: Ajith Kumar
  * -----
- * Last Modified: 03-07-2022 07:02:17
- * Modified By: Clay Risser
+ * Last Modified: 07-07-2022 00:19:52
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -24,28 +24,30 @@
 
 import React from "react";
 import {
-  storiesOf,
   createArgsStory,
   createSxArgs,
   sxArgTypes,
+  autoContrastArgType,
 } from "../../../storybook";
 import Embed from "./index";
 
-storiesOf("Embed", module)
-  .add("default", createArgsStory(Embed), {
-    args: {
-      Children: "Embed Component",
-      autoContrast: Embed.defaultProps?.autoContrast,
-      ...createSxArgs(Embed),
-    },
-    argTypes: {
-      autoContrast: {
-        options: ["A", "AA", "AAA", false],
-        control: { type: "select" },
-      },
-      ...sxArgTypes,
-    },
-  })
-  .add("Like Theme-UI", () => <Embed />, {
-    component: "Embed",
+export default {
+  title: "components/Embed",
+  component: Embed,
+  parameters: {
+    status: { type: "beta" },
+  },
+};
+
+export const embed = createArgsStory(Embed);
+(embed.args = {
+  children: "Iam Embed Component",
+  autoContrast: Embed.defaultProps?.autoContrast,
+  ...createSxArgs(Embed),
+}),
+  (embed.argTypes = {
+    ...autoContrastArgType,
+    ...sxArgTypes,
   });
+
+export const LikeThemeUI = () => <Embed />;

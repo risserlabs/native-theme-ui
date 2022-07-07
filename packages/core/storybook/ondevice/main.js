@@ -4,8 +4,8 @@
  * File Created: 06-07-2022 05:42:28
  * Author: Clay Risser
  * -----
- * Last Modified: 06-07-2022 08:55:00
- * Modified By: Clay Risser
+ * Last Modified: 07-07-2022 00:26:35
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -54,7 +54,10 @@ module.exports = {
     "../../**/Label.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/*.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Variant.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Embed.stories.@(js|jsx|ts|tsx|md|mdx)",
   ],
+  
+
   addons: [
     "@storybook/addon-ondevice-controls",
     "@storybook/addon-ondevice-actions",
