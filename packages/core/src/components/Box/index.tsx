@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 06-07-2022 08:00:05
+ * Last Modified: 06-07-2022 08:51:13
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -27,7 +27,7 @@ import { Box as DBox, Pressable as DPressable } from "@dripsy/core";
 import { BackgroundColorProvider } from "@risserlabs/auto-contrast";
 import Text from "../Text";
 import { BoxProps, splitProps, pressablePropKeys } from "./props";
-import { DBoxProps, DripsyFC } from "../../dripsyHelper";
+import { DBoxProps, DripsyFC, isText } from "../../dripsyHelper";
 
 const pressablePropKeysSet = new Set(pressablePropKeys);
 
@@ -39,14 +39,13 @@ const Box: DripsyFC<BoxProps> = (props: BoxProps) => {
   const { baseProps, baseSx, textProps, pressableSx, textSx, pressableProps } =
     splitProps(props, sx);
 
-  const children =
-    typeof props.children === "string" ? (
-      <Text {...textProps} sx={textSx}>
-        {props.children}
-      </Text>
-    ) : (
-      props.children
-    );
+  const children = isText(props.children) ? (
+    <Text {...textProps} sx={textSx}>
+      {props.children}
+    </Text>
+  ) : (
+    props.children
+  );
 
   const isPressable = (() => {
     const propKeys = Object.keys(props);

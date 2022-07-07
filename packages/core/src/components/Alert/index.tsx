@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 10:23:15
+ * Last Modified: 06-07-2022 08:23:48
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -40,6 +40,7 @@ const Alert: DripsyFC<AlertProps> = (props: AlertProps) => {
     ...Alert.defaultSx,
     ...props.sx,
   });
+
   return <StyledBox {...(props as PatchStyledProps<BoxProps>)} sx={sx} />;
 };
 

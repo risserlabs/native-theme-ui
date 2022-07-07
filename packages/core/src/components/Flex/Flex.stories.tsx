@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 06-07-2022 08:05:12
+ * Last Modified: 06-07-2022 08:18:20
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -31,7 +31,6 @@ import {
 } from "../../../storybook";
 import Box from "../Box";
 import Flex from "./index";
-import Text from "../Text";
 
 export default {
   title: "components/Flex",
@@ -53,13 +52,13 @@ flex.argTypes = {
 
 export const flexRow = () => (
   <Flex>
-    <Box autoContrast="AAA" sx={{ bg: "primary", p: 1, m: 1 }}>
+    <Box autoContrast="AAA" sx={{ bg: "primary", p: 4, m: 2 }}>
       Hello, world!
     </Box>
-    <Box autoContrast="AAA" sx={{ bg: "secondary", p: 1, m: 1 }}>
+    <Box autoContrast="AAA" sx={{ bg: "secondary", p: 4, m: 2 }}>
       Hello, world!
     </Box>
-    <Box autoContrast="AAA" sx={{ bg: "primary", p: 1, m: 1 }}>
+    <Box autoContrast="AAA" sx={{ bg: "primary", p: 4, m: 2 }}>
       Hello, world!
     </Box>
   </Flex>
@@ -67,13 +66,13 @@ export const flexRow = () => (
 
 export const flexColumn = () => (
   <Flex sx={{ flexDirection: "column" }}>
-    <Box autoContrast="AAA" sx={{ bg: "primary", p: 1, m: 1 }}>
+    <Box autoContrast="AAA" sx={{ bg: "primary", p: 4, m: 2 }}>
       Hello, world!
     </Box>
-    <Box autoContrast="AAA" sx={{ bg: "secondary", p: 1, m: 1 }}>
+    <Box autoContrast="AAA" sx={{ bg: "secondary", p: 4, m: 2 }}>
       Hello, world!
     </Box>
-    <Box autoContrast="AAA" sx={{ bg: "primary", p: 1, m: 1 }}>
+    <Box autoContrast="AAA" sx={{ bg: "primary", p: 4, m: 2 }}>
       Hello, world!
     </Box>
   </Flex>

@@ -1,10 +1,10 @@
 /**
- * File: /src/dripsyHelper.ts
+ * File: /src/dripsyHelper.tsx
  * Project: @native-theme-ui/core
  * File Created: 14-06-2022 07:52:25
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 10:23:15
+ * Last Modified: 06-07-2022 08:50:22
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,8 +22,15 @@
  * limitations under the License.
  */
 
-import { FC } from "react";
-import { SxProp } from "@dripsy/core";
+import React from "react";
+import { ComponentPropsWithRef, ComponentType, FC } from "react";
+import {
+  DripsyFinalTheme,
+  StyledProps,
+  SxProp,
+  ThemedOptions,
+  createThemedComponent as createDripsyThemedComponent,
+} from "@dripsy/core";
 import { TextInput as RNTextInput } from "react-native";
 
 export type DPressableProps = Pick<
@@ -583,3 +590,47 @@ export type DripsyFC<P> = FC<P> & { defaultSx: SxProp };
 export type PatchStyledProps<P> = P & any;
 
 export type PatchVariant<P> = Omit<P, "variant"> & { variant?: string };
+
+export function createThemedComponent<
+  BaseComponentProps extends {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    style?: any;
+  },
+  ExtraProps,
+  ThemeKey extends keyof DripsyFinalTheme
+>(
+  Component: ComponentType<BaseComponentProps>,
+  options?: ThemedOptions<ExtraProps, ThemeKey>
+): ComponentType<
+  StyledProps<ThemeKey> &
+    ComponentPropsWithRef<ComponentType<BaseComponentProps>> &
+    ExtraProps
+> {
+  const WrappedComponent: FC<BaseComponentProps> = (
+    props: BaseComponentProps
+  ) => {
+    return <Component {...props} />;
+  };
+  return createDripsyThemedComponent<BaseComponentProps, ExtraProps, ThemeKey>(
+    WrappedComponent,
+    {
+      ...options,
+    }
+  );
+}
+
+export function isText(children: unknown) {
+  if (Array.isArray(children)) {
+    return (
+      children.length > 1 &&
+      typeof children[0] === "string" &&
+      "_owner" in children[1] &&
+      "_store" in children[1] &&
+      "key" in children[1] &&
+      "props" in children[1] &&
+      "ref" in children[1] &&
+      "type" in children[1]
+    );
+  }
+  return typeof children === "string";
+}
