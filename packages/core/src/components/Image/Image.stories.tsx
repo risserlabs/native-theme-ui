@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 07-07-2022 04:44:14
- * Modified By: Manikanta
+ * Last Modified: 11-07-2022 00:27:56
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -24,42 +24,66 @@
 
 import React from "react";
 import {
-  storiesOf,
+  Args,
   createArgsStory,
   createSxArgs,
   sxArgTypes,
 } from "../../../storybook";
 import Image from "./index";
 
-storiesOf("Image", module)
-  .add("default", createArgsStory(Image), {
-    args: {
-      src: "https://picsum.photos/200/300",
-      ...createSxArgs(Image),
-    },
-    argTypes: {
-      ...sxArgTypes,
-    },
-  })
-  .add(
-    "Styled image",
-    () => (
-      <Image
-        source={{
-          uri: "https://source.unsplash.com/user/c_v_r/1900x800",
-        }}
-        sx={{
-          width: 150,
-          height: 150,
-          borderRadius: 150 / 2,
-          overflow: "hidden",
-          borderWidth: 3,
-          borderColor: "primary",
-        }}
-      />
-    ),
-    {
-      component: Image,
-      status: { type: "beta" },
-    }
-  );
+export default {
+  title: "components/Image",
+  component: Image,
+  parameters: {
+    status: { type: "beta" },
+  },
+};
+
+export const image = createArgsStory(Image);
+
+image.args = {
+  src: "https://picsum.photos/200/300",
+  ...createSxArgs(Image),
+};
+
+image.argTypes = {
+  ...sxArgTypes,
+};
+
+export const styledImage = () => (
+  <Image
+    source={{
+      uri: "https://source.unsplash.com/user/c_v_r/1900x800",
+    }}
+    sx={{
+      width: 150,
+      height: 150,
+      borderRadius: 150 / 2,
+      overflow: "hidden",
+      borderWidth: 3,
+      borderColor: "primary",
+    }}
+  />
+);
+
+//   "Styled image",
+//   () => (
+//     <Image
+//       source={{
+//         uri: "https://source.unsplash.com/user/c_v_r/1900x800",
+//       }}
+//       sx={{
+//         width: 150,
+//         height: 150,
+//         borderRadius: 150 / 2,
+//         overflow: "hidden",
+//         borderWidth: 3,
+//         borderColor: "primary",
+//       }}
+//     />
+//   ),
+//   {
+//     component: Image,
+//     status: { type: "beta" },
+//   }
+// ;
