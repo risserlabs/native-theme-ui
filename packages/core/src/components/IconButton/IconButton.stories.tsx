@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 06-07-2022 00:41:54
+ * Last Modified: 11-07-2022 04:17:13
  * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -35,9 +35,7 @@ import IconButton from ".";
 export default {
   title: "components/IconButton",
   component: IconButton,
-  parameters: {
-    status: { type: "beta" },
-  },
+  parameters: {},
 };
 export const iconButton = createArgsStory(IconButton);
 (iconButton.args = {

@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 05-07-2022 01:52:01
+ * Last Modified: 11-07-2022 04:37:02
  * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -43,7 +43,7 @@ export default {
 };
 export const badge = createArgsStory(Badge);
 (badge.args = {
-  children: "Iam Badge Component",
+  children: "Badge",
   autoContrast: Badge.defaultProps?.autoContrast,
   ...createSxArgs(Badge),
 }),
@@ -69,14 +69,21 @@ export const badge = createArgsStory(Badge);
 //  }),
 export const likeThemeUi = () => (
   <Box>
-    <Badge variant="accent" sx={{ padding: "70", borderRadius: 100 }}>
+    <Badge
+      variant="accent"
+      sx={{ padding: "70", borderRadius: 100, width: 100 }}
+    >
       This is a badge
     </Badge>
   </Box>
 );
-export const OutlineBadge = () => <Badge variant="outline">Badge</Badge>;
+export const OutlineBadge = () => (
+  <Badge variant="outline" sx={{ width: 100, height: 50, borderRadius: 9999 }}>
+    Badge 15
+  </Badge>
+);
 export const CircleBadge = () => (
-  <Badge variant="circle" sx={{ borderRadius: 9999, height: 40, width: 50 }}>
+  <Badge variant="circle" sx={{ borderRadius: 60, height: 50, width: 50 }}>
     16
   </Badge>
 );
