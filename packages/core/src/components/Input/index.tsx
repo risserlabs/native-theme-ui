@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 10:23:15
- * Modified By: Clay Risser
+ * Last Modified: 11-07-2022 04:07:28
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -54,13 +54,13 @@ Input.defaultProps = {};
 Input.defaultSx = {
   display: "block",
   width: "100%",
-  p: 2,
-  margin: 0,
+  p: 12,
+  margin: 10,
   minWidth: 0,
   appearance: "none",
-  fontSize: 1,
+  fontSize: 5,
   lineHeight: 1,
-  border: "1px solid",
+  border: "2px solid",
   borderRadius: 4,
   color: "text",
   bg: "transparent",
