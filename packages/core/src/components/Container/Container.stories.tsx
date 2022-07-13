@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 13:00:27
  * Author: ajithkrm6
  * -----
- * Last Modified: 05-07-2022 00:55:54
+ * Last Modified: 13-07-2022 00:29:39
  * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -32,7 +32,7 @@ import {
 import Container from "./index";
 
 export default {
-  title: "components/Container",
+  title: "components/layout/Container",
   component: Container,
   parameters: {
     status: { type: "beta" },

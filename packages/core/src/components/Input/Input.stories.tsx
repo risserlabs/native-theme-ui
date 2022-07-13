@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 05-07-2022 04:48:02
+ * Last Modified: 11-07-2022 04:05:17
  * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -51,8 +51,8 @@ input.args = {
   autoContrast: Input.defaultProps?.autoContrast,
 };
 input.argTypes = {
-  ...autoContrastArgType,
   ...sxArgTypes,
+  ...autoContrastArgType,
 };
 
 // storiesOf("Input", module)

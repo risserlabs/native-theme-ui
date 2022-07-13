@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 05-07-2022 02:11:48
+ * Last Modified: 12-07-2022 23:38:12
  * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -35,7 +35,7 @@ import {
 import NavLink from ".";
 
 export default {
-  title: "components/NavLink",
+  title: "components/links/NavLink",
   component: NavLink,
   parameters: {
     status: { type: "beta" },

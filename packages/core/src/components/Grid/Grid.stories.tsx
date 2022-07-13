@@ -4,7 +4,7 @@
  * File Created: 27-06-2022 10:04:09
  * Author: Ajithkrm6
  * -----
- * Last Modified: 06-07-2022 05:14:32
+ * Last Modified: 13-07-2022 00:58:13
  * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -32,7 +32,7 @@ import {
 } from "../../../storybook";
 
 export default {
-  title: "Components/Grid",
+  title: "components/grids/Grid",
   component: Grid,
   parameters: {
     type: { status: "beta" },

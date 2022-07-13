@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 08:54:38
- * Modified By: Clay Risser
+ * Last Modified: 13-07-2022 01:11:43
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -28,7 +28,7 @@ import Close from "./index";
 import { createArgsStory, createSxArgs, sxArgTypes } from "../../../storybook";
 
 export default {
-  title: "components/Button/Close",
+  title: "components/buttons/Close",
   component: Close,
   parameters: {
     status: { type: "beta" },

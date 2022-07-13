@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 06-07-2022 08:56:04
- * Modified By: Clay Risser
+ * Last Modified: 13-07-2022 01:04:32
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -45,7 +45,7 @@ const Close: DripsyFC<CloseProps> = (props: CloseProps) => {
 
   //todo: replace Pressable with Icon button (Icon button wrapping is not done yet)
 
-  return <Button {...props} sx={sx} />;
+  return <Button variant="close" {...props} sx={sx} />;
 };
 
 Close.defaultProps = {
