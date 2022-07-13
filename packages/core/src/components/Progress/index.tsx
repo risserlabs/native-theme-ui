@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 10:23:15
- * Modified By: Clay Risser
+ * Last Modified: 13-07-2022 05:33:15
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -96,7 +96,7 @@ const Progress: DripsyFC<ProgressProps> = (props: ProgressProps) => {
   delete sxValue.mt;
 
   return (
-    <View sx={sxMax}>
+    <View Variant="styles.progress" sx={sxMax}>
       <View sx={sxValue} />
     </View>
   );

@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 11-07-2022 04:07:28
+ * Last Modified: 13-07-2022 05:31:03
  * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -40,6 +40,8 @@ const Input: DripsyFC<InputProps> = (props: InputProps) => {
   });
   return (
     <DTextInput
+      themeKey="forms"
+      variant="input"
       {...props}
       placeholderTextColor={themeLookup("color", props.placeholderTextColor)}
       selectionColor={themeLookup("color", props.selectionColor)}

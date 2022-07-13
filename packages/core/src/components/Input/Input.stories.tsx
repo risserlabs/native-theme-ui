@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 11-07-2022 04:05:17
+ * Last Modified: 13-07-2022 05:31:14
  * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -34,7 +34,7 @@ import {
 import Input from "./index";
 
 export default {
-  title: "Components/Input",
+  title: "Components/forms/Input",
   component: Input,
   parameters: {
     status: { type: "beta" },

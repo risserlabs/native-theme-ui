@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 06-07-2022 03:37:27
+ * Last Modified: 13-07-2022 05:30:04
  * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -44,7 +44,7 @@ const Label: DripsyFC<LabelProps> = (props: LabelProps) => {
     ...props.sx,
   };
 
-  return <DText {...props} sx={sx} />;
+  return <DText themeKey="forms" Variant="label" {...props} sx={sx} />;
 };
 
 Label.defaultProps = {

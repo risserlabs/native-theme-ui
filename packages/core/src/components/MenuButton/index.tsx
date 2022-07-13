@@ -4,7 +4,7 @@
  * File Created: 19-06-2022 06:50:27
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 13-07-2022 00:30:04
+ * Last Modified: 13-07-2022 05:28:50
  * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -55,7 +55,13 @@ const MenuButton: DripsyFC<MenuButtonProps> = (
   };
 
   return (
-    <Pressable {...props} sx={{ ...sx }} onPress={props.onPress}>
+    <Pressable
+      themeKey="buttons"
+      variant="menu"
+      {...props}
+      sx={{ ...sx }}
+      onPress={props.onPress}
+    >
       <Image source={props.source} sx={{ ...menusx }} />
     </Pressable>
   );

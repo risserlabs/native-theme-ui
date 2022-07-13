@@ -4,7 +4,7 @@
  * File Created: 19-06-2022 06:50:53
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 13-07-2022 01:03:23
+ * Last Modified: 13-07-2022 05:29:09
  * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -33,7 +33,7 @@ import {
 import MenuButton from ".";
 
 export default {
-  title: "components/MenuButton",
+  title: "components/buttons/MenuButton",
   component: MenuButton,
   parameters: {},
 };
