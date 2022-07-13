@@ -4,7 +4,7 @@
  * File Created: 22-06-2022 14:34:02
  * Author: Ajithkrm6
  * -----
- * Last Modified: 05-07-2022 01:36:41
+ * Last Modified: 12-07-2022 23:37:34
  * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -34,7 +34,7 @@ import Link from "./index";
 import Box from "../Box";
 
 export default {
-  title: "components/Link",
+  title: "components/links/Link",
   component: Link,
   parameters: {
     status: { type: "beta" },

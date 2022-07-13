@@ -4,13 +4,13 @@
  * File Created: 22-06-2022 14:33:38
  * Author: Ajithkrm6
  * -----
- * Last Modified: 05-07-2022 06:24:43
+ * Last Modified: 13-07-2022 01:15:14
  * Modified By: Ajith Kumar
- * -----
+ * ----- except in
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
+ * you may not use this file compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
@@ -26,6 +26,7 @@ import React from "react";
 import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
 import { A as DA } from "@dripsy/core";
 import { DAProps, DripsyFC } from "../../dripsyHelper";
+import { styles } from "../Pressable";
 
 export type LinkProps = Partial<DAProps> & {
   autoContrast?: AutoContrast;
@@ -37,7 +38,9 @@ const Link: DripsyFC<LinkProps> = (props: LinkProps) => {
     ...Link.defaultSx,
     ...props.sx,
   });
-  return <DA {...(props as DAProps)} sx={sx} />;
+  return (
+    <DA themeKey="links" Variant="styles.a" {...(props as DAProps)} sx={sx} />
+  );
 };
 
 Link.defaultProps = {};

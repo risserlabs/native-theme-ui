@@ -4,8 +4,8 @@
  * File Created: 23-06-2022 18:32:39
  * Author: Ajithkrm6
  * -----
- * Last Modified: 06-07-2022 08:11:46
- * Modified By: Clay Risser
+ * Last Modified: 12-07-2022 23:42:40
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -25,6 +25,7 @@
 import React from "react";
 import Box, { BoxProps } from "../Box";
 import { DripsyFC } from "../../dripsyHelper";
+import { message } from "./Message.stories";
 
 export type MessageProps = BoxProps;
 
@@ -33,7 +34,7 @@ const Message: DripsyFC<MessageProps> = (props: MessageProps) => {
     ...Message.defaultSx,
     ...props.sx,
   };
-  return <Box {...props} sx={sx} />;
+  return <Box themeKey="messages" {...props} sx={sx} />;
 };
 
 Message.defaultProps = {};

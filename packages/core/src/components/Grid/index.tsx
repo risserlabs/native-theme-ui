@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 10:03:43
  * Author: Ajithkrm6
  * -----
- * Last Modified: 30-06-2022 10:23:52
- * Modified By: Clay Risser
+ * Last Modified: 13-07-2022 00:46:47
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -32,7 +32,7 @@ type GridProps = BoxProps & {
 };
 
 const Grid: DripsyFC<GridProps> = (props: GridProps) => {
-  return <Box {...props} />;
+  return <Box themeKey="grids" {...props} />;
 };
 Grid.defaultSx = {
   display: "grid",

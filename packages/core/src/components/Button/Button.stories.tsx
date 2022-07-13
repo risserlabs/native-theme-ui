@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 07:34:26
  * Author: Clay Risser
  * -----
- * Last Modified: 04-07-2022 23:54:56
- * Modified By: Hari Krishna
+ * Last Modified: 13-07-2022 01:08:39
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -36,7 +36,7 @@ import {
 } from "../../../storybook";
 
 export default {
-  title: "components/Button",
+  title: "components/buttons/Button",
   component: Button,
   parameters: {
     status: { type: "beta" },
@@ -87,4 +87,3 @@ withAutocontrast.argTypes = {
   ...autoContrastArgType,
   background: { control: { type: "color" } },
 };
- 

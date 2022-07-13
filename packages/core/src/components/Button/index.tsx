@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 07:34:18
  * Author: Clay Risser
  * -----
- * Last Modified: 06-07-2022 08:51:32
- * Modified By: Clay Risser
+ * Last Modified: 13-07-2022 01:04:01
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -44,7 +44,12 @@ const Button: DripsyFC<ButtonProps> = (props: ButtonProps) => {
     props.children
   );
   return (
-    <DPressable {...(baseProps as DPressableProps)} sx={baseSx}>
+    <DPressable
+      themeKey="buttons"
+      variant="primary"
+      {...(baseProps as DPressableProps)}
+      sx={baseSx}
+    >
       <BackgroundColorProvider sx={sx}>{children}</BackgroundColorProvider>
     </DPressable>
   );

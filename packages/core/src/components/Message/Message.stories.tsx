@@ -4,8 +4,8 @@
  * File Created: 22-06-2022 04:27:49
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 06-07-2022 08:07:51
- * Modified By: Clay Risser
+ * Last Modified: 12-07-2022 23:28:35
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -32,7 +32,7 @@ import {
 import Message from "./index";
 
 export default {
-  title: "components/Message",
+  title: "components/messages/Message",
   component: Message,
   parameters: {
     status: { type: "beta" },
