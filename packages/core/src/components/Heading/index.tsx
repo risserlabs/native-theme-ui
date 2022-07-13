@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 10:23:15
- * Modified By: Clay Risser
+ * Last Modified: 13-07-2022 02:08:28
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -23,29 +23,30 @@
  */
 
 import React from "react";
-import { SxProp } from "@dripsy/core";
+import { styled, SxProp } from "@dripsy/core";
 import Text from "../Text";
+import { H1, H2, H3, H4, H5, H6 } from "@dripsy/core";
 import Box, { BoxProps } from "../Box";
 import { TextProps as RNTextProps } from "react-native";
 import useThemeLookup from "../../hooks/useThemeLookup";
 import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
 import { DripsyFC, PatchStyledProps } from "../../dripsyHelper";
-import { styled } from "@dripsy/core";
 
-type HEADINGS = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-//export interface HeadingProps extends RNTextProps {
-// as: HEADINGS;
-//}
+type variants = "H1" | "H2" | "H3" | "H4" | "H5" | "H6";
+
+export interface DHeadingProps extends RNTextProps {
+  sx: SxProp | undefined;
+  as: variants;
+}
 
 export type HeadingProps = RNTextProps & {
   autoContrast?: AutoContrast;
   sx?: SxProp;
+  as?: variants;
 };
 
 const Heading: DripsyFC<HeadingProps> = (props: HeadingProps) => {
   // const themeLookup = useThemeLookup();
-
-  // const { as, ...props } = props;
   // const sx: SxProp = {
   // ...themeLookup('styles', as),
   //   ...styles.heading,
@@ -57,14 +58,19 @@ const Heading: DripsyFC<HeadingProps> = (props: HeadingProps) => {
   });
 
   const StyledBox = styled(Box, {
-    themeKey: "alerts",
-    defaultVariant: "",
+    themeKey: "text",
+    defaultVariant: "heading",
   })({});
 
   const styledBoxProps = { ...props };
   delete styledBoxProps.autoContrast;
   return (
-    <StyledBox {...(styledBoxProps as PatchStyledProps<BoxProps>)} sx={sx} />
+    <StyledBox
+      themeKey="text"
+      variant="heading"
+      {...(styledBoxProps as PatchStyledProps<BoxProps>)}
+      sx={sx}
+    />
   );
 };
 

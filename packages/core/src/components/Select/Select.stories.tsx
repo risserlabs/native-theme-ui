@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 06:16:36
  * Author: Harikittu46
  * -----
- * Last Modified: 05-07-2022 04:34:40
- * Modified By: Hari Krishna
+ * Last Modified: 13-07-2022 01:34:39
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -36,7 +36,7 @@ import Box from "../Box";
 //import Text from "../Text";
 
 export default {
-  title: "components/Select",
+  title: "components/forms/Select",
   component: Select,
   parameters: {
     status: { type: "beta" },

@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 06-07-2022 00:14:46
+ * Last Modified: 13-07-2022 01:32:43
  * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -34,7 +34,7 @@ import {
 } from "../../../storybook";
 
 export default {
-  title: "components/Text",
+  title: "components/text/Text",
   component: Text,
   parameters: {
     status: { type: "beta" },

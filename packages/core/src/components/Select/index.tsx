@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 06:47:48
  * Author: Harikittu46
  * -----
- * Last Modified: 03-07-2022 10:23:15
- * Modified By: Clay Risser
+ * Last Modified: 13-07-2022 01:33:33
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -47,7 +47,11 @@ const Select: DripsyFC<SelectProps> & { Option: typeof Option } = (
     },
     true
   );
-  return <DPicker sx={sx}>{props.children}</DPicker>;
+  return (
+    <DPicker themeKey="forms" variant="select" sx={sx}>
+      {props.children}
+    </DPicker>
+  );
 };
 
 Select.Option = Option;

@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 07-07-2022 00:20:22
+ * Last Modified: 13-07-2022 03:34:20
  * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -36,56 +36,26 @@ import {
 } from "../../../storybook";
 import expo from "../../../storybook/ondevice/expo";
 import { autoContrast } from "@risserlabs/auto-contrast/lib/hooks/useColor";
+import variants from "../../../themes/variants";
+import { ProgressPlugin } from "webpack";
 
 export default {
-  title: "components/Heading",
+  title: "components/text/Heading",
   component: Heading,
   parameters: {
     status: { type: "beta" },
   },
 };
-//  .add(
-//   'variants',
-//    () => (
-// <Box>
-//   <Heading as="h1" sx={{ color: 'primary', lineHeight: 30 }}>
-// h1
-// </Heading>
-// <Heading as="h2" sx={{ color: 'primary', lineHeight: 30 }}>
-//  h2
-// </Heading>
-// <Heading as="h3" sx={{ color: 'primary', lineHeight: 27 }}>
-// h3
-// </Heading>
-// <Heading as="h4" sx={{ color: 'primary', lineHeight: 25 }}>
-// h4
-// </Heading>
-// <Heading as="h5" sx={{ color: 'primary', lineHeight: 20 }}>
-// h5
-// </Heading>
-// <Heading as="h6" sx={{ color: 'primary', lineHeight: 20 }}>
-// h6
-// </Heading>
-// </Box>
-// ),
-// {
-//  component: Heading,
-//  status: { type: 'beta' }
-// }
-// )
+
 export const heading = createArgsStory(Heading);
 
 heading.args = {
   children: "Heading!",
-  autoContrast: Heading.defaultProps?.autoContrast,
+  //autoContrast: Heading.defaultProps?.autoContrast,
   ...createSxArgs(Heading),
 };
 
 heading.argTypes = {
-  // autoContrast: {
-  //   options: ["A", "AA", "AAA", "false"],
-  //   control: { type: "select" }
-  // }
   ...autoContrastArgType,
   ...sxArgTypes,
 };
@@ -106,4 +76,51 @@ withBackground.argTypes = {
     options: ["A", "AA", "AAA", false],
     control: { type: "select" },
   },
+};
+export const headingVariants = () => {
+  // switch () {
+  //   case "H2":
+  //     return
+  //     <Heading as="H2" sx={{ color: "primary", lineHeight: 29 }}>
+  //       Heading2
+  //     </Heading>;
+  //   case "H3":
+  //     return
+  //     <Heading as="H3" sx={{ color: "primary", lineHeight: 27 }}>
+  //       Heading3
+  //     </Heading>;
+  //   case "H4":
+  //     return
+  //     <Heading as="H4" sx={{ color: "primary", lineHeight: 25 }}>
+  //       Heading4
+  //     </Heading>;
+  //   case "H5":
+  //     return
+  //     <Heading as="H5" sx={{ color: "primary", lineHeight: 20 }}>
+  //       Heading5
+  //     </Heading>;
+  //   case "H6":
+  //     return
+  //     <Heading as="H6" sx={{ color: "primary", lineHeight: 20 }}>
+  //       Heading6
+  //     </Heading>;
+  //   default:
+  //     return
+  //     <Heading as="H1" sx={{ color: "primary", lineHeight: 30 }}>
+  //       Default heading (H1)
+  //     </Heading>;
+  // }
+};
+
+headingVariants.args = {
+  as: variants,
+  autoContrast: {
+    options: ["A", "AA", "AAA", false],
+    control: { type: "select" },
+  },
+};
+
+headingVariants.argTypes = {
+  as: { control: { type: "select" } },
+  options: ["H2", "H3", "H4", "H5", "H6", false],
 };

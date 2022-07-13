@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 10:23:15
- * Modified By: Clay Risser
+ * Last Modified: 13-07-2022 01:32:15
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -36,7 +36,7 @@ const Text: DripsyFC<TextProps> = (props: TextProps) => {
     ...Text.defaultSx,
     ...props.sx,
   });
-  return <DText {...props} sx={sx}></DText>;
+  return <DText themeKey="text" variant="default" {...props} sx={sx}></DText>;
 };
 
 Text.defaultProps = {};
