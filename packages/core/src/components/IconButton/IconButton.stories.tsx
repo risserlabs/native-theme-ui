@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 11-07-2022 04:17:13
+ * Last Modified: 13-07-2022 00:21:03
  * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -33,9 +33,11 @@ import {
 import IconButton from ".";
 
 export default {
-  title: "components/IconButton",
+  title: "components/buttons/IconButton",
   component: IconButton,
-  parameters: {},
+  parameters: {
+    status: { type: "beta" },
+  },
 };
 export const iconButton = createArgsStory(IconButton);
 (iconButton.args = {
@@ -48,28 +50,12 @@ export const iconButton = createArgsStory(IconButton);
     ...sxArgTypes,
   });
 
-// storiesOf("IconButton", module)
-//   .add("default Icon", createArgsStory(IconButton), {
-//     args: {
-//       children: "Iam Icon Button ",
-//       autoContrast: IconButton.defaultProps?.autoContrast,
-//       ...createSxArgs(IconButton),
-//     },
-//     argTypes: {
-//       autoContrast: {
-//         options: ["A", "AA", "AAA", false],
-//         control: { type: "select" },
-//       },
-//       ...sxArgTypes,
-//     },
-//   })
-
 export const HomeIconButton = () => (
   <IconButton
     source={require("../../../assets/homeIcon.png")}
     iconSx={{
-      width: 30,
-      height: 30,
+      width: 100,
+      height: 100,
       overflow: "hidden",
     }}
     onPress={() => console.log("HOME ICON PRESSED")}
@@ -80,8 +66,8 @@ export const NotificationIconButton = () => (
   <IconButton
     source={require("../../../assets/notificationIcon.png")}
     iconSx={{
-      width: 30,
-      height: 30,
+      width: 100,
+      height: 100,
       overflow: "hidden",
     }}
     onPress={() => console.log("NOTIFICATION ICON PRESSED")}

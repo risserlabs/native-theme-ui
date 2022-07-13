@@ -4,7 +4,7 @@
  * File Created: 20-06-2022 05:48:50
  * Author: Clay Risser
  * -----
- * Last Modified: 05-07-2022 05:30:45
+ * Last Modified: 13-07-2022 00:18:10
  * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -35,7 +35,7 @@ import Paragraph from "./index";
 import Box from "../Box";
 
 export default {
-  title: "components/Paragraph",
+  title: "components/texts/Paragraph",
   component: Paragraph,
   parameters: {
     status: { type: "beta" },

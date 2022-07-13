@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 11-07-2022 00:27:56
- * Modified By: Harikittu46
+ * Last Modified: 13-07-2022 00:03:10
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -24,7 +24,7 @@
 
 import React from "react";
 import {
-  Args,
+  //Args,
   createArgsStory,
   createSxArgs,
   sxArgTypes,
@@ -32,7 +32,7 @@ import {
 import Image from "./index";
 
 export default {
-  title: "components/Image",
+  title: "components/images/Image",
   component: Image,
   parameters: {
     status: { type: "beta" },

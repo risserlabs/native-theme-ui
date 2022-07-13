@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 11-07-2022 04:37:02
+ * Last Modified: 13-07-2022 00:10:01
  * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -35,7 +35,7 @@ import {
 import Badge from ".";
 
 export default {
-  title: "components/Badge",
+  title: "components/badges/Badge",
   component: Badge,
   parameters: {
     status: { type: "beta" },
@@ -52,21 +52,6 @@ export const badge = createArgsStory(Badge);
     ...sxArgTypes,
   });
 
-// storiesOf("Badge", module)
-//   .add("default", createArgsStory(Badge), {
-//     args: {
-//       children: "Badge",
-//       autoContrast: Badge.defaultProps?.autoContrast,
-//       ...createSxArgs(Badge),
-//     },
-//     argTypes: {
-//       autoContrast: {
-//         options: ["A", "AA", "AAA", false],
-//         control: { type: "select" },
-//       },
-//       ...sxArgTypes,
-//     },
-//  }),
 export const likeThemeUi = () => (
   <Box>
     <Badge

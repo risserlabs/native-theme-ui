@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 10:23:15
- * Modified By: Clay Risser
+ * Last Modified: 12-07-2022 03:53:02
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -24,8 +24,8 @@
 import React from "react";
 import { SxProp, View as DView } from "@dripsy/core";
 import { ViewProps as RNViewProps } from "react-native";
-import Text from "../Text";
-import Image from "../Image";
+// import Text from "../Text";
+// import Image from "../Image";
 import { DripsyFC } from "../../dripsyHelper";
 import { AutoContrast } from "@risserlabs/auto-contrast";
 
@@ -35,6 +35,7 @@ export type AvatarProps = RNViewProps & {
   isImage?: boolean;
   name?: string;
   uri?: string;
+  src?: string;
 };
 
 //export interface ViewProps extends RNViewProps {

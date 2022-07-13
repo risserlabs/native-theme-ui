@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 05-07-2022 02:03:28
+ * Last Modified: 13-07-2022 00:05:01
  * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -33,7 +33,7 @@ import {
 import Avatar from ".";
 
 export default {
-  title: "components/Avatar",
+  title: "components/images/Avatar",
   component: Avatar,
   parameters: {
     status: { type: "beta" },
@@ -50,22 +50,18 @@ export const avatar = createArgsStory(Avatar);
     ...sxArgTypes,
   });
 
-// storiesOf("Avatar", module)
-//   .add("Default", createArgsStory(Avatar), {
-//     args: {
-//       children: "Iam Avatar",
-//       autoContrast: Avatar.defaultProps?.autoContrast,
-//       ...createSxArgs(Avatar),
-//     },
-//     argTypes: {
-//       autoContrast: {
-//         options: ["A", "AA", "AAA", false],
-//         control: { type: "Select" },
-//       },
-//       ...sxArgTypes,
-//     },
-//   })
-
 export const SimpleAvatar = () => <Avatar> Simple Avatar</Avatar>;
 
-export const imageAvatar = () => <Avatar> Image Avatar</Avatar>;
+export const imageAvatar = () => (
+  <Avatar
+    src="https://source.unsplash.com/user/c_v_r/1900x800"
+    sx={{
+      width: 150,
+      height: 150,
+      borderRadius: 150 / 2,
+      overflow: "hidden",
+      borderWidth: 3,
+      borderColor: "primary",
+    }}
+  />
+);
