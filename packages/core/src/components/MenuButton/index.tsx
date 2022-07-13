@@ -4,8 +4,8 @@
  * File Created: 19-06-2022 06:50:27
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 03-07-2022 10:23:15
- * Modified By: Clay Risser
+ * Last Modified: 13-07-2022 00:30:04
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -23,18 +23,54 @@
  */
 
 import React, { FC } from "react";
+import { SxProp } from "@dripsy/core";
+import {
+  PressableProps as RNPressableProps,
+  ImageProps as RNImageProps,
+  ImageSourcePropType,
+} from "react-native";
+import Pressable from "../Pressable";
+import Image from "../Image";
+import { DripsyFC } from "../../dripsyHelper";
 import { AutoContrast } from "@risserlabs/auto-contrast";
-// import { Pressable as RNPressable } from 'react-native';
-import { Pressable as DPressable, SxProp } from "@dripsy/core";
-type MenuButtonProps = {
-  autoContrast?: AutoContrast;
+export interface PressableProps extends RNPressableProps {
   sx?: SxProp;
+}
+export interface ImageProps extends RNImageProps {
+  autoContrast?: AutoContrast;
+  source: ImageSourcePropType;
+  menuSx?: SxProp;
+  // tintColor?: string;
+}
+type MenuButtonProps = PressableProps & ImageProps;
+const MenuButton: DripsyFC<MenuButtonProps> = (
+  props: PressableProps & ImageProps
+) => {
+  const sx: SxProp = {
+    ...MenuButton.defaultSx,
+    ...props.sx,
+  };
+  const menusx: SxProp = {
+    ...props.menuSx,
+  };
+
+  return (
+    <Pressable {...props} sx={{ ...sx }} onPress={props.onPress}>
+      <Image source={props.source} sx={{ ...menusx }} />
+    </Pressable>
+  );
 };
 
-const MenuButton: FC<MenuButtonProps> = (props: MenuButtonProps) => {
-  return <DPressable sx={props.sx}>Menu Button</DPressable>;
+MenuButton.defaultProps = {
+  sx: {},
+  menuSx: {},
 };
 
-MenuButton.defaultProps = {};
+MenuButton.defaultSx = {
+  maxWidth: "100%",
+  bg: "primary",
+  alignItems: "center",
+  justifyContent: "center",
+};
 
 export default MenuButton;

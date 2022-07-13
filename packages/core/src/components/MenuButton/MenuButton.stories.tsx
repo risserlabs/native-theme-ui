@@ -4,8 +4,8 @@
  * File Created: 19-06-2022 06:50:53
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 30-06-2022 10:04:07
- * Modified By: Clay Risser
+ * Last Modified: 13-07-2022 01:03:23
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -23,13 +23,67 @@
  */
 
 import React from "react";
-import { storiesOf } from "../../../storybook";
-import MenuButton from "./index";
+import {
+  //storiesOf,
+  createArgsStory,
+  sxArgTypes,
+  createSxArgs,
+  autoContrastArgType,
+} from "../../../storybook";
+import MenuButton from ".";
 
-storiesOf("MenuButton", module)
-  .add("with green color", () => (
-    <MenuButton sx={{ backgroundColor: "green" }} />
-  ))
-  .add("with blue color", () => (
-    <MenuButton sx={{ backgroundColor: "blue" }} />
-  ));
+export default {
+  title: "components/MenuButton",
+  component: MenuButton,
+  parameters: {},
+};
+export const menuButton = createArgsStory(MenuButton);
+(menuButton.args = {
+  children: "Iam Menu Button Component",
+  autoContrast: MenuButton.defaultProps?.autoContrast,
+  ...createSxArgs(MenuButton),
+}),
+  (menuButton.argTypes = {
+    ...autoContrastArgType,
+    ...sxArgTypes,
+  });
+
+// storiesOf("IconButton", module)
+//   .add("default Icon", createArgsStory(IconButton), {
+//     args: {
+//       children: "Iam Icon Button ",
+//       autoContrast: IconButton.defaultProps?.autoContrast,
+//       ...createSxArgs(IconButton),
+//     },
+//     argTypes: {
+//       autoContrast: {
+//         options: ["A", "AA", "AAA", false],
+//         control: { type: "select" },
+//       },
+//       ...sxArgTypes,
+//     },
+//   })
+
+export const HomeMenuButton = () => (
+  <MenuButton
+    source={require("../../../assets/homeIcon.png")}
+    menuSx={{
+      width: 30,
+      height: 30,
+      overflow: "hidden",
+    }}
+    onPress={() => console.log("HOME MENU PRESSED")}
+  />
+);
+
+export const NotificationIconButton = () => (
+  <MenuButton
+    source={require("../../../assets/notificationIcon.png")}
+    menuSx={{
+      width: 30,
+      height: 30,
+      overflow: "hidden",
+    }}
+    onPress={() => console.log("NOTIFICATION MENU PRESSED")}
+  />
+);
