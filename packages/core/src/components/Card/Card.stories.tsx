@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 12-07-2022 23:47:15
- * Modified By: Lavanya Katari
+ * Last Modified: 13-07-2022 05:19:38
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -33,7 +33,7 @@ import {
   autoContrastArgType,
 } from "../../../storybook";
 export default {
-  title: "components/Cards/Card",
+  title: "components/cards/Card",
   component: "Card",
   parameters: {
     status: { type: "beta" },

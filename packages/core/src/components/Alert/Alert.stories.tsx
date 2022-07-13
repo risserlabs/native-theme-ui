@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 05-07-2022 04:51:00
- * Modified By: Lavanya Katari
+ * Last Modified: 13-07-2022 05:16:41
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -32,7 +32,7 @@ import {
   autoContrastArgType,
 } from "../../../storybook";
 export default {
-  title: "components/Alert",
+  title: "components/alerts/Alert",
   component: Alert,
   parameters: {
     status: { type: "beta" },

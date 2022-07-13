@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 13:07:00
  * Author: ajithkrm6
  * -----
- * Last Modified: 13-07-2022 01:18:54
+ * Last Modified: 13-07-2022 05:20:27
  * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -29,7 +29,7 @@ import { DripsyFC } from "../../dripsyHelper";
 export type ContainerProps = BoxProps;
 
 const Container: DripsyFC<ContainerProps> = (props: ContainerProps) => {
-  return <Box themeKey="layout" Variant="container" {...props} />;
+  return <Box themeKey="layout" variant="container" {...props} />;
 };
 
 Container.defaultProps = {};

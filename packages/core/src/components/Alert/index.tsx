@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 06-07-2022 08:23:48
- * Modified By: Clay Risser
+ * Last Modified: 13-07-2022 05:16:37
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -30,10 +30,10 @@ import { DripsyFC, PatchStyledProps } from "../../dripsyHelper";
 
 export type AlertProps = BoxProps;
 
-const StyledBox = createThemedComponent(Box, {
-  themeKey: "alerts",
-  defaultVariant: "primary",
-});
+// const StyledBox = createThemedComponent(Box, {
+//   themeKey: "alerts",
+//   defaultVariant: "primary",
+// });
 
 const Alert: DripsyFC<AlertProps> = (props: AlertProps) => {
   const sx = useAutoContrast(props, {
@@ -41,7 +41,14 @@ const Alert: DripsyFC<AlertProps> = (props: AlertProps) => {
     ...props.sx,
   });
 
-  return <StyledBox {...(props as PatchStyledProps<BoxProps>)} sx={sx} />;
+  return (
+    <Box
+      themeKey="alerts"
+      variant="primary"
+      {...(props as PatchStyledProps<BoxProps>)}
+      sx={sx}
+    />
+  );
 };
 
 Alert.defaultProps = {};
