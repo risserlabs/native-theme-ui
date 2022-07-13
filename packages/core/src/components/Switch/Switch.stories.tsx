@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 07:02:17
- * Modified By: Clay Risser
+ * Last Modified: 12-07-2022 04:28:31
+ * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -32,6 +32,37 @@ import {
   createSxArgs,
   sxArgTypes,
 } from "../../../storybook";
+// export default {
+//   title: "components/Switch",
+//   component: Switch,
+//   parameters: {
+//     status: { type: "beta" },
+//   },
+// };
+// export const RNswitch = createArgsStory(Switch);
+// (RNswitch.args = {
+//   children: " I am a Switch ",
+//   autoContrast: Switch.defaultProps?.autocontrast,
+//   onChange: action("onChange"),
+//   onValueChange: action("onValueChange"),
+//   ...createSxArgs(RNswitch),
+// }),
+//   (RNswitch.sxArgsTypes = {
+//     hidden: { switch: { type: "boolean" } },
+//     disabled: { switch: { type: "boolean" } },
+//     ...autoContrastArgType,
+//     ...sxArgTypes,
+//   });
+
+// export const withBackground = () => (
+//   <Box sx={{ bg: "background", p: 4 }}>
+//     <Switch
+//       trackColor={{ false: "#767577", true: "primary" }}
+//       ios_backgroundColor="#3e3e3e"
+//       value={true}
+//     />
+//   </Box>
+//);
 
 storiesOf("Switch", module)
   .add(

@@ -4,7 +4,7 @@
  * File Created: 20-06-2022 07:09:30
  * Author: Lavanya Katari
  * -----
- * Last Modified: 06-07-2022 23:30:54
+ * Last Modified: 13-07-2022 00:42:23
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,6 +22,7 @@
  * limitations under the License.
  */
 
+import { defaultBreakpoints } from "@theme-ui/css";
 import React from "react";
 import {
   createArgsStory,
@@ -31,7 +32,7 @@ import {
 } from "../../../storybook";
 import Radio from "./index";
 export default {
-  title: "components/Radio",
+  title: "components/forms/Radio",
   component: Radio,
   parameters: {
     status: { type: "beta" },

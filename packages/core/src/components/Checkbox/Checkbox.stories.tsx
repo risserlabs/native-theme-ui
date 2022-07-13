@@ -4,7 +4,7 @@
  * File Created: 15-06-2022 06:37:48
  * Author: Lavanya Katari
  * -----
- * Last Modified: 06-07-2022 23:30:29
+ * Last Modified: 12-07-2022 23:48:54
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -34,7 +34,7 @@ import {
 } from "../../../storybook";
 import CheckBox from "./index";
 export default {
-  title: "components/CheckBox",
+  title: "components/forms/CheckBox",
   component: CheckBox,
   parameters: {
     status: { type: "beta" },

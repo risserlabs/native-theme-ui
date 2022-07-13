@@ -4,7 +4,7 @@
  * File Created: 27-06-2022 23:52:56
  * Author: Lavanya Katari
  * -----
- * Last Modified: 06-07-2022 23:25:51
+ * Last Modified: 07-07-2022 05:49:59
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -32,7 +32,7 @@ import {
 } from "../../../storybook";
 import Variant from ".";
 export default {
-  title: "Components/Variants",
+  title: "components/Variants",
   component: Variant,
   parameters: {
     status: { type: "beta" },
