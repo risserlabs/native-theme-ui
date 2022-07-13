@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 10:23:15
- * Modified By: Clay Risser
+ * Last Modified: 13-07-2022 01:14:23
+ * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -37,7 +37,7 @@ const Card: DripsyFC<CardProps> = (props: CardProps) => {
     ...props.sx,
   };
   return (
-    <DView {...props} sx={sx}>
+    <DView themekey="Cards" Variant="primary" {...props} sx={sx}>
       {props.children}
     </DView>
   );

@@ -4,7 +4,7 @@
  * File Created: 27-06-2022 00:27:56
  * Author: Lavanya Katari
  * -----
- * Last Modified: 06-07-2022 23:31:07
+ * Last Modified: 12-07-2022 23:50:35
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -31,7 +31,7 @@ import {
 } from "../../../storybook";
 import Slider from "./index";
 export default {
-  title: "components/Slider",
+  title: "components/forms/Slider",
   component: Slider,
   parameters: {
     status: { type: "beta" },
