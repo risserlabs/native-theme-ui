@@ -4,7 +4,7 @@
  * File Created: 22-06-2022 14:33:38
  * Author: Ajithkrm6
  * -----
- * Last Modified: 13-07-2022 01:15:14
+ * Last Modified: 14-07-2022 06:53:04
  * Modified By: Ajith Kumar
  * ----- except in
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -39,7 +39,12 @@ const Link: DripsyFC<LinkProps> = (props: LinkProps) => {
     ...props.sx,
   });
   return (
-    <DA themeKey="links" Variant="styles.a" {...(props as DAProps)} sx={sx} />
+    <DA
+      themeKey={"links" as unknown as any}
+      variant={"styles.a" as unknown as any}
+      {...(props as DAProps)}
+      sx={sx}
+    />
   );
 };
 

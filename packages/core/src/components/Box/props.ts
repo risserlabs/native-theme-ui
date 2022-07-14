@@ -4,8 +4,8 @@
  * File Created: 05-07-2022 06:24:30
  * Author: Clay Risser
  * -----
- * Last Modified: 06-07-2022 07:46:57
- * Modified By: Clay Risser
+ * Last Modified: 14-07-2022 07:07:23
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -27,7 +27,7 @@ import { SxProp } from "dripsy";
 import { createSplitProps } from "../../util";
 import { DBoxProps, DPressableProps, PatchVariant } from "../../dripsyHelper";
 
-export type BasePropsBucket = PatchVariant<DBoxProps>;
+export type BasePropsBucket = DBoxProps;
 
 export type TextPropsBucket = {
   autoContrast?: AutoContrast;
@@ -75,4 +75,4 @@ export const splitProps = createSplitProps<
   }
 );
 
-export type BoxProps = BasePropsBucket & TextPropsBucket & PressablePropsBucket;
+export type BoxProps = PatchVariant<BasePropsBucket & TextPropsBucket & PressablePropsBucket>;
