@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 01:05:11
  * Author: Lavanya Katari
  * -----
- * Last Modified: 13-07-2022 01:18:24
+ * Last Modified: 14-07-2022 06:58:17
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -42,7 +42,11 @@ const Checkbox: DripsyFC<CheckboxProps> = (props: CheckboxProps) => {
     eCheckboxProps.value = true;
   }
   return (
-    <Box themekey="forms" Variant="checkbox" sx={props.sx}>
+    <Box
+      themeKey={"forms" as unknown as any}
+      variant={"checkbox" as unknown as any}
+      sx={props.sx}
+    >
       <ECheckbox {...eCheckboxProps} />
     </Box>
   );

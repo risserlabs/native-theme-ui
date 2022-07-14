@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-07-2022 05:21:50
- * Modified By: Ajith Kumar
+ * Last Modified: 14-07-2022 07:18:45
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -26,6 +26,7 @@ import React from "react";
 import { View, Sx, SxProp } from "@dripsy/core";
 import { DripsyFC, DViewProps } from "../../dripsyHelper";
 import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
+import Box from "../Box";
 
 type DividerProps = DViewProps & {
   autoContrast?: AutoContrast;
@@ -41,7 +42,7 @@ const Divider: DripsyFC<DividerProps> = (props: DividerProps) => {
   const sx = useAutoContrast(props, mergedSx);
   (sx as Sx).bg = (sx as Sx).color as string;
   delete (sx as Sx).color;
-  return <View variant="styles.hr" sx={sx} />;
+  return <Box variant="styles.hr" sx={sx} />;
 };
 
 Divider.defaultProps = {};

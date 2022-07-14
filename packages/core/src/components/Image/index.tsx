@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 11-07-2022 01:05:22
+ * Last Modified: 14-07-2022 00:17:55
  * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -38,7 +38,7 @@ const Image: DripsyFC<ImageProps> = (props: ImageProps) => {
   const dImageProps = { ...props };
   if (props.src) dImageProps.source = { uri: props.src };
   delete dImageProps.src;
-  return <DImage {...dImageProps} sx={sx} />;
+  return <DImage themeKey="images" {...dImageProps} sx={sx} />;
 };
 
 Image.defaultProps = {

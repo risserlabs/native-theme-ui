@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-07-2022 03:34:20
+ * Last Modified: 14-07-2022 00:34:54
  * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -36,8 +36,6 @@ import {
 } from "../../../storybook";
 import expo from "../../../storybook/ondevice/expo";
 import { autoContrast } from "@risserlabs/auto-contrast/lib/hooks/useColor";
-import variants from "../../../themes/variants";
-import { ProgressPlugin } from "webpack";
 
 export default {
   title: "components/text/Heading",
@@ -51,7 +49,6 @@ export const heading = createArgsStory(Heading);
 
 heading.args = {
   children: "Heading!",
-  //autoContrast: Heading.defaultProps?.autoContrast,
   ...createSxArgs(Heading),
 };
 
@@ -113,7 +110,6 @@ export const headingVariants = () => {
 };
 
 headingVariants.args = {
-  as: variants,
   autoContrast: {
     options: ["A", "AA", "AAA", false],
     control: { type: "select" },

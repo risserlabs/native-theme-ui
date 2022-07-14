@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-07-2022 00:43:31
+ * Last Modified: 14-07-2022 06:54:30
  * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -34,7 +34,14 @@ const NavLink: DripsyFC<NavLinkProps> = (props: NavLinkProps) => {
     ...NavLink.defaultSx,
     ...props.sx,
   };
-  return <Link themeKey="links" variant="nav" {...props} sx={sx} />;
+  return (
+    <Link
+      themeKey={"links" as unknown as any}
+      variant={"nav" as unknown as any}
+      {...props}
+      sx={sx}
+    />
+  );
 };
 
 NavLink.defaultProps = {
