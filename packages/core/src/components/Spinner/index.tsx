@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 10:23:15
- * Modified By: Clay Risser
+ * Last Modified: 14-07-2022 00:27:03
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -34,11 +34,6 @@ export type SpinnerProps = RNActivityIndicator & {
   sx?: SxProp;
   color?: string;
 };
-
-//export interface ActivityIndicatorProps extends RNActivityIndicator {
-// sx?: SxProp;
-//color?: string;
-//}
 
 const Spinner: DripsyFC<SpinnerProps> = (props: SpinnerProps) => {
   const themeLookup = useThemeLookup();

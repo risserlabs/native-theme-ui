@@ -4,8 +4,8 @@
  * File Created: 05-07-2022 06:24:30
  * Author: Clay Risser
  * -----
- * Last Modified: 06-07-2022 07:46:57
- * Modified By: Clay Risser
+ * Last Modified: 14-07-2022 07:05:56
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -33,7 +33,7 @@ export type TextPropsBucket = {
   autoContrast?: AutoContrast;
 };
 
-export type PressablePropsBucket = DPressableProps;
+export type PressablePropsBucket = PatchVariant<DPressableProps>;
 
 export type BaseSxBucket = SxProp;
 

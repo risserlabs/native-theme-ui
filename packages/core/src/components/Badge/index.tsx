@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-07-2022 05:18:38
- * Modified By: Ajith Kumar
+ * Last Modified: 14-07-2022 00:14:28
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -23,10 +23,11 @@
  */
 
 import React from "react";
-import { SxProp, View as DView } from "@dripsy/core";
+import { SxProp } from "@dripsy/core";
 import { ViewProps as RNViewProps } from "react-native";
 import { DripsyFC } from "../../dripsyHelper";
 import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
+import Box from "../Box";
 
 export type BadgeProps = RNViewProps & {
   autoContrast?: AutoContrast;
@@ -51,9 +52,9 @@ const Badge: DripsyFC<BadgeProps> = (props: BadgeProps) => {
   });
 
   return (
-    <DView themeKey="badges" variant="primary" sx={{ ...sx }}>
+    <Box themeKey="badges" variant="primary" sx={{ ...sx }}>
       {props.children}
-    </DView>
+    </Box>
   );
 };
 

@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 05-07-2022 05:40:01
+ * Last Modified: 14-07-2022 00:32:48
  * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -26,7 +26,6 @@ import React from "react";
 import Box from "../Box";
 import Divider from ".";
 import {
-  //storiesOf,
   createArgsStory,
   Args,
   createSxArgs,
@@ -52,20 +51,6 @@ export const divider = createArgsStory(Divider);
     ...sxArgTypes,
   });
 
-// storiesOf("Divider", module)
-//   .add("default", createArgsStory(Divider), {
-//     args: {
-//       autoContrast: Divider.defaultProps?.autoContrast,
-//       ...createSxArgs(Divider),
-//     },
-//     argTypes: {
-//       autoContrast: {
-//         options: ["A", "AA", "AAA", false],
-//         control: { type: "select" },
-//       },
-//       ...sxArgTypes,
-//     },
-//   })
 export const withBackGround = (args: Args) => (
   <Box sx={{ bg: args.background, p: 4, width: "100%" }}>
     <Divider autoContrast={args.autoContrast} />

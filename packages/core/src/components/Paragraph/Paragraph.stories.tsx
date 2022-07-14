@@ -4,7 +4,7 @@
  * File Created: 20-06-2022 05:48:50
  * Author: Clay Risser
  * -----
- * Last Modified: 13-07-2022 01:37:34
+ * Last Modified: 14-07-2022 03:54:02
  * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,7 +24,6 @@
 
 import React from "react";
 import {
-  //storiesOf,
   Args,
   createArgsStory,
   createSxArgs,
@@ -53,21 +52,6 @@ paragraph.argTypes = {
   ...sxArgTypes,
 };
 
-// storiesOf("Paragraph", module)
-//   .add("default", createArgsStory(Paragraph), {
-//     args: {
-//       children: "I am a paragraph",
-//       autoContrast: Paragraph.defaultProps?.autoContrast,
-//       ...createSxArgs(Paragraph),
-//     },
-//     argTypes: {
-//       autoContrast: {
-//         options: ["A", "AA", "AAA", false],
-//         control: { type: "select" },
-//       },
-//       ...sxArgTypes,
-//     },
-//   })
 export const withBackGround = (args: Args) => (
   <Box
     sx={{

@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 12-07-2022 03:53:02
+ * Last Modified: 14-07-2022 00:18:38
  * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,10 +22,9 @@
  * limitations under the License.
  */
 import React from "react";
-import { SxProp, View as DView } from "@dripsy/core";
+import { SxProp } from "@dripsy/core";
 import { ViewProps as RNViewProps } from "react-native";
-// import Text from "../Text";
-// import Image from "../Image";
+import Box from "../Box";
 import { DripsyFC } from "../../dripsyHelper";
 import { AutoContrast } from "@risserlabs/auto-contrast";
 
@@ -38,19 +37,16 @@ export type AvatarProps = RNViewProps & {
   src?: string;
 };
 
-//export interface ViewProps extends RNViewProps {
-//sx?: SxProp;
-//isImage?: boolean;
-//name?: string;
-//uri?: string;
-//}
-
 const Avatar: DripsyFC<AvatarProps> = (props: AvatarProps) => {
   const sx: SxProp = {
     ...Avatar.defaultSx,
     ...props.sx,
   };
-  return <DView sx={{ ...sx }}>{props.children}</DView>;
+  return (
+    <Box themeKey="images" variant="avatar" sx={{ ...sx }}>
+      {props.children}
+    </Box>
+  );
 };
 
 Avatar.defaultProps = {

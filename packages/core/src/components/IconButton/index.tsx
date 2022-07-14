@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-07-2022 00:00:32
+ * Last Modified: 14-07-2022 07:05:10
  * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -40,7 +40,7 @@ export interface ImageProps extends RNImageProps {
   autoContrast?: AutoContrast;
   source: ImageSourcePropType;
   iconSx?: SxProp;
-  // tintColor?: string;
+  //tintColor?: string;
 }
 type IconButtonProps = PressableProps & ImageProps;
 const IconButton: DripsyFC<IconButtonProps> = (
@@ -55,7 +55,13 @@ const IconButton: DripsyFC<IconButtonProps> = (
   };
 
   return (
-    <Pressable {...props} sx={{ ...sx }} onPress={props.onPress}>
+    <Pressable
+      themeKey="buttons"
+      variant="icon"
+      {...props}
+      sx={{ ...sx }}
+      onPress={props.onPress}
+    >
       <Image source={props.source} sx={{ ...iconsx }} />
     </Pressable>
   );
