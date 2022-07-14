@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-07-2022 01:32:15
+ * Last Modified: 14-07-2022 06:48:14
  * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,7 +25,7 @@
 import React from "react";
 import { Text as DText } from "@dripsy/core";
 import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
-import { DripsyFC, DTextProps } from "../../dripsyHelper";
+import { DripsyFC, DTextProps, PatchVariant } from "../../dripsyHelper";
 
 export type TextProps = DTextProps & {
   autoContrast?: AutoContrast;
@@ -36,7 +36,15 @@ const Text: DripsyFC<TextProps> = (props: TextProps) => {
     ...Text.defaultSx,
     ...props.sx,
   });
-  return <DText themeKey="text" variant="default" {...props} sx={sx}></DText>;
+
+  return (
+    <DText
+      themeKey="text"
+      variant={"default" as unknown as any}
+      {...props}
+      sx={sx}
+    ></DText>
+  );
 };
 
 Text.defaultProps = {};

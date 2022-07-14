@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 06:47:48
  * Author: Harikittu46
  * -----
- * Last Modified: 13-07-2022 01:33:33
+ * Last Modified: 14-07-2022 06:49:02
  * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -48,7 +48,7 @@ const Select: DripsyFC<SelectProps> & { Option: typeof Option } = (
     true
   );
   return (
-    <DPicker themeKey="forms" variant="select" sx={sx}>
+    <DPicker themeKey="forms" variant={"select" as unknown as any} sx={sx}>
       {props.children}
     </DPicker>
   );
@@ -69,7 +69,6 @@ Select.defaultSx = {
   borderRadius: 4,
   borderColor: "blue",
   color: "inherit",
-  //backgroundColor: (theme) => get(theme, 'colors.background', null),
 };
 
 export default Select;
