@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-07-2022 05:32:02
+ * Last Modified: 14-07-2022 07:01:47
  * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -49,8 +49,8 @@ const Textarea: DripsyFC<TextareaProps> = (props: TextareaProps) => {
   };
   return (
     <DTextInput
-      themeKey="forms"
-      variant="textarea"
+      themeKey={"forms" as unknown as any}
+      variant={"textarea" as unknown as any}
       {...props}
       multiline
       placeholderTextColor={themeLookup("color", props.placeholderTextColor)}

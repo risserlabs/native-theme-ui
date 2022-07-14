@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-07-2022 05:30:04
+ * Last Modified: 14-07-2022 06:53:09
  * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -27,6 +27,7 @@ import { DripsyFC } from "../../dripsyHelper";
 import { Text as DText, SxProp } from "@dripsy/core";
 import { TextProps as RNTextProps } from "react-native";
 import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
+import { BoxProps } from "../Box";
 
 type LabelProps = RNTextProps & {
   sx?: SxProp;
@@ -44,7 +45,14 @@ const Label: DripsyFC<LabelProps> = (props: LabelProps) => {
     ...props.sx,
   };
 
-  return <DText themeKey="forms" Variant="label" {...props} sx={sx} />;
+  return (
+    <DText
+      themeKey={"forms" as unknown as any}
+      variant={"label" as unknown as any}
+      {...props}
+      sx={sx}
+    />
+  );
 };
 
 Label.defaultProps = {

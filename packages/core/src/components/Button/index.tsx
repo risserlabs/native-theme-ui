@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 07:34:18
  * Author: Clay Risser
  * -----
- * Last Modified: 13-07-2022 01:04:01
- * Modified By: Ajith Kumar
+ * Last Modified: 14-07-2022 07:10:21
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -45,8 +45,8 @@ const Button: DripsyFC<ButtonProps> = (props: ButtonProps) => {
   );
   return (
     <DPressable
-      themeKey="buttons"
-      variant="primary"
+      themeKey={"buttons" as unknown as any}
+      variant={"primary" as unknown as any}
       {...(baseProps as DPressableProps)}
       sx={baseSx}
     >

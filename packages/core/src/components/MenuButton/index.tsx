@@ -4,7 +4,7 @@
  * File Created: 19-06-2022 06:50:27
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 13-07-2022 05:28:50
+ * Last Modified: 14-07-2022 07:21:05
  * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -56,8 +56,8 @@ const MenuButton: DripsyFC<MenuButtonProps> = (
 
   return (
     <Pressable
-      themeKey="buttons"
-      variant="menu"
+      //themeKey={"buttons" as unknown as any}
+      //variant={"menu" as unknown as any}
       {...props}
       sx={{ ...sx }}
       onPress={props.onPress}
