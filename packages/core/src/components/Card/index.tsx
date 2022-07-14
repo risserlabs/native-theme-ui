@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-07-2022 01:14:23
+ * Last Modified: 14-07-2022 06:56:38
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,9 +24,10 @@
 
 import React from "react";
 import { AutoContrast } from "@risserlabs/auto-contrast";
-import { View as DView, SxProp } from "@dripsy/core";
+import { SxProp } from "@dripsy/core";
 import { ViewProps as RNViewProps } from "react-native";
 import { DripsyFC } from "../../dripsyHelper";
+import Box, { BoxProps } from "../Box";
 type CardProps = RNViewProps & {
   autoContrast?: AutoContrast;
   sx?: SxProp;
@@ -37,9 +38,14 @@ const Card: DripsyFC<CardProps> = (props: CardProps) => {
     ...props.sx,
   };
   return (
-    <DView themekey="Cards" Variant="primary" {...props} sx={sx}>
+    <Box
+      themeKey={"cards" as unknown as any}
+      variant={"primary" as unknown as any}
+      {...props}
+      sx={sx}
+    >
       {props.children}
-    </DView>
+    </Box>
   );
 };
 

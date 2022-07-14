@@ -4,7 +4,7 @@
  * File Created: 27-06-2022 00:27:04
  * Author: Lavanya Katari
  * -----
- * Last Modified: 13-07-2022 04:26:18
+ * Last Modified: 14-07-2022 06:55:07
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -36,7 +36,7 @@ export type SliderProps = {
 const Slider: DripsyFC<SliderProps> = (props: SliderProps) => {
   const eSliderProps = { ...props };
   delete eSliderProps.sx;
-  return <RNCSlider themekey="forms" Variant="slider" />;
+  return <RNCSlider />;
 };
 
 Slider.defaultSx = {
