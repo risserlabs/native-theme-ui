@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-07-2022 00:05:01
+ * Last Modified: 15-07-2022 06:08:20
  * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -31,6 +31,7 @@ import {
   autoContrastArgType,
 } from "../../../storybook";
 import Avatar from ".";
+import Image from "../Image";
 
 export default {
   title: "components/images/Avatar",
@@ -41,7 +42,7 @@ export default {
 };
 export const avatar = createArgsStory(Avatar);
 (avatar.args = {
-  children: "Iam Avatar Component",
+  children: "UI",
   autoContrast: Avatar.defaultProps?.autoContrast,
   ...createSxArgs(Avatar),
 }),
@@ -50,18 +51,28 @@ export const avatar = createArgsStory(Avatar);
     ...sxArgTypes,
   });
 
-export const SimpleAvatar = () => <Avatar> Simple Avatar</Avatar>;
+export const SimpleAvatar = () => (
+  <Image
+    source={{
+      uri: "https://images.unsplash.com/photo-1657739880076-d8232c1da8e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    }}
+    sx={{
+      width: 100,
+      height: 100,
+      borderRadius: 60,
+    }}
+  />
+);
 
 export const imageAvatar = () => (
-  <Avatar
-    src="https://source.unsplash.com/user/c_v_r/1900x800"
+  <Image
+    source={{
+      uri: "https://images.unsplash.com/photo-1657739880076-d8232c1da8e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    }}
     sx={{
-      width: 150,
-      height: 150,
-      borderRadius: 150 / 2,
-      overflow: "hidden",
-      borderWidth: 3,
-      borderColor: "primary",
+      width: 100,
+      height: 100,
+      borderRadius: 50,
     }}
   />
 );

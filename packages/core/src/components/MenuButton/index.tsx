@@ -4,7 +4,7 @@
  * File Created: 19-06-2022 06:50:27
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 14-07-2022 07:21:05
+ * Last Modified: 15-07-2022 04:10:38
  * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -71,7 +71,6 @@ MenuButton.defaultProps = {
   sx: {},
   menuSx: {},
 };
-
 MenuButton.defaultSx = {
   maxWidth: "100%",
   bg: "primary",
