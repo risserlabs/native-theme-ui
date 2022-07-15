@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 23:52:10
  * Author: Lavanya Katari
  * -----
- * Last Modified: 06-07-2022 08:37:05
- * Modified By: Clay Risser
+ * Last Modified: 14-07-2022 23:30:53
+ * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -37,7 +37,7 @@ const Variant: DripsyFC<VariantProps> = (props: VariantProps) => {
     ...Variant.defaultSx,
     ...props.sx,
   };
-  return <div {...props}>Variants component</div>;
+  return <div>variant component</div>;
 };
 Variant.defaultProps = {};
 Variant.defaultSx = {
