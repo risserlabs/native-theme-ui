@@ -4,8 +4,8 @@
  * File Created: 06-07-2022 05:42:28
  * Author: Clay Risser
  * -----
- * Last Modified: 13-07-2022 01:10:01
- * Modified By: Ajith Kumar
+ * Last Modified: 15-07-2022 00:16:36
+ * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -56,6 +56,7 @@ module.exports = {
     "../../**/Variant.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Embed.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Image.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Switch.stories.@(js|jsx|ts|tsx|md|mdx)",
   ],
   
 
