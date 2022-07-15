@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 14-07-2022 00:34:54
- * Modified By: Harikittu46
+ * Last Modified: 15-07-2022 02:06:58
+ * Modified By: Hari Krishna
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -36,6 +36,7 @@ import {
 } from "../../../storybook";
 import expo from "../../../storybook/ondevice/expo";
 import { autoContrast } from "@risserlabs/auto-contrast/lib/hooks/useColor";
+import { variant } from "../Variant/Variant.stories";
 
 export default {
   title: "components/text/Heading",
@@ -75,38 +76,49 @@ withBackground.argTypes = {
   },
 };
 export const headingVariants = () => {
-  // switch () {
-  //   case "H2":
-  //     return
-  //     <Heading as="H2" sx={{ color: "primary", lineHeight: 29 }}>
-  //       Heading2
-  //     </Heading>;
-  //   case "H3":
-  //     return
-  //     <Heading as="H3" sx={{ color: "primary", lineHeight: 27 }}>
-  //       Heading3
-  //     </Heading>;
-  //   case "H4":
-  //     return
-  //     <Heading as="H4" sx={{ color: "primary", lineHeight: 25 }}>
-  //       Heading4
-  //     </Heading>;
-  //   case "H5":
-  //     return
-  //     <Heading as="H5" sx={{ color: "primary", lineHeight: 20 }}>
-  //       Heading5
-  //     </Heading>;
-  //   case "H6":
-  //     return
-  //     <Heading as="H6" sx={{ color: "primary", lineHeight: 20 }}>
-  //       Heading6
-  //     </Heading>;
-  //   default:
-  //     return
-  //     <Heading as="H1" sx={{ color: "primary", lineHeight: 30 }}>
-  //       Default heading (H1)
-  //     </Heading>;
-  // }
+  switch (variant) {
+    case "H2":
+      return (
+        <Heading as="H2" sx={{ color: "primary", lineHeight: 29 }}>
+          Heading2
+        </Heading>
+      );
+
+    case "H3":
+      return (
+        <Heading as="H3" sx={{ color: "primary", lineHeight: 27 }}>
+          Heading3
+        </Heading>
+      );
+
+    case "H4":
+      return (
+        <Heading as="H4" sx={{ color: "primary", lineHeight: 25 }}>
+          Heading4
+        </Heading>
+      );
+
+    case "H5":
+      return (
+        <Heading as="H5" sx={{ color: "primary", lineHeight: 20 }}>
+          Heading5
+        </Heading>
+      );
+
+    case "H6":
+      return (
+        <Heading as="H6" sx={{ color: "primary", lineHeight: 20 }}>
+          Heading6
+        </Heading>
+      );
+
+    default:
+      return (
+        <Heading as="H1" sx={{ color: "primary", lineHeight: 30 }}>
+          Default heading (H1)
+        </Heading>
+      );
+  }
 };
 
 headingVariants.args = {
@@ -117,6 +129,6 @@ headingVariants.args = {
 };
 
 headingVariants.argTypes = {
-  as: { control: { type: "select" } },
+  variant: { control: { type: "select" } },
   options: ["H2", "H3", "H4", "H5", "H6", false],
 };

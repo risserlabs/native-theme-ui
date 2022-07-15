@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 14-07-2022 00:28:20
- * Modified By: Harikittu46
+ * Last Modified: 15-07-2022 00:28:41
+ * Modified By: Hari Krishna
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -32,17 +32,17 @@ import useThemeLookup from "../../hooks/useThemeLookup";
 import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
 import { DripsyFC, PatchStyledProps } from "../../dripsyHelper";
 
-type variants = "H1" | "H2" | "H3" | "H4" | "H5" | "H6";
+type variant = "H1" | "H2" | "H3" | "H4" | "H5" | "H6";
 
 export interface DHeadingProps extends RNTextProps {
   sx: SxProp | undefined;
-  as: variants;
+  as: variant;
 }
 
 export type HeadingProps = RNTextProps & {
   autoContrast?: AutoContrast;
   sx?: SxProp;
-  as?: variants;
+  as?: variant;
 };
 
 const Heading: DripsyFC<HeadingProps> = (props: HeadingProps) => {

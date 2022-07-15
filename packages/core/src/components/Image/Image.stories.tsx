@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-07-2022 00:03:10
- * Modified By: Manikanta
+ * Last Modified: 14-07-2022 23:10:12
+ * Modified By: Hari Krishna
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -65,25 +65,3 @@ export const styledImage = () => (
     }}
   />
 );
-
-//   "Styled image",
-//   () => (
-//     <Image
-//       source={{
-//         uri: "https://source.unsplash.com/user/c_v_r/1900x800",
-//       }}
-//       sx={{
-//         width: 150,
-//         height: 150,
-//         borderRadius: 150 / 2,
-//         overflow: "hidden",
-//         borderWidth: 3,
-//         borderColor: "primary",
-//       }}
-//     />
-//   ),
-//   {
-//     component: Image,
-//     status: { type: "beta" },
-//   }
-// ;
