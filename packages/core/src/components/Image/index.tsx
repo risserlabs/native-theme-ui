@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 14-07-2022 23:48:34
- * Modified By: Hari Krishna
+ * Last Modified: 18-07-2022 01:48:21
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -49,13 +49,6 @@ Image.defaultSx = {
   minWidth: 100,
   maxWidth: 100,
   height: "100",
-
-  // width: 150,
-  // height: 150,
-  // borderRadius: 150 / 2,
-  // overflow: "hidden",
-  // borderWidth: 3,
-  // borderColor: "primary",
 };
 
 export default Image;

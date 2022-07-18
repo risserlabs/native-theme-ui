@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 13:07:00
  * Author: ajithkrm6
  * -----
- * Last Modified: 14-07-2022 07:06:39
+ * Last Modified: 18-07-2022 00:18:30
  * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,7 +24,7 @@
 
 import React from "react";
 import Box, { BoxProps } from "../Box";
-import { DripsyFC, DBoxProps } from "../../dripsyHelper";
+import { DripsyFC } from "../../dripsyHelper";
 
 export type ContainerProps = BoxProps;
 const Container: DripsyFC<ContainerProps> = (props: ContainerProps) => {
