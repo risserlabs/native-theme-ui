@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 15-07-2022 06:08:20
+ * Last Modified: 18-07-2022 00:45:31
  * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -70,9 +70,9 @@ export const imageAvatar = () => (
       uri: "https://images.unsplash.com/photo-1657739880076-d8232c1da8e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     }}
     sx={{
-      width: 100,
       height: 100,
-      borderRadius: 50,
+      width: 100,
+      borderRadius: 60,
     }}
   />
 );

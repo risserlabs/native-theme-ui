@@ -4,7 +4,7 @@
  * File Created: 20-06-2022 00:46:04
  * Author: Manikanta
  * -----
- * Last Modified: 14-07-2022 00:38:34
+ * Last Modified: 18-07-2022 04:33:37
  * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -29,6 +29,8 @@ import { DripsyFC, DBoxProps } from "../../dripsyHelper";
 
 export type EmbedProps = DBoxProps & {
   autoContrast?: AutoContrast;
+  source?: string;
+  uri?: string;
 };
 
 const Embed: DripsyFC<EmbedProps> = (props: EmbedProps) => {

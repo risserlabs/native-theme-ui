@@ -4,7 +4,7 @@
  * File Created: 27-06-2022 05:47:44
  * Author: Ajith Kumar
  * -----
- * Last Modified: 07-07-2022 00:19:52
+ * Last Modified: 18-07-2022 01:43:42
  * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -30,6 +30,7 @@ import {
   autoContrastArgType,
 } from "../../../storybook";
 import Embed from "./index";
+import Image from "../Image";
 
 export default {
   title: "components/Embed",
@@ -50,4 +51,15 @@ export const embed = createArgsStory(Embed);
     ...sxArgTypes,
   });
 
-export const LikeThemeUI = () => <Embed />;
+export const LikeThemeUI = () => (
+  <Image
+    source={{
+      uri: "https://www.youtube.com/embed/GNCd_ERZvZM",
+    }}
+    sx={{
+      height: 100,
+      width: 100,
+      borderRadius: 50,
+    }}
+  />
+);
