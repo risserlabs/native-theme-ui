@@ -4,7 +4,7 @@
  * File Created: 06-07-2022 05:42:28
  * Author: Clay Risser
  * -----
- * Last Modified: 15-07-2022 00:16:36
+ * Last Modified: 15-07-2022 05:43:52
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -49,7 +49,6 @@ module.exports = {
     "../../**/Grid.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Spinner.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Grid.stories.@(js|jsx|ts|tsx|md|mdx)",
-    "../../**/Radio.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Progress.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Label.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/*.stories.@(js|jsx|ts|tsx|md|mdx)",
