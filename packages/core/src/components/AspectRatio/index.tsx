@@ -1,11 +1,11 @@
 /**
- * File: /components/AspectRatio/index.tsx
+ * File: /src/components/AspectRatio/index.tsx
  * Project: @native-theme-ui/core
  * File Created: 27-06-2022 03:42:37
  * Author: Harikittu46
  * -----
- * Last Modified: 30-06-2022 08:49:28
- * Modified By: Clay Risser
+ * Last Modified: 18-07-2022 04:31:34
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,22 +22,36 @@
  * limitations under the License.
  */
 
-import React, { FC } from "react";
+import React from "react";
 import { AutoContrast } from "@risserlabs/auto-contrast";
 
-type AspectRatioProps = {
-  autoContrast?: AutoContrast;
+import { SxProp, Image as DImage } from "@dripsy/core";
+import { DripsyFC, DImageProps } from "../../dripsyHelper";
+
+export type AspectRatioProps = DImageProps & {
+  src?: string;
 };
-const AspectRatio: FC<AspectRatioProps> = () => {
-  return (
-    <div
-      style={{
-        backgroundColor: "red",
-      }}
-    >
-      AspectRatio component
-    </div>
-  );
+const AspectRatio: DripsyFC<AspectRatioProps> = (props: AspectRatioProps) => {
+  const sx: SxProp = {
+    ...AspectRatio.defaultSx,
+    ...props.sx,
+  };
+
+  const dAspectImageProps = { ...props };
+  if (props.src) dAspectImageProps.source = { uri: props.src };
+  delete dAspectImageProps.src;
+
+  return <DImage {...dAspectImageProps} sx={sx} />;
 };
 
+AspectRatio.defaultProps = {
+  sx: {},
+};
+
+AspectRatio.defaultSx = {
+  position: "relative",
+  overflow: "hidden",
+  width: "100%",
+  height: 0,
+};
 export default AspectRatio;

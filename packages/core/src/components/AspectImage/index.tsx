@@ -1,11 +1,11 @@
 /**
- * File: /components/AspectImage/index.tsx
+ * File: /src/components/AspectImage/index.tsx
  * Project: @native-theme-ui/core
  * File Created: 23-06-2022 03:43:01
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 30-06-2022 08:49:28
- * Modified By: Clay Risser
+ * Last Modified: 18-07-2022 02:13:28
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,22 +22,37 @@
  * limitations under the License.
  */
 
-import React, { FC } from "react";
+import React from "react";
 import { AutoContrast } from "@risserlabs/auto-contrast";
 
-type AspectImageProps = {
-  autoContrast?: AutoContrast;
+import { SxProp, Image as DImage } from "@dripsy/core";
+import { DripsyFC, DImageProps } from "../../dripsyHelper";
+
+export type AspectImageProps = DImageProps & {
+  src?: string;
 };
-const AspectImage: FC<AspectImageProps> = () => {
-  return (
-    <div
-      style={{
-        backgroundColor: "green",
-      }}
-    >
-      AspectImage component
-    </div>
-  );
+const AspectImage: DripsyFC<AspectImageProps> = (props: AspectImageProps) => {
+  const sx: SxProp = {
+    ...AspectImage.defaultSx,
+    ...props.sx,
+  };
+
+  const dAspectImageProps = { ...props };
+  if (props.src) dAspectImageProps.source = { uri: props.src };
+  delete dAspectImageProps.src;
+
+  return <DImage {...dAspectImageProps} sx={sx} />;
+};
+
+AspectImage.defaultProps = {
+  sx: {},
+};
+
+AspectImage.defaultSx = {
+  minWidth: 100,
+  maxWidth: 100,
+  height: "100",
+  objectFit: "cover",
 };
 
 export default AspectImage;

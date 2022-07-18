@@ -4,8 +4,8 @@
  * File Created: 23-06-2022 03:44:14
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 30-06-2022 10:04:33
- * Modified By: Clay Risser
+ * Last Modified: 18-07-2022 01:21:32
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -23,9 +23,29 @@
  */
 
 import React from "react";
-import { storiesOf } from "../../../storybook";
+import {
+  //Args,
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes,
+} from "../../../storybook";
 import AspectImage from "./index";
 
-storiesOf("AspectImage", module).add("with background", () => (
-  <AspectImage></AspectImage>
-));
+export default {
+  title: "components/images/AspectImage",
+  component: AspectImage,
+  parameters: {
+    status: { type: "beta" },
+  },
+};
+
+export const aspectImage = createArgsStory(AspectImage);
+
+aspectImage.args = {
+  src: "https://picsum.photos/200/300",
+  ...createSxArgs(AspectImage),
+};
+
+aspectImage.argTypes = {
+  ...sxArgTypes,
+};
