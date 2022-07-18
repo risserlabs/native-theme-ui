@@ -69,10 +69,14 @@ export function createArgsStory(
   return function StoryComponent(args: Record<string, unknown>) {
     const sxArgs = Object.entries(getSx(args)).reduce(
       (sxArgs: Args, [key, value]: [string, unknown]) => {
-        if (typeof value === "string" && !Number.isNaN(Number(value))) {
-          value = Number(value);
-        }
-        if (!(typeof value === "number" && value === 0)) {
+        if (typeof value === "string" && !value.length) return sxArgs;
+        if (
+          typeof value === "string" &&
+          !Number.isNaN(Number(value)) &&
+          !Number.isNaN(parseInt(value))
+        ) {
+          sxArgs[key] = Number(value);
+        } else {
           sxArgs[key] = value;
         }
         return sxArgs;

@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 05:47:44
  * Author: Ajith Kumar
  * -----
- * Last Modified: 18-07-2022 01:43:42
- * Modified By: Manikanta
+ * Last Modified: 18-07-2022 05:02:21
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -41,15 +41,16 @@ export default {
 };
 
 export const embed = createArgsStory(Embed);
-(embed.args = {
-  children: "Iam Embed Component",
+embed.args = {
+  src: "https://www.youtube.com/embed/GNCd_ERZvZM",
   autoContrast: Embed.defaultProps?.autoContrast,
-  ...createSxArgs(Embed),
-}),
-  (embed.argTypes = {
-    ...autoContrastArgType,
-    ...sxArgTypes,
-  });
+  ratio: 16 / 9,
+  ...{ ...createSxArgs(Embed), sxWidth: "260" },
+};
+embed.argTypes = {
+  ...autoContrastArgType,
+  ...sxArgTypes,
+};
 
 export const LikeThemeUI = () => (
   <Image
