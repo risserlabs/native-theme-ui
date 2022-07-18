@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 03:42:55
  * Author: Harikittu46
  * -----
- * Last Modified: 30-06-2022 10:04:32
- * Modified By: Clay Risser
+ * Last Modified: 18-07-2022 04:18:49
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -23,9 +23,29 @@
  */
 
 import React from "react";
-import { storiesOf } from "../../../storybook";
+import {
+  //Args,
+  createArgsStory,
+  createSxArgs,
+  sxArgTypes,
+} from "../../../storybook";
 import AspectRatio from "./index";
 
-storiesOf("AspectRatio", module).add("with background", () => (
-  <AspectRatio></AspectRatio>
-));
+export default {
+  title: "components/images/AspectRatio",
+  component: AspectRatio,
+  parameters: {
+    status: { type: "beta" },
+  },
+};
+
+export const aspectRatio = createArgsStory(AspectRatio);
+
+aspectRatio.args = {
+  src: "https://picsum.photos/200/300",
+  ...createSxArgs(AspectRatio),
+};
+
+aspectRatio.argTypes = {
+  ...sxArgTypes,
+};

@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 14-07-2022 00:18:38
+ * Last Modified: 15-07-2022 05:20:03
  * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -34,7 +34,7 @@ export type AvatarProps = RNViewProps & {
   isImage?: boolean;
   name?: string;
   uri?: string;
-  src?: string;
+  source?: string;
 };
 
 const Avatar: DripsyFC<AvatarProps> = (props: AvatarProps) => {
