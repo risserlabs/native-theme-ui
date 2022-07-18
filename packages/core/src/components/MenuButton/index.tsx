@@ -4,7 +4,7 @@
  * File Created: 19-06-2022 06:50:27
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 15-07-2022 04:10:38
+ * Last Modified: 18-07-2022 04:33:53
  * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -33,6 +33,8 @@ import Pressable from "../Pressable";
 import Image from "../Image";
 import { DripsyFC } from "../../dripsyHelper";
 import { AutoContrast } from "@risserlabs/auto-contrast";
+import Ionicons from "@expo/vector-icons/Ionicons";
+
 export interface PressableProps extends RNPressableProps {
   sx?: SxProp;
 }
@@ -55,13 +57,7 @@ const MenuButton: DripsyFC<MenuButtonProps> = (
   };
 
   return (
-    <Pressable
-      //themeKey={"buttons" as unknown as any}
-      //variant={"menu" as unknown as any}
-      {...props}
-      sx={{ ...sx }}
-      onPress={props.onPress}
-    >
+    <Pressable {...props} sx={{ ...sx }} onPress={props.onPress}>
       <Image source={props.source} sx={{ ...menusx }} />
     </Pressable>
   );
