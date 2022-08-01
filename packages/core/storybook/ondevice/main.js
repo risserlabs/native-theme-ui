@@ -58,7 +58,6 @@ module.exports = {
     "../../**/Image.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Switch.stories.@(js|jsx|ts|tsx|md|mdx)",
   ],
-  
 
   addons: [
     "@storybook/addon-ondevice-controls",
