@@ -1,6 +1,6 @@
 {
   "name": "@native-theme-ui/core",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "lib/index.js",
   "module": "es/index.js",
   "sideEffects": false,
@@ -11,7 +11,7 @@
     "url": "https://gitlab.com/risserlabs/community/native-theme-ui"
   },
   "scripts": {
-    "postinstall": "make -s postinstall"
+    "prepare": "make -s prepare"
   },
   "license": "Apache-2.0",
   "files": [
@@ -201,9 +201,5 @@
       "pixelmatch": {}
     },
     "verboseRenderer": true
-  },
-  "publishConfig": {
-    "@risserlabs:registry": "https://gitlab.com/api/v4/projects/37464925/packages/npm/",
-    "registry": "https://gitlab.com/api/v4/projects/37464925/packages/npm/"
   }
 }
