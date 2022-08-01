@@ -51,5 +51,9 @@
   "eslintIgnore": [
     "es",
     "lib"
-  ]
+  ],
+  "publishConfig": {
+    "@risserlabs:registry": "https://gitlab.com/api/v4/projects/37464925/packages/npm/",
+    "registry": "https://gitlab.com/api/v4/projects/37464925/packages/npm/"
+  }
 }
