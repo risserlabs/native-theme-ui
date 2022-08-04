@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 02-07-2022 12:56:04
+ * Last Modified: 04-08-2022 07:28:47
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,4 +22,4 @@
  * limitations under the License.
  */
 
-export { default } from "./storybook/ondevice/expo";
+export { default } from "./storybook/ondevice/Expo";

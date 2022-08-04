@@ -4,7 +4,7 @@
  * File Created: 02-07-2022 12:47:49
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 10:23:16
+ * Last Modified: 04-08-2022 07:28:36
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,17 +22,27 @@
  * limitations under the License.
  */
 
-import React from "react";
-import { Platform } from "react-native";
-import { getStorybookUI, addDecorator } from "@storybook/react-native";
-import { DripsyProvider } from "@dripsy/core";
-import * as themes from "../../themes";
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-// addDecorator();
-
+import React, { FC } from "react";
+import { Platform, SafeAreaView, StatusBar } from "react-native";
+import { getStorybookUI } from "@storybook/react-native";
 import "./storybook.requires";
 
-export default getStorybookUI({
+const StorybookUI = getStorybookUI({
   host: Platform.OS === "android" ? "10.0.2.2" : "0.0.0.0",
 });
+
+export type ExpoProps = Record<string, unknown>;
+
+const Expo: FC<ExpoProps> = () => {
+  if (Platform.OS === "android") {
+    return (
+      <SafeAreaView style={{ height: "100%" }}>
+        <StatusBar />
+        <StorybookUI />
+      </SafeAreaView>
+    );
+  }
+  return <StorybookUI />;
+};
+
+export default Expo;

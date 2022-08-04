@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 07:34:18
  * Author: Clay Risser
  * -----
- * Last Modified: 14-07-2022 07:10:21
- * Modified By: K S R P BHUSHAN
+ * Last Modified: 04-08-2022 07:25:02
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -32,7 +32,7 @@ import { ButtonProps, splitProps } from "./props";
 const Button: DripsyFC<ButtonProps> = (props: ButtonProps) => {
   const sx = {
     ...Button.defaultSx,
-    display: props.hidden ? "none" : "inline-block",
+    display: props.hidden ? "none" : "flex",
     ...props.sx,
   };
   const { baseProps, baseSx, textProps, textSx } = splitProps(props, sx);
@@ -64,12 +64,9 @@ Button.defaultSx = {
   border: 0,
   borderRadius: 4,
   color: "white",
-  fontSize: "inherit",
-  lineHeight: "inherit",
   px: 3,
   py: 2,
   textAlign: "center",
-  textDecoration: "none",
   userSelect: "none",
 };
 
