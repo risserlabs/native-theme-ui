@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 15-07-2022 02:06:58
+ * Last Modified: 05-08-2022 01:34:59
  * Modified By: Hari Krishna
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -34,7 +34,6 @@ import {
   createSxArgs,
   sxArgTypes,
 } from "../../../storybook";
-import expo from "../../../storybook/ondevice/expo";
 import { autoContrast } from "@risserlabs/auto-contrast/lib/hooks/useColor";
 import { variant } from "../Variant/Variant.stories";
 

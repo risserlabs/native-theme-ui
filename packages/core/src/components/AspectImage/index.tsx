@@ -4,8 +4,8 @@
  * File Created: 23-06-2022 03:43:01
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 18-07-2022 02:13:28
- * Modified By: Harikittu46
+ * Last Modified: 19-07-2022 01:19:18
+ * Modified By: Hari Krishna
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -30,6 +30,7 @@ import { DripsyFC, DImageProps } from "../../dripsyHelper";
 
 export type AspectImageProps = DImageProps & {
   src?: string;
+  ratio?: number;
 };
 const AspectImage: DripsyFC<AspectImageProps> = (props: AspectImageProps) => {
   const sx: SxProp = {

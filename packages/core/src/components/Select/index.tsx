@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 06:47:48
  * Author: Harikittu46
  * -----
- * Last Modified: 14-07-2022 06:49:02
- * Modified By: Harikittu46
+ * Last Modified: 05-08-2022 01:03:04
+ * Modified By: Hari Krishna
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -59,12 +59,12 @@ Select.Option = Option;
 Select.defaultProps = {};
 
 Select.defaultSx = {
-  display: "block",
+  display: "flex",
   width: "100%",
   p: 2,
   appearance: "none",
-  fontSize: "inherit",
-  lineHeight: "inherit",
+  // fontSize: "inherit",
+  // lineHeight: "inherit",
   border: "1px solid",
   borderRadius: 4,
   borderColor: "blue",

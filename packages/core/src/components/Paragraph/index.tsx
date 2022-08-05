@@ -4,7 +4,7 @@
  * File Created: 20-06-2022 05:48:50
  * Author: Clay Risser
  * -----
- * Last Modified: 14-07-2022 07:08:46
+ * Last Modified: 05-08-2022 03:47:27
  * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -49,7 +49,7 @@ const Paragraph: DripsyFC<ParagraphProps> = (props: ParagraphProps) => {
 Paragraph.defaultProps = {};
 
 Paragraph.defaultSx = {
-  fontFamily: "SofiaPro-Bold",
+  fontFamily: "body",
   fontWeight: "body",
   lineHeight: "body",
 };
