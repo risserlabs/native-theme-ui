@@ -4,7 +4,7 @@
  * File Created: 22-06-2022 14:33:38
  * Author: Ajithkrm6
  * -----
- * Last Modified: 14-07-2022 06:53:04
+ * Last Modified: 05-08-2022 01:03:12
  * Modified By: Ajith Kumar
  * ----- except in
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -51,10 +51,9 @@ const Link: DripsyFC<LinkProps> = (props: LinkProps) => {
 Link.defaultProps = {};
 
 Link.defaultSx = {
-  color: "inherit",
-  textDecoration: "none",
+  // color: "inherit",
   fontWeight: "bold",
-  display: "inline-block",
+  display: "flex",
   //'&:hover, &:focus, &.active': {
   //color: 'primary',
   //};
