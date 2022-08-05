@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 10:23:15
- * Modified By: Clay Risser
+ * Last Modified: 05-08-2022 03:31:51
+ * Modified By: Ajith Kumar
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -78,7 +78,7 @@ Donut.defaultSx = {
   width: "50px",
   height: "50px",
   borderRadius: "50px",
-  strokeWidth: 2,
+  strokeWidth: "2px",
   fill: "none",
   stroke: "currentcolor",
   color: "primary",
