@@ -4,7 +4,7 @@
  * File Created: 06-07-2022 05:42:28
  * Author: Clay Risser
  * -----
- * Last Modified: 04-08-2022 23:33:08
+ * Last Modified: 05-08-2022 04:36:27
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -40,13 +40,12 @@ module.exports = {
     // "../../**/Avatar.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Divider.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Paragraph.stories.@(js|jsx|ts|tsx|md|mdx)",
-    // "../../**/Card.stories.@(js|jsx|ts|tsx|md|mdx)",
-    // "../../**/Checkbox.stories.@(js|jsx|ts|tsx|md|mdx)",
-    // "../../**/Alert.stories.@(js|jsx|ts|tsx|md|mdx)",
+     "../../**/Card.stories.@(js|jsx|ts|tsx|md|mdx)",
+     "../../**/Checkbox.stories.@(js|jsx|ts|tsx|md|mdx)",
+     "../../**/Alert.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Slider.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/IconButton.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Flex.stories.@(js|jsx|ts|tsx|md|mdx)",
-    // "../../**/Grid.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Spinner.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Grid.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Radio.stories.@(js|jsx|ts|tsx|md|mdx)",

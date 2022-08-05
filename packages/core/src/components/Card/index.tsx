@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 14-07-2022 06:56:38
+ * Last Modified: 05-08-2022 01:30:22
  * Modified By: Lavanya Katari
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -57,7 +57,7 @@ Card.defaultProps = {
 Card.defaultSx = {
   boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
   transition: "0.3s",
-  padding: "4px 16px",
+  // padding: "4px 16px",
   borderRadius: "2%",
 };
 export default Card;
