@@ -3,7 +3,7 @@
 # File Created: 30-06-2022 08:16:45
 # Author: Clay Risser
 # -----
-# Last Modified: 04-07-2022 12:02:54
+# Last Modified: 01-08-2022 07:46:21
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -156,8 +156,8 @@ vr-approve: ##
 		--chromeFlags="--headless --disable-gpu --hide-scrollbars --no-sandbox" \
 		approve
 
-.PHONY: postinstall
-postinstall:
+.PHONY: prepare
+prepare:
 	@$(EXPO_YARN_WORKSPACES) postinstall
 
 .PHONY: publish +publish

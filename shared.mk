@@ -3,7 +3,7 @@
 # File Created: 23-01-2022 02:18:40
 # Author: Clay Risser
 # -----
-# Last Modified: 02-07-2022 13:04:55
+# Last Modified: 01-08-2022 07:09:48
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -39,6 +39,9 @@ export STORYBOOK_NATIVE_SERVER ?= node $(call ternary,$(TEST) -f \
 	$(PROJECT_ROOT)/node_modules/@risserlabs/storybook-react-native-server/bin/index.js,$(PROJECT_ROOT)/node_modules/@risserlabs/storybook-react-native-server/bin/index.js,$(CURDIR)/node_modules/@risserlabs/storybook-react-native-server/bin/index.js) 
 export STORYBOOK_SERVER ?= node $(call ternary,$(TEST) -f \
 	$(PROJECT_ROOT)/node_modules/@storybook/react/bin/index.js,$(PROJECT_ROOT)/node_modules/@storybook/react/bin/index.js,$(CURDIR)/node_modules/@storybook/react/bin/index.js) 
+
+export NPM_AUTH_TOKEN ?= $(shell $(CAT) $(HOME)/.docker/config.json | \
+	$(JQ) -r '.auths["registry.gitlab.com"].auth' | $(BASE64_NOWRAP) -d)
 
 CACHE_ENVS += \
 	BABEL \

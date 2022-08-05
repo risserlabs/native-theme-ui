@@ -2,6 +2,7 @@
   "compilerOptions": {
     "allowJs": true,
     "emitDeclarationOnly": true,
+    "declaration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
@@ -30,24 +31,12 @@
       "Webworker.Iterable"
     ]
   },
+  "include": ["src/**/*"],
   "exclude": [
-    "*-build",
-    "*.js",
-    "*.jsx",
-    "*.ts",
-    "*.tsx",
-    ".expo",
-    ".mkpm",
-    "es",
-    "lib",
     "node_modules",
     "src/**/*.stories.js",
     "src/**/*.stories.jsx",
     "src/**/*.stories.ts",
-    "src/**/*.stories.tsx",
-    "storybook",
-    "storybook-static",
-    "tests",
-    "themes"
+    "src/**/*.stories.tsx"
   ]
 }

@@ -75,4 +75,6 @@ export const splitProps = createSplitProps<
   }
 );
 
-export type BoxProps = PatchVariant<BasePropsBucket & TextPropsBucket & PressablePropsBucket>;
+export type BoxProps = PatchVariant<
+  BasePropsBucket & TextPropsBucket & PressablePropsBucket
+>;
