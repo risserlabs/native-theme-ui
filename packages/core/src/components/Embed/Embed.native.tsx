@@ -4,8 +4,8 @@
  * File Created: 18-07-2022 06:25:17
  * Author: Clay Risser
  * -----
- * Last Modified: 18-07-2022 07:59:05
- * Modified By: Clay Risser
+ * Last Modified: 20-07-2022 00:55:37
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -71,7 +71,7 @@ const Embed: DripsyFC<EmbedProps> = (props: EmbedProps) => {
   const youtubeVideoId =
     (typeof props.src === "string" &&
       (props.src.indexOf("youtube.com/") > -1 ||
-        props.src.indexOf("youtu.be/") > -1) &&
+        props.src.indexOf("youtube/") > -1) &&
       Array.from(props.src.match(/[^/]+$/g) || [])
         .join("")
         .trim()) ||
