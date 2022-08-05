@@ -4,8 +4,8 @@
  * File Created: 06-07-2022 05:42:28
  * Author: Clay Risser
  * -----
- * Last Modified: 04-08-2022 07:30:20
- * Modified By: Clay Risser
+ * Last Modified: 05-08-2022 03:58:33
+ * Modified By: Hari Krishna
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -34,7 +34,7 @@ module.exports = {
     // "../../**/NavLink.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Message.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Donut.stories.@(js|jsx|ts|tsx|md|mdx)",
-    // "../../**/Select.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Select.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Heading.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Badge.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Avatar.stories.@(js|jsx|ts|tsx|md|mdx)",
@@ -54,8 +54,8 @@ module.exports = {
     // "../../**/Label.stories.@(js|jsx|ts|tsx|md|mdx)",
     // // "../../**/*.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Variant.stories.@(js|jsx|ts|tsx|md|mdx)",
-    // "../../**/Embed.stories.@(js|jsx|ts|tsx|md|mdx)",
-    // "../../**/Image.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Embed.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Image.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Switch.stories.@(js|jsx|ts|tsx|md|mdx)",
   ],
 

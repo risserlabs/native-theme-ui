@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 18-07-2022 01:48:21
- * Modified By: Harikittu46
+ * Last Modified: 05-08-2022 00:45:19
+ * Modified By: Hari Krishna
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -46,9 +46,9 @@ Image.defaultProps = {
 };
 
 Image.defaultSx = {
-  minWidth: 100,
-  maxWidth: 100,
-  height: "100",
+  minWidth: "50%",
+  maxWidth: "100%",
+  height: "100%",
 };
 
 export default Image;

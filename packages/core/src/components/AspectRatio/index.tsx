@@ -4,7 +4,7 @@
  * File Created: 27-06-2022 03:42:37
  * Author: Harikittu46
  * -----
- * Last Modified: 18-07-2022 04:31:34
+ * Last Modified: 21-07-2022 01:20:47
  * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,13 +23,13 @@
  */
 
 import React from "react";
-import { AutoContrast } from "@risserlabs/auto-contrast";
-
+// import { AutoContrast } from "@risserlabs/auto-contrast";
 import { SxProp, Image as DImage } from "@dripsy/core";
 import { DripsyFC, DImageProps } from "../../dripsyHelper";
 
 export type AspectRatioProps = DImageProps & {
   src?: string;
+  ratio?: number;
 };
 const AspectRatio: DripsyFC<AspectRatioProps> = (props: AspectRatioProps) => {
   const sx: SxProp = {
@@ -45,7 +45,7 @@ const AspectRatio: DripsyFC<AspectRatioProps> = (props: AspectRatioProps) => {
 };
 
 AspectRatio.defaultProps = {
-  sx: {},
+  ratio: 16 / 9,
 };
 
 AspectRatio.defaultSx = {
@@ -53,5 +53,7 @@ AspectRatio.defaultSx = {
   overflow: "hidden",
   width: "100%",
   height: 0,
+  // paddingBottom: (100 / (ratio ))+ '%',
 };
+
 export default AspectRatio;
