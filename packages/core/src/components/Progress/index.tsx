@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 14-07-2022 07:15:25
+ * Last Modified: 05-08-2022 02:24:01
  * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -106,7 +106,7 @@ const Progress: DripsyFC<ProgressProps> = (props: ProgressProps) => {
 Progress.defaultProps = {};
 
 Progress.defaultSx = {
-  display: "block",
+  display: "flex",
   height: "5px",
   margin: 0,
   marginRight: "20px",
