@@ -4,19 +4,14 @@
  * File Created: 06-07-2022 05:42:28
  * Author: Clay Risser
  * -----
-<<<<<<< HEAD
- * Last Modified: 05-08-2022 04:37:30
- * Modified By: Lavanya Katari
-=======
- * Last Modified: 05-08-2022 04:37:30
- * Modified By: Lavanya Katari
- * Last Modified: 05-08-2022 04:37:30
- * Modified By: Lavanya Katari
- * Last Modified: 05-08-2022 04:37:30
- * Modified By: Lavanya Katari
- * Last Modified: 05-08-2022 04:37:30
- * Modified By: Lavanya Katari
->>>>>>> fb05aba888710af258a41ff6c90ab783b5fd523c
+ * Last Modified: 06-08-2022 00:11:46
+ * Modified By: Manikanta
+ * Last Modified: 06-08-2022 00:11:46
+ * Modified By: Manikanta
+ * Last Modified: 06-08-2022 00:11:46
+ * Modified By: Manikanta
+ * Last Modified: 06-08-2022 00:11:46
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -48,31 +43,20 @@ module.exports = {
     "../../**/Select.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Heading.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Badge.stories.@(js|jsx|ts|tsx|md|mdx)",
-    // "../../**/Avatar.stories.@(js|jsx|ts|tsx|md|mdx)",
-    // "../../**/Divider.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Paragraph.stories.@(js|jsx|ts|tsx|md|mdx)",
      "../../**/Card.stories.@(js|jsx|ts|tsx|md|mdx)",
      "../../**/Checkbox.stories.@(js|jsx|ts|tsx|md|mdx)",
      "../../**/Alert.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Slider.stories.@(js|jsx|ts|tsx|md|mdx)",
-    // "../../**/IconButton.stories.@(js|jsx|ts|tsx|md|mdx)",
-    // "../../**/Flex.stories.@(js|jsx|ts|tsx|md|mdx)",
-     "../../**/Avatar.stories.@(js|jsx|ts|tsx|md|mdx)",
+   //  "../../**/IconButton.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/Avatar.stories.@(js|jsx|ts|tsx|md|mdx)",
      "../../**/Divider.stories.@(js|jsx|ts|tsx|md|mdx)",
-     "../../**/Paragraph.stories.@(js|jsx|ts|tsx|md|mdx)",
-    // "../../**/Card.stories.@(js|jsx|ts|tsx|md|mdx)",
-    // "../../**/Checkbox.stories.@(js|jsx|ts|tsx|md|mdx)",
-    // "../../**/Alert.stories.@(js|jsx|ts|tsx|md|mdx)",
-    // "../../**/Slider.stories.@(js|jsx|ts|tsx|md|mdx)",
-    // "../../**/IconButton.stories.@(js|jsx|ts|tsx|md|mdx)",
-    "../../**/Flex.stories.@(js|jsx|ts|tsx|md|mdx)",
-    // "../../**/Grid.stories.@(js|jsx|ts|tsx|md|mdx)",
+     "../../**/Flex.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Spinner.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Grid.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Radio.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Progress.stories.@(js|jsx|ts|tsx|md|mdx)",
      "../../**/Label.stories.@(js|jsx|ts|tsx|md|mdx)",
-    // // "../../**/*.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Variant.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Embed.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Image.stories.@(js|jsx|ts|tsx|md|mdx)",
