@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-07-2022 01:32:43
- * Modified By: Harikittu46
+ * Last Modified: 09-08-2022 07:21:04
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -74,3 +74,14 @@ withBackground.argTypes = {
     control: { type: "select" },
   },
 };
+
+export const withCustomFont = () => (
+  <Text
+    sx={{
+      fontFamily: "Sacramento_400Regular",
+      fontSize: 28,
+    }}
+  >
+    Hello, world!
+  </Text>
+);

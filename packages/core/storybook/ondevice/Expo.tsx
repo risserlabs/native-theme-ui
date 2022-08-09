@@ -1,10 +1,10 @@
 /**
- * File: /storybook/ondevice/expo.tsx
+ * File: /storybook/ondevice/Expo.tsx
  * Project: @native-theme-ui/core
  * File Created: 02-07-2022 12:47:49
  * Author: Clay Risser
  * -----
- * Last Modified: 04-08-2022 07:28:36
+ * Last Modified: 09-08-2022 07:18:50
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,24 +22,38 @@
  * limitations under the License.
  */
 
-import React, { FC } from "react";
-import { Platform, SafeAreaView, StatusBar } from "react-native";
+import * as SplashScreen from "expo-splash-screen";
+import React, { FC, useEffect } from "react";
+import { Platform, View, StatusBar as RNStatusBar } from "react-native";
+import { Sacramento_400Regular } from "@expo-google-fonts/sacramento";
+import { StatusBar } from "expo-status-bar";
 import { getStorybookUI } from "@storybook/react-native";
+import { useFonts } from "expo-font";
 import "./storybook.requires";
 
+const logger = console;
+SplashScreen.preventAutoHideAsync().catch(logger.error);
 const StorybookUI = getStorybookUI({
   host: Platform.OS === "android" ? "10.0.2.2" : "0.0.0.0",
 });
 
-export type ExpoProps = Record<string, unknown>;
+const Expo: FC<unknown> = () => {
+  const [fontsLoaded] = useFonts({
+    Sacramento_400Regular,
+  });
 
-const Expo: FC<ExpoProps> = () => {
+  useEffect(() => {
+    if (fontsLoaded) SplashScreen.hideAsync();
+  }, [fontsLoaded]);
+  if (!fontsLoaded) return null;
+
   if (Platform.OS === "android") {
     return (
-      <SafeAreaView style={{ height: "100%" }}>
-        <StatusBar />
+      <View style={{ flex: 1 }}>
+        <StatusBar style="auto" />
+        <View style={{ height: RNStatusBar.currentHeight }} />
         <StorybookUI />
-      </SafeAreaView>
+      </View>
     );
   }
   return <StorybookUI />;
