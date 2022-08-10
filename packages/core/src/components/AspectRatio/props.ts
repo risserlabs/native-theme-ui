@@ -22,10 +22,9 @@
  * limitations under the License.
  */
 
-
 import { SxProp } from "dripsy";
 import { createSplitProps } from "../../util";
-import {  DImageProps } from "../../dripsyHelper";
+import { DImageProps } from "../../dripsyHelper";
 
 export type BasePropsBucket = DImageProps;
 
