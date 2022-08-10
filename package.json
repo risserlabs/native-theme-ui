@@ -41,7 +41,7 @@
   },
   "resolutions": {
     "@storybook/addon-react-native-web@0.0.7": "patch:@storybook/addon-react-native-web@npm:0.0.7#.yarn/patches/@storybook-addon-react-native-web-npm-0.0.7-49dddd98a4",
-    "@storybook/client-api": "patch:@storybook/client-api@npm:6.3.13#.yarn/patches/@storybook-client-api-npm-6.3.13-4ad3be9220",
+    "@storybook/client-api@6.3.13": "patch:@storybook/client-api@npm:6.3.13#.yarn/patches/@storybook-client-api-npm-6.3.13-4ad3be9220",
     "@types/react": "17.0.21",
     "@types/react-native": "0.67.6",
     "expo-font": "~10.1.0",
