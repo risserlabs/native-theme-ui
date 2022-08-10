@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 05-08-2022 03:31:51
- * Modified By: Ajith Kumar
+ * Last Modified: 10-08-2022 06:33:49
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -29,7 +29,7 @@ import { ViewProps } from "react-native";
 import { DripsyFC } from "../../dripsyHelper";
 import { AutoContrast } from "@risserlabs/auto-contrast";
 
-type DonutProps = ViewProps & {
+export type DonutProps = ViewProps & {
   sx?: SxProp;
   max?: number;
   value?: number;

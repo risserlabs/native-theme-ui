@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-07-2022 01:04:32
- * Modified By: Ajith Kumar
+ * Last Modified: 10-08-2022 06:33:25
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -29,7 +29,7 @@ import { AutoContrast } from "@risserlabs/auto-contrast";
 import { DripsyFC } from "../../dripsyHelper";
 import Button from "../Button";
 
-type CloseProps = RNPressableProps & {
+export type CloseProps = RNPressableProps & {
   sx?: SxProp;
   autoContrast?: AutoContrast;
 };

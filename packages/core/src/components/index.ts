@@ -1,10 +1,10 @@
 /**
- * File: /components/index.ts
+ * File: /src/components/index.ts
  * Project: @native-theme-ui/core
  * File Created: 30-06-2022 08:41:11
  * Author: Clay Risser
  * -----
- * Last Modified: 30-06-2022 08:49:28
+ * Last Modified: 10-08-2022 06:38:45
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,44 +22,44 @@
  * limitations under the License.
  */
 
-import Alert from "./Alert";
-import AspectImage from "./AspectImage";
-import AspectRatio from "./AspectRatio";
-import Avatar from "./Avatar";
-import Badge from "./Badge";
-import Box from "./Box";
-import Button from "./Button";
-import Card from "./Card";
-import Checkbox from "./Checkbox";
-import Close from "./Close";
-import Container from "./Container";
-import Divider from "./Divider";
-import Donut from "./Donut";
-import Embed from "./Embed";
-import Field from "./Field";
-import Flex from "./Flex";
-import Forms from "./Forms";
-import Grid from "./Grid";
-import Heading from "./Heading";
-import IconButton from "./IconButton";
-import Image from "./Image";
-import Input from "./Input";
-import Label from "./Label";
-import Link from "./Link";
-import MenuButton from "./MenuButton";
-import Message from "./Message";
-import NavLink from "./NavLink";
-import Paragraph from "./Paragraph";
-import Pressable from "./Pressable";
-import Progress from "./Progress";
-import Radio from "./Radio";
-import Select from "./Select";
-import Slider from "./Slider";
-import Spinner from "./Spinner";
-import Switch from "./Switch";
-import Text from "./Text";
-import Textarea from "./Textarea";
-import Variant from "./Variant";
+import Alert, { AlertProps } from "./Alert";
+import AspectImage, { AspectImageProps } from "./AspectImage";
+import AspectRatio, { AspectRatioProps } from "./AspectRatio";
+import Avatar, { AvatarProps } from "./Avatar";
+import Badge, { BadgeProps } from "./Badge";
+import Box, { BoxProps } from "./Box";
+import Button, { ButtonProps } from "./Button";
+import Card, { CardProps } from "./Card";
+import Checkbox, { CheckboxProps } from "./Checkbox";
+import Close, { CloseProps } from "./Close";
+import Container, { ContainerProps } from "./Container";
+import Divider, { DividerProps } from "./Divider";
+import Donut, { DonutProps } from "./Donut";
+import Embed, { EmbedProps } from "./Embed";
+import Field, { FieldProps } from "./Field";
+import Flex, { FlexProps } from "./Flex";
+import Forms, { FormsProps } from "./Forms";
+import Grid, { GridProps } from "./Grid";
+import Heading, { HeadingProps } from "./Heading";
+import IconButton, { IconButtonProps } from "./IconButton";
+import Image, { ImageProps } from "./Image";
+import Input, { InputProps } from "./Input";
+import Label, { LabelProps } from "./Label";
+import Link, { LinkProps } from "./Link";
+import MenuButton, { MenuButtonProps } from "./MenuButton";
+import Message, { MessageProps } from "./Message";
+import NavLink, { NavLinkProps } from "./NavLink";
+import Paragraph, { ParagraphProps } from "./Paragraph";
+import Pressable, { PressableProps } from "./Pressable";
+import Progress, { ProgressProps } from "./Progress";
+import Radio, { RadioProps } from "./Radio";
+import Select, { SelectProps } from "./Select";
+import Slider, { SliderProps } from "./Slider";
+import Spinner, { SpinnerProps } from "./Spinner";
+import Switch, { SwitchProps } from "./Switch";
+import Text, { TextProps } from "./Text";
+import Textarea, { TextareaProps } from "./Textarea";
+import Variant, { VariantProps } from "./Variant";
 
 export {
   Alert,
@@ -100,4 +100,45 @@ export {
   Text,
   Textarea,
   Variant,
+};
+
+export type {
+  AlertProps,
+  AspectImageProps,
+  AspectRatioProps,
+  AvatarProps,
+  BadgeProps,
+  BoxProps,
+  ButtonProps,
+  CardProps,
+  CheckboxProps,
+  CloseProps,
+  ContainerProps,
+  DividerProps,
+  DonutProps,
+  EmbedProps,
+  FieldProps,
+  FlexProps,
+  FormsProps,
+  GridProps,
+  HeadingProps,
+  IconButtonProps,
+  ImageProps,
+  InputProps,
+  LabelProps,
+  LinkProps,
+  MenuButtonProps,
+  MessageProps,
+  NavLinkProps,
+  ParagraphProps,
+  PressableProps,
+  ProgressProps,
+  RadioProps,
+  SelectProps,
+  SliderProps,
+  SpinnerProps,
+  SwitchProps,
+  TextProps,
+  TextareaProps,
+  VariantProps,
 };

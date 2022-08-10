@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 15-07-2022 07:10:49
- * Modified By: Manikanta
+ * Last Modified: 10-08-2022 06:36:13
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -42,7 +42,7 @@ export interface ImageProps extends RNImageProps {
   iconSx?: SxProp;
   //tintColor?: string;
 }
-type IconButtonProps = PressableProps & ImageProps;
+export type IconButtonProps = PressableProps & ImageProps;
 const IconButton: DripsyFC<IconButtonProps> = (
   props: PressableProps & ImageProps
 ) => {

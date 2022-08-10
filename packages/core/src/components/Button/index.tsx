@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 07:34:18
  * Author: Clay Risser
  * -----
- * Last Modified: 04-08-2022 07:25:02
+ * Last Modified: 10-08-2022 06:33:00
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -69,5 +69,7 @@ Button.defaultSx = {
   textAlign: "center",
   userSelect: "none",
 };
+
+export type { ButtonProps };
 
 export default Button;

@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 10:03:43
  * Author: Ajithkrm6
  * -----
- * Last Modified: 13-07-2022 00:46:47
- * Modified By: Ajith Kumar
+ * Last Modified: 10-08-2022 06:35:45
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -27,7 +27,7 @@ import { DripsyFC } from "../../dripsyHelper";
 import { AutoContrast } from "@risserlabs/auto-contrast";
 import Box, { BoxProps } from "../Box";
 
-type GridProps = BoxProps & {
+export type GridProps = BoxProps & {
   autoContrast?: AutoContrast;
 };
 

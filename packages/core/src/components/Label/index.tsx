@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 14-07-2022 06:53:09
- * Modified By: K S R P BHUSHAN
+ * Last Modified: 10-08-2022 06:36:21
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -29,7 +29,7 @@ import { TextProps as RNTextProps } from "react-native";
 import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
 import { BoxProps } from "../Box";
 
-type LabelProps = RNTextProps & {
+export type LabelProps = RNTextProps & {
   sx?: SxProp;
   autoContrast?: AutoContrast;
 };

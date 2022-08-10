@@ -4,7 +4,7 @@
  * File Created: 21-06-2022 02:17:32
  * Author: Harikittu46
  * -----
- * Last Modified: 03-07-2022 10:23:15
+ * Last Modified: 10-08-2022 06:35:19
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -27,11 +27,11 @@ import { AutoContrast } from "@risserlabs/auto-contrast";
 import { DripsyFC } from "../../dripsyHelper";
 import { SxProp } from "@dripsy/core";
 
-type FormProps = {
+export type FormsProps = {
   autoContrast?: AutoContrast;
   sx?: SxProp;
 };
-const Forms: DripsyFC<FormProps> = (props: FormProps) => {
+const Forms: DripsyFC<FormsProps> = (props: FormsProps) => {
   const sx: SxProp = {
     ...Forms.defaultSx,
     ...props.sx,

@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 14-07-2022 07:01:47
- * Modified By: K S R P BHUSHAN
+ * Last Modified: 10-08-2022 06:36:48
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -29,7 +29,7 @@ import { AutoContrast } from "@risserlabs/auto-contrast";
 import { DripsyFC } from "../../dripsyHelper";
 import useThemeLookup from "../../hooks/useThemeLookup";
 
-type TextareaProps = RNTextInputProps & {
+export type TextareaProps = RNTextInputProps & {
   sx?: SxProp;
   autoContrast?: AutoContrast;
 };

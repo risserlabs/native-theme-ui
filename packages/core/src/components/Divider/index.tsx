@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 14-07-2022 07:18:45
- * Modified By: Manikanta
+ * Last Modified: 10-08-2022 06:33:37
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -28,7 +28,7 @@ import { DripsyFC, DViewProps } from "../../dripsyHelper";
 import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
 import Box from "../Box";
 
-type DividerProps = DViewProps & {
+export type DividerProps = DViewProps & {
   autoContrast?: AutoContrast;
 };
 

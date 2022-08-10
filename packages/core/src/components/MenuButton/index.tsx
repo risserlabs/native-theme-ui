@@ -4,8 +4,8 @@
  * File Created: 19-06-2022 06:50:27
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 19-07-2022 06:17:03
- * Modified By: K S R P BHUSHAN
+ * Last Modified: 10-08-2022 06:36:38
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -44,7 +44,7 @@ export interface ImageProps extends RNImageProps {
   menuSx?: SxProp;
   // tintColor?: string;
 }
-type MenuButtonProps = PressableProps & ImageProps;
+export type MenuButtonProps = PressableProps & ImageProps;
 const MenuButton: DripsyFC<MenuButtonProps> = (
   props: PressableProps & ImageProps
 ) => {

@@ -4,7 +4,7 @@
  * File Created: 18-07-2022 06:25:05
  * Author: Clay Risser
  * -----
- * Last Modified: 18-07-2022 06:54:53
+ * Last Modified: 10-08-2022 06:34:16
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,7 +22,11 @@
  * limitations under the License.
  */
 
+import { EmbedProps } from "./props";
+
 import Embed from "./Embed";
+
+export type { EmbedProps };
 
 export * from "./Embed";
 
