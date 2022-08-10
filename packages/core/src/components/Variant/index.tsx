@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 23:52:10
  * Author: Lavanya Katari
  * -----
- * Last Modified: 14-07-2022 23:30:53
- * Modified By: Lavanya Katari
+ * Last Modified: 09-08-2022 23:27:26
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -42,7 +42,7 @@ const Variant: DripsyFC<VariantProps> = (props: VariantProps) => {
 Variant.defaultProps = {};
 Variant.defaultSx = {
   boxSizing: "border-box",
-  display: "inline-block",
+  display: "flex",
   margin: 0,
   minWidth: 0,
   maxWidth: 0,

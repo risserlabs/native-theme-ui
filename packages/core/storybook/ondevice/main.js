@@ -4,7 +4,7 @@
  * File Created: 06-07-2022 05:42:28
  * Author: Clay Risser
  * -----
- * Last Modified: 10-08-2022 03:40:09
+ * Last Modified: 10-08-2022 03:45:58
  * Modified By: Manikanta
  
  * -----
@@ -36,7 +36,7 @@ module.exports = {
     "../../**/Message.stories.@(js|jsx|ts|tsx|md|mdx)",
     //"../../**/Donut.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Select.stories.@(js|jsx|ts|tsx|md|mdx)",
-    // "../../**/Heading.stories.@(js|jsx|ts|tsx|md|mdx)",
+    //"../../**/Heading.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Badge.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Paragraph.stories.@(js|jsx|ts|tsx|md|mdx)",
     //  "../../**/Card.stories.@(js|jsx|ts|tsx|md|mdx)",
