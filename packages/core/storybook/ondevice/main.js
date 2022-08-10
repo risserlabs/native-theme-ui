@@ -4,14 +4,14 @@
  * File Created: 06-07-2022 05:42:28
  * Author: Clay Risser
  * -----
- * Last Modified: 06-08-2022 02:23:26
- * Modified By: Ajith Kumar
- * Last Modified: 06-08-2022 02:23:26
- * Modified By: Ajith Kumar
- * Last Modified: 06-08-2022 02:23:26
- * Modified By: Ajith Kumar
- * Last Modified: 06-08-2022 02:23:26
- * Modified By: Ajith Kumar
+ * Last Modified: 09-08-2022 23:26:53
+ * Modified By: Manikanta
+ * Last Modified: 09-08-2022 23:26:53
+ * Modified By: Manikanta
+ * Last Modified: 09-08-2022 23:26:53
+ * Modified By: Manikanta
+ * Last Modified: 09-08-2022 23:26:53
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -43,19 +43,19 @@ module.exports = {
     "../../**/Select.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Heading.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Badge.stories.@(js|jsx|ts|tsx|md|mdx)",
-    // "../../**/Paragraph.stories.@(js|jsx|ts|tsx|md|mdx)",
+   "../../**/Paragraph.stories.@(js|jsx|ts|tsx|md|mdx)",
     //  "../../**/Card.stories.@(js|jsx|ts|tsx|md|mdx)",
      "../../**/Checkbox.stories.@(js|jsx|ts|tsx|md|mdx)",
      "../../**/Alert.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Slider.stories.@(js|jsx|ts|tsx|md|mdx)",
-   //  "../../**/IconButton.stories.@(js|jsx|ts|tsx|md|mdx)",
+    "../../**/IconButton.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Avatar.stories.@(js|jsx|ts|tsx|md|mdx)",
      "../../**/Divider.stories.@(js|jsx|ts|tsx|md|mdx)",
     //  "../../**/Flex.stories.@(js|jsx|ts|tsx|md|mdx)",
-    // "../../**/Spinner.stories.@(js|jsx|ts|tsx|md|mdx)",
+     //"../../**/Spinner.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Grid.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Radio.stories.@(js|jsx|ts|tsx|md|mdx)",
-    // "../../**/Progress.stories.@(js|jsx|ts|tsx|md|mdx)",
+     //"../../**/Progress.stories.@(js|jsx|ts|tsx|md|mdx)",
      "../../**/Label.stories.@(js|jsx|ts|tsx|md|mdx)",
     // "../../**/Variant.stories.@(js|jsx|ts|tsx|md|mdx)",
     "../../**/Embed.stories.@(js|jsx|ts|tsx|md|mdx)",

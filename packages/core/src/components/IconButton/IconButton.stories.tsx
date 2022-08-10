@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-07-2022 00:21:03
+ * Last Modified: 10-08-2022 03:35:10
  * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -54,8 +54,8 @@ export const HomeIconButton = () => (
   <IconButton
     source={require("../../../assets/homeIcon.png")}
     iconSx={{
-      width: 100,
-      height: 100,
+      width: 30,
+      height: 50,
       overflow: "hidden",
     }}
     onPress={() => console.log("HOME ICON PRESSED")}
@@ -66,8 +66,8 @@ export const NotificationIconButton = () => (
   <IconButton
     source={require("../../../assets/notificationIcon.png")}
     iconSx={{
-      width: 100,
-      height: 100,
+      width: 30,
+      height: 50,
       overflow: "hidden",
     }}
     onPress={() => console.log("NOTIFICATION ICON PRESSED")}
