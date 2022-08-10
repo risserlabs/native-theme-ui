@@ -4,7 +4,7 @@
  * File Created: 20-06-2022 05:48:50
  * Author: Clay Risser
  * -----
- * Last Modified: 14-07-2022 03:54:02
+ * Last Modified: 10-08-2022 03:37:24
  * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -32,7 +32,7 @@ import {
 } from "../../../storybook";
 import Paragraph from "./index";
 import Box from "../Box";
-
+import Text from "../Text";
 export default {
   title: "components/text/Paragraph",
   component: Paragraph,
@@ -42,8 +42,10 @@ export default {
 };
 
 export const paragraph = createArgsStory(Paragraph);
+
 paragraph.args = {
-  children: "i am Paragraph",
+  children: "I am Paragraph",
+
   autoContrast: Paragraph.defaultProps?.autoContrast,
   ...createSxArgs(Paragraph),
 };
@@ -55,7 +57,8 @@ paragraph.argTypes = {
 export const withBackGround = (args: Args) => (
   <Box
     sx={{
-      padding: 2,
+      padding: 30,
+
       bg: args.background,
     }}
   >

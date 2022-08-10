@@ -4,8 +4,8 @@
  * File Created: 30-06-2022 07:49:47
  * Author: Clay Risser
  * -----
- * Last Modified: 15-07-2022 00:29:27
- * Modified By: Lavanya Katari
+ * Last Modified: 09-08-2022 07:01:31
+ * Modified By: Hari Krishna
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -57,7 +57,7 @@ const Switch: DripsyFC<SwitchProps> = (props: SwitchProps) => {
 
 Switch.defaultProps = {};
 Switch.defaultSx = {
-  display: "block",
+  display: "flex",
   height: "5px",
   margin: 0,
   marginRight: "20px",
