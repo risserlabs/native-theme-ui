@@ -4,8 +4,8 @@
  * File Created: 20-06-2022 05:48:50
  * Author: Clay Risser
  * -----
- * Last Modified: 05-08-2022 03:47:27
- * Modified By: Manikanta
+ * Last Modified: 09-08-2022 23:49:15
+ * Modified By: Hari Krishna
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -49,8 +49,8 @@ const Paragraph: DripsyFC<ParagraphProps> = (props: ParagraphProps) => {
 Paragraph.defaultProps = {};
 
 Paragraph.defaultSx = {
-  fontFamily: "body",
-  fontWeight: "body",
+  // fontFamily: "system-ui",
+  // fontWeight: "normal",
   lineHeight: "body",
 };
 
