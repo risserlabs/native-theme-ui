@@ -4,7 +4,7 @@
  * File Created: 02-07-2022 12:47:49
  * Author: Clay Risser
  * -----
- * Last Modified: 09-08-2022 07:18:50
+ * Last Modified: 10-08-2022 06:16:12
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,11 +25,11 @@
 import * as SplashScreen from "expo-splash-screen";
 import React, { FC, useEffect } from "react";
 import { Platform, View, StatusBar as RNStatusBar } from "react-native";
-import { Sacramento_400Regular } from "@expo-google-fonts/sacramento";
 import { StatusBar } from "expo-status-bar";
 import { getStorybookUI } from "@storybook/react-native";
 import { useFonts } from "expo-font";
 import "./storybook.requires";
+import fonts from "../fonts";
 
 const logger = console;
 SplashScreen.preventAutoHideAsync().catch(logger.error);
@@ -38,9 +38,7 @@ const StorybookUI = getStorybookUI({
 });
 
 const Expo: FC<unknown> = () => {
-  const [fontsLoaded] = useFonts({
-    Sacramento_400Regular,
-  });
+  const [fontsLoaded] = useFonts(fonts);
 
   useEffect(() => {
     if (fontsLoaded) SplashScreen.hideAsync();

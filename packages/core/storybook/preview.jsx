@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 10:23:16
+ * Last Modified: 10-08-2022 06:18:48
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,10 +25,12 @@
 import React from "react";
 import { DripsyProvider } from "@dripsy/core";
 import { themes as storybookThemes } from "@storybook/theming";
+import { useFonts } from "expo-font";
 import { withDesign } from "storybook-addon-designs";
 import { withGlobals } from "@luigiminardim/storybook-addon-globals-controls";
 import { withThemes } from "storybook-addon-themes/react";
 import * as themes from "../themes";
+import fonts from "./fonts";
 
 export const parameters = {
   globalsControls: {},
@@ -57,13 +59,16 @@ export const parameters = {
       themeUI: theme,
       color: theme.colors.primary,
     })),
-    Decorator: (props) => (
-      // eslint-disable-next-line react/prop-types
-      <DripsyProvider theme={props.theme.themeUI}>
-        {/* eslint-disable-next-line react/prop-types */}
-        {props.children}
-      </DripsyProvider>
-    ),
+    Decorator: (props) => {
+      useFonts(fonts);
+      return (
+        // eslint-disable-next-line react/prop-types
+        <DripsyProvider theme={props.theme.themeUI}>
+          {/* eslint-disable-next-line react/prop-types */}
+          {props.children}
+        </DripsyProvider>
+      );
+    },
   },
 };
 
