@@ -1,35 +1,10 @@
 {
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "allowJs": true,
     "emitDeclarationOnly": true,
-    "declaration": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "incremental": true,
-    "isolatedModules": true,
-    "jsx": "react",
-    "module": "CommonJS",
-    "moduleResolution": "Node",
     "noEmit": false,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "noUnusedParameters": true,
     "outDir": "lib",
-    "resolveJsonModule": true,
-    "rootDir": "src",
-    "skipLibCheck": true,
-    "sourceMap": true,
-    "strict": true,
-    "target": "ES5",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ES2021",
-      "ScriptHost",
-      "WebWorker",
-      "WebWorker.ImportScripts",
-      "Webworker.Iterable"
-    ]
+    "rootDir": "src"
   },
   "include": ["src/**/*"],
   "exclude": [

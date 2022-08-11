@@ -2,7 +2,7 @@
 /.loki/.gitignore
 /.loki/current
 /.loki/difference
-/es
+/esm
 /lib
 /storybook-static
 /storybook/ondevice/storybook.requires.js

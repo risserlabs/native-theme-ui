@@ -3,7 +3,7 @@
 # File Created: 04-12-2021 07:22:50
 # Author: Clay Risser <email@clayrisser.com>
 # -----
-# Last Modified: 04-07-2022 12:02:46
+# Last Modified: 11-08-2022 09:50:43
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -94,6 +94,10 @@ publish: | ~build +publish ##
 .PHONY: count
 count: ## count lines of code in project
 	@$(CLOC) $(shell $(GIT) ls-files | $(GREP) -vE "^\.yarn")
+
+.PHONY: browserslist
+browserslist:
+	@$(BROWSERSLIST_BINARY)
 
 INOTIFY_LIMIT ?= 999999
 .PHONY: doctor

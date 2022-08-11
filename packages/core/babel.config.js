@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 02-07-2022 14:29:19
+ * Last Modified: 11-08-2022 09:49:10
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -82,18 +82,6 @@ module.exports = (api) => {
               modules: false,
               spec: true,
               useBuiltIns: "usage",
-              targets: {
-                node: "6",
-                browsers: [
-                  "ie >= 11",
-                  "last 3 chrome major versions",
-                  "last 3 chromeandroid major versions",
-                  "last 3 edge major versions",
-                  "last 3 firefox major versions",
-                  "last 3 ios major versions",
-                  "last 3 safari major versions",
-                ],
-              },
             },
           ],
         ],
@@ -124,18 +112,6 @@ module.exports = (api) => {
               modules: "umd",
               spec: true,
               useBuiltIns: "usage",
-              targets: {
-                node: "6",
-                browsers: [
-                  "ie >= 11",
-                  "last 3 chrome major versions",
-                  "last 3 chromeandroid major versions",
-                  "last 3 edge major versions",
-                  "last 3 firefox major versions",
-                  "last 3 ios major versions",
-                  "last 3 safari major versions",
-                ],
-              },
             },
           ],
         ],

@@ -4,7 +4,7 @@
  * File Created: 05-07-2022 07:43:20
  * Author: Clay Risser
  * -----
- * Last Modified: 05-07-2022 07:55:12
+ * Last Modified: 10-08-2022 07:45:53
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,8 +23,8 @@
  */
 
 import { AutoContrast } from "@risserlabs/auto-contrast";
-import { SxProp } from "dripsy";
 import { ReactNode } from "react";
+import { SxProp } from "@dripsy/core";
 import { DPressableProps } from "../../dripsyHelper";
 import { createSplitProps } from "../../util";
 

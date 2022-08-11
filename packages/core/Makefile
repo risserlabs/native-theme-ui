@@ -3,7 +3,7 @@
 # File Created: 30-06-2022 08:16:45
 # Author: Clay Risser
 # -----
-# Last Modified: 01-08-2022 07:46:21
+# Last Modified: 11-08-2022 10:52:21
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -65,9 +65,10 @@ lib/index.js:
 	@$(call reset,build)
 $(ACTION)/build: $(call git_deps,\.([jt]sx?)$$)
 	@$(BABEL) --env-name umd src -d lib --extensions '.js,.jsx,.ts,.tsx' --source-maps
+	@$(ECHO) '{"type": "commonjs"}' > lib/package.json
 	@$(CP) src/modulesToTranspile.json lib
-	@$(BABEL) --env-name esm src -d es --extensions '.js,.jsx,.ts,.tsx' --source-maps
-	@$(CP) src/modulesToTranspile.json es
+	@$(BABEL) --env-name esm src -d esm --extensions '.js,.jsx,.ts,.tsx' --source-maps
+	@$(ECHO) '{"type": "module"}' > esm/package.json
 	@$(TSC) -p tsconfig.build.json -d
 	@$(call done,build)
 
@@ -168,6 +169,10 @@ publish: | ~build +publish ##
 .PHONY: inc
 inc: ##
 	@$(NPM) version patch --git=false $(NOFAIL)
+
+.PHONY: browserslist
+browserslist:
+	@$(BROWSERSLIST_BINARY)
 
 .PHONY: clean
 clean: ##

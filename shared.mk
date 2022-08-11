@@ -3,7 +3,7 @@
 # File Created: 23-01-2022 02:18:40
 # Author: Clay Risser
 # -----
-# Last Modified: 01-08-2022 07:09:48
+# Last Modified: 11-08-2022 09:50:24
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,6 +22,7 @@
 
 export BABEL ?= $(call yarn_binary,babel)
 export BABEL_NODE ?= $(call yarn_binary,babel-node)
+export BROWSERSLIST_BINARY ?= $(call yarn_binary,browserslist)
 export BUILD_STORYBOOK ?= $(call yarn_binary,build-storybook)
 export CLOC ?= cloc
 export CSPELL ?= $(call yarn_binary,cspell)
@@ -46,6 +47,7 @@ export NPM_AUTH_TOKEN ?= $(shell $(CAT) $(HOME)/.docker/config.json | \
 CACHE_ENVS += \
 	BABEL \
 	BABEL_NODE \
+	BROWSERSLIST_BINARY \
 	BUILD_STORYBOOK \
 	CLOC \
 	CSPELL \

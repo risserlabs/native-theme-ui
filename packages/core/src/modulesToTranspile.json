@@ -1,1 +1,6 @@
-["dripsy", "@dripsy/core", "react-native-swipe-gestures"]
+[
+  "@dripsy/core",
+  "@native-theme-ui/core",
+  "@risserlabs/auto-contrast",
+  "react-native-swipe-gestures"
+]
