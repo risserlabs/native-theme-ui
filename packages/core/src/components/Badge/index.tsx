@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 07:56:33
+ * Last Modified: 17-08-2022 11:24:17
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -51,7 +51,7 @@ const Badge: FC<BadgeProps> = (props: BadgeProps) => {
   });
 
   return (
-    <Box themeKey="badges" variant="primary" sx={{ ...sx }}>
+    <Box variant="primary" sx={{ ...sx }}>
       {props.children}
     </Box>
   );

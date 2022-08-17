@@ -4,7 +4,7 @@
  * File Created: 23-06-2022 18:32:39
  * Author: Ajithkrm6
  * -----
- * Last Modified: 01-08-2022 06:51:02
+ * Last Modified: 17-08-2022 11:26:01
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -33,7 +33,7 @@ const Message: DripsyFC<MessageProps> = (props: MessageProps) => {
     ...Message.defaultSx,
     ...props.sx,
   };
-  return <Box themeKey="messages" {...props} sx={sx} />;
+  return <Box {...props} sx={sx} />;
 };
 
 Message.defaultProps = {};

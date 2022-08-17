@@ -1,10 +1,10 @@
 /**
- * File: /src/components/Grid/index.tsx
+ * File: /src/theme.ts
  * Project: @native-theme-ui/core
- * File Created: 27-06-2022 10:03:43
- * Author: Ajithkrm6
+ * File Created: 17-08-2022 11:19:50
+ * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 11:25:49
+ * Last Modified: 17-08-2022 11:22:37
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,20 +22,13 @@
  * limitations under the License.
  */
 
-import React from "react";
-import { DripsyFC } from "../../dripsyHelper";
-import { AutoContrast } from "@risserlabs/auto-contrast";
-import Box, { BoxProps } from "../Box";
+export interface CustomTheme {
+  autoContrast?: import("@risserlabs/auto-contrast").AutoContrast;
+  variants?: Record<string, unknown>;
+  images?: Record<string, unknown>;
+}
 
-export type GridProps = BoxProps & {
-  autoContrast?: AutoContrast;
-};
-
-const Grid: DripsyFC<GridProps> = (props: GridProps) => {
-  return <Box {...props} />;
-};
-Grid.defaultSx = {
-  display: "grid",
-  //gridGap: gap,
-};
-export default Grid;
+declare module "dripsy" {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface DripsyCustomTheme extends CustomTheme {}
+}

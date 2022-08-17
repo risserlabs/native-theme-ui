@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 05:46:46
+ * Last Modified: 17-08-2022 11:25:17
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -28,7 +28,7 @@ import Button, { ButtonProps } from "../Button";
 export type CloseProps = ButtonProps;
 
 const Close: FC<CloseProps> = (props: CloseProps) => {
-  return <Button variant="close" {...props} />;
+  return <Button {...(props as any)} />;
 };
 
 export default Close;

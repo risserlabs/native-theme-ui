@@ -4,7 +4,7 @@
  * File Created: 17-08-2022 07:19:35
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 10:25:12
+ * Last Modified: 17-08-2022 11:22:31
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,7 +24,8 @@
 
 import * as presets from "@theme-ui/presets";
 import { DripsyBaseTheme, makeTheme } from "dripsy";
-import variants from "./src/variants";
+import { CustomTheme } from "~/theme";
+import variants from "~/variants";
 
 export const base = wrapTheme(presets.base);
 export const bootstrap = wrapTheme(presets.bootstrap);
@@ -63,9 +64,6 @@ export const main = makeTheme({
 } as DripsyBaseTheme);
 
 declare module "dripsy" {
-  interface DripsyCustomTheme {
-    autoContrast?: import("@risserlabs/auto-contrast").AutoContrast;
-    variants?: Record<string, unknown>;
-    images?: Record<string, unknown>;
-  }
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface DripsyCustomTheme extends CustomTheme {}
 }
