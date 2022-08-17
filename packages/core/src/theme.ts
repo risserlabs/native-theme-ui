@@ -4,7 +4,7 @@
  * File Created: 17-08-2022 11:19:50
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 11:22:37
+ * Last Modified: 17-08-2022 11:43:49
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-export interface CustomTheme {
+export interface ExtendedCustomTheme {
   autoContrast?: import("@risserlabs/auto-contrast").AutoContrast;
   variants?: Record<string, unknown>;
   images?: Record<string, unknown>;
@@ -30,5 +30,5 @@ export interface CustomTheme {
 
 declare module "dripsy" {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface DripsyCustomTheme extends CustomTheme {}
+  interface DripsyCustomTheme extends ExtendedCustomTheme {}
 }
