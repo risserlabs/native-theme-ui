@@ -4,7 +4,7 @@
  * File Created: 29-06-2022 07:38:31
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 06:56:35
+ * Last Modified: 17-08-2022 01:10:31
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,7 +25,7 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const createExpoWebpackConfigAsync = require("@expo/webpack-config");
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const modulesToTranspile = require("./src/modulesToTranspile.json");
+const modulesToTranspile = require("./modulesToTranspile.json");
 
 module.exports = (config, argv) =>
   createExpoWebpackConfigAsync(

@@ -1,9 +1,9 @@
 # File: /Makefile
 # Project: @native-theme-ui/core
-# File Created: 30-06-2022 08:16:45
+# File Created: 02-07-2022 06:11:16
 # Author: Clay Risser
 # -----
-# Last Modified: 11-08-2022 10:52:21
+# Last Modified: 17-08-2022 05:26:24
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -66,14 +66,15 @@ lib/index.js:
 $(ACTION)/build: $(call git_deps,\.([jt]sx?)$$)
 	@$(BABEL) --env-name umd src -d lib --extensions '.js,.jsx,.ts,.tsx' --source-maps
 	@$(ECHO) '{"type": "commonjs"}' > lib/package.json
-	@$(CP) src/modulesToTranspile.json lib
 	@$(BABEL) --env-name esm src -d esm --extensions '.js,.jsx,.ts,.tsx' --source-maps
 	@$(ECHO) '{"type": "module"}' > esm/package.json
 	@$(TSC) -p tsconfig.build.json -d
 	@$(call done,build)
 
 ACTIONS += prepare@storybook-ondevice~install ##
-$(ACTION)/prepare@storybook-ondevice: $(call git_deps,\.([jt]sx?)$$)
+storybook/ondevice/storybook.requires.js:
+	@$(call reset,prepare@storybook-ondevice)
+$(ACTION)/prepare@storybook-ondevice: storybook/ondevice/storybook.requires.js $(call git_deps,\.([jt]sx?)$$)
 	@$(SB_RN_GET_STORIES) --config-path $(CURDIR)/storybook/ondevice
 	@$(call done,prepare@storybook-ondevice)
 
@@ -100,28 +101,25 @@ $(ACTION)/build@storybook-ios: $(call git_deps,\.([jt]sx?)$$)
 	@$(EXPO) build:ios
 	@$(call done,build@storybook-ios)
 
-.PHONY: start@storybook +start@storybook
+.PHONY: start@storybook +start@storybook start@storybook-web +start@storybook-web
 start@storybook: | ~install +start@storybook ##
-+start@storybook:
++start@storybook: start@storybook-web
+start@storybook-web: | ~install +start@storybook-web ##
++start@storybook-web:
 	@$(STORYBOOK_SERVER) --no-version-updates -c storybook -p 6006
 
-.PHONY: start@storybook-native +start@storybook-native
-start@storybook-native: | ~install +start@storybook-native ##
-+start@storybook-native:
-	@$(STORYBOOK_NATIVE_SERVER) -c storybook
-
-.PHONY: start@storybook-web +start@storybook-web
-start@storybook-web: | ~prepare@storybook-ondevice +start@storybook-web ##
-+start@storybook-web:
+.PHONY: start@storybook-expo +start@storybook-expo
+start@storybook-expo: | ~prepare@storybook-ondevice +start@storybook-expo ##
++start@storybook-expo:
 	@$(EXPO) start -c --web $(ARGS)
 
 .PHONY: start@storybook-android +start@storybook-android
-start@storybook-android: | ~install +start@storybook-android ##
+start@storybook-android: | ~prepare@storybook-ondevice +start@storybook-android ##
 +start@storybook-android:
 	@$(EXPO) start -c --android $(ARGS)
 
 .PHONY: start@storybook-ios +start@storybook-ios
-start@storybook-ios: | ~install +start@storybook-ios ##
+start@storybook-ios: | ~prepare@storybook-ondevice +start@storybook-ios ##
 +start@storybook-ios:
 	@$(EXPO) start -c --ios $(ARGS)
 

@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 18-07-2022 06:22:42
+ * Last Modified: 17-08-2022 05:24:07
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,7 +23,7 @@
  */
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const modulesToTranspile = require("../src/modulesToTranspile.json");
+const modulesToTranspile = require("../modulesToTranspile.json");
 
 const babelConfig = {
   presets: [],
@@ -93,12 +93,18 @@ module.exports = {
     postcss: false,
     storyStoreV7: false,
   },
+  managerWebpack(config) {
+    return {
+      ...config,
+      target: "web",
+    };
+  },
   webpackFinal: (webpackConfig) => {
     patchBabel(webpackConfig, {
       ...babelConfig,
       plugins: [...(babelConfig.plugins || [])],
     });
-    return { ...webpackConfig };
+    return { ...webpackConfig, target: "web" };
   },
 };
 

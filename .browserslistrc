@@ -1,2 +1,2 @@
 defaults
-node 12
+node >= 12
