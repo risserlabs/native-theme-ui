@@ -4,8 +4,8 @@
  * File Created: 20-06-2022 05:48:50
  * Author: Clay Risser
  * -----
- * Last Modified: 10-08-2022 03:37:24
- * Modified By: Manikanta
+ * Last Modified: 17-08-2022 10:43:00
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -47,7 +47,7 @@ paragraph.args = {
   children: "I am Paragraph",
 
   autoContrast: Paragraph.defaultProps?.autoContrast,
-  ...createSxArgs(Paragraph),
+  ...createSxArgs(),
 };
 paragraph.argTypes = {
   ...autoContrastArgType,

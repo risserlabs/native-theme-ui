@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 06:54:27
+ * Last Modified: 17-08-2022 10:43:00
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -44,7 +44,7 @@ export default {
 export const spinner = createArgsStory(Spinner);
 spinner.args = {
   autoContrast: spinner.defaultProps?.autoContrast,
-  ...createSxArgs(Spinner),
+  ...createSxArgs(),
 };
 spinner.argTypes = {
   ...autoContrastArgType,
@@ -57,7 +57,7 @@ spinner.argTypes = {
 //     args: {
 //       children: "Iam Spinner Component",
 //       autoContrast: Spinner.defaultProps?.autoContrast,
-//       ...createSxArgs(Spinner),
+//       ...createSxArgs()
 //     },
 //     argTypes: {
 //       autoContrast: {

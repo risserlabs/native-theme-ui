@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 23:52:56
  * Author: Lavanya Katari
  * -----
- * Last Modified: 07-07-2022 05:49:59
- * Modified By: Lavanya Katari
+ * Last Modified: 17-08-2022 10:32:40
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -66,7 +66,7 @@ variant.argTypes = {
 //  .add("default", createArgsStory(Variant), {
 //    args: {
 //      children: " I Am a Variant",
-//      ...createSxArgs(Variant),
+//      ...createSxArgs()
 //    },
 //    argTypes: {
 //      autoContrast: {

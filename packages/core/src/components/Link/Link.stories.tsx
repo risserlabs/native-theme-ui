@@ -4,8 +4,8 @@
  * File Created: 22-06-2022 14:34:02
  * Author: Ajithkrm6
  * -----
- * Last Modified: 12-07-2022 23:37:34
- * Modified By: Ajith Kumar
+ * Last Modified: 17-08-2022 10:43:00
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -46,7 +46,7 @@ link.args = {
   href: "https://example.com",
   autoContrast: Link.defaultProps?.autoContrast,
   hidden: Link.defaultProps?.hidden,
-  ...createSxArgs(Link),
+  ...createSxArgs(),
 };
 link.argTypes = {
   ...autoContrastArgType,
@@ -78,7 +78,7 @@ withBackground.argTypes = {
 //       children: "Click Me",
 //       href: "https://example.com",
 //       autoContrast: Link.defaultProps?.autoContrast,
-//       ...createSxArgs(Link),
+//       ...createSxArgs()
 //     },
 //     argTypes: {
 //       autoContrast: {

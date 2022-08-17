@@ -4,8 +4,8 @@
  * File Created: 19-06-2022 06:50:53
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 13-07-2022 05:29:09
- * Modified By: K S R P BHUSHAN
+ * Last Modified: 17-08-2022 10:43:00
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -41,7 +41,7 @@ export const menuButton = createArgsStory(MenuButton);
 (menuButton.args = {
   children: "Iam Menu Button Component",
   autoContrast: MenuButton.defaultProps?.autoContrast,
-  ...createSxArgs(MenuButton),
+  ...createSxArgs(),
 }),
   (menuButton.argTypes = {
     ...autoContrastArgType,
@@ -53,7 +53,7 @@ export const menuButton = createArgsStory(MenuButton);
 //     args: {
 //       children: "Iam Icon Button ",
 //       autoContrast: IconButton.defaultProps?.autoContrast,
-//       ...createSxArgs(IconButton),
+//       ...createSxArgs()
 //     },
 //     argTypes: {
 //       autoContrast: {

@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-07-2022 05:30:16
- * Modified By: K S R P BHUSHAN
+ * Last Modified: 17-08-2022 10:43:00
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -44,7 +44,7 @@ export const label = createArgsStory(Label);
 label.args = {
   children: "Label",
   autoContrast: Label.defaultProps?.autoContrast,
-  ...createSxArgs(Label),
+  ...createSxArgs(),
 };
 label.argTypes = {
   ...autoContrastArgType,
@@ -67,7 +67,7 @@ export const withBackground = () => (
 //     args: {
 // children: "Label",
 // autoContrast: Label.defaultProps?.autoContrast,
-// ...createSxArgs(Label),
+// ...createSxArgs()
 //     },
 //     argTypes: {
 //       autoContrast: {
@@ -93,7 +93,7 @@ export const withBackground = () => (
 //     args: {
 //       children: "Label",
 //       autoContrast: Label.defaultProps?.autoContrast,
-//       ...createSxArgs(Label),
+//       ...createSxArgs()
 //     },
 //     argTypes: {
 //       autoContrast: {

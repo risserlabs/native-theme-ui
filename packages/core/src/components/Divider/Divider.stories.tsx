@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 14-07-2022 00:32:48
- * Modified By: Manikanta
+ * Last Modified: 17-08-2022 10:43:00
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -44,7 +44,7 @@ export const divider = createArgsStory(Divider);
 (divider.args = {
   children: "Iam Divider Component",
   autoContrast: Divider.defaultProps?.autoContrast,
-  ...createSxArgs(Divider),
+  ...createSxArgs(),
 }),
   (divider.argTypes = {
     ...autoContrastArgType,

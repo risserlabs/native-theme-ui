@@ -4,7 +4,7 @@
  * File Created: 02-07-2022 13:20:19
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 06:54:27
+ * Last Modified: 17-08-2022 11:08:45
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,7 +25,7 @@
 import React, { ReactNode } from "react";
 import { DripsyProvider } from "dripsy";
 import { makeDecorator, LegacyStoryFn, StoryWrapper } from "@storybook/addons";
-import * as themes from "../../themes";
+import * as themes from "../../theme";
 
 const withTheme = makeDecorator({
   name: "withTheme",

@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 12-07-2022 23:38:12
- * Modified By: Ajith Kumar
+ * Last Modified: 17-08-2022 10:43:00
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -47,7 +47,7 @@ navLink.args = {
   children: "I am a NavLink",
   href: "https://theme-ui.com/components/nav-link",
   autoContrast: NavLink.defaultProps?.autoContrast,
-  ...createSxArgs(NavLink),
+  ...createSxArgs(),
 };
 navLink.argTypes = {
   ...autoContrastArgType,

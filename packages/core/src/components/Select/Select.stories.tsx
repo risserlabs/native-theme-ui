@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 06:16:36
  * Author: Harikittu46
  * -----
- * Last Modified: 13-07-2022 01:34:39
- * Modified By: Harikittu46
+ * Last Modified: 17-08-2022 10:43:00
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -52,7 +52,7 @@ export const select = createArgsStory(Select, {}, [
 
 (select.args = {
   autoContrast: Select.defaultProps?.autoContrast,
-  ...createSxArgs(Select),
+  ...createSxArgs(),
 }),
   (select.argTypes = {
     background: { control: { type: "color" } },

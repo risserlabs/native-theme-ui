@@ -4,8 +4,8 @@
  * File Created: 20-06-2022 07:09:30
  * Author: Lavanya Katari
  * -----
- * Last Modified: 15-07-2022 05:38:54
- * Modified By: Lavanya Katari
+ * Last Modified: 17-08-2022 10:43:00
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -42,7 +42,7 @@ export const radio = createArgsStory(Radio);
 radio.args = {
   children: "I am Radio",
   autoContrast: Radio.defaultProps?.autoContrast,
-  ...createSxArgs(Radio),
+  ...createSxArgs(),
 };
 radio.argTypes = {
   hidden: { control: { type: "boolean" } },
@@ -55,7 +55,7 @@ radio.argTypes = {
 // .add("default", createArgsStory(Radio), {
 //   args: {
 //     children: "I Am Radio component",
-//     ...createSxArgs(Radio),
+//     ...createSxArgs()
 //   },
 //   argTypes: {
 //     autoContrast: {

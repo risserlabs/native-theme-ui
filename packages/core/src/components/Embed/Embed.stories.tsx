@@ -4,7 +4,7 @@
  * File Created: 27-06-2022 05:47:44
  * Author: Ajith Kumar
  * -----
- * Last Modified: 18-07-2022 05:02:21
+ * Last Modified: 17-08-2022 11:02:15
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -45,7 +45,7 @@ embed.args = {
   src: "https://www.youtube.com/embed/GNCd_ERZvZM",
   autoContrast: Embed.defaultProps?.autoContrast,
   ratio: 16 / 9,
-  ...{ ...createSxArgs(Embed), sxWidth: "260" },
+  ...createSxArgs(),
 };
 embed.argTypes = {
   ...autoContrastArgType,

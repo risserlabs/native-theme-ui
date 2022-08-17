@@ -4,7 +4,7 @@
  * File Created: 17-08-2022 07:19:35
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 07:36:46
+ * Last Modified: 17-08-2022 10:25:12
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,6 +22,46 @@
  * limitations under the License.
  */
 
+import * as presets from "@theme-ui/presets";
+import { DripsyBaseTheme, makeTheme } from "dripsy";
+import variants from "./src/variants";
+
+export const base = wrapTheme(presets.base);
+export const bootstrap = wrapTheme(presets.bootstrap);
+export const bulma = wrapTheme(presets.bulma);
+export const dark = wrapTheme(presets.dark);
+export const deep = wrapTheme(presets.deep);
+export const funk = wrapTheme(presets.funk);
+export const future = wrapTheme(presets.future);
+export const roboto = wrapTheme(presets.roboto);
+export const sketchy = wrapTheme(presets.sketchy as never);
+export const swiss = wrapTheme(presets.swiss);
+export const system = wrapTheme(presets.system);
+export const tailwind = wrapTheme(presets.tailwind);
+export const tosh = wrapTheme(presets.tosh);
+
+function wrapTheme(theme: Record<string, unknown>) {
+  return makeTheme({
+    ...theme,
+    ...variants,
+    autoContrast: "AAA",
+  } as DripsyBaseTheme);
+}
+
+export const main = makeTheme({
+  ...presets.base,
+  ...variants,
+  autoContrast: true,
+  fontWeights: {},
+  colors: {
+    ...base.colors,
+    textPrimary: "#ffffff",
+  },
+  types: {
+    strictVariants: false,
+  },
+} as DripsyBaseTheme);
+
 declare module "dripsy" {
   interface DripsyCustomTheme {
     autoContrast?: import("@risserlabs/auto-contrast").AutoContrast;
@@ -29,5 +69,3 @@ declare module "dripsy" {
     images?: Record<string, unknown>;
   }
 }
-
-export default null;

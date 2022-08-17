@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 06:54:27
+ * Last Modified: 17-08-2022 11:04:38
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -47,7 +47,7 @@ export const input = createArgsStory(Input, {
   onFocus: action("onFocus"),
 });
 input.args = {
-  ...createSxArgs(Input),
+  ...createSxArgs(),
   autoContrast: Input.defaultProps?.autoContrast,
 };
 input.argTypes = {
@@ -65,7 +65,7 @@ input.argTypes = {
 //     }),
 //     {
 //       args: {
-//         ...createSxArgs(Input),
+//         ...createSxArgs()
 //       },
 //       argTypes: {
 //         ...sxArgTypes,

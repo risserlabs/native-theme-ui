@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 05:44:07
+ * Last Modified: 17-08-2022 10:43:00
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -43,7 +43,7 @@ export default {
 export const alert = createArgsStory(Alert);
 alert.args = {
   children: "I Am Alert",
-  ...createSxArgs(Alert),
+  ...createSxArgs(),
 };
 alert.argTypes = {
   autoContrast: {

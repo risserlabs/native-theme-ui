@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 07:30:42
+ * Last Modified: 17-08-2022 10:43:00
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -48,7 +48,7 @@ export const box = createArgsStory(Box, {
 box.args = {
   children: "I am a box",
   autoContrast: Box.defaultProps?.autoContrast,
-  ...createSxArgs(Box),
+  ...createSxArgs(),
 };
 box.argTypes = {
   ...autoContrastArgType,

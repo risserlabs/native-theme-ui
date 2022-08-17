@@ -4,7 +4,7 @@
  * File Created: 28-06-2022 07:42:41
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 07:54:51
+ * Last Modified: 17-08-2022 10:23:18
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,7 +24,7 @@
 
 import { DripsyFinalTheme } from "dripsy";
 
-const variants: DripsyFinalTheme = {
+const variants: Partial<DripsyFinalTheme> = {
   variants: {},
   images: {
     avatar: {},
@@ -46,8 +46,6 @@ const variants: DripsyFinalTheme = {
     close: {
       height: 200,
       width: 200,
-      // backgroundColor: "red",
-      // bg: "green",
     },
   },
 };

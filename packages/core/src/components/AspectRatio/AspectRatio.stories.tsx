@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 03:42:55
  * Author: Harikittu46
  * -----
- * Last Modified: 21-07-2022 00:08:17
- * Modified By: Harikittu46
+ * Last Modified: 17-08-2022 10:43:00
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -44,7 +44,7 @@ export const aspectRatio = createArgsStory(AspectRatio);
 aspectRatio.args = {
   src: "https://picsum.photos/200/300",
   ratio: 16 / 9,
-  ...createSxArgs(AspectRatio),
+  ...createSxArgs(),
 };
 
 aspectRatio.argTypes = {

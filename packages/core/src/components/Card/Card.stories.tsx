@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-07-2022 05:19:38
- * Modified By: Ajith Kumar
+ * Last Modified: 17-08-2022 10:43:00
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -43,7 +43,7 @@ export const card = createArgsStory(Card);
 card.args = {
   children: "I am a Card",
   autoContrast: Card.defaultProps?.autoContrast,
-  ...createSxArgs(card),
+  ...createSxArgs(),
 };
 card.argTypes = {
   hidden: { control: { type: "boolean" } },
@@ -56,7 +56,7 @@ card.argTypes = {
 //  .add("default", createArgsStory(Card), {
 //   args: {
 //     children: "i am a card",
-//    ...createSxArgs(Card),
+//    ...createSxArgs()
 //  },
 //  argTypes: {
 //    autoContrast: {

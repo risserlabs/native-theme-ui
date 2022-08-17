@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 05-07-2022 04:46:23
- * Modified By: Ajith Kumar
+ * Last Modified: 17-08-2022 10:43:00
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -43,7 +43,7 @@ export default {
 export const donut = createArgsStory(Donut);
 donut.args = {
   children: "I am a donut",
-  ...createSxArgs(Donut),
+  ...createSxArgs(),
 };
 donut.argTypes = {
   ...autoContrastArgType,
@@ -77,7 +77,7 @@ export const withSeventyPercent = () => (
 //   .add("default", createArgsStory(Donut), {
 //     args: {
 //       children: "I am a donut",
-//       ...createSxArgs(Donut),
+//       ...createSxArgs()
 //     },
 //     argTypes: {
 //       autoContrast: {

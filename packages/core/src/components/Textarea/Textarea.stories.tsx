@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 06:54:27
+ * Last Modified: 17-08-2022 10:43:00
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -45,7 +45,7 @@ export const textarea = createArgsStory(Textarea);
 textarea.args = {
   children: "I am a Text",
   autoContrast: Textarea.defaultProps?.autoContrast,
-  ...createSxArgs(Textarea),
+  ...createSxArgs(),
 };
 textarea.argTypes = {
   ...autoContrastArgType,

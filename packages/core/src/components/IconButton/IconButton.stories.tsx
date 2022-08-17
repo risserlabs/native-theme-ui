@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 10-08-2022 03:35:10
- * Modified By: Manikanta
+ * Last Modified: 17-08-2022 10:43:00
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -43,7 +43,7 @@ export const iconButton = createArgsStory(IconButton);
 (iconButton.args = {
   children: "Iam Icon Button Component",
   autoContrast: IconButton.defaultProps?.autoContrast,
-  ...createSxArgs(IconButton),
+  ...createSxArgs(),
 }),
   (iconButton.argTypes = {
     ...autoContrastArgType,

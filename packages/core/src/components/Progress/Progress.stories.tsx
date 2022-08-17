@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 06-07-2022 23:30:54
- * Modified By: K S R P BHUSHAN
+ * Last Modified: 17-08-2022 10:43:00
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -44,7 +44,7 @@ export const progress = createArgsStory(Progress);
 progress.args = {
   value: Progress.defaultProps?.value,
   max: Progress.defaultProps?.max,
-  ...createSxArgs(Progress, ["sxP"]),
+  ...createSxArgs(),
 };
 progress.argTypes = {
   value: { control: { type: "number" } },
@@ -71,7 +71,7 @@ withBackground.argTypes = {
 //     args: {
 //       value: Progress.defaultProps?.value,
 //       max: Progress.defaultProps?.max,
-//       ...createSxArgs(Progress, ["sxP"]),
+//       ...createSxArgs()
 //     },
 //     argTypes: {
 //       value: { control: { type: "number" } },

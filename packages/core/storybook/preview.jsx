@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 06:54:27
+ * Last Modified: 17-08-2022 11:08:30
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -29,7 +29,7 @@ import { useFonts } from "expo-font";
 import { withDesign } from "storybook-addon-designs";
 import { withGlobals } from "@luigiminardim/storybook-addon-globals-controls";
 import { withThemes } from "storybook-addon-themes/react";
-import * as themes from "../themes";
+import * as themes from "../theme";
 import fonts from "./fonts";
 
 export const parameters = {

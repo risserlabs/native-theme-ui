@@ -4,8 +4,8 @@
  * File Created: 22-06-2022 04:27:49
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 12-07-2022 23:28:35
- * Modified By: Ajith Kumar
+ * Last Modified: 17-08-2022 10:43:00
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -43,7 +43,7 @@ export const message = createArgsStory(Message);
 message.args = {
   children: "I am a message component",
   autoContrast: Message.defaultProps?.autoContrast,
-  ...createSxArgs(Message),
+  ...createSxArgs(),
 };
 message.argTypes = {
   ...autoContrastArgType,

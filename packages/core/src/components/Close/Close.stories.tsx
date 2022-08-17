@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-07-2022 01:11:43
- * Modified By: Ajith Kumar
+ * Last Modified: 17-08-2022 10:53:00
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -38,7 +38,7 @@ export default {
 export const close = createArgsStory(Close);
 close.args = {
   children: "Close",
-  ...createSxArgs(Close),
+  ...createSxArgs(),
 };
 close.argTypes = {
   autoContrast: {

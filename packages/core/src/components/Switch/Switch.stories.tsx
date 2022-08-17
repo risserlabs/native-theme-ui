@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 15-07-2022 00:05:53
- * Modified By: Lavanya Katari
+ * Last Modified: 17-08-2022 10:43:00
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -45,7 +45,7 @@ export const RNswitch = createArgsStory(Switch);
   autoContrast: Switch.defaultProps?.autocontrast,
   onChange: action("onChange"),
   onValueChange: action("onValueChange"),
-  ...createSxArgs(RNswitch),
+  ...createSxArgs(),
 }),
   (RNswitch.sxArgsTypes = {
     hidden: { switch: { type: "boolean" } },
@@ -75,7 +75,7 @@ export const withBackground = () => (
 //      args: {
 //        children: "Iam switch component",
 //        defaultChecked: Switch.defaultProps?.autocontrast,
-//        ...createSxArgs(Switch),
+//        ...createSxArgs()
 //      },
 //      argTypes: {
 //    autoContrast: {
@@ -111,7 +111,7 @@ export const nSwitch = () => (
 nSwitch.args = {
   children: "I am NSwitch component",
   defaultChecked: Switch.defaultProps?.autocontrast,
-  ...createSxArgs(Switch),
+  ...createSxArgs(),
 };
 
 nSwitch.argTypes = {

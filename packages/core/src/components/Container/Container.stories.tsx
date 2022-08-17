@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 13:00:27
  * Author: ajithkrm6
  * -----
- * Last Modified: 13-07-2022 00:29:39
- * Modified By: Ajith Kumar
+ * Last Modified: 17-08-2022 10:43:00
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -43,7 +43,7 @@ export const container = createArgsStory(Container);
 container.args = {
   children: "I am Container",
   autoContrast: Container.defaultProps?.autoContrast,
-  ...createSxArgs(Container),
+  ...createSxArgs(),
 };
 container.argTypes = {
   ...autoContrastArgType,
@@ -53,7 +53,7 @@ container.argTypes = {
 //args: {
 //children: "I am a Container",
 //autoContrast: Container.defaultProps?.autoContrast,
-//...createSxArgs(Container),
+//...createSxArgs()
 //},
 //argTypes: {
 //autoContrast: {

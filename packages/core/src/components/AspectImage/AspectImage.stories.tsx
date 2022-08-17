@@ -4,8 +4,8 @@
  * File Created: 23-06-2022 03:44:14
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 18-07-2022 01:21:32
- * Modified By: Harikittu46
+ * Last Modified: 17-08-2022 10:43:00
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -43,7 +43,7 @@ export const aspectImage = createArgsStory(AspectImage);
 
 aspectImage.args = {
   src: "https://picsum.photos/200/300",
-  ...createSxArgs(AspectImage),
+  ...createSxArgs(),
 };
 
 aspectImage.argTypes = {

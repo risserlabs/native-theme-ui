@@ -4,8 +4,8 @@
  * File Created: 15-06-2022 06:37:48
  * Author: Lavanya Katari
  * -----
- * Last Modified: 12-07-2022 23:48:54
- * Modified By: Lavanya Katari
+ * Last Modified: 17-08-2022 10:43:00
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -47,7 +47,7 @@ export const Checkbox = createArgsStory(CheckBox, {
 Checkbox.args = {
   children: " I am CheckBox",
   autoContrast: CheckBox.defaultProps?.autoContrast,
-  ...createSxArgs(CheckBox),
+  ...createSxArgs(),
 };
 Checkbox.argTypes = {
   hidden: { control: { type: "boolean" } },
@@ -66,7 +66,7 @@ Checkbox.argTypes = {
 //  {
 //    args: {
 //      defaultChecked: CheckBox.defaultProps?.defaultChecked,
-//     ...createSxArgs(CheckBox),
+//     ...createSxArgs()
 //    },
 //    argTypes: {
 //      autoContrast: {

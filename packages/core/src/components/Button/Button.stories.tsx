@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 07:34:26
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 06:13:18
+ * Last Modified: 17-08-2022 10:43:00
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -54,7 +54,7 @@ button.args = {
   hidden: Button.defaultProps?.hidden,
   autoContrast: Button.defaultProps?.autoContrast,
   disabled: Button.defaultProps?.disabled,
-  ...createSxArgs(Button),
+  ...createSxArgs(),
 };
 button.argTypes = {
   hidden: { control: { type: "boolean" } },

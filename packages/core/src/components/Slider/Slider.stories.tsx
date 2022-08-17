@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 00:27:56
  * Author: Lavanya Katari
  * -----
- * Last Modified: 12-07-2022 23:50:35
- * Modified By: Lavanya Katari
+ * Last Modified: 17-08-2022 10:43:00
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -42,7 +42,7 @@ slider.args = {
   children: " I am a Slider",
   autoContrast: Slider.defaultProps?.autoContrast,
 
-  ...createSxArgs(slider),
+  ...createSxArgs(),
 };
 slider.sxArgTypes = {
   hidden: { slider: { type: "boolean" } },
@@ -57,7 +57,7 @@ export const withBackground = () => <Slider></Slider>;
 //  .add("default", createArgsStory(Slider), {
 //    args: {
 //      children: "Slider",
-//      ...createSxArgs(Slider),
+//      ...createSxArgs()
 //    },
 //    argTypes: {
 //      autoContrast: {

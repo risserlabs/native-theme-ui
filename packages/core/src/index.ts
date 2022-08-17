@@ -4,7 +4,7 @@
  * File Created: 30-06-2022 08:40:58
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 06:54:27
+ * Last Modified: 17-08-2022 10:27:01
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,28 +22,9 @@
  * limitations under the License.
  */
 
-export type { DripsyFinalTheme as Theme } from "dripsy";
+import variants from "./variants";
 
 export * from "./components";
 export * from "./hooks";
 
-export {
-  BreakpointIndexProvider,
-  ContainerQuery,
-  Styles,
-  createThemedComponent,
-  css,
-  getBreakpointIndex,
-  remToPixels,
-  styled,
-  useBreakpointIndex,
-  useBreakpoints,
-  useDripsyTheme as useTheme,
-  useResponsiveValue,
-  useSx,
-} from "dripsy";
-
-export * from "dripsy/src/provider";
-export * from "dripsy/src/css/scales";
-export * from "dripsy/src/declarations";
-export * from "dripsy/src/css/types";
+export { variants };
