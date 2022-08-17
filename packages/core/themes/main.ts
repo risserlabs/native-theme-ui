@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 10:23:16
+ * Last Modified: 17-08-2022 07:00:30
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,12 +22,11 @@
  * limitations under the License.
  */
 
+import { DripsyBaseTheme, makeTheme } from "dripsy";
 import { base } from "@theme-ui/presets";
-import { makeTheme } from "@dripsy/core";
-import { BaseTheme } from "./index";
 import variants from "./variants";
 
-const theme = makeTheme<BaseTheme>({
+const theme = makeTheme({
   ...base,
   ...variants,
   types: {
@@ -39,8 +38,6 @@ const theme = makeTheme<BaseTheme>({
   },
   fontWeights: {},
   autoContrast: true,
-});
-
-export type MainTheme = typeof theme;
+} as DripsyBaseTheme);
 
 export default theme;

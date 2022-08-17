@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 10-08-2022 06:33:37
+ * Last Modified: 17-08-2022 06:54:27
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,7 +23,7 @@
  */
 
 import React from "react";
-import { View, Sx, SxProp } from "@dripsy/core";
+import { View, Sx, SxProp } from "dripsy";
 import { DripsyFC, DViewProps } from "../../dripsyHelper";
 import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
 import Box from "../Box";

@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 10-08-2022 06:33:25
+ * Last Modified: 17-08-2022 05:46:46
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,42 +22,13 @@
  * limitations under the License.
  */
 
-import React from "react";
-import { SxProp } from "@dripsy/core";
-import { PressableProps as RNPressableProps } from "react-native";
-import { AutoContrast } from "@risserlabs/auto-contrast";
-import { DripsyFC } from "../../dripsyHelper";
-import Button from "../Button";
+import React, { FC } from "react";
+import Button, { ButtonProps } from "../Button";
 
-export type CloseProps = RNPressableProps & {
-  sx?: SxProp;
-  autoContrast?: AutoContrast;
+export type CloseProps = ButtonProps;
+
+const Close: FC<CloseProps> = (props: CloseProps) => {
+  return <Button variant="close" {...props} />;
 };
-//export interface CloseProps extends RNPressableProps {
-//sx?: SxProp;
-//}
-
-const Close: DripsyFC<CloseProps> = (props: CloseProps) => {
-  const sx: SxProp = {
-    ...Close.defaultSx,
-    ...props.sx,
-  };
-
-  //todo: replace Pressable with Icon button (Icon button wrapping is not done yet)
-
-  return <Button variant="close" {...props} sx={sx} />;
-};
-
-Close.defaultProps = {
-  sx: {},
-};
-
-Close.defaultSx = {
-  bg: "transparent",
-};
-
-//export const styles = {
-//close: { bg: 'transparent' }
-//};
 
 export default Close;

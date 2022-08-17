@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 05-08-2022 01:15:01
- * Modified By: Lavanya Katari
+ * Last Modified: 17-08-2022 05:44:07
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,15 +22,16 @@
  * limitations under the License.
  */
 
-import React, { Component } from "react";
+import React from "react";
 import Close from "../Close";
-import Alert from ".";
+import Alert from "./index";
 import {
   createArgsStory,
   createSxArgs,
   sxArgTypes,
   autoContrastArgType,
 } from "../../../storybook";
+
 export default {
   title: "components/alerts/Alert",
   component: Alert,
@@ -38,55 +39,27 @@ export default {
     status: { type: "beta" },
   },
 };
+
 export const alert = createArgsStory(Alert);
-(alert.args = {
+alert.args = {
   children: "I Am Alert",
-  // variant: Alert.defaultProps?.variant,
   ...createSxArgs(Alert),
-}),
-  (alert.argTypes = {
-    autoContrast: {
-      options: ["A", "AA", "AAA", false],
-      control: { type: "select" },
-    },
-  }),
-  (alert.variant = {
-    options: ["primary", "muted"],
+};
+alert.argTypes = {
+  autoContrast: {
+    options: ["A", "AA", "AAA", false],
     control: { type: "select" },
-    ...autoContrastArgType,
-    ...sxArgTypes,
-  });
+  },
+};
+alert.variant = {
+  options: ["primary", "muted"],
+  control: { type: "select" },
+  ...autoContrastArgType,
+  ...sxArgTypes,
+};
+
 export const likeThemeUi = () => (
   <Alert>
     Beep boop, this is an alert! <Close />
   </Alert>
 );
-
-//storiesOf("atoms/Alert", module)
-// .addParameters({
-//  status: { type: "beta" },
-// })
-// .add("default", createArgsStory(Alert), {
-//  args: {
-//    children: "I am Alert",
-//    variant: Alert.defaultProps?.variant,
-//    ...createSxArgs(Alert),
-//  },
-//  argTypes: {
-//    autoContrast: {
-//      options: ["A", "AA", "AAA", false],
-//      control: { type: "select" },
-//    },
-//   variant: {
-//     options: ["primary", "muted"],
-//     control: { type: "select" },
-//    },
-//    ...sxArgTypes,
-//  },
-// })
-
-//.add("like theme ui", () => (
-// <Alert>
-//   Beep boop, this is an alert! <Close />
-//  </Alert>
-// ));

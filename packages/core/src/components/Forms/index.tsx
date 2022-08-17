@@ -4,7 +4,7 @@
  * File Created: 21-06-2022 02:17:32
  * Author: Harikittu46
  * -----
- * Last Modified: 10-08-2022 06:35:19
+ * Last Modified: 17-08-2022 06:54:27
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -25,7 +25,7 @@
 import React from "react";
 import { AutoContrast } from "@risserlabs/auto-contrast";
 import { DripsyFC } from "../../dripsyHelper";
-import { SxProp } from "@dripsy/core";
+import { SxProp } from "dripsy";
 
 export type FormsProps = {
   autoContrast?: AutoContrast;

@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 15-07-2022 00:28:41
- * Modified By: Hari Krishna
+ * Last Modified: 17-08-2022 06:54:27
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -23,9 +23,9 @@
  */
 
 import React from "react";
-import { styled, SxProp } from "@dripsy/core";
+import { styled, SxProp } from "dripsy";
 import Text from "../Text";
-import { H1, H2, H3, H4, H5, H6 } from "@dripsy/core";
+import { H1, H2, H3, H4, H5, H6 } from "dripsy";
 import Box, { BoxProps } from "../Box";
 import { TextProps as RNTextProps } from "react-native";
 import useThemeLookup from "../../hooks/useThemeLookup";

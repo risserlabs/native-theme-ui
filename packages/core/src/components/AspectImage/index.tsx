@@ -4,8 +4,8 @@
  * File Created: 23-06-2022 03:43:01
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 19-07-2022 01:19:18
- * Modified By: Hari Krishna
+ * Last Modified: 17-08-2022 06:54:27
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -25,7 +25,7 @@
 import React from "react";
 import { AutoContrast } from "@risserlabs/auto-contrast";
 
-import { SxProp, Image as DImage } from "@dripsy/core";
+import { SxProp, Image as DImage } from "dripsy";
 import { DripsyFC, DImageProps } from "../../dripsyHelper";
 
 export type AspectImageProps = DImageProps & {

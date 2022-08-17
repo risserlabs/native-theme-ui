@@ -1,10 +1,10 @@
 /**
- * File: /src/components/Embed/YoutubeIframeStyled.tsx
+ * File: /src/components/Embed/YoutubeIframeThemed.tsx
  * Project: @native-theme-ui/core
  * File Created: 18-07-2022 08:05:40
  * Author: Clay Risser
  * -----
- * Last Modified: 18-07-2022 08:06:05
+ * Last Modified: 17-08-2022 06:54:27
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import { createThemedComponent, SxProp } from "@dripsy/core";
+import { createThemedComponent, SxProp } from "dripsy";
 import React, { FC } from "react";
 import YoutubeIframe, { YoutubeIframeProps } from "react-native-youtube-iframe";
 

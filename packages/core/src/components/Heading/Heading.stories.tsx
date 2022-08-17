@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 05-08-2022 01:34:59
- * Modified By: Hari Krishna
+ * Last Modified: 17-08-2022 06:54:27
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -23,7 +23,7 @@
  */
 
 import React from "react";
-import { View } from "@dripsy/core";
+import { View } from "dripsy";
 import Box from "../Box";
 import Heading from "./index";
 import Text from "../Text";

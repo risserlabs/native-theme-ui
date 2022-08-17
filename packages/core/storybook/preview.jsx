@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 10-08-2022 06:18:48
+ * Last Modified: 17-08-2022 06:54:27
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,7 +23,7 @@
  */
 
 import React from "react";
-import { DripsyProvider } from "@dripsy/core";
+import { DripsyProvider } from "dripsy";
 import { themes as storybookThemes } from "@storybook/theming";
 import { useFonts } from "expo-font";
 import { withDesign } from "storybook-addon-designs";

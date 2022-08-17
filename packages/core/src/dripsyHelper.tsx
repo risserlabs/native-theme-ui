@@ -4,7 +4,7 @@
  * File Created: 14-06-2022 07:52:25
  * Author: Clay Risser
  * -----
- * Last Modified: 06-07-2022 08:50:22
+ * Last Modified: 17-08-2022 06:54:27
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -30,143 +30,8 @@ import {
   SxProp,
   ThemedOptions,
   createThemedComponent as createDripsyThemedComponent,
-} from "@dripsy/core";
+} from "dripsy";
 import { TextInput as RNTextInput } from "react-native";
-
-export type DPressableProps = Pick<
-  Omit<
-    | (import("@dripsy/core").StyledProps<keyof import("@dripsy/core").Theme> &
-        Pick<
-          import("react-native").PressableProps &
-            React.RefAttributes<import("react-native").View>,
-          keyof import("react-native").PressableProps | "key"
-        > &
-        React.RefAttributes<
-          React.Component<
-            import("react-native").PressableProps &
-              React.RefAttributes<import("react-native").View>,
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            any,
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            any
-          >
-        > & {
-          showCursor: boolean;
-        })
-    | (import("@dripsy/core").StyledProps<keyof import("@dripsy/core").Theme> &
-        import("react-native").PressableProps &
-        React.RefAttributes<import("react-native").View> & {
-          children?: React.ReactNode;
-        } & {
-          showCursor: boolean;
-        })
-    | (import("@dripsy/core").StyledProps<keyof import("@dripsy/core").Theme> &
-        Pick<
-          import("react-native").PressableProps &
-            React.RefAttributes<import("react-native").View>,
-          keyof import("react-native").PressableProps | "key"
-        > &
-        React.RefAttributes<
-          React.Component<
-            import("react-native").PressableProps &
-              React.RefAttributes<import("react-native").View>,
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            any,
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            any
-          >
-        > & {
-          showCursor: boolean;
-        } & {
-          children?: React.ReactNode;
-        }),
-    "showCursor"
-  >,
-  | "testID"
-  | "pointerEvents"
-  | "variant"
-  | "children"
-  | "style"
-  | "themeKey"
-  | "sx"
-  | "variants"
-  | "as"
-  | "hitSlop"
-  | "onLayout"
-  | "removeClippedSubviews"
-  | "nativeID"
-  | "collapsable"
-  | "needsOffscreenAlphaCompositing"
-  | "renderToHardwareTextureAndroid"
-  | "focusable"
-  | "shouldRasterizeIOS"
-  | "isTVSelectable"
-  | "hasTVPreferredFocus"
-  | "tvParallaxProperties"
-  | "tvParallaxShiftDistanceX"
-  | "tvParallaxShiftDistanceY"
-  | "tvParallaxTiltAngle"
-  | "tvParallaxMagnification"
-  | "onStartShouldSetResponder"
-  | "onMoveShouldSetResponder"
-  | "onResponderEnd"
-  | "onResponderGrant"
-  | "onResponderReject"
-  | "onResponderMove"
-  | "onResponderRelease"
-  | "onResponderStart"
-  | "onResponderTerminationRequest"
-  | "onResponderTerminate"
-  | "onStartShouldSetResponderCapture"
-  | "onMoveShouldSetResponderCapture"
-  | "onTouchStart"
-  | "onTouchMove"
-  | "onTouchEnd"
-  | "onTouchCancel"
-  | "onTouchEndCapture"
-  | "accessible"
-  | "accessibilityActions"
-  | "accessibilityLabel"
-  | "accessibilityRole"
-  | "accessibilityState"
-  | "accessibilityHint"
-  | "accessibilityValue"
-  | "onAccessibilityAction"
-  | "accessibilityLiveRegion"
-  | "importantForAccessibility"
-  | "accessibilityElementsHidden"
-  | "accessibilityViewIsModal"
-  | "onAccessibilityEscape"
-  | "onAccessibilityTap"
-  | "onMagicTap"
-  | "accessibilityIgnoresInvertColors"
-  | "onPress"
-  | "onPressIn"
-  | "onPressOut"
-  | "onLongPress"
-  | "delayLongPress"
-  | "disabled"
-  | "pressRetentionOffset"
-  | "android_disableSound"
-  | "android_ripple"
-  | "testOnly_pressed"
-  | "key"
-> &
-  React.RefAttributes<import("react-native").View>;
-
-export type DBoxProps = import("@dripsy/core").StyledProps<
-  keyof import("@dripsy/core").Theme
-> &
-  (
-    | (import("react-native").ViewProps &
-        import("react").RefAttributes<
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          import("react").Component<import("react-native").ViewProps, any, any>
-        >)
-    | (import("react-native").ViewProps & {
-        children?: import("react").ReactNode;
-      })
-  );
 
 export type DPProps = import("@dripsy/core").StyledProps<"text"> &
   (

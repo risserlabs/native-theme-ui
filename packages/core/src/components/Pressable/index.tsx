@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 06-07-2022 08:54:35
+ * Last Modified: 17-08-2022 06:54:27
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,7 +24,7 @@
 
 import React, { FC, ReactNode } from "react";
 import { BackgroundColorProvider } from "@risserlabs/auto-contrast";
-import { Pressable as DPressable, SxProp } from "@dripsy/core";
+import { Pressable as DPressable, SxProp } from "dripsy";
 import { PressableProps as RNPressableProps } from "react-native";
 import Text from "../Text";
 import { isText } from "../../dripsyHelper";

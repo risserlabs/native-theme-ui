@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 10-08-2022 06:36:21
+ * Last Modified: 17-08-2022 06:54:27
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,7 +24,7 @@
 
 import React from "react";
 import { DripsyFC } from "../../dripsyHelper";
-import { Text as DText, SxProp } from "@dripsy/core";
+import { Text as DText, SxProp } from "dripsy";
 import { TextProps as RNTextProps } from "react-native";
 import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
 import { BoxProps } from "../Box";

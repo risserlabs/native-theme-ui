@@ -4,7 +4,7 @@
  * File Created: 05-07-2022 07:43:20
  * Author: Clay Risser
  * -----
- * Last Modified: 10-08-2022 07:45:53
+ * Last Modified: 17-08-2022 06:54:27
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -24,11 +24,11 @@
 
 import { AutoContrast } from "@risserlabs/auto-contrast";
 import { ReactNode } from "react";
-import { SxProp } from "@dripsy/core";
-import { DPressableProps } from "../../dripsyHelper";
+import { SxProp } from "dripsy";
 import { createSplitProps } from "../../util";
+import { StyledPressableProps } from "./index";
 
-export type BasePropsBucket = Omit<DPressableProps, "variant"> & {
+export type BasePropsBucket = StyledPressableProps & {
   children?: ReactNode;
   hidden?: boolean;
   variant?: string;

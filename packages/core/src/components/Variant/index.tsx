@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 23:52:10
  * Author: Lavanya Katari
  * -----
- * Last Modified: 09-08-2022 23:27:26
- * Modified By: K S R P BHUSHAN
+ * Last Modified: 17-08-2022 06:54:27
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -25,7 +25,7 @@
 import React from "react";
 import { AutoContrast } from "@risserlabs/auto-contrast";
 import { DripsyFC } from "../../dripsyHelper";
-import { SxProp } from "@dripsy/core";
+import { SxProp } from "dripsy";
 import Box from "../Box";
 export type VariantProps = {
   autoContrast?: AutoContrast;

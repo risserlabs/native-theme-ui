@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 09-08-2022 07:25:59
- * Modified By: K S R P BHUSHAN
+ * Last Modified: 17-08-2022 06:54:27
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -24,7 +24,7 @@
 
 import React from "react";
 import Box from "../Box";
-import { SxProp, Sx, View } from "@dripsy/core";
+import { SxProp, Sx, View } from "dripsy";
 import { DripsyFC, DViewProps } from "../../dripsyHelper";
 
 export type ProgressProps = Omit<

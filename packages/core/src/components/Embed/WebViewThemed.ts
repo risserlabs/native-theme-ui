@@ -1,4 +1,4 @@
-import { createThemedComponent } from "@dripsy/core";
+import { createThemedComponent } from "dripsy";
 import WebView, { WebViewProps } from "react-native-webview";
 
 export type WebViewThemedProps = WebViewProps;

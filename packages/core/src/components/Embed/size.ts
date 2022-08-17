@@ -1,4 +1,4 @@
-import { Theme, useDripsyTheme } from "@dripsy/core";
+import { Theme, useDripsyTheme } from "dripsy";
 import { ResponsiveStyleValue, StylePropertyValue } from "@theme-ui/css";
 
 function getAbsoluteSize(

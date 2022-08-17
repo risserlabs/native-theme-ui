@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 07:34:26
  * Author: Clay Risser
  * -----
- * Last Modified: 13-07-2022 01:08:39
- * Modified By: Ajith Kumar
+ * Last Modified: 17-08-2022 06:13:18
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -68,7 +68,7 @@ export const likeThemUi = () => (
     <Button sx={{ mr: 2 }} onPress={action("beep")}>
       Beep
     </Button>
-    <Button variant="secondary" sx={{ mr: 2 }} onPress={action("boop")}>
+    <Button sx={{ mr: 2 }} onPress={action("boop")}>
       Boop
     </Button>
     <Button sx={{ mr: 2 }} hidden>

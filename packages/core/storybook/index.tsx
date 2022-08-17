@@ -4,7 +4,7 @@
  * File Created: 23-01-2022 02:18:40
  * Author: Clay Risser
  * -----
- * Last Modified: 03-07-2022 10:23:16
+ * Last Modified: 17-08-2022 07:34:33
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,8 +22,7 @@
  * limitations under the License.
  */
 
-import React, { ComponentType, ReactNode } from "react";
-import { SxProp, Sx } from "@dripsy/core";
+import React, { ReactNode } from "react";
 export * from "./storybook";
 
 export function getProps(args: Record<string, unknown>) {
@@ -88,26 +87,23 @@ export function createArgsStory(
 }
 
 export function createSxArgs(
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  C: ComponentType<any> & { defaultSx: SxProp },
+  defaultSxArgs: Record<string, unknown> = {},
   omit: string[] = []
 ) {
   const omitSet = new Set(omit);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const DC = C as ComponentType<any> & { defaultSx: Sx };
   return Object.entries({
-    sxBg: DC.defaultSx?.bg,
-    sxM: DC.defaultSx?.m,
-    sxP: DC.defaultSx?.p,
-    sxFontSize: DC.defaultSx?.fontSize,
-    sxColor: DC.defaultSx?.color,
-    sxHeight: DC.defaultSx?.height,
-    sxWidth: DC.defaultSx?.width,
-    sxBorderWidth: DC.defaultSx?.borderWidth,
-    sxBorderRadius: DC.defaultSx?.borderRadius,
-    sxMinWidth: DC.defaultSx?.minWidth,
-    sxMaxWidth: DC.defaultSx?.minWidth,
-    sxBorderColor: DC.defaultSx?.borderColor,
+    sxBg: defaultSxArgs?.bg || "",
+    sxBorderColor: defaultSxArgs?.borderColor || "",
+    sxBorderRadius: defaultSxArgs?.borderRadius || "",
+    sxBorderWidth: defaultSxArgs?.borderWidth || "",
+    sxColor: defaultSxArgs?.color || "",
+    sxFontSize: defaultSxArgs?.fontSize || "",
+    sxHeight: defaultSxArgs?.height || "",
+    sxM: defaultSxArgs?.m || "",
+    sxMaxWidth: defaultSxArgs?.minWidth || "",
+    sxMinWidth: defaultSxArgs?.minWidth || "",
+    sxP: defaultSxArgs?.p || "",
+    sxWidth: defaultSxArgs?.width || "",
   }).reduce((sxArgs: Args, [key, value]: [string, unknown]) => {
     if (!omitSet.has(key)) sxArgs[key] = value;
     return sxArgs;

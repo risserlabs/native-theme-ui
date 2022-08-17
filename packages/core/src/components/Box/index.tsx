@@ -4,7 +4,7 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 06-07-2022 08:51:13
+ * Last Modified: 17-08-2022 07:55:25
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,12 +22,36 @@
  * limitations under the License.
  */
 
-import React from "react";
-import { Box as DBox, Pressable as DPressable } from "@dripsy/core";
+import React, { ComponentProps } from "react";
 import { BackgroundColorProvider } from "@risserlabs/auto-contrast";
+import { View as RNView, Pressable as RNPressable } from "react-native";
+import { createThemedComponent, Sx } from "dripsy";
 import Text from "../Text";
 import { BoxProps, splitProps, pressablePropKeys } from "./props";
-import { DBoxProps, DripsyFC, isText } from "../../dripsyHelper";
+import { DripsyFC, isText } from "../../dripsyHelper";
+
+const defaultStyle: Sx = {
+  boxSizing: "border-box",
+  cursor: "auto",
+  display: "flex",
+  flexDirection: "row",
+  margin: 0,
+  minWidth: 0,
+};
+
+const ThemedView = createThemedComponent(RNView, {
+  defaultStyle,
+  themeKey: "variants",
+});
+
+const ThemedPressable = createThemedComponent(RNPressable, {
+  defaultStyle,
+  themeKey: "variants",
+});
+
+export type ThemedViewProps = ComponentProps<typeof ThemedView>;
+
+export type ThemedPressableProps = ComponentProps<typeof ThemedPressable>;
 
 const pressablePropKeysSet = new Set(pressablePropKeys);
 
@@ -57,22 +81,22 @@ const Box: DripsyFC<BoxProps> = (props: BoxProps) => {
   })();
 
   const renderBase = () => (
-    <DBox
-      {...(baseProps as DBoxProps)}
-      {...(isPressable ? {} : (pressableProps as Partial<DBoxProps>))}
+    <ThemedView
+      {...(baseProps as ThemedViewProps)}
+      {...(isPressable ? {} : (pressableProps as Partial<ThemedViewProps>))}
       sx={{
         ...baseSx,
         ...(isPressable ? {} : pressableSx),
       }}
     >
       <BackgroundColorProvider sx={sx}>{children}</BackgroundColorProvider>
-    </DBox>
+    </ThemedView>
   );
 
   return isPressable ? (
-    <DPressable {...pressableProps} sx={pressableSx}>
+    <ThemedPressable {...pressableProps} sx={pressableSx}>
       {renderBase()}
-    </DPressable>
+    </ThemedPressable>
   ) : (
     renderBase()
   );
@@ -80,14 +104,7 @@ const Box: DripsyFC<BoxProps> = (props: BoxProps) => {
 
 Box.defaultProps = {};
 
-Box.defaultSx = {
-  boxSizing: "border-box",
-  cursor: "auto",
-  display: "flex",
-  flexDirection: "row",
-  margin: 0,
-  minWidth: 0,
-};
+Box.defaultSx = {};
 
 export type { BoxProps };
 

@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 13-07-2022 05:16:37
- * Modified By: Ajith Kumar
+ * Last Modified: 17-08-2022 05:39:12
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -23,17 +23,11 @@
  */
 
 import React from "react";
-import { createThemedComponent } from "@dripsy/core";
 import { useAutoContrast } from "@risserlabs/auto-contrast";
 import Box, { BoxProps } from "../Box";
 import { DripsyFC, PatchStyledProps } from "../../dripsyHelper";
 
 export type AlertProps = BoxProps;
-
-// const StyledBox = createThemedComponent(Box, {
-//   themeKey: "alerts",
-//   defaultVariant: "primary",
-// });
 
 const Alert: DripsyFC<AlertProps> = (props: AlertProps) => {
   const sx = useAutoContrast(props, {
@@ -58,8 +52,6 @@ Alert.defaultSx = {
   bg: "primary",
   borderRadius: 4,
   color: "white",
-  display: "flex",
-  flexDirection: "row",
   fontWeight: "bold",
   justifyContent: "space-between",
   px: 3,

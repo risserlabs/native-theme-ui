@@ -4,8 +4,8 @@
  * File Created: 22-06-2022 14:33:38
  * Author: Ajithkrm6
  * -----
- * Last Modified: 05-08-2022 01:03:12
- * Modified By: Ajith Kumar
+ * Last Modified: 17-08-2022 06:54:27
+ * Modified By: Clay Risser
  * ----- except in
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -24,7 +24,7 @@
 
 import React from "react";
 import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
-import { A as DA } from "@dripsy/core";
+import { A as DA } from "dripsy";
 import { DAProps, DripsyFC } from "../../dripsyHelper";
 import { styles } from "../Pressable";
 

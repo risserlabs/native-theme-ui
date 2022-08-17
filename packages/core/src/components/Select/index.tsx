@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 06:47:48
  * Author: Harikittu46
  * -----
- * Last Modified: 09-08-2022 23:26:25
- * Modified By: Hari Krishna
+ * Last Modified: 17-08-2022 06:54:27
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -25,7 +25,7 @@
 import React from "react";
 import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
 import { Picker as EPicker, PickerProps } from "@react-native-picker/picker";
-import { createThemedComponent, SxProp } from "@dripsy/core";
+import { createThemedComponent, SxProp } from "dripsy";
 import { DripsyFC } from "../../dripsyHelper";
 import Option from "./Option";
 

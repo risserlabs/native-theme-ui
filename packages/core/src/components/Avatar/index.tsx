@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 15-07-2022 05:20:03
- * Modified By: Manikanta
+ * Last Modified: 17-08-2022 07:55:02
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -21,32 +21,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import React from "react";
-import { SxProp } from "@dripsy/core";
-import { ViewProps as RNViewProps } from "react-native";
+import React, { FC, ComponentProps } from "react";
+import { createThemedComponent } from "dripsy";
 import Box from "../Box";
-import { DripsyFC } from "../../dripsyHelper";
-import { AutoContrast } from "@risserlabs/auto-contrast";
 
-export type AvatarProps = RNViewProps & {
-  autoContrast?: AutoContrast;
-  sx?: SxProp;
+const ThemedBox = createThemedComponent(Box, {
+  themeKey: "images",
+  defaultVariant: "avatar",
+  defaultStyle: {
+    alignItems: "center",
+    bg: "primary",
+    border: 0,
+    borderColor: "primary",
+    borderRadius: 25,
+    borderWidth: 1,
+    height: 50,
+    justifyContent: "center",
+    maxWidth: "100%",
+    overflow: "hidden",
+    width: 50,
+  },
+});
+
+export type AvatarProps = ComponentProps<typeof ThemedBox> & {
   isImage?: boolean;
   name?: string;
   uri?: string;
   source?: string;
 };
 
-const Avatar: DripsyFC<AvatarProps> = (props: AvatarProps) => {
-  const sx: SxProp = {
-    ...Avatar.defaultSx,
-    ...props.sx,
-  };
-  return (
-    <Box themeKey="images" variant="avatar" sx={{ ...sx }}>
-      {props.children}
-    </Box>
-  );
+const Avatar: FC<AvatarProps> = (props: AvatarProps) => {
+  return <ThemedBox {...props}>{props.children}</ThemedBox>;
 };
 
 Avatar.defaultProps = {
@@ -54,19 +59,6 @@ Avatar.defaultProps = {
   isImage: false,
   name: "",
   uri: "",
-};
-Avatar.defaultSx = {
-  maxWidth: "100%",
-  bg: "primary",
-  border: 0,
-  alignItems: "center",
-  justifyContent: "center",
-  width: 50,
-  height: 50,
-  borderRadius: 25,
-  overflow: "hidden",
-  borderWidth: 1,
-  borderColor: "primary",
 };
 
 export default Avatar;

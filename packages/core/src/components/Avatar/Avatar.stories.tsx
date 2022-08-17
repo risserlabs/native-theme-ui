@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 18-07-2022 00:45:31
- * Modified By: Manikanta
+ * Last Modified: 17-08-2022 07:54:35
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -24,13 +24,12 @@
 
 import React from "react";
 import {
-  // storiesOf,
   createArgsStory,
   sxArgTypes,
   createSxArgs,
   autoContrastArgType,
 } from "../../../storybook";
-import Avatar from ".";
+import Avatar from "./index";
 import Image from "../Image";
 
 export default {
@@ -44,7 +43,7 @@ export const avatar = createArgsStory(Avatar);
 (avatar.args = {
   children: "UI",
   autoContrast: Avatar.defaultProps?.autoContrast,
-  ...createSxArgs(Avatar),
+  ...createSxArgs(),
 }),
   (avatar.argTypes = {
     ...autoContrastArgType,
@@ -52,10 +51,7 @@ export const avatar = createArgsStory(Avatar);
   });
 
 export const SimpleAvatar = () => (
-  <Image
-    source={{
-      uri: "https://images.unsplash.com/photo-1657739880076-d8232c1da8e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-    }}
+  <Avatar
     sx={{
       width: 100,
       height: 100,

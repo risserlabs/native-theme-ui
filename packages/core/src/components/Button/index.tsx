@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 07:34:18
  * Author: Clay Risser
  * -----
- * Last Modified: 10-08-2022 06:33:00
+ * Last Modified: 17-08-2022 06:54:27
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,16 +22,51 @@
  * limitations under the License.
  */
 
-import React from "react";
-import { Pressable as DPressable } from "@dripsy/core";
+import React, {
+  ComponentPropsWithRef,
+  forwardRef,
+  ComponentProps,
+} from "react";
 import { BackgroundColorProvider } from "@risserlabs/auto-contrast";
-import { DripsyFC, DPressableProps, isText } from "../../dripsyHelper";
+import { Platform, Pressable as RNPressable } from "react-native";
+import { styled } from "dripsy";
 import Text from "../Text";
 import { ButtonProps, splitProps } from "./props";
+import { isText } from "../../dripsyHelper";
 
-const Button: DripsyFC<ButtonProps> = (props: ButtonProps) => {
+const StyledPressable = styled(RNPressable, {
+  themeKey: "buttons",
+  defaultVariant: "primary",
+})(({ showCursor }: { showCursor: boolean }) => ({
+  ...Platform.select({
+    web: {
+      cursor: showCursor ? "pointer" : "default",
+    },
+  }),
+  ...{
+    alignSelf: "flex-start",
+    appearance: "none",
+    bg: "primary",
+    border: 0,
+    borderRadius: 4,
+    color: "white",
+    px: 3,
+    py: 2,
+    textAlign: "center",
+    userSelect: "none",
+  },
+}));
+
+export type StyledPressableProps = Omit<
+  ComponentProps<typeof StyledPressable>,
+  "showCursor"
+>;
+
+const Button = forwardRef(function Button(
+  props: ButtonProps,
+  ref?: ComponentPropsWithRef<typeof RNPressable>["ref"]
+) {
   const sx = {
-    ...Button.defaultSx,
     display: props.hidden ? "none" : "flex",
     ...props.sx,
   };
@@ -44,31 +79,24 @@ const Button: DripsyFC<ButtonProps> = (props: ButtonProps) => {
     props.children
   );
   return (
-    <DPressable
-      themeKey={"buttons" as unknown as any}
-      variant={"primary" as unknown as any}
-      {...(baseProps as DPressableProps)}
+    <StyledPressable
+      {...(baseProps as StyledPressableProps)}
+      showCursor={
+        !!(
+          props.onPress ||
+          props.accessibilityRole === "link" ||
+          !props.disabled
+        )
+      }
       sx={baseSx}
+      ref={ref}
     >
       <BackgroundColorProvider sx={sx}>{children}</BackgroundColorProvider>
-    </DPressable>
+    </StyledPressable>
   );
-};
+});
 
 Button.defaultProps = {};
-
-Button.defaultSx = {
-  alignSelf: "flex-start",
-  appearance: "none",
-  bg: "primary",
-  border: 0,
-  borderRadius: 4,
-  color: "white",
-  px: 3,
-  py: 2,
-  textAlign: "center",
-  userSelect: "none",
-};
 
 export type { ButtonProps };
 

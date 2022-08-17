@@ -4,7 +4,7 @@
  * File Created: 20-07-2022 23:39:41
  * Author: Harikittu46
  * -----
- * Last Modified: 10-08-2022 07:45:44
+ * Last Modified: 17-08-2022 06:54:27
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import { SxProp } from "@dripsy/core";
+import { SxProp } from "dripsy";
 import { createSplitProps } from "../../util";
 import { DImageProps } from "../../dripsyHelper";
 

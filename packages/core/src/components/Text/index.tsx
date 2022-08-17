@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 14-07-2022 06:48:14
- * Modified By: Harikittu46
+ * Last Modified: 17-08-2022 07:45:33
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -23,9 +23,9 @@
  */
 
 import React from "react";
-import { Text as DText } from "@dripsy/core";
+import { Text as DText } from "dripsy";
 import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
-import { DripsyFC, DTextProps, PatchVariant } from "../../dripsyHelper";
+import { DripsyFC, DTextProps } from "../../dripsyHelper";
 
 export type TextProps = DTextProps & {
   autoContrast?: AutoContrast;

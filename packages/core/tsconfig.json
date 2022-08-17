@@ -34,6 +34,6 @@
       "Webworker.Iterable"
     ]
   },
-  "include": ["src", ".eslintrc.js", "tests"],
+  "include": ["src", ".eslintrc.js", "tests", "themes", "@types", "theme.ts"],
   "extends": "expo/tsconfig.base"
 }

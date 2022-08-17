@@ -1,10 +1,10 @@
 /**
- * File: /themes/variants.ts
+ * File: /theme.ts
  * Project: @native-theme-ui/core
- * File Created: 28-06-2022 07:42:41
+ * File Created: 17-08-2022 07:19:35
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 07:54:51
+ * Last Modified: 17-08-2022 07:36:46
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -22,34 +22,12 @@
  * limitations under the License.
  */
 
-import { DripsyFinalTheme } from "dripsy";
+declare module "dripsy" {
+  interface DripsyCustomTheme {
+    autoContrast?: import("@risserlabs/auto-contrast").AutoContrast;
+    variants?: Record<string, unknown>;
+    images?: Record<string, unknown>;
+  }
+}
 
-const variants: DripsyFinalTheme = {
-  variants: {},
-  images: {
-    avatar: {},
-  },
-  alerts: {
-    primary: {
-      color: "background",
-      bg: "primary",
-    },
-    muted: {
-      color: "text",
-      bg: "muted",
-    },
-  },
-  buttons: {
-    primary: {
-      bg: "red",
-    },
-    close: {
-      height: 200,
-      width: 200,
-      // backgroundColor: "red",
-      // bg: "green",
-    },
-  },
-};
-
-export default variants;
+export default null;

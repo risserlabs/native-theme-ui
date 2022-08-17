@@ -4,7 +4,7 @@
  * File Created: 27-06-2022 04:20:16
  * Author: Lavanya Katari
  * -----
- * Last Modified: 03-07-2022 10:23:15
+ * Last Modified: 17-08-2022 06:54:27
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,7 +23,7 @@
  */
 
 import React from "react";
-import { TextInput as DTextInput } from "@dripsy/core";
+import { TextInput as DTextInput } from "dripsy";
 import {
   BackgroundColorProvider,
   AutoContrast,

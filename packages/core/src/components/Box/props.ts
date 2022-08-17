@@ -4,7 +4,7 @@
  * File Created: 05-07-2022 06:24:30
  * Author: Clay Risser
  * -----
- * Last Modified: 10-08-2022 07:45:39
+ * Last Modified: 17-08-2022 07:28:51
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -23,17 +23,18 @@
  */
 
 import { AutoContrast } from "@risserlabs/auto-contrast";
-import { SxProp } from "@dripsy/core";
+import { SxProp } from "dripsy";
 import { createSplitProps } from "../../util";
-import { DBoxProps, DPressableProps, PatchVariant } from "../../dripsyHelper";
+import { PatchVariant } from "../../dripsyHelper";
+import { ThemedViewProps, ThemedPressableProps } from "./index";
 
-export type BasePropsBucket = DBoxProps;
+export type BasePropsBucket = ThemedViewProps;
 
 export type TextPropsBucket = {
   autoContrast?: AutoContrast;
 };
 
-export type PressablePropsBucket = DPressableProps;
+export type PressablePropsBucket = ThemedPressableProps;
 
 export type BaseSxBucket = SxProp;
 

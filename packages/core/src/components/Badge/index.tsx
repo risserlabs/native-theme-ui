@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 05-08-2022 01:16:30
- * Modified By: Manikanta
+ * Last Modified: 17-08-2022 07:56:33
+ * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,8 +22,8 @@
  * limitations under the License.
  */
 
-import React from "react";
-import { SxProp } from "@dripsy/core";
+import React, { FC } from "react";
+import { SxProp } from "dripsy";
 import { ViewProps as RNViewProps } from "react-native";
 import { DripsyFC } from "../../dripsyHelper";
 import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
@@ -38,7 +38,7 @@ export type BadgeProps = RNViewProps & {
 
 //}
 
-const Badge: DripsyFC<BadgeProps> = (props: BadgeProps) => {
+const Badge: FC<BadgeProps> = (props: BadgeProps) => {
   // const style =
   //props.variant === 'accent'
   //? styles.badge.accent
@@ -47,7 +47,6 @@ const Badge: DripsyFC<BadgeProps> = (props: BadgeProps) => {
   // : styles.badge.circle;
 
   const sx = useAutoContrast(props, {
-    ...Badge.defaultSx,
     ...props.sx,
   });
 
@@ -62,7 +61,7 @@ Badge.defaultProps = {
   sx: {},
   variant: "accent",
 };
-Badge.defaultSx = {
+const defaultSx = {
   width: 50,
   height: 20,
   display: "flex",
