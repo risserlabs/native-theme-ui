@@ -3,7 +3,7 @@
 # File Created: 02-07-2022 06:11:16
 # Author: Clay Risser
 # -----
-# Last Modified: 17-08-2022 05:26:24
+# Last Modified: 17-08-2022 14:42:12
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -65,9 +65,7 @@ lib/index.js:
 	@$(call reset,build)
 $(ACTION)/build: $(call git_deps,\.([jt]sx?)$$)
 	@$(BABEL) --env-name umd src -d lib --extensions '.js,.jsx,.ts,.tsx' --source-maps
-	@$(ECHO) '{"type": "commonjs"}' > lib/package.json
 	@$(BABEL) --env-name esm src -d esm --extensions '.js,.jsx,.ts,.tsx' --source-maps
-	@$(ECHO) '{"type": "module"}' > esm/package.json
 	@$(TSC) -p tsconfig.build.json -d
 	@$(call done,build)
 

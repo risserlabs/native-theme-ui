@@ -4,7 +4,7 @@
  * File Created: 17-06-2022 07:34:18
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 06:54:27
+ * Last Modified: 17-08-2022 12:18:33
  * Modified By: Clay Risser
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
@@ -31,7 +31,7 @@ import { BackgroundColorProvider } from "@risserlabs/auto-contrast";
 import { Platform, Pressable as RNPressable } from "react-native";
 import { styled } from "dripsy";
 import Text from "../Text";
-import { ButtonProps, splitProps } from "./props";
+import { ButtonProps as Props, splitProps } from "./props";
 import { isText } from "../../dripsyHelper";
 
 const StyledPressable = styled(RNPressable, {
@@ -63,7 +63,7 @@ export type StyledPressableProps = Omit<
 >;
 
 const Button = forwardRef(function Button(
-  props: ButtonProps,
+  props: Props,
   ref?: ComponentPropsWithRef<typeof RNPressable>["ref"]
 ) {
   const sx = {
@@ -98,6 +98,6 @@ const Button = forwardRef(function Button(
 
 Button.defaultProps = {};
 
-export type { ButtonProps };
+export type ButtonProps = ComponentProps<typeof Button>;
 
 export default Button;

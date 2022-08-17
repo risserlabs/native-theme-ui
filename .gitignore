@@ -7,7 +7,7 @@
 .vercel
 .yarn/install-state.gz
 .yarn/unplugged
-/es
+/esm
 /lib
 node_modules/
 yarn-error.log

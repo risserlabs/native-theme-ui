@@ -3,5 +3,6 @@
   "@native-theme-ui/core",
   "@risserlabs/auto-contrast",
   "dripsy",
-  "react-native-swipe-gestures"
+  "react-native-swipe-gestures",
+  "react-native-web"
 ]

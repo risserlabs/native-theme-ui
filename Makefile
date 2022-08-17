@@ -3,7 +3,7 @@
 # File Created: 04-12-2021 07:22:50
 # Author: Clay Risser <email@clayrisser.com>
 # -----
-# Last Modified: 11-08-2022 09:50:43
+# Last Modified: 17-08-2022 14:46:49
 # Modified By: Clay Risser
 # -----
 # Risser Labs LLC (c) Copyright 2021 - 2022
@@ -59,7 +59,7 @@ ACTIONS += build ##
 $(ACTION)/build: $(call git_deps,\.([jt]sx?)$$)
 	@$(call workspace_foreach,build,$(ARGS))
 	@$(BABEL) --env-name umd src -d lib --extensions '.js,.jsx,.ts,.tsx' --source-maps
-	@$(BABEL) --env-name esm src -d es --extensions '.js,.jsx,.ts,.tsx' --source-maps
+	@$(BABEL) --env-name esm src -d esm --extensions '.js,.jsx,.ts,.tsx' --source-maps
 	@$(TSC) -p tsconfig.build.json -d
 	@$(call done,build)
 
