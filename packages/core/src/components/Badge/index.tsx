@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 11:24:17
- * Modified By: Clay Risser
+ * Last Modified: 17-08-2022 23:41:10
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -25,7 +25,7 @@
 import React, { FC } from "react";
 import { SxProp } from "dripsy";
 import { ViewProps as RNViewProps } from "react-native";
-import { DripsyFC } from "../../dripsyHelper";
+
 import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
 import Box from "../Box";
 

@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 04:20:16
  * Author: Lavanya Katari
  * -----
- * Last Modified: 17-08-2022 06:54:27
- * Modified By: Clay Risser
+ * Last Modified: 18-08-2022 04:29:52
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { FC } from "react";
 import { TextInput as DTextInput } from "dripsy";
 import {
   BackgroundColorProvider,
@@ -35,9 +35,9 @@ export type FieldProps = DTextInputProps & {
   autoContrast?: AutoContrast;
 };
 
-const Field: DripsyFC<FieldProps> = (props: FieldProps) => {
+const Field: FC<FieldProps> = (props: FieldProps) => {
   const sx = useAutoContrast(props, {
-    ...Field.defaultSx,
+    // ...Field.defaultSx,
     ...props.sx,
   });
   return (
@@ -50,7 +50,7 @@ const Field: DripsyFC<FieldProps> = (props: FieldProps) => {
 };
 
 Field.defaultProps = {};
-Field.defaultSx = {
+const defaultSx = {
   boxSizing: "border-box",
   display: "inline-block",
   margin: 0,
