@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 06:54:27
- * Modified By: Clay Risser
+ * Last Modified: 18-08-2022 00:09:30
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { FC } from "react";
 import { ActivityIndicator as DActivityIndicator, SxProp } from "dripsy";
 import { ActivityIndicatorProps as RNActivityIndicator } from "react-native";
 import useThemeLookup from "../../hooks/useThemeLookup";
@@ -35,7 +35,7 @@ export type SpinnerProps = RNActivityIndicator & {
   color?: string;
 };
 
-const Spinner: DripsyFC<SpinnerProps> = (props: SpinnerProps) => {
+const Spinner: FC<SpinnerProps> = (props: SpinnerProps) => {
   const themeLookup = useThemeLookup();
   const sxProp: SxProp = { ...styles.spinner, ...props.sx };
 
@@ -56,5 +56,5 @@ Spinner.defaultProps = {
 export const styles = {
   spinner: {},
 };
-Spinner.defaultSx = {};
+const defaultSx = {};
 export default Spinner;

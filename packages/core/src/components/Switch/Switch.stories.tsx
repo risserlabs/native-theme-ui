@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 10:43:00
- * Modified By: Clay Risser
+ * Last Modified: 18-08-2022 03:59:35
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -64,30 +64,6 @@ export const withBackground = () => (
   </Box>
 );
 
-//storiesOf("Switch", module)
-//  .add(
-//    "default",
-//    createArgsStory(Switch, {
-//      onChange: action("onChange"),
-//      onValueChange: action("onValueChange"),
-//    }),
-//    {
-//      args: {
-//        children: "Iam switch component",
-//        defaultChecked: Switch.defaultProps?.autocontrast,
-//        ...createSxArgs()
-//      },
-//      argTypes: {
-//    autoContrast: {
-//      options: ["A", "AA", "AAA", false],
-//      control: { type: "select" },
-//    },
-//    defaultChecked: { control: { type: "boolean" } },
-//    ...sxArgTypes,
-//  },
-//    }
-//  )
-
 export const nSwitch = () => (
   <>
     <Switch
@@ -122,46 +98,3 @@ nSwitch.argTypes = {
   defaultChecked: { control: { type: "boolean" } },
   ...sxArgTypes,
 };
-
-//  .add(
-//    "default",
-//    () => (
-//      <>
-//  <Switch
-//    trackColor={{ false: "#767577", true: "#81b0ff" }}
-//    ios_backgroundColor="#3e3e3e"
-//  />
-//  <Switch
-//    trackColor={{ false: "#767577", true: "primary" }}
-//    ios_backgroundColor="#3e3e3e"
-//    thumbColor={"red"}
-//    value={true}
-//  />
-//  <Switch
-//    trackColor={{ false: "#767577", true: "primary" }}
-//    ios_backgroundColor="#3e3e3e"
-//    thumbColor={"primary"}
-//  />
-//      </>
-//    ),
-//    {
-//      component: Switch,
-//      status: { type: "beta" },
-//    }
-//  )
-//  .add(
-//    "with background",
-//    () => (
-//      <Box sx={{ bg: "background", p: 4 }}>
-//        <Switch
-//          trackColor={{ false: "#767577", true: "primary" }}
-//          ios_backgroundColor="#3e3e3e"
-//          value={true}
-//        />
-//      </Box>
-//    ),
-//    {
-//      component: Switch,
-//      status: { type: "beta" },
-//    }
-//  );

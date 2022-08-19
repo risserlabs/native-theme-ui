@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 10:43:00
- * Modified By: Clay Risser
+ * Last Modified: 18-08-2022 03:46:52
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -52,22 +52,6 @@ card.argTypes = {
   ...sxArgTypes,
 };
 
-//storiesOf("Card", module)
-//  .add("default", createArgsStory(Card), {
-//   args: {
-//     children: "i am a card",
-//    ...createSxArgs()
-//  },
-//  argTypes: {
-//    autoContrast: {
-//      options: ["A", "AA", "AAA", false],
-//      control: { type: "select" },
-//    },
-//    ...sxArgTypes,
-//  },
-// })
-//.add(
-// "simple card",
 export const SimpleCard = () => (
   <Card
     sx={{
@@ -82,8 +66,6 @@ export const SimpleCard = () => (
   </Card>
 );
 
-// .add(
-//  "with background",
 export const withBackground = (args: Args) => (
   <Box
     sx={{
@@ -94,18 +76,3 @@ export const withBackground = (args: Args) => (
     <Card autoContrast={args.autoContrast}>I am a Card</Card>{" "}
   </Box>
 );
-
-// {
-//  args: {
-//   background: "Purple",
-//    autoContrast: "AAA",
-// },
-//  argTypes: {
-//   background: { control: { type: "color" } },
-//    autoContrast: {
-//     options: ["A", "AA", "AAA", false],
-//     control: { type: "select" },
-//   },
-//  },
-//  }
-// );

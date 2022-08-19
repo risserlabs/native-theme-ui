@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 00:27:04
  * Author: Lavanya Katari
  * -----
- * Last Modified: 17-08-2022 06:54:27
- * Modified By: Clay Risser
+ * Last Modified: 18-08-2022 04:05:15
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { FC } from "react";
 import RNCSlider from "@react-native-community/slider";
 import { AutoContrast } from "@risserlabs/auto-contrast";
 import { SxProp } from "dripsy";
@@ -33,13 +33,13 @@ export type SliderProps = {
   autoContrast?: AutoContrast;
 };
 
-const Slider: DripsyFC<SliderProps> = (props: SliderProps) => {
+const Slider: FC<SliderProps> = (props: SliderProps) => {
   const eSliderProps = { ...props };
   delete eSliderProps.sx;
   return <RNCSlider />;
 };
 
-Slider.defaultSx = {
+const defaultSx = {
   display: "block",
   width: "100%",
   height: 8,

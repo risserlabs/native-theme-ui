@@ -4,8 +4,8 @@
  * File Created: 20-06-2022 05:48:50
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 10:43:00
- * Modified By: Clay Risser
+ * Last Modified: 18-08-2022 00:07:33
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -65,17 +65,3 @@ export const withBackGround = (args: Args) => (
     <Paragraph autoContrast={args.autoContrast}>I am a paragraph</Paragraph>
   </Box>
 );
-//   // {
-//   //   args: {
-//   //     background: "black",
-//   //     autoContrast: "AAA",
-//   //   },
-//   //   argTypes: {
-//   //     background: { control: { type: "color" } },
-//   //     autoContrast: {
-//   //       options: ["A", "AA", "AAA", false],
-//   //       control: { type: "select" },
-//   //     },
-//   //   },
-//   // }
-// );

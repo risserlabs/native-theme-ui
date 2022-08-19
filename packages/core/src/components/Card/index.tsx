@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 06:54:27
- * Modified By: Clay Risser
+ * Last Modified: 18-08-2022 03:49:12
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { FC } from "react";
 import { AutoContrast } from "@risserlabs/auto-contrast";
 import { SxProp } from "dripsy";
 import { ViewProps as RNViewProps } from "react-native";
@@ -34,9 +34,8 @@ export type CardProps = RNViewProps & {
   sx?: SxProp;
 };
 
-const Card: DripsyFC<CardProps> = (props: CardProps) => {
+const Card: FC<CardProps> = (props: CardProps) => {
   const sx: SxProp = {
-    ...Card.defaultSx,
     ...props.sx,
   };
   return (
@@ -56,7 +55,7 @@ Card.defaultProps = {
   sx: {},
 };
 
-Card.defaultSx = {
+const defaultSx = {
   boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
   transition: "0.3s",
   // padding: "4px 16px",

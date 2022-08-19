@@ -4,8 +4,8 @@
  * File Created: 15-06-2022 06:37:48
  * Author: Lavanya Katari
  * -----
- * Last Modified: 17-08-2022 10:43:00
- * Modified By: Clay Risser
+ * Last Modified: 18-08-2022 03:40:11
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -56,28 +56,6 @@ Checkbox.argTypes = {
   ...sxArgTypes,
 };
 
-//storiesOf("CheckBox", module)
-// .add(
-// "default",
-//   createArgsStory(CheckBox, {
-//   onChange: action("onChange"),
-// onValueChange: action("onValueChange"),
-// }),
-//  {
-//    args: {
-//      defaultChecked: CheckBox.defaultProps?.defaultChecked,
-//     ...createSxArgs()
-//    },
-//    argTypes: {
-//      autoContrast: {
-//        options: ["A", "AA", "AAA", false],
-//        control: { type: "select" },
-//     },
-//     defaultChecked: { control: { type: "boolean" } },
-//     ...sxArgTypes,
-//    },
-//   }
-//  )
 export const withBackground = (args: Args) => (
   <Box
     sx={{
@@ -88,17 +66,3 @@ export const withBackground = (args: Args) => (
     <CheckBox autoContrast={args.autoContrast}>I am a paragraph</CheckBox>
   </Box>
 );
-// {
-//  args: {
-//    background: "Purple",
-//     autoContrast: "AA",
-//  },
-//  argTypes: {
-//    background: { control: { type: "color" } },
-//   autoContrast: {
-//     options: ["A", "AA", "AAA", false],
-//      control: { type: "select" },
-//    },
-//   },
-//  }
-//  );

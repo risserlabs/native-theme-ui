@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 10:43:00
- * Modified By: Clay Risser
+ * Last Modified: 18-08-2022 00:15:18
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -26,7 +26,6 @@ import React from "react";
 import { Box } from "dripsy";
 import Spinner from ".";
 import {
-  //storiesOf,
   createArgsStory,
   createSxArgs,
   sxArgTypes,
@@ -50,23 +49,6 @@ spinner.argTypes = {
   ...autoContrastArgType,
   ...sxArgTypes,
 };
-
-//storiesOf("Spinner", module)
-
-//   .add("default", createArgsStory(Spinner), {
-//     args: {
-//       children: "Iam Spinner Component",
-//       autoContrast: Spinner.defaultProps?.autoContrast,
-//       ...createSxArgs()
-//     },
-//     argTypes: {
-//       autoContrast: {
-//         options: ["A", "AA", "AAA", false],
-//         control: { type: "select" },
-//       },
-//       ...sxArgTypes,
-//     },
-//   })
 
 export const size = () => (
   <div style={{ display: "flex", gap: 10 }}>

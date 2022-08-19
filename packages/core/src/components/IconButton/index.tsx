@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 06:54:27
- * Modified By: Clay Risser
+ * Last Modified: 17-08-2022 23:55:27
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { FC } from "react";
 import { SxProp } from "dripsy";
 import {
   PressableProps as RNPressableProps,
@@ -31,7 +31,7 @@ import {
 } from "react-native";
 import Pressable from "../Pressable";
 import Image from "../Image";
-import { DripsyFC } from "../../dripsyHelper";
+//import { DripsyFC } from "../../dripsyHelper";
 import { AutoContrast } from "@risserlabs/auto-contrast";
 export interface PressableProps extends RNPressableProps {
   sx?: SxProp;
@@ -43,11 +43,10 @@ export interface ImageProps extends RNImageProps {
   //tintColor?: string;
 }
 export type IconButtonProps = PressableProps & ImageProps;
-const IconButton: DripsyFC<IconButtonProps> = (
+const IconButton: FC<IconButtonProps> = (
   props: PressableProps & ImageProps
 ) => {
   const sx: SxProp = {
-    ...IconButton.defaultSx,
     ...props.sx,
   };
   const iconsx: SxProp = {
@@ -72,7 +71,7 @@ IconButton.defaultProps = {
   iconSx: {},
 };
 
-IconButton.defaultSx = {
+const defaultSx = {
   maxWidth: "100%",
   bg: "primary",
   alignItems: "center",

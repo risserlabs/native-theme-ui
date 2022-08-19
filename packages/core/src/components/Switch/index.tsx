@@ -4,8 +4,8 @@
  * File Created: 30-06-2022 07:49:47
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 06:54:27
- * Modified By: Clay Risser
+ * Last Modified: 18-08-2022 03:59:39
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { FC } from "react";
 import { Switch as RNSwitch, SwitchProps as RNSwitchProps } from "react-native";
 import useThemeLookup from "../../hooks/useThemeLookup";
 
@@ -39,7 +39,7 @@ export type SwitchProps = RNSwitchProps & {
 //thumbColor?: string;
 //trackColor?: { false?: string; true?: string };}
 
-const Switch: DripsyFC<SwitchProps> = (props: SwitchProps) => {
+const Switch: FC<SwitchProps> = (props: SwitchProps) => {
   const themeLookup = useThemeLookup();
 
   return (
@@ -56,7 +56,8 @@ const Switch: DripsyFC<SwitchProps> = (props: SwitchProps) => {
 };
 
 Switch.defaultProps = {};
-Switch.defaultSx = {
+
+const defaultSx = {
   display: "flex",
   height: "5px",
   margin: 0,

@@ -4,8 +4,8 @@
  * File Created: 18-07-2022 06:25:17
  * Author: Clay Risser
  * -----
- * Last Modified: 18-07-2022 07:15:36
- * Modified By: Clay Risser
+ * Last Modified: 18-08-2022 01:15:17
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,19 +22,19 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { FC } from "react";
 import { ResponsiveStyleValue } from "@theme-ui/css";
 import Box from "../Box";
-import { DripsyFC } from "../../dripsyHelper";
+//import { DripsyFC } from "../../dripsyHelper";
 import { SizeDimension, useCalculateSize } from "./size";
 import { splitProps, EmbedProps } from "./props";
 
-const Embed: DripsyFC<EmbedProps> = (props: EmbedProps) => {
+const Embed: FC<EmbedProps> = (props: EmbedProps) => {
   const sx = {
     ...(props.height ? { height: props.height } : {}),
     ...(props.width ? { width: props.width } : {}),
     border: props.frameBorder,
-    ...Embed.defaultSx,
+
     ...props.sx,
   };
   sx.height = useCalculateSize(
@@ -71,7 +71,7 @@ const Embed: DripsyFC<EmbedProps> = (props: EmbedProps) => {
 
 Embed.defaultProps = {};
 
-Embed.defaultSx = {
+const defaultSx = {
   // width: "100%",
   position: "relative",
   overflow: "hidden",
