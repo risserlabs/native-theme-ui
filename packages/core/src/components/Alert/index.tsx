@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 05:39:12
- * Modified By: Clay Risser
+ * Last Modified: 18-08-2022 03:53:14
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,16 +22,15 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { FC } from "react";
 import { useAutoContrast } from "@risserlabs/auto-contrast";
 import Box, { BoxProps } from "../Box";
 import { DripsyFC, PatchStyledProps } from "../../dripsyHelper";
 
 export type AlertProps = BoxProps;
 
-const Alert: DripsyFC<AlertProps> = (props: AlertProps) => {
+const Alert: FC<AlertProps> = (props: AlertProps) => {
   const sx = useAutoContrast(props, {
-    ...Alert.defaultSx,
     ...props.sx,
   });
 
@@ -47,7 +46,7 @@ const Alert: DripsyFC<AlertProps> = (props: AlertProps) => {
 
 Alert.defaultProps = {};
 
-Alert.defaultSx = {
+const defaultSx = {
   alignItems: "center",
   bg: "primary",
   borderRadius: 4,

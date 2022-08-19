@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 01:05:11
  * Author: Lavanya Katari
  * -----
- * Last Modified: 17-08-2022 06:54:27
- * Modified By: Clay Risser
+ * Last Modified: 18-08-2022 03:42:23
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -23,7 +23,7 @@
  */
 
 import ECheckbox, { CheckboxProps as ECheckboxProps } from "expo-checkbox";
-import React from "react";
+import React, { FC } from "react";
 import { AutoContrast } from "@risserlabs/auto-contrast";
 import { SxProp } from "dripsy";
 import { DripsyFC } from "../../dripsyHelper";
@@ -35,7 +35,7 @@ export type CheckboxProps = ECheckboxProps & {
   autoContrast?: AutoContrast;
 };
 
-const Checkbox: DripsyFC<CheckboxProps> = (props: CheckboxProps) => {
+const Checkbox: FC<CheckboxProps> = (props: CheckboxProps) => {
   const eCheckboxProps = { ...props };
   delete eCheckboxProps.sx;
   if (props.defaultChecked) {
@@ -54,6 +54,6 @@ const Checkbox: DripsyFC<CheckboxProps> = (props: CheckboxProps) => {
 
 Checkbox.defaultProps = {};
 
-Checkbox.defaultSx = {};
+const defaultSx = {};
 
 export default Checkbox;

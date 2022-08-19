@@ -4,8 +4,8 @@
  * File Created: 27-06-2022 00:27:56
  * Author: Lavanya Katari
  * -----
- * Last Modified: 17-08-2022 10:43:00
- * Modified By: Clay Risser
+ * Last Modified: 18-08-2022 04:03:33
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -50,7 +50,7 @@ slider.sxArgTypes = {
   ...autoContrastArgType,
   ...sxArgTypes,
 };
-//export const withBackground = () => <Box sx={{ bg: "background", p: 4 }}></Box>;
+
 export const withBackground = () => <Slider></Slider>;
 
 //storiesOf("Slider", module)

@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 06:54:27
- * Modified By: Clay Risser
+ * Last Modified: 18-08-2022 00:53:03
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { FC } from "react";
 import { TextInput as DTextInput, SxProp } from "dripsy";
 import { TextInputProps as RNTextInputProps } from "react-native";
 import { AutoContrast } from "@risserlabs/auto-contrast";
@@ -41,10 +41,9 @@ export type TextareaProps = RNTextInputProps & {
 //underlineColorAndroid?: string;
 //}
 
-const Textarea: DripsyFC<TextareaProps> = (props: TextareaProps) => {
+const Textarea: FC<TextareaProps> = (props: TextareaProps) => {
   const themeLookup = useThemeLookup();
   const sx: SxProp = {
-    ...Textarea.defaultSx,
     ...props.sx,
   };
   return (
@@ -66,7 +65,7 @@ Textarea.defaultProps = {
   numberOfLines: 4,
 };
 
-Textarea.defaultSx = {
+const defaultSx = {
   bg: "transparent",
 };
 

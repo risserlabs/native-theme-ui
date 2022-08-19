@@ -4,8 +4,8 @@
  * File Created: 20-06-2022 07:09:30
  * Author: Lavanya Katari
  * -----
- * Last Modified: 17-08-2022 10:43:00
- * Modified By: Clay Risser
+ * Last Modified: 18-08-2022 04:25:16
+ * Modified By: Manikanta
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -50,18 +50,3 @@ radio.argTypes = {
   ...autoContrastArgType,
   ...sxArgTypes,
 };
-
-//storiesOf("Radio", module)
-// .add("default", createArgsStory(Radio), {
-//   args: {
-//     children: "I Am Radio component",
-//     ...createSxArgs()
-//   },
-//   argTypes: {
-//     autoContrast: {
-//      options: ["A", "AA", "AAA", false],
-//    },
-//   ...sxArgTypes,
-//  },
-//  })
-//.add("with background", () => <Radio></Radio>);
