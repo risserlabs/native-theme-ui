@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 06:54:27
- * Modified By: Clay Risser
+ * Last Modified: 18-08-2022 00:20:43
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { FC } from "react";
 import { DripsyFC } from "../../dripsyHelper";
 import { Text as DText, SxProp } from "dripsy";
 import { TextProps as RNTextProps } from "react-native";
@@ -39,9 +39,8 @@ export type LabelProps = RNTextProps & {
 //sx?: SxProp;
 //}
 
-const Label: DripsyFC<LabelProps> = (props: LabelProps) => {
+const Label: FC<LabelProps> = (props: LabelProps) => {
   const sx: SxProp = {
-    ...Label.defaultSx,
     ...props.sx,
   };
 
@@ -58,7 +57,7 @@ const Label: DripsyFC<LabelProps> = (props: LabelProps) => {
 Label.defaultProps = {
   sx: {},
 };
-Label.defaultSx = {
+const defaultSx = {
   color: "text",
   fontWeight: "bold",
 };

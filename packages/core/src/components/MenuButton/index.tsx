@@ -4,8 +4,8 @@
  * File Created: 19-06-2022 06:50:27
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 17-08-2022 06:54:27
- * Modified By: Clay Risser
+ * Last Modified: 18-08-2022 03:37:47
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -45,11 +45,10 @@ export interface ImageProps extends RNImageProps {
   // tintColor?: string;
 }
 export type MenuButtonProps = PressableProps & ImageProps;
-const MenuButton: DripsyFC<MenuButtonProps> = (
+const MenuButton: FC<MenuButtonProps> = (
   props: PressableProps & ImageProps
 ) => {
   const sx: SxProp = {
-    ...MenuButton.defaultSx,
     ...props.sx,
   };
   const menusx: SxProp = {
@@ -67,7 +66,7 @@ MenuButton.defaultProps = {
   sx: {},
   menuSx: {},
 };
-MenuButton.defaultSx = {
+const defaultSx = {
   maxWidth: "100%",
   bg: "primary",
   alignItems: "center",

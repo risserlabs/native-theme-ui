@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 06:54:27
- * Modified By: Clay Risser
+ * Last Modified: 18-08-2022 00:38:39
+ * Modified By: K S R P BHUSHAN
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { FC } from "react";
 import Box from "../Box";
 import { SxProp, Sx, View } from "dripsy";
 import { DripsyFC, DViewProps } from "../../dripsyHelper";
@@ -44,12 +44,11 @@ export type ProgressProps = Omit<
   value?: number;
 };
 
-const Progress: DripsyFC<ProgressProps> = (props: ProgressProps) => {
+const Progress: FC<ProgressProps> = (props: ProgressProps) => {
   const max = props.max || 100;
   const value = props.value || 0;
 
   const sx = {
-    ...Progress.defaultSx,
     ...props.sx,
   };
 
@@ -105,7 +104,7 @@ const Progress: DripsyFC<ProgressProps> = (props: ProgressProps) => {
 
 Progress.defaultProps = {};
 
-Progress.defaultSx = {
+const defaultSx = {
   display: "flex",
   height: "5px",
   margin: 0,
