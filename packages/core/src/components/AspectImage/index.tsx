@@ -4,8 +4,8 @@
  * File Created: 23-06-2022 03:43:01
  * Author: K S R P BHUSHAN
  * -----
- * Last Modified: 17-08-2022 06:54:27
- * Modified By: Clay Risser
+ * Last Modified: 18-08-2022 00:23:13
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { FC } from "react";
 import { AutoContrast } from "@risserlabs/auto-contrast";
 
 import { SxProp, Image as DImage } from "dripsy";
@@ -32,9 +32,8 @@ export type AspectImageProps = DImageProps & {
   src?: string;
   ratio?: number;
 };
-const AspectImage: DripsyFC<AspectImageProps> = (props: AspectImageProps) => {
+const AspectImage: FC<AspectImageProps> = (props: AspectImageProps) => {
   const sx: SxProp = {
-    ...AspectImage.defaultSx,
     ...props.sx,
   };
 
@@ -49,7 +48,7 @@ AspectImage.defaultProps = {
   sx: {},
 };
 
-AspectImage.defaultSx = {
+const defaultSx = {
   minWidth: 100,
   maxWidth: 100,
   height: "100",

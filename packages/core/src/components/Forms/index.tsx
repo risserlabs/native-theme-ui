@@ -4,8 +4,8 @@
  * File Created: 21-06-2022 02:17:32
  * Author: Harikittu46
  * -----
- * Last Modified: 17-08-2022 06:54:27
- * Modified By: Clay Risser
+ * Last Modified: 18-08-2022 00:25:35
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { FC } from "react";
 import { AutoContrast } from "@risserlabs/auto-contrast";
 import { DripsyFC } from "../../dripsyHelper";
 import { SxProp } from "dripsy";
@@ -31,14 +31,13 @@ export type FormsProps = {
   autoContrast?: AutoContrast;
   sx?: SxProp;
 };
-const Forms: DripsyFC<FormsProps> = (props: FormsProps) => {
+const Forms: FC<FormsProps> = (props: FormsProps) => {
   const sx: SxProp = {
-    ...Forms.defaultSx,
     ...props.sx,
   };
   return <div>Form component</div>;
 };
 
 Forms.defaultProps = {};
-Forms.defaultSx = {};
+const defaultSx = {};
 export default Forms;

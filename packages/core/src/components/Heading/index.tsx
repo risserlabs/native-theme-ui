@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 06:54:27
- * Modified By: Clay Risser
+ * Last Modified: 18-08-2022 00:26:44
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { FC } from "react";
 import { styled, SxProp } from "dripsy";
 import Text from "../Text";
 import { H1, H2, H3, H4, H5, H6 } from "dripsy";
@@ -45,7 +45,7 @@ export type HeadingProps = RNTextProps & {
   as?: variant;
 };
 
-const Heading: DripsyFC<HeadingProps> = (props: HeadingProps) => {
+const Heading: FC<HeadingProps> = (props: HeadingProps) => {
   // const themeLookup = useThemeLookup();
   // const sx: SxProp = {
   // ...themeLookup('styles', as),
@@ -53,7 +53,6 @@ const Heading: DripsyFC<HeadingProps> = (props: HeadingProps) => {
   // ...props.sx
 
   const sx = useAutoContrast(props, {
-    ...Heading.defaultSx,
     ...props.sx,
   });
 
@@ -76,7 +75,7 @@ const Heading: DripsyFC<HeadingProps> = (props: HeadingProps) => {
 
 Heading.defaultProps = {};
 
-Heading.defaultSx = {
+const defaultSx = {
   fontFamily: "heading",
   fontWeight: "heading",
   lineHeight: "heading",

@@ -4,8 +4,8 @@
  * File Created: 17-06-2022 06:47:48
  * Author: Harikittu46
  * -----
- * Last Modified: 17-08-2022 06:54:27
- * Modified By: Clay Risser
+ * Last Modified: 18-08-2022 00:28:33
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { FC } from "react";
 import { AutoContrast, useAutoContrast } from "@risserlabs/auto-contrast";
 import { Picker as EPicker, PickerProps } from "@react-native-picker/picker";
 import { createThemedComponent, SxProp } from "dripsy";
@@ -36,13 +36,12 @@ export type SelectProps = PickerProps & {
   sx?: SxProp;
 };
 
-const Select: DripsyFC<SelectProps> & { Option: typeof Option } = (
+const Select: FC<SelectProps> & { Option: typeof Option } = (
   props: SelectProps
 ) => {
   const sx = useAutoContrast(
     props,
     {
-      ...Select.defaultSx,
       ...props.sx,
     },
     true
@@ -58,7 +57,7 @@ Select.Option = Option;
 
 Select.defaultProps = {};
 
-Select.defaultSx = {
+const defaultSx = {
   display: "flex",
   width: "100%",
   p: 2,

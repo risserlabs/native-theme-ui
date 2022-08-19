@@ -4,8 +4,8 @@
  * File Created: 13-06-2022 00:51:44
  * Author: Clay Risser
  * -----
- * Last Modified: 17-08-2022 06:54:27
- * Modified By: Clay Risser
+ * Last Modified: 18-08-2022 00:37:27
+ * Modified By: Harikittu46
  * -----
  * Risser Labs LLC (c) Copyright 2021 - 2022
  *
@@ -22,7 +22,7 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { FC } from "react";
 import { SxProp, Image as DImage } from "dripsy";
 import { DImageProps, DripsyFC } from "../../dripsyHelper";
 
@@ -30,9 +30,8 @@ export type ImageProps = DImageProps & {
   src?: string;
 };
 
-const Image: DripsyFC<ImageProps> = (props: ImageProps) => {
+const Image: FC<ImageProps> = (props: ImageProps) => {
   const sx: SxProp = {
-    ...Image.defaultSx,
     ...props.sx,
   };
   const dImageProps = { ...props };
@@ -45,9 +44,9 @@ Image.defaultProps = {
   sx: {},
 };
 
-Image.defaultSx = {
-  minWidth: "50%",
-  maxWidth: "100%",
+const defaultSx = {
+  minWidth: 50,
+  maxWidth: 100,
   height: "100%",
 };
 
